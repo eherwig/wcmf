@@ -1,0 +1,4 @@
+<map id="PermissionManager" name="PermissionManager">
+<area shape="rect" id="node2" href="$classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html" title="DefaultPermissionManager retrieves authorization rules from the application configuration. " alt="" coords="5,292,204,413"/>
+<area shape="rect" id="node3" href="$classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html" title="NullPermissionManager acts like an absent PermissionManager. " alt="" coords="228,299,387,406"/>
+</map>

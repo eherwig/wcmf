@@ -1,0 +1,5 @@
+<map id="AuthUser" name="AuthUser">
+<area shape="rect" id="node3" href="$classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_anonymous_user.html" title="Anonymous user. " alt="" coords="14,807,133,913"/>
+<area shape="rect" id="node4" href="$classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_default_auth_user.html" title="Default AuthUser implementation. " alt="" coords="59,491,195,759"/>
+<area shape="rect" id="node2" href="$interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html" title="User is the interface for users. " alt="" coords="6,5,141,259"/>
+</map>
