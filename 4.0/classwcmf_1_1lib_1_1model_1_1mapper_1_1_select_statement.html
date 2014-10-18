@@ -21,14 +21,7 @@
     <script src="dynsections.js"></script>
     <link href="theme/css/syntax.css" rel="stylesheet">
     <link href="theme/css/style.css" rel="stylesheet">
-    <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
-  });
-</script>
-<link rel="search" href="search-opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="wCMF"/>
+    <script src="search/search.js"></script>
   </head>
   <body style="min-height: 200px; padding-top: 50px;">
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
@@ -52,12 +45,13 @@
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
-                <form class="navbar-form navbar-left" role="search" method="get" action="search.php">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" name="query">
+                <li>
+                  <div id="MSearchBox">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+                  <div id="MSearchSelect"></div>
+                  <div id="MSearchClose"></div>
+                </li>
               </ul>
             </div>
           </div>
@@ -74,6 +68,20 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="namespacewcmf.html">wcmf</a></li><li class="navelem"><a class="el" href="namespacewcmf_1_1lib.html">lib</a></li><li class="navelem"><a class="el" href="namespacewcmf_1_1lib_1_1model.html">model</a></li><li class="navelem"><a class="el" href="namespacewcmf_1_1lib_1_1model_1_1mapper.html">mapper</a></li><li class="navelem"><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement.html">SelectStatement</a></li>  </ul>
@@ -95,13 +103,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>Select statement. </p>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00024">24</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00023">23</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for SelectStatement:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement__inherit__graph.svg" width="151" height="478"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement__inherit__graph.svg" width="151" height="478"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -240,7 +249,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement.html" title="Select statement. ">SelectStatement</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00041">41</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00040">40</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -317,7 +326,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00086">86</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00087">87</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -344,7 +353,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Mixed </dd></dl>
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00095">95</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00096">96</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -364,7 +373,7 @@ Protected Attributes</h2></td></tr>
 <p>Execute a count query and return the row count. </p>
 <dl class="section return"><dt>Returns</dt><dd>Integer </dd></dl>
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00106">106</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00107">107</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -383,7 +392,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Put the statement into the cache. </p>
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00136">136</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00137">137</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -402,7 +411,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd>Select::assemble() </dd></dl>
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00145">145</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00147">147</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -431,7 +440,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd>Select::query() </dd></dl>
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00156">156</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00158">158</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -466,7 +475,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00167">167</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00169">169</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -501,7 +510,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00176">176</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00178">178</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -520,7 +529,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Serialization handlers. </p>
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00184">184</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00186">186</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -537,7 +546,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00188">188</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00190">190</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -552,7 +561,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00026">26</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00025">25</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -566,7 +575,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00027">27</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00026">26</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -588,7 +597,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00029">29</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00028">28</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -610,7 +619,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00030">30</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00029">29</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -632,7 +641,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00031">31</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00030">30</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -654,7 +663,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00032">32</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
+<p>Definition at line <a class="el" href="_select_statement_8php_source.html#l00031">31</a> of file <a class="el" href="_select_statement_8php_source.html">SelectStatement.php</a>.</p>
 
 </div>
 </div>
@@ -670,7 +679,7 @@ Protected Attributes</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Sep 9 2014 00:09:35 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+          Generated on Sat Oct 18 2014 23:48:53 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
       </div>
     </div>
   </div>

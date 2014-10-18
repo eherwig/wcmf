@@ -21,14 +21,7 @@
     <script src="dynsections.js"></script>
     <link href="theme/css/syntax.css" rel="stylesheet">
     <link href="theme/css/style.css" rel="stylesheet">
-    <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
-  });
-</script>
-<link rel="search" href="search-opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="wCMF"/>
+    <script src="search/search.js"></script>
   </head>
   <body style="min-height: 200px; padding-top: 50px;">
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
@@ -52,12 +45,13 @@
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
-                <form class="navbar-form navbar-left" role="search" method="get" action="search.php">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" name="query">
+                <li>
+                  <div id="MSearchBox">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+                  <div id="MSearchSelect"></div>
+                  <div id="MSearchClose"></div>
+                </li>
               </ul>
             </div>
           </div>
@@ -74,6 +68,20 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="namespacewcmf.html">wcmf</a></li><li class="navelem"><a class="el" href="namespacewcmf_1_1lib.html">lib</a></li><li class="navelem"><a class="el" href="namespacewcmf_1_1lib_1_1presentation.html">presentation</a></li><li class="navelem"><a class="el" href="namespacewcmf_1_1lib_1_1presentation_1_1view.html">view</a></li><li class="navelem"><a class="el" href="namespacewcmf_1_1lib_1_1presentation_1_1view_1_1impl.html">impl</a></li><li class="navelem"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_smarty_view.html">SmartyView</a></li>  </ul>
@@ -95,13 +103,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html" title="View defines the interface for all view implementations. ">View</a> is a subclass of Smarty that is customized for use with the wCMF.</p>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00026">26</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00027">27</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for SmartyView:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_smarty_view__inherit__graph.svg" width="155" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_smarty_view__inherit__graph.svg" width="162" height="551"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -114,6 +123,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a978ab4a9bc17ea7c23a5977e0b04278c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8eac4c706d53b4bad818cb810875c94"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_smarty_view.html#ad8eac4c706d53b4bad818cb810875c94">setCacheLifetime</a> ($cacheLifeTime)</td></tr>
 <tr class="separator:ad8eac4c706d53b4bad818cb810875c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fc4a5c79db22df5e3d63528788c5113"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_smarty_view.html#a8fc4a5c79db22df5e3d63528788c5113">setCacheDir</a> ($cacheDir)</td></tr>
+<tr class="separator:a8fc4a5c79db22df5e3d63528788c5113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c434116ce212942b5a8dc1bacc33185"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_smarty_view.html#a2c434116ce212942b5a8dc1bacc33185">setPluginsDir</a> ($pluginsDir)</td></tr>
 <tr class="separator:a2c434116ce212942b5a8dc1bacc33185"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9c6d4ff34657dc3d723bf3970f99af2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_smarty_view.html#ae9c6d4ff34657dc3d723bf3970f99af2">setOutputFilter</a> ($outputFilter)</td></tr>
@@ -147,6 +158,8 @@ Protected Attributes</h2></td></tr>
 Static Protected Attributes</h2></td></tr>
 <tr class="memitem:a020e39c21bf2215c41ad7daf44effd52"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_smarty_view.html#a020e39c21bf2215c41ad7daf44effd52">$_sharedView</a> = null</td></tr>
 <tr class="separator:a020e39c21bf2215c41ad7daf44effd52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93378b89332d16b93a91e26beb4338c"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_smarty_view.html#ae93378b89332d16b93a91e26beb4338c">$_actionKeyProvider</a> = null</td></tr>
+<tr class="separator:ae93378b89332d16b93a91e26beb4338c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a095c5d389db211932136b53f25f39685"></a>
@@ -164,7 +177,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Constructor. </p>
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00035">35</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00037">37</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 
 </div>
 </div>
@@ -191,7 +204,7 @@ Static Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00066">66</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00062">62</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 
 </div>
 </div>
@@ -217,7 +230,7 @@ Static Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00074">74</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00070">70</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 
 </div>
 </div>
@@ -243,7 +256,33 @@ Static Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00082">82</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00078">78</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8fc4a5c79db22df5e3d63528788c5113"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">setCacheDir </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$cacheDir</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the caching directory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$cacheDir</td><td>String </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00086">86</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 
 </div>
 </div>
@@ -269,7 +308,7 @@ Static Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00090">90</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00097">97</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 
 </div>
 </div>
@@ -295,7 +334,7 @@ Static Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00098">98</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00105">105</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 
 </div>
 </div>
@@ -326,7 +365,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#a8e7aaacf604710d7f853f3261d84b9fc">View</a>.</p>
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00107">107</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00114">114</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 
 </div>
 </div>
@@ -347,7 +386,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#a8c584efa272687554bd9abe5e83fe10c">View</a>.</p>
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00114">114</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00121">121</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 
 </div>
 </div>
@@ -367,7 +406,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#a70a0fe08035189260c72e32a9e20d30c">View</a>.</p>
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00121">121</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00128">128</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 
 </div>
 </div>
@@ -387,7 +426,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#ae1df87df22fcd64f8298d22239b189b8">View</a>.</p>
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00128">128</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00135">135</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 
 </div>
 </div>
@@ -424,7 +463,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#a4bff378c45f9901d49be3fe13c0e1989">View</a>.</p>
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00135">135</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00142">142</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 
 </div>
 </div>
@@ -452,7 +491,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#af5b55597bf6435397d8a7f6f6b3a2fbc">View</a>.</p>
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00147">147</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00154">154</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 
 </div>
 </div>
@@ -491,7 +530,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#a45a60e1d1f1ed4fd76d709c504e87589">View</a>.</p>
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00159">159</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00166">166</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 
 </div>
 </div>
@@ -536,7 +575,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#ae914476664014895052ce1905fe582b8">View</a>.</p>
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00169">169</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00176">176</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 
 </div>
 </div>
@@ -559,7 +598,29 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00028">28</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00029">29</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae93378b89332d16b93a91e26beb4338c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">$_actionKeyProvider = null</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00030">30</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 
 </div>
 </div>
@@ -581,7 +642,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00030">30</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
+<p>Definition at line <a class="el" href="_smarty_view_8php_source.html#l00032">32</a> of file <a class="el" href="_smarty_view_8php_source.html">SmartyView.php</a>.</p>
 
 </div>
 </div>
@@ -597,7 +658,7 @@ Static Protected Attributes</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Sep 9 2014 00:09:39 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+          Generated on Sat Oct 18 2014 23:48:55 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
       </div>
     </div>
   </div>

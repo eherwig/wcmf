@@ -21,14 +21,7 @@
     <script src="dynsections.js"></script>
     <link href="theme/css/syntax.css" rel="stylesheet">
     <link href="theme/css/style.css" rel="stylesheet">
-    <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
-  });
-</script>
-<link rel="search" href="search-opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="wCMF"/>
+    <script src="search/search.js"></script>
   </head>
   <body style="min-height: 200px; padding-top: 50px;">
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
@@ -52,12 +45,13 @@
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
-                <form class="navbar-form navbar-left" role="search" method="get" action="search.php">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" name="query">
+                <li>
+                  <div id="MSearchBox">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+                  <div id="MSearchSelect"></div>
+                  <div id="MSearchClose"></div>
+                </li>
               </ul>
             </div>
           </div>
@@ -74,6 +68,20 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="namespacewcmf.html">wcmf</a></li><li class="navelem"><a class="el" href="namespacewcmf_1_1application.html">application</a></li><li class="navelem"><a class="el" href="namespacewcmf_1_1application_1_1controller.html">controller</a></li><li class="navelem"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_x_m_l_export_controller.html">XMLExportController</a></li>  </ul>
@@ -114,13 +122,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div> </div><p>For additional actions and parameters see <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html">BatchController actions</a>.</p>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00049">49</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
+<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00048">48</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for XMLExportController:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1application_1_1controller_1_1_x_m_l_export_controller__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1application_1_1controller_1_1_x_m_l_export_controller__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -237,7 +246,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a47a24ac0d700f62a9434d298ade72fb9" title="Initialize the Controller with request/response data. ">Controller::initialize()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00074">74</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
+<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00073">73</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
 
 </div>
 </div>
@@ -264,7 +273,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#aa969f966d1ab74704cbde9512d281d2c" title="Get definitions of work packages. ">BatchController::getWorkPackage()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00101">101</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
+<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00100">100</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
 
 </div>
 </div>
@@ -290,7 +299,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ad91d741678d4dd54df44eb28216f1a39" title="Get the filename of the file to download at the end of processing. ">BatchController::getDownloadFile()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00113">113</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
+<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00112">112</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
 
 </div>
 </div>
@@ -325,7 +334,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This is a callback method called on a matching work package, see <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab0e75dc0967afe71da4d6bd46d7a500b" title="Add a work package to session. ">BatchController::addWorkPackage()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00124">124</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
+<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00123">123</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
 
 </div>
 </div>
@@ -395,7 +404,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This is a callback method called on a matching work package, see <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab0e75dc0967afe71da4d6bd46d7a500b" title="Add a work package to session. ">BatchController::addWorkPackage()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00249">249</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
+<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00250">250</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
 
 </div>
 </div>
@@ -447,7 +456,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00273">273</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
+<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00275">275</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
 
 </div>
 </div>
@@ -507,7 +516,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The updated document state </dd></dl>
 
-<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00295">295</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
+<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00297">297</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
 
 </div>
 </div>
@@ -542,7 +551,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Integer </dd></dl>
 
-<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00356">356</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
+<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00358">358</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
 
 </div>
 </div>
@@ -578,7 +587,7 @@ Protected Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The formatted value </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Subclasses may overrite this for special application requirements </dd></dl>
 
-<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00389">389</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
+<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00391">391</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
 
 </div>
 </div>
@@ -593,7 +602,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00050">50</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
+<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00049">49</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
 
 </div>
 </div>
@@ -607,7 +616,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00051">51</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
+<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00050">50</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
 
 </div>
 </div>
@@ -621,7 +630,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00052">52</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
+<p>Definition at line <a class="el" href="_x_m_l_export_controller_8php_source.html#l00051">51</a> of file <a class="el" href="_x_m_l_export_controller_8php_source.html">XMLExportController.php</a>.</p>
 
 </div>
 </div>
@@ -637,7 +646,7 @@ Protected Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Sep 9 2014 00:09:33 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+          Generated on Sat Oct 18 2014 23:48:52 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
       </div>
     </div>
   </div>

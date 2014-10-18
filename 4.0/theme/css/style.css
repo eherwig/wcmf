@@ -1,8 +1,3 @@
-#MSearchBox {
-  position: relative;
-  display: block;
-}
-
 .jumbotron h2 {
   line-height: 1.2;
 }
@@ -44,4 +39,40 @@ td.entry {
 .anchor{
   padding-top: 50px;
   margin-top: -50px;
+}
+
+// Search
+
+#MSearchSelectWindow {
+  display: none;
+  position: absolute;
+  left: 0; top: 0;
+}
+
+#MSearchResultsWindow {
+  display: none;
+  left: 0; top: 0;
+  margin: -55px 0 0 0;
+  z-index: 9999;
+}
+
+#MSearchResults {
+  width: 300px;
+  height: 200px;
+}
+
+.SRChildren {
+  padding-left: 10px; padding-bottom: .5em
+}
+
+.SRPage .SRChildren {
+  display: none;
+}
+
+a.SRScope {
+  display: block;
+}
+
+span.SRScope {
+  padding-left: 4px;
 }

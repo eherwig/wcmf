@@ -21,14 +21,7 @@
     <script src="dynsections.js"></script>
     <link href="theme/css/syntax.css" rel="stylesheet">
     <link href="theme/css/style.css" rel="stylesheet">
-    <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
-  });
-</script>
-<link rel="search" href="search-opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="wCMF"/>
+    <script src="search/search.js"></script>
   </head>
   <body style="min-height: 200px; padding-top: 50px;">
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
@@ -52,12 +45,13 @@
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
-                <form class="navbar-form navbar-left" role="search" method="get" action="search.php">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" name="query">
+                <li>
+                  <div id="MSearchBox">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+                  <div id="MSearchSelect"></div>
+                  <div id="MSearchClose"></div>
+                </li>
               </ul>
             </div>
           </div>
@@ -74,6 +68,20 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="namespacewcmf.html">wcmf</a></li><li class="navelem"><a class="el" href="namespacewcmf_1_1application.html">application</a></li><li class="navelem"><a class="el" href="namespacewcmf_1_1application_1_1controller.html">controller</a></li><li class="navelem"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_multiple_action_controller.html">MultipleActionController</a></li>  </ul>
@@ -108,12 +116,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>An example of input data in JSON: </p><div class="fragment"><div class="line">data: {</div>
 <div class="line">  action1: {</div>
 <div class="line">    action: <span class="stringliteral">&quot;create&quot;</span>,</div>
-<div class="line">    oid: <span class="stringliteral">&quot;Author:wcmffb298f3784dd49548a05d43d7bf88590&quot;</span>,</div>
-<div class="line">    name: <span class="stringliteral">&quot;Ingo Herwig&quot;</span></div>
+<div class="line">    params: {</div>
+<div class="line">      oid: <span class="stringliteral">&quot;Author:wcmffb298f3784dd49548a05d43d7bf88590&quot;</span>,</div>
+<div class="line">      name: <span class="stringliteral">&quot;Ingo Herwig&quot;</span></div>
+<div class="line">    }</div>
 <div class="line">  },</div>
 <div class="line">  action2: {</div>
 <div class="line">    action: <span class="stringliteral">&quot;read&quot;</span>,</div>
-<div class="line">    oid: <span class="stringliteral">&quot;{last_created_oid:Author}&quot;</span></div>
+<div class="line">    params: {</div>
+<div class="line">      oid: <span class="stringliteral">&quot;{last_created_oid:Author}&quot;</span></div>
+<div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>The output data for the preceding request could look like </p><div class="fragment"><div class="line">data: {</div>
@@ -132,13 +144,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">}</div>
 </div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_multiple_action_controller_8php_source.html#l00078">78</a> of file <a class="el" href="_multiple_action_controller_8php_source.html">MultipleActionController.php</a>.</p>
+<p>Definition at line <a class="el" href="_multiple_action_controller_8php_source.html#l00082">82</a> of file <a class="el" href="_multiple_action_controller_8php_source.html">MultipleActionController.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for MultipleActionController:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1application_1_1controller_1_1_multiple_action_controller__inherit__graph.svg" width="203" height="360"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1application_1_1controller_1_1_multiple_action_controller__inherit__graph.svg" width="203" height="360"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
@@ -196,7 +209,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a184909dab34698899937d810a9f5d393" title="Check if the data given by initialize() meet the requirements of the Controller. ">Controller::validate()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_multiple_action_controller_8php_source.html#l00083">83</a> of file <a class="el" href="_multiple_action_controller_8php_source.html">MultipleActionController.php</a>.</p>
+<p>Definition at line <a class="el" href="_multiple_action_controller_8php_source.html#l00087">87</a> of file <a class="el" href="_multiple_action_controller_8php_source.html">MultipleActionController.php</a>.</p>
 
 </div>
 </div>
@@ -222,7 +235,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a4eadfceba84d61eda01f9828935cf8e5" title="Process the request. ">Controller::doExecute()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_multiple_action_controller_8php_source.html#l00108">108</a> of file <a class="el" href="_multiple_action_controller_8php_source.html">MultipleActionController.php</a>.</p>
+<p>Definition at line <a class="el" href="_multiple_action_controller_8php_source.html#l00112">112</a> of file <a class="el" href="_multiple_action_controller_8php_source.html">MultipleActionController.php</a>.</p>
 
 </div>
 </div>
@@ -238,7 +251,7 @@ Additional Inherited Members</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Sep 9 2014 00:09:33 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+          Generated on Sat Oct 18 2014 23:48:52 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
       </div>
     </div>
   </div>

@@ -21,14 +21,7 @@
     <script src="dynsections.js"></script>
     <link href="theme/css/syntax.css" rel="stylesheet">
     <link href="theme/css/style.css" rel="stylesheet">
-    <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
-  });
-</script>
-<link rel="search" href="search-opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="wCMF"/>
+    <script src="search/search.js"></script>
   </head>
   <body style="min-height: 200px; padding-top: 50px;">
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
@@ -52,12 +45,13 @@
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
-                <form class="navbar-form navbar-left" role="search" method="get" action="search.php">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" name="query">
+                <li>
+                  <div id="MSearchBox">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+                  <div id="MSearchSelect"></div>
+                  <div id="MSearchClose"></div>
+                </li>
               </ul>
             </div>
           </div>
@@ -74,6 +68,20 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_e659925bc7938c132ebc659cdfa3fb60.html">application</a></li><li class="navelem"><a class="el" href="dir_534cac7d4c5b7fef43abeb5786558088.html">controller</a></li>  </ul>
@@ -99,7 +107,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html" title="ObjectFactory loads class definitions and instantiates classes. ">wcmf\lib\core\ObjectFactory</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1core_1_1_illegal_argument_exception.html" title="IllegalArgumentException signals an exception in method arguments. ">wcmf\lib\core\IllegalArgumentException</a>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1i18n_1_1_message.html" title="Message is used to get localized messages to be used in the user interface. ">wcmf\lib\i18n\Message</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">wcmf\lib\persistence\ObjectId</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html" title="PersistenceAction values are used to define actions on PersistentObject instances. ">wcmf\lib\persistence\PersistenceAction</a>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html" title="ApplicationError is used to signal errors that occur while processing a request. ">wcmf\lib\presentation\ApplicationError</a>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html" title="Controller is the base class of all controllers. ">wcmf\lib\presentation\Controller</a>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;use <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html" title="User is the interface for users. ">wcmf\lib\security\principal\User</a>;</div>
@@ -143,8 +151,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// add permissions for this operation</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    $oidStr = $authUser-&gt;getOID()-&gt;_toString();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    $permissionManager-&gt;addTempPermission($oidStr, <span class="stringliteral">&#39;&#39;</span>, <span class="stringliteral">&#39;read&#39;</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    $permissionManager-&gt;addTempPermission($oidStr, <span class="stringliteral">&#39;&#39;</span>, <span class="stringliteral">&#39;modify&#39;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    $permissionManager-&gt;addTempPermission($oidStr, <span class="stringliteral">&#39;&#39;</span>, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html#add302975378da047de904daa059a332b">PersistenceAction::READ</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    $permissionManager-&gt;addTempPermission($oidStr, <span class="stringliteral">&#39;&#39;</span>, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html#aacb6276ab2690c4071ba0b38714321bc">PersistenceAction::UPDATE</a>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// start the persistence transaction</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    $transaction = $persistenceFacade-&gt;getTransaction();</div>
@@ -197,7 +205,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Sep 9 2014 00:09:26 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+          Generated on Sat Oct 18 2014 23:48:49 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
       </div>
     </div>
   </div>

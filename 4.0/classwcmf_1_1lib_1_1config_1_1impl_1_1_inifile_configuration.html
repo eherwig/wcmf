@@ -21,14 +21,7 @@
     <script src="dynsections.js"></script>
     <link href="theme/css/syntax.css" rel="stylesheet">
     <link href="theme/css/style.css" rel="stylesheet">
-    <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
-  });
-</script>
-<link rel="search" href="search-opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="wCMF"/>
+    <script src="search/search.js"></script>
   </head>
   <body style="min-height: 200px; padding-top: 50px;">
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
@@ -52,12 +45,13 @@
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
-                <form class="navbar-form navbar-left" role="search" method="get" action="search.php">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" name="query">
+                <li>
+                  <div id="MSearchBox">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+                  <div id="MSearchSelect"></div>
+                  <div id="MSearchClose"></div>
+                </li>
               </ul>
             </div>
           </div>
@@ -74,6 +68,20 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="namespacewcmf.html">wcmf</a></li><li class="navelem"><a class="el" href="namespacewcmf_1_1lib.html">lib</a></li><li class="navelem"><a class="el" href="namespacewcmf_1_1lib_1_1config.html">config</a></li><li class="navelem"><a class="el" href="namespacewcmf_1_1lib_1_1config_1_1impl.html">impl</a></li><li class="navelem"><a class="el" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html">InifileConfiguration</a></li>  </ul>
@@ -93,13 +101,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dl class="section note"><dt>Note</dt><dd>This class only supports ini files with sections.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00028">28</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00029">29</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for InifileConfiguration:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -201,7 +210,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00049">49</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00050">50</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -222,7 +231,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the filesystem path to the configuration files. </p>
 <dl class="section return"><dt>Returns</dt><dd>The path, either absolute or relative to the executed script </dd></dl>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00057">57</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00058">58</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -244,7 +253,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a55ad87c7b53d1748156bb15250d26e02">Configuration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00068">68</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00069">69</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -276,7 +285,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#adbc60917b6870516162d2a30d5e1521f">Configuration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00078">78</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00079">79</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -329,7 +338,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Associative array with keys 'config' (configuration array) and 'files' (array of parsed files) </dd></dl>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00141">141</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00142">142</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -349,7 +358,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#ac1f543e7e36a77057d0049cee985a5f8">Configuration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00168">168</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00169">169</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -370,7 +379,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a137c634253bdf2fce742cfcf3f86cc6b">Configuration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00175">175</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00176">176</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -391,7 +400,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a69b8f6a56f006f65cdfdb8a8884eb420">Configuration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00182">182</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00183">183</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -422,7 +431,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a71b2cd5459406a4e51de66135416d16c">Configuration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00195">195</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00196">196</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -453,7 +462,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#ade8987dcf8041a3c7724604177be53bd">Configuration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00202">202</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00203">203</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -484,7 +493,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#afc7bdbf49e8c614de9ddf9176a87af7c">Configuration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00215">215</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00216">216</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -515,7 +524,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a735dc312f405fb15076d16e459af8b8c">Configuration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00223">223</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00224">224</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -546,7 +555,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#aaaf925fc2efaab606cbbddfddf93c277">Configuration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00240">240</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00241">241</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -577,7 +586,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a92fb64ddc3e58d0dc5fb0361657797af">Configuration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00257">257</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00258">258</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -600,7 +609,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_writable_configuration.html#a0c5b48d8c7498d3a69aa9d63124f2e4f">WritableConfiguration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00272">272</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00273">273</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -620,7 +629,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_writable_configuration.html#a57e6b54b217644429863a4c4f7c6dcd2">WritableConfiguration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00290">290</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00291">291</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -641,7 +650,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_writable_configuration.html#a4607ca457e0330d8c746700bbc4fbe05">WritableConfiguration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00297">297</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00298">298</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -662,7 +671,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_writable_configuration.html#a70324a0f46ed24ffe64f25aa5ca5e221">WritableConfiguration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00314">314</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00315">315</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -693,7 +702,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_writable_configuration.html#a7cd317350dc665e97e672a2712f9fbd7">WritableConfiguration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00329">329</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00330">330</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -736,7 +745,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_writable_configuration.html#af94edcfe83c279b7bcbb18e83f8123d1">WritableConfiguration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00356">356</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00357">357</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -767,7 +776,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_writable_configuration.html#a198742a4f23c940bde0cf341ec3d556a">WritableConfiguration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00400">400</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00401">401</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -804,7 +813,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_writable_configuration.html#a66553a9ac1f2448a0350d74c5a8c26f5">WritableConfiguration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00415">415</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00416">416</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -825,7 +834,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_writable_configuration.html#af3642581fa1d0f1ad05ae4f8c6aa188e">WritableConfiguration</a>.</p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00445">445</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00446">446</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -861,7 +870,7 @@ Protected Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>An associative array containing the data</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>: Sebastien Cevey <a href="#" onclick="location.href='mai'+'lto:'+'seb'+'@c'+'ine'+'7.'+'net'; return false;">seb@c<span style="display: none;">.nosp@m.</span>ine7<span style="display: none;">.nosp@m.</span>.net</a> Original Code base: <a href="#" onclick="location.href='mai'+'lto:'+'inf'+'o@'+'meg'+'am'+'an.'+'nl'; return false;">info@<span style="display: none;">.nosp@m.</span>mega<span style="display: none;">.nosp@m.</span>man.n<span style="display: none;">.nosp@m.</span>l</a> Added comment handling/Removed process sections flag: Ingo Herwig </dd></dl>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00494">494</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00495">495</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -889,7 +898,7 @@ Protected Member Functions</h2></td></tr>
 <p>Process the values in the ini array. </p>
 <p>This method turns string values that hold array definitions (comma separated values enclosed by curly brackets) into array values. </p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00540">540</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00541">541</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -923,7 +932,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00550">550</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00551">551</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -976,7 +985,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The merged array. </dd></dl>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00575">575</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00576">576</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -1011,7 +1020,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Mixed </dd></dl>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00596">596</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00597">597</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -1039,7 +1048,7 @@ Protected Member Functions</h2></td></tr>
 <p>Store the instance in the filesystem. </p>
 <p>If the instance is modified, this call is ignored. </p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00613">613</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00614">614</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -1074,7 +1083,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boolean whether the data could be retrieved or not </dd></dl>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00637">637</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00638">638</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -1109,7 +1118,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Filename </dd></dl>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00669">669</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00670">670</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -1155,7 +1164,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True, if one of the files is newer, false else </dd></dl>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00681">681</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00682">682</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -1182,7 +1191,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Clear application cache. </p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00693">693</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00694">694</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -1209,7 +1218,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Build the internal lookup table. </p>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00706">706</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00705">705</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -1255,7 +1264,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Array with section as first entry and key as second or null if not found </dd></dl>
 
-<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00726">726</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
+<p>Definition at line <a class="el" href="_inifile_configuration_8php_source.html#l00725">725</a> of file <a class="el" href="_inifile_configuration_8php_source.html">InifileConfiguration.php</a>.</p>
 
 </div>
 </div>
@@ -1271,7 +1280,7 @@ Protected Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Sep 9 2014 00:09:33 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+          Generated on Sat Oct 18 2014 23:48:53 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
       </div>
     </div>
   </div>

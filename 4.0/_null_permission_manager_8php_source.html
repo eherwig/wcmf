@@ -21,14 +21,7 @@
     <script src="dynsections.js"></script>
     <link href="theme/css/syntax.css" rel="stylesheet">
     <link href="theme/css/style.css" rel="stylesheet">
-    <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
-  });
-</script>
-<link rel="search" href="search-opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="wCMF"/>
+    <script src="search/search.js"></script>
   </head>
   <body style="min-height: 200px; padding-top: 50px;">
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
@@ -52,12 +45,13 @@
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
-                <form class="navbar-form navbar-left" role="search" method="get" action="search.php">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" name="query">
+                <li>
+                  <div id="MSearchBox">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+                  <div id="MSearchSelect"></div>
+                  <div id="MSearchClose"></div>
+                </li>
               </ul>
             </div>
           </div>
@@ -74,6 +68,20 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_88527e3c69c4b7a74da3f178c2797901.html">security</a></li><li class="navelem"><a class="el" href="dir_52fee51a684c4d07180f46fe0a760a94.html">impl</a></li>  </ul>
@@ -119,20 +127,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  }</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">   * @see PermissionManager::createPermission()</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">   * @see PermissionManager::setPermissions()</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">   38</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">createPermission</a>($resource, $context, $action, $role, $modifier) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">   * @see PermissionManager::removePermission()</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">   45</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">removePermission</a>($resource, $context, $action, $role) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;?&gt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#a53ab5bb502b1c4ed185008a686b81a76">   38</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#a53ab5bb502b1c4ed185008a686b81a76">setPermissions</a>($resource, $context, $action, $permissions) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">   * @see PermissionManager::createPermission()</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">   44</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">createPermission</a>($resource, $context, $action, $role, $modifier) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">   * @see PermissionManager::removePermission()</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">   51</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">removePermission</a>($resource, $context, $action, $role) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;?&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -142,7 +156,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Sep 9 2014 00:09:31 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+          Generated on Sat Oct 18 2014 23:48:51 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
       </div>
     </div>
   </div>

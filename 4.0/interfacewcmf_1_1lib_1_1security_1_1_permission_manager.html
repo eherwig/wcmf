@@ -21,14 +21,7 @@
     <script src="dynsections.js"></script>
     <link href="theme/css/syntax.css" rel="stylesheet">
     <link href="theme/css/style.css" rel="stylesheet">
-    <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
-  });
-</script>
-<link rel="search" href="search-opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="wCMF"/>
+    <script src="search/search.js"></script>
   </head>
   <body style="min-height: 200px; padding-top: 50px;">
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
@@ -52,12 +45,13 @@
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
-                <form class="navbar-form navbar-left" role="search" method="get" action="search.php">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" name="query">
+                <li>
+                  <div id="MSearchBox">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+                  <div id="MSearchSelect"></div>
+                  <div id="MSearchClose"></div>
+                </li>
               </ul>
             </div>
           </div>
@@ -74,6 +68,20 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="namespacewcmf.html">wcmf</a></li><li class="navelem"><a class="el" href="namespacewcmf_1_1lib.html">lib</a></li><li class="navelem"><a class="el" href="namespacewcmf_1_1lib_1_1security.html">security</a></li><li class="navelem"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html">PermissionManager</a></li>  </ul>
@@ -93,24 +101,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html" title="PermissionManager implementations are used to handle all authorization requests. ">PermissionManager</a> instances are configured with an AuthUser instance, against which authorization requests are processed.</p>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_permission_manager_8php_source.html#l00020">20</a> of file <a class="el" href="_permission_manager_8php_source.html">PermissionManager.php</a>.</p>
+<p>Definition at line <a class="el" href="_permission_manager_8php_source.html#l00022">22</a> of file <a class="el" href="_permission_manager_8php_source.html">PermissionManager.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for PermissionManager:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1security_1_1_permission_manager__inherit__graph.svg" width="392" height="419"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1security_1_1_permission_manager__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aab50b9feb697b13e198426709debe8c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#aab50b9feb697b13e198426709debe8c9">setAuthUser</a> ($authUser)</td></tr>
-<tr class="separator:aab50b9feb697b13e198426709debe8c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a692dfe0c754d13a61681ff0680637752"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a692dfe0c754d13a61681ff0680637752">setAuthUser</a> (<a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">User</a> $authUser)</td></tr>
+<tr class="separator:a692dfe0c754d13a61681ff0680637752"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a687dba7af92a5d45f6363b17fe941ff7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a687dba7af92a5d45f6363b17fe941ff7">getAuthUser</a> ()</td></tr>
 <tr class="separator:a687dba7af92a5d45f6363b17fe941ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1106ad7526f478ceb616e6f0ed126138"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a1106ad7526f478ceb616e6f0ed126138">authorize</a> ($resource, $context, $action)</td></tr>
-<tr class="separator:a1106ad7526f478ceb616e6f0ed126138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a152d96cdd1ac6639609b9ac3e54f121e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a152d96cdd1ac6639609b9ac3e54f121e">authorize</a> ($resource, $context, $action, <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">User</a> $user=null)</td></tr>
+<tr class="separator:a152d96cdd1ac6639609b9ac3e54f121e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64a13b847c34c489832bfab8fc11d026"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a64a13b847c34c489832bfab8fc11d026">addTempPermission</a> ($resource, $context, $action)</td></tr>
 <tr class="separator:a64a13b847c34c489832bfab8fc11d026"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e8e6ec6e7f929d60fba0a7cc78598be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a1e8e6ec6e7f929d60fba0a7cc78598be">removeTempPermission</a> ($resource, $context, $action)</td></tr>
@@ -121,6 +129,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5916f247aa7cfe7f3a41019a55441299"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad58bc0d686fd120810b99cf7b96173f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#ad58bc0d686fd120810b99cf7b96173f0">getPermissions</a> ($resource, $context, $action)</td></tr>
 <tr class="separator:ad58bc0d686fd120810b99cf7b96173f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53ab5bb502b1c4ed185008a686b81a76"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a53ab5bb502b1c4ed185008a686b81a76">setPermissions</a> ($resource, $context, $action, $permissions)</td></tr>
+<tr class="separator:a53ab5bb502b1c4ed185008a686b81a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5da29b2068c61f9cfb5fa0bb34594ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">createPermission</a> ($resource, $context, $action, $role, $modifier)</td></tr>
 <tr class="separator:ab5da29b2068c61f9cfb5fa0bb34594ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47b4c8cae336a409b71ac2ddfd1a1ee6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">removePermission</a> ($resource, $context, $action, $role)</td></tr>
@@ -134,14 +144,14 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a07a7905d362aa5a7e5838463bbb1005f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aab50b9feb697b13e198426709debe8c9"></a>
+<a class="anchor" id="a692dfe0c754d13a61681ff0680637752"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">setAuthUser </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">User</a>&#160;</td>
           <td class="paramname"><em>$authUser</em></td><td>)</td>
           <td></td>
         </tr>
@@ -151,7 +161,7 @@ Public Attributes</h2></td></tr>
 <p>Set the authenticated user. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$authUser</td><td>AuthUser instance. </td></tr>
+    <tr><td class="paramname">$authUser</td><td>User instance. </td></tr>
   </table>
   </dd>
 </dl>
@@ -172,11 +182,11 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the authenticated user. </p>
-<dl class="section return"><dt>Returns</dt><dd>AuthUser instance. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>User instance. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a1106ad7526f478ceb616e6f0ed126138"></a>
+<a class="anchor" id="a152d96cdd1ac6639609b9ac3e54f121e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -196,7 +206,13 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$action</em>&#160;</td>
+          <td class="paramname"><em>$action</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">User</a>&#160;</td>
+          <td class="paramname"><em>$user</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -219,6 +235,7 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">$resource</td><td>The resource to authorize (e.g. class name of the Controller or ObjectId instance). </td></tr>
     <tr><td class="paramname">$context</td><td>The context in which the action takes place. </td></tr>
     <tr><td class="paramname">$action</td><td>The action to process. </td></tr>
+    <tr><td class="paramname">$user</td><td>User instance to use for authorization (optional, default: the user obtained by getAuthUser method) </td></tr>
   </table>
   </dd>
 </dl>
@@ -403,15 +420,66 @@ Public Attributes</h2></td></tr>
 <p>Permission management. </p>
 <p>Get the permissions on a resource, context, action combination. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$resource</td><td>The resource (e.g. class name of the Controller or OID). </td></tr>
+    <tr><td class="paramname">$resource</td><td>The resource (e.g. class name of the Controller or ObjectId). </td></tr>
     <tr><td class="paramname">$context</td><td>The context in which the action takes place. </td></tr>
     <tr><td class="paramname">$action</td><td>The action to process. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>An assoziative array with keys 'default', 'allow', 'deny' and the attached roles as values or null, if no permissions are defined. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Assoziative array with keys 'default' (boolean) and 'allow', 'deny' (arrays of role names) or null, if no permissions are defined. </dd></dl>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#ad58bc0d686fd120810b99cf7b96173f0">NullPermissionManager</a>, and <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#ad58bc0d686fd120810b99cf7b96173f0">DefaultPermissionManager</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#ad58bc0d686fd120810b99cf7b96173f0">DefaultPermissionManager</a>, <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_static_permission_manager.html#ad58bc0d686fd120810b99cf7b96173f0">StaticPermissionManager</a>, <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_chained_permission_manager.html#ad58bc0d686fd120810b99cf7b96173f0">ChainedPermissionManager</a>, and <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#ad58bc0d686fd120810b99cf7b96173f0">NullPermissionManager</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a53ab5bb502b1c4ed185008a686b81a76"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">setPermissions </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$resource</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$action</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$permissions</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the permissions on a resource, context, action combination. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$resource</td><td>The resource (e.g. class name of the Controller or ObjectId). </td></tr>
+    <tr><td class="paramname">$context</td><td>The context in which the action takes place. </td></tr>
+    <tr><td class="paramname">$action</td><td>The action to process. </td></tr>
+    <tr><td class="paramname">$permissions</td><td>Assoziative array with keys 'default' (boolean) and 'allow', 'deny' (arrays of role names) or null if all permissions should be deleted. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a53ab5bb502b1c4ed185008a686b81a76">DefaultPermissionManager</a>, <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_static_permission_manager.html#a53ab5bb502b1c4ed185008a686b81a76">StaticPermissionManager</a>, <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_chained_permission_manager.html#a53ab5bb502b1c4ed185008a686b81a76">ChainedPermissionManager</a>, and <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#a53ab5bb502b1c4ed185008a686b81a76">NullPermissionManager</a>.</p>
 
 </div>
 </div>
@@ -460,17 +528,17 @@ Public Attributes</h2></td></tr>
 <p>Create/Change a permission for a role on a resource, context, action combination. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$resource</td><td>The resource (e.g. class name of the Controller or OID). </td></tr>
+    <tr><td class="paramname">$resource</td><td>The resource (e.g. class name of the Controller or ObjectId). </td></tr>
     <tr><td class="paramname">$context</td><td>The context in which the action takes place. </td></tr>
     <tr><td class="paramname">$action</td><td>The action to process. </td></tr>
     <tr><td class="paramname">$role</td><td>The role to authorize. </td></tr>
-    <tr><td class="paramname">$modifier</td><td>One of the PERMISSION_MODIFIER_ constants. </td></tr>
+    <tr><td class="paramname">$modifier</td><td>One of the PERMISSION_MODIFIER constants. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boolean whether creation succeded/failed. </dd></dl>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">DefaultPermissionManager</a>, and <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">NullPermissionManager</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">DefaultPermissionManager</a>, <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_static_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">StaticPermissionManager</a>, <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_chained_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">ChainedPermissionManager</a>, and <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">NullPermissionManager</a>.</p>
 
 </div>
 </div>
@@ -513,7 +581,7 @@ Public Attributes</h2></td></tr>
 <p>Remove a role from a permission on a resource, context, action combination. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$resource</td><td>The resource (e.g. class name of the Controller or OID). </td></tr>
+    <tr><td class="paramname">$resource</td><td>The resource (e.g. class name of the Controller or ObjectId). </td></tr>
     <tr><td class="paramname">$context</td><td>The context in which the action takes place. </td></tr>
     <tr><td class="paramname">$action</td><td>The action to process. </td></tr>
     <tr><td class="paramname">$role</td><td>The role to remove. </td></tr>
@@ -522,7 +590,7 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boolean whether removal succeded/failed. </dd></dl>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">DefaultPermissionManager</a>, and <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">NullPermissionManager</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">DefaultPermissionManager</a>, <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_static_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">StaticPermissionManager</a>, <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_chained_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">ChainedPermissionManager</a>, and <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">NullPermissionManager</a>.</p>
 
 </div>
 </div>
@@ -537,7 +605,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_permission_manager_8php_source.html#l00022">22</a> of file <a class="el" href="_permission_manager_8php_source.html">PermissionManager.php</a>.</p>
+<p>Definition at line <a class="el" href="_permission_manager_8php_source.html#l00024">24</a> of file <a class="el" href="_permission_manager_8php_source.html">PermissionManager.php</a>.</p>
 
 </div>
 </div>
@@ -551,7 +619,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_permission_manager_8php_source.html#l00023">23</a> of file <a class="el" href="_permission_manager_8php_source.html">PermissionManager.php</a>.</p>
+<p>Definition at line <a class="el" href="_permission_manager_8php_source.html#l00025">25</a> of file <a class="el" href="_permission_manager_8php_source.html">PermissionManager.php</a>.</p>
 
 </div>
 </div>
@@ -567,7 +635,7 @@ Public Attributes</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Sep 9 2014 00:09:40 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+          Generated on Sat Oct 18 2014 23:48:55 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
       </div>
     </div>
   </div>

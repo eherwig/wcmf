@@ -21,14 +21,7 @@
     <script src="dynsections.js"></script>
     <link href="theme/css/syntax.css" rel="stylesheet">
     <link href="theme/css/style.css" rel="stylesheet">
-    <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
-  });
-</script>
-<link rel="search" href="search-opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="wCMF"/>
+    <script src="search/search.js"></script>
   </head>
   <body style="min-height: 200px; padding-top: 50px;">
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
@@ -52,12 +45,13 @@
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
-                <form class="navbar-form navbar-left" role="search" method="get" action="search.php">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" name="query">
+                <li>
+                  <div id="MSearchBox">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+                  <div id="MSearchSelect"></div>
+                  <div id="MSearchClose"></div>
+                </li>
               </ul>
             </div>
           </div>
@@ -74,6 +68,20 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_88527e3c69c4b7a74da3f178c2797901.html">security</a></li><li class="navelem"><a class="el" href="dir_52fee51a684c4d07180f46fe0a760a94.html">impl</a></li>  </ul>
@@ -96,95 +104,185 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>wcmf\lib\security\impl;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1config_1_1_action_key.html" title="ActionKey helps parsing values from action key configurations. ">wcmf\lib\config\ActionKey</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html" title="ObjectFactory loads class definitions and instantiates classes. ">wcmf\lib\core\ObjectFactory</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;use <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html" title="PermissionManager implementations are used to handle all authorization requests. ">wcmf\lib\security\PermissionManager</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * DefaultPermissionManager retrieves authorization rules from the</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * application configuration.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html" title="DefaultPermissionManager retrieves authorization rules from the application configuration. ">DefaultPermissionManager</a> <span class="keyword">extends</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html" title="AbstractPermissionManager is the base class for concrete PermissionManager implementations. ">AbstractPermissionManager</a> implements <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html" title="PermissionManager implementations are used to handle all authorization requests. ">PermissionManager</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a3a51070e492fb719641f9cdba64ba112">   25</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a3a51070e492fb719641f9cdba64ba112">AUTHORIZATION_SECTION</a> = <span class="stringliteral">&#39;authorization&#39;</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">   * @see PermissionManager::getPermissions()</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#ad58bc0d686fd120810b99cf7b96173f0">   30</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#ad58bc0d686fd120810b99cf7b96173f0">getPermissions</a>($resource, $context, $action) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    $actionKey = <a class="code" href="classwcmf_1_1lib_1_1config_1_1_action_key.html#ad0d4f1214c03eb9d04b2a02a8ae7e9c2" title="Get a configuration key that matches a given combination of resource, context, action best...">ActionKey::getBestMatch</a>(self::AUTHORIZATION_SECTION, $resource, $context, $action);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> (strlen($actionKey) &gt; 0) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      $config = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a25119d3df435b609991f58060ea482e2" title="Get the Configuration instance. ">ObjectFactory::getConfigurationInstance</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <span class="keywordflow">return</span> $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html#a7789183d9c7fe2ea3634e522b8a7cd57" title="Parse a permissions string and return an associative array with the keys &#39;default&#39;, &#39;allow&#39;, &#39;deny&#39;, where &#39;allow&#39;, &#39;deny&#39; are arrays itselves holding roles and &#39;default&#39; is a boolean value derived from the wildcard policy (+* or -*). ">parsePermissions</a>($config-&gt;getValue($actionKey, self::AUTHORIZATION_SECTION));</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> null;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">   * @see PermissionManager::createPermission()</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">   42</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">createPermission</a>($resource, $context, $action, $role, $modifier) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> self::modifyPermission($resource, $context, $action, $role, $modifier);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">   * @see PermissionManager::removePermission()</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">   49</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">removePermission</a>($resource, $context, $action, $role) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> self::modifyPermission($resource, $context, $action, $role, null);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">   * Modify a permission for the given role.</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">   * @param $resource The resource (e.g. class name of the Controller or OID).</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">   * @param $context The context in which the action takes place.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">   * @param $action The action to process.</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">   * @param $role The role to authorize.</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">   * @param $modifier One of the PERMISSION_MODIFIER_ constants, null, if the permission</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">   *    should be removed.</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">   * @return boolean</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#adbf4e88182081d9a1446db6b5a9412cb">   63</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#adbf4e88182081d9a1446db6b5a9412cb" title="Modify a permission for the given role. ">modifyPermission</a>($resource, $context, $action, $role, $modifier) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// get config file to modify</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    $appConfig = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a25119d3df435b609991f58060ea482e2" title="Get the Configuration instance. ">ObjectFactory::getConfigurationInstance</a>();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    $configFiles = $appConfig-&gt;getConfigurations();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>($configFiles) == 0) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1config_1_1_action_key.html" title="An action key is a combination of a resource, context and action that is represented as a string...">wcmf\lib\config\ActionKey</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_persistence_action_key_provider.html" title="PersistenceActionKeyProvider searches for action keys in the application storage. ...">wcmf\lib\config\impl\PersistenceActionKeyProvider</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1core_1_1_log.html" title="Log is used to log application events. ">wcmf\lib\core\Log</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html" title="ObjectFactory loads class definitions and instantiates classes. ">wcmf\lib\core\ObjectFactory</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1model_1_1_object_query.html" title="ObjectQuery implements a template based object query. ">wcmf\lib\model\ObjectQuery</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html" title="BuildDepth values are used to define the depth when loading object trees. ">wcmf\lib\persistence\BuildDepth</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html" title="Criteria defines a condition on a PersistentObject&#39;s attribute used to select specific instances...">wcmf\lib\persistence\Criteria</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html" title="AbstractPermissionManager is the base class for concrete PermissionManager implementations. ">wcmf\lib\security\impl\AbstractPermissionManager</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;use <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html" title="PermissionManager implementations are used to handle all authorization requests. ">wcmf\lib\security\PermissionManager</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1util_1_1_string_util.html" title="StringUtil provides support for string manipulation. ">wcmf\lib\util\StringUtil</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * DefaultPermissionManager retrieves authorization rules the storage.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * It is configures with an entity type that stores permissions and must</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * have the values &#39;resource&#39;, &#39;context&#39;, &#39;action&#39;, &#39;roles&#39;.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html" title="DefaultPermissionManager retrieves authorization rules the storage. ">DefaultPermissionManager</a> <span class="keyword">extends</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html" title="AbstractPermissionManager is the base class for concrete PermissionManager implementations. ">AbstractPermissionManager</a> implements <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html" title="PermissionManager implementations are used to handle all authorization requests. ">PermissionManager</a> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">private</span> $_permissionType = null;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">private</span> $_actionKeyProvider = null;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">   * Constructor</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a095c5d389db211932136b53f25f39685">   39</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a095c5d389db211932136b53f25f39685" title="Constructor. ">__construct</a>() {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    $this-&gt;_actionKeyProvider = <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_persistence_action_key_provider.html" title="PersistenceActionKeyProvider searches for action keys in the application storage. ...">PersistenceActionKeyProvider</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    $this-&gt;_actionKeyProvider-&gt;setValueMap(array(</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="stringliteral">&#39;resource&#39;</span> =&gt; <span class="stringliteral">&#39;resource&#39;</span>,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="stringliteral">&#39;context&#39;</span> =&gt; <span class="stringliteral">&#39;context&#39;</span>,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="stringliteral">&#39;action&#39;</span> =&gt; <span class="stringliteral">&#39;action&#39;</span>,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="stringliteral">&#39;value&#39;</span> =&gt; <span class="stringliteral">&#39;roles&#39;</span>,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    ));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">   * Set the entity type name of Permission instances.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">   * @param $permissionType String</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a578bd9d3d0d0741023eb3b886296e683">   53</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a578bd9d3d0d0741023eb3b886296e683" title="Set the entity type name of Permission instances. ">setPermissionType</a>($permissionType) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    $this-&gt;_permissionType = $permissionType;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    $this-&gt;_actionKeyProvider-&gt;setEntityType($this-&gt;_permissionType);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">   * @see PermissionManager::getPermissions()</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#ad58bc0d686fd120810b99cf7b96173f0">   61</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#ad58bc0d686fd120810b99cf7b96173f0">getPermissions</a>($resource, $context, $action) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    $result = null;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    $actionKey = <a class="code" href="classwcmf_1_1lib_1_1config_1_1_action_key.html#a2207aa22c775177bfb7947b342f4312a" title="Get an action key that matches a given combination of resource, context, action best. ">ActionKey::getBestMatch</a>($this-&gt;_actionKeyProvider, $resource, $context, $action);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (strlen($actionKey) &gt; 0) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      $result = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html#ab4201bd729770ace4835a1f4a02f4b96" title="Parse a permissions string and return an associative array with the keys &#39;default&#39;, &#39;allow&#39;, &#39;deny&#39;, where &#39;allow&#39;, &#39;deny&#39; are arrays itselves holding roles and &#39;default&#39; is a boolean value derived from the wildcard policy (+* or -*). ">deserializePermissions</a>($this-&gt;_actionKeyProvider-&gt;getKeyValue($actionKey));</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classwcmf_1_1lib_1_1core_1_1_log.html#a26531badb0cbec790207efa2e47e67c3" title="Check if debug level is enabled for a category. ">Log::isDebugEnabled</a>(__CLASS__)) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <a class="code" href="classwcmf_1_1lib_1_1core_1_1_log.html#a896f88f7dde6a74531a99e37a79d3555" title="Print a debug message for a category. ">Log::debug</a>(<span class="stringliteral">&quot;Permissions for $resource?$context?$action (-&gt;$actionKey): &quot;</span>.trim(<a class="code" href="classwcmf_1_1lib_1_1util_1_1_string_util.html#ae46769839b493da0198c8df8910ef756" title="Get the dump of a variable as string. ">StringUtil::getDump</a>($result)), __CLASS__);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// create a writable configuration and modify the permission</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    $mainConfig = $configFiles[0];</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    $newConfig = <span class="keyword">new</span> IniFileConfiguration(dirname($mainConfig));</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    $newConfig-&gt;addConfiguration(basename($mainConfig));</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    $permDef = <a class="code" href="classwcmf_1_1lib_1_1config_1_1_action_key.html#a93814d3754ee709faec336fc3a4727d2" title="Create an action key from the given values. ">ActionKey::createKey</a>($resource, $context, $action);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    $permVal = <span class="stringliteral">&#39;&#39;</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> ($modifier != null) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      $permVal = $modifier.$role;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> ($newConfig-&gt;getValue($permDef, self::AUTHORIZATION_SECTION) === <span class="keyword">false</span> &amp;&amp; $modifier != null) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      $newConfig-&gt;setValue($permDef, $permVal, self::AUTHORIZATION_SECTION, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      $value = $newConfig-&gt;getValue($permDef, self::AUTHORIZATION_SECTION);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="comment">// remove role from value</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      $newValue = str_replace(array(<a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a4e34e2ff1951d49ebe88423999609413">PermissionManager::PERMISSION_MODIFIER_ALLOW</a>.$role,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a07a7905d362aa5a7e5838463bbb1005f">PermissionManager::PERMISSION_MODIFIER_DENY</a>.$role), <span class="stringliteral">&quot;&quot;</span>, $value);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <span class="keywordflow">if</span> ($newValue != <span class="stringliteral">&#39;&#39;</span>) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        $newConfig-&gt;setValue($permDef, $newValue.<span class="stringliteral">&quot; &quot;</span>.$permVal, self::AUTHORIZATION_SECTION, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> $result;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">   * @see PermissionManager::setPermissions()</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a53ab5bb502b1c4ed185008a686b81a76">   76</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a53ab5bb502b1c4ed185008a686b81a76">setPermissions</a>($resource, $context, $action, $permissions) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    $permissionInstance = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#ab4d4f91be46a4fb50dd31e83372d7638" title="Get the permission object that matches the given parameters. ">getPermissionInstance</a>($resource, $context, $action);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    $isChanged = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span> ($permissions != null) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="comment">// set permissions</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      $rolesStr = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html#a5726ac7c0433cb191ec510b475fbf6ad" title="Convert an associative permissions array with keys &#39;default&#39;, &#39;allow&#39;, &#39;deny&#39; into a string...">serializePermissions</a>($permissions);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="keywordflow">if</span> (strlen($rolesStr)) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> (!$permissionInstance) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;          $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a1d3ee517e6fafb5443619cb21d8698b5" title="Create a permission object with the given parameters. ">createPermissionObject</a>($resource, $context, $action, $rolesStr);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;          $permissionInstance-&gt;setValue(<span class="stringliteral">&#39;roles&#39;</span>, $rolesStr);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        $isChanged = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        $newConfig-&gt;removeKey($permDef, self::AUTHORIZATION_SECTION);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    $newConfig-&gt;writeConfiguration(basename($mainConfig));</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;?&gt;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="comment">// delete permissions</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordflow">if</span> ($permissionInstance) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        $permissionInstance-&gt;delete();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        $isChanged = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> ($isChanged) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <a class="code" href="classwcmf_1_1lib_1_1config_1_1_action_key.html#af5b55597bf6435397d8a7f6f6b3a2fbc" title="Clear the action key cache. ">ActionKey::clearCache</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">   * @see PermissionManager::createPermission()</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">  109</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">createPermission</a>($resource, $context, $action, $role, $modifier) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> self::modifyPermission($resource, $context, $action, $role, $modifier);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">   * @see PermissionManager::removePermission()</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">  116</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">removePermission</a>($resource, $context, $action, $role) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> self::modifyPermission($resource, $context, $action, $role, null);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">   * Modify a permission for the given role.</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">   * @param $resource The resource (e.g. class name of the Controller or object id).</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">   * @param $context The context in which the action takes place.</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">   * @param $action The action to process.</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">   * @param $role The role to authorize.</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">   * @param $modifier One of the PERMISSION_MODIFIER_ constants, null, if the permission</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">   *    should be removed.</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">   * @return boolean</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#adbf4e88182081d9a1446db6b5a9412cb">  130</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#adbf4e88182081d9a1446db6b5a9412cb" title="Modify a permission for the given role. ">modifyPermission</a>($resource, $context, $action, $role, $modifier) {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">// define roles value (empty if no modifier is given)</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    $permVal = $modifier != null ? $modifier.$role : <span class="stringliteral">&#39;&#39;</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// check for existing permission</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    $permission = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#ab4d4f91be46a4fb50dd31e83372d7638" title="Get the permission object that matches the given parameters. ">getPermissionInstance</a>($resource, $context, $action);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">if</span> (!$permission &amp;&amp; $modifier != null) {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      <span class="comment">// create the permission, if it does not exist yet</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      $permission = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a1d3ee517e6fafb5443619cb21d8698b5" title="Create a permission object with the given parameters. ">createPermissionObject</a>($resource, $context, $action, $permVal);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    elseif ($permission) {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      $value = $permission-&gt;getValue(<span class="stringliteral">&#39;roles&#39;</span>);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      <span class="comment">// remove role from value</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;      $newValue = preg_replace(<span class="stringliteral">&#39;/ +/&#39;</span>, <span class="charliteral">&#39; &#39;</span>, str_replace(array(<a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a4e34e2ff1951d49ebe88423999609413">PermissionManager::PERMISSION_MODIFIER_ALLOW</a>.$role,</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                    <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a07a7905d362aa5a7e5838463bbb1005f">PermissionManager::PERMISSION_MODIFIER_DENY</a>.$role), <span class="stringliteral">&quot;&quot;</span>, $value));</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      <span class="keywordflow">if</span> (strlen($newValue) &gt; 0) {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        $permission-&gt;setValue(<span class="stringliteral">&#39;roles&#39;</span>, trim($newValue.<span class="stringliteral">&quot; &quot;</span>.$permVal));</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        $permission-&gt;delete();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;      }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="classwcmf_1_1lib_1_1config_1_1_action_key.html#af5b55597bf6435397d8a7f6f6b3a2fbc" title="Clear the action key cache. ">ActionKey::clearCache</a>();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">   * Get the permission object that matches the given parameters</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">   * @param $resource Resource</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">   * @param $context Context</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">   * @param $action Action</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">   * @return Instance of _permissionType or null</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#ab4d4f91be46a4fb50dd31e83372d7638">  163</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#ab4d4f91be46a4fb50dd31e83372d7638" title="Get the permission object that matches the given parameters. ">getPermissionInstance</a>($resource, $context, $action) {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    $query = <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1_object_query.html" title="ObjectQuery implements a template based object query. ">ObjectQuery</a>($this-&gt;_permissionType, __CLASS__.__METHOD__);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    $tpl = $query-&gt;getObjectTemplate($this-&gt;_permissionType);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    $tpl-&gt;setValue(<span class="stringliteral">&#39;resource&#39;</span>, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#ae6b230eb180eff4b2a102692f591abe5" title="Factory method for constructing a Critera that may be used as value on a PersistentObject&#39;s attribute...">Criteria::asValue</a>(<span class="charliteral">&#39;=&#39;</span>, $resource));</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    $tpl-&gt;setValue(<span class="stringliteral">&#39;context&#39;</span>, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#ae6b230eb180eff4b2a102692f591abe5" title="Factory method for constructing a Critera that may be used as value on a PersistentObject&#39;s attribute...">Criteria::asValue</a>(<span class="charliteral">&#39;=&#39;</span>, $context));</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    $tpl-&gt;setValue(<span class="stringliteral">&#39;action&#39;</span>, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#ae6b230eb180eff4b2a102692f591abe5" title="Factory method for constructing a Critera that may be used as value on a PersistentObject&#39;s attribute...">Criteria::asValue</a>(<span class="charliteral">&#39;=&#39;</span>, $action));</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    $permissions = $query-&gt;execute(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b">BuildDepth::SINGLE</a>);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">return</span> (<span class="keyword">sizeof</span>($permissions) &gt; 0) ? $permissions[0] : null;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">   * Create a permission object with the given parameters</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">   * @param $resource Resource</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">   * @param $context Context</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">   * @param $action Action</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">   * @param $roles String representing the permissions as returned from serializePermissions()</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">   * @return Instance of _permissionType</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a1d3ee517e6fafb5443619cb21d8698b5">  181</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html#a1d3ee517e6fafb5443619cb21d8698b5" title="Create a permission object with the given parameters. ">createPermissionObject</a>($resource, $context, $action, $roles) {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    $persistenceFacade = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415" title="Get an instance from the configuration. ">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;persistenceFacade&#39;</span>);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    $permission = $persistenceFacade-&gt;create($this-&gt;_permissionType);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    $permission-&gt;setValue(<span class="stringliteral">&#39;resource&#39;</span>, $resource);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    $permission-&gt;setValue(<span class="stringliteral">&#39;context&#39;</span>, $context);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    $permission-&gt;setValue(<span class="stringliteral">&#39;action&#39;</span>, $action);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    $permission-&gt;setValue(<span class="stringliteral">&#39;roles&#39;</span>, $roles);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">return</span> $permission;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;?&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -194,7 +292,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Sep 9 2014 00:09:31 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+          Generated on Sat Oct 18 2014 23:48:51 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
       </div>
     </div>
   </div>
