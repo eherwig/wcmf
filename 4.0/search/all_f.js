@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['name',['NAME',['../classwcmf_1_1lib_1_1persistence_1_1_property_change_event.html#a244352f035b82b20b0efa506167fd862',1,'wcmf\lib\persistence\PropertyChangeEvent\NAME()'],['../classwcmf_1_1lib_1_1persistence_1_1_state_change_event.html#a244352f035b82b20b0efa506167fd862',1,'wcmf\lib\persistence\StateChangeEvent\NAME()'],['../classwcmf_1_1lib_1_1persistence_1_1_value_change_event.html#a244352f035b82b20b0efa506167fd862',1,'wcmf\lib\persistence\ValueChangeEvent\NAME()'],['../classwcmf_1_1lib_1_1presentation_1_1_application_event.html#a244352f035b82b20b0efa506167fd862',1,'wcmf\lib\presentation\ApplicationEvent\NAME()']]],
+  ['name',['NAME',['../classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#a244352f035b82b20b0efa506167fd862',1,'wcmf\lib\persistence\PersistentEvent\NAME()'],['../classwcmf_1_1lib_1_1persistence_1_1_property_change_event.html#a244352f035b82b20b0efa506167fd862',1,'wcmf\lib\persistence\PropertyChangeEvent\NAME()'],['../classwcmf_1_1lib_1_1persistence_1_1_state_change_event.html#a244352f035b82b20b0efa506167fd862',1,'wcmf\lib\persistence\StateChangeEvent\NAME()'],['../classwcmf_1_1lib_1_1persistence_1_1_value_change_event.html#a244352f035b82b20b0efa506167fd862',1,'wcmf\lib\persistence\ValueChangeEvent\NAME()'],['../classwcmf_1_1lib_1_1presentation_1_1_application_event.html#a244352f035b82b20b0efa506167fd862',1,'wcmf\lib\presentation\ApplicationEvent\NAME()']]],
+  ['namespaces_2ephp',['namespaces.php',['../namespaces_8php.html',1,'']]],
   ['nblines',['NbLines',['../classwcmf_1_1lib_1_1pdf_1_1_p_d_f.html#a90dd79d30b8457473567f5174030f110',1,'wcmf::lib::pdf::PDF']]],
   ['next',['next',['../classwcmf_1_1lib_1_1model_1_1_node_iterator.html#acea62048bfee7b3cd80ed446c86fb78a',1,'wcmf\lib\model\NodeIterator\next()'],['../classwcmf_1_1lib_1_1model_1_1_node_value_iterator.html#acea62048bfee7b3cd80ed446c86fb78a',1,'wcmf\lib\model\NodeValueIterator\next()'],['../classwcmf_1_1lib_1_1model_1_1_persistent_iterator.html#acea62048bfee7b3cd80ed446c86fb78a',1,'wcmf\lib\model\PersistentIterator\next()']]],
   ['no_5fcache',['NO_CACHE',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement.html#a7f0a4e752a9b88d4989ef0726c0bb330',1,'wcmf::lib::model::mapper::SelectStatement']]],
@@ -24,6 +25,8 @@ var searchData=
   ['nodevalueiterator_2ephp',['NodeValueIterator.php',['../_node_value_iterator_8php.html',1,'']]],
   ['null',['NULL',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_s_q_l_const.html#a91a5a1066d3876aada829d106ede64d6',1,'wcmf::lib::model::mapper::SQLConst']]],
   ['null_5foid',['NULL_OID',['../classwcmf_1_1lib_1_1persistence_1_1_object_id.html#a194c2ee5508a35b5463eb63fc680c8b6',1,'wcmf::lib::persistence::ObjectId']]],
+  ['nullcache',['NullCache',['../classwcmf_1_1lib_1_1io_1_1impl_1_1_null_cache.html',1,'wcmf::lib::io::impl']]],
+  ['nullcache_2ephp',['NullCache.php',['../_null_cache_8php.html',1,'']]],
   ['nullformat',['NullFormat',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_null_format.html',1,'wcmf::lib::presentation::format::impl']]],
   ['nullformat_2ephp',['NullFormat.php',['../_null_format_8php.html',1,'']]],
   ['nulllockhandler',['NullLockHandler',['../classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1impl_1_1_null_lock_handler.html',1,'wcmf::lib::persistence::concurrency::impl']]],

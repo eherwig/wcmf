@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>wCMF 4.0: PersistentObject Class Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A PHP framework for building reliable maintainable and extendable web applications">
+    <meta name="keywords" content="PHP, web application framework, model driven development">
+    <meta name="author" content="wemove digital solutions">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -38,7 +41,7 @@
               <ul class="nav navbar-nav">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-hand-o-right"></i> Guides <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Coming soon...</a></li>
+                    <li><a href="gettingstarted.html">Getting started</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -99,17 +102,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a> is the base class of all persistent objects. </p>
-<p>It implements the basic persistence methods (save(), <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a13bdffdd926f26b825ea57066334ff01" title="Delete the object. ">delete()</a>) which will be delegated to the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html" title="PersistenceMapper defines the interface for all mapper classes. ">PersistenceMapper</a> class that constructed the object.</p>
+<p>It mainly implements an unique identifier for each instance (<a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a>), tracking of the persistent state, methods for setting and getting values as well as callback methods for lifecycle events.</p>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00032">32</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00033">33</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for PersistentObject:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1persistence_1_1_persistent_object__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1persistence_1_1_persistent_object__inherit__graph.svg" width="443" height="1058"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -255,7 +257,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00058">58</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00059">59</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -282,7 +284,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00083">83</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00084">84</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -302,7 +304,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the type of the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The objects type. </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00094">94</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00095">95</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -322,7 +324,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the object id of the <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00102">102</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00103">103</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -348,7 +350,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00110">110</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00111">111</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -393,7 +395,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00120">120</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00121">121</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -413,7 +415,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html" title="PersistenceMapper defines the interface for all mapper classes. ">PersistenceMapper</a> of the object. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html" title="PersistenceMapper defines the interface for all mapper classes. ">PersistenceMapper</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00143">143</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00144">144</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -433,7 +435,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the primary key values. </p>
 <dl class="section return"><dt>Returns</dt><dd>Array of value names </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00158">158</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00159">159</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -452,7 +454,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Delete the object. </p>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00170">170</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00171">171</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -472,7 +474,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the object's state: </p>
 <dl class="section return"><dt>Returns</dt><dd>One of the STATE constant values: </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00179">179</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00180">180</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -492,7 +494,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Set the state of the object to one of the STATE constants. </p>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00186">186</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00187">187</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -512,7 +514,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get a copy of the object (ChangeListeners and Lock are not copied) </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00219">219</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00220">220</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -549,7 +551,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00236">236</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00237">237</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -575,7 +577,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00251">251</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00252">252</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -595,7 +597,7 @@ Protected Member Functions</h2></td></tr>
 <p>Clear all values. </p>
 <p>Set each value to null except for the primary key values </p>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00264">264</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00265">265</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -615,7 +617,7 @@ Protected Member Functions</h2></td></tr>
 <p>Persistence hook methods. </p>
 <p>Subclasses may override this to implement special application requirements. The default implementations do nothing. This method is called once after creation of this object. At this time it is not known in the store. </p>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00302">302</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00303">303</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -634,7 +636,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>This method is called once before inserting the newly created object into the store. </p>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00307">307</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00308">308</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -653,7 +655,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>This method is called once after inserting the newly created object into the store. </p>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00312">312</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00313">313</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -672,7 +674,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>This method is called always after loading the object from the store. </p>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00317">317</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00318">318</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -691,7 +693,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>This method is called always before updating the modified object in the store. </p>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00322">322</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00323">323</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -710,7 +712,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>This method is called always after updating the modified object in the store. </p>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00327">327</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00328">328</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -729,7 +731,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>This method is called once before deleting the object from the store. </p>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00332">332</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00333">333</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -748,7 +750,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>This method is called once after deleting the object from the store. </p>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00337">337</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00338">338</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -775,7 +777,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boolean whether the item exists or not. </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00348">348</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00349">349</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -802,7 +804,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value of the item / null if it doesn't exits. </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00357">357</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00358">358</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -828,7 +830,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00368">368</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00369">369</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -848,7 +850,7 @@ Protected Member Functions</h2></td></tr>
 <p>Validate all values. </p>
 <dl class="section return"><dt>Returns</dt><dd>Empty string if validation succeeded, an error string else. The default implementation returns the result of <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a79a4b765c1306b600933ae1ce359d16c" title="Check a value&#39;s value against the validation type set on it. ">PersistentObject::validateValueAgainstValidateType()</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00379">379</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00380">380</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -886,7 +888,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>Subclasses will override this method to implement special application requirements. </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00401">401</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00402">402</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -931,7 +933,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00412">412</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00413">413</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -983,7 +985,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boolean whether the operation succeeds or not </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00444">444</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00445">445</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1028,7 +1030,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00478">478</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00479">479</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1048,7 +1050,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the list of changed attributes since creation, loading. </p>
 <dl class="section return"><dt>Returns</dt><dd>Array of value names </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00486">486</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00487">487</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1068,7 +1070,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the original data provided to the initialize method. </p>
 <dl class="section return"><dt>Returns</dt><dd>Associative array with value names as keys and values as values </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00494">494</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00495">495</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1088,7 +1090,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the list of objects that must exist in the store, before this object may be persisted. </p>
 <p>Subclasses may use this method to manage dependencies. </p><dl class="section return"><dt>Returns</dt><dd>Array of <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a> instances </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00504">504</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00505">505</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1126,7 +1128,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value property/null if not found. </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00514">514</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00515">515</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1170,7 +1172,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00541">541</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00542">542</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1191,7 +1193,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the names of all properties of a value in the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>An array consisting of the names. </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00552">552</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00553">553</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1211,7 +1213,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the names of all persistent items. </p>
 <dl class="section return"><dt>Returns</dt><dd>An array of item names. </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00570">570</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00571">571</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1231,7 +1233,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the names of all items. </p>
 <dl class="section return"><dt>Returns</dt><dd>An array of item names. </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00586">586</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00587">587</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1251,7 +1253,7 @@ Protected Member Functions</h2></td></tr>
 <p>Check if the object contains all attributes described in it's mapper. </p>
 <dl class="section return"><dt>Returns</dt><dd>Boolean </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00595">595</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00596">596</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1278,7 +1280,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value of the property / null if it doesn't exits. </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00613">613</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00614">614</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1315,7 +1317,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00635">635</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00636">636</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1342,7 +1344,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An array consisting of the names. </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00651">651</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00652">652</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1363,7 +1365,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the name of the type used for display. </p><dl class="section return"><dt>Returns</dt><dd>The name. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Sublasses will override this for special application requirements </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00671">671</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00672">672</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1384,7 +1386,7 @@ Protected Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The description. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Sublasses will override this for special application requirements </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00680">680</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00681">681</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1404,7 +1406,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the display value names of the object. </p>
 <p>(defined by the property 'display_value') </p><dl class="section return"><dt>Returns</dt><dd>An array of value names </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00689">689</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00690">690</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1425,7 +1427,7 @@ Protected Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The value. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Sublasses will override this for special application requirements </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00706">706</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00707">707</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1453,7 +1455,7 @@ Protected Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The name of the value. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Sublasses will override this for special application requirements </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00716">716</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00717">717</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1481,7 +1483,7 @@ Protected Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The description of the value. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Sublasses will override this for special application requirements </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00726">726</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00727">727</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1501,7 +1503,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get a string representation of the values of the <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00734">734</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00735">735</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1521,7 +1523,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get a string representation of the <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00778">778</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00779">779</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1536,7 +1538,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00034">34</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00035">35</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1550,7 +1552,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00035">35</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00036">36</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1564,7 +1566,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00036">36</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00037">37</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1578,7 +1580,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00037">37</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_persistent_object_8php_source.html#l00038">38</a> of file <a class="el" href="_persistent_object_8php_source.html">PersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1593,8 +1595,8 @@ Protected Member Functions</h2></td></tr>
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 18 2014 23:48:54 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+        <small>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Fri Dec 12 2014 00:17:36 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</small>
       </div>
     </div>
   </div>

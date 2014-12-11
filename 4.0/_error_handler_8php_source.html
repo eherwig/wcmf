@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>wCMF 4.0: lib/core/ErrorHandler.php Source File</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A PHP framework for building reliable maintainable and extendable web applications">
+    <meta name="keywords" content="PHP, web application framework, model driven development">
+    <meta name="author" content="wemove digital solutions">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -38,7 +41,7 @@
               <ul class="nav navbar-nav">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-hand-o-right"></i> Guides <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Coming soon...</a></li>
+                    <li><a href="gettingstarted.html">Getting started</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -129,44 +132,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1core_1_1_error_handler.html#afac334117f677949dc59de17ccb4ff7e">   36</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_error_handler.html#afac334117f677949dc59de17ccb4ff7e" title="Get the stack trace. ">getStackTrace</a>() {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    ob_start();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    debug_print_backtrace();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    debug_print_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    $trace = ob_get_contents();</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    ob_end_clean();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// remove first item from backtrace as it&#39;s this function which is redundant.</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    $trace = preg_replace (<span class="stringliteral">&#39;/^#0\s+&#39;</span> . __FUNCTION__ . <span class="stringliteral">&quot;[^\n]*\n/&quot;</span>, <span class="stringliteral">&#39;&#39;</span>, $trace, 1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    $trace = preg_replace(<span class="stringliteral">&#39;/^#0\s+&#39;</span>.__FUNCTION__.<span class="stringliteral">&quot;[^\n]*\n/&quot;</span>, <span class="stringliteral">&#39;&#39;</span>, $trace, 1);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// renumber backtrace items.</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    $trace = preg_replace (<span class="stringliteral">&#39;/^#(\d+)/me&#39;</span>, <span class="charliteral">&#39;\&#39;</span>#\<span class="stringliteral">&#39; . ($1 - 1)&#39;</span>, $trace);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> $trace;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">   * Actual error handling method</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">   * @param $errno</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">   * @param $errstr</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">   * @param $errfile</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">   * @param $errline</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">   * @return Boolean</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">   * @throws ErrorException</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1core_1_1_error_handler.html#a34a7b5c54d405faaeadd1ce6231fca0d">   60</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_error_handler.html#a34a7b5c54d405faaeadd1ce6231fca0d" title="Actual error handling method. ">handleError</a>($errno, $errstr, $errfile, $errline) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    $errorIsEnabled = (bool)($errno &amp; ini_get(<span class="stringliteral">&#39;error_reporting&#39;</span>));</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// -- FATAL ERROR</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span>(isset(self::$FATAL_ERRORS[$errno]) &amp;&amp; $errorIsEnabled ) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">throw</span> new \ErrorException($errstr, 0, $errno, $errfile, $errline);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// -- NON-FATAL ERROR/WARNING/NOTICE</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>( $errorIsEnabled ) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="classwcmf_1_1lib_1_1core_1_1_log.html#a645862e7bcee0470686a7a9c6a0ab71b" title="Print a warn message for a category. ">Log::warn</a>($errstr, __CLASS__);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// Make sure this ends up in $php_errormsg, if appropriate</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;?&gt;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> $trace;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">   * Actual error handling method</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">   * @param $errno</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">   * @param $errstr</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">   * @param $errfile</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">   * @param $errline</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">   * @return Boolean</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">   * @throws ErrorException</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1core_1_1_error_handler.html#a34a7b5c54d405faaeadd1ce6231fca0d">   57</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_error_handler.html#a34a7b5c54d405faaeadd1ce6231fca0d" title="Actual error handling method. ">handleError</a>($errno, $errstr, $errfile, $errline) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    $errorIsEnabled = (bool)($errno &amp; ini_get(<span class="stringliteral">&#39;error_reporting&#39;</span>));</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// -- FATAL ERROR</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span>(isset(self::$FATAL_ERRORS[$errno]) &amp;&amp; $errorIsEnabled ) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">throw</span> new \ErrorException($errstr, 0, $errno, $errfile, $errline);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// -- NON-FATAL ERROR/WARNING/NOTICE</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>( $errorIsEnabled ) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="classwcmf_1_1lib_1_1core_1_1_log.html#a645862e7bcee0470686a7a9c6a0ab71b" title="Print a warn message for a category. ">Log::warn</a>($errstr, __CLASS__);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// Make sure this ends up in $php_errormsg, if appropriate</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;?&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -175,8 +175,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 18 2014 23:48:49 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+        <small>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Fri Dec 12 2014 00:17:31 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</small>
       </div>
     </div>
   </div>

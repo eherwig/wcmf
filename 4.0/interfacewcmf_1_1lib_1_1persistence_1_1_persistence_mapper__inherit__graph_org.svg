@@ -68,7 +68,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="classwcmf_1_1lib_1_1persistence_1_1_abstract_mapper.html" target="_top" xlink:title="AbstractMapper provides a basic implementation for other mapper classes. ">
+<g id="a_node4"><a xlink:href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html" target="_top" xlink:title="AbstractMapper provides a basic implementation for other mapper classes. ">
 <polygon fill="white" stroke="black" points="73.5,-551.5 73.5,-839.5 207.5,-839.5 207.5,-551.5 73.5,-551.5"/>
 <text text-anchor="middle" x="140.5" y="-827.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractMapper</text>
 <polyline fill="none" stroke="black" points="73.5,-820.5 207.5,-820.5 "/>

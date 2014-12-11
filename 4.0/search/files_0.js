@@ -15,6 +15,7 @@ var searchData=
   ['applicationerror_2ephp',['ApplicationError.php',['../_application_error_8php.html',1,'']]],
   ['applicationevent_2ephp',['ApplicationEvent.php',['../_application_event_8php.html',1,'']]],
   ['applicationexception_2ephp',['ApplicationException.php',['../_application_exception_8php.html',1,'']]],
+  ['architecture_2edoxy',['architecture.doxy',['../architecture_8doxy.html',1,'']]],
   ['arrayoutputstrategy_2ephp',['ArrayOutputStrategy.php',['../_array_output_strategy_8php.html',1,'']]],
   ['associatecontroller_2ephp',['AssociateController.php',['../_associate_controller_8php.html',1,'']]],
   ['attributedescription_2ephp',['AttributeDescription.php',['../_attribute_description_8php.html',1,'']]],

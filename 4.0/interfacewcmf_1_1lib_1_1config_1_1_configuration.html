@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>wCMF 4.0: Configuration Interface Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A PHP framework for building reliable maintainable and extendable web applications">
+    <meta name="keywords" content="PHP, web application framework, model driven development">
+    <meta name="author" content="wemove digital solutions">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -38,7 +41,7 @@
               <ul class="nav navbar-nav">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-hand-o-right"></i> Guides <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Coming soon...</a></li>
+                    <li><a href="gettingstarted.html">Getting started</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -97,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementations of <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html" title="Implementations of Configuration give access to the application configuration. ">Configuration</a> give access to the application configuration. </p>
-<p>An instance of a <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html" title="Implementations of Configuration give access to the application configuration. ">Configuration</a> implementation must be created on application startup and must be registered at ObjectFactory using the <a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#af52b37b11b7e005d07db4c4a84c5efeb" title="Set the Configuration instance. ">ObjectFactory::configure()</a> method.</p>
+<p>An instance of a <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html" title="Implementations of Configuration give access to the application configuration. ">Configuration</a> implementation must be created on application startup and must be registered at ObjectFactory using the ObjectFactory::configure() method.</p>
 <p>Configurations are supposed to be separated into section, that contain keys with values. Section names and keys are treated case insensitive.</p>
 <p>There maybe more than one application configuration. You can retrieve their names by using the <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a55ad87c7b53d1748156bb15250d26e02" title="Get a list of available configurations. ">Configuration::getConfigurations()</a> method. Different configurations maybe merged by calling the <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#adbc60917b6870516162d2a30d5e1521f" title="Parses the given configuration and merges it with already added configurations. ">Configuration::addConfiguration()</a> method. While merging, existing values will be overwritten, while new values will be added. This allows to have very flexible application configurations for different scenarios, users and roles.</p>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
@@ -108,8 +111,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1config_1_1_configuration__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1config_1_1_configuration__inherit__graph.svg" width="174" height="698"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -544,8 +546,8 @@ Public Member Functions</h2></td></tr>
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 18 2014 23:48:53 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+        <small>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Fri Dec 12 2014 00:17:35 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</small>
       </div>
     </div>
   </div>

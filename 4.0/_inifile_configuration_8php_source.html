@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>wCMF 4.0: lib/config/impl/InifileConfiguration.php Source File</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A PHP framework for building reliable maintainable and extendable web applications">
+    <meta name="keywords" content="PHP, web application framework, model driven development">
+    <meta name="author" content="wemove digital solutions">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -38,7 +41,7 @@
               <ul class="nav navbar-nav">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-hand-o-right"></i> Guides <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Coming soon...</a></li>
+                    <li><a href="gettingstarted.html">Getting started</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -789,42 +792,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    if (Log::isDebugEnabled(__CLASS__)) {</div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;      Log::debug(&quot;Clear all caches&quot;, __CLASS__);</div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    }</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    $cache = ObjectFactory::getInstance(&#39;cache<span class="stringliteral">&#39;);</span></div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;<span class="stringliteral">    $cache-&gt;clearAll();</span></div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;<span class="stringliteral">  }</span></div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;<span class="stringliteral"></span><span class="comment"></span></div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;<span class="comment">   * Build the internal lookup table</span></div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00705"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html#a8fa89bbaaeb8fe1791b952701b19544b">  705</a></span>&#160;  protected function buildLookupTable() {</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    $this-&gt;_lookupTable = array();</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    foreach ($this-&gt;_configArray as $section =&gt; $entry) {</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;      // create section entry</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;      $lookupSectionKey = strtolower($section.&#39;:<span class="stringliteral">&#39;);</span></div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;<span class="stringliteral">      $this-&gt;_lookupTable[$lookupSectionKey] = array($section);</span></div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;<span class="stringliteral">      // create key entries</span></div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;<span class="stringliteral">      foreach ($entry as $key =&gt; $value) {</span></div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;<span class="stringliteral">        $lookupKey = strtolower($lookupSectionKey.$key);</span></div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;<span class="stringliteral">        $this-&gt;_lookupTable[$lookupKey] = array($section, $key);</span></div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;<span class="stringliteral">      }</span></div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;<span class="stringliteral">    }</span></div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;<span class="stringliteral">  }</span></div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;<span class="stringliteral"></span><span class="comment"></span></div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;<span class="comment">   * Lookup section and key.</span></div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;<span class="comment">   * @param $section The section to lookup</span></div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;<span class="comment">   * @param $key The key to lookup (optional)</span></div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;<span class="comment">   * @return Array with section as first entry and key as second or null if not found</span></div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00725"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html#a6a0d862231f5886c84bfcf362911404a">  725</a></span>&#160;  protected function lookup($section, $key=null) {</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    $lookupKey = strtolower($section).&#39;:<span class="stringliteral">&#39;.strtolower($key);</span></div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;<span class="stringliteral">    if (isset($this-&gt;_lookupTable[$lookupKey])) {</span></div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;<span class="stringliteral">      return $this-&gt;_lookupTable[$lookupKey];</span></div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;<span class="stringliteral">    }</span></div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;<span class="stringliteral">    return null;</span></div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;<span class="stringliteral">  }</span></div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;<span class="stringliteral">}</span></div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="stringliteral">?&gt;</span></div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    try {</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;      $cache = ObjectFactory::getInstance(&#39;cache<span class="stringliteral">&#39;);</span></div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;<span class="stringliteral">      $cache-&gt;clearAll();</span></div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;<span class="stringliteral">    }</span></div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;<span class="stringliteral">    catch (\Exception $e) {}</span></div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;<span class="stringliteral">  }</span></div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;<span class="stringliteral"></span><span class="comment"></span></div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;<span class="comment">   * Build the internal lookup table</span></div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00708"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html#a8fa89bbaaeb8fe1791b952701b19544b">  708</a></span>&#160;  protected function buildLookupTable() {</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    $this-&gt;_lookupTable = array();</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    foreach ($this-&gt;_configArray as $section =&gt; $entry) {</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;      // create section entry</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;      $lookupSectionKey = strtolower($section.&#39;:<span class="stringliteral">&#39;);</span></div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;<span class="stringliteral">      $this-&gt;_lookupTable[$lookupSectionKey] = array($section);</span></div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;<span class="stringliteral">      // create key entries</span></div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;<span class="stringliteral">      foreach ($entry as $key =&gt; $value) {</span></div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;<span class="stringliteral">        $lookupKey = strtolower($lookupSectionKey.$key);</span></div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;<span class="stringliteral">        $this-&gt;_lookupTable[$lookupKey] = array($section, $key);</span></div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;<span class="stringliteral">      }</span></div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;<span class="stringliteral">    }</span></div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;<span class="stringliteral">  }</span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;<span class="stringliteral"></span><span class="comment"></span></div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;<span class="comment">   * Lookup section and key.</span></div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;<span class="comment">   * @param $section The section to lookup</span></div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;<span class="comment">   * @param $key The key to lookup (optional)</span></div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;<span class="comment">   * @return Array with section as first entry and key as second or null if not found</span></div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00728"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html#a6a0d862231f5886c84bfcf362911404a">  728</a></span>&#160;  protected function lookup($section, $key=null) {</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    $lookupKey = strtolower($section).&#39;:<span class="stringliteral">&#39;.strtolower($key);</span></div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;<span class="stringliteral">    if (isset($this-&gt;_lookupTable[$lookupKey])) {</span></div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;<span class="stringliteral">      return $this-&gt;_lookupTable[$lookupKey];</span></div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;<span class="stringliteral">    }</span></div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="stringliteral">    return null;</span></div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;<span class="stringliteral">  }</span></div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;<span class="stringliteral">}</span></div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;<span class="stringliteral">?&gt;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -833,8 +839,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 18 2014 23:48:49 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+        <small>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Fri Dec 12 2014 00:17:31 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</small>
       </div>
     </div>
   </div>

@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>wCMF 4.0: lib/model/mapper/RDBMapper.php Source File</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A PHP framework for building reliable maintainable and extendable web applications">
+    <meta name="keywords" content="PHP, web application framework, model driven development">
+    <meta name="author" content="wemove digital solutions">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -38,7 +41,7 @@
               <ul class="nav navbar-nav">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-hand-o-right"></i> Guides <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Coming soon...</a></li>
+                    <li><a href="gettingstarted.html">Getting started</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -115,21 +118,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html" title="RDBMapper maps objects of one type to a relational database schema. ">wcmf\lib\model\mapper\RDBMapper</a>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement.html" title="Select statement. ">wcmf\lib\model\mapper\SelectStatement</a>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">wcmf\lib\model\Node</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_abstract_mapper.html" title="AbstractMapper provides a basic implementation for other mapper classes. ">wcmf\lib\persistence\AbstractMapper</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html" title="BuildDepth values are used to define the depth when loading object trees. ">wcmf\lib\persistence\BuildDepth</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html" title="Criteria defines a condition on a PersistentObject&#39;s attribute used to select specific instances...">wcmf\lib\persistence\Criteria</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_delete_operation.html" title="DeleteOperation holds data necessary to accomplish an delete operation on the persistent store...">wcmf\lib\persistence\DeleteOperation</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_insert_operation.html" title="InsertOperation holds data necessary to accomplish an insert operation on the persistent store...">wcmf\lib\persistence\InsertOperation</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">wcmf\lib\persistence\ObjectId</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html" title="PagingInfo contains information about a paged list. ">wcmf\lib\persistence\PagingInfo</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_exception.html" title="PersistenceException signals an exception in the persistence service. ">wcmf\lib\persistence\PersistenceException</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;use <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html" title="PersistenceFacade defines the interface for PersistenceFacade implementations. ">wcmf\lib\persistence\PersistenceFacade</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;use <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html" title="PersistenceMapper defines the interface for all mapper classes. ">wcmf\lib\persistence\PersistenceMapper</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_operation.html" title="A PersistenceOperation instance holds data necessary to accomplish an operation on the persistent sto...">wcmf\lib\persistence\PersistenceOperation</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">wcmf\lib\persistence\PersistentObject</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html" title="PersistentObjectProxy is proxy for an PersistentObject instance. ">wcmf\lib\persistence\PersistentObjectProxy</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_reference_description.html" title="Instances of ReferenceDescription describe reference attributes of PersistentObjects. ">wcmf\lib\persistence\ReferenceDescription</a>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_update_operation.html" title="UpdateOperation instances hold data necessary to accomplish an update operation on the persistent sto...">wcmf\lib\persistence\UpdateOperation</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html" title="BuildDepth values are used to define the depth when loading object trees. ">wcmf\lib\persistence\BuildDepth</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html" title="Criteria defines a condition on a PersistentObject&#39;s attribute used to select specific instances...">wcmf\lib\persistence\Criteria</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_delete_operation.html" title="DeleteOperation holds data necessary to accomplish an delete operation on the persistent store...">wcmf\lib\persistence\DeleteOperation</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_insert_operation.html" title="InsertOperation holds data necessary to accomplish an insert operation on the persistent store...">wcmf\lib\persistence\InsertOperation</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">wcmf\lib\persistence\ObjectId</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html" title="PagingInfo contains information about a paged list. ">wcmf\lib\persistence\PagingInfo</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_exception.html" title="PersistenceException signals an exception in the persistence service. ">wcmf\lib\persistence\PersistenceException</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;use <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html" title="PersistenceFacade defines the interface for PersistenceFacade implementations. ">wcmf\lib\persistence\PersistenceFacade</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;use <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html" title="PersistenceMapper defines the interface for all mapper classes. ">wcmf\lib\persistence\PersistenceMapper</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_operation.html" title="A PersistenceOperation instance holds data necessary to accomplish an operation on the persistent sto...">wcmf\lib\persistence\PersistenceOperation</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">wcmf\lib\persistence\PersistentObject</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html" title="PersistentObjectProxy is proxy for an PersistentObject instance. ">wcmf\lib\persistence\PersistentObjectProxy</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_reference_description.html" title="Instances of ReferenceDescription describe reference attributes of PersistentObjects. ">wcmf\lib\persistence\ReferenceDescription</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_update_operation.html" title="UpdateOperation instances hold data necessary to accomplish an update operation on the persistent sto...">wcmf\lib\persistence\UpdateOperation</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html" title="AbstractMapper provides a basic implementation for other mapper classes. ">wcmf\lib\persistence\impl\AbstractMapper</a>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> * RDBMapper maps objects of one type to a relational database schema.</span></div>
@@ -138,7 +141,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html">   47</a></span>&#160;<span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html" title="RDBMapper maps objects of one type to a relational database schema. ">RDBMapper</a> <span class="keyword">extends</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_abstract_mapper.html" title="AbstractMapper provides a basic implementation for other mapper classes. ">AbstractMapper</a> implements <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html" title="PersistenceMapper defines the interface for all mapper classes. ">PersistenceMapper</a> {</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html">   47</a></span>&#160;<span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html" title="RDBMapper maps objects of one type to a relational database schema. ">RDBMapper</a> <span class="keyword">extends</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html" title="AbstractMapper provides a basic implementation for other mapper classes. ">AbstractMapper</a> implements <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html" title="PersistenceMapper defines the interface for all mapper classes. ">PersistenceMapper</a> {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">private</span> <span class="keyword">static</span> $SEQUENCE_CLASS = <span class="stringliteral">&#39;DBSequence&#39;</span>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">private</span> <span class="keyword">static</span> $connections = array();   <span class="comment">// registry for connections, key: connId</span></div>
@@ -683,7 +686,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00589"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a7ce9b36cb807e3d26cced6b36307cd2d">  589</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a7ce9b36cb807e3d26cced6b36307cd2d">getDefaultOrder</a>($roleName=null) {</div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    $sortDef = null;</div>
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    $sortType = null;</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    <span class="keywordflow">if</span> ($roleName != null &amp;&amp; $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_abstract_mapper.html#ad1993bb56d99fa01bed86153f6ed1fdb">hasRelation</a>($roleName) &amp;&amp;</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    <span class="keywordflow">if</span> ($roleName != null &amp;&amp; $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#ad1993bb56d99fa01bed86153f6ed1fdb">hasRelation</a>($roleName) &amp;&amp;</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;            ($relationDesc = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#ac77dee55b074f69295e108d124098139">getRelation</a>($roleName)) instanceof <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_many_to_many_relation_description.html" title="Instances of RDBManyToManyRelationDescription describe a many to many relation from &#39;this&#39; end to &#39;ot...">RDBManyToManyRelationDescription</a>) {</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;      <span class="comment">// the order may be overriden by the many to many relation class</span></div>
@@ -776,7 +779,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <span class="comment">// delegate to loadObjects</span></div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    $criteria = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a5e5ac75494dfc770d3bf27ba81f79b24" title="Create an array of condition Criteria instances for the primary key values. ">createPKCondition</a>($oid);</div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    $pagingInfo = <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html" title="PagingInfo contains information about a paged list. ">PagingInfo</a>(1, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    $objects = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_abstract_mapper.html#a83e724262dff453dc35561b241ca7539">loadObjects</a>($oid-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html#a830b5c75df72b32396701bc563fbe3c7" title="Get the type (including namespace) ">getType</a>(), $buildDepth, $criteria, null, $pagingInfo);</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    $objects = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a83e724262dff453dc35561b241ca7539">loadObjects</a>($oid-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html#a830b5c75df72b32396701bc563fbe3c7" title="Get the type (including namespace) ">getType</a>(), $buildDepth, $criteria, null, $pagingInfo);</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>($objects) &gt; 0) {</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;      <span class="keywordflow">return</span> $objects[0];</div>
 <div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    }</div>
@@ -848,14 +851,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;        $mapper-&gt;executeOperation($operation);</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;      }</div>
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;      <span class="comment">// log action</span></div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;      $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_abstract_mapper.html#a5bcf6eb1ecdfeda45c4a34223aadcd92">logAction</a>($object);</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;      $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a5bcf6eb1ecdfeda45c4a34223aadcd92">logAction</a>($object);</div>
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    }</div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ($object-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#afbf787ced76807989fb3093e1772c5a1" title="Get the object&#39;s state: ">getState</a>() == <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a53f40b6aa8360fb891d6516dea517b57">PersistentObject::STATE_DIRTY</a>) {</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;      <span class="comment">// save existing object</span></div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;      <span class="comment">// precondition: the object exists in the database</span></div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;</div>
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;      <span class="comment">// log action</span></div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;      $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_abstract_mapper.html#a5bcf6eb1ecdfeda45c4a34223aadcd92">logAction</a>($object);</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;      $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a5bcf6eb1ecdfeda45c4a34223aadcd92">logAction</a>($object);</div>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;</div>
 <div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;      <span class="comment">// save object</span></div>
 <div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;      $operations = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a1df9faa81e9b2c8bb54e2ef58a563ca8" title="Get the SQL command to update a object in the database. ">getUpdateSQL</a>($object);</div>
@@ -883,8 +886,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    }</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;</div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    <span class="comment">// log action</span></div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_abstract_mapper.html#a824bc2aedc89381c03c5d7b31a8c078d">isLogging</a>()) {</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;      $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_abstract_mapper.html#a5bcf6eb1ecdfeda45c4a34223aadcd92">logAction</a>($object);</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a824bc2aedc89381c03c5d7b31a8c078d">isLogging</a>()) {</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;      $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a5bcf6eb1ecdfeda45c4a34223aadcd92">logAction</a>($object);</div>
 <div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;    }</div>
 <div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;</div>
 <div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;    <span class="comment">// delete object</span></div>
@@ -1082,7 +1085,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;    <span class="comment">// set object data</span></div>
 <div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;    $values = array();</div>
 <div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;    <span class="keywordflow">foreach</span>($objectData as $name =&gt; $value) {</div>
-<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;      <span class="keywordflow">if</span> ($this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_abstract_mapper.html#ac78ba27a41d0291c61326022489d4986">hasAttribute</a>($name) || strpos($name, self::INTERNAL_VALUE_PREFIX) === 0) {</div>
+<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;      <span class="keywordflow">if</span> ($this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#ac78ba27a41d0291c61326022489d4986">hasAttribute</a>($name) || strpos($name, self::INTERNAL_VALUE_PREFIX) === 0) {</div>
 <div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;        $values[$name] = $value;</div>
 <div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;      }</div>
 <div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;    }</div>
@@ -1130,7 +1133,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l01036"></a><span class="lineno"> 1036</span>&#160;      <span class="comment">// currently loading, we load the complete objects and add them</span></div>
 <div class="line"><a name="l01037"></a><span class="lineno"> 1037</span>&#160;      <span class="keywordflow">if</span> ($loadNextGeneration &amp;&amp; !isset($this-&gt;_loadingRelations[$relationId])) {</div>
 <div class="line"><a name="l01038"></a><span class="lineno"> 1038</span>&#160;        $this-&gt;_loadingRelations[$relationId] = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;        $relatives = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_abstract_mapper.html#a98b29bdc19f82db61178329269679d09">loadRelation</a>($objects, $role, $newBuildDepth);</div>
+<div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;        $relatives = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a98b29bdc19f82db61178329269679d09">loadRelation</a>($objects, $role, $newBuildDepth);</div>
 <div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;        <span class="comment">// set the values</span></div>
 <div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;        <span class="keywordflow">foreach</span> ($objects as $object) {</div>
 <div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;          $oidStr = $object-&gt;getOID()-&gt;__toString();</div>
@@ -1192,191 +1195,198 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;      }</div>
 <div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;      $relativeMap[$key][] = ($buildDepth != <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#ad8e66505aa12ab235195acb721268093">BuildDepth::PROXIES_ONLY</a>) ? $relatedObject :</div>
 <div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;              <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html" title="PersistentObjectProxy is proxy for an PersistentObject instance. ">PersistentObjectProxy</a>($relatedObject-&gt;getOID());</div>
-<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;    }</div>
-<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;    <span class="keywordflow">foreach</span> ($objects as $object) {</div>
-<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;      $oidStr = $object-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html#ac886ae95a746f43906bb3b2515092440" title="Get the object id of the PersistentObject. ">getOID</a>()-&gt;__toString();</div>
-<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;      $key = $object-&gt;getValue($objValueName);</div>
-<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;      $relatives[$oidStr] = isset($relativeMap[$key]) ? $relativeMap[$key] : array();</div>
-<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;    }</div>
-<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;    <span class="keywordflow">return</span> $relatives;</div>
-<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;  }</div>
-<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;<span class="comment">   * @see PersistenceMapper::beginTransaction()</span></div>
-<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;<span class="comment">   * Since all RDBMapper instances with the same connection parameters share</span></div>
-<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;<span class="comment">   * one connection, the call will be ignored, if the method was already called</span></div>
-<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;<span class="comment">   * for another instance.</span></div>
-<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01116"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#af3380f3b13931d581fa973a382946b32"> 1116</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#af3380f3b13931d581fa973a382946b32">beginTransaction</a>() {</div>
-<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;_conn == null) {</div>
-<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;      $this-&gt;connect();</div>
-<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;    }</div>
-<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;    <span class="keywordflow">if</span> (!$this-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#af74d8674fcfdea8c02436d9b01642a57" title="Check if the connection is currently in a transaction. ">isInTransaction</a>()) {</div>
-<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;      $this-&gt;_conn-&gt;beginTransaction();</div>
-<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;      $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a0094e453215f759a33d3b3ff396d7fae" title="Set the transaction state for the connection. ">setIsInTransaction</a>(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;    }</div>
-<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;  }</div>
-<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;<span class="comment">   * @see PersistenceMapper::commitTransaction()</span></div>
-<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;<span class="comment">   * Since all RDBMapper instances with the same connection parameters share</span></div>
-<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;<span class="comment">   * one connection, the call will be ignored, if the method was already called</span></div>
-<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;<span class="comment">   * for another instance.</span></div>
-<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01132"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#afc95fb0d27bada24f816703817abd614"> 1132</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#afc95fb0d27bada24f816703817abd614">commitTransaction</a>() {</div>
-<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;_conn == null) {</div>
-<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;      $this-&gt;connect();</div>
-<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;    }</div>
-<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#af74d8674fcfdea8c02436d9b01642a57" title="Check if the connection is currently in a transaction. ">isInTransaction</a>()) {</div>
-<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;      $this-&gt;_conn-&gt;commit();</div>
-<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;      $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a0094e453215f759a33d3b3ff396d7fae" title="Set the transaction state for the connection. ">setIsInTransaction</a>(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;    }</div>
-<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;  }</div>
-<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;<span class="comment">   * @see PersistenceMapper::rollbackTransaction()</span></div>
-<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;<span class="comment">   * @note Rollbacks have to be supported by the database.</span></div>
-<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;<span class="comment">   * Since all RDBMapper instances with the same connection parameters share</span></div>
-<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;<span class="comment">   * one connection, the call will be ignored, if the method was already called</span></div>
-<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;<span class="comment">   * for another instance.</span></div>
-<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01149"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#aab1719603a6f0ccad51f056302445814"> 1149</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#aab1719603a6f0ccad51f056302445814">rollbackTransaction</a>() {</div>
-<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;_conn == null) {</div>
-<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;      $this-&gt;connect();</div>
-<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;    }</div>
-<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#af74d8674fcfdea8c02436d9b01642a57" title="Check if the connection is currently in a transaction. ">isInTransaction</a>()) {</div>
-<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;      $this-&gt;_conn-&gt;rollBack();</div>
-<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;      $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a0094e453215f759a33d3b3ff396d7fae" title="Set the transaction state for the connection. ">setIsInTransaction</a>(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;    }</div>
-<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;  }</div>
-<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;<span class="comment">   * Set the transaction state for the connection</span></div>
-<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;<span class="comment">   * @param $isInTransaction Boolean whether the connection is in a transaction or not</span></div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01163"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a0094e453215f759a33d3b3ff396d7fae"> 1163</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a0094e453215f759a33d3b3ff396d7fae" title="Set the transaction state for the connection. ">setIsInTransaction</a>($isInTransaction) {</div>
-<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;    self::$inTransaction[$this-&gt;_connId] = $isInTransaction;</div>
-<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;  }</div>
-<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;<span class="comment">   * Check if the connection is currently in a transaction</span></div>
-<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;<span class="comment">   * @return Boolean</span></div>
-<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01171"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#af74d8674fcfdea8c02436d9b01642a57"> 1171</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#af74d8674fcfdea8c02436d9b01642a57" title="Check if the connection is currently in a transaction. ">isInTransaction</a>() {</div>
-<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;    <span class="keywordflow">return</span> isset(self::$inTransaction[$this-&gt;_connId]) &amp;&amp; self::$inTransaction[$this-&gt;_connId] === <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;  }</div>
-<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;<span class="comment">   * TEMPLATE METHODS</span></div>
-<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;<span class="comment">   * Subclasses must implement this method to define their object type.</span></div>
-<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;<span class="comment">   * Get the names of the attributes in the mapped class to order by default and the sort directions</span></div>
-<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;<span class="comment">   * (ASC or DESC). The roleName parameter allows to ask for the order with respect to a specific role.</span></div>
-<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;<span class="comment">   * @param $roleName The role name of the relation (optional, default: _null_)</span></div>
-<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;<span class="comment">   * @return An array of assciative arrays with the keys sortFieldName and sortDirection (ASC or DESC)</span></div>
+<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;</div>
+<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;      <span class="comment">// remove internal value after use (important when loading nm relations,</span></div>
+<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;      <span class="comment">// because if not done, the value will not be updated when loading the relation</span></div>
+<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;      <span class="comment">// for another object, leading to less objects seen in the relation)</span></div>
+<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;      <span class="keywordflow">if</span> (strpos($relValueName, self::INTERNAL_VALUE_PREFIX) === 0) {</div>
+<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;        $relatedObject-&gt;removeValue($relValueName);</div>
+<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;      }</div>
+<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;    }</div>
+<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;    <span class="keywordflow">foreach</span> ($objects as $object) {</div>
+<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;      $oidStr = $object-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html#ac886ae95a746f43906bb3b2515092440" title="Get the object id of the PersistentObject. ">getOID</a>()-&gt;__toString();</div>
+<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;      $key = $object-&gt;getValue($objValueName);</div>
+<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;      $relatives[$oidStr] = isset($relativeMap[$key]) ? $relativeMap[$key] : array();</div>
+<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;    }</div>
+<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;    <span class="keywordflow">return</span> $relatives;</div>
+<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;  }</div>
+<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;<span class="comment">   * @see PersistenceMapper::beginTransaction()</span></div>
+<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;<span class="comment">   * Since all RDBMapper instances with the same connection parameters share</span></div>
+<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;<span class="comment">   * one connection, the call will be ignored, if the method was already called</span></div>
+<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;<span class="comment">   * for another instance.</span></div>
+<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l01123"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#af3380f3b13931d581fa973a382946b32"> 1123</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#af3380f3b13931d581fa973a382946b32">beginTransaction</a>() {</div>
+<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;_conn == null) {</div>
+<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;      $this-&gt;connect();</div>
+<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;    }</div>
+<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;    <span class="keywordflow">if</span> (!$this-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#af74d8674fcfdea8c02436d9b01642a57" title="Check if the connection is currently in a transaction. ">isInTransaction</a>()) {</div>
+<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;      $this-&gt;_conn-&gt;beginTransaction();</div>
+<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;      $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a0094e453215f759a33d3b3ff396d7fae" title="Set the transaction state for the connection. ">setIsInTransaction</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;    }</div>
+<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;  }</div>
+<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;<span class="comment">   * @see PersistenceMapper::commitTransaction()</span></div>
+<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;<span class="comment">   * Since all RDBMapper instances with the same connection parameters share</span></div>
+<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;<span class="comment">   * one connection, the call will be ignored, if the method was already called</span></div>
+<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;<span class="comment">   * for another instance.</span></div>
+<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l01139"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#afc95fb0d27bada24f816703817abd614"> 1139</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#afc95fb0d27bada24f816703817abd614">commitTransaction</a>() {</div>
+<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;_conn == null) {</div>
+<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;      $this-&gt;connect();</div>
+<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;    }</div>
+<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#af74d8674fcfdea8c02436d9b01642a57" title="Check if the connection is currently in a transaction. ">isInTransaction</a>()) {</div>
+<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;      $this-&gt;_conn-&gt;commit();</div>
+<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;      $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a0094e453215f759a33d3b3ff396d7fae" title="Set the transaction state for the connection. ">setIsInTransaction</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;    }</div>
+<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;  }</div>
+<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;<span class="comment">   * @see PersistenceMapper::rollbackTransaction()</span></div>
+<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;<span class="comment">   * @note Rollbacks have to be supported by the database.</span></div>
+<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;<span class="comment">   * Since all RDBMapper instances with the same connection parameters share</span></div>
+<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;<span class="comment">   * one connection, the call will be ignored, if the method was already called</span></div>
+<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;<span class="comment">   * for another instance.</span></div>
+<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l01156"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#aab1719603a6f0ccad51f056302445814"> 1156</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#aab1719603a6f0ccad51f056302445814">rollbackTransaction</a>() {</div>
+<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;_conn == null) {</div>
+<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;      $this-&gt;connect();</div>
+<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;    }</div>
+<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#af74d8674fcfdea8c02436d9b01642a57" title="Check if the connection is currently in a transaction. ">isInTransaction</a>()) {</div>
+<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;      $this-&gt;_conn-&gt;rollBack();</div>
+<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;      $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a0094e453215f759a33d3b3ff396d7fae" title="Set the transaction state for the connection. ">setIsInTransaction</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;    }</div>
+<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;  }</div>
+<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;<span class="comment">   * Set the transaction state for the connection</span></div>
+<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;<span class="comment">   * @param $isInTransaction Boolean whether the connection is in a transaction or not</span></div>
+<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l01170"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a0094e453215f759a33d3b3ff396d7fae"> 1170</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a0094e453215f759a33d3b3ff396d7fae" title="Set the transaction state for the connection. ">setIsInTransaction</a>($isInTransaction) {</div>
+<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;    self::$inTransaction[$this-&gt;_connId] = $isInTransaction;</div>
+<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;  }</div>
+<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;<span class="comment">   * Check if the connection is currently in a transaction</span></div>
+<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;<span class="comment">   * @return Boolean</span></div>
+<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l01178"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#af74d8674fcfdea8c02436d9b01642a57"> 1178</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#af74d8674fcfdea8c02436d9b01642a57" title="Check if the connection is currently in a transaction. ">isInTransaction</a>() {</div>
+<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;    <span class="keywordflow">return</span> isset(self::$inTransaction[$this-&gt;_connId]) &amp;&amp; self::$inTransaction[$this-&gt;_connId] === <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;  }</div>
+<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;<span class="comment">   * TEMPLATE METHODS</span></div>
+<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;<span class="comment">   * Subclasses must implement this method to define their object type.</span></div>
 <div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a8694db2b65d2a53be7b90e0a18c5519f" title="TEMPLATE METHODS Subclasses must implement this method to define their object type. ">getOwnDefaultOrder</a>($roleName=null);</div>
-<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;<span class="comment">   * Get a list of all RelationDescriptions.</span></div>
-<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;<span class="comment">   * @return An associative array with the relation names as keys and the RelationDescription instances as values.</span></div>
-<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#afc8e4dd8e8d0ca54e48c35514d6ef92b" title="Get a list of all RelationDescriptions. ">getRelationDescriptions</a>();</div>
-<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;<span class="comment">   * Get a list of all AttributeDescriptions.</span></div>
-<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;<span class="comment">   * @return An associative array with the attribute names as keys and the AttributeDescription instances as values.</span></div>
-<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a10ac145f5b2e443c4997ca0e0234c094" title="Get a list of all AttributeDescriptions. ">getAttributeDescriptions</a>();</div>
-<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;<span class="comment">   * Factory method for the supported object type.</span></div>
-<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;<span class="comment">   * @param $oid The object id (maybe null)</span></div>
-<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;<span class="comment">   * @return A reference to the created object.</span></div>
+<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;<span class="comment">   * Get the names of the attributes in the mapped class to order by default and the sort directions</span></div>
+<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;<span class="comment">   * (ASC or DESC). The roleName parameter allows to ask for the order with respect to a specific role.</span></div>
+<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;<span class="comment">   * @param $roleName The role name of the relation (optional, default: _null_)</span></div>
+<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;<span class="comment">   * @return An array of assciative arrays with the keys sortFieldName and sortDirection (ASC or DESC)</span></div>
+<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a8694db2b65d2a53be7b90e0a18c5519f" title="TEMPLATE METHODS Subclasses must implement this method to define their object type. ">getOwnDefaultOrder</a>($roleName=null);</div>
+<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;<span class="comment">   * Get a list of all RelationDescriptions.</span></div>
+<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;<span class="comment">   * @return An associative array with the relation names as keys and the RelationDescription instances as values.</span></div>
+<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#afc8e4dd8e8d0ca54e48c35514d6ef92b" title="Get a list of all RelationDescriptions. ">getRelationDescriptions</a>();</div>
+<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;<span class="comment">   * Get a list of all AttributeDescriptions.</span></div>
+<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;<span class="comment">   * @return An associative array with the attribute names as keys and the AttributeDescription instances as values.</span></div>
 <div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#aa964429995d2e15009b092957d39502d" title="Factory method for the supported object type. ">createObject</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a> $oid=null);</div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a10ac145f5b2e443c4997ca0e0234c094" title="Get a list of all AttributeDescriptions. ">getAttributeDescriptions</a>();</div>
 <div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;<span class="comment">   * Set the object primary key and foreign key values for storing the object in the database.</span></div>
-<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;<span class="comment">   * @param $object A reference to the object to insert.</span></div>
-<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;<span class="comment">   * @note The object does not have the final object id set. If a new id value for a primary key column is needed.</span></div>
-<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;<span class="comment">   * @note The prepared object will be used in the application afterwards. So values that are only to be modified for</span></div>
-<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;<span class="comment">   * the storage process should be changed in getInsertSQL() and getUpdateSQL() only!</span></div>
-<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;<span class="comment">   * for the insert statement, use RDBMapper::getNextId().</span></div>
-<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a8a5c3ac15dd4c27d618a1e3c455e6a3d" title="Set the object primary key and foreign key values for storing the object in the database. ">prepareForStorage</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a> $object);</div>
-<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;<span class="comment">   * Get the SQL command to select object data from the database.</span></div>
-<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;<span class="comment">   * @param $criteria An array of Criteria instances that define conditions on the type&#39;s attributes (optional, default: _null_)</span></div>
-<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;<span class="comment">   * @param $alias The alias for the table name (default: _null_)</span></div>
-<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;<span class="comment">   * @param $orderby An array holding names of attributes to order by, maybe appended with &#39;ASC&#39;, &#39;DESC&#39; (optional, default: _null_)</span></div>
-<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;<span class="comment">   * @param $pagingInfo An PagingInfo instance describing which page to load (optional, default: _null_))</span></div>
-<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;<span class="comment">   * @param $queryId Identifier for the query cache (maybe null to let implementers handle it). (default: _null_)</span></div>
-<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;<span class="comment">   * @return SelectStatement instance that selects all object data that match the condition or an array with the query parts.</span></div>
-<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;<span class="comment">   * @note The names of the data item columns MUST match the data item names provided in the &#39;_datadef&#39; array from RDBMapper::getObjectDefinition()</span></div>
-<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;<span class="comment">   *       Use alias names if not! The selected data will be put into the &#39;_data&#39; array of the object definition.</span></div>
-<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#ac30e3796e83f93666c6fca2270fb7a94" title="Get the SQL command to select object data from the database. ">getSelectSQL</a>($criteria=null, $alias=null, $orderby=null, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html" title="PagingInfo contains information about a paged list. ">PagingInfo</a> $pagingInfo=null, $queryId=null);</div>
-<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;<span class="comment">   * Get the SQL command to select those objects from the database that are related to the given object.</span></div>
-<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;<span class="comment">   * @note Navigability may not be checked in this method</span></div>
-<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;<span class="comment">   * @note In case of a sortable many to many relation, the sortkey value must also be selected</span></div>
-<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;<span class="comment">   * @param $otherObjectProxies Array of PersistentObjectProxy instances for the objects to load the relatives for.</span></div>
-<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;<span class="comment">   * @param $otherRole The role of the other object in relation to the objects to load.</span></div>
-<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;<span class="comment">   * @param $criteria An array of Criteria instances that define conditions on the object&#39;s attributes (optional, default: _null_)</span></div>
-<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;<span class="comment">   * @param $orderby An array holding names of attributes to order by, maybe appended with &#39;ASC&#39;, &#39;DESC&#39; (optional, default: _null_)</span></div>
-<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;<span class="comment">   * @param $pagingInfo An PagingInfo instance describing which page to load (optional, default: _null_)</span></div>
-<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;<span class="comment">   * @return Array with SelectStatement instance and the attribute names which establish the relation between</span></div>
-<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;<span class="comment">   * the loaded objects and the proxies (proxies&#39;s attribute name first)</span></div>
-<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a665a81f3471e6a95f48e01149f8b65e7" title="Get the SQL command to select those objects from the database that are related to the given object...">getRelationSelectSQL</a>(array $otherObjectProxies, $otherRole,</div>
-<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;          $criteria=null, $orderby=null, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html" title="PagingInfo contains information about a paged list. ">PagingInfo</a> $pagingInfo=null);</div>
-<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;<span class="comment">   * Get the SQL command to insert a object into the database.</span></div>
-<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;<span class="comment">   * @param $object A reference to the object to insert.</span></div>
-<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;<span class="comment">   * @return Array of PersistenceOperation instances that insert a new object.</span></div>
-<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#aeb05c1fb5f657ea80966507399e06a57" title="Get the SQL command to insert a object into the database. ">getInsertSQL</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a> $object);</div>
+<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;<span class="comment">   * Factory method for the supported object type.</span></div>
+<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;<span class="comment">   * @param $oid The object id (maybe null)</span></div>
+<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;<span class="comment">   * @return A reference to the created object.</span></div>
+<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#aa964429995d2e15009b092957d39502d" title="Factory method for the supported object type. ">createObject</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a> $oid=null);</div>
+<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;<span class="comment">   * Set the object primary key and foreign key values for storing the object in the database.</span></div>
+<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;<span class="comment">   * @param $object A reference to the object to insert.</span></div>
+<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;<span class="comment">   * @note The object does not have the final object id set. If a new id value for a primary key column is needed.</span></div>
+<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;<span class="comment">   * @note The prepared object will be used in the application afterwards. So values that are only to be modified for</span></div>
+<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;<span class="comment">   * the storage process should be changed in getInsertSQL() and getUpdateSQL() only!</span></div>
+<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;<span class="comment">   * for the insert statement, use RDBMapper::getNextId().</span></div>
+<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a8a5c3ac15dd4c27d618a1e3c455e6a3d" title="Set the object primary key and foreign key values for storing the object in the database. ">prepareForStorage</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a> $object);</div>
+<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;<span class="comment">   * Get the SQL command to select object data from the database.</span></div>
+<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;<span class="comment">   * @param $criteria An array of Criteria instances that define conditions on the type&#39;s attributes (optional, default: _null_)</span></div>
+<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;<span class="comment">   * @param $alias The alias for the table name (default: _null_)</span></div>
+<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;<span class="comment">   * @param $orderby An array holding names of attributes to order by, maybe appended with &#39;ASC&#39;, &#39;DESC&#39; (optional, default: _null_)</span></div>
+<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;<span class="comment">   * @param $pagingInfo An PagingInfo instance describing which page to load (optional, default: _null_))</span></div>
+<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;<span class="comment">   * @param $queryId Identifier for the query cache (maybe null to let implementers handle it). (default: _null_)</span></div>
+<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;<span class="comment">   * @return SelectStatement instance that selects all object data that match the condition or an array with the query parts.</span></div>
+<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;<span class="comment">   * @note The names of the data item columns MUST match the data item names provided in the &#39;_datadef&#39; array from RDBMapper::getObjectDefinition()</span></div>
+<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;<span class="comment">   *       Use alias names if not! The selected data will be put into the &#39;_data&#39; array of the object definition.</span></div>
+<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#ac30e3796e83f93666c6fca2270fb7a94" title="Get the SQL command to select object data from the database. ">getSelectSQL</a>($criteria=null, $alias=null, $orderby=null, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html" title="PagingInfo contains information about a paged list. ">PagingInfo</a> $pagingInfo=null, $queryId=null);</div>
+<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;<span class="comment">   * Get the SQL command to select those objects from the database that are related to the given object.</span></div>
+<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;<span class="comment">   * @note Navigability may not be checked in this method</span></div>
+<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;<span class="comment">   * @note In case of a sortable many to many relation, the sortkey value must also be selected</span></div>
+<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;<span class="comment">   * @param $otherObjectProxies Array of PersistentObjectProxy instances for the objects to load the relatives for.</span></div>
+<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;<span class="comment">   * @param $otherRole The role of the other object in relation to the objects to load.</span></div>
+<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;<span class="comment">   * @param $criteria An array of Criteria instances that define conditions on the object&#39;s attributes (optional, default: _null_)</span></div>
+<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;<span class="comment">   * @param $orderby An array holding names of attributes to order by, maybe appended with &#39;ASC&#39;, &#39;DESC&#39; (optional, default: _null_)</span></div>
+<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;<span class="comment">   * @param $pagingInfo An PagingInfo instance describing which page to load (optional, default: _null_)</span></div>
+<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;<span class="comment">   * @return Array with SelectStatement instance and the attribute names which establish the relation between</span></div>
+<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;<span class="comment">   * the loaded objects and the proxies (proxies&#39;s attribute name first)</span></div>
+<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a665a81f3471e6a95f48e01149f8b65e7" title="Get the SQL command to select those objects from the database that are related to the given object...">getRelationSelectSQL</a>(array $otherObjectProxies, $otherRole,</div>
+<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;          $criteria=null, $orderby=null, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html" title="PagingInfo contains information about a paged list. ">PagingInfo</a> $pagingInfo=null);</div>
 <div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;<span class="comment">   * Get the SQL command to update a object in the database.</span></div>
-<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;<span class="comment">   * @param $object A reference to the object to update.</span></div>
-<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;<span class="comment">   * @return Array of PersistenceOperation instances that update an existing object.</span></div>
+<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;<span class="comment">   * Get the SQL command to insert a object into the database.</span></div>
+<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;<span class="comment">   * @param $object A reference to the object to insert.</span></div>
+<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;<span class="comment">   * @return Array of PersistenceOperation instances that insert a new object.</span></div>
 <div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a1df9faa81e9b2c8bb54e2ef58a563ca8" title="Get the SQL command to update a object in the database. ">getUpdateSQL</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a> $object);</div>
+<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#aeb05c1fb5f657ea80966507399e06a57" title="Get the SQL command to insert a object into the database. ">getInsertSQL</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a> $object);</div>
 <div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;<span class="comment">   * Get the SQL command to delete a object from the database.</span></div>
-<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;<span class="comment">   * @param $oid The object id of the object to delete.</span></div>
-<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;<span class="comment">   * @return Array of PersistenceOperation instances that delete an existing object.</span></div>
+<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;<span class="comment">   * Get the SQL command to update a object in the database.</span></div>
+<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;<span class="comment">   * @param $object A reference to the object to update.</span></div>
+<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;<span class="comment">   * @return Array of PersistenceOperation instances that update an existing object.</span></div>
 <div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#aaeb455f4c1234dcacdb6c2e3f458fca2" title="Get the SQL command to delete a object from the database. ">getDeleteSQL</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a> $oid);</div>
+<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a1df9faa81e9b2c8bb54e2ef58a563ca8" title="Get the SQL command to update a object in the database. ">getUpdateSQL</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a> $object);</div>
 <div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;<span class="comment">   * Create an array of condition Criteria instances for the primary key values</span></div>
-<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;<span class="comment">   * @param $oid The object id that defines the primary key values</span></div>
-<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;<span class="comment">   * @return Array of Criteria instances</span></div>
+<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;<span class="comment">   * Get the SQL command to delete a object from the database.</span></div>
+<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;<span class="comment">   * @param $oid The object id of the object to delete.</span></div>
+<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;<span class="comment">   * @return Array of PersistenceOperation instances that delete an existing object.</span></div>
 <div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a5e5ac75494dfc770d3bf27ba81f79b24" title="Create an array of condition Criteria instances for the primary key values. ">createPKCondition</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a> $oid);</div>
+<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#aaeb455f4c1234dcacdb6c2e3f458fca2" title="Get the SQL command to delete a object from the database. ">getDeleteSQL</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a> $oid);</div>
 <div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;<span class="comment">   * Get the name of the database table, where this type is mapped to</span></div>
-<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;<span class="comment">   * @return String</span></div>
-<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a93566f2c8d709d410ae8ec46b813999b" title="Get the name of the database table, where this type is mapped to. ">getTableName</a>();</div>
-<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;<span class="comment">   * Determine if an attribute is a foreign key</span></div>
-<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;<span class="comment">   * @return Boolean</span></div>
-<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#ae6568fd87ea493d55978b84560680d40" title="Determine if an attribute is a foreign key. ">isForeignKey</a>($name);</div>
-<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;}</div>
-<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;?&gt;</div>
+<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;<span class="comment">   * Create an array of condition Criteria instances for the primary key values</span></div>
+<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;<span class="comment">   * @param $oid The object id that defines the primary key values</span></div>
+<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;<span class="comment">   * @return Array of Criteria instances</span></div>
+<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a5e5ac75494dfc770d3bf27ba81f79b24" title="Create an array of condition Criteria instances for the primary key values. ">createPKCondition</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a> $oid);</div>
+<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;<span class="comment">   * Get the name of the database table, where this type is mapped to</span></div>
+<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;<span class="comment">   * @return String</span></div>
+<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a93566f2c8d709d410ae8ec46b813999b" title="Get the name of the database table, where this type is mapped to. ">getTableName</a>();</div>
+<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;<span class="comment">   * Determine if an attribute is a foreign key</span></div>
+<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;<span class="comment">   * @return Boolean</span></div>
+<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#ae6568fd87ea493d55978b84560680d40" title="Determine if an attribute is a foreign key. ">isForeignKey</a>($name);</div>
+<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;}</div>
+<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;?&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -1385,8 +1395,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 18 2014 23:48:50 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+        <small>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Fri Dec 12 2014 00:17:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</small>
       </div>
     </div>
   </div>

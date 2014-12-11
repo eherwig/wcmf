@@ -13,7 +13,7 @@ var indexSectionsWithContent =
   3: "abcdefghijlmnoprstuvwx",
   4: "_abcdefghiklmnopqrstuvw",
   5: "$abcdeghilmnoprstuw",
-  6: "m"
+  6: "acgimp"
 };
 
 var indexSectionNames =

@@ -2,7 +2,7 @@ var searchData=
 [
   ['abstractformat',['AbstractFormat',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_abstract_format.html',1,'wcmf::lib::presentation::format::impl']]],
   ['abstractformat_2ephp',['AbstractFormat.php',['../_abstract_format_8php.html',1,'']]],
-  ['abstractmapper',['AbstractMapper',['../classwcmf_1_1lib_1_1persistence_1_1_abstract_mapper.html',1,'wcmf::lib::persistence']]],
+  ['abstractmapper',['AbstractMapper',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html',1,'wcmf::lib::persistence::impl']]],
   ['abstractmapper_2ephp',['AbstractMapper.php',['../_abstract_mapper_8php.html',1,'']]],
   ['abstractnodeserializer',['AbstractNodeSerializer',['../classwcmf_1_1lib_1_1model_1_1impl_1_1_abstract_node_serializer.html',1,'wcmf::lib::model::impl']]],
   ['abstractnodeserializer_2ephp',['AbstractNodeSerializer.php',['../_abstract_node_serializer_8php.html',1,'']]],
@@ -62,6 +62,8 @@ var searchData=
   ['applydataoncreate',['applyDataOnCreate',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a5dad8a77dc7889b2f4ba4da08c6416c9',1,'wcmf::lib::model::mapper::RDBMapper']]],
   ['applydataonload',['applyDataOnLoad',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a4531046c084c823e1b5a4c0103ed568b',1,'wcmf::lib::model::mapper::RDBMapper']]],
   ['aquirelock',['aquireLock',['../interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#af2587aae6d4b83240e4f2af303bedb67',1,'wcmf\lib\persistence\concurrency\ConcurrencyManager\aquireLock()'],['../classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1impl_1_1_default_concurrency_manager.html#af2587aae6d4b83240e4f2af303bedb67',1,'wcmf\lib\persistence\concurrency\impl\DefaultConcurrencyManager\aquireLock()'],['../classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1impl_1_1_default_lock_handler.html#af2587aae6d4b83240e4f2af303bedb67',1,'wcmf\lib\persistence\concurrency\impl\DefaultLockHandler\aquireLock()'],['../classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1impl_1_1_null_lock_handler.html#af2587aae6d4b83240e4f2af303bedb67',1,'wcmf\lib\persistence\concurrency\impl\NullLockHandler\aquireLock()'],['../interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock_handler.html#af2587aae6d4b83240e4f2af303bedb67',1,'wcmf\lib\persistence\concurrency\LockHandler\aquireLock()']]],
+  ['architecture',['Architecture',['../architecture.html',1,'']]],
+  ['architecture_2edoxy',['architecture.doxy',['../architecture_8doxy.html',1,'']]],
   ['arrayoutputstrategy',['ArrayOutputStrategy',['../classwcmf_1_1lib_1_1persistence_1_1output_1_1impl_1_1_array_output_strategy.html',1,'wcmf::lib::persistence::output::impl']]],
   ['arrayoutputstrategy_2ephp',['ArrayOutputStrategy.php',['../_array_output_strategy_8php.html',1,'']]],
   ['assemble',['assemble',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement.html#a66026de64e1ba022185d3daca19ad026',1,'wcmf::lib::model::mapper::SelectStatement']]],
@@ -85,7 +87,7 @@ var searchData=
   ['authorization_5fsection',['AUTHORIZATION_SECTION',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_static_permission_manager.html#a3a51070e492fb719641f9cdba64ba112',1,'wcmf::lib::security::impl::StaticPermissionManager']]],
   ['authorizationexception',['AuthorizationException',['../classwcmf_1_1lib_1_1security_1_1_authorization_exception.html',1,'wcmf::lib::security']]],
   ['authorizationexception_2ephp',['AuthorizationException.php',['../_authorization_exception_8php.html',1,'']]],
-  ['authorizationfailederror',['authorizationFailedError',['../classwcmf_1_1lib_1_1persistence_1_1_abstract_mapper.html#a2ec676b3c39aae6dd22774d168e16349',1,'wcmf::lib::persistence::AbstractMapper']]],
+  ['authorizationfailederror',['authorizationFailedError',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a2ec676b3c39aae6dd22774d168e16349',1,'wcmf::lib::persistence::impl::AbstractMapper']]],
   ['authorize',['authorize',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html#a152d96cdd1ac6639609b9ac3e54f121e',1,'wcmf\lib\security\impl\AbstractPermissionManager\authorize()'],['../interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a152d96cdd1ac6639609b9ac3e54f121e',1,'wcmf\lib\security\PermissionManager\authorize()']]],
   ['authorizeaction',['authorizeAction',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html#ac8cde1864f51f56bffc617483fc78d48',1,'wcmf::lib::security::impl::AbstractPermissionManager']]]
 ];

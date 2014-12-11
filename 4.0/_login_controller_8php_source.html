@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>wCMF 4.0: application/controller/LoginController.php Source File</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A PHP framework for building reliable maintainable and extendable web applications">
+    <meta name="keywords" content="PHP, web application framework, model driven development">
+    <meta name="author" content="wemove digital solutions">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -38,7 +41,7 @@
               <ul class="nav navbar-nav">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-hand-o-right"></i> Guides <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Coming soon...</a></li>
+                    <li><a href="gettingstarted.html">Getting started</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -196,41 +199,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        $authUser = $authManager-&gt;login($request-&gt;getValue(<span class="stringliteral">&#39;user&#39;</span>), $request-&gt;getValue(<span class="stringliteral">&#39;password&#39;</span>));</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      }</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      <span class="keywordflow">catch</span> (Exception $ex) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="classwcmf_1_1lib_1_1core_1_1_log.html#a14ef9c88c1ea83b3dbe62ab71b5bf44c" title="Print a error message for a category. ">Log::error</a>(<span class="stringliteral">&quot;Could not log in: &quot;</span>.$ex, __CLASS__);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <span class="keywordflow">if</span> ($authUser) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="comment">// login succeeded</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        $session-&gt;clear();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        $permissionManager = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415" title="Get an instance from the configuration. ">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;permissionManager&#39;</span>);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        $permissionManager-&gt;setAuthUser($authUser);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment">// return role names of the user</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        $roleNames = array();</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        $roles = $authUser-&gt;getRoles();</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">for</span> ($i=0, $count=<span class="keyword">sizeof</span>($roles); $i&lt;$count; $i++) {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;          $roleNames[] = $roles[$i]-&gt;getName();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        $response-&gt;setValue(<span class="stringliteral">&#39;roles&#39;</span>, $roleNames);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        $response-&gt;setValue(<span class="stringliteral">&#39;sid&#39;</span>, $session-&gt;getID());</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        $response-&gt;setAction(<span class="stringliteral">&#39;ok&#39;</span>);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="comment">// login failed</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        $response-&gt;addError(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554" title="Factory method for retrieving a predefind error instance. ">ApplicationError::get</a>(<span class="stringliteral">&#39;AUTHENTICATION_FAILED&#39;</span>));</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    elseif ($request-&gt;getAction() == <span class="stringliteral">&#39;logout&#39;</span>) {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      <span class="comment">// clear all session data</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      $session-&gt;destroy();</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      <span class="comment">// empty response</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      $response-&gt;clearValues();</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;?&gt;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        $authUser = null;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="classwcmf_1_1lib_1_1core_1_1_log.html#a14ef9c88c1ea83b3dbe62ab71b5bf44c" title="Print a error message for a category. ">Log::error</a>(<span class="stringliteral">&quot;Could not log in: &quot;</span>.$ex, __CLASS__);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="keywordflow">if</span> ($authUser) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="comment">// login succeeded</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        $session-&gt;clear();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        $permissionManager = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415" title="Get an instance from the configuration. ">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;permissionManager&#39;</span>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        $permissionManager-&gt;setAuthUser($authUser);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="comment">// return role names of the user</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        $roleNames = array();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        $roles = $authUser-&gt;getRoles();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">for</span> ($i=0, $count=<span class="keyword">sizeof</span>($roles); $i&lt;$count; $i++) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;          $roleNames[] = $roles[$i]-&gt;getName();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        $response-&gt;setValue(<span class="stringliteral">&#39;roles&#39;</span>, $roleNames);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        $response-&gt;setValue(<span class="stringliteral">&#39;sid&#39;</span>, $session-&gt;getID());</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        $response-&gt;setAction(<span class="stringliteral">&#39;ok&#39;</span>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="comment">// login failed</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        $response-&gt;addError(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554" title="Factory method for retrieving a predefind error instance. ">ApplicationError::get</a>(<span class="stringliteral">&#39;AUTHENTICATION_FAILED&#39;</span>));</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    elseif ($request-&gt;getAction() == <span class="stringliteral">&#39;logout&#39;</span>) {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      <span class="comment">// clear all session data</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      $session-&gt;destroy();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      <span class="comment">// empty response</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      $response-&gt;clearValues();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;?&gt;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -239,8 +243,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 18 2014 23:48:49 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+        <small>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Fri Dec 12 2014 00:17:31 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</small>
       </div>
     </div>
   </div>

@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>wCMF 4.0: User Interface Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A PHP framework for building reliable maintainable and extendable web applications">
+    <meta name="keywords" content="PHP, web application framework, model driven development">
+    <meta name="author" content="wemove digital solutions">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -38,7 +41,7 @@
               <ul class="nav navbar-nav">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-hand-o-right"></i> Guides <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Coming soon...</a></li>
+                    <li><a href="gettingstarted.html">Getting started</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -105,8 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user__inherit__graph.svg" width="387" height="595"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user__inherit__graph.svg" width="387" height="566"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -121,8 +123,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3e35c8d3dbb2c513c618a664389e0926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04e0957baeb7acde9c0c86556da2d43f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a04e0957baeb7acde9c0c86556da2d43f">getPassword</a> ()</td></tr>
 <tr class="separator:a04e0957baeb7acde9c0c86556da2d43f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a754638ee4a060aee99964f5a8d015d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a6a754638ee4a060aee99964f5a8d015d">hashPassword</a> ($password)</td></tr>
-<tr class="separator:a6a754638ee4a060aee99964f5a8d015d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1dc46472e5da1bdd9776eb07691b7d0a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a1dc46472e5da1bdd9776eb07691b7d0a">verifyPassword</a> ($password, $passwordHash)</td></tr>
 <tr class="separator:a1dc46472e5da1bdd9776eb07691b7d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbdb41bfc6dd8dc9b0b56b062fe04477"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#afbdb41bfc6dd8dc9b0b56b062fe04477">setConfig</a> ($config)</td></tr>
@@ -244,33 +244,6 @@ Public Member Functions</h2></td></tr>
 <p>The result is expected to be hashed, if the user was persisted already. If not persisted, the result may be the plaintext password. </p><dl class="section return"><dt>Returns</dt><dd>The password of the user, </dd></dl>
 
 <p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_user.html#a04e0957baeb7acde9c0c86556da2d43f">AbstractUser</a>, and <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_anonymous_user.html#a04e0957baeb7acde9c0c86556da2d43f">AnonymousUser</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6a754638ee4a060aee99964f5a8d015d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">hashPassword </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$password</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Hash a password. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">$password</td><td>The plaintext password to hash </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The hashed password. </dd></dl>
-
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_user.html#a6a754638ee4a060aee99964f5a8d015d">AbstractUser</a>, and <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_anonymous_user.html#a6a754638ee4a060aee99964f5a8d015d">AnonymousUser</a>.</p>
 
 </div>
 </div>
@@ -416,8 +389,8 @@ Public Member Functions</h2></td></tr>
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 18 2014 23:48:56 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+        <small>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Fri Dec 12 2014 00:17:37 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</small>
       </div>
     </div>
   </div>

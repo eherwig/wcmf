@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>wCMF 4.0: lib/config/impl/ConfigActionKeyProvider.php Source File</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A PHP framework for building reliable maintainable and extendable web applications">
+    <meta name="keywords" content="PHP, web application framework, model driven development">
+    <meta name="author" content="wemove digital solutions">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -38,7 +41,7 @@
               <ul class="nav navbar-nav">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-hand-o-right"></i> Guides <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Coming soon...</a></li>
+                    <li><a href="gettingstarted.html">Getting started</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -102,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * See the LICENSE file distributed with this work for</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespacewcmf_1_1lib_1_1config_1_1impl.html">   11</a></span>&#160;<span class="keyword">namespace </span>wcmf\lib\config\impl;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>wcmf\lib\config\impl;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="interfacewcmf_1_1lib_1_1config_1_1_action_key_provider.html" title="Implementations of ActionKeyProvider search for action keys. ">wcmf\lib\config\ActionKeyProvider</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html" title="ObjectFactory loads class definitions and instantiates classes. ">wcmf\lib\core\ObjectFactory</a>;</div>
@@ -116,7 +119,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_config_action_key_provider.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_config_action_key_provider.html" title="ConfigActionKeyProvider searches for action keys in the application configuration. ">ConfigActionKeyProvider</a> <span class="keyword">implements</span> <a class="code" href="interfacewcmf_1_1lib_1_1config_1_1_action_key_provider.html" title="Implementations of ActionKeyProvider search for action keys. ">ActionKeyProvider</a> {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">private</span> $_configSection = null;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">private</span> $_cacheId = null;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">private</span> $_id = null;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">   * Set the configuration section to search in.</span></div>
@@ -124,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_config_action_key_provider.html#aefd5a1f9bb69dd64222cf8b1ec7b8da4">   31</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_config_action_key_provider.html#aefd5a1f9bb69dd64222cf8b1ec7b8da4" title="Set the configuration section to search in. ">setConfigSection</a>($configSection) {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    $this-&gt;_configSection = $configSection;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    $this-&gt;_cacheId = null;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    $this-&gt;_id = null;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  }</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">  /**</span></div>
@@ -147,13 +150,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">   * @see ActionKeyProvider::getCacheId()</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">   * @see ActionKeyProvider::getId()</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_config_action_key_provider.html#a33b6ec12f934481bad7acbb577a8565d">   58</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_config_action_key_provider.html#a33b6ec12f934481bad7acbb577a8565d">getCacheId</a>() {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;_cacheId ==  null) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      $this-&gt;_cacheId = __CLASS__.<span class="charliteral">&#39;.&#39;</span>.$this-&gt;_configSection;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_config_action_key_provider.html#a12251d0c022e9e21c137a105ff683f13">   58</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_config_action_key_provider.html#a12251d0c022e9e21c137a105ff683f13">getId</a>() {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;_id == null) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      $this-&gt;_id = str_replace(<span class="charliteral">&#39;\\&#39;</span>, <span class="charliteral">&#39;.&#39;</span>, __CLASS__).<span class="charliteral">&#39;.&#39;</span>.$this-&gt;_configSection;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> $this-&gt;_cacheId;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> $this-&gt;_id;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;?&gt;</div>
@@ -165,8 +168,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 18 2014 23:48:49 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+        <small>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Fri Dec 12 2014 00:17:31 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</small>
       </div>
     </div>
   </div>

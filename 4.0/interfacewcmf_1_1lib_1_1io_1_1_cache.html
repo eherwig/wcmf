@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>wCMF 4.0: Cache Interface Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A PHP framework for building reliable maintainable and extendable web applications">
+    <meta name="keywords" content="PHP, web application framework, model driven development">
+    <meta name="author" content="wemove digital solutions">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -38,7 +41,7 @@
               <ul class="nav navbar-nav">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-hand-o-right"></i> Guides <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Coming soon...</a></li>
+                    <li><a href="gettingstarted.html">Getting started</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -106,8 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1io_1_1_cache__inherit__graph.svg" width="124" height="346"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1io_1_1_cache__inherit__graph.svg" width="235" height="346"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -158,7 +160,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>boolean </dd></dl>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#ae6cb0291eb519f7bfbca53472757a3f4">FileCache</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#ae6cb0291eb519f7bfbca53472757a3f4">FileCache</a>, and <a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_null_cache.html#ae6cb0291eb519f7bfbca53472757a3f4">NullCache</a>.</p>
 
 </div>
 </div>
@@ -196,7 +198,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Mixed </dd></dl>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#ae88a743f383e72aecb9fc49a102550db">FileCache</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#ae88a743f383e72aecb9fc49a102550db">FileCache</a>, and <a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_null_cache.html#ae88a743f383e72aecb9fc49a102550db">NullCache</a>.</p>
 
 </div>
 </div>
@@ -240,7 +242,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#ab260d7514023adcf6fce8dddf8904579">FileCache</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#ab260d7514023adcf6fce8dddf8904579">FileCache</a>, and <a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_null_cache.html#ab260d7514023adcf6fce8dddf8904579">NullCache</a>.</p>
 
 </div>
 </div>
@@ -259,14 +261,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clear the given cache section. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>The wildcard char '*' may be added to the section name in order to clear all matching sections. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$section</td><td>The caching section </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#a20738c2c4a77d11cbaf305c8aaf5f580">FileCache</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#a20738c2c4a77d11cbaf305c8aaf5f580">FileCache</a>, and <a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_null_cache.html#a20738c2c4a77d11cbaf305c8aaf5f580">NullCache</a>.</p>
 
 </div>
 </div>
@@ -285,7 +287,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Clear all cache sections. </p>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#a1c40f27bdcc44f4faf3fc044ee577af2">FileCache</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#a1c40f27bdcc44f4faf3fc044ee577af2">FileCache</a>, and <a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_null_cache.html#a1c40f27bdcc44f4faf3fc044ee577af2">NullCache</a>.</p>
 
 </div>
 </div>
@@ -300,8 +302,8 @@ Public Member Functions</h2></td></tr>
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 18 2014 23:48:53 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+        <small>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Fri Dec 12 2014 00:17:35 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</small>
       </div>
     </div>
   </div>

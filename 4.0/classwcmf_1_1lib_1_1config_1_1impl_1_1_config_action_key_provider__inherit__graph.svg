@@ -19,7 +19,7 @@
 <text text-anchor="start" x="8" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setConfigSection()</text>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ containsKey()</text>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getKeyValue()</text>
-<text text-anchor="start" x="8" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getCacheId()</text>
+<text text-anchor="start" x="8" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getId()</text>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
@@ -31,7 +31,7 @@
 <polyline fill="none" stroke="black" points="13.5,-168.5 109.5,-168.5 "/>
 <text text-anchor="start" x="21.5" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ containsKey()</text>
 <text text-anchor="start" x="21.5" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getKeyValue()</text>
-<text text-anchor="start" x="21.5" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getCacheId()</text>
+<text text-anchor="start" x="21.5" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getId()</text>
 </a>
 </g>
 </g>

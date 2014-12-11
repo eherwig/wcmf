@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>wCMF 4.0: Request Class Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A PHP framework for building reliable maintainable and extendable web applications">
+    <meta name="keywords" content="PHP, web application framework, model driven development">
+    <meta name="author" content="wemove digital solutions">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -38,7 +41,7 @@
               <ul class="nav navbar-nav">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-hand-o-right"></i> Guides <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Coming soon...</a></li>
+                    <li><a href="gettingstarted.html">Getting started</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -101,14 +104,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>It is typically instantiated and filled by the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html" title="ActionMapper implementations are responsible for instantiating and executing Controllers based on the...">ActionMapper</a>.</p>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_request_8php_source.html#l00024">24</a> of file <a class="el" href="_request_8php_source.html">Request.php</a>.</p>
+<p>Definition at line <a class="el" href="_request_8php_source.html#l00026">26</a> of file <a class="el" href="_request_8php_source.html">Request.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for Request:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1presentation_1_1_request__inherit__graph.svg" width="202" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1presentation_1_1_request__inherit__graph.svg" width="202" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -234,7 +236,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Constructor. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a429349292e9a88be9acf2fa6a5c6daf3" title="Constructor. ">ControllerMessage::__construct</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_request_8php_source.html#l00032">32</a> of file <a class="el" href="_request_8php_source.html">Request.php</a>.</p>
+<p>Definition at line <a class="el" href="_request_8php_source.html#l00034">34</a> of file <a class="el" href="_request_8php_source.html">Request.php</a>.</p>
 
 </div>
 </div>
@@ -292,7 +294,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. ">Request</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_request_8php_source.html#l00060">60</a> of file <a class="el" href="_request_8php_source.html">Request.php</a>.</p>
+<p>Definition at line <a class="el" href="_request_8php_source.html#l00062">62</a> of file <a class="el" href="_request_8php_source.html">Request.php</a>.</p>
 
 </div>
 </div>
@@ -312,7 +314,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Get the HTTP method of the request. </p>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_request_8php_source.html#l00136">136</a> of file <a class="el" href="_request_8php_source.html">Request.php</a>.</p>
+<p>Definition at line <a class="el" href="_request_8php_source.html#l00148">148</a> of file <a class="el" href="_request_8php_source.html">Request.php</a>.</p>
 
 </div>
 </div>
@@ -338,7 +340,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_request_8php_source.html#l00144">144</a> of file <a class="el" href="_request_8php_source.html">Request.php</a>.</p>
+<p>Definition at line <a class="el" href="_request_8php_source.html#l00156">156</a> of file <a class="el" href="_request_8php_source.html">Request.php</a>.</p>
 
 </div>
 </div>
@@ -358,7 +360,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Get the message response format. </p>
 <p>If no explicit format is set, the format is derived from the Content-Type header value, if existing. If no format can be derived, the first format in the configuration key 'Formats' will be used. </p><dl class="section return"><dt>Returns</dt><dd>Format instance </dd></dl>
 
-<p>Definition at line <a class="el" href="_request_8php_source.html#l00155">155</a> of file <a class="el" href="_request_8php_source.html">Request.php</a>.</p>
+<p>Definition at line <a class="el" href="_request_8php_source.html#l00167">167</a> of file <a class="el" href="_request_8php_source.html">Request.php</a>.</p>
 
 </div>
 </div>
@@ -373,8 +375,8 @@ Additional Inherited Members</h2></td></tr>
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 18 2014 23:48:55 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+        <small>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Fri Dec 12 2014 00:17:36 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</small>
       </div>
     </div>
   </div>

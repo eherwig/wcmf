@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>wCMF 4.0: Node Class Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A PHP framework for building reliable maintainable and extendable web applications">
+    <meta name="keywords" content="PHP, web application framework, model driven development">
+    <meta name="author" content="wemove digital solutions">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -38,7 +41,7 @@
               <ul class="nav navbar-nav">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-hand-o-right"></i> Guides <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Coming soon...</a></li>
+                    <li><a href="gettingstarted.html">Getting started</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -101,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> adds the concept of relations to PersistentObject. </p>
-<p>It is the basic component for building object trees (although a <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> can have more than one parents). Relations are stored as values where the value name is the role name. The <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> class implements the 'Composite Pattern'. Use the methods <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#ab7e46d534a9af31201071356b0f3171e" title="Add a Node to the given relation. ">addNode()</a>, <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#a7b02e282038aaef880ac63951e57fe24" title="Delete a Node from the given relation. ">deleteNode()</a> to build/modify trees.</p>
+<p>It is the basic component for building object trees (although a <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> can have more than one parents). Relations are stored as values where the value name is the role name. The <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> class implements the <em>Composite Pattern</em>. Use the methods <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#ab7e46d534a9af31201071356b0f3171e" title="Add a Node to the given relation. ">addNode()</a>, <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#a7b02e282038aaef880ac63951e57fe24" title="Delete a Node from the given relation. ">deleteNode()</a> to build/modify trees.</p>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
 <p>Definition at line <a class="el" href="_node_8php_source.html#l00032">32</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
@@ -110,8 +113,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1model_1_1_node__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1model_1_1_node__inherit__graph.svg" width="443" height="1058"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -1539,9 +1541,9 @@ Static Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Accept a Visitor. </p>
-<p>For use with the 'Visitor Pattern'. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>For use with the <em>Visitor Pattern</em>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$visitor</td><td>The Visitor. </td></tr>
+    <tr><td class="paramname">$visitor</td><td>Visitor instance. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1703,8 +1705,8 @@ Static Protected Member Functions</h2></td></tr>
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <p>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 18 2014 23:48:53 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</p>
+        <small>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Fri Dec 12 2014 00:17:35 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.7</small>
       </div>
     </div>
   </div>

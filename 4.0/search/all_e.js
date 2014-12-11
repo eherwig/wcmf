@@ -25,6 +25,8 @@ var searchData=
   ['messagecontroller',['MessageController',['../classwcmf_1_1application_1_1controller_1_1_message_controller.html',1,'wcmf::application::controller']]],
   ['messagecontroller_2ephp',['MessageController.php',['../_message_controller_8php.html',1,'']]],
   ['mkdirrec',['mkdirRec',['../classwcmf_1_1lib_1_1io_1_1_file_util.html#aea7a754facedfed79eae2a831f5af5a9',1,'wcmf::lib::io::FileUtil']]],
+  ['modeling',['Modeling',['../modeling.html',1,'']]],
+  ['modeling_2edoxy',['modeling.doxy',['../modeling_8doxy.html',1,'']]],
   ['modifier_2eclean_5ftext_2ephp',['modifier.clean_text.php',['../modifier_8clean__text_8php.html',1,'']]],
   ['modifier_2emoney_5fformat_2ephp',['modifier.money_format.php',['../modifier_8money__format_8php.html',1,'']]],
   ['modifier_2enumber_5fformat_2ephp',['modifier.number_format.php',['../modifier_8number__format_8php.html',1,'']]],

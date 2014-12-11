@@ -1,6 +1,6 @@
 <map id="PersistentObject" name="PersistentObject">
 <area shape="rect" id="node2" href="$classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. " alt="" coords="53,365,291,707"/>
-<area shape="rect" id="node3" href="$classwcmf_1_1lib_1_1model_1_1_null_node.html" title="NullNode is an implementation of the NullObject pattern, It inherits all functionality from Node (act..." alt="" coords="5,872,88,949"/>
-<area shape="rect" id="node4" href="$classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_role.html" title="Default implementation of a role. " alt="" coords="113,857,231,964"/>
-<area shape="rect" id="node5" href="$classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_user.html" title="Default implementation of a user that is persistent. " alt="" coords="256,755,437,1067"/>
+<area shape="rect" id="node3" href="$classwcmf_1_1lib_1_1model_1_1_null_node.html" title="NullNode is an implementation of the NullObject pattern, It inherits all functionality from Node (act..." alt="" coords="5,865,88,942"/>
+<area shape="rect" id="node4" href="$classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_role.html" title="Default implementation of a role. " alt="" coords="113,850,231,957"/>
+<area shape="rect" id="node5" href="$classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_user.html" title="Default implementation of a user that is persistent. " alt="" coords="256,755,437,1052"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="AbstractUser" name="AbstractUser">
 <area shape="rect" id="node2" href="$classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. " alt="" coords="5,365,244,707"/>
 <area shape="rect" id="node3" href="$classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. " alt="" coords="7,5,243,317"/>
-<area shape="rect" id="node4" href="$interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html" title="User is the interface for users. " alt="" coords="269,424,397,648"/>
+<area shape="rect" id="node4" href="$interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html" title="User is the interface for users. " alt="" coords="269,431,397,641"/>
 </map>

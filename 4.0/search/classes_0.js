@@ -1,7 +1,7 @@
 var searchData=
 [
   ['abstractformat',['AbstractFormat',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_abstract_format.html',1,'wcmf::lib::presentation::format::impl']]],
-  ['abstractmapper',['AbstractMapper',['../classwcmf_1_1lib_1_1persistence_1_1_abstract_mapper.html',1,'wcmf::lib::persistence']]],
+  ['abstractmapper',['AbstractMapper',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html',1,'wcmf::lib::persistence::impl']]],
   ['abstractnodeserializer',['AbstractNodeSerializer',['../classwcmf_1_1lib_1_1model_1_1impl_1_1_abstract_node_serializer.html',1,'wcmf::lib::model::impl']]],
   ['abstractpermissionmanager',['AbstractPermissionManager',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html',1,'wcmf::lib::security::impl']]],
   ['abstractquery',['AbstractQuery',['../classwcmf_1_1lib_1_1model_1_1_abstract_query.html',1,'wcmf::lib::model']]],
