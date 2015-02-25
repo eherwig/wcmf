@@ -101,7 +101,7 @@
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="classwcmf_1_1lib_1_1persistence_1_1output_1_1impl_1_1_auditing_output_strategy.html" target="_top" xlink:title="LogOutputStrategy outputs object changes to the logger category LogOutputStrategy, loglevel info. ">
+<g id="a_node6"><a xlink:href="classwcmf_1_1lib_1_1persistence_1_1output_1_1impl_1_1_auditing_output_strategy.html" target="_top" xlink:title="AuditingOutputStrategy outputs object changes to the logger category AuditingOutputStrategy, loglevel info. ">
 <polygon fill="white" stroke="black" points="396,-226.5 396,-305.5 514,-305.5 514,-226.5 396,-226.5"/>
 <text text-anchor="middle" x="455" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">AuditingOutputStrategy</text>
 <polyline fill="none" stroke="black" points="396,-286.5 514,-286.5 "/>

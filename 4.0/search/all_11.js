@@ -57,6 +57,8 @@ var searchData=
   ['position_2ephp',['Position.php',['../_position_8php.html',1,'']]],
   ['prefilter_2eremoveprids_2ephp',['prefilter.removeprids.php',['../prefilter_8removeprids_8php.html',1,'']]],
   ['prepareforstorage',['prepareForStorage',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html#a8a5c3ac15dd4c27d618a1e3c455e6a3d',1,'wcmf\lib\model\mapper\NodeUnifiedRDBMapper\prepareForStorage()'],['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a8a5c3ac15dd4c27d618a1e3c455e6a3d',1,'wcmf\lib\model\mapper\RDBMapper\prepareForStorage()']]],
+  ['presentation',['Presentation',['../presentation.html',1,'']]],
+  ['presentation_2edoxy',['presentation.doxy',['../presentation_8doxy.html',1,'']]],
   ['principalfactory',['PrincipalFactory',['../interfacewcmf_1_1lib_1_1security_1_1principal_1_1_principal_factory.html',1,'wcmf::lib::security::principal']]],
   ['principalfactory_2ephp',['PrincipalFactory.php',['../_principal_factory_8php.html',1,'']]],
   ['printjsonresult',['printJSONResult',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_json_format.html#a111075f7d00c254deed5cfc9c5452667',1,'wcmf::lib::presentation::format::impl::JsonFormat']]],

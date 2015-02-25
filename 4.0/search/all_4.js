@@ -66,8 +66,6 @@ var searchData=
   ['controller_2ephp',['Controller.php',['../_controller_8php.html',1,'']]],
   ['controllermessage',['ControllerMessage',['../classwcmf_1_1lib_1_1presentation_1_1_controller_message.html',1,'wcmf::lib::presentation']]],
   ['controllermessage_2ephp',['ControllerMessage.php',['../_controller_message_8php.html',1,'']]],
-  ['controllers',['Controllers',['../controllers.html',1,'']]],
-  ['controllers_2edoxy',['controllers.doxy',['../controllers_8doxy.html',1,'']]],
   ['convertcp1252utf8toiso',['convertCp1252Utf8ToIso',['../classwcmf_1_1lib_1_1io_1_1_encoding_util.html#ab7778966c22be82638f5adfe2698575d',1,'wcmf::lib::io::EncodingUtil']]],
   ['convertisotocp1252utf8',['convertIsoToCp1252Utf8',['../classwcmf_1_1lib_1_1io_1_1_encoding_util.html#a5afa6dd70bedc1b158ee1e7e029b86c6',1,'wcmf::lib::io::EncodingUtil']]],
   ['convertvaluesforstorage',['convertValuesForStorage',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html#a36a90e8ea60010f3c789e4a004abcab4',1,'wcmf::lib::model::mapper::NodeUnifiedRDBMapper']]],

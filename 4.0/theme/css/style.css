@@ -3,13 +3,44 @@
 }
 
 .tocify {
-  width: auto;
+  width: 175px;
+  margin-left: 0;
+  border: none;
+  webkit-border-radius: 0;
+  moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.tocify-header li, .tocify-subheader li, .tocify-subheader .tocify-subheader li {
+  text-indent: 0;
+}
+
+.tocify ul, .tocify li {
+  line-height: inherit;
+}
+
+.tocify-header li {
+  text-transform: uppercase;
+}
+
+.tocify-subheader li {
+  text-transform: none;
+  font-size: inherit;
+}
+
+.tocify-subheader .tocify-subheader li {
+  text-transform: none;
+  font-style: italic;
 }
 
 .nav-list > .active > a, .nav-list > .active > a:hover {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
   background-color: #0088cc;
+}
+
+.nav-list > li > a {
+  padding: 10px;
 }
 
 a[name] {
@@ -36,9 +67,39 @@ td.entry {
   padding-right: 8px;
 }
 
-.anchor{
+.anchor {
   padding-top: 50px;
   margin-top: -50px;
+}
+
+.image {
+  padding-top: 20px;
+}
+
+.caption {
+  padding: 10px 0 20px 0;
+  font-style: italic;
+}
+
+.fragment {
+  margin: 4px 8px 10px 2px !important;
+}
+
+.panel-default {
+  border: none;
+}
+
+.contents {
+  margin-top: -20px;
+}
+
+.textblock h2, .textblock h3, .textblock h4 {
+  padding-top: 20px;
+}
+
+.textblock h2 {
+  border-top: 1px solid #ddd;
+  margin-top: 24px;
 }
 
 // Search
@@ -62,7 +123,8 @@ td.entry {
 }
 
 .SRChildren {
-  padding-left: 10px; padding-bottom: .5em
+  padding-left: 10px;
+  padding-bottom: .5em
 }
 
 .SRPage .SRChildren {
