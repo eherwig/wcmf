@@ -25,6 +25,7 @@
     <link href="theme/css/syntax.css" rel="stylesheet">
     <link href="theme/css/style.css" rel="stylesheet">
     <script src="search/search.js"></script>
+    <script src="search/searchdata.js"></script>
   </head>
   <body style="min-height: 200px; padding-top: 50px;">
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
@@ -105,14 +106,115 @@ Model</h1>
 <p>We believe that this approach helps to develop a clear concept of the application and improves code quality and maintainability dramatically.</p>
 <h2><a class="anchor" id="model_create"></a>
 Modeling</h2>
-<p>Technically the model is an <a href="http://en.wikipedia.org/wiki/Unified_Modeling_Language">UML</a> model that uses the Chronos <a href="http://en.wikipedia.org/wiki/Profile_%28UML%29">profile</a> from the <a href="http://sourceforge.net/projects/olympos/">Olympos</a> project. It is stored in an XML file (e.g. <code>model.uml</code>). This file can be directly edited using <a href="http://www.eclipse.org/papyrus/">Eclipse Papyrus</a> or any other compatible UML modeling tool. Alternatively you can use the <a href="http://sourceforge.net/projects/olympos/">Chronos Web Modeler</a> that allows browser based collaborative modeling. wCMF uses a minimized version of the code generator from the Olympos project.</p>
+<p>Technically the model is an <a href="http://en.wikipedia.org/wiki/Unified_Modeling_Language">UML</a> model that uses the <em>Chronos</em> <a href="http://en.wikipedia.org/wiki/Profile_%28UML%29">profile</a> from the <a href="http://sourceforge.net/projects/olympos/">Olympos</a> project. It is stored in an XML file (e.g. <code>model.uml</code>). This file can be directly edited using <a href="http://www.eclipse.org/papyrus/">Eclipse Papyrus</a> or any other compatible UML modeling tool. Alternatively you can use the <a href="http://sourceforge.net/projects/olympos/">Chronos Web Modeler</a> that allows browser based collaborative modeling. wCMF uses a minimized version of the code generator from the Olympos project with wCMF specific templates.</p>
+<p>The following diagram shows the workflow of the generator.</p>
 <div class="image">
 <img src="generator.png" alt="generator.png"/>
 <div class="caption">
 Generator workflow</div></div>
-<p> In the following sections we describe how to model the different aspects of the application.</p>
+ <h3><a class="anchor" id="model_profile"></a>
+Chronos profile</h3>
+<p><em>Profiles</em> are used to extend UML for different domains. They consist of <b>stereotypes</b> and <b>tags</b> that are applied to model elements in order to express domain specific features. The following sections describe the stereotypes and tags of the <em>Chronos</em> profile that are used to define various aspects of a wCMF application. The complete <a href="https://raw.githubusercontent.com/iherwig/wcmf-default-app/master/model/chronos.profile.uml">Chronos profile</a> is available on GitHub.</p>
+<p>You will notice that only a small part of UML is used to define the application and not all aspects of the application are defined in the model. Especially the actual behavior of controllers and domain classes is omitted, since we believe that this is more efficiently expressed in code. For simplicity and compatibility reasons all aspects can be modeled in <b>class diagrams</b> using <b>classes</b>, <b>attributes</b> and <b>associations</b>.</p>
+<dl class="section note"><dt>Note</dt><dd>UML elements and concepts that are not mentioned in the following sections are most likely not supported by the generator and will be ignored.</dd></dl>
 <h3><a class="anchor" id="model_classes"></a>
 Domain classes</h3>
+<p>The following <b>stereotypes</b> are used to model persistent domain classes and their relations.</p>
+<table class="doxtable">
+<tr>
+<th>Name </th><th>UML meta class </th><th>Description </th><th>Example  </th></tr>
+<tr>
+<td><em>ChiNode</em> </td><td>Class </td><td>Persistent domain class. Must inherit from the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html"><code>Node</code></a>. </td><td><em>Article</em> </td></tr>
+<tr>
+<td><em>ChiValue</em> </td><td>Attribute </td><td>Persistent attribute in a <em>ChiNode</em>. </td><td><em>headline</em> of Article </td></tr>
+<tr>
+<td><em>ChiValueRef</em> </td><td>Attribute </td><td>ReadOnly-reference to an attribute of another <em>ChiNode</em>. </td><td><em>author_name</em> in Article references <em>name</em> in Author </td></tr>
+<tr>
+<td><em>ChiManyToMany</em> </td><td>Class </td><td>Connection class in a many to many relation between <em>ChiNode</em> classes. Must inherit from <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html"><code>Node</code></a>. </td><td>One <em>Author</em> writes nultiple <em>Articles</em> and one <em>Article</em> has multiple <em>Authors</em> </td></tr>
+<tr>
+<td><em>ChiAssociation</em> </td><td>Association </td><td>Optional, e.g. used to define a foreign key name in a relation between <em>ChiNode</em> instances. </td><td><em>author_id</em> in Article as foreign key to Author table </td></tr>
+</table>
+<h4><a class="anchor" id="model_chinode"></a>
+ChiNode / ChiManyToMany</h4>
+<p>The following <b>tags</b> are defined on the <em>ChiNode</em> / <em>ChiManyToMany</em> stereotypes.</p>
+<table class="doxtable">
+<tr>
+<th>Tag </th><th>Description </th><th>Example </th><th>Default value  </th></tr>
+<tr>
+<td><em>initparams</em> </td><td>Name of the configuration section, which defines initialization parameters for the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html"><code>PersistenceMapper</code></a> instance </td><td><em>database</em> </td><td><em>database</em> </td></tr>
+<tr>
+<td><em>display_value</em> </td><td>Attributes to display in a list view: A single attribute name or |-separated list of attribute names </td><td><em>name|date</em> </td><td></td></tr>
+<tr>
+<td><em>orderby</em> </td><td>Definition of default sorting: <em>none</em> (no order), <em>sortkey</em> (generates a <em>sortkey</em> column, that is used for explicit sorting) or the name of any attribute optionally followed by <em>ASC</em> or <em>DESC</em> </td><td><em>name ASC</em> </td><td><em>none</em> </td></tr>
+<tr>
+<td><em>is_searchable</em> </td><td>Boolean, indicating whether this type should be included in the default search </td><td><em>true</em> </td><td><em>true</em> </td></tr>
+<tr>
+<td><em>is_soap</em> </td><td>Boolean, indicating whether this type should be exposed to the SOAP interface </td><td><em>true</em> </td><td><em>true</em> </td></tr>
+<tr>
+<td><em>table_name</em> </td><td>The name of the database table in which instances will be stored </td><td><em>Author</em> </td><td>Class name </td></tr>
+<tr>
+<td><em>pk_name</em> </td><td>The name of the primary key column: A single value or |-separated list of values (the generator will add this automatically, if there is no appropriate attribute) </td><td><em>fk_user_id|fk_role_id</em> </td><td><em>id</em> </td></tr>
+<tr>
+<td><em>child_order</em> </td><td>The order of the associated child types: A single type or |-separated list of types </td><td><em>Image|Textblock|Attachment</em> in Document type </td><td></td></tr>
+<tr>
+<td><em>parent_order</em> </td><td>The order of the associated parent types: A single type or |-separated list of types </td><td><em>Author|Publisher</em> in Book type </td><td></td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>Some of these tags are accessible in the application through the <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#aa54d71e15bac85c5f7a13e62b9933652"><code>PersistentObject::getProperty</code></a> method.</dd></dl>
+<h4><a class="anchor" id="model_chivalue"></a>
+ChiValue</h4>
+<p>The following <b>tags</b> are defined on the <em>ChiValue</em> stereotype.</p>
+<table class="doxtable">
+<tr>
+<th>Tag </th><th>Description </th><th>Example </th><th>Default value  </th></tr>
+<tr>
+<td><em>app_data_type</em> </td><td>Application specific attribute tags: A single value or |-separated list of values </td><td><em>TAG_A|TAG_B</em> </td><td><em>DATATYPE_ATTRIBUTE</em> </td></tr>
+<tr>
+<td><em>db_data_type</em> </td><td>The attribute's database type </td><td><em>TEXT</em> </td><td><em>VARCHAR(255)</em> </td></tr>
+<tr>
+<td><em>is_editable</em> </td><td>Boolean, indicating whether this attribute is editable </td><td><em>true</em> </td><td><em>true</em> </td></tr>
+<tr>
+<td><em>input_type</em> </td><td>Name of the attribute's input control as listed in the <em>InputTypes</em> configuration section </td><td><em>filebrowser</em> </td><td><em>text</em> </td></tr>
+<tr>
+<td><em>display_type</em> </td><td>Name of the attribute's display type as listed in the <em>DisplayTypes</em> configuration section </td><td><em>image</em> </td><td><em>text</em> </td></tr>
+<tr>
+<td><em>restrictions_match</em> </td><td>Name of the attribute's validation type as listed in the <em>Validator</em> configuration section </td><td><em>regexp:^[0-9]*$</em> </td><td></td></tr>
+<tr>
+<td><em>restrictions_not_match</em> </td><td><em>not used</em> </td><td></td><td></td></tr>
+<tr>
+<td><em>restrictions_description</em> </td><td>Validation description used in case of a validation error </td><td><em>The value must be an integer or empty</em> </td><td></td></tr>
+<tr>
+<td><em>column_name</em> </td><td>The name of the database column in which the attribute will be stored </td><td><em>name</em> </td><td>Attribute name </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>Some of these tags are accessible in the application through the <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a095af4f09e7aa62ba45e94a35c047c1d"><code>PersistentObject::getValueProperty</code></a> method.</dd></dl>
+<h4><a class="anchor" id="model_chivalueref"></a>
+ChiValueRef</h4>
+<p>The following <b>tags</b> are defined on the <em>ChiValueRef</em> stereotype.</p>
+<table class="doxtable">
+<tr>
+<th>Tag </th><th>Description </th><th>Example </th><th>Default value  </th></tr>
+<tr>
+<td><em>reference_type</em> </td><td>Type, that owns the referenced attribute </td><td><em>Author</em> </td><td></td></tr>
+<tr>
+<td><em>reference_value</em> </td><td>Name of the references attribute </td><td><em>name</em> </td><td></td></tr>
+</table>
+<h4><a class="anchor" id="model_association"></a>
+ChiAssociation</h4>
+<p>The following <b>tags</b> are defined on the <em>ChiAssociation</em> stereotype.</p>
+<table class="doxtable">
+<tr>
+<th>Tag </th><th>Description </th><th>Example </th><th>Default value  </th></tr>
+<tr>
+<td><em>fk_name</em> </td><td>Name of the foreign key attribute (the generator will add this automatically, if there is no appropriate attribute) </td><td><em>author_id</em> </td><td><em>fk</em>_type_ <em>id</em> </td></tr>
+</table>
+<h4>Inheritance</h4>
+<p><span class="label label-danger">TODO</span></p>
+<h4>Associations</h4>
+<p><span class="label label-danger">TODO</span></p>
+<h5>Navigability</h5>
+<p><span class="label label-danger">TODO</span></p>
+<h5>Association types</h5>
+<p><span class="label label-danger">TODO</span></p>
+<h5>Multiple associations</h5>
 <p><span class="label label-danger">TODO</span></p>
 <h3><a class="anchor" id="model_flow"></a>
 Application flow</h3>
@@ -131,8 +233,8 @@ Generating</h2>
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <small>&copy; 2014 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Feb 25 2015 01:29:03 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+        <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Sun Mar 1 2015 23:01:50 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
