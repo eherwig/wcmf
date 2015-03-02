@@ -46,14 +46,15 @@
                     <li><a href="architecture.html">Architecture</a></li>
                     <li><a href="model.html">Model</a></li>
                     <li><a href="persistence.html">Persistence</a></li>
-                    <!--li><a href="presentation.html">Presentation</a></li-->
+                    <li><a href="presentation.html">Presentation</a></li>
                     <li><a href="configuration.html">Configuration</a></li>
-                    <!--li><a href="permissions.html">Permissions</a></li-->
-                    <!--li><a href="i18n.html">I18N</a></li-->
+                    <li><a href="permissions.html">Permissions</a></li>
+                    <li><a href="i18n.html">I18N</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
+                <li><a href="#"><i class="fa fa-support"></i> Support</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
                 <li>
@@ -155,9 +156,9 @@ ChiNode / ChiManyToMany</h4>
 <tr>
 <td><em>pk_name</em> </td><td>The name of the primary key column: A single value or |-separated list of values (the generator will add this automatically, if there is no appropriate attribute) </td><td><em>fk_user_id|fk_role_id</em> </td><td><em>id</em> </td></tr>
 <tr>
-<td><em>child_order</em> </td><td>The order of the associated child types: A single type or |-separated list of types </td><td><em>Image|Textblock|Attachment</em> in Document type </td><td></td></tr>
+<td><em>child_order</em> </td><td>The order of the associated child types: A single type or |-separated list of types </td><td><em>Image|Textblock|Attachment</em> in Article type </td><td></td></tr>
 <tr>
-<td><em>parent_order</em> </td><td>The order of the associated parent types: A single type or |-separated list of types </td><td><em>Author|Publisher</em> in Book type </td><td></td></tr>
+<td><em>parent_order</em> </td><td>The order of the associated parent types: A single type or |-separated list of types </td><td><em>Author|Publisher</em> in Article type </td><td></td></tr>
 </table>
 <dl class="section note"><dt>Note</dt><dd>Some of these tags are accessible in the application through the <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#aa54d71e15bac85c5f7a13e62b9933652"><code>PersistentObject::getProperty</code></a> method.</dd></dl>
 <h4><a class="anchor" id="model_chivalue"></a>
@@ -206,7 +207,15 @@ ChiAssociation</h4>
 <tr>
 <td><em>fk_name</em> </td><td>Name of the foreign key attribute (the generator will add this automatically, if there is no appropriate attribute) </td><td><em>author_id</em> </td><td><em>fk</em>_type_ <em>id</em> </td></tr>
 </table>
-<h4>Inheritance</h4>
+<h4>Example diagram</h4>
+<p>A simple data model is shown in the diagram below. Each of the domain classes <em>Author</em>, <em>Article</em> and <em>Image</em> is modeled with <em>ChiNode</em> stereotype, their attributes with <em>ChiValue</em> stereotype. The only exception is the <em>author_name</em> attribute, which is a reference to the <em>name</em> attribute of <em>Author</em> and therefore uses the stereotype <em>ChiValueRef</em>. As the relations between the classes show, one <em>Author</em> can own several <em>Articles</em> and each <em>Article</em> in turn can contain several <em>Images</em>.</p>
+<p>All <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html"><code>PersistenceMapper</code></a> instance are initialized using the parameters defined in the <em>database</em> configuration section.</p>
+<p>In list views <em>Author</em> instances are sorted by <em>name</em> while <em>Article</em> and <em>Image</em> instances get an attribute <em>sortkey</em> which is used to define an explicit order.</p>
+<div class="image">
+<img src="model.png" alt="model.png"/>
+<div class="caption">
+Example diagram</div></div>
+ <h4>Inheritance</h4>
 <p><span class="label label-danger">TODO</span></p>
 <h4>Associations</h4>
 <p><span class="label label-danger">TODO</span></p>
@@ -219,11 +228,20 @@ ChiAssociation</h4>
 <h3><a class="anchor" id="model_flow"></a>
 Application flow</h3>
 <p><span class="label label-danger">TODO</span></p>
+<h3><a class="anchor" id="model_default"></a>
+Default model</h3>
+<p><span class="label label-danger">TODO</span></p>
+<h2><a class="anchor" id="model_generator"></a>
+Generator</h2>
+<p><span class="label label-danger">TODO</span></p>
 <h3><a class="anchor" id="model_config"></a>
 Configuration</h3>
 <p><span class="label label-danger">TODO</span></p>
-<h2><a class="anchor" id="model_generate"></a>
-Generating</h2>
+<h3><a class="anchor" id="model_run"></a>
+Running</h3>
+<p><span class="label label-danger">TODO</span></p>
+<h3><a class="anchor" id="model_artefacts"></a>
+Artefacts</h3>
 <p><span class="label label-danger">TODO</span> </p>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
@@ -234,7 +252,7 @@ Generating</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sun Mar 1 2015 23:01:50 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Mon Mar 2 2015 23:31:12 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
