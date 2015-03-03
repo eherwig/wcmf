@@ -209,7 +209,7 @@ ChiAssociation</h4>
 </table>
 <h4>Example diagram</h4>
 <p>A simple data model is shown in the diagram below. Each of the domain classes <em>Author</em>, <em>Article</em> and <em>Image</em> is modeled with <em>ChiNode</em> stereotype, their attributes with <em>ChiValue</em> stereotype. The only exception is the <em>author_name</em> attribute, which is a reference to the <em>name</em> attribute of <em>Author</em> and therefore uses the stereotype <em>ChiValueRef</em>. As the relations between the classes show, one <em>Author</em> can own several <em>Articles</em> and each <em>Article</em> in turn can contain several <em>Images</em>.</p>
-<p>All <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html"><code>PersistenceMapper</code></a> instance are initialized using the parameters defined in the <em>database</em> configuration section.</p>
+<p>All <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html"><code>PersistenceMapper</code></a> instances are initialized using the parameters defined in the <em>database</em> configuration section.</p>
 <p>In list views <em>Author</em> instances are sorted by <em>name</em> while <em>Article</em> and <em>Image</em> instances get an attribute <em>sortkey</em> which is used to define an explicit order.</p>
 <div class="image">
 <img src="model.png" alt="model.png"/>
