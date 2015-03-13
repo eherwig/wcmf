@@ -936,7 +936,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;<span class="comment">   * @param $name The relation name (= role)</span></div>
 <div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00832"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1_node.html#a5e307e5fdfc4d0fd39202738593c0034">  832</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1_node.html#a5e307e5fdfc4d0fd39202738593c0034" title="Add an uninitialized relation. ">addRelation</a>($name) {</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    <span class="keywordflow">if</span> (!$this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a270bd65d789405427f5005ef5b0e0f38" title="Values and Properties. ">hasValue</a>($name)) {</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    <span class="keywordflow">if</span> (!$this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a270bd65d789405427f5005ef5b0e0f38" title="Check if the node has a given item. ">hasValue</a>($name)) {</div>
 <div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;      $this-&gt;_relationStates[$name] = <a class="code" href="classwcmf_1_1lib_1_1model_1_1_node.html#a6729718117a7d6b4bcb7f96fc93e57e0">Node::RELATION_STATE_UNINITIALIZED</a>;</div>
 <div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;      $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a71a273f5aef767615099c573a832f3e5" title="Internal (fast) version to set a value without any validation, state change, listener notification et...">setValueInternal</a>($name, null);</div>
 <div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    }</div>
@@ -984,7 +984,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Mar 13 2015 12:47:04 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 13 2015 18:37:44 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
