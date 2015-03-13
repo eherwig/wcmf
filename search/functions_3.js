@@ -60,7 +60,7 @@ var searchData=
   ['createsection',['createSection',['../classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html#a4607ca457e0330d8c746700bbc4fbe05',1,'wcmf\lib\config\impl\InifileConfiguration\createSection()'],['../interfacewcmf_1_1lib_1_1config_1_1_writable_configuration.html#a4607ca457e0330d8c746700bbc4fbe05',1,'wcmf\lib\config\WritableConfiguration\createSection()']]],
   ['createthumbnail',['createThumbnail',['../classwcmf_1_1lib_1_1util_1_1_graphics_util.html#a4d4316d16354f293f26ccdd46b7dbc2f',1,'wcmf::lib::util::GraphicsUtil']]],
   ['cropimage',['cropImage',['../classwcmf_1_1lib_1_1util_1_1_graphics_util.html#a468677f50609efbe878ef52ffa20e36e',1,'wcmf::lib::util::GraphicsUtil']]],
-  ['cropstring',['cropString',['../classwcmf_1_1lib_1_1util_1_1_string_util.html#af63e008529a615a4dcfbbb3720750fcf',1,'wcmf::lib::util::StringUtil']]],
+  ['cropstring',['cropString',['../classwcmf_1_1lib_1_1util_1_1_string_util.html#ad3f4c27d0ef72af661f7b69e732fe296',1,'wcmf::lib::util::StringUtil']]],
   ['current',['current',['../classwcmf_1_1lib_1_1model_1_1_node_iterator.html#af343507d1926e6ecf964625d41db528c',1,'wcmf\lib\model\NodeIterator\current()'],['../classwcmf_1_1lib_1_1model_1_1_node_value_iterator.html#af343507d1926e6ecf964625d41db528c',1,'wcmf\lib\model\NodeValueIterator\current()'],['../classwcmf_1_1lib_1_1model_1_1_persistent_iterator.html#af343507d1926e6ecf964625d41db528c',1,'wcmf\lib\model\PersistentIterator\current()']]],
   ['currentnode',['currentNode',['../classwcmf_1_1lib_1_1model_1_1_node_value_iterator.html#acd6cfc475ffca8ad2a8504cfb8afab05',1,'wcmf::lib::model::NodeValueIterator']]]
 ];
