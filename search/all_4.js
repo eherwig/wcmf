@@ -95,7 +95,7 @@ var searchData=
   ['criteria',['Criteria',['../classwcmf_1_1lib_1_1persistence_1_1_criteria.html',1,'wcmf::lib::persistence']]],
   ['criteria_2ephp',['Criteria.php',['../_criteria_8php.html',1,'']]],
   ['cropimage',['cropImage',['../classwcmf_1_1lib_1_1util_1_1_graphics_util.html#a468677f50609efbe878ef52ffa20e36e',1,'wcmf::lib::util::GraphicsUtil']]],
-  ['cropstring',['cropString',['../classwcmf_1_1lib_1_1util_1_1_string_util.html#ad3f4c27d0ef72af661f7b69e732fe296',1,'wcmf::lib::util::StringUtil']]],
+  ['cropstring',['cropString',['../classwcmf_1_1lib_1_1util_1_1_string_util.html#abe02a26ef1495202eb3f2a7cd8f364cd',1,'wcmf::lib::util::StringUtil']]],
   ['csvutil',['CSVUtil',['../classwcmf_1_1lib_1_1util_1_1_c_s_v_util.html',1,'wcmf::lib::util']]],
   ['csvutil_2ephp',['CSVUtil.php',['../_c_s_v_util_8php.html',1,'']]],
   ['current',['current',['../classwcmf_1_1lib_1_1model_1_1_node_iterator.html#af343507d1926e6ecf964625d41db528c',1,'wcmf\lib\model\NodeIterator\current()'],['../classwcmf_1_1lib_1_1model_1_1_node_value_iterator.html#af343507d1926e6ecf964625d41db528c',1,'wcmf\lib\model\NodeValueIterator\current()'],['../classwcmf_1_1lib_1_1model_1_1_persistent_iterator.html#af343507d1926e6ecf964625d41db528c',1,'wcmf\lib\model\PersistentIterator\current()']]],
