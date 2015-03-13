@@ -254,17 +254,35 @@ Role names in multiple associations</div></div>
  <h4>Inheritance</h4>
 <p>If different domain classes should have the same attributes, a common base class can make these available to inheriting classes. An example may be an <code>EntityBase</code> type, which defines meta information like creation date and last modification date for all domain classes. The diagram below illustrates the concept.</p>
 <div class="image">
-<img src="model_inheritance.png" alt="model_inheritance.png"/>
+<img src="inheritance.png" alt="inheritance.png"/>
 <div class="caption">
 Inheritance</div></div>
 <p> Inheritance will cause the generator to create new relations in the following cases:</p>
-<ul>
-<li>Subclasses of parent classes of the current class will become parents too.</li>
-<li>Parent classes of the superclass of the current class will become parents too.</li>
-<li>Subclasses of child classes of the current class will become children too.</li>
-<li>Child classes of super classes of the current class will become children too.</li>
-</ul>
-<h3><a class="anchor" id="model_flow"></a>
+<div class="image-table"> <table class="doxtable">
+<tr>
+<th>Parent relations </th><th>Child relations  </th></tr>
+<tr>
+<td><div class="image">
+<img src="inherited-relation1.png" alt="inherited-relation1.png"/>
+<div class="caption">
+Subclass B becomes parent of A</div></div>
+ </td><td><div class="image">
+<img src="inherited-relation3.png" alt="inherited-relation3.png"/>
+<div class="caption">
+Subclass B becomes child of A</div></div>
+</td></tr>
+<tr>
+<td><div class="image">
+<img src="inherited-relation2.png" alt="inherited-relation2.png"/>
+<div class="caption">
+Parent class of B becomes parent of A</div></div>
+ </td><td><div class="image">
+<img src="inherited-relation4.png" alt="inherited-relation4.png"/>
+<div class="caption">
+Child class of B becomes child of A</div></div>
+</td></tr>
+</table>
+</div><h3><a class="anchor" id="model_flow"></a>
 Application flow</h3>
 <p><span class="label label-danger">TODO</span></p>
 <h3><a class="anchor" id="model_default"></a>
@@ -294,7 +312,7 @@ Artefacts</h3>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Mar 13 2015 11:09:47 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 13 2015 12:35:04 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
