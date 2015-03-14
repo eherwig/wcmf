@@ -207,21 +207,9 @@ Build depth</h4>
 <div class="caption">
 Build depth</div></div>
 <p> If using a build depth value of <code>1</code> the <code>Author</code> instance <em>Author A</em> will be loaded together with it's related <code>Book</code> instances (<em>Book A</em>, <em>Book B</em>). A value of <code>2</code> will also load the <code>Chapter</code> instances (<em>Chapter A1</em>, <em>Chapter A2</em>). The default value is <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b"><code>BuildDepth::SINGLE</code></a>, which means that only the <em>Author A</em> instance is loaded. In the above illustration the value of <code>2</code> is equal to passing <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#aa77abffeefb50083440c805c0fd76695"><code>BuildDepth::INFINITE</code></a>.</p>
-<h3><a class="anchor" id="pers_search"></a>
-Searching objects</h3>
-<p>To search objects in the store the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html#a83e724262dff453dc35561b241ca7539"><code>PersistenceFacade::loadObjects</code></a> method may be used. It allows to set the conditions that loaded objects should match.</p>
-<div class="fragment"><div class="line">$criteria = array(</div>
-<div class="line">  <span class="keyword">new</span> Criteria(<span class="stringliteral">&quot;Book&quot;</span>, <span class="stringliteral">&quot;title&quot;</span>, <span class="stringliteral">&quot;LIKE&quot;</span>, <span class="stringliteral">&quot;A%&quot;</span>),</div>
-<div class="line">  <span class="keyword">new</span> Criteria(<span class="stringliteral">&quot;Book&quot;</span>, <span class="stringliteral">&quot;year&quot;</span>, <span class="stringliteral">&quot;&gt;=&quot;</span>, <span class="stringliteral">&quot;2014&quot;</span>)))</div>
-<div class="line">)</div>
-<div class="line"></div>
-<div class="line"><span class="comment">// load all Book instances with titles starting with A and release date 2014 or later</span></div>
-<div class="line">$books = ObjectFactory::getInstance(<span class="stringliteral">&#39;persistenceFacade&#39;</span>)-&gt;loadObjects(<span class="stringliteral">&quot;Book&quot;</span>, BuildDepth::SINGLE, $criteria);</div>
-</div><!-- fragment --><p>In this example all <code>Book</code> instances with titles starting with <em>A</em> and release date <em>2014 or later</em> are loaded.</p>
-<p>More complex use cases are supported by the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_object_query.html"><code>ObjectQuery</code></a> class.</p>
 <h4><a class="anchor" id="pers_sorting"></a>
 Sorting</h4>
-<p>When loading a list of objects, the default order of the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html"><code>PersistenceMapper</code></a> class is used for sorting. This default order is defined in the model (<code>orderby</code> tag of <code>ChiNode</code>, see <a class="el" href="model.html#model_chinode">ChiNode / ChiManyToMany</a>). Besides this, all loading methods (e.g. <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html#a83e724262dff453dc35561b241ca7539"><code>PersistenceFacade::loadObjects</code></a>) accept an <code>orderby</code> parameter for explicitly setting a different order.</p>
+<p>When loading a list of objects, the default order of the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html"><code>PersistenceMapper</code></a> class is used for sorting. This default order is defined in the model (<em>orderby</em> tag of <em>ChiNode</em>, see <a class="el" href="model.html#model_chinode">ChiNode / ChiManyToMany</a>). Besides this, all loading methods (e.g. <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html#a83e724262dff453dc35561b241ca7539"><code>PersistenceFacade::loadObjects</code></a>) accept an <code>orderby</code> parameter for explicitly setting a different order.</p>
 <p>A list of already loaded <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html"><code>Node</code></a> instances may be sorted by using <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node_comparator.html"><code>NodeComparator</code></a> in the following way:</p>
 <div class="fragment"><div class="line">$nodeList = array(...);</div>
 <div class="line"></div>
@@ -237,6 +225,18 @@ Sorting</h4>
 </div><!-- fragment --><h4><a class="anchor" id="pers_pagination"></a>
 Pagination</h4>
 <p><span class="label label-danger">TODO</span></p>
+<h3><a class="anchor" id="pers_search"></a>
+Searching objects</h3>
+<p>To search objects in the store the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html#a83e724262dff453dc35561b241ca7539"><code>PersistenceFacade::loadObjects</code></a> method may be used. It allows to set the conditions that loaded objects should match.</p>
+<div class="fragment"><div class="line">$criteria = array(</div>
+<div class="line">  <span class="keyword">new</span> Criteria(<span class="stringliteral">&quot;Book&quot;</span>, <span class="stringliteral">&quot;title&quot;</span>, <span class="stringliteral">&quot;LIKE&quot;</span>, <span class="stringliteral">&quot;A%&quot;</span>),</div>
+<div class="line">  <span class="keyword">new</span> Criteria(<span class="stringliteral">&quot;Book&quot;</span>, <span class="stringliteral">&quot;year&quot;</span>, <span class="stringliteral">&quot;&gt;=&quot;</span>, <span class="stringliteral">&quot;2014&quot;</span>)))</div>
+<div class="line">)</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// load all Book instances with titles starting with A and release date 2014 or later</span></div>
+<div class="line">$books = ObjectFactory::getInstance(<span class="stringliteral">&#39;persistenceFacade&#39;</span>)-&gt;loadObjects(<span class="stringliteral">&quot;Book&quot;</span>, BuildDepth::SINGLE, $criteria);</div>
+</div><!-- fragment --><p>In this example all <code>Book</code> instances with titles starting with <em>A</em> and release date <em>2014 or later</em> are loaded.</p>
+<p>More complex use cases are supported by the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_object_query.html"><code>ObjectQuery</code></a> class.</p>
 <h3><a class="anchor" id="pers_iter"></a>
 Traversing object graphs</h3>
 <p><span class="label label-danger">TODO</span></p>
@@ -261,7 +261,7 @@ Transactions</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Mar 13 2015 18:37:47 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sat Mar 14 2015 23:22:46 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
