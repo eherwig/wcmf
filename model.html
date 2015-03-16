@@ -442,7 +442,7 @@ Default model</h3>
 <h2><a class="anchor" id="model_generator"></a>
 Generator</h2>
 <p>wCMF uses the code generator from the <a href="http://sourceforge.net/projects/olympos/">Olympos</a> project which is originally based on <em>openArchitectureWare</em>. The generator is a JAVA application that executes user defined workflows. Workflows are organized in cartridges one of which is the wCMF cartridge. Cartridges are written in the <em>Xtent/Xpand</em> language.</p>
-<p>If you are using <a href="https://getcomposer.org/">Composer</a>, the generator will be installed as a dependency in the directory <em>vendor/olympos/chronos-generator</em>. It may be also be downloaded from <a href="http://sourceforge.net/projects/olympos/files/ChronosGenerator-0.9.9.6b-wCMF.zip">SourceForge</a>.</p>
+<p>If you are using <a href="https://getcomposer.org/">Composer</a>, the generator will be installed as a dependency in the directory <em>vendor/olympos/chronos-generator</em>. It may also be downloaded from <a href="http://sourceforge.net/projects/olympos/files/ChronosGenerator-0.9.9.6b-wCMF.zip">SourceForge</a>.</p>
 <h3><a class="anchor" id="generator_config"></a>
 Configuration</h3>
 <p>The configuration of the generator is stored as key-value pairs in a file called <code>workflow.properties</code> in the <em>model</em> directory. It contains the following <b>variables</b>:</p>
@@ -522,11 +522,11 @@ Artefacts</h3>
 <p>The generator creates the following files:</p>
 <ul>
 <li><b>SQL scripts</b> are generated in the <em>install</em> directory. They contain the table definitions for <a href="http://www.mysql.com">MySQL</a> databases (<code>install/tables_mysql.sql</code>) and <a href="https://sqlite.org">SQLite</a> databases (<code>install/tables_sqlite.sql</code>). For each domain class one table is created, inherited attributes are stored in each table (<a href="http://martinfowler.com/eaaCatalog/concreteTableInheritance.html">Concrete Table Inheritance</a>).</li>
-<li><b>Mapper</b> classes are generated in directories corresponding to the model packages (<em>app/src/model</em>, if the default model packages are used). For each <code>ChiNode</code>/<code>ChiManyToMany</code> class one subclass of <a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html"><code>NodeUnifiedRDBMapper</code></a> is created (e.g. <code>AuthorRDBMapper</code>).</li>
+<li><b>Mapper classes</b> are generated in directories corresponding to the model packages (<em>app/src/model</em>, if the default model packages are used). For each <code>ChiNode</code>/<code>ChiManyToMany</code> class one subclass of <a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html"><code>NodeUnifiedRDBMapper</code></a> is created (e.g. <code>AuthorRDBMapper</code>).</li>
 <li><b>Domain classes</b> are generated in the same directories as the mapper classes. For each <code>ChiNode</code>/<code>ChiManyToMany</code> class two classes are created, one base class that contains all generated code (e.g. <code>AuthorBase</code>) and one empty subclass, that is used to add custom code (e.g. <code>Author</code>). The base class inherits from <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html"><code>Node</code></a>.</li>
 <li><b>Configuration files</b> in the <a href="http://en.wikipedia.org/wiki/INI_file">INI file</a> format are generated in the <em>app/config</em> directory. Configuration files are implicitly defined in the model by the <code>ChiActionKey.config</code> and <code>ChiSystem.config</code> tags. For each name mentioned in these tags, one configuration file will be created, containing all definitions related to it. Furthermore, the default configuration file (<em>config.ini</em> per default) contains the domain class mapping definitions.</li>
-<li><b>Controller</b> classes are generated in directories corresponding to the model packages (<em>app/src/controller</em>, if the default model packages are used). For each <code>ChiController</code> class one subclass of <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> will be created.</li>
-<li><b>View</b> templates are generated in directories corresponding to the model packages (<em>app/src/views</em>, if the default model packages are used). For each <code>ChiView</code> class one empty template file will be created.</li>
+<li><b>Controller classes</b> are generated in directories corresponding to the model packages (<em>app/src/controller</em>, if the default model packages are used). For each <code>ChiController</code> class one subclass of <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> will be created.</li>
+<li><b>View templates</b> are generated in directories corresponding to the model packages (<em>app/src/views</em>, if the default model packages are used). For each <code>ChiView</code> class one empty template file will be created.</li>
 </ul>
 <h4><a class="anchor" id="generator_pr"></a>
 Protected regions</h4>
@@ -563,7 +563,7 @@ Protected regions</h4>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Mon Mar 16 2015 00:10:54 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Mon Mar 16 2015 11:09:04 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
