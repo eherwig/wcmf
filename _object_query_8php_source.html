@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_2c1ec4f11fe265bd3cc5505512fe6437.html">model</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_0eb1f34a69271cf642f946bb8e891ca3.html">model</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -168,28 +168,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"> * $query = new ObjectQuery(&#39;Author&#39;);</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"> * // (Author.name LIKE &#39;%ingo%&#39; AND Author.email LIKE &#39;%wemove%&#39;)</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"> * $authorTpl1 = &amp;$query-&gt;getObjectTemplate(&#39;Author&#39;);</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"> * $authorTpl1 = $query-&gt;getObjectTemplate(&#39;Author&#39;);</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"> * $authorTpl1-&gt;setValue(&quot;name&quot;, &quot;ingo&quot;);</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"> * $authorTpl1-&gt;setValue(&quot;email&quot;, &quot;LIKE &#39;%wemove%&#39;&quot;);</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"> * // OR Author.name LIKE &#39;%herwig%&#39;</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"> * $authorTpl2 = &amp;$query-&gt;getObjectTemplate(&#39;Author&#39;, null, Criteria::OPERATOR_OR);</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"> * $authorTpl2 = $query-&gt;getObjectTemplate(&#39;Author&#39;, null, Criteria::OPERATOR_OR);</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> * $authorTpl2-&gt;setValue(&quot;name&quot;, &quot;herwig&quot;);</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"> * // Recipe.created &gt;= &#39;2004-01-01&#39; AND Recipe.created &lt; &#39;2005-01-01&#39;</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"> * $recipeTpl1 = &amp;$query-&gt;getObjectTemplate(&#39;Recipe&#39;);</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"> * $recipeTpl1 = $query-&gt;getObjectTemplate(&#39;Recipe&#39;);</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"> * $recipeTpl1-&gt;setValue(&quot;created&quot;, &quot;&gt;= &#39;2004-01-01&#39;&quot;);</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"> * $recipeTpl2 = &amp;$query-&gt;getObjectTemplate(&#39;Recipe&#39;);</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"> * $recipeTpl2 = $query-&gt;getObjectTemplate(&#39;Recipe&#39;);</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"> * $recipeTpl2-&gt;setValue(&quot;created&quot;, &quot;&lt; &#39;2005-01-01&#39;&quot;);</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"> * // AND (Recipe.name LIKE &#39;%Salat%&#39; OR Recipe.portions = 4)</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"> * // could have be built using one template, but this demonstrates the usage</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"> * // of the ObjectQuery::makeGroup() method</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"> * $recipeTpl3 = &amp;$query-&gt;getObjectTemplate(&#39;Recipe&#39;);</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"> * $recipeTpl3 = $query-&gt;getObjectTemplate(&#39;Recipe&#39;);</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"> * $recipeTpl3-&gt;setValue(&quot;name&quot;, &quot;Salat&quot;);</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> * $recipeTpl4 = &amp;$query-&gt;getObjectTemplate(&#39;Recipe&#39;, null, Criteria::OPERATOR_OR);</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> * $recipeTpl4 = $query-&gt;getObjectTemplate(&#39;Recipe&#39;, null, Criteria::OPERATOR_OR);</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"> * $recipeTpl4-&gt;setValue(&quot;portions&quot;, &quot;= 4&quot;);</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"> * $query-&gt;makeGroup(array(&amp;$recipeTpl3, &amp;$recipeTpl4), Criteria::OPERATOR_AND);</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"> * $query-&gt;makeGroup(array($recipeTpl3, $recipeTpl4), Criteria::OPERATOR_AND);</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> * $authorTpl1-&gt;addNode($recipeTpl1, &#39;Recipe&#39;);</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> * $authorTpl1-&gt;addNode($recipeTpl2, &#39;Recipe&#39;);</span></div>
@@ -762,7 +762,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Mar 17 2015 01:09:52 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Tue Mar 17 2015 17:15:31 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

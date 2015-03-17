@@ -206,7 +206,7 @@ Build depth</h4>
 <img src="builddepth.png" alt="builddepth.png"/>
 <div class="caption">
 Build depth</div></div>
-<p> If using a build depth value of <em>1</em> the <code>Author</code> instance <em>Author A</em> will be loaded together with it's related <code>Book</code> instances (<em>Book A</em>, <em>Book B</em>). A value of <em>2</em> will also load the <code>Chapter</code> instances (<em>Chapter A1</em>, <em>Chapter A2</em>). The default value is <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b"><code>BuildDepth::SINGLE</code></a>, which means that only the <em>Author A</em> instance is loaded. In the above illustration the value of <em>2</em> is equal to passing <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#aa77abffeefb50083440c805c0fd76695"><code>BuildDepth::INFINITE</code></a>.</p>
+<p> If using a build depth value of <em>1</em> the <code>Author</code> instance <em>Author A</em> will be loaded together with it's related <code>Articles</code> instances (<em>Article A</em>, <em>Article B</em>). A value of <em>2</em> will also load the <code>Chapter</code> instances (<em>Chapter A1</em>, <em>Chapter A2</em>). The default value is <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b"><code>BuildDepth::SINGLE</code></a>, which means that only the <em>Author A</em> instance is loaded. In the above illustration the value of <em>2</em> is equal to passing <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#aa77abffeefb50083440c805c0fd76695"><code>BuildDepth::INFINITE</code></a>.</p>
 <h4><a class="anchor" id="pers_sorting"></a>
 Sorting</h4>
 <p>When loading a list of objects, the default order of the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html"><code>PersistenceMapper</code></a> class is used for sorting. This default order is defined in the model (<em>orderby</em> tag of <em>ChiNode</em>, see <a class="el" href="model.html#model_chinode">ChiNode / ChiManyToMany</a>). Besides this, all loading methods (e.g. <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html#a83e724262dff453dc35561b241ca7539"><code>PersistenceFacade::loadObjects</code></a>) accept an <code>orderby</code> parameter for explicitly setting a different order.</p>
@@ -236,16 +236,39 @@ Pagination</h4>
 Searching objects</h3>
 <p>To search objects in the store the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html#a83e724262dff453dc35561b241ca7539"><code>PersistenceFacade::loadObjects</code></a> method may be used. It allows to set the conditions that loaded objects should match.</p>
 <div class="fragment"><div class="line">$criteria = array(</div>
-<div class="line">  <span class="keyword">new</span> Criteria(<span class="stringliteral">&quot;Book&quot;</span>, <span class="stringliteral">&quot;title&quot;</span>, <span class="stringliteral">&quot;LIKE&quot;</span>, <span class="stringliteral">&quot;A%&quot;</span>),</div>
-<div class="line">  <span class="keyword">new</span> Criteria(<span class="stringliteral">&quot;Book&quot;</span>, <span class="stringliteral">&quot;year&quot;</span>, <span class="stringliteral">&quot;&gt;=&quot;</span>, <span class="stringliteral">&quot;2014&quot;</span>)))</div>
+<div class="line">  <span class="keyword">new</span> Criteria(<span class="stringliteral">&quot;Article&quot;</span>, <span class="stringliteral">&quot;title&quot;</span>, <span class="stringliteral">&quot;LIKE&quot;</span>, <span class="stringliteral">&quot;A%&quot;</span>),</div>
+<div class="line">  <span class="keyword">new</span> Criteria(<span class="stringliteral">&quot;Article&quot;</span>, <span class="stringliteral">&quot;year&quot;</span>, <span class="stringliteral">&quot;&gt;=&quot;</span>, <span class="stringliteral">&quot;2014&quot;</span>)))</div>
 <div class="line">)</div>
 <div class="line"></div>
-<div class="line"><span class="comment">// load all Book instances with titles starting with A and release date 2014 or later</span></div>
-<div class="line">$books = ObjectFactory::getInstance(<span class="stringliteral">&#39;persistenceFacade&#39;</span>)-&gt;loadObjects(<span class="stringliteral">&quot;Book&quot;</span>, BuildDepth::SINGLE, $criteria);</div>
-</div><!-- fragment --><p>In this example all <code>Book</code> instances with titles starting with <em>A</em> and release date <em>2014 or later</em> are loaded.</p>
-<p>More complex use cases are supported by the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_object_query.html"><code>ObjectQuery</code></a> class.</p>
+<div class="line"><span class="comment">// load all Article instances with titles starting with A and release date 2014 or later</span></div>
+<div class="line">$articles = ObjectFactory::getInstance(<span class="stringliteral">&#39;persistenceFacade&#39;</span>)-&gt;loadObjects(<span class="stringliteral">&quot;Article&quot;</span>, BuildDepth::SINGLE, $criteria);</div>
+</div><!-- fragment --><p>In this example all <code>Article</code> instances with titles starting with <em>A</em> and release date <em>2014 or later</em> are loaded.</p>
+<p>More complex use cases are supported by the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_object_query.html"><code>ObjectQuery</code></a> class. For example it allows to set search constraints on connected objects as shown in the following example:</p>
+<div class="fragment"><div class="line"><span class="comment">// create a Author query</span></div>
+<div class="line">$query = <span class="keyword">new</span> ObjectQuery(<span class="stringliteral">&#39;Author&#39;</span>);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// query part: Author.name LIKE &#39;A%&#39; OR Author.name LIKE &#39;B%&#39;</span></div>
+<div class="line">$authorTpl1 = $query-&gt;getObjectTemplate(<span class="stringliteral">&quot;Author&quot;</span>);</div>
+<div class="line">$authorTpl1-&gt;setValue(<span class="stringliteral">&quot;name&quot;</span>, Criteria::asValue(<span class="stringliteral">&quot;LIKE&quot;</span>, <span class="stringliteral">&quot;A%&quot;</span>));</div>
+<div class="line">$authorTpl2 = $query-&gt;getObjectTemplate(<span class="stringliteral">&quot;Author&quot;</span>, null, Criteria::OPERATOR_OR);</div>
+<div class="line">$authorTpl2-&gt;setValue(<span class="stringliteral">&quot;name&quot;</span>, Criteria::asValue(<span class="stringliteral">&quot;LIKE&quot;</span>, <span class="stringliteral">&quot;B%&quot;</span>));</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// query part: Article.created &gt;= &#39;2004-01-01&#39; AND Article.created &lt; &#39;2005-01-01&#39;</span></div>
+<div class="line">$articleTpl1 = $query-&gt;getObjectTemplate(<span class="stringliteral">&quot;Article&quot;</span>);</div>
+<div class="line">$articleTpl1-&gt;setValue(<span class="stringliteral">&quot;created&quot;</span>, Criteria::asValue(<span class="stringliteral">&quot;&gt;=&quot;</span>, <span class="stringliteral">&quot;2004-01-01&quot;</span>));</div>
+<div class="line">$articleTpl2 = $query-&gt;getObjectTemplate(<span class="stringliteral">&quot;Article&quot;</span>);</div>
+<div class="line">$articleTpl2-&gt;setValue(<span class="stringliteral">&quot;created&quot;</span>, Criteria::asValue(<span class="stringliteral">&quot;&lt;&quot;</span>, <span class="stringliteral">&quot;2005-01-01&quot;</span>));</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// connect query nodes</span></div>
+<div class="line">$authorTpl1-&gt;addNode($articleTpl1);</div>
+<div class="line">$authorTpl1-&gt;addNode($articleTpl2);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// load result</span></div>
+<div class="line">$authorList = $query-&gt;execute(BuildDepth::SINGLE);</div>
+</div><!-- fragment --><p>In this example all <code>Author</code> instances are loaded which have names starting with <em>A</em> or <em>B</em> and which have <code>Article</code> instances connected that are created in the year <em>2014</em>.</p>
+<p>Besides this, wCMF integrates the <a href="http://framework.zend.com/manual/1.12/en/zend.search.lucene.overview.html">Lucene</a> search engine in the class <a class="el" href="classwcmf_1_1lib_1_1search_1_1impl_1_1_lucene_search.html"><code>LuceneSearch</code></a>.</p>
 <h3><a class="anchor" id="pers_iter"></a>
-Iterators</h3>
+Iterating objects</h3>
 <p>wCMF provides several <a href="http://php.net/manual/en/class.iterator.php">iterator</a> classes for traversing objects and values.</p>
 <p><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node_iterator.html"><code>NodeIterator</code></a> allows to traverse object graphs starting from a root <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html"><code>Node</code></a>. The algorithm used is <a href="http://en.wikipedia.org/wiki/Depth-first_search">depth-first search</a>.</p>
 <div class="fragment"><div class="line"><span class="comment">// traverse $root and all descendents</span></div>
@@ -266,7 +289,7 @@ Iterators</h3>
 <div class="fragment"><div class="line"><span class="comment">// traverse 10 nodes starting from $oid</span></div>
 <div class="line">$counter = 0;</div>
 <div class="line">$it = <span class="keyword">new</span> PersistentIterator($oid);</div>
-<div class="line"><span class="keywordflow">while</span> ($it-&gt;valid() &amp;&amp; $counter &lt; 10) {</div>
+<div class="line"><span class="keywordflow">while</span>($it-&gt;valid() &amp;&amp; $counter &lt; 10) {</div>
 <div class="line">  echo <span class="stringliteral">&quot;current object: &quot;</span>.$it-&gt;currentNode();</div>
 <div class="line">  $it-&gt;next();</div>
 <div class="line">  $counter++;</div>
@@ -277,7 +300,7 @@ Iterators</h3>
 <div class="line"></div>
 <div class="line"><span class="comment">// load the iterator state later and traverse the remaining nodes</span></div>
 <div class="line">$it = PersistentIterator::load($iterId);</div>
-<div class="line"><span class="keywordflow">while</span> ($it-&gt;valid()) {</div>
+<div class="line"><span class="keywordflow">while</span>($it-&gt;valid()) {</div>
 <div class="line">  echo <span class="stringliteral">&quot;current object: &quot;</span>.$it-&gt;currentNode();</div>
 <div class="line">  $it-&gt;next();</div>
 <div class="line">}</div>
@@ -311,8 +334,28 @@ Modifying objects</h3>
 <div class="line">$tx-&gt;commit();</div>
 </div><!-- fragment --><h2><a class="anchor" id="pers_validation"></a>
 Validation</h2>
-<p><span class="label label-danger">TODO</span></p>
-<h2><a class="anchor" id="pers_concurrency"></a>
+<p>Before persisting objects, their content has to be validated according to the application requirements. Validation is handled in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a1a79f61fa591ebe2550b187c1544e1d1"><code>PersistentObject::validateValue</code></a> (for a single attribute) or <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a27828d8e8c0fc9a21c24e2ed0d319a79"><code>PersistentObject::validateValues</code></a> (for the complete instance). These methods are called when values are changed via <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a838057c0748db6d0db1d38fe5d06ef6b"><code>PersistentObject::setValue</code></a> or right before persisting the object in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#aa39e50f302f70bdb719120f322d49cc6"><code>AbstractMapper::save</code></a>. Both validation methods throw a <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_validation_exception.html"><code>ValidationException</code></a>, if validation fails.</p>
+<p>The actual validation is delegated to the <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1_validator.html"><code>Validator</code></a> class, which uses <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1validator_1_1_validate_type.html"><code>ValidateType</code></a> implementations for validating different types of attributes. Each validation type accepts configuration options, that are passed in as a string value. The format of this value is completely up to the validator type implementation. In order to define, which validation should be applied to a domain class attribute, the <em>tag</em> <code>restrictions_match</code> is used in the model (see <a class="el" href="model.html#model_chivalue">ChiValue</a>).</p>
+<p>Currently three <b>validation types</b> are supported:</p>
+<p><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_filter.html"><code>Filter</code></a> validates against a PHP filter (see <a href="http://php.net/manual/en/function.filter-var.php">filter_var</a>), e.g. </p><div class="fragment"><div class="line"><span class="comment">// FILTER_VALIDATE_INT with min_range option and FILTER_FLAG_ALLOW_HEX flag</span></div>
+<div class="line">filter:<span class="keywordtype">int</span>|{<span class="stringliteral">&quot;options&quot;</span>:{<span class="stringliteral">&quot;min_range&quot;</span>:0},<span class="stringliteral">&quot;flags&quot;</span>:2}</div>
+</div><!-- fragment --><p><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image.html"><code>Image</code></a> checks <em>width</em> and <em>height</em> of the referred image file e.g. </p><div class="fragment"><div class="line"><span class="comment">// image width exactly 200px, height less than 100px</span></div>
+<div class="line">image:{<span class="stringliteral">&quot;width&quot;</span>:[200,1],<span class="stringliteral">&quot;height&quot;</span>:[100,0]}</div>
+</div><!-- fragment --><p><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_reg_exp.html"><code>RegExp</code></a> validates against a regular expression (see <a href="http://php.net/manual/en/function.preg-match.php">preg_match</a>) e.g. </p><div class="fragment"><div class="line"><span class="comment">// integer or empty</span></div>
+<div class="line">regexp:^[0-9]*$</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The validation type is derived from the part of the configuration string, that precedes the first colon.</dd></dl>
+<p>Custom validation types may be added in the configuration. For example after adding <code>myValidator</code> (implemented in <code>MyValidator</code> class):</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Validators]</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;regexp = $regexpValidator</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;filter = $filterValidator</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;image = $imageValidator</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;myValidator = $myValidator</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;[MyValidator]</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;__class = path\to\MyValidator</div>
+</div><!-- fragment --><p>it may be used in the following way:</p>
+<div class="fragment"><div class="line">myValidator:custom_configuration_string_passed_by_MyValidator</div>
+</div><!-- fragment --><h2><a class="anchor" id="pers_concurrency"></a>
 Concurrency</h2>
 <p><span class="label label-danger">TODO</span></p>
 <h2><a class="anchor" id="pers_tx"></a>
@@ -327,7 +370,7 @@ Transactions</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Mar 17 2015 01:09:58 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Tue Mar 17 2015 17:15:34 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

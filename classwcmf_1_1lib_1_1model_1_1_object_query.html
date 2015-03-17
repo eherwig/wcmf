@@ -125,28 +125,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">$query = <span class="keyword">new</span> ObjectQuery(<span class="stringliteral">&#39;Author&#39;</span>);</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// (Author.name LIKE &#39;%ingo%&#39; AND Author.email LIKE &#39;%wemove%&#39;)</span></div>
-<div class="line">$authorTpl1 = &amp;$query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Author&#39;</span>);</div>
+<div class="line">$authorTpl1 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Author&#39;</span>);</div>
 <div class="line">$authorTpl1-&gt;setValue(<span class="stringliteral">&quot;name&quot;</span>, <span class="stringliteral">&quot;ingo&quot;</span>);</div>
 <div class="line">$authorTpl1-&gt;setValue(<span class="stringliteral">&quot;email&quot;</span>, <span class="stringliteral">&quot;LIKE &#39;%wemove%&#39;&quot;</span>);</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// OR Author.name LIKE &#39;%herwig%&#39;</span></div>
-<div class="line">$authorTpl2 = &amp;$query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Author&#39;</span>, null, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#a22ee5179bb121cf704f9be4c8581a913">Criteria::OPERATOR_OR</a>);</div>
+<div class="line">$authorTpl2 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Author&#39;</span>, null, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#a22ee5179bb121cf704f9be4c8581a913">Criteria::OPERATOR_OR</a>);</div>
 <div class="line">$authorTpl2-&gt;setValue(<span class="stringliteral">&quot;name&quot;</span>, <span class="stringliteral">&quot;herwig&quot;</span>);</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// Recipe.created &gt;= &#39;2004-01-01&#39; AND Recipe.created &lt; &#39;2005-01-01&#39;</span></div>
-<div class="line">$recipeTpl1 = &amp;$query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Recipe&#39;</span>);</div>
+<div class="line">$recipeTpl1 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Recipe&#39;</span>);</div>
 <div class="line">$recipeTpl1-&gt;setValue(<span class="stringliteral">&quot;created&quot;</span>, <span class="stringliteral">&quot;&gt;= &#39;2004-01-01&#39;&quot;</span>);</div>
-<div class="line">$recipeTpl2 = &amp;$query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Recipe&#39;</span>);</div>
+<div class="line">$recipeTpl2 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Recipe&#39;</span>);</div>
 <div class="line">$recipeTpl2-&gt;setValue(<span class="stringliteral">&quot;created&quot;</span>, <span class="stringliteral">&quot;&lt; &#39;2005-01-01&#39;&quot;</span>);</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// AND (Recipe.name LIKE &#39;%Salat%&#39; OR Recipe.portions = 4)</span></div>
 <div class="line"><span class="comment">// could have be built using one template, but this demonstrates the usage</span></div>
 <div class="line"><span class="comment">// of the ObjectQuery::makeGroup() method</span></div>
-<div class="line">$recipeTpl3 = &amp;$query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Recipe&#39;</span>);</div>
+<div class="line">$recipeTpl3 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Recipe&#39;</span>);</div>
 <div class="line">$recipeTpl3-&gt;setValue(<span class="stringliteral">&quot;name&quot;</span>, <span class="stringliteral">&quot;Salat&quot;</span>);</div>
-<div class="line">$recipeTpl4 = &amp;$query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Recipe&#39;</span>, null, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#a22ee5179bb121cf704f9be4c8581a913">Criteria::OPERATOR_OR</a>);</div>
+<div class="line">$recipeTpl4 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Recipe&#39;</span>, null, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#a22ee5179bb121cf704f9be4c8581a913">Criteria::OPERATOR_OR</a>);</div>
 <div class="line">$recipeTpl4-&gt;setValue(<span class="stringliteral">&quot;portions&quot;</span>, <span class="stringliteral">&quot;= 4&quot;</span>);</div>
-<div class="line">$query-&gt;makeGroup(array(&amp;$recipeTpl3, &amp;$recipeTpl4), <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#aecfb583df189a0066873cc163d1fe2a7">Criteria::OPERATOR_AND</a>);</div>
+<div class="line">$query-&gt;makeGroup(array($recipeTpl3, $recipeTpl4), <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#aecfb583df189a0066873cc163d1fe2a7">Criteria::OPERATOR_AND</a>);</div>
 <div class="line"></div>
 <div class="line">$authorTpl1-&gt;addNode($recipeTpl1, <span class="stringliteral">&#39;Recipe&#39;</span>);</div>
 <div class="line">$authorTpl1-&gt;addNode($recipeTpl2, <span class="stringliteral">&#39;Recipe&#39;</span>);</div>
@@ -846,7 +846,7 @@ Additional Inherited Members</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Mar 17 2015 01:09:58 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Tue Mar 17 2015 17:15:35 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
