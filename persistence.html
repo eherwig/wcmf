@@ -192,7 +192,7 @@ Loading objects</h3>
 <div class="line"><span class="keywordflow">if</span> ($author == null) {</div>
 <div class="line">  echo(<span class="stringliteral">&quot;An Author with object id &quot;</span>.$oid.<span class="stringliteral">&quot; does not exist.&quot;</span>;</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>In the example the <code>Author</code> instance with id <code>1</code> is loaded.</p>
+</div><!-- fragment --><p>In the example the <code>Author</code> instance with id <em>1</em> is loaded.</p>
 <h4><a class="anchor" id="pers_builddepth"></a>
 Build depth</h4>
 <p>When loading objects we generally distinguish between <b>eager</b> and <b>lazy</b> loading (see <a href="http://en.wikipedia.org/wiki/Lazy_loading">Lazy loading</a>). By default <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html"><code>PersistenceFacade</code></a> performs <em>lazy loading</em> by using <em>virtual proxies</em> (instances of <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html"><code>PersistentObjectProxy</code></a>). That means that related objects are retrieved from the store, only when they are actually accessed. In order to perform <em>eager loading</em>, a <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html"><code>BuildDepth</code></a> value may be passed in the method calls:</p>
@@ -200,13 +200,13 @@ Build depth</h4>
 <div class="line"></div>
 <div class="line"><span class="comment">// load the Author instance with id 1 together with all related objects</span></div>
 <div class="line">$author = ObjectFactory::getInstance(<span class="stringliteral">&#39;persistenceFacade&#39;</span>)-&gt;load($oid, BuildDepth::INFINITE);</div>
-</div><!-- fragment --><p>In this example the <code>Author</code> instance with id <code>1</code> is loaded together with all related objects recursively.</p>
+</div><!-- fragment --><p>In this example the <code>Author</code> instance with id <em>1</em> is loaded together with all related objects recursively.</p>
 <p>Instead of a <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html"><code>BuildDepth</code></a> value, an integer number may be passed indicating the depth of relations to load. The following image illustrates the <em>build depth</em> parameter for a simple model.</p>
 <div class="image">
 <img src="builddepth.png" alt="builddepth.png"/>
 <div class="caption">
 Build depth</div></div>
-<p> If using a build depth value of <code>1</code> the <code>Author</code> instance <em>Author A</em> will be loaded together with it's related <code>Book</code> instances (<em>Book A</em>, <em>Book B</em>). A value of <code>2</code> will also load the <code>Chapter</code> instances (<em>Chapter A1</em>, <em>Chapter A2</em>). The default value is <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b"><code>BuildDepth::SINGLE</code></a>, which means that only the <em>Author A</em> instance is loaded. In the above illustration the value of <code>2</code> is equal to passing <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#aa77abffeefb50083440c805c0fd76695"><code>BuildDepth::INFINITE</code></a>.</p>
+<p> If using a build depth value of <em>1</em> the <code>Author</code> instance <em>Author A</em> will be loaded together with it's related <code>Book</code> instances (<em>Book A</em>, <em>Book B</em>). A value of <em>2</em> will also load the <code>Chapter</code> instances (<em>Chapter A1</em>, <em>Chapter A2</em>). The default value is <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b"><code>BuildDepth::SINGLE</code></a>, which means that only the <em>Author A</em> instance is loaded. In the above illustration the value of <em>2</em> is equal to passing <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#aa77abffeefb50083440c805c0fd76695"><code>BuildDepth::INFINITE</code></a>.</p>
 <h4><a class="anchor" id="pers_sorting"></a>
 Sorting</h4>
 <p>When loading a list of objects, the default order of the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html"><code>PersistenceMapper</code></a> class is used for sorting. This default order is defined in the model (<em>orderby</em> tag of <em>ChiNode</em>, see <a class="el" href="model.html#model_chinode">ChiNode / ChiManyToMany</a>). Besides this, all loading methods (e.g. <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html#a83e724262dff453dc35561b241ca7539"><code>PersistenceFacade::loadObjects</code></a>) accept an <code>orderby</code> parameter for explicitly setting a different order.</p>
@@ -224,8 +224,15 @@ Sorting</h4>
 <div class="line">usort($nodeList, array($comparator, <span class="stringliteral">&#39;compare&#39;</span>));</div>
 </div><!-- fragment --><h4><a class="anchor" id="pers_pagination"></a>
 Pagination</h4>
-<p><span class="label label-danger">TODO</span></p>
-<h3><a class="anchor" id="pers_search"></a>
+<p>In order to reduce the response time of your application when displaying large lists of objects, <a href="http://en.wikipedia.org/wiki/Pagination#Pagination_in_web_content">pagination</a> may be used. This technique splits the list into smaller parts (<em>pages</em>) that are displayed one by one. In wCMF the class <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html"><code>PagingInfo</code></a> implements the concept.</p>
+<p>The following code shows how to load <em>25</em> <code>Author</code> instances starting from position <em>50</em>:</p>
+<div class="fragment"><div class="line"><span class="comment">// setup paging</span></div>
+<div class="line">$pagingInfo = <span class="keyword">new</span> PagingInfo(25);</div>
+<div class="line">$pagingInfo-&gt;setOffset(50);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// load the Author instances</span></div>
+<div class="line">$authors = ObjectFactory::getInstance(<span class="stringliteral">&#39;persistenceFacade&#39;</span>)-&gt;loadObjects(<span class="stringliteral">&#39;Author&#39;</span>, BuildDepth::SINGLE, null, null, $pagingInfo);</div>
+</div><!-- fragment --><h3><a class="anchor" id="pers_search"></a>
 Searching objects</h3>
 <p>To search objects in the store the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html#a83e724262dff453dc35561b241ca7539"><code>PersistenceFacade::loadObjects</code></a> method may be used. It allows to set the conditions that loaded objects should match.</p>
 <div class="fragment"><div class="line">$criteria = array(</div>
@@ -238,12 +245,71 @@ Searching objects</h3>
 </div><!-- fragment --><p>In this example all <code>Book</code> instances with titles starting with <em>A</em> and release date <em>2014 or later</em> are loaded.</p>
 <p>More complex use cases are supported by the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_object_query.html"><code>ObjectQuery</code></a> class.</p>
 <h3><a class="anchor" id="pers_iter"></a>
-Traversing object graphs</h3>
-<p><span class="label label-danger">TODO</span></p>
-<h3><a class="anchor" id="pers_modify"></a>
+Iterators</h3>
+<p>wCMF provides several <a href="http://php.net/manual/en/class.iterator.php">iterator</a> classes for traversing objects and values.</p>
+<p><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node_iterator.html"><code>NodeIterator</code></a> allows to traverse object graphs starting from a root <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html"><code>Node</code></a>. The algorithm used is <a href="http://en.wikipedia.org/wiki/Depth-first_search">depth-first search</a>.</p>
+<div class="fragment"><div class="line"><span class="comment">// traverse $root and all descendents</span></div>
+<div class="line">$it = <span class="keyword">new</span> NodeIterator($root);</div>
+<div class="line"><span class="keywordflow">foreach</span>($it as $oid =&gt; $obj) {</div>
+<div class="line">  echo <span class="stringliteral">&quot;current object id: $oid&quot;</span>;</div>
+<div class="line">  echo <span class="stringliteral">&quot;current object: $obj&quot;</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node_value_iterator.html"><code>NodeValueIterator</code></a> is used to iterate over all persistent values of a <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html"><code>Node</code></a>.</p>
+<div class="fragment"><div class="line"><span class="comment">// traverse all values of $object</span></div>
+<div class="line">$it = <span class="keyword">new</span> NodeValueIterator($object);</div>
+<div class="line"><span class="keywordflow">for</span>($it-&gt;rewind(); $it-&gt;valid(); $it-&gt;next()) {</div>
+<div class="line">  echo <span class="stringliteral">&quot;current object: &quot;</span>.$it-&gt;currentNode();</div>
+<div class="line">  echo <span class="stringliteral">&quot;current attribute name: &quot;</span>.$it-&gt;key();</div>
+<div class="line">  echo <span class="stringliteral">&quot;current attribute value: &quot;</span>.$it-&gt;current();</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><a class="el" href="classwcmf_1_1lib_1_1model_1_1_persistent_iterator.html"><code>PersistentIterator</code></a> allows to traverse object graphs as well, but it's state may be persisted in order to split the iteration of large lists into smaller parts.</p>
+<div class="fragment"><div class="line"><span class="comment">// traverse 10 nodes starting from $oid</span></div>
+<div class="line">$counter = 0;</div>
+<div class="line">$it = <span class="keyword">new</span> PersistentIterator($oid);</div>
+<div class="line"><span class="keywordflow">while</span> ($it-&gt;valid() &amp;&amp; $counter &lt; 10) {</div>
+<div class="line">  echo <span class="stringliteral">&quot;current object: &quot;</span>.$it-&gt;currentNode();</div>
+<div class="line">  $it-&gt;next();</div>
+<div class="line">  $counter++;</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// save iterator state in the session</span></div>
+<div class="line">$iterId = $it-&gt;save();</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// load the iterator state later and traverse the remaining nodes</span></div>
+<div class="line">$it = PersistentIterator::load($iterId);</div>
+<div class="line"><span class="keywordflow">while</span> ($it-&gt;valid()) {</div>
+<div class="line">  echo <span class="stringliteral">&quot;current object: &quot;</span>.$it-&gt;currentNode();</div>
+<div class="line">  $it-&gt;next();</div>
+<div class="line">}</div>
+</div><!-- fragment --><h3><a class="anchor" id="pers_modify"></a>
 Modifying objects</h3>
-<p><span class="label label-danger">TODO</span></p>
-<h2><a class="anchor" id="pers_validation"></a>
+<p>Domain class instances are created by calling the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html#a2088197336092f89458036911a002bef"><code>PersistenceFacade::create</code></a> method or simply the class constructor, where the first approach is preferred over the second because it also sets the default values on attributes.</p>
+<p>Changes on instances are persisted automatically, when the current transaction is committed (see <a class="el" href="persistence.html#pers_tx">Transactions</a>). Objects are removed from the store by calling the <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a13bdffdd926f26b825ea57066334ff01"><code>PersistentObject::delete</code></a> method.</p>
+<div class="fragment"><div class="line">$persistenceFacade = ObjectFactory::getInstance(<span class="stringliteral">&#39;persistenceFacade&#39;</span>);</div>
+<div class="line">$tx = $persistenceFacade-&gt;getTransaction();</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// create an Author instance</span></div>
+<div class="line">$author = $persistenceFacade-&gt;create(<span class="stringliteral">&#39;Author&#39;</span>);</div>
+<div class="line">$author-&gt;setValue(<span class="stringliteral">&#39;name&#39;</span>, <span class="stringliteral">&#39;Author A&#39;</span>);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// create an Article instance and attach it to the author</span></div>
+<div class="line">$article = $persistenceFacade-&gt;create(<span class="stringliteral">&#39;Article&#39;</span>);</div>
+<div class="line">$article-&gt;setValue(<span class="stringliteral">&#39;title&#39;</span>, <span class="stringliteral">&#39;Article A&#39;</span>);</div>
+<div class="line">$author-&gt;addNode($article);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// save everything</span></div>
+<div class="line">$tx-&gt;commit();</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// get the author&#39;s object id</span></div>
+<div class="line">$oid = $author-&gt;getOID()</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// delete the author instance</span></div>
+<div class="line">$author = $persistenceFacade-&gt;load($oid);</div>
+<div class="line">$author-&gt;delete();</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// save everything</span></div>
+<div class="line">$tx-&gt;commit();</div>
+</div><!-- fragment --><h2><a class="anchor" id="pers_validation"></a>
 Validation</h2>
 <p><span class="label label-danger">TODO</span></p>
 <h2><a class="anchor" id="pers_concurrency"></a>
@@ -261,7 +327,7 @@ Transactions</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Mon Mar 16 2015 13:36:50 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Tue Mar 17 2015 01:09:58 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
