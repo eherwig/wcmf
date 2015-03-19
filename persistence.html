@@ -387,7 +387,28 @@ Locking</h3>
 <div class="line">$concurrencyManager-&gt;releaseLock($oid, $lockType);</div>
 </div><!-- fragment --><h2><a class="anchor" id="pers_tx"></a>
 Transactions</h2>
-<p><span class="label label-danger">TODO</span> </p>
+<p>wCMF supports <a href="http://en.wikipedia.org/wiki/Database_transaction">database transactions</a>. There is only <b>one transaction at the same time</b> and it may be obtained using the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html#ac67a68804da2dfc9131f341f3659e578"><code>PersistenceFacade::getTransaction</code></a> method. The transaction has an <em>active</em> state, which is set in the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a3a9793666e688407121d76d3a7e4db5d"><code>Transaction::begin</code></a> method and reset on commit or rollback.</p>
+<p>The following example shows, how to use transactions:</p>
+<div class="fragment"><div class="line">$persistenceFacade = ObjectFactory::getInstance(<span class="stringliteral">&#39;persistenceFacade&#39;</span>);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// get the current transaction and start it</span></div>
+<div class="line">$transaction = $persistenceFacade-&gt;getTransaction();</div>
+<div class="line">$transaction-&gt;begin();</div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">  <span class="comment">// load the the Author instance with id 1 and make changes to it</span></div>
+<div class="line">  $author = $persistenceFacade-&gt;load(<span class="keyword">new</span> ObjectId(<span class="stringliteral">&#39;Author&#39;</span>, 1));</div>
+<div class="line">  $author-&gt;setValue(<span class="stringliteral">&quot;name&quot;</span>, <span class="stringliteral">&quot;Author B&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">  <span class="comment">// save the changes</span></div>
+<div class="line">  $transaction-&gt;commit();</div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">catch</span>(<a class="code" href="namespace_exception.html">Exception</a> $ex) {</div>
+<div class="line">  <span class="comment">// rollback the transaction if the commit fails</span></div>
+<div class="line">  echo $ex-&gt;getMessage();</div>
+<div class="line">  $transaction-&gt;rollback();</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Even if not obtained explicitely, there is always a transaction existing in the background, to which objects loaded from the store are attached. But in order to persist changes when doing a commit, the transaction has to be set <em>active</em> <em>before</em> loading or creating the object.</dd></dl>
+<p>There are situations where you want to let the current transaction <b>ignore changes</b> made to newly created objects or objects loaded from the store. In these cases you can use the method <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a8602b5996ccc25be7603f59f5b019ef5"><code>Transaction::detach</code></a> in order to disconnect the object from the transaction. </p>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -397,7 +418,7 @@ Transactions</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Mar 18 2015 15:17:54 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Thu Mar 19 2015 12:47:13 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
