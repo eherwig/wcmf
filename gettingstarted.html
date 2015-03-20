@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <div id="MSearchBox">
-                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search API" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
                   <div id="MSearchSelect"></div>
                   <div id="MSearchClose"></div>
@@ -100,9 +100,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Getting started </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="has-toc"></div><h1>Getting started</h1>
+<div class="textblock"><div class="has-toc"></div><h1><a class="anchor" id="getting_started"></a>
+Getting started</h1>
 <p>The wCMF project mainly consists of two parts, the application framework and an application template.</p>
-<h2>wCMF Framework</h2>
+<h2><a class="anchor" id="framework"></a>
+wCMF Framework</h2>
 <p>The wCMF framework provides the infrastructure to create PHP web applications based on the model-view-controller pattern. The project's source code is hosted at <a href="https://github.com/iherwig/wcmf">GitHub</a> and can be forked or downloaded from there.</p>
 <p>If you manage your dependencies using <a href="https://getcomposer.org/">Composer</a> you may want to add the following lines to your <code>composer.json</code>:</p>
 <div class="fragment"><div class="line">{</div>
@@ -110,7 +112,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        <span class="stringliteral">&quot;wcmf/wcmf&quot;</span>: <span class="stringliteral">&quot;dev-master&quot;</span></div>
 <div class="line">    }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2>Default Application</h2>
+</div><!-- fragment --><h2><a class="anchor" id="app"></a>
+Default Application</h2>
 <p>The default application is a fully functional data managing application based on the wCMF framework. Besides interfaces for create/read/update/delete (CRUD) operations on all entity types defined in the domain model, it features user, role and permission management as well as a lucene based search.</p>
 <p>The following screenshots show the list and detail view of an <em>Author</em> entity type.</p>
 <div class="image">
@@ -119,7 +122,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="wcmf-default-app2ws.png" alt="wcmf-default-app2ws.png"/>
 </div>
-<h3>Prerequisites</h3>
+<h3><a class="anchor" id="app_pre"></a>
+Prerequisites</h3>
 <p>To run the wCMF default application you will need the following:</p>
 <ul>
 <li>Web server (e.g. Apache)</li>
@@ -128,9 +132,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>UML Modeling tool (e.g. <a href="http://www.eclipse.org/papyrus/">Eclipse Papyrus</a> or <a href="http://sourceforge.net/projects/olympos/">Chronos Web Modeler</a>)</li>
 <li><a href="http://ant.apache.org/">Apache Ant</a> for code generation and deployment</li>
 </ul>
-<h3>Installation</h3>
+<h3><a class="anchor" id="app_install"></a>
+Installation</h3>
 <p>The application's source code may be forked or downloaded from <a href="https://github.com/iherwig/wcmf-default-app">GitHub</a>. After download, execute the following steps to get a running application:</p>
-<h4>Unpack the code</h4>
+<h4><a class="anchor" id="app_install_zip"></a>
+Unpack the code</h4>
 <p>Put the code into a directory accessible to your web server. You should see the following directories:</p>
 <ul>
 <li><em>app</em><ul>
@@ -147,15 +153,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li><em>tools</em></li>
 </ul>
 <p>We assume that the application's root directory is accessible via the url <code><a href="http://localhost/wcmf-default-app">http://localhost/wcmf-default-app</a></code>.</p>
-<h4>Run Composer</h4>
+<h4><a class="anchor" id="app_install_composer"></a>
+Run Composer</h4>
 <p>The application uses Composer to manage external dependencies. Execute the following command in the root directory of the application to fetch them:</p>
 <div class="fragment"><div class="line">composer install</div>
-</div><!-- fragment --><h4>Model the domain</h4>
+</div><!-- fragment --><h3><a class="anchor" id="app_model"></a>
+Model the domain</h3>
 <p>The application ships with a demo UML model that may be used as a quick start. It's located in <code>model/model.uml</code>. Base models for those who want to start from scratch are located in <em>model/base/cwm/</em> and <em>model/base/papyrus/</em>. An in-depth guide on modeling for wCMF may be found in the section <a class="el" href="model.html">Model</a>.</p>
-<h4>Generate the code</h4>
+<h3><a class="anchor" id="app_gen"></a>
+Generate the code</h3>
 <p>A code generator is used to generate class- and configuration files from the domain model. Execute the following command in the <em>build</em> directory of the application in order to run the generator:</p>
 <div class="fragment"><div class="line">ant generate</div>
-</div><!-- fragment --><h4>Setup the database connection</h4>
+</div><!-- fragment --><h3><a class="anchor" id="app_db"></a>
+Setup the database connection</h3>
 <p>The database connection information is defined in the file <code>app/config/server.ini</code> and defaults to</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Database]</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;dbType = mysql</div>
@@ -165,13 +175,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;dbPassword =</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;dbCharSet = utf8</div>
 </div><!-- fragment --><p>Change these values to fit your local configuration. If privileges are granted, the database will be created automatically in the next step. If not, you have to create it beforehand.</p>
-<h4>Run installation scripts</h4>
+<h3><a class="anchor" id="app_db_init"></a>
+Run installation scripts</h3>
 <p>Open a web browser and navigate to <code><a href="http://localhost/wcmf-default-app/install/">http://localhost/wcmf-default-app/install/</a></code>. Click the buttons:</p>
 <ul>
 <li><em>Update database</em> to create the application tables</li>
 <li><em>Initialize database</em> to create the initial data (e.g. the <em>admin</em> user)</li>
 </ul>
-<h4>Open the application</h4>
+<h3><a class="anchor" id="app_run"></a>
+Open the application</h3>
 <p>Navigate to <code><a href="http://localhost/wcmf-default-app/app/public/">http://localhost/wcmf-default-app/app/public/</a></code> to open the login screen. Sign in using</p>
 <ul>
 <li>Username: <em>admin</em></li>
@@ -186,7 +198,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 19 2015 19:20:37 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 20 2015 02:50:18 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

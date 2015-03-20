@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <div id="MSearchBox">
-                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search API" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
                   <div id="MSearchSelect"></div>
                   <div id="MSearchClose"></div>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d75c23162a2652451dce46d2e7e8aead.html">application</a></li><li class="navelem"><a class="el" href="dir_d4705990998dc57c6886494362019069.html">controller</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e659925bc7938c132ebc659cdfa3fb60.html">application</a></li><li class="navelem"><a class="el" href="dir_534cac7d4c5b7fef43abeb5786558088.html">controller</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">MessageController.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_message_controller_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2014 wemove digital solutions GmbH</span></div>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * See the LICENSE file distributed with this work for</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1application_1_1controller.html" title="Application controllers. ">wcmf\application\controller</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1application_1_1controller.html">wcmf\application\controller</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1i18n_1_1_message.html">wcmf\lib\i18n\Message</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1_controller.html">wcmf\lib\presentation\Controller</a>;</div>
@@ -139,13 +139,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_message_controller.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1application_1_1controller_1_1_message_controller.html" title="MessageController is used to get all messages translated to the given language. ">MessageController</a> <span class="keyword">extends</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html" title="Controller is the base class of all controllers. ">Controller</a> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_message_controller.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1application_1_1controller_1_1_message_controller.html">MessageController</a> <span class="keyword">extends</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html">Controller</a> {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">   * @see Controller::validate()</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_message_controller.html#a184909dab34698899937d810a9f5d393">   41</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_message_controller.html#a184909dab34698899937d810a9f5d393">validate</a>() {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">if</span> (!$this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a87b623a9d1bd969d602c10eee8b40d04" title="Checks the language request parameter and adds an respons error, if it is not contained in the Locali...">checkLanguageParameter</a>()) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">if</span> (!$this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a87b623a9d1bd969d602c10eee8b40d04">checkLanguageParameter</a>()) {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// do default validation</span></div>
@@ -157,12 +157,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_message_controller.html#a4eadfceba84d61eda01f9828935cf8e5">   52</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_message_controller.html#a4eadfceba84d61eda01f9828935cf8e5">doExecute</a>() {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    $request = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22" title="Get the Request object. ">getRequest</a>();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f" title="Get the Response object. ">getResponse</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    $request = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">getRequest</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>();</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// get all messages</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    $lang = $request-&gt;getValue(<span class="stringliteral">&#39;language&#39;</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    $messages = <a class="code" href="classwcmf_1_1lib_1_1i18n_1_1_message.html#ad6a14f1346ac261f322015b6e1ea6284" title="The getAll() method is used to get a localized list of all defined strings. ">Message::getAll</a>($lang);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    $messages = <a class="code" href="classwcmf_1_1lib_1_1i18n_1_1_message.html#ad6a14f1346ac261f322015b6e1ea6284">Message::getAll</a>($lang);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    $response-&gt;setValues($messages);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// success</span></div>
@@ -173,13 +173,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">   * @see Controller::assignResponseDefaults()</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_message_controller.html#a570fd766e5395246e8fb34d8a317616c">   69</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_message_controller.html#a570fd766e5395246e8fb34d8a317616c">assignResponseDefaults</a>() {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>($this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f" title="Get the Response object. ">getResponse</a>()-&gt;getErrors()) &gt; 0) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>($this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>()-&gt;getErrors()) &gt; 0) {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      parent::assignResponseDefaults();</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// don&#39;t add anything in case of success</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;?&gt;</div>
+<div class="ttc" id="classwcmf_1_1lib_1_1i18n_1_1_message_html_ad6a14f1346ac261f322015b6e1ea6284"><div class="ttname"><a href="classwcmf_1_1lib_1_1i18n_1_1_message.html#ad6a14f1346ac261f322015b6e1ea6284">wcmf\lib\i18n\Message\getAll</a></div><div class="ttdeci">static getAll($lang='')</div><div class="ttdoc">The getAll() method is used to get a localized list of all defined strings. </div><div class="ttdef"><b>Definition:</b> <a href="_message_8php_source.html#l00110">Message.php:110</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_adf1a35ad20e475c59cc0967d5764aa22"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">wcmf\lib\presentation\Controller\getRequest</a></div><div class="ttdeci">getRequest()</div><div class="ttdoc">Get the Request object. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00152">Controller.php:152</a></div></div>
+<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_message_controller_html_a184909dab34698899937d810a9f5d393"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_message_controller.html#a184909dab34698899937d810a9f5d393">wcmf\application\controller\MessageController\validate</a></div><div class="ttdeci">validate()</div><div class="ttdef"><b>Definition:</b> <a href="_message_controller_8php_source.html#l00041">MessageController.php:41</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html">wcmf\lib\presentation\Controller</a></div><div class="ttdoc">Controller is the base class of all controllers. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00041">Controller.php:41</a></div></div>
+<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_message_controller_html_a4eadfceba84d61eda01f9828935cf8e5"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_message_controller.html#a4eadfceba84d61eda01f9828935cf8e5">wcmf\application\controller\MessageController\doExecute</a></div><div class="ttdeci">doExecute()</div><div class="ttdef"><b>Definition:</b> <a href="_message_controller_8php_source.html#l00052">MessageController.php:52</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_controller_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_controller.html">Controller</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a87b623a9d1bd969d602c10eee8b40d04"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a87b623a9d1bd969d602c10eee8b40d04">wcmf\lib\presentation\Controller\checkLanguageParameter</a></div><div class="ttdeci">checkLanguageParameter()</div><div class="ttdoc">Checks the language request parameter and adds an respons error, if it is not contained in the Locali...</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00214">Controller.php:214</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1i18n_1_1_message_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1application_1_1controller_html"><div class="ttname"><a href="namespacewcmf_1_1application_1_1controller.html">wcmf\application\controller</a></div><div class="ttdoc">Application controllers. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00003">namespaces.php:3</a></div></div>
+<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_message_controller_html_a570fd766e5395246e8fb34d8a317616c"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_message_controller.html#a570fd766e5395246e8fb34d8a317616c">wcmf\application\controller\MessageController\assignResponseDefaults</a></div><div class="ttdeci">assignResponseDefaults()</div><div class="ttdef"><b>Definition:</b> <a href="_message_controller_8php_source.html#l00069">MessageController.php:69</a></div></div>
+<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_message_controller_html"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_message_controller.html">wcmf\application\controller\MessageController</a></div><div class="ttdoc">MessageController is used to get all messages translated to the given language. </div><div class="ttdef"><b>Definition:</b> <a href="_message_controller_8php_source.html#l00036">MessageController.php:36</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a6c907e8af775e517a77037dd0164222f"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">wcmf\lib\presentation\Controller\getResponse</a></div><div class="ttdeci">getResponse()</div><div class="ttdoc">Get the Response object. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00160">Controller.php:160</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -189,7 +201,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 19 2015 19:20:33 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 20 2015 02:50:16 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

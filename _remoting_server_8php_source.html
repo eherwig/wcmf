@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <div id="MSearchBox">
-                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search API" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
                   <div id="MSearchSelect"></div>
                   <div id="MSearchClose"></div>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_6e2676533094fc65b5aa77e942e2c54c.html">service</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_a4349cbbcd5ad81c177e82224d5e014f.html">service</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">RemotingServer.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_remoting_server_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2014 wemove digital solutions GmbH</span></div>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * See the LICENSE file distributed with this work for</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1service.html" title="Service related interfaces and classes. ">wcmf\lib\service</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1service.html">wcmf\lib\service</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1core_1_1_object_factory.html">wcmf\lib\core\ObjectFactory</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1_response.html">wcmf\lib\presentation\Response</a>;</div>
@@ -144,7 +144,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1service_1_1_remoting_server.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1service_1_1_remoting_server.html" title="RemotingServer is used to communicate with other wCMF instances. ">RemotingServer</a> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1service_1_1_remoting_server.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1service_1_1_remoting_server.html">RemotingServer</a> {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">private</span> $_clients = array();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">private</span> $_users = array();</div>
@@ -155,13 +155,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">   * @param $request A Request instance</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">   * @return A Response instance</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1service_1_1_remoting_server.html#adfd9d351e1e4a337833dd209ea3e5b72">   52</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1service_1_1_remoting_server.html#adfd9d351e1e4a337833dd209ea3e5b72" title="Send a request to the server identified by serverKey. ">doCall</a>($serverKey, $request) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1service_1_1_remoting_server.html#adfd9d351e1e4a337833dd209ea3e5b72">   52</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1service_1_1_remoting_server.html#adfd9d351e1e4a337833dd209ea3e5b72">doCall</a>($serverKey, $request) {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    $client = $this-&gt;getClient($serverKey);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> ($client) {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      $response = $client-&gt;call($request);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keywordflow">return</span> $response;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a>(null, null, null);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_response.html">Response</a>(null, null, null);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">  /**</span></div>
@@ -171,14 +171,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">private</span> <span class="keyword">function</span> getClient($serverKey) {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (!isset($this-&gt;_clients[$serverKey])) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      $config = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a25119d3df435b609991f58060ea482e2" title="Get the Configuration instance. ">ObjectFactory::getConfigurationInstance</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      $config = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a25119d3df435b609991f58060ea482e2">ObjectFactory::getConfigurationInstance</a>();</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      $serverDef = $config-&gt;getValue($serverKey, <span class="stringliteral">&#39;remoteserver&#39;</span>);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="comment">// get remote the user</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      $user = $this-&gt;getRemoteUser($serverKey);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      $client = null;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <span class="keywordflow">if</span> (strpos($serverDef, <span class="stringliteral">&#39;http://&#39;</span>) === 0 || strpos($serverDef, <span class="stringliteral">&#39;https://&#39;</span>) === 0) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        $client = <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1service_1_1impl_1_1_h_t_t_p_client.html" title="HTTPClient is used to do calls to other wCMF instances over HTTP. ">HTTPClient</a>($serverDef, $user);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        $client = <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1service_1_1impl_1_1_h_t_t_p_client.html">HTTPClient</a>($serverDef, $user);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      }</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        $client = <span class="keyword">new</span> RPCClient($serverDef, $user);</div>
@@ -195,7 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">private</span> <span class="keyword">function</span> getRemoteUser($serverKey) {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">if</span> (!isset($this-&gt;_users[$serverKey])) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      $config = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a25119d3df435b609991f58060ea482e2" title="Get the Configuration instance. ">ObjectFactory::getConfigurationInstance</a>();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      $config = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a25119d3df435b609991f58060ea482e2">ObjectFactory::getConfigurationInstance</a>();</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      $remoteUser = $config-&gt;getValue($serverKey, <span class="stringliteral">&#39;remoteuser&#39;</span>);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="keywordflow">if</span> (is_array($remoteUser) &amp;&amp; <span class="keyword">sizeof</span>($remoteUser) == 2) {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        $this-&gt;_users[$serverKey] = array(</div>
@@ -214,6 +214,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;?&gt;</div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1service_1_1impl_1_1_h_t_t_p_client_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1service_1_1impl_1_1_h_t_t_p_client.html">HTTPClient</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a25119d3df435b609991f58060ea482e2"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a25119d3df435b609991f58060ea482e2">wcmf\lib\core\ObjectFactory\getConfigurationInstance</a></div><div class="ttdeci">static getConfigurationInstance()</div><div class="ttdoc">Get the Configuration instance. </div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00072">ObjectFactory.php:72</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1service_1_1_remoting_server_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1service_1_1_remoting_server.html">wcmf\lib\service\RemotingServer</a></div><div class="ttdoc">RemotingServer is used to communicate with other wCMF instances. </div><div class="ttdef"><b>Definition:</b> <a href="_remoting_server_8php_source.html#l00041">RemotingServer.php:41</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1service_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1service.html">wcmf\lib\service</a></div><div class="ttdoc">Service related interfaces and classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00092">namespaces.php:92</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1service_1_1impl_1_1_h_t_t_p_client_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1service_1_1impl_1_1_h_t_t_p_client.html">wcmf\lib\service\impl\HTTPClient</a></div><div class="ttdoc">HTTPClient is used to do calls to other wCMF instances over HTTP. </div><div class="ttdef"><b>Definition:</b> <a href="_h_t_t_p_client_8php_source.html#l00028">HTTPClient.php:28</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1service_1_1impl_1_1_r_p_c_client_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1service_1_1impl_1_1_r_p_c_client.html">RPCClient</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_response.html">wcmf\lib\presentation\Response</a></div><div class="ttdoc">Response holds the response values that are used as output from Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_response_8php_source.html#l00022">Response.php:22</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_object_factory_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_object_factory.html">ObjectFactory</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1service_1_1_remoting_server_html_adfd9d351e1e4a337833dd209ea3e5b72"><div class="ttname"><a href="classwcmf_1_1lib_1_1service_1_1_remoting_server.html#adfd9d351e1e4a337833dd209ea3e5b72">wcmf\lib\service\RemotingServer\doCall</a></div><div class="ttdeci">doCall($serverKey, $request)</div><div class="ttdoc">Send a request to the server identified by serverKey. </div><div class="ttdef"><b>Definition:</b> <a href="_remoting_server_8php_source.html#l00052">RemotingServer.php:52</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -223,7 +233,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 19 2015 19:20:35 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 20 2015 02:50:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

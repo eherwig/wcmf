@@ -1,14 +1,11 @@
 var searchData=
 [
   ['layoutvisitor',['LayoutVisitor',['../classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html',1,'wcmf::lib::model::visitor']]],
-  ['layoutvisitor_2ephp',['LayoutVisitor.php',['../_layout_visitor_8php.html',1,'']]],
   ['limit_5fnegative',['LIMIT_NEGATIVE',['../namespacewcmf_1_1lib_1_1presentation.html#a9d9aafb0da2465c50b9c293d23bb214e',1,'wcmf::lib::presentation']]],
   ['linetype_5fdirect',['LINETYPE_DIRECT',['../classwcmf_1_1lib_1_1model_1_1output_1_1_image_output_strategy.html#a7f7fa08faa628531fd99c88c289b5a2e',1,'wcmf::lib::model::output::ImageOutputStrategy']]],
   ['linetype_5frouted',['LINETYPE_ROUTED',['../classwcmf_1_1lib_1_1model_1_1output_1_1_image_output_strategy.html#aee5cf1ae259d9df4e93d72fe83255a75',1,'wcmf::lib::model::output::ImageOutputStrategy']]],
   ['listcontroller',['ListController',['../classwcmf_1_1application_1_1controller_1_1_list_controller.html',1,'wcmf::application::controller']]],
-  ['listcontroller_2ephp',['ListController.php',['../_list_controller_8php.html',1,'']]],
   ['liststrategy',['ListStrategy',['../interfacewcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1_list_strategy.html',1,'wcmf::lib::presentation::control::lists']]],
-  ['liststrategy_2ephp',['ListStrategy.php',['../_list_strategy_8php.html',1,'']]],
   ['load',['load',['../classwcmf_1_1lib_1_1model_1_1_persistent_iterator.html#af521ea4240219f0a0ccbd1819033148f',1,'wcmf\lib\model\PersistentIterator\load()'],['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a90b99cef8752ebb13eb49a1005a251ec',1,'wcmf\lib\persistence\impl\AbstractMapper\load()'],['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistence_facade.html#a90b99cef8752ebb13eb49a1005a251ec',1,'wcmf\lib\persistence\impl\DefaultPersistenceFacade\load()'],['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_remote_capable_persistence_facade.html#a90b99cef8752ebb13eb49a1005a251ec',1,'wcmf\lib\persistence\impl\RemoteCapablePersistenceFacade\load()'],['../interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html#a90b99cef8752ebb13eb49a1005a251ec',1,'wcmf\lib\persistence\PersistenceFacade\load()'],['../interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a90b99cef8752ebb13eb49a1005a251ec',1,'wcmf\lib\persistence\PersistenceMapper\load()']]],
   ['loadchildren',['loadChildren',['../classwcmf_1_1lib_1_1model_1_1_node.html#a2cfcc79657b237f9c8ca4fac2508a5a9',1,'wcmf::lib::model::Node']]],
   ['loadfirstobject',['loadFirstObject',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistence_facade.html#ad9192b6aaf8db759f289763d287ea2a7',1,'wcmf\lib\persistence\impl\DefaultPersistenceFacade\loadFirstObject()'],['../interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html#ad9192b6aaf8db759f289763d287ea2a7',1,'wcmf\lib\persistence\PersistenceFacade\loadFirstObject()']]],
@@ -30,20 +27,13 @@ var searchData=
   ['loadtranslation',['loadTranslation',['../classwcmf_1_1lib_1_1i18n_1_1impl_1_1_default_localization.html#aecf5f93cd7a9c4d36ff3890879cb5209',1,'wcmf\lib\i18n\impl\DefaultLocalization\loadTranslation()'],['../interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#aecf5f93cd7a9c4d36ff3890879cb5209',1,'wcmf\lib\i18n\Localization\loadTranslation()']]],
   ['loadtranslationimpl',['loadTranslationImpl',['../classwcmf_1_1lib_1_1i18n_1_1impl_1_1_default_localization.html#a59dcd90529647ed7a06a2e7d0682a194',1,'wcmf::lib::i18n::impl::DefaultLocalization']]],
   ['localization',['Localization',['../interfacewcmf_1_1lib_1_1i18n_1_1_localization.html',1,'wcmf::lib::i18n']]],
-  ['localization_2ephp',['Localization.php',['../_localization_8php.html',1,'']]],
   ['lock',['Lock',['../classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html',1,'wcmf::lib::persistence::concurrency']]],
-  ['lock_2ephp',['Lock.php',['../_lock_8php.html',1,'']]],
   ['lockhandler',['LockHandler',['../interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock_handler.html',1,'wcmf::lib::persistence::concurrency']]],
-  ['lockhandler_2ephp',['LockHandler.php',['../_lock_handler_8php.html',1,'']]],
   ['log',['Log',['../classwcmf_1_1lib_1_1core_1_1_log.html',1,'wcmf::lib::core']]],
-  ['log_2ephp',['Log.php',['../_log_8php.html',1,'']]],
   ['logaction',['logAction',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a5bcf6eb1ecdfeda45c4a34223aadcd92',1,'wcmf::lib::persistence::impl::AbstractMapper']]],
   ['loggingcontroller',['LoggingController',['../classwcmf_1_1application_1_1controller_1_1_logging_controller.html',1,'wcmf::application::controller']]],
-  ['loggingcontroller_2ephp',['LoggingController.php',['../_logging_controller_8php.html',1,'']]],
   ['login',['login',['../interfacewcmf_1_1lib_1_1security_1_1_authentication_manager.html#a6090ba2dfd95fa92d36e39969ed9a5c7',1,'wcmf\lib\security\AuthenticationManager\login()'],['../classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html#a6090ba2dfd95fa92d36e39969ed9a5c7',1,'wcmf\lib\security\impl\DefaultAuthenticationManager\login()']]],
   ['logincontroller',['LoginController',['../classwcmf_1_1application_1_1controller_1_1_login_controller.html',1,'wcmf::application::controller']]],
-  ['logincontroller_2ephp',['LoginController.php',['../_login_controller_8php.html',1,'']]],
   ['lookup',['lookup',['../classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html#a6a0d862231f5886c84bfcf362911404a',1,'wcmf::lib::config::impl::InifileConfiguration']]],
-  ['lucenesearch',['LuceneSearch',['../classwcmf_1_1lib_1_1search_1_1impl_1_1_lucene_search.html',1,'wcmf::lib::search::impl']]],
-  ['lucenesearch_2ephp',['LuceneSearch.php',['../_lucene_search_8php.html',1,'']]]
+  ['lucenesearch',['LuceneSearch',['../classwcmf_1_1lib_1_1search_1_1impl_1_1_lucene_search.html',1,'wcmf::lib::search::impl']]]
 ];

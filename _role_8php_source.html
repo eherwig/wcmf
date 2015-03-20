@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <div id="MSearchBox">
-                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search API" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
                   <div id="MSearchSelect"></div>
                   <div id="MSearchClose"></div>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_a433880e15c69bf379b17cfb26eaf05d.html">security</a></li><li class="navelem"><a class="el" href="dir_9add21fbd46783274b745bfe4cfb7cca.html">principal</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_88527e3c69c4b7a74da3f178c2797901.html">security</a></li><li class="navelem"><a class="el" href="dir_0dbe3780b17c1304d8c46cd23f0e05f9.html">principal</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Role.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_role_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2014 wemove digital solutions GmbH</span></div>
@@ -114,28 +114,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * See the LICENSE file distributed with this work for</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1security_1_1principal.html" title="&#160; ">wcmf\lib\security\principal</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1security_1_1principal.html">wcmf\lib\security\principal</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * Role is the interface for user roles.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html">   18</a></span>&#160;<span class="keyword">interface </span><a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html" title="Role is the interface for user roles. ">Role</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html">   18</a></span>&#160;<span class="keyword">interface </span><a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html">Role</a> {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">   * Set the name of the role.</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">   * @param $name The name of the role.</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html#a2fe666694997d047711d7653eca2f132" title="Set the name of the role. ">setName</a>($name);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html#a2fe666694997d047711d7653eca2f132">setName</a>($name);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">   * Get name of the role.</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">   * @return The name of the role.</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html#a3d0963e68bb313b163a73f2803c64600" title="Get name of the role. ">getName</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html#a3d0963e68bb313b163a73f2803c64600">getName</a>();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;?&gt;</div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1security_1_1principal_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1security_1_1principal.html">wcmf\lib\security\principal</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00087">namespaces.php:87</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role_html_a3d0963e68bb313b163a73f2803c64600"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html#a3d0963e68bb313b163a73f2803c64600">wcmf\lib\security\principal\Role\getName</a></div><div class="ttdeci">getName()</div><div class="ttdoc">Get name of the role. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html">wcmf\lib\security\principal\Role</a></div><div class="ttdoc">Role is the interface for user roles. </div><div class="ttdef"><b>Definition:</b> <a href="_role_8php_source.html#l00018">Role.php:18</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role_html_a2fe666694997d047711d7653eca2f132"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html#a2fe666694997d047711d7653eca2f132">wcmf\lib\security\principal\Role\setName</a></div><div class="ttdeci">setName($name)</div><div class="ttdoc">Set the name of the role. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -145,7 +149,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 19 2015 19:20:35 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 20 2015 02:50:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <div id="MSearchBox">
-                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search API" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
                   <div id="MSearchSelect"></div>
                   <div id="MSearchClose"></div>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_158140ff656f78de6c470107cebb8f00.html">util</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_b43341d16db0234838ae0798b48b0108.html">util</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Obfuscator.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_obfuscator_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2014 wemove digital solutions GmbH</span></div>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * See the LICENSE file distributed with this work for</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1util.html" title="Utility classes. ">wcmf\lib\util</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1util.html">wcmf\lib\util</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1core_1_1_object_factory.html">wcmf\lib\core\ObjectFactory</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span></div>
@@ -126,7 +126,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html" title="Obfuscator allows to obfuscate strings. ">Obfuscator</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html">Obfuscator</a> {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="comment">// session name constants</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">private</span> <span class="keyword">static</span> $VALUES_VARNAME = <span class="stringliteral">&#39;Obfuscator.values&#39;</span>;</div>
@@ -136,11 +136,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">   * @param $str The original sring</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">   * @return The obfuscated string</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html#a81a1f6ff47bb1df4aab684cd2da6d76d">   33</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html#a81a1f6ff47bb1df4aab684cd2da6d76d" title="Get an obfuscated string. ">obfuscate</a>($str) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html#a81a1f6ff47bb1df4aab684cd2da6d76d">   33</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html#a81a1f6ff47bb1df4aab684cd2da6d76d">obfuscate</a>($str) {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span> (strlen($str) == 0) {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="keywordflow">return</span> <span class="stringliteral">&#39;&#39;</span>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    $session = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415" title="Get an instance from the configuration. ">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;session&#39;</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    $session = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;session&#39;</span>);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    self::ensureStorage();</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// create and store the value</span></div>
@@ -157,8 +157,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">   * @param $str The obfuscated sring</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">   * @return The original string or an empty string if it does not exist</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html#a2d7dcfe6f1e0f38b99d8c7ef7dba03f7">   54</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html#a2d7dcfe6f1e0f38b99d8c7ef7dba03f7" title="Get an unveiled string. ">unveil</a>($str) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    $session = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415" title="Get an instance from the configuration. ">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;session&#39;</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html#a2d7dcfe6f1e0f38b99d8c7ef7dba03f7">   54</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html#a2d7dcfe6f1e0f38b99d8c7ef7dba03f7">unveil</a>($str) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    $session = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;session&#39;</span>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    self::ensureStorage();</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    $values = $session-&gt;get(self::$VALUES_VARNAME);</div>
@@ -174,7 +174,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">   * Ensure that the session storage for the values is initialized</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">function</span> ensureStorage() {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    $session = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415" title="Get an instance from the configuration. ">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;session&#39;</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    $session = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;session&#39;</span>);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (!$session-&gt;exist(self::$VALUES_VARNAME)) {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      $values = array();</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      $session-&gt;set(self::$VALUES_VARNAME, $values);</div>
@@ -182,6 +182,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;?&gt;</div>
+<div class="ttc" id="classwcmf_1_1lib_1_1util_1_1_obfuscator_html_a81a1f6ff47bb1df4aab684cd2da6d76d"><div class="ttname"><a href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html#a81a1f6ff47bb1df4aab684cd2da6d76d">wcmf\lib\util\Obfuscator\obfuscate</a></div><div class="ttdeci">static obfuscate($str)</div><div class="ttdoc">Get an obfuscated string. </div><div class="ttdef"><b>Definition:</b> <a href="_obfuscator_8php_source.html#l00033">Obfuscator.php:33</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1util_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1util.html">wcmf\lib\util</a></div><div class="ttdoc">Utility classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00097">namespaces.php:97</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1util_1_1_obfuscator_html_a2d7dcfe6f1e0f38b99d8c7ef7dba03f7"><div class="ttname"><a href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html#a2d7dcfe6f1e0f38b99d8c7ef7dba03f7">wcmf\lib\util\Obfuscator\unveil</a></div><div class="ttdeci">static unveil($str)</div><div class="ttdoc">Get an unveiled string. </div><div class="ttdef"><b>Definition:</b> <a href="_obfuscator_8php_source.html#l00054">Obfuscator.php:54</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1util_1_1_obfuscator_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html">wcmf\lib\util\Obfuscator</a></div><div class="ttdoc">Obfuscator allows to obfuscate strings. </div><div class="ttdef"><b>Definition:</b> <a href="_obfuscator_8php_source.html#l00023">Obfuscator.php:23</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_object_factory_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_object_factory.html">ObjectFactory</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a0ebda2d4f8517d892a36a5c08e879415"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">wcmf\lib\core\ObjectFactory\getInstance</a></div><div class="ttdeci">static getInstance($name)</div><div class="ttdoc">Get an instance from the configuration. </div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00084">ObjectFactory.php:84</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -191,7 +197,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 19 2015 19:20:35 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 20 2015 02:50:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

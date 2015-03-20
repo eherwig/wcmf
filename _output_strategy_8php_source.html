@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <div id="MSearchBox">
-                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search API" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
                   <div id="MSearchSelect"></div>
                   <div id="MSearchClose"></div>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_af4f2c8af6d5aeb9e7b67de5ac895365.html">persistence</a></li><li class="navelem"><a class="el" href="dir_b4e025510a7facccb659160a17a5ef90.html">output</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_39c44806d06b09217b7facf120c76084.html">persistence</a></li><li class="navelem"><a class="el" href="dir_d148dd3f9ce82ae75709d28a9cdaaed8.html">output</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">OutputStrategy.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_output_strategy_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2014 wemove digital solutions GmbH</span></div>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * See the LICENSE file distributed with this work for</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1persistence_1_1output.html" title="&#160; ">wcmf\lib\persistence\output</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1persistence_1_1output.html">wcmf\lib\persistence\output</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">wcmf\lib\persistence\PersistentObject</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span></div>
@@ -125,25 +125,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy.html">   22</a></span>&#160;<span class="keyword">interface </span><a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy.html" title="OutputStrategy defines the interface for classes that write an object&#39;s content to a destination (cal...">OutputStrategy</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy.html">   22</a></span>&#160;<span class="keyword">interface </span><a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy.html">OutputStrategy</a> {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">   * Write the document header.</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy.html#aebc6fcc595ba5fb79eee73a6b44f76c1" title="Write the document header. ">writeHeader</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy.html#aebc6fcc595ba5fb79eee73a6b44f76c1">writeHeader</a>();</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">   * Write the document footer.</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy.html#af8d1aaf7e817a5f84b74f313b9f6d500" title="Write the document footer. ">writeFooter</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy.html#af8d1aaf7e817a5f84b74f313b9f6d500">writeFooter</a>();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">   * Write the object&#39;s content.</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">   * @param $obj The object to write.</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy.html#a847655b39d94d2ee1821f4bfcd684764" title="Write the object&#39;s content. ">writeObject</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a> $obj);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy.html#a847655b39d94d2ee1821f4bfcd684764">writeObject</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $obj);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;?&gt;</div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html">wcmf\lib\persistence\PersistentObject</a></div><div class="ttdoc">PersistentObject is the base class of all persistent objects. </div><div class="ttdef"><b>Definition:</b> <a href="_persistent_object_8php_source.html#l00033">PersistentObject.php:33</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1_persistent_object_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy.html">wcmf\lib\persistence\output\OutputStrategy</a></div><div class="ttdoc">OutputStrategy defines the interface for classes that write an object&#39;s content to a destination (cal...</div><div class="ttdef"><b>Definition:</b> <a href="_output_strategy_8php_source.html#l00022">OutputStrategy.php:22</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy_html_aebc6fcc595ba5fb79eee73a6b44f76c1"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy.html#aebc6fcc595ba5fb79eee73a6b44f76c1">wcmf\lib\persistence\output\OutputStrategy\writeHeader</a></div><div class="ttdeci">writeHeader()</div><div class="ttdoc">Write the document header. </div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1output_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1output.html">wcmf\lib\persistence\output</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00050">namespaces.php:50</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy_html_af8d1aaf7e817a5f84b74f313b9f6d500"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy.html#af8d1aaf7e817a5f84b74f313b9f6d500">wcmf\lib\persistence\output\OutputStrategy\writeFooter</a></div><div class="ttdeci">writeFooter()</div><div class="ttdoc">Write the document footer. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy_html_a847655b39d94d2ee1821f4bfcd684764"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy.html#a847655b39d94d2ee1821f4bfcd684764">wcmf\lib\persistence\output\OutputStrategy\writeObject</a></div><div class="ttdeci">writeObject(PersistentObject $obj)</div><div class="ttdoc">Write the object&#39;s content. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -153,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 19 2015 19:20:34 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 20 2015 02:50:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

@@ -17,10 +17,7 @@ var searchData=
   ['hasvalue',['hasValue',['../interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a71b2cd5459406a4e51de66135416d16c',1,'wcmf\lib\config\Configuration\hasValue()'],['../classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html#a71b2cd5459406a4e51de66135416d16c',1,'wcmf\lib\config\impl\InifileConfiguration\hasValue()'],['../classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a270bd65d789405427f5005ef5b0e0f38',1,'wcmf\lib\persistence\PersistentObject\hasValue()'],['../classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a270bd65d789405427f5005ef5b0e0f38',1,'wcmf\lib\presentation\ControllerMessage\hasValue()']]],
   ['header',['Header',['../classwcmf_1_1lib_1_1pdf_1_1_p_d_f.html#af476ba4a046025587e6ca04f98918434',1,'wcmf::lib::pdf::PDF']]],
   ['hierarchicalformat',['HierarchicalFormat',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_hierarchical_format.html',1,'wcmf::lib::presentation::format::impl']]],
-  ['hierarchicalformat_2ephp',['HierarchicalFormat.php',['../_hierarchical_format_8php.html',1,'']]],
   ['history_5fnot_5fsupported',['HISTORY_NOT_SUPPORTED',['../namespacewcmf_1_1lib_1_1presentation.html#a6c467a87aedf64b9e2272dc3f8464218',1,'wcmf::lib::presentation']]],
   ['htmlformat',['HtmlFormat',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_html_format.html',1,'wcmf::lib::presentation::format::impl']]],
-  ['htmlformat_2ephp',['HtmlFormat.php',['../_html_format_8php.html',1,'']]],
-  ['httpclient',['HTTPClient',['../classwcmf_1_1lib_1_1service_1_1impl_1_1_h_t_t_p_client.html',1,'wcmf::lib::service::impl']]],
-  ['httpclient_2ephp',['HTTPClient.php',['../_h_t_t_p_client_8php.html',1,'']]]
+  ['httpclient',['HTTPClient',['../classwcmf_1_1lib_1_1service_1_1impl_1_1_h_t_t_p_client.html',1,'wcmf::lib::service::impl']]]
 ];

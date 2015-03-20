@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <div id="MSearchBox">
-                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search API" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
                   <div id="MSearchSelect"></div>
                   <div id="MSearchClose"></div>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_af4f2c8af6d5aeb9e7b67de5ac895365.html">persistence</a></li><li class="navelem"><a class="el" href="dir_cac8c8ccbddb1471b8873b456005c375.html">concurrency</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_39c44806d06b09217b7facf120c76084.html">persistence</a></li><li class="navelem"><a class="el" href="dir_311c64bfd5dfde0fdde4247e5fd40ab1.html">concurrency</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ConcurrencyManager.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_concurrency_manager_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2014 wemove digital solutions GmbH</span></div>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * See the LICENSE file distributed with this work for</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1persistence_1_1concurrency.html" title="&#160; ">wcmf\lib\persistence\concurrency</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1persistence_1_1concurrency.html">wcmf\lib\persistence\concurrency</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1persistence_1_1_object_id.html">wcmf\lib\persistence\ObjectId</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">wcmf\lib\persistence\PersistentObject</a>;</div>
@@ -135,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html">   32</a></span>&#160;<span class="keyword">interface </span><a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html" title="ConcurrencyManager is used to handle concurrency for objects. ">ConcurrencyManager</a> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html">   32</a></span>&#160;<span class="keyword">interface </span><a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html">ConcurrencyManager</a> {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">   * Aquire a lock on an ObjectId for the current user. Throws an exception if</span></div>
@@ -146,38 +146,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">   *    for an optimistic lock (optional, if not given, the current state will</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">   *    be loaded from the store)</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#af2587aae6d4b83240e4f2af303bedb67" title="Aquire a lock on an ObjectId for the current user. ">aquireLock</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a> $oid, $type, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a> $currentState=null);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#af2587aae6d4b83240e4f2af303bedb67">aquireLock</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid, $type, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $currentState=null);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">   * Release a lock on an ObjectId for the current user.</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">   * @param $oid object id of the object to release.</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">   * @param $type One of the Lock::Type constants or null for all types (default: _null_)</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#a01b6b1a8d60d02ba834481c8f52a9052" title="Release a lock on an ObjectId for the current user. ">releaseLock</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a> $oid, $type=null);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#a01b6b1a8d60d02ba834481c8f52a9052">releaseLock</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid, $type=null);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">   * Release all locks on an ObjectId regardless of the user.</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">   * @param $oid object id of the object to release.</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#abeb5d0739d9ae661e8d3d49d857bcad3" title="Release all locks on an ObjectId regardless of the user. ">releaseLocks</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a> $oid);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#abeb5d0739d9ae661e8d3d49d857bcad3">releaseLocks</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">   * Release all locks for the current user.</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#a5a238737b9f57975f3fa9e2f58e92742" title="Release all locks for the current user. ">releaseAllLocks</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#a5a238737b9f57975f3fa9e2f58e92742">releaseAllLocks</a>();</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">   * Get the lock for an object id.</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">   * @param $oid object id of the object to get the lock data for.</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">   * @return Lock instance or null</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#ab50182e55c29b404afbc2f58fd545977" title="Get the lock for an object id. ">getLock</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a> $oid);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#ab50182e55c29b404afbc2f58fd545977">getLock</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">   * Check if the given object can be persisted. Throws an exception if not.</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">   * @param $object The object to check.</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#af7d0ca14919c9e8fd089296a5b99bc27" title="Check if the given object can be persisted. ">checkPersist</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a> $object);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#af7d0ca14919c9e8fd089296a5b99bc27">checkPersist</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $object);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">   * Update the current state of the lock belonging to the given object</span></div>
@@ -185,9 +185,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">   * @param $oid The object id.</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">   * @param $object The updated object data.</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#ae0bbe33ac146c4bb71270ee61b7dbb6c" title="Update the current state of the lock belonging to the given object if existing and owned by the curre...">updateLock</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a> $oid, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a> $object);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#ae0bbe33ac146c4bb71270ee61b7dbb6c">updateLock</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $object);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;?&gt;</div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html">wcmf\lib\persistence\PersistentObject</a></div><div class="ttdoc">PersistentObject is the base class of all persistent objects. </div><div class="ttdef"><b>Definition:</b> <a href="_persistent_object_8php_source.html#l00033">PersistentObject.php:33</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1_persistent_object_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1concurrency_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1concurrency.html">wcmf\lib\persistence\concurrency</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00046">namespaces.php:46</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager_html_abeb5d0739d9ae661e8d3d49d857bcad3"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#abeb5d0739d9ae661e8d3d49d857bcad3">wcmf\lib\persistence\concurrency\ConcurrencyManager\releaseLocks</a></div><div class="ttdeci">releaseLocks(ObjectId $oid)</div><div class="ttdoc">Release all locks on an ObjectId regardless of the user. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager_html_af7d0ca14919c9e8fd089296a5b99bc27"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#af7d0ca14919c9e8fd089296a5b99bc27">wcmf\lib\persistence\concurrency\ConcurrencyManager\checkPersist</a></div><div class="ttdeci">checkPersist(PersistentObject $object)</div><div class="ttdoc">Check if the given object can be persisted. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager_html_ae0bbe33ac146c4bb71270ee61b7dbb6c"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#ae0bbe33ac146c4bb71270ee61b7dbb6c">wcmf\lib\persistence\concurrency\ConcurrencyManager\updateLock</a></div><div class="ttdeci">updateLock(ObjectId $oid, PersistentObject $object)</div><div class="ttdoc">Update the current state of the lock belonging to the given object if existing and owned by the curre...</div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_object_id_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">wcmf\lib\persistence\ObjectId</a></div><div class="ttdoc">ObjectId is the unique identifier of an object. </div><div class="ttdef"><b>Definition:</b> <a href="_object_id_8php_source.html#l00027">ObjectId.php:27</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html">wcmf\lib\persistence\concurrency\ConcurrencyManager</a></div><div class="ttdoc">ConcurrencyManager is used to handle concurrency for objects. </div><div class="ttdef"><b>Definition:</b> <a href="_concurrency_manager_8php_source.html#l00032">ConcurrencyManager.php:32</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1_object_id_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager_html_af2587aae6d4b83240e4f2af303bedb67"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#af2587aae6d4b83240e4f2af303bedb67">wcmf\lib\persistence\concurrency\ConcurrencyManager\aquireLock</a></div><div class="ttdeci">aquireLock(ObjectId $oid, $type, PersistentObject $currentState=null)</div><div class="ttdoc">Aquire a lock on an ObjectId for the current user. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager_html_a5a238737b9f57975f3fa9e2f58e92742"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#a5a238737b9f57975f3fa9e2f58e92742">wcmf\lib\persistence\concurrency\ConcurrencyManager\releaseAllLocks</a></div><div class="ttdeci">releaseAllLocks()</div><div class="ttdoc">Release all locks for the current user. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager_html_a01b6b1a8d60d02ba834481c8f52a9052"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#a01b6b1a8d60d02ba834481c8f52a9052">wcmf\lib\persistence\concurrency\ConcurrencyManager\releaseLock</a></div><div class="ttdeci">releaseLock(ObjectId $oid, $type=null)</div><div class="ttdoc">Release a lock on an ObjectId for the current user. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager_html_ab50182e55c29b404afbc2f58fd545977"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html#ab50182e55c29b404afbc2f58fd545977">wcmf\lib\persistence\concurrency\ConcurrencyManager\getLock</a></div><div class="ttdeci">getLock(ObjectId $oid)</div><div class="ttdoc">Get the lock for an object id. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -197,7 +210,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 19 2015 19:20:34 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 20 2015 02:50:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

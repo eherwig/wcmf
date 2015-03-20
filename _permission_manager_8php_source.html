@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <div id="MSearchBox">
-                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search API" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
                   <div id="MSearchSelect"></div>
                   <div id="MSearchClose"></div>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_a433880e15c69bf379b17cfb26eaf05d.html">security</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_88527e3c69c4b7a74da3f178c2797901.html">security</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">PermissionManager.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_permission_manager_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2014 wemove digital solutions GmbH</span></div>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * See the LICENSE file distributed with this work for</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1security.html" title="Security related interfaces and classes. ">wcmf\lib\security</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1security.html">wcmf\lib\security</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">wcmf\lib\security\principal\User</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span></div>
@@ -125,7 +125,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html">   22</a></span>&#160;<span class="keyword">interface </span><a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html" title="PermissionManager implementations are used to handle all authorization requests. ">PermissionManager</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html">   22</a></span>&#160;<span class="keyword">interface </span><a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html">PermissionManager</a> {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a4e34e2ff1951d49ebe88423999609413">   24</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a4e34e2ff1951d49ebe88423999609413">PERMISSION_MODIFIER_ALLOW</a> = <span class="charliteral">&#39;+&#39;</span>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a07a7905d362aa5a7e5838463bbb1005f">   25</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a07a7905d362aa5a7e5838463bbb1005f">PERMISSION_MODIFIER_DENY</a> = <span class="charliteral">&#39;-&#39;</span>;</div>
@@ -134,13 +134,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">   * Set the authenticated user.</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">   * @param $authUser User instance.</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a692dfe0c754d13a61681ff0680637752" title="Set the authenticated user. ">setAuthUser</a>(<a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html" title="User is the interface for users. ">User</a> $authUser);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a692dfe0c754d13a61681ff0680637752">setAuthUser</a>(<a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">User</a> $authUser);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">   * Get the authenticated user.</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">   * @return User instance.</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a687dba7af92a5d45f6363b17fe941ff7" title="Get the authenticated user. ">getAuthUser</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a687dba7af92a5d45f6363b17fe941ff7">getAuthUser</a>();</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">   * Authorize for given resource, context, action triple.</span></div>
@@ -157,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">   * @param $user User instance to use for authorization (optional, default: the user obtained by getAuthUser method)</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">   * @return Boolean whether authorization succeded/failed.</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a152d96cdd1ac6639609b9ac3e54f121e" title="Authorize for given resource, context, action triple. ">authorize</a>($resource, $context, $action, <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html" title="User is the interface for users. ">User</a> $user=null);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a152d96cdd1ac6639609b9ac3e54f121e">authorize</a>($resource, $context, $action, <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">User</a> $user=null);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">   * Add a temporary permission for the current user. The permission</span></div>
@@ -167,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">   * @param $context The context in which the action takes place.</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">   * @param $action The action to process.</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a64a13b847c34c489832bfab8fc11d026" title="Add a temporary permission for the current user. ">addTempPermission</a>($resource, $context, $action);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a64a13b847c34c489832bfab8fc11d026">addTempPermission</a>($resource, $context, $action);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">   * Remove a temporary permission for the current user.</span></div>
@@ -175,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">   * @param $context The context in which the action takes place.</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">   * @param $action The action to process.</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a1e8e6ec6e7f929d60fba0a7cc78598be" title="Remove a temporary permission for the current user. ">removeTempPermission</a>($resource, $context, $action);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a1e8e6ec6e7f929d60fba0a7cc78598be">removeTempPermission</a>($resource, $context, $action);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">   * Check if a temporary permission for the current user exists.</span></div>
@@ -184,12 +184,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">   * @param $action The action to process.</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">   * @return Boolean</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a9712e1e30e26b1cd1f3ce5119042bbe4" title="Check if a temporary permission for the current user exists. ">hasTempPermission</a>($resource, $context, $action);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a9712e1e30e26b1cd1f3ce5119042bbe4">hasTempPermission</a>($resource, $context, $action);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">   * Reset all temporary permissions</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a5916f247aa7cfe7f3a41019a55441299" title="Reset all temporary permissions. ">clearTempPermissions</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a5916f247aa7cfe7f3a41019a55441299">clearTempPermissions</a>();</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">   * Permission management</span></div>
@@ -203,7 +203,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">   * @return Assoziative array with keys &#39;default&#39; (boolean) and &#39;allow&#39;, &#39;deny&#39;</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">   * (arrays of role names) or null, if no permissions are defined.</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#ad58bc0d686fd120810b99cf7b96173f0" title="Permission management. ">getPermissions</a>($resource, $context, $action);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#ad58bc0d686fd120810b99cf7b96173f0">getPermissions</a>($resource, $context, $action);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">   * Set the permissions on a resource, context, action combination.</span></div>
@@ -213,7 +213,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">   * @param $permissions Assoziative array with keys &#39;default&#39; (boolean) and</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">   * &#39;allow&#39;, &#39;deny&#39; (arrays of role names) or null if all permissions should be deleted.</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a53ab5bb502b1c4ed185008a686b81a76" title="Set the permissions on a resource, context, action combination. ">setPermissions</a>($resource, $context, $action, $permissions);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a53ab5bb502b1c4ed185008a686b81a76">setPermissions</a>($resource, $context, $action, $permissions);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">   * Create/Change a permission for a role on a resource, context, action combination.</span></div>
@@ -224,7 +224,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">   * @param $modifier One of the PERMISSION_MODIFIER constants.</span></div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">   * @return Boolean whether creation succeded/failed.</span></div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba" title="Create/Change a permission for a role on a resource, context, action combination. ...">createPermission</a>($resource, $context, $action, $role, $modifier);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">createPermission</a>($resource, $context, $action, $role, $modifier);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">   * Remove a role from a permission on a resource, context, action combination.</span></div>
@@ -234,9 +234,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">   * @param $role The role to remove.</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">   * @return Boolean whether removal succeded/failed.</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6" title="Remove a role from a permission on a resource, context, action combination. ">removePermission</a>($resource, $context, $action, $role);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">removePermission</a>($resource, $context, $action, $role);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;?&gt;</div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1security_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1security.html">wcmf\lib\security</a></div><div class="ttdoc">Security related interfaces and classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00083">namespaces.php:83</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_permission_manager_html_a47b4c8cae336a409b71ac2ddfd1a1ee6"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a47b4c8cae336a409b71ac2ddfd1a1ee6">wcmf\lib\security\PermissionManager\removePermission</a></div><div class="ttdeci">removePermission($resource, $context, $action, $role)</div><div class="ttdoc">Remove a role from a permission on a resource, context, action combination. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_permission_manager_html_a9712e1e30e26b1cd1f3ce5119042bbe4"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a9712e1e30e26b1cd1f3ce5119042bbe4">wcmf\lib\security\PermissionManager\hasTempPermission</a></div><div class="ttdeci">hasTempPermission($resource, $context, $action)</div><div class="ttdoc">Check if a temporary permission for the current user exists. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">wcmf\lib\security\principal\User</a></div><div class="ttdoc">User is the interface for users. </div><div class="ttdef"><b>Definition:</b> <a href="_user_8php_source.html#l00018">User.php:18</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_permission_manager_html_a152d96cdd1ac6639609b9ac3e54f121e"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a152d96cdd1ac6639609b9ac3e54f121e">wcmf\lib\security\PermissionManager\authorize</a></div><div class="ttdeci">authorize($resource, $context, $action, User $user=null)</div><div class="ttdoc">Authorize for given resource, context, action triple. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_permission_manager_html_a687dba7af92a5d45f6363b17fe941ff7"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a687dba7af92a5d45f6363b17fe941ff7">wcmf\lib\security\PermissionManager\getAuthUser</a></div><div class="ttdeci">getAuthUser()</div><div class="ttdoc">Get the authenticated user. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_permission_manager_html_a5916f247aa7cfe7f3a41019a55441299"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a5916f247aa7cfe7f3a41019a55441299">wcmf\lib\security\PermissionManager\clearTempPermissions</a></div><div class="ttdeci">clearTempPermissions()</div><div class="ttdoc">Reset all temporary permissions. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_permission_manager_html_ad58bc0d686fd120810b99cf7b96173f0"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#ad58bc0d686fd120810b99cf7b96173f0">wcmf\lib\security\PermissionManager\getPermissions</a></div><div class="ttdeci">getPermissions($resource, $context, $action)</div><div class="ttdoc">Permission management. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_permission_manager_html_a4e34e2ff1951d49ebe88423999609413"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a4e34e2ff1951d49ebe88423999609413">wcmf\lib\security\PermissionManager\PERMISSION_MODIFIER_ALLOW</a></div><div class="ttdeci">const PERMISSION_MODIFIER_ALLOW</div><div class="ttdef"><b>Definition:</b> <a href="_permission_manager_8php_source.html#l00024">PermissionManager.php:24</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_permission_manager_html_ab5da29b2068c61f9cfb5fa0bb34594ba"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#ab5da29b2068c61f9cfb5fa0bb34594ba">wcmf\lib\security\PermissionManager\createPermission</a></div><div class="ttdeci">createPermission($resource, $context, $action, $role, $modifier)</div><div class="ttdoc">Create/Change a permission for a role on a resource, context, action combination. ...</div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_permission_manager_html_a64a13b847c34c489832bfab8fc11d026"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a64a13b847c34c489832bfab8fc11d026">wcmf\lib\security\PermissionManager\addTempPermission</a></div><div class="ttdeci">addTempPermission($resource, $context, $action)</div><div class="ttdoc">Add a temporary permission for the current user. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_permission_manager_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html">wcmf\lib\security\PermissionManager</a></div><div class="ttdoc">PermissionManager implementations are used to handle all authorization requests. </div><div class="ttdef"><b>Definition:</b> <a href="_permission_manager_8php_source.html#l00022">PermissionManager.php:22</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">User</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_permission_manager_html_a07a7905d362aa5a7e5838463bbb1005f"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a07a7905d362aa5a7e5838463bbb1005f">wcmf\lib\security\PermissionManager\PERMISSION_MODIFIER_DENY</a></div><div class="ttdeci">const PERMISSION_MODIFIER_DENY</div><div class="ttdef"><b>Definition:</b> <a href="_permission_manager_8php_source.html#l00025">PermissionManager.php:25</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_permission_manager_html_a1e8e6ec6e7f929d60fba0a7cc78598be"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a1e8e6ec6e7f929d60fba0a7cc78598be">wcmf\lib\security\PermissionManager\removeTempPermission</a></div><div class="ttdeci">removeTempPermission($resource, $context, $action)</div><div class="ttdoc">Remove a temporary permission for the current user. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_permission_manager_html_a692dfe0c754d13a61681ff0680637752"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a692dfe0c754d13a61681ff0680637752">wcmf\lib\security\PermissionManager\setAuthUser</a></div><div class="ttdeci">setAuthUser(User $authUser)</div><div class="ttdoc">Set the authenticated user. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_permission_manager_html_a53ab5bb502b1c4ed185008a686b81a76"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a53ab5bb502b1c4ed185008a686b81a76">wcmf\lib\security\PermissionManager\setPermissions</a></div><div class="ttdeci">setPermissions($resource, $context, $action, $permissions)</div><div class="ttdoc">Set the permissions on a resource, context, action combination. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -246,7 +263,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 19 2015 19:20:35 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 20 2015 02:50:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

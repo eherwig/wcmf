@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <div id="MSearchBox">
-                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search API" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
                   <div id="MSearchSelect"></div>
                   <div id="MSearchClose"></div>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_af4f2c8af6d5aeb9e7b67de5ac895365.html">persistence</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_39c44806d06b09217b7facf120c76084.html">persistence</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">PersistentEvent.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_persistent_event_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2014 wemove digital solutions GmbH</span></div>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * See the LICENSE file distributed with this work for</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1persistence.html" title="Persistence layer related interfaces and classes. ">wcmf\lib\persistence</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1persistence.html">wcmf\lib\persistence</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1core_1_1_event.html">wcmf\lib\core\Event</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">wcmf\lib\persistence\PersistentObject</a>;</div>
@@ -125,7 +125,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html" title="PersistentEvent signals create/update/delete operations on a persistent entity. ">PersistentEvent</a> <span class="keyword">extends</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_event.html" title="Event is the base class for all events. ">Event</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html">PersistentEvent</a> <span class="keyword">extends</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_event.html">Event</a> {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#a244352f035b82b20b0efa506167fd862">   24</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#a244352f035b82b20b0efa506167fd862">NAME</a> = __CLASS__;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
@@ -137,7 +137,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">   * @param $object A reference to the involved PersistentObject instance.</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">   * @param $action One of the PersistenceAction values.</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#ad8bf2d72daade111a2d14a6f6cb2bd4d">   34</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#ad8bf2d72daade111a2d14a6f6cb2bd4d" title="Constructor. ">__construct</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. ">PersistentObject</a> $object, $action) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#ad8bf2d72daade111a2d14a6f6cb2bd4d">   34</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#ad8bf2d72daade111a2d14a6f6cb2bd4d">__construct</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $object, $action) {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    $this-&gt;_object = $object;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    $this-&gt;_action = $action;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  }</div>
@@ -146,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">   * Get the object involved.</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">   * @return PersistentObject instance</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#a8ecaa7401cc1e1144cb98698a9658ebc">   43</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#a8ecaa7401cc1e1144cb98698a9658ebc" title="Get the object involved. ">getObject</a>() {</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#a8ecaa7401cc1e1144cb98698a9658ebc">   43</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#a8ecaa7401cc1e1144cb98698a9658ebc">getObject</a>() {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> $this-&gt;_object;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"></span></div>
@@ -154,11 +154,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">   * Get the action.</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">   * @return PersistenceAction value</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#a189a4abe5faf11f4320d5d3f1d3d1715">   51</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#a189a4abe5faf11f4320d5d3f1d3d1715" title="Get the action. ">getAction</a>() {</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#a189a4abe5faf11f4320d5d3f1d3d1715">   51</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#a189a4abe5faf11f4320d5d3f1d3d1715">getAction</a>() {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> $this-&gt;_action;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;?&gt;</div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html">wcmf\lib\persistence\PersistentObject</a></div><div class="ttdoc">PersistentObject is the base class of all persistent objects. </div><div class="ttdef"><b>Definition:</b> <a href="_persistent_object_8php_source.html#l00033">PersistentObject.php:33</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1_persistent_object_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_event_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_event.html">Event</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_persistent_event_html_a244352f035b82b20b0efa506167fd862"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#a244352f035b82b20b0efa506167fd862">wcmf\lib\persistence\PersistentEvent\NAME</a></div><div class="ttdeci">const NAME</div><div class="ttdef"><b>Definition:</b> <a href="_persistent_event_8php_source.html#l00024">PersistentEvent.php:24</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence.html">wcmf\lib\persistence</a></div><div class="ttdoc">Persistence layer related interfaces and classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00042">namespaces.php:42</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_persistent_event_html_a189a4abe5faf11f4320d5d3f1d3d1715"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#a189a4abe5faf11f4320d5d3f1d3d1715">wcmf\lib\persistence\PersistentEvent\getAction</a></div><div class="ttdeci">getAction()</div><div class="ttdoc">Get the action. </div><div class="ttdef"><b>Definition:</b> <a href="_persistent_event_8php_source.html#l00051">PersistentEvent.php:51</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_persistent_event_html_a8ecaa7401cc1e1144cb98698a9658ebc"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#a8ecaa7401cc1e1144cb98698a9658ebc">wcmf\lib\persistence\PersistentEvent\getObject</a></div><div class="ttdeci">getObject()</div><div class="ttdoc">Get the object involved. </div><div class="ttdef"><b>Definition:</b> <a href="_persistent_event_8php_source.html#l00043">PersistentEvent.php:43</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_persistent_event_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html">wcmf\lib\persistence\PersistentEvent</a></div><div class="ttdoc">PersistentEvent signals create/update/delete operations on a persistent entity. </div><div class="ttdef"><b>Definition:</b> <a href="_persistent_event_8php_source.html#l00022">PersistentEvent.php:22</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_event_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_event.html">wcmf\lib\core\Event</a></div><div class="ttdoc">Event is the base class for all events. </div><div class="ttdef"><b>Definition:</b> <a href="_event_8php_source.html#l00018">Event.php:18</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_persistent_event_html_ad8bf2d72daade111a2d14a6f6cb2bd4d"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_persistent_event.html#ad8bf2d72daade111a2d14a6f6cb2bd4d">wcmf\lib\persistence\PersistentEvent\__construct</a></div><div class="ttdeci">__construct(PersistentObject $object, $action)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="_persistent_event_8php_source.html#l00034">PersistentEvent.php:34</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -168,7 +178,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 19 2015 19:20:34 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 20 2015 02:50:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <div id="MSearchBox">
-                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search API" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
                   <div id="MSearchSelect"></div>
                   <div id="MSearchClose"></div>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_a2d5e495f4b604d04f57d90095a59dd6.html">core</a></li><li class="navelem"><a class="el" href="dir_9eb28cc46d7bf4ce3f79e6fb4bccb078.html">impl</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_d199231fb67ce2e47dcb413ed251abf6.html">core</a></li><li class="navelem"><a class="el" href="dir_bf63a07c351eddd8b9f7b594c9314329.html">impl</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">DefaultSession.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_default_session_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2014 wemove digital solutions GmbH</span></div>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * See the LICENSE file distributed with this work for</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1core_1_1impl.html" title="&#160; ">wcmf\lib\core\impl</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1core_1_1impl.html">wcmf\lib\core\impl</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1core_1_1_session.html">wcmf\lib\core\Session</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span></div>
@@ -123,7 +123,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html" title="Default session implementation. ">DefaultSession</a> <span class="keyword">implements</span> <a class="code" href="interfacewcmf_1_1lib_1_1core_1_1_session.html" title="Session is the interface for session implementations and defines access to session variables...">Session</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html">DefaultSession</a> <span class="keyword">implements</span> <a class="code" href="interfacewcmf_1_1lib_1_1core_1_1_session.html">Session</a> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">private</span> <span class="keyword">static</span> $ERROR_VARNAME = <span class="stringliteral">&#39;Session.errors&#39;</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
@@ -235,6 +235,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    unset($_SESSION[self::$ERROR_VARNAME]);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session_html_a6e548ebf2656742bfd19939ead923ed2"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a6e548ebf2656742bfd19939ead923ed2">wcmf\lib\core\impl\DefaultSession\getErrors</a></div><div class="ttdeci">getErrors()</div><div class="ttdef"><b>Definition:</b> <a href="_default_session_8php_source.html#l00120">DefaultSession.php:120</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session_html_aa821bec12eaa7e0f649397c9675ff505"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#aa821bec12eaa7e0f649397c9675ff505">wcmf\lib\core\impl\DefaultSession\clear</a></div><div class="ttdeci">clear()</div><div class="ttdef"><b>Definition:</b> <a href="_default_session_8php_source.html#l00084">DefaultSession.php:84</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session_html_a5b954c29d82b610903bb9c4bb50bba91"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a5b954c29d82b610903bb9c4bb50bba91">wcmf\lib\core\impl\DefaultSession\addError</a></div><div class="ttdeci">addError($key, $error)</div><div class="ttdef"><b>Definition:</b> <a href="_default_session_8php_source.html#l00099">DefaultSession.php:99</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session_html_ae5c48a5e6b4931e5a57f81be51de6ea2"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#ae5c48a5e6b4931e5a57f81be51de6ea2">wcmf\lib\core\impl\DefaultSession\exist</a></div><div class="ttdeci">exist($key)</div><div class="ttdef"><b>Definition:</b> <a href="_default_session_8php_source.html#l00076">DefaultSession.php:76</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session_html_aa118461de946085fe42989193337044a"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#aa118461de946085fe42989193337044a">wcmf\lib\core\impl\DefaultSession\destroy</a></div><div class="ttdeci">destroy()</div><div class="ttdef"><b>Definition:</b> <a href="_default_session_8php_source.html#l00091">DefaultSession.php:91</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1core_1_1_session_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1core_1_1_session.html">wcmf\lib\core\Session</a></div><div class="ttdoc">Session is the interface for session implementations and defines access to session variables...</div><div class="ttdef"><b>Definition:</b> <a href="_session_8php_source.html#l00019">Session.php:19</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session_html_a30dd7fff4fec7a39f9be9d27d4b22a59"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a30dd7fff4fec7a39f9be9d27d4b22a59">wcmf\lib\core\impl\DefaultSession\getID</a></div><div class="ttdeci">getID()</div><div class="ttdef"><b>Definition:</b> <a href="_default_session_8php_source.html#l00044">DefaultSession.php:44</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session_html_a421831a265621325e1fdd19aace0c758"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a421831a265621325e1fdd19aace0c758">wcmf\lib\core\impl\DefaultSession\__destruct</a></div><div class="ttdeci">__destruct()</div><div class="ttdef"><b>Definition:</b> <a href="_default_session_8php_source.html#l00037">DefaultSession.php:37</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session_html_a240ee3d044f5d595b1d5be5d47cd5769"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a240ee3d044f5d595b1d5be5d47cd5769">wcmf\lib\core\impl\DefaultSession\clearErrors</a></div><div class="ttdeci">clearErrors()</div><div class="ttdef"><b>Definition:</b> <a href="_default_session_8php_source.html#l00128">DefaultSession.php:128</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1impl_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1impl.html">wcmf\lib\core\impl</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00013">namespaces.php:13</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session_html_a095c5d389db211932136b53f25f39685"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a095c5d389db211932136b53f25f39685">wcmf\lib\core\impl\DefaultSession\__construct</a></div><div class="ttdeci">__construct()</div><div class="ttdef"><b>Definition:</b> <a href="_default_session_8php_source.html#l00024">DefaultSession.php:24</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session_html_a5f30134d3cbab62eb305a5c45612b08f"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a5f30134d3cbab62eb305a5c45612b08f">wcmf\lib\core\impl\DefaultSession\getError</a></div><div class="ttdeci">getError($key)</div><div class="ttdef"><b>Definition:</b> <a href="_default_session_8php_source.html#l00109">DefaultSession.php:109</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session_html_aab787bd83f84f4215dceb35f7c305eee"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#aab787bd83f84f4215dceb35f7c305eee">wcmf\lib\core\impl\DefaultSession\set</a></div><div class="ttdeci">set($key, $value)</div><div class="ttdef"><b>Definition:</b> <a href="_default_session_8php_source.html#l00062">DefaultSession.php:62</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_session_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_session.html">Session</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html">wcmf\lib\core\impl\DefaultSession</a></div><div class="ttdoc">Default session implementation. </div><div class="ttdef"><b>Definition:</b> <a href="_default_session_8php_source.html#l00020">DefaultSession.php:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -244,7 +259,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 19 2015 19:20:33 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 20 2015 02:50:16 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

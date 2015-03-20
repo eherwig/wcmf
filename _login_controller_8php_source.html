@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <div id="MSearchBox">
-                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search API" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
                   <div id="MSearchSelect"></div>
                   <div id="MSearchClose"></div>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d75c23162a2652451dce46d2e7e8aead.html">application</a></li><li class="navelem"><a class="el" href="dir_d4705990998dc57c6886494362019069.html">controller</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e659925bc7938c132ebc659cdfa3fb60.html">application</a></li><li class="navelem"><a class="el" href="dir_534cac7d4c5b7fef43abeb5786558088.html">controller</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">LoginController.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_login_controller_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2014 wemove digital solutions GmbH</span></div>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * See the LICENSE file distributed with this work for</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1application_1_1controller.html" title="Application controllers. ">wcmf\application\controller</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1application_1_1controller.html">wcmf\application\controller</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use \Exception;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1core_1_1_log.html">wcmf\lib\core\Log</a>;</div>
@@ -153,15 +153,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_login_controller.html">   50</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1application_1_1controller_1_1_login_controller.html" title="LoginController handles the login process. ">LoginController</a> <span class="keyword">extends</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html" title="Controller is the base class of all controllers. ">Controller</a> {</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_login_controller.html">   50</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1application_1_1controller_1_1_login_controller.html">LoginController</a> <span class="keyword">extends</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html">Controller</a> {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">   * @see Controller::initialize()</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_login_controller.html#a47a24ac0d700f62a9434d298ade72fb9">   55</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_login_controller.html#a47a24ac0d700f62a9434d298ade72fb9">initialize</a>(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. ">Request</a> $request, <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> $response) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_login_controller.html#a47a24ac0d700f62a9434d298ade72fb9">   55</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_login_controller.html#a47a24ac0d700f62a9434d298ade72fb9">initialize</a>(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_request.html">Request</a> $request, <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_response.html">Response</a> $response) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// delete all data, if not in login process</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> ($request-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a189a4abe5faf11f4320d5d3f1d3d1715" title="Get the name of the action. ">getAction</a>() != <span class="stringliteral">&#39;login&#39;</span>) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      $request-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a5d4231f684d0e52b41bf69afb0bb9fbe" title="Remove all values. ">clearValues</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> ($request-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a189a4abe5faf11f4320d5d3f1d3d1715">getAction</a>() != <span class="stringliteral">&#39;login&#39;</span>) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      $request-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a5d4231f684d0e52b41bf69afb0bb9fbe">clearValues</a>();</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    parent::initialize($request, $response);</div>
@@ -171,8 +171,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">   * @see Controller::validate()</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_login_controller.html#a184909dab34698899937d810a9f5d393">   67</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_login_controller.html#a184909dab34698899937d810a9f5d393">validate</a>() {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    $request = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22" title="Get the Request object. ">getRequest</a>();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f" title="Get the Response object. ">getResponse</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    $request = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">getRequest</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>();</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> ($request-&gt;getAction() == <span class="stringliteral">&#39;login&#39;</span>) {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      $invalidParameters = array();</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keywordflow">if</span>(!$request-&gt;hasValue(<span class="stringliteral">&#39;user&#39;</span>)) {</div>
@@ -183,7 +183,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>($invalidParameters) &gt; 0) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        $response-&gt;addError(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554" title="Factory method for retrieving a predefind error instance. ">ApplicationError::get</a>(<span class="stringliteral">&#39;PARAMETER_INVALID&#39;</span>,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        $response-&gt;addError(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554">ApplicationError::get</a>(<span class="stringliteral">&#39;PARAMETER_INVALID&#39;</span>,</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;          array(<span class="stringliteral">&#39;invalidParameters&#39;</span> =&gt; $invalidParameters)));</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      }</div>
@@ -195,13 +195,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">   * @see Controller::doExecute()</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_login_controller.html#a4eadfceba84d61eda01f9828935cf8e5">   91</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_login_controller.html#a4eadfceba84d61eda01f9828935cf8e5">doExecute</a>() {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    $session = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415" title="Get an instance from the configuration. ">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;session&#39;</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    $request = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22" title="Get the Request object. ">getRequest</a>();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f" title="Get the Response object. ">getResponse</a>();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    $session = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;session&#39;</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    $request = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">getRequest</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>();</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> ($request-&gt;getAction() == <span class="stringliteral">&#39;login&#39;</span>) {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <span class="comment">// authenticate</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      $authManager = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415" title="Get an instance from the configuration. ">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;authenticationManager&#39;</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      $authManager = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;authenticationManager&#39;</span>);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="comment">// try to login</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      <span class="keywordflow">try</span> {</div>
@@ -209,13 +209,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      }</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      <span class="keywordflow">catch</span> (<a class="code" href="namespace_exception.html">Exception</a> $ex) {</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        $authUser = null;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="classwcmf_1_1lib_1_1core_1_1_log.html#a14ef9c88c1ea83b3dbe62ab71b5bf44c" title="Print a error message for a category. ">Log::error</a>(<span class="stringliteral">&quot;Could not log in: &quot;</span>.$ex, __CLASS__);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="classwcmf_1_1lib_1_1core_1_1_log.html#a14ef9c88c1ea83b3dbe62ab71b5bf44c">Log::error</a>(<span class="stringliteral">&quot;Could not log in: &quot;</span>.$ex, __CLASS__);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      }</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="keywordflow">if</span> ($authUser) {</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="comment">// login succeeded</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        $session-&gt;clear();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        $permissionManager = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415" title="Get an instance from the configuration. ">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;permissionManager&#39;</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        $permissionManager = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;permissionManager&#39;</span>);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        $permissionManager-&gt;setAuthUser($authUser);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="comment">// return role names of the user</span></div>
@@ -231,7 +231,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      }</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="comment">// login failed</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        $response-&gt;addError(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554" title="Factory method for retrieving a predefind error instance. ">ApplicationError::get</a>(<span class="stringliteral">&#39;AUTHENTICATION_FAILED&#39;</span>));</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        $response-&gt;addError(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554">ApplicationError::get</a>(<span class="stringliteral">&#39;AUTHENTICATION_FAILED&#39;</span>));</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      }</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    elseif ($request-&gt;getAction() == <span class="stringliteral">&#39;logout&#39;</span>) {</div>
@@ -244,6 +244,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  }</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;?&gt;</div>
+<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_login_controller_html_a184909dab34698899937d810a9f5d393"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_login_controller.html#a184909dab34698899937d810a9f5d393">wcmf\application\controller\LoginController\validate</a></div><div class="ttdeci">validate()</div><div class="ttdef"><b>Definition:</b> <a href="_login_controller_8php_source.html#l00067">LoginController.php:67</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_adf1a35ad20e475c59cc0967d5764aa22"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">wcmf\lib\presentation\Controller\getRequest</a></div><div class="ttdeci">getRequest()</div><div class="ttdoc">Get the Request object. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00152">Controller.php:152</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_message_html_a5d4231f684d0e52b41bf69afb0bb9fbe"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a5d4231f684d0e52b41bf69afb0bb9fbe">wcmf\lib\presentation\ControllerMessage\clearValues</a></div><div class="ttdeci">clearValues()</div><div class="ttdoc">Remove all values. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_message_8php_source.html#l00313">ControllerMessage.php:313</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html">wcmf\lib\presentation\Controller</a></div><div class="ttdoc">Controller is the base class of all controllers. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00041">Controller.php:41</a></div></div>
+<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_login_controller_html_a4eadfceba84d61eda01f9828935cf8e5"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_login_controller.html#a4eadfceba84d61eda01f9828935cf8e5">wcmf\application\controller\LoginController\doExecute</a></div><div class="ttdeci">doExecute()</div><div class="ttdef"><b>Definition:</b> <a href="_login_controller_8php_source.html#l00091">LoginController.php:91</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_controller_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_controller.html">Controller</a></div></div>
+<div class="ttc" id="namespace_exception_html"><div class="ttname"><a href="namespace_exception.html">Exception</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_request_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_request.html">wcmf\lib\presentation\Request</a></div><div class="ttdoc">Request holds the request values that are used as input to Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_request_8php_source.html#l00026">Request.php:26</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_request_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a></div></div>
+<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_login_controller_html"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_login_controller.html">wcmf\application\controller\LoginController</a></div><div class="ttdoc">LoginController handles the login process. </div><div class="ttdef"><b>Definition:</b> <a href="_login_controller_8php_source.html#l00050">LoginController.php:50</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_message_html_a189a4abe5faf11f4320d5d3f1d3d1715"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a189a4abe5faf11f4320d5d3f1d3d1715">wcmf\lib\presentation\ControllerMessage\getAction</a></div><div class="ttdeci">getAction()</div><div class="ttdoc">Get the name of the action. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_message_8php_source.html#l00130">ControllerMessage.php:130</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_log_html_a14ef9c88c1ea83b3dbe62ab71b5bf44c"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_log.html#a14ef9c88c1ea83b3dbe62ab71b5bf44c">wcmf\lib\core\Log\error</a></div><div class="ttdeci">static error($message, $category)</div><div class="ttdoc">Print a error message for a category. </div><div class="ttdef"><b>Definition:</b> <a href="_log_8php_source.html#l00071">Log.php:71</a></div></div>
+<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_login_controller_html_a47a24ac0d700f62a9434d298ade72fb9"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_login_controller.html#a47a24ac0d700f62a9434d298ade72fb9">wcmf\application\controller\LoginController\initialize</a></div><div class="ttdeci">initialize(Request $request, Response $response)</div><div class="ttdef"><b>Definition:</b> <a href="_login_controller_8php_source.html#l00055">LoginController.php:55</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_log_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_log.html">Log</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1application_1_1controller_html"><div class="ttname"><a href="namespacewcmf_1_1application_1_1controller.html">wcmf\application\controller</a></div><div class="ttdoc">Application controllers. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00003">namespaces.php:3</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_application_error_html_a7b6de2953b070910660cee9f229bc554"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554">wcmf\lib\presentation\ApplicationError\get</a></div><div class="ttdeci">static get($code, $data=null)</div><div class="ttdoc">Factory method for retrieving a predefind error instance. </div><div class="ttdef"><b>Definition:</b> <a href="_application_error_8php_source.html#l00120">ApplicationError.php:120</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_response.html">wcmf\lib\presentation\Response</a></div><div class="ttdoc">Response holds the response values that are used as output from Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_response_8php_source.html#l00022">Response.php:22</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_object_factory_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_object_factory.html">ObjectFactory</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a6c907e8af775e517a77037dd0164222f"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">wcmf\lib\presentation\Controller\getResponse</a></div><div class="ttdeci">getResponse()</div><div class="ttdoc">Get the Response object. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00160">Controller.php:160</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_application_error_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_application_error.html">ApplicationError</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a0ebda2d4f8517d892a36a5c08e879415"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">wcmf\lib\core\ObjectFactory\getInstance</a></div><div class="ttdeci">static getInstance($name)</div><div class="ttdoc">Get an instance from the configuration. </div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00084">ObjectFactory.php:84</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -253,7 +275,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 19 2015 19:20:33 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 20 2015 02:50:16 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

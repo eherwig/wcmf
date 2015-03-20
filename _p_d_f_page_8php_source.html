@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <div id="MSearchBox">
-                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search API" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
                   <div id="MSearchSelect"></div>
                   <div id="MSearchClose"></div>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_e9af63c4591b3294354fbe52a8bcbaca.html">pdf</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_9586bb3f5bbb5628996caedb3ee19830.html">pdf</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">PDFPage.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_p_d_f_page_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2014 wemove digital solutions GmbH</span></div>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * See the LICENSE file distributed with this work for</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1pdf.html" title="PDF related interfaces and classes. ">wcmf\lib\pdf</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1pdf.html">wcmf\lib\pdf</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * PDFPage instances define the content of a pdf page by using a</span></div>
@@ -122,7 +122,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_page.html">   19</a></span>&#160;<span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_page.html" title="PDFPage instances define the content of a pdf page by using a set of FPDF/FPDI commands inside the PD...">PDFPage</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_page.html">   19</a></span>&#160;<span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_page.html">PDFPage</a> {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">   * Render data onto a pdf.</span></div>
@@ -130,9 +130,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">   * @param $page The page number in the pdf document</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">   * @param $data An optional data object to get data from.</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_page.html#a553c97cf3bc40ddc7f5850f78932ae4c" title="Render data onto a pdf. ">render</a>($pdf, $page, $data=null);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_page.html#a553c97cf3bc40ddc7f5850f78932ae4c">render</a>($pdf, $page, $data=null);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;?&gt;</div>
+<div class="ttc" id="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_page_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_page.html">wcmf\lib\pdf\PDFPage</a></div><div class="ttdoc">PDFPage instances define the content of a pdf page by using a set of FPDF/FPDI commands inside the PD...</div><div class="ttdef"><b>Definition:</b> <a href="_p_d_f_page_8php_source.html#l00019">PDFPage.php:19</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_page_html_a553c97cf3bc40ddc7f5850f78932ae4c"><div class="ttname"><a href="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_page.html#a553c97cf3bc40ddc7f5850f78932ae4c">wcmf\lib\pdf\PDFPage\render</a></div><div class="ttdeci">render($pdf, $page, $data=null)</div><div class="ttdoc">Render data onto a pdf. </div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1pdf_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1pdf.html">wcmf\lib\pdf</a></div><div class="ttdoc">PDF related interfaces and classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00037">namespaces.php:37</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -142,7 +145,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 19 2015 19:20:34 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 20 2015 02:50:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

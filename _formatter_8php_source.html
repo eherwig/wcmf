@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <div id="MSearchBox">
-                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search API" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
                   <div id="MSearchSelect"></div>
                   <div id="MSearchClose"></div>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_2c167dadae1edee6396156038f705d0a.html">presentation</a></li><li class="navelem"><a class="el" href="dir_1f6e1aa37aff22067e601f662dcca2cb.html">format</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_ef6d6a8be2e4a5ebed8a716caaca8b88.html">presentation</a></li><li class="navelem"><a class="el" href="dir_82c5bdeac6ff789f1ec5ef2e92639db3.html">format</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Formatter.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_formatter_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2014 wemove digital solutions GmbH</span></div>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * See the LICENSE file distributed with this work for</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1format.html" title="&#160; ">wcmf\lib\presentation\format</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1format.html">wcmf\lib\presentation\format</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1config_1_1_configuration_exception.html">wcmf\lib\config\ConfigurationException</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1_request.html">wcmf\lib\presentation\Request</a>;</div>
@@ -127,19 +127,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html" title="Formatter is is the single entry point for request/response formatting. ">Formatter</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html">Formatter</a> {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">   * Deserialize Request data into objects.</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">   * @param $request A reference to the Request instance</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#a7c8752b32b154d60303a2128c07f47fd">   30</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#a7c8752b32b154d60303a2128c07f47fd" title="Deserialize Request data into objects. ">deserialize</a>(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. ">Request</a> $request) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#a7c8752b32b154d60303a2128c07f47fd">   30</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#a7c8752b32b154d60303a2128c07f47fd">deserialize</a>(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_request.html">Request</a> $request) {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// get the formatter that should be used for this request format</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    $format = $request-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#ae3c4fbe3e8eb0d6755694bc597d6c52f" title="Get the message format. ">getFormat</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    $format = $request-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#ae3c4fbe3e8eb0d6755694bc597d6c52f">getFormat</a>();</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span> ($format == null) {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="comment">// the format must be given!</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html" title="ConfigurationException signals an exception in the configuration. ">ConfigurationException</a>(<span class="stringliteral">&quot;No content format defined for &quot;</span>.$request-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a7516ca30af0db3cdbf9a7739b48ce91d" title="Get a string representation of the message. ">__toString</a>());</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a>(<span class="stringliteral">&quot;No content format defined for &quot;</span>.$request-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a7516ca30af0db3cdbf9a7739b48ce91d">__toString</a>());</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    $format-&gt;deserialize($request);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div>
@@ -148,18 +148,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">   * Serialize Response according to the output format.</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">   * @param $response A reference to the Response instance</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#ad93bbf55527356a07bf74a2744b552d2">   45</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#ad93bbf55527356a07bf74a2744b552d2" title="Serialize Response according to the output format. ">serialize</a>(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> $response) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#ad93bbf55527356a07bf74a2744b552d2">   45</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#ad93bbf55527356a07bf74a2744b552d2">serialize</a>(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_response.html">Response</a> $response) {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// get the formatter that should be used for this response format</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    $format = $response-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#ae3c4fbe3e8eb0d6755694bc597d6c52f" title="Get the message format. ">getFormat</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    $format = $response-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#ae3c4fbe3e8eb0d6755694bc597d6c52f">getFormat</a>();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> ($format == null) {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="comment">// the response format must be given!</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html" title="ConfigurationException signals an exception in the configuration. ">ConfigurationException</a>(<span class="stringliteral">&quot;No response format defined for &quot;</span>.$response-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a7516ca30af0db3cdbf9a7739b48ce91d" title="Get a string representation of the message. ">__toString</a>());</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a>(<span class="stringliteral">&quot;No response format defined for &quot;</span>.$response-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a7516ca30af0db3cdbf9a7739b48ce91d">__toString</a>());</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (!headers_sent()) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      header(<span class="stringliteral">&#39;HTTP/1.1 &#39;</span>.$response-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_response.html#a9d21636071f529e2154051d3ea6e5921" title="Get the response HTTP status code. ">getStatus</a>());</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      header(<span class="stringliteral">&#39;HTTP/1.1 &#39;</span>.$response-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_response.html#a9d21636071f529e2154051d3ea6e5921">getStatus</a>());</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      header(<span class="stringliteral">&quot;Content-Type: &quot;</span>.$format-&gt;getMimeType().<span class="stringliteral">&quot;; charset=utf-8&quot;</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keywordflow">foreach</span> ($response-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a157e0005d82edaa21cbea07fdc5c62da" title="Get all key headers. ">getHeaders</a>() as $name =&gt; $value) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keywordflow">foreach</span> ($response-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a157e0005d82edaa21cbea07fdc5c62da">getHeaders</a>() as $name =&gt; $value) {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        header($name.<span class="stringliteral">&#39;: &#39;</span>.$value);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
@@ -167,6 +167,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;?&gt;</div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter_html_ad93bbf55527356a07bf74a2744b552d2"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#ad93bbf55527356a07bf74a2744b552d2">wcmf\lib\presentation\format\Formatter\serialize</a></div><div class="ttdeci">static serialize(Response $response)</div><div class="ttdoc">Serialize Response according to the output format. </div><div class="ttdef"><b>Definition:</b> <a href="_formatter_8php_source.html#l00045">Formatter.php:45</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1config_1_1_configuration_exception_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_request_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_request.html">wcmf\lib\presentation\Request</a></div><div class="ttdoc">Request holds the request values that are used as input to Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_request_8php_source.html#l00026">Request.php:26</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_request_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_message_html_a157e0005d82edaa21cbea07fdc5c62da"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a157e0005d82edaa21cbea07fdc5c62da">wcmf\lib\presentation\ControllerMessage\getHeaders</a></div><div class="ttdeci">getHeaders()</div><div class="ttdoc">Get all key headers. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_message_8php_source.html#l00193">ControllerMessage.php:193</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1format_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1format.html">wcmf\lib\presentation\format</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00069">namespaces.php:69</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_message_html_ae3c4fbe3e8eb0d6755694bc597d6c52f"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#ae3c4fbe3e8eb0d6755694bc597d6c52f">wcmf\lib\presentation\ControllerMessage\getFormat</a></div><div class="ttdeci">getFormat()</div><div class="ttdoc">Get the message format. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_message_8php_source.html#l00149">ControllerMessage.php:149</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_response.html">wcmf\lib\presentation\Response</a></div><div class="ttdoc">Response holds the response values that are used as output from Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_response_8php_source.html#l00022">Response.php:22</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_response_html_a9d21636071f529e2154051d3ea6e5921"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_response.html#a9d21636071f529e2154051d3ea6e5921">wcmf\lib\presentation\Response\getStatus</a></div><div class="ttdeci">getStatus()</div><div class="ttdoc">Get the response HTTP status code. </div><div class="ttdef"><b>Definition:</b> <a href="_response_8php_source.html#l00066">Response.php:66</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html">wcmf\lib\presentation\format\Formatter</a></div><div class="ttdoc">Formatter is is the single entry point for request/response formatting. </div><div class="ttdef"><b>Definition:</b> <a href="_formatter_8php_source.html#l00024">Formatter.php:24</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter_html_a7c8752b32b154d60303a2128c07f47fd"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#a7c8752b32b154d60303a2128c07f47fd">wcmf\lib\presentation\format\Formatter\deserialize</a></div><div class="ttdeci">static deserialize(Request $request)</div><div class="ttdoc">Deserialize Request data into objects. </div><div class="ttdef"><b>Definition:</b> <a href="_formatter_8php_source.html#l00030">Formatter.php:30</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1config_1_1_configuration_exception_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">wcmf\lib\config\ConfigurationException</a></div><div class="ttdoc">ConfigurationException signals an exception in the configuration. </div><div class="ttdef"><b>Definition:</b> <a href="_configuration_exception_8php_source.html#l00018">ConfigurationException.php:18</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_message_html_a7516ca30af0db3cdbf9a7739b48ce91d"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a7516ca30af0db3cdbf9a7739b48ce91d">wcmf\lib\presentation\ControllerMessage\__toString</a></div><div class="ttdeci">__toString()</div><div class="ttdoc">Get a string representation of the message. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_message_8php_source.html#l00381">ControllerMessage.php:381</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -176,7 +190,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 19 2015 19:20:34 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 20 2015 02:50:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

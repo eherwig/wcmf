@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <div id="MSearchBox">
-                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search API" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
                   <div id="MSearchSelect"></div>
                   <div id="MSearchClose"></div>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d75c23162a2652451dce46d2e7e8aead.html">application</a></li><li class="navelem"><a class="el" href="dir_d4705990998dc57c6886494362019069.html">controller</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e659925bc7938c132ebc659cdfa3fb60.html">application</a></li><li class="navelem"><a class="el" href="dir_534cac7d4c5b7fef43abeb5786558088.html">controller</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ValueListController.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_value_list_controller_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2014 wemove digital solutions GmbH</span></div>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * See the LICENSE file distributed with this work for</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1application_1_1controller.html" title="Application controllers. ">wcmf\application\controller</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1application_1_1controller.html">wcmf\application\controller</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1_controller.html">wcmf\lib\presentation\Controller</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1control_1_1_value_list_provider.html">wcmf\lib\presentation\control\ValueListProvider</a>;</div>
@@ -141,20 +141,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_value_list_controller.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1application_1_1controller_1_1_value_list_controller.html" title="ValueListController is used to resolve lists for input_type definitions. ">ValueListController</a> <span class="keyword">extends</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html" title="Controller is the base class of all controllers. ">Controller</a> {</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_value_list_controller.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1application_1_1controller_1_1_value_list_controller.html">ValueListController</a> <span class="keyword">extends</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html">Controller</a> {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">   * @see Controller::validate()</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_value_list_controller.html#a184909dab34698899937d810a9f5d393">   43</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_value_list_controller.html#a184909dab34698899937d810a9f5d393">validate</a>() {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    $request = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22" title="Get the Request object. ">getRequest</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f" title="Get the Response object. ">getResponse</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    $request = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">getRequest</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>();</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span>(!$request-&gt;hasValue(<span class="stringliteral">&#39;listDef&#39;</span>)) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      $response-&gt;addError(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554" title="Factory method for retrieving a predefind error instance. ">ApplicationError::get</a>(<span class="stringliteral">&#39;PARAMETER_INVALID&#39;</span>,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      $response-&gt;addError(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554">ApplicationError::get</a>(<span class="stringliteral">&#39;PARAMETER_INVALID&#39;</span>,</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        array(<span class="stringliteral">&#39;invalidParameters&#39;</span> =&gt; array(<span class="stringliteral">&#39;listDef&#39;</span>))));</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (!$this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a87b623a9d1bd969d602c10eee8b40d04" title="Checks the language request parameter and adds an respons error, if it is not contained in the Locali...">checkLanguageParameter</a>()) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (!$this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a87b623a9d1bd969d602c10eee8b40d04">checkLanguageParameter</a>()) {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// do default validation</span></div>
@@ -165,13 +165,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">   * @see Controller::doExecute()</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_value_list_controller.html#a4eadfceba84d61eda01f9828935cf8e5">   61</a></span>&#160;  <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_value_list_controller.html#a4eadfceba84d61eda01f9828935cf8e5">doExecute</a>() {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    $request = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22" title="Get the Request object. ">getRequest</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f" title="Get the Response object. ">getResponse</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    $request = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">getRequest</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    $listDef = base64_decode($request-&gt;getValue(<span class="stringliteral">&#39;listDef&#39;</span>));</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    $language = $request-&gt;getValue(<span class="stringliteral">&#39;language&#39;</span>);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    $list = <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1_value_list_provider.html#a19acffbd2f25b7b28e9629400e977255" title="Get a list of key/value pairs defined by the given configuration. ">ValueListProvider::getList</a>($listDef, $language);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    $list = <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1_value_list_provider.html#a19acffbd2f25b7b28e9629400e977255">ValueListProvider::getList</a>($listDef, $language);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    $items = array();</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">foreach</span>($list[<span class="stringliteral">&#39;items&#39;</span>] as $id =&gt; $name) {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      $items[] = array(<span class="stringliteral">&#39;oid&#39;</span> =&gt; $id, <span class="stringliteral">&#39;displayText&#39;</span> =&gt; $name);</div>
@@ -185,6 +185,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;?&gt;</div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_adf1a35ad20e475c59cc0967d5764aa22"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">wcmf\lib\presentation\Controller\getRequest</a></div><div class="ttdeci">getRequest()</div><div class="ttdoc">Get the Request object. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00152">Controller.php:152</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html">wcmf\lib\presentation\Controller</a></div><div class="ttdoc">Controller is the base class of all controllers. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00041">Controller.php:41</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_controller_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_controller.html">Controller</a></div></div>
+<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_value_list_controller_html"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_value_list_controller.html">wcmf\application\controller\ValueListController</a></div><div class="ttdoc">ValueListController is used to resolve lists for input_type definitions. </div><div class="ttdef"><b>Definition:</b> <a href="_value_list_controller_8php_source.html#l00038">ValueListController.php:38</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a87b623a9d1bd969d602c10eee8b40d04"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a87b623a9d1bd969d602c10eee8b40d04">wcmf\lib\presentation\Controller\checkLanguageParameter</a></div><div class="ttdeci">checkLanguageParameter()</div><div class="ttdoc">Checks the language request parameter and adds an respons error, if it is not contained in the Locali...</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00214">Controller.php:214</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1control_1_1_value_list_provider_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1control_1_1_value_list_provider.html">ValueListProvider</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1application_1_1controller_html"><div class="ttname"><a href="namespacewcmf_1_1application_1_1controller.html">wcmf\application\controller</a></div><div class="ttdoc">Application controllers. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00003">namespaces.php:3</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_application_error_html_a7b6de2953b070910660cee9f229bc554"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554">wcmf\lib\presentation\ApplicationError\get</a></div><div class="ttdeci">static get($code, $data=null)</div><div class="ttdoc">Factory method for retrieving a predefind error instance. </div><div class="ttdef"><b>Definition:</b> <a href="_application_error_8php_source.html#l00120">ApplicationError.php:120</a></div></div>
+<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_value_list_controller_html_a184909dab34698899937d810a9f5d393"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_value_list_controller.html#a184909dab34698899937d810a9f5d393">wcmf\application\controller\ValueListController\validate</a></div><div class="ttdeci">validate()</div><div class="ttdef"><b>Definition:</b> <a href="_value_list_controller_8php_source.html#l00043">ValueListController.php:43</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a6c907e8af775e517a77037dd0164222f"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">wcmf\lib\presentation\Controller\getResponse</a></div><div class="ttdeci">getResponse()</div><div class="ttdoc">Get the Response object. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00160">Controller.php:160</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1control_1_1_value_list_provider_html_a19acffbd2f25b7b28e9629400e977255"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1control_1_1_value_list_provider.html#a19acffbd2f25b7b28e9629400e977255">wcmf\lib\presentation\control\ValueListProvider\getList</a></div><div class="ttdeci">static getList($definition, $language=null)</div><div class="ttdoc">Get a list of key/value pairs defined by the given configuration. </div><div class="ttdef"><b>Definition:</b> <a href="_value_list_provider_8php_source.html#l00039">ValueListProvider.php:39</a></div></div>
+<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_value_list_controller_html_a4eadfceba84d61eda01f9828935cf8e5"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_value_list_controller.html#a4eadfceba84d61eda01f9828935cf8e5">wcmf\application\controller\ValueListController\doExecute</a></div><div class="ttdeci">doExecute()</div><div class="ttdef"><b>Definition:</b> <a href="_value_list_controller_8php_source.html#l00061">ValueListController.php:61</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -194,7 +206,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 19 2015 19:20:33 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 20 2015 02:50:16 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

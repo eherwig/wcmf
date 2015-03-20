@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <div id="MSearchBox">
-                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search API" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
                   <div id="MSearchSelect"></div>
                   <div id="MSearchClose"></div>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_af4f2c8af6d5aeb9e7b67de5ac895365.html">persistence</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_39c44806d06b09217b7facf120c76084.html">persistence</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">BuildDepth.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_build_depth_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2014 wemove digital solutions GmbH</span></div>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * See the LICENSE file distributed with this work for</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1persistence.html" title="Persistence layer related interfaces and classes. ">wcmf\lib\persistence</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1persistence.html">wcmf\lib\persistence</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * BuildDepth values are used to define the depth when loading</span></div>
@@ -122,7 +122,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html" title="BuildDepth values are used to define the depth when loading object trees. ">BuildDepth</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html">BuildDepth</a> {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#aa77abffeefb50083440c805c0fd76695">   21</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#aa77abffeefb50083440c805c0fd76695">INFINITE</a> = -1;     <span class="comment">// build complete tree from given root on</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b">   22</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b">SINGLE</a>   = -2;     <span class="comment">// build only given object</span></div>
@@ -131,6 +131,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#aea7ca06e97d0ffa2d7764c79dece2bd5">   25</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#aea7ca06e97d0ffa2d7764c79dece2bd5">MAX</a> = 10;          <span class="comment">// maximum possible creation depth in one call</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;?&gt;</div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_build_depth_html_aea7ca06e97d0ffa2d7764c79dece2bd5"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#aea7ca06e97d0ffa2d7764c79dece2bd5">wcmf\lib\persistence\BuildDepth\MAX</a></div><div class="ttdeci">const MAX</div><div class="ttdef"><b>Definition:</b> <a href="_build_depth_8php_source.html#l00025">BuildDepth.php:25</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_build_depth_html_ad8e66505aa12ab235195acb721268093"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#ad8e66505aa12ab235195acb721268093">wcmf\lib\persistence\BuildDepth\PROXIES_ONLY</a></div><div class="ttdeci">const PROXIES_ONLY</div><div class="ttdef"><b>Definition:</b> <a href="_build_depth_8php_source.html#l00024">BuildDepth.php:24</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence.html">wcmf\lib\persistence</a></div><div class="ttdoc">Persistence layer related interfaces and classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00042">namespaces.php:42</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_build_depth_html_aa77abffeefb50083440c805c0fd76695"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#aa77abffeefb50083440c805c0fd76695">wcmf\lib\persistence\BuildDepth\INFINITE</a></div><div class="ttdeci">const INFINITE</div><div class="ttdef"><b>Definition:</b> <a href="_build_depth_8php_source.html#l00021">BuildDepth.php:21</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_build_depth_html_a4af9e891afe0982a6bc3b1338da3dfe6"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#a4af9e891afe0982a6bc3b1338da3dfe6">wcmf\lib\persistence\BuildDepth\REQUIRED</a></div><div class="ttdeci">const REQUIRED</div><div class="ttdef"><b>Definition:</b> <a href="_build_depth_8php_source.html#l00023">BuildDepth.php:23</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_build_depth_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html">wcmf\lib\persistence\BuildDepth</a></div><div class="ttdoc">BuildDepth values are used to define the depth when loading object trees. </div><div class="ttdef"><b>Definition:</b> <a href="_build_depth_8php_source.html#l00019">BuildDepth.php:19</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_build_depth_html_af33f2aced1762d825db23934d1b3205b"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b">wcmf\lib\persistence\BuildDepth\SINGLE</a></div><div class="ttdeci">const SINGLE</div><div class="ttdef"><b>Definition:</b> <a href="_build_depth_8php_source.html#l00022">BuildDepth.php:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -140,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 19 2015 19:20:34 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 20 2015 02:50:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

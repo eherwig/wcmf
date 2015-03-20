@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li>
                   <div id="MSearchBox">
-                    <input id="MSearchField" type="text" class="form-control" placeholder="Search" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
+                    <input id="MSearchField" type="text" class="form-control" placeholder="Search API" name="query" onkeyup="searchBox.OnSearchFieldChange(event)">
                   </div>
                   <div id="MSearchSelect"></div>
                   <div id="MSearchClose"></div>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_0eb1f34a69271cf642f946bb8e891ca3.html">model</a></li><li class="navelem"><a class="el" href="dir_ead0c7e5245a6dcb1ec28f2ac9131edb.html">visitor</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_2c1ec4f11fe265bd3cc5505512fe6437.html">model</a></li><li class="navelem"><a class="el" href="dir_20152d23ac4a2aad56f6cc40109dcd8b.html">visitor</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">LayoutVisitor.php</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_layout_visitor_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2014 wemove digital solutions GmbH</span></div>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * See the LICENSE file distributed with this work for</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1model_1_1visitor.html" title="&#160; ">wcmf\lib\model\visitor</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1model_1_1visitor.html">wcmf\lib\model\visitor</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1model_1_1_node_iterator.html">wcmf\lib\model\NodeIterator</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1model_1_1output_1_1_position.html">wcmf\lib\model\output\Position</a>;</div>
@@ -128,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html" title="LayoutVisitor is used to position a tree of objects on a plane (the objects must implement the getPar...">LayoutVisitor</a> <span class="keyword">extends</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_visitor.html" title="Visitor is used to extend an object&#39;s functionality by not extending its interface. ">Visitor</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html">LayoutVisitor</a> <span class="keyword">extends</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_visitor.html">Visitor</a></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#abffce6787aaee2eb8a0e404f6e308ec8">   27</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#abffce6787aaee2eb8a0e404f6e308ec8">MAPTYPE_HORIZONTAL</a> = 0;</div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#aa6b3c81b89002413398e8e1f3bd7e31c">   28</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#aa6b3c81b89002413398e8e1f3bd7e31c">MAPTYPE_VERTICAL</a> = 1;</div>
@@ -138,7 +138,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">   * Constructor.</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#a095c5d389db211932136b53f25f39685">   35</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#a095c5d389db211932136b53f25f39685" title="Constructor. ">__construct</a>() {</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#a095c5d389db211932136b53f25f39685">   35</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#a095c5d389db211932136b53f25f39685">__construct</a>() {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// set default maptype</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    $this-&gt;_map[<span class="stringliteral">&quot;type&quot;</span>] = self::MAPTYPE_HORIZONTAL;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  }</div>
@@ -147,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">   * Visit the current object in iteration and position it on the map.</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">   * @param $obj A reference to the current object.</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#a3a734750f826c1fca14cf02d9c440031">   44</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#a3a734750f826c1fca14cf02d9c440031" title="Visit the current object in iteration and position it on the map. ">visit</a>($obj) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#a3a734750f826c1fca14cf02d9c440031">   44</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#a3a734750f826c1fca14cf02d9c440031">visit</a>($obj) {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    $this-&gt;_map[$obj-&gt;getOID()] = $this-&gt;calculatePosition($obj);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"></span></div>
@@ -156,14 +156,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">   * @return The object map as assioziative array (key: object Id, value: Position).</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">   * map[&quot;type&quot;] = MAPTYPE_HORIZONTAL | MAPTYPE_VERTICAL</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#a831bfd2e8f3f041f518f9815cb503bda">   53</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#a831bfd2e8f3f041f518f9815cb503bda" title="Visit the current object in iteration and position it on the map. ">getMap</a>() {</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#a831bfd2e8f3f041f518f9815cb503bda">   53</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#a831bfd2e8f3f041f518f9815cb503bda">getMap</a>() {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> $this-&gt;_map;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">   * Flip layout (x &lt;-&gt; y).</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#ab7b978294481794664ea5ffa6530e020">   60</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#ab7b978294481794664ea5ffa6530e020" title="Flip layout (x <-> y). ">flip</a>() {</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#ab7b978294481794664ea5ffa6530e020">   60</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#ab7b978294481794664ea5ffa6530e020">flip</a>() {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">foreach</span>($this-&gt;_map as $key =&gt; $position) {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      $temp = $position-&gt;x;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      $position-&gt;x = $position-&gt;y;</div>
@@ -182,7 +182,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    $parent = &amp; $obj-&gt;getParent();</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (!$parent) {</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="comment">// start here</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      $position = <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1output_1_1_position.html" title="The Position class stores a coordinate tuple for use with the LayoutVisitor. ">Position</a>(0,0,0);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      $position = <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1output_1_1_position.html">Position</a>(0,0,0);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      $position = <span class="keyword">new</span> Position(0,0,0);</div>
@@ -222,6 +222,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  }</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;?&gt;</div>
+<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor_html_ab7b978294481794664ea5ffa6530e020"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#ab7b978294481794664ea5ffa6530e020">wcmf\lib\model\visitor\LayoutVisitor\flip</a></div><div class="ttdeci">flip()</div><div class="ttdoc">Flip layout (x <-> y). </div><div class="ttdef"><b>Definition:</b> <a href="_layout_visitor_8php_source.html#l00060">LayoutVisitor.php:60</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor_html_a095c5d389db211932136b53f25f39685"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#a095c5d389db211932136b53f25f39685">wcmf\lib\model\visitor\LayoutVisitor\__construct</a></div><div class="ttdeci">__construct()</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="_layout_visitor_8php_source.html#l00035">LayoutVisitor.php:35</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor_html_aa6b3c81b89002413398e8e1f3bd7e31c"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#aa6b3c81b89002413398e8e1f3bd7e31c">wcmf\lib\model\visitor\LayoutVisitor\MAPTYPE_VERTICAL</a></div><div class="ttdeci">const MAPTYPE_VERTICAL</div><div class="ttdef"><b>Definition:</b> <a href="_layout_visitor_8php_source.html#l00028">LayoutVisitor.php:28</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1model_1_1visitor_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1model_1_1visitor.html">wcmf\lib\model\visitor</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00034">namespaces.php:34</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor_html_a831bfd2e8f3f041f518f9815cb503bda"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#a831bfd2e8f3f041f518f9815cb503bda">wcmf\lib\model\visitor\LayoutVisitor\getMap</a></div><div class="ttdeci">getMap()</div><div class="ttdoc">Visit the current object in iteration and position it on the map. </div><div class="ttdef"><b>Definition:</b> <a href="_layout_visitor_8php_source.html#l00053">LayoutVisitor.php:53</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor_html_abffce6787aaee2eb8a0e404f6e308ec8"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#abffce6787aaee2eb8a0e404f6e308ec8">wcmf\lib\model\visitor\LayoutVisitor\MAPTYPE_HORIZONTAL</a></div><div class="ttdeci">const MAPTYPE_HORIZONTAL</div><div class="ttdef"><b>Definition:</b> <a href="_layout_visitor_8php_source.html#l00027">LayoutVisitor.php:27</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1output_1_1_position_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1output_1_1_position.html">wcmf\lib\model\output\Position</a></div><div class="ttdoc">The Position class stores a coordinate tuple for use with the LayoutVisitor. </div><div class="ttdef"><b>Definition:</b> <a href="_position_8php_source.html#l00019">Position.php:19</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1model_1_1_node_iterator_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1model_1_1_node_iterator.html">NodeIterator</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html">wcmf\lib\model\visitor\LayoutVisitor</a></div><div class="ttdoc">LayoutVisitor is used to position a tree of objects on a plane (the objects must implement the getPar...</div><div class="ttdef"><b>Definition:</b> <a href="_layout_visitor_8php_source.html#l00025">LayoutVisitor.php:25</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1model_1_1visitor_1_1_visitor_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1model_1_1visitor_1_1_visitor.html">Visitor</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor_html_a3a734750f826c1fca14cf02d9c440031"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#a3a734750f826c1fca14cf02d9c440031">wcmf\lib\model\visitor\LayoutVisitor\visit</a></div><div class="ttdeci">visit($obj)</div><div class="ttdoc">Visit the current object in iteration and position it on the map. </div><div class="ttdef"><b>Definition:</b> <a href="_layout_visitor_8php_source.html#l00044">LayoutVisitor.php:44</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1model_1_1output_1_1_position_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1model_1_1output_1_1_position.html">Position</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1visitor_1_1_visitor_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_visitor.html">wcmf\lib\model\visitor\Visitor</a></div><div class="ttdoc">Visitor is used to extend an object&#39;s functionality by not extending its interface. </div><div class="ttdef"><b>Definition:</b> <a href="_visitor_8php_source.html#l00026">Visitor.php:26</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -231,7 +244,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 19 2015 19:20:34 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Mar 20 2015 02:50:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
