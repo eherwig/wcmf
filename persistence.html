@@ -116,6 +116,9 @@ Data model</h2>
 Database tables</h3>
 <p>Still the most common storage for web applications is a <em>SQL</em> database (e.g. <a href="http://www.mysql.com/">MySQL</a>). It is also wCMF's default storage. Although not strictly necessary it is recommended to use one database table for each persistent class, where each class property maps to one table column and each row stores one instance. The object identity is stored in the primary key column, which is named <em>id</em> by default.</p>
 <dl class="section note"><dt>Note</dt><dd>wCMF uses a table called <code>DBSequence</code> for retrieving the next id value used for insertion, since <em>autoincrement</em> columns are not supported on all database servers.</dd></dl>
+<h4><a class="anchor" id="pers_id"></a>
+Primary keys</h4>
+<p>Primary keys are used to clearly identify an object in the database. They can consist of one (<em>simple</em>) or more (<em>compound</em>) columns. The default name for a primary key column is <em>id</em>. wCMF stores the primary key of an object together with it's type name in an <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html"><code>ObjectId</code></a> instance.</p>
 <h4><a class="anchor" id="pers_relations"></a>
 Relations</h4>
 <p>The following two relations types must be considered, when modeling the data tables:</p>
@@ -356,7 +359,10 @@ Validation types</h3>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;__class = path\to\MyValidator</div>
 </div><!-- fragment --><p>it may be used in the following way:</p>
 <div class="fragment"><div class="line">myValidator:custom_configuration_string_passed_by_MyValidator</div>
-</div><!-- fragment --><h2><a class="anchor" id="pers_concurrency"></a>
+</div><!-- fragment --><h3><a class="anchor" id="pers_validation_custom"></a>
+Complex validation</h3>
+<p>The described validation types only operate on one attribute. If more complex validation is required, e.g. if dependencies between several attributes exist, the method <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a1a79f61fa591ebe2550b187c1544e1d1"><code>PersistentObject::validateValue</code></a> may be overriden in the appropriate domain class.</p>
+<h2><a class="anchor" id="pers_concurrency"></a>
 Concurrency</h2>
 <p>When two or more users try to access the same object at the same time problems like <em>lost updates</em> might occur. These issues are avoided by <em>concurrency control</em> mechanisms, typically <em>object locking</em>.</p>
 <h3><a class="anchor" id="pers_locking"></a>
@@ -417,7 +423,7 @@ Transactions</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Mar 20 2015 18:56:07 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sat Mar 28 2015 13:15:08 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

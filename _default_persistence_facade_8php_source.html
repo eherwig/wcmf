@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_af4f2c8af6d5aeb9e7b67de5ac895365.html">persistence</a></li><li class="navelem"><a class="el" href="dir_3c9228373f2b4dcbb03c5622f3c738e4.html">impl</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_39c44806d06b09217b7facf120c76084.html">persistence</a></li><li class="navelem"><a class="el" href="dir_9ae216038d3fbc60e2f8062a0e79dbe7.html">impl</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -232,8 +232,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    $transaction = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistence_facade.html#ac67a68804da2dfc9131f341f3659e578">getTransaction</a>();</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    $obj = $transaction-&gt;getLoaded($oid);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="comment">// if not cached, load</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">if</span> ($obj == null) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="comment">// if not cached or build depth requested, load</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">if</span> ($obj == null || $buildDepth != <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b">BuildDepth::SINGLE</a>) {</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      $mapper = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistence_facade.html#af819f6d3ad97a825e17dc07541e736bd">getMapper</a>($oid-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html#a830b5c75df72b32396701bc563fbe3c7">getType</a>());</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      <span class="keywordflow">if</span> ($mapper != null) {</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        $obj = $mapper-&gt;load($oid, $buildDepth);</div>
@@ -492,7 +492,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Mar 20 2015 18:56:06 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sat Mar 28 2015 13:15:07 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
