@@ -118,14 +118,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 </div> </div><dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00043">43</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
+<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00045">45</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for RESTController:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1application_1_1controller_1_1_r_e_s_t_controller__inherit__graph.svg" width="210" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1application_1_1controller_1_1_r_e_s_t_controller__inherit__graph.svg" width="210" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -204,7 +203,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a47a24ac0d700f62a9434d298ade72fb9" title="Initialize the Controller with request/response data. ">Controller::initialize()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00048">48</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
+<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00050">50</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
 
 </div>
 </div>
@@ -230,7 +229,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a184909dab34698899937d810a9f5d393" title="Check if the data given by initialize() meet the requirements of the Controller. ">Controller::validate()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00074">74</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
+<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00076">76</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
 
 </div>
 </div>
@@ -256,7 +255,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a4eadfceba84d61eda01f9828935cf8e5" title="Process the request. ">Controller::doExecute()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00099">99</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
+<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00101">101</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
 
 </div>
 </div>
@@ -298,6 +297,8 @@ Protected Member Functions</h2></td></tr>
 <tr>
 <td><em>in</em> <code>sort</code> </td><td>_?sort(+foo)_ for sorting the list by foo ascending </td></tr>
 <tr>
+<td><em>in</em> <code>limit</code> </td><td>_?limit(10,25)_ for loading 25 objects starting from position 10 </td></tr>
+<tr>
 <td><em>in</em> <code>relation</code> </td><td>Relation name if objects in relation to another object should be loaded (determines the type of the returned objects) </td></tr>
 <tr>
 <td><em>in</em> <code>sourceId</code> </td><td>Id of the object to which the returned objects are related (determines the object id together with <em>className</em>) </td></tr>
@@ -305,7 +306,7 @@ Protected Member Functions</h2></td></tr>
 <td><em>out</em> </td><td>Single object or list of objects. In case of a list, the <em>Content-Range</em> header will be set. </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00138">138</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
+<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00141">141</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
 
 </div>
 </div>
@@ -331,7 +332,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a570fd766e5395246e8fb34d8a317616c" title="Assign default variables to the response. ">Controller::assignResponseDefaults()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00252">252</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
+<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00284">284</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
 
 </div>
 </div>
@@ -373,7 +374,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 <p>The object data is contained in POST content. If an existing object should be added, an <code>oid</code> parameter in the object data is sufficient. </p>
 
-<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00273">273</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
+<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00305">305</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
 
 </div>
 </div>
@@ -419,7 +420,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 <p>The object data is contained in POST content. </p>
 
-<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00334">334</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
+<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00366">366</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
 
 </div>
 </div>
@@ -462,7 +463,7 @@ Protected Member Functions</h2></td></tr>
 <td><em>in</em> <code>targetId</code> </td><td>Id of the object to be deleted from the relation (determines the object id together with <em>relation</em>) </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00441">441</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
+<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00473">473</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
 
 </div>
 </div>
@@ -496,7 +497,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00470">470</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
+<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00502">502</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
 
 </div>
 </div>
@@ -524,7 +525,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the first oid from the request. </p>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00482">482</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
+<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00514">514</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
 
 </div>
 </div>
@@ -570,7 +571,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00499">499</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
+<p>Definition at line <a class="el" href="_r_e_s_t_controller_8php_source.html#l00531">531</a> of file <a class="el" href="_r_e_s_t_controller_8php_source.html">RESTController.php</a>.</p>
 
 </div>
 </div>
@@ -583,7 +584,7 @@ Protected Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Mar 28 2015 13:15:08 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Wed Apr 8 2015 00:13:58 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
