@@ -136,21 +136,21 @@ Request processing</h2>
 <li>The <a class="el" href="architecture.html#arch_actionkey">Action Key</a> is determined from the request parameters.</li>
 <li><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html"><code>PermissionManager</code></a> is asked to authorize the action key for the current user (see <a class="el" href="permissions.html#perm_check">Checking permissions</a>).</li>
 <li>If authorization is successful, the request data is transformed into the internal application format (see <a class="el" href="presentation.html#pres_format">Formats</a>).</li>
-<li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> instance matching the request is determined (see <a class="el" href="presentation.html#pres_actions">Action mapping</a>) and executed.</li>
+<li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> instance matching the request is determined (see pres_actions) and executed.</li>
 <li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_response.html"><code>Response</code></a> instance is obtained after execution.</li>
 <li>The response data is transformed into the requested response format (see <a class="el" href="presentation.html#pres_format">Formats</a>).</li>
 <li>Execution returns to step 3, if a valid action key is contained in the response data and terminates, if not.</li>
 </ol>
 <h3><a class="anchor" id="pres_format"></a>
 Formats</h3>
-<p>wCMF is designed to be able to consume various request formats and produce several response formats. While some clients communicate using <a href="http://en.wikipedia.org/wiki/JSON">JSON</a> format, others might prefer to encode data in <a href="http://en.wikipedia.org/wiki/XML">XML</a>. The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html"><code>Formatter</code></a> class is used to determine the required format and delegate the actual formatting to the correct <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html"><code>Format</code></a> implementation. wCMF currently contains the following <b>implementations</b>:</p>
+<p>wCMF is designed to be able to consume various request formats and produce several response formats. While some clients communicate using <a href="http://en.wikipedia.org/wiki/JSON">JSON</a> format, others might prefer to encode data in <a href="http://en.wikipedia.org/wiki/XML">XML</a>. The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html"><code>Formatter</code></a> class is used to determine the required format and delegate the actual formatting to the correct <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html"><code>Format</code></a> implementation. wCMF currently provides the following <b>implementations</b>:</p>
 <ul>
 <li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_html_format.html"><code>HtmlFormat</code></a> expects all data to be sent as key-value-pairs. Object data are transferred in parameters named <code>value-</code><em>name-oid</em> (e.g. <code>value-title-Book:3</code>). Responses in this format are rendered as HTML views (see <a class="el" href="presentation.html#pres_views">Views</a>).</li>
 <li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_json_format.html"><code>JsonFormat</code></a> handles JSON encoded request data and encodes response data into the same format.</li>
 <li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_soap_format.html"><code>SoapFormat</code></a> is used together with the <a href="http://sourceforge.net/projects/nusoap/">NuSOAP</a> library to implement a SOAP interface.</li>
 <li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_null_format.html"><code>NullFormat</code></a> is used internally, if no formatting is required, e.g. if one controller calls another controller.</li>
 </ul>
-<p>If not explicitely set, the request and response format is automatically determined from the <b>HTTP headers</b>:</p>
+<p>If not explicitely set, the request and response format is automatically determined from the <b>HTTP headers</b> sent with the request:</p>
 <ul>
 <li>The <code>Content-Type</code> header defines the <b>request</b> format</li>
 <li>The <code>Accept</code> header defines the <b>response</b> format</li>
@@ -165,14 +165,14 @@ Formats</h3>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;[NullFormat]</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;__class = wcmf\lib\presentation\format\impl\NullFormat</div>
-</div><!-- fragment --><h3><a class="anchor" id="pres_actions"></a>
-Action mapping</h3>
+</div><!-- fragment --><h3><a class="anchor" id="pres_routing"></a>
+Routing</h3>
+<p>Routing is the process of selecting the correct <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> for a given request. wCMF distinguishes between <em>internal</em> and <em>external</em> routing.</p>
+<h4><a class="anchor" id="pres_routingint"></a>
+Internal routing</h4>
 <p><span class="label label-danger">TODO</span></p>
-<h4><a class="anchor" id="pres_actionsint"></a>
-Internal action mapping</h4>
-<p><span class="label label-danger">TODO</span></p>
-<h4><a class="anchor" id="pres_actionsext"></a>
-External action mapping</h4>
+<h4><a class="anchor" id="pres_routingext"></a>
+External routing</h4>
 <p><span class="label label-danger">TODO</span></p>
 <h2><a class="anchor" id="pres_controllers"></a>
 Controllers</h2>
@@ -201,7 +201,7 @@ Debugging/Logging</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Apr 8 2015 00:13:58 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Tue Apr 14 2015 23:54:39 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

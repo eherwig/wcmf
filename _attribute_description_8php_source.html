@@ -162,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">   * Check if this attribute is tagged with the given application specific tags</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">   * @param $tags An array of tags that the attribute should match. Empty array results in true the given matchMode (default: empty array)</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">   * @param $matchMode One of &#39;all&#39;, &#39;none&#39;, &#39;any&#39;, defines how the attribute&#39;s tags should match the given tags (default: &#39;all&#39;)</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">   * @return True if the attribute has all data types, false else</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">   * @return True if the attribute tags satisfy the match mode, false else</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1_attribute_description.html#aa90b94d4f412124728644dc1e8d62425">   62</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_attribute_description.html#aa90b94d4f412124728644dc1e8d62425">matchTags</a>(array <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_attribute_description.html#a475a6a63b85186663d34151bcbd21590">$tags</a>=array(), $matchMode=<span class="stringliteral">&#39;all&#39;</span>) {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    $numGivenTags = <span class="keyword">sizeof</span>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_attribute_description.html#a475a6a63b85186663d34151bcbd21590">$tags</a>);</div>
@@ -299,7 +299,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Apr 8 2015 00:13:56 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Tue Apr 14 2015 23:54:38 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
