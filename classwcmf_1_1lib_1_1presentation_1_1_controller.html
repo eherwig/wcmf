@@ -49,6 +49,7 @@
                     <li><a href="configuration.html">Configuration</a></li>
                     <li><a href="permissions.html">Permissions</a></li>
                     <li><a href="i18n.html">I18N</a></li>
+                    <li><a href="tests.html">Tests</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -147,7 +148,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a47a24ac0d700f62a9434d298ade72fb9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a47a24ac0d700f62a9434d298ade72fb9">initialize</a> (<a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_request.html">Request</a> $request, <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_response.html">Response</a> $response)</td></tr>
+<tr class="memitem:a47a24ac0d700f62a9434d298ade72fb9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a47a24ac0d700f62a9434d298ade72fb9">initialize</a> (<a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a> $request, <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a> $response)</td></tr>
 <tr class="separator:a47a24ac0d700f62a9434d298ade72fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1909f4b7f8129c7790cb75de2ffbe1e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a1909f4b7f8129c7790cb75de2ffbe1e4">execute</a> ()</td></tr>
 <tr class="separator:a1909f4b7f8129c7790cb75de2ffbe1e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,13 +180,13 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">initialize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_request.html">Request</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a>&#160;</td>
           <td class="paramname"><em>$request</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_response.html">Response</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a>&#160;</td>
           <td class="paramname"><em>$response</em>&#160;</td>
         </tr>
         <tr>
@@ -200,8 +201,8 @@ Protected Member Functions</h2></td></tr>
 <p>Which data is required is defined by the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html" title="Controller is the base class of all controllers. ">Controller</a>. The base class method just stores the parameters in a member variable. Specialized Controllers may overide this behaviour for further initialization. </p><dl class="section attention"><dt>Attention</dt><dd>It lies in its responsibility to fail or do some default action if some data is missing. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$request</td><td>A reference to the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. ">Request</a> sent to the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html" title="Controller is the base class of all controllers. ">Controller</a>. The sender attribute of the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. ">Request</a> is the last controller's name, the context is the current context and the action is the requested one. All data sent from the last controller are accessible using the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a664ea399753a23ceeb585c084ae7de48" title="Get a value. ">Request::getValue</a> method. The request is supposed to be read-only. It will not be used any more after beeing passed to the controller. </td></tr>
-    <tr><td class="paramname">$response</td><td>A reference to the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> that will be modified by the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html" title="Controller is the base class of all controllers. ">Controller</a>. The initial values for context and action are the same as in the request parameter and are meant to be modified according to the performed action. The sender attribute of the response is set to the current controller. Initially there are no data stored in the response. </td></tr>
+    <tr><td class="paramname">$request</td><td>A reference to the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. ">Request</a> sent to the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html" title="Controller is the base class of all controllers. ">Controller</a>. The sender attribute of the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. ">Request</a> is the last controller's name, the context is the current context and the action is the requested one. All data sent from the last controller are accessible using the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a664ea399753a23ceeb585c084ae7de48" title="Get a value. ">Request::getValue</a> method. The request is supposed to be read-only. It will not be used any more after beeing passed to the controller. </td></tr>
+    <tr><td class="paramname">$response</td><td>A reference to the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> that will be modified by the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html" title="Controller is the base class of all controllers. ">Controller</a>. The initial values for context and action are the same as in the request parameter and are meant to be modified according to the performed action. The sender attribute of the response is set to the current controller. Initially there are no data stored in the response. </td></tr>
   </table>
   </dd>
 </dl>
@@ -313,7 +314,7 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> instance </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> instance </dd></dl>
 
 <p>Definition at line <a class="el" href="_controller_8php_source.html#l00135">135</a> of file <a class="el" href="_controller_8php_source.html">Controller.php</a>.</p>
 
@@ -332,10 +333,10 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. ">Request</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. ">Request</a> object </dd></dl>
+<p>Get the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. ">Request</a> object. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. ">Request</a> object </dd></dl>
 
-<p>Definition at line <a class="el" href="_controller_8php_source.html#l00152">152</a> of file <a class="el" href="_controller_8php_source.html">Controller.php</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8php_source.html#l00155">155</a> of file <a class="el" href="_controller_8php_source.html">Controller.php</a>.</p>
 
 </div>
 </div>
@@ -352,10 +353,10 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> object </dd></dl>
+<p>Get the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> object. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> object </dd></dl>
 
-<p>Definition at line <a class="el" href="_controller_8php_source.html#l00160">160</a> of file <a class="el" href="_controller_8php_source.html">Controller.php</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8php_source.html#l00163">163</a> of file <a class="el" href="_controller_8php_source.html">Controller.php</a>.</p>
 
 </div>
 </div>
@@ -383,7 +384,7 @@ Protected Member Functions</h2></td></tr>
 <p>Assign default variables to the response. </p>
 <p>This method is called after <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html" title="Controller is the base class of all controllers. ">Controller</a> execution. This method may be used by derived controller classes for convenient response setup. </p>
 
-<p>Definition at line <a class="el" href="_controller_8php_source.html#l00168">168</a> of file <a class="el" href="_controller_8php_source.html">Controller.php</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8php_source.html#l00171">171</a> of file <a class="el" href="_controller_8php_source.html">Controller.php</a>.</p>
 
 </div>
 </div>
@@ -411,7 +412,7 @@ Protected Member Functions</h2></td></tr>
 <p>Check if the current request is localized. </p>
 <p>This is true, if it has a language parameter that is not equal to Localization::getDefaultLanguage(). Throws an exception if a language is given which is not supported </p><dl class="section return"><dt>Returns</dt><dd>Boolean whether the request is localized or not </dd></dl>
 
-<p>Definition at line <a class="el" href="_controller_8php_source.html#l00198">198</a> of file <a class="el" href="_controller_8php_source.html">Controller.php</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8php_source.html#l00201">201</a> of file <a class="el" href="_controller_8php_source.html">Controller.php</a>.</p>
 
 </div>
 </div>
@@ -439,7 +440,7 @@ Protected Member Functions</h2></td></tr>
 <p>Checks the language request parameter and adds an respons error, if it is not contained in the Localization::getSupportedLanguages() list. </p>
 <dl class="section return"><dt>Returns</dt><dd>Boolean </dd></dl>
 
-<p>Definition at line <a class="el" href="_controller_8php_source.html#l00214">214</a> of file <a class="el" href="_controller_8php_source.html">Controller.php</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8php_source.html#l00217">217</a> of file <a class="el" href="_controller_8php_source.html">Controller.php</a>.</p>
 
 </div>
 </div>
@@ -452,7 +453,7 @@ Protected Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Apr 14 2015 23:54:45 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Thu May 14 2015 01:47:16 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

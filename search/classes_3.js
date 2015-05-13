@@ -11,6 +11,8 @@ var searchData=
   ['defaultpermissionmanager',['DefaultPermissionManager',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html',1,'wcmf::lib::security::impl']]],
   ['defaultpersistencefacade',['DefaultPersistenceFacade',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistence_facade.html',1,'wcmf::lib::persistence::impl']]],
   ['defaultprincipalfactory',['DefaultPrincipalFactory',['../classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_default_principal_factory.html',1,'wcmf::lib::security::principal::impl']]],
+  ['defaultrequest',['DefaultRequest',['../classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html',1,'wcmf::lib::presentation::impl']]],
+  ['defaultresponse',['DefaultResponse',['../classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html',1,'wcmf::lib::presentation::impl']]],
   ['defaultsession',['DefaultSession',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html',1,'wcmf::lib::core::impl']]],
   ['defaulttransaction',['DefaultTransaction',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_transaction.html',1,'wcmf::lib::persistence::impl']]],
   ['deletecontroller',['DeleteController',['../classwcmf_1_1application_1_1controller_1_1_delete_controller.html',1,'wcmf::application::controller']]],

@@ -11,8 +11,8 @@ var searchData=
   ['remotecapablepersistencefacade',['RemoteCapablePersistenceFacade',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_remote_capable_persistence_facade.html',1,'wcmf::lib::persistence::impl']]],
   ['remotingclient',['RemotingClient',['../interfacewcmf_1_1lib_1_1service_1_1_remoting_client.html',1,'wcmf::lib::service']]],
   ['remotingserver',['RemotingServer',['../classwcmf_1_1lib_1_1service_1_1_remoting_server.html',1,'wcmf::lib::service']]],
-  ['request',['Request',['../classwcmf_1_1lib_1_1presentation_1_1_request.html',1,'wcmf::lib::presentation']]],
-  ['response',['Response',['../classwcmf_1_1lib_1_1presentation_1_1_response.html',1,'wcmf::lib::presentation']]],
+  ['request',['Request',['../interfacewcmf_1_1lib_1_1presentation_1_1_request.html',1,'wcmf::lib::presentation']]],
+  ['response',['Response',['../interfacewcmf_1_1lib_1_1presentation_1_1_response.html',1,'wcmf::lib::presentation']]],
   ['restcontroller',['RESTController',['../classwcmf_1_1application_1_1controller_1_1_r_e_s_t_controller.html',1,'wcmf::application::controller']]],
   ['role',['Role',['../interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html',1,'wcmf::lib::security::principal']]],
   ['rpcclient',['RPCClient',['../classwcmf_1_1lib_1_1service_1_1impl_1_1_r_p_c_client.html',1,'wcmf::lib::service::impl']]]

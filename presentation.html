@@ -49,6 +49,7 @@
                     <li><a href="configuration.html">Configuration</a></li>
                     <li><a href="permissions.html">Permissions</a></li>
                     <li><a href="i18n.html">I18N</a></li>
+                    <li><a href="tests.html">Tests</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -123,21 +124,21 @@ Application</h2>
 <div class="line">}</div>
 </div><!-- fragment --><p>The example shows the three important public methods of the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html"><code>Application</code></a> class:</p>
 <ul>
-<li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a8a93d7a699b6a01fa0dcdf47b9a357fd"><code>initialize</code></a> method is used to <b>setup</b> the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html"><code>Application</code></a>. It returns a <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance, that may be modified before execution.</li>
-<li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#ae40ac2db89d00ceca9183a1e5426b1f9"><code>run</code></a> method is called to <b>execute</b> the given request. The method returns a <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_response.html"><code>Response</code></a> instance, that is not used in this example.</li>
+<li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a8a93d7a699b6a01fa0dcdf47b9a357fd"><code>initialize</code></a> method is used to <b>setup</b> the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html"><code>Application</code></a>. It returns a <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance, that may be modified before execution.</li>
+<li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#ae40ac2db89d00ceca9183a1e5426b1f9"><code>run</code></a> method is called to <b>execute</b> the given request. The method returns a <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html"><code>Response</code></a> instance, that is not used in this example.</li>
 <li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a332beeec10cf9aa57bef49cf913bca78"><code>handleException</code></a> method is called, if an <b>exception</b> occurs. The method rolls back the database transaction and calls the <code>failure</code> action.</li>
 </ul>
 <p>The details of request execution are the topic of the next section.</p>
 <h2><a class="anchor" id="pres_request"></a>
 Request processing</h2>
-<p>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance created on initialization of the application provides all information about the incoming HTTP request, that is necessary for execution. Upon execution, the following actions are performed:</p>
+<p>The <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance created on initialization of the application provides all information about the incoming HTTP request, that is necessary for execution. Upon execution, the following actions are performed:</p>
 <ol type="1">
-<li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance is passed to <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html"><code>ActionMapper</code></a> for further processing.</li>
+<li>The <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance is passed to <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html"><code>ActionMapper</code></a> for further processing.</li>
 <li>The <a class="el" href="architecture.html#arch_actionkey">Action Key</a> is determined from the request parameters.</li>
 <li><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html"><code>PermissionManager</code></a> is asked to authorize the action key for the current user (see <a class="el" href="permissions.html#perm_check">Checking permissions</a>).</li>
 <li>If authorization is successful, the request data is transformed into the internal application format (see <a class="el" href="presentation.html#pres_format">Formats</a>).</li>
-<li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> instance matching the request is determined (see pres_actions) and executed.</li>
-<li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_response.html"><code>Response</code></a> instance is obtained after execution.</li>
+<li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> instance matching the request is determined (see <a class="el" href="presentation.html#pres_routing">Routing</a>) and executed.</li>
+<li>The <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html"><code>Response</code></a> instance is obtained after execution.</li>
 <li>The response data is transformed into the requested response format (see <a class="el" href="presentation.html#pres_format">Formats</a>).</li>
 <li>Execution returns to step 3, if a valid action key is contained in the response data and terminates, if not.</li>
 </ol>
@@ -170,10 +171,21 @@ Routing</h3>
 <p>Routing is the process of selecting the correct <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> for a given request. wCMF distinguishes between <em>internal</em> and <em>external</em> routing.</p>
 <h4><a class="anchor" id="pres_routingint"></a>
 Internal routing</h4>
-<p><span class="label label-danger">TODO</span></p>
+<p>Internal routing takes place after the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance is created and initialized. wCMF inspects the <b>action key</b> formed from it's <em>sender</em>, <em>context</em> and <em>action</em> parameters (see <a class="el" href="architecture.html#arch_actionkey">Action Key</a>) to determine the controller to be executed next. The mapping of action keys to controllers is defined in the <code>ActionMapping</code> configuration section.</p>
+<p>If the executed controller together with the <em>context</em> and <em>action</em> parameters of the response match another action key, the corresponding controller will be executed afterwards. This allows to chain several actions together.</p>
 <h4><a class="anchor" id="pres_routingext"></a>
 External routing</h4>
-<p><span class="label label-danger">TODO</span></p>
+<p>The mapping of the current <b>request uri</b> to an action key is called external routing. The default logic is implemented in the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html#a36e0e7579b8ab70ec7690b37dcdfa312"><code>DefaultRequest::initialize</code></a> method. The method matches the <em>path part</em> of the request uri against the entries of the <code>Routes</code> configuration section. Variables declared in path segments will be automatically passed as request parameters.</p>
+<p>The following example configuration taken from the default application illustrates the concept:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Routes]</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;/ = action=cms</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;/rest/{language}/{className} = action=restAction&amp;collection=1</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;/rest/{language}/{className}/{id|[0-9]+} = action=restAction&amp;collection=0</div>
+</div><!-- fragment --><ul>
+<li>The first entry is matched by the root path, which is then mapped to the <em>cms</em> action - corresponding to the action key <em>??cms</em>.</li>
+<li>The second entry defines the <em>language</em> and <em>className</em> variables (surrounded by curly braces) and would be matched by the request uris <em>/rest/de/Author</em> or <em>/rest/en/Book</em>. The executed action would be <em>restAction</em>.</li>
+<li>The <em>id</em> variable in the third entry must be an integer because of the regular expression constraint <code>[0-9]+</code>.</li>
+</ul>
 <h2><a class="anchor" id="pres_controllers"></a>
 Controllers</h2>
 <p><span class="label label-danger">TODO</span></p>
@@ -201,7 +213,7 @@ Debugging/Logging</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Apr 14 2015 23:54:39 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Thu May 14 2015 01:47:14 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

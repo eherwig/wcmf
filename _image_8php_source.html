@@ -49,6 +49,7 @@
                     <li><a href="configuration.html">Configuration</a></li>
                     <li><a href="permissions.html">Permissions</a></li>
                     <li><a href="i18n.html">I18N</a></li>
+                    <li><a href="tests.html">Tests</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -119,65 +120,68 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1util_1_1_graphics_util.html">wcmf\lib\util\GraphicsUtil</a>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * Image ValidateType validates an image value.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * Image validates an image value.</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * @code</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * image:{&quot;width&quot;:[200,1],&quot;height&quot;:[100,0]}  // width exactly 200px, height less than 100px</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * imagesize:{&quot;height&quot;:[300,0]}  // arbitrary width, height exactly 300px</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * @endcode</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image.html">Image</a> <span class="keyword">implements</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1validator_1_1_validate_type.html">ValidateType</a> {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">   * @see ValidateType::validate</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image.html#abf59ef976129c7728dffa5dd8e2fcde8">   32</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image.html#abf59ef976129c7728dffa5dd8e2fcde8">validate</a>($value, $options=null) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span> (strlen($value) == 0) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    $imageOptions = json_decode($options, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    $imgWidth = isset($imageOptions[<span class="stringliteral">&#39;width&#39;</span>]) ? $imageOptions[<span class="stringliteral">&#39;width&#39;</span>] : <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    $imgHeight = isset($imageOptions[<span class="stringliteral">&#39;height&#39;</span>]) ? $imageOptions[<span class="stringliteral">&#39;height&#39;</span>] : <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Configuration examples:</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * @code</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * // width exactly 200px, height less than 100px</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * image:{&quot;width&quot;:[200,1],&quot;height&quot;:[100,0]}</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * // arbitrary width, height exactly 300px</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * image:{&quot;height&quot;:[300,0]}</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * @endcode</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image.html">Image</a> <span class="keyword">implements</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1validator_1_1_validate_type.html">ValidateType</a> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">   * @see ValidateType::validate</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">   * $options is an associative array with keys &#39;width&#39; (optional) and &#39;height&#39; (optional)</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image.html#abf59ef976129c7728dffa5dd8e2fcde8">   36</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image.html#abf59ef976129c7728dffa5dd8e2fcde8">validate</a>($value, $options=null) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> (strlen($value) == 0) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> ($imgWidth === <span class="keyword">false</span> &amp;&amp; $imgHeight === <span class="keyword">false</span>) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    $graphicsUtil = <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1util_1_1_graphics_util.html">GraphicsUtil</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span> (!$graphicsUtil-&gt;isImage($value)) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// check dimensions of the image</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> ($imgWidth !== <span class="keyword">false</span>) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      $checkWidth = $graphicsUtil-&gt;isValidImageWidth($value, $imgWidth[0], $imgWidth[1]);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      $checkWidth = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    $imgWidth = isset($options[<span class="stringliteral">&#39;width&#39;</span>]) ? $options[<span class="stringliteral">&#39;width&#39;</span>] : <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    $imgHeight = isset($options[<span class="stringliteral">&#39;height&#39;</span>]) ? $options[<span class="stringliteral">&#39;height&#39;</span>] : <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> ($imgWidth === <span class="keyword">false</span> &amp;&amp; $imgHeight === <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    $graphicsUtil = <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1util_1_1_graphics_util.html">GraphicsUtil</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> (!$graphicsUtil-&gt;isImage($value)) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// check dimensions of the image</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> ($imgWidth !== <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      $checkWidth = $graphicsUtil-&gt;isValidImageWidth($value, $imgWidth[0], $imgWidth[1]);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> ($imgHeight !== <span class="keyword">false</span>) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      $checkHeight = $graphicsUtil-&gt;isValidImageHeight($value, $imgHeight[0], $imgHeight[1]);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      $checkWidth = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      $checkHeight = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span> ($imgHeight !== <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      $checkHeight = $graphicsUtil-&gt;isValidImageHeight($value, $imgHeight[0], $imgHeight[1]);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span>(!($checkWidth &amp;&amp; $checkHeight)) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      $checkHeight = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;?&gt;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span>(!($checkWidth &amp;&amp; $checkHeight)) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;?&gt;</div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1validator_1_1_validate_type_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1validator_1_1_validate_type.html">wcmf\lib\persistence\validator\ValidateType</a></div><div class="ttdoc">ValidateType defines the interface for all validator classes. </div><div class="ttdef"><b>Definition:</b> <a href="_validate_type_8php_source.html#l00018">ValidateType.php:18</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image.html">wcmf\lib\persistence\validator\impl\Image</a></div><div class="ttdoc">Image ValidateType validates an image value. </div><div class="ttdef"><b>Definition:</b> <a href="_image_8php_source.html#l00027">Image.php:27</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image.html">wcmf\lib\persistence\validator\impl\Image</a></div><div class="ttdoc">Image validates an image value. </div><div class="ttdef"><b>Definition:</b> <a href="_image_8php_source.html#l00030">Image.php:30</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1util_1_1_graphics_util_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1util_1_1_graphics_util.html">GraphicsUtil</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1util_1_1_graphics_util_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1util_1_1_graphics_util.html">wcmf\lib\util\GraphicsUtil</a></div><div class="ttdoc">GraphicsUtil provides support for graphic manipulation. </div><div class="ttdef"><b>Definition:</b> <a href="_graphics_util_8php_source.html#l00025">GraphicsUtil.php:25</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image_html_abf59ef976129c7728dffa5dd8e2fcde8"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image.html#abf59ef976129c7728dffa5dd8e2fcde8">wcmf\lib\persistence\validator\impl\Image\validate</a></div><div class="ttdeci">validate($value, $options=null)</div><div class="ttdef"><b>Definition:</b> <a href="_image_8php_source.html#l00032">Image.php:32</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image_html_abf59ef976129c7728dffa5dd8e2fcde8"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image.html#abf59ef976129c7728dffa5dd8e2fcde8">wcmf\lib\persistence\validator\impl\Image\validate</a></div><div class="ttdeci">validate($value, $options=null)</div><div class="ttdef"><b>Definition:</b> <a href="_image_8php_source.html#l00036">Image.php:36</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1validator_1_1impl_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1validator_1_1impl.html">wcmf\lib\persistence\validator\impl</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00056">namespaces.php:56</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1validator_1_1_validate_type_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1validator_1_1_validate_type.html">ValidateType</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -189,7 +193,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Apr 14 2015 23:54:39 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Thu May 14 2015 01:47:13 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

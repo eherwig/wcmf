@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['abstractcontrollermessage',['AbstractControllerMessage',['../classwcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message.html',1,'wcmf::lib::presentation::impl']]],
   ['abstractformat',['AbstractFormat',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_abstract_format.html',1,'wcmf::lib::presentation::format::impl']]],
   ['abstractmapper',['AbstractMapper',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html',1,'wcmf::lib::persistence::impl']]],
   ['abstractnodeserializer',['AbstractNodeSerializer',['../classwcmf_1_1lib_1_1model_1_1impl_1_1_abstract_node_serializer.html',1,'wcmf::lib::model::impl']]],
@@ -15,7 +16,7 @@ var searchData=
   ['addcolumns',['addColumns',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html#a7c63d708623d82a88b943d88df10881c',1,'wcmf::lib::model::mapper::NodeUnifiedRDBMapper']]],
   ['addconfiguration',['addConfiguration',['../interfacewcmf_1_1lib_1_1config_1_1_configuration.html#adbc60917b6870516162d2a30d5e1521f',1,'wcmf\lib\config\Configuration\addConfiguration()'],['../classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html#adbc60917b6870516162d2a30d5e1521f',1,'wcmf\lib\config\impl\InifileConfiguration\addConfiguration()']]],
   ['addcriteria',['addCriteria',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html#a384f0251f66e5d505faa28b07877e13f',1,'wcmf::lib::model::mapper::NodeUnifiedRDBMapper']]],
-  ['adderror',['addError',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a5b954c29d82b610903bb9c4bb50bba91',1,'wcmf\lib\core\impl\DefaultSession\addError()'],['../interfacewcmf_1_1lib_1_1core_1_1_session.html#a5b954c29d82b610903bb9c4bb50bba91',1,'wcmf\lib\core\Session\addError()'],['../classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a1713cbae7046bb8f8baa9cac224150ec',1,'wcmf\lib\presentation\ControllerMessage\addError()']]],
+  ['adderror',['addError',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a5b954c29d82b610903bb9c4bb50bba91',1,'wcmf\lib\core\impl\DefaultSession\addError()'],['../interfacewcmf_1_1lib_1_1core_1_1_session.html#a5b954c29d82b610903bb9c4bb50bba91',1,'wcmf\lib\core\Session\addError()'],['../interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a1713cbae7046bb8f8baa9cac224150ec',1,'wcmf\lib\presentation\ControllerMessage\addError()'],['../classwcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message.html#a1713cbae7046bb8f8baa9cac224150ec',1,'wcmf\lib\presentation\impl\AbstractControllerMessage\addError()']]],
   ['addlistener',['addListener',['../interfacewcmf_1_1lib_1_1core_1_1_event_manager.html#aecafed86aa9693c261f0ecfad25d64b3',1,'wcmf\lib\core\EventManager\addListener()'],['../classwcmf_1_1lib_1_1core_1_1impl_1_1_default_event_manager.html#aecafed86aa9693c261f0ecfad25d64b3',1,'wcmf\lib\core\impl\DefaultEventManager\addListener()']]],
   ['addnode',['addNode',['../classwcmf_1_1lib_1_1model_1_1_node.html#ab7e46d534a9af31201071356b0f3171e',1,'wcmf::lib::model::Node']]],
   ['addnodetoresponse',['addNodeToResponse',['../classwcmf_1_1application_1_1controller_1_1_batch_display_controller.html#ad875cd02667694b1ae426579cc3b0e43',1,'wcmf::application::controller::BatchDisplayController']]],
@@ -39,7 +40,6 @@ var searchData=
   ['afterupdate',['afterUpdate',['../classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#afae845016f4e0f43e4214a22d3567b73',1,'wcmf::lib::persistence::PersistentObject']]],
   ['analyzer',['Analyzer',['../classwcmf_1_1lib_1_1search_1_1impl_1_1_analyzer.html',1,'wcmf::lib::search::impl']]],
   ['anonymoususer',['AnonymousUser',['../classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_anonymous_user.html',1,'wcmf::lib::security::principal::impl']]],
-  ['appendvalue',['appendValue',['../classwcmf_1_1lib_1_1presentation_1_1_controller_message.html#a987e436ed904d44e68335e6154bccb42',1,'wcmf::lib::presentation::ControllerMessage']]],
   ['application',['Application',['../classwcmf_1_1lib_1_1presentation_1_1_application.html',1,'wcmf::lib::presentation']]],
   ['applicationerror',['ApplicationError',['../classwcmf_1_1lib_1_1presentation_1_1_application_error.html',1,'wcmf::lib::presentation']]],
   ['applicationevent',['ApplicationEvent',['../classwcmf_1_1lib_1_1presentation_1_1_application_event.html',1,'wcmf::lib::presentation']]],

@@ -49,6 +49,7 @@
                     <li><a href="configuration.html">Configuration</a></li>
                     <li><a href="permissions.html">Permissions</a></li>
                     <li><a href="i18n.html">I18N</a></li>
+                    <li><a href="tests.html">Tests</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -110,6 +111,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>initExport()
 : <a class="el" href="classwcmf_1_1application_1_1controller_1_1_x_m_l_export_controller.html#ae4a2f6a100f1f637fe25e6f459c27f38">XMLExportController</a>
 </li>
+<li>initFramework()
+: <a class="el" href="classwcmf_1_1lib_1_1util_1_1_test_util.html#a34382d6d956020ac8b79b012d272d55b">TestUtil</a>
+</li>
 <li>initialize()
 : <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a47a24ac0d700f62a9434d298ade72fb9">BatchController</a>
 , <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_display_controller.html#a47a24ac0d700f62a9434d298ade72fb9">BatchDisplayController</a>
@@ -120,6 +124,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a61834deae88099596d01576a81701dde">PersistentObject</a>
 , <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a8a93d7a699b6a01fa0dcdf47b9a357fd">Application</a>
 , <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a47a24ac0d700f62a9434d298ade72fb9">Controller</a>
+, <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html#a36e0e7579b8ab70ec7690b37dcdfa312">DefaultRequest</a>
+, <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#a36e0e7579b8ab70ec7690b37dcdfa312">Request</a>
 </li>
 <li>INTERNAL_VALUE_PREFIX
 : <a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a80fbec4be0b7c98d509869ff85aafa0c">RDBMapper</a>
@@ -248,12 +254,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a267fcef60c39cb385faf112bb3546b94">PersistenceMapper</a>
 </li>
 <li>isStatic()
-: <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html#a14c572b170d4db9139c414da70ce6fe2">ConfigListStrategy</a>
-, <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_file_list_strategy.html#a14c572b170d4db9139c414da70ce6fe2">FileListStrategy</a>
-, <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_fixed_list_strategy.html#a14c572b170d4db9139c414da70ce6fe2">FixedListStrategy</a>
-, <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_function_list_strategy.html#a14c572b170d4db9139c414da70ce6fe2">FunctionListStrategy</a>
-, <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_node_list_strategy.html#a14c572b170d4db9139c414da70ce6fe2">NodeListStrategy</a>
-, <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1_list_strategy.html#a14c572b170d4db9139c414da70ce6fe2">ListStrategy</a>
+: <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html#ac7d5e8d0b9f16671d86018e19ac4f7ce">ConfigListStrategy</a>
+, <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_file_list_strategy.html#ac7d5e8d0b9f16671d86018e19ac4f7ce">FileListStrategy</a>
+, <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_fixed_list_strategy.html#ac7d5e8d0b9f16671d86018e19ac4f7ce">FixedListStrategy</a>
+, <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_function_list_strategy.html#ac7d5e8d0b9f16671d86018e19ac4f7ce">FunctionListStrategy</a>
+, <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_node_list_strategy.html#ac7d5e8d0b9f16671d86018e19ac4f7ce">NodeListStrategy</a>
+, <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1_list_strategy.html#ac7d5e8d0b9f16671d86018e19ac4f7ce">ListStrategy</a>
 </li>
 <li>isStopped()
 : <a class="el" href="classwcmf_1_1lib_1_1core_1_1_event.html#aaf3350830f5be65c2a8521c0c937c73c">Event</a>
@@ -282,6 +288,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>isWarnEnabled()
 : <a class="el" href="classwcmf_1_1lib_1_1core_1_1_log.html#a1df91905010c8efaa4017fd22c47e0de">Log</a>
 </li>
+<li>isWindows()
+: <a class="el" href="classwcmf_1_1lib_1_1util_1_1_test_util.html#a5cb525701942e6365c1b75dcca3562b9">TestUtil</a>
+</li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
@@ -292,7 +301,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Apr 14 2015 23:54:48 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Thu May 14 2015 01:47:18 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

@@ -49,6 +49,7 @@
                     <li><a href="configuration.html">Configuration</a></li>
                     <li><a href="permissions.html">Permissions</a></li>
                     <li><a href="i18n.html">I18N</a></li>
+                    <li><a href="tests.html">Tests</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -173,11 +174,11 @@ ChiValue</h4>
 <tr>
 <td><em>is_editable</em> </td><td>Boolean, indicating whether this attribute is editable </td><td><em>true</em> </td><td><em>true</em> </td></tr>
 <tr>
-<td><em>input_type</em> </td><td>Name of the attribute's input control as listed in the <em>InputTypes</em> configuration section </td><td><em>filebrowser</em> </td><td><em>text</em> </td></tr>
+<td><em>input_type</em> </td><td>Name of the attribute's input control as listed in the <em>InputTypes</em> configuration section and additional configuration encoded as JSON string </td><td><em>filebrowser</em> or <em>ckeditor:{"toolbarSet":"full"}</em> </td><td><em>text</em> </td></tr>
 <tr>
 <td><em>display_type</em> </td><td>Name of the attribute's display type as listed in the <em>DisplayTypes</em> configuration section </td><td><em>image</em> </td><td><em>text</em> </td></tr>
 <tr>
-<td><em>restrictions_match</em> </td><td>Name of the attribute's validation type as listed in the <em>Validator</em> configuration section (see <a class="el" href="persistence.html#pers_validation">Validation</a>) </td><td><em>regexp:^[0-9]*$</em> </td><td></td></tr>
+<td><em>restrictions_match</em> </td><td>Name of the attribute's validation type as listed in the <em>Validator</em> configuration section (see <a class="el" href="persistence.html#pers_validation">Validation</a>) and additional configuration encoded as JSON string </td><td><em>regexp:{"pattern":"^[0-9]*$"}</em> or <em>image:{"height":[300,0]}</em> </td><td></td></tr>
 <tr>
 <td><em>restrictions_not_match</em> </td><td><em>not used</em> </td><td></td><td></td></tr>
 <tr>
@@ -519,13 +520,29 @@ ant generate
 </pre><h3><a class="anchor" id="generator_artefacts"></a>
 Artefacts</h3>
 <p>The generator creates the following files:</p>
+<h4><a class="anchor" id="generator_artefacts_config"></a>
+Configuration</h4>
 <ul>
 <li><b>SQL scripts</b> are generated in the <em>install</em> directory. They contain the table definitions for <a href="http://www.mysql.com">MySQL</a> databases (<code>install/tables_mysql.sql</code>) and <a href="https://sqlite.org">SQLite</a> databases (<code>install/tables_sqlite.sql</code>). For each domain class one table is created, inherited attributes are stored in each table (<a href="http://martinfowler.com/eaaCatalog/concreteTableInheritance.html">Concrete Table Inheritance</a>).</li>
-<li><b>Mapper classes</b> are generated in directories corresponding to the model packages (<em>app/src/model</em>, if the default model packages are used). For each <code>ChiNode</code>/<code>ChiManyToMany</code> class one subclass of <a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html"><code>NodeUnifiedRDBMapper</code></a> is created (e.g. <code>AuthorRDBMapper</code>).</li>
-<li><b>Domain classes</b> are generated in the same directories as the mapper classes. For each <code>ChiNode</code>/<code>ChiManyToMany</code> class two classes are created, one base class that contains all generated code (e.g. <code>AuthorBase</code>) and one empty subclass, that is used to add custom code (e.g. <code>Author</code>). The base class inherits from <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html"><code>Node</code></a>.</li>
 <li><b>Configuration files</b> in the <a href="http://en.wikipedia.org/wiki/INI_file">INI file</a> format are generated in the <em>app/config</em> directory. Configuration files are implicitly defined in the model by the <code>ChiActionKey.config</code> and <code>ChiSystem.config</code> tags. For each name mentioned in these tags, one configuration file will be created, containing all definitions related to it. Furthermore, the default configuration file (<em>config.ini</em> per default) contains the domain class mapping definitions.</li>
+</ul>
+<h4><a class="anchor" id="generator_artefacts_php"></a>
+PHP Code</h4>
+<ul>
+<li><b>Mapper classes</b> are generated in directories corresponding to the model packages (<em>app/src/model</em>, if the default model packages are used). For each <code>ChiNode</code>/<code>ChiManyToMany</code> class one subclass of <a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html"><code>NodeUnifiedRDBMapper</code></a> is created (e.g. <code>AuthorRDBMapper</code>).</li>
+<li><b>Domain classes</b> are generated in the same directories as the mapper classes. For each <code>ChiNode</code>/<code>ChiManyToMany</code> class two classes are created, one base class that contains all generated code (e.g. <code>AuthorBase</code>) and one empty subclass, that is used to add custom code (e.g. <code>Author</code>). The base class inherits from <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html"><code>Node</code></a> or one of it's subclasses.</li>
 <li><b>Controller classes</b> are generated in directories corresponding to the model packages (<em>app/src/controller</em>, if the default model packages are used). For each <code>ChiController</code> class one subclass of <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> will be created.</li>
+</ul>
+<h4><a class="anchor" id="generator_artefacts_tpl"></a>
+Template Code</h4>
+<ul>
 <li><b>View templates</b> are generated in directories corresponding to the model packages (<em>app/src/views</em>, if the default model packages are used). For each <code>ChiView</code> class one empty template file will be created.</li>
+</ul>
+<h4><a class="anchor" id="generator_artefacts_js"></a>
+JavaScript Code</h4>
+<ul>
+<li><b>Domain classes</b> are generated in a subdirectory of <em>public/js</em> (<em>app/public/js/app/src/model</em>, if the default model packages are used). For each <code>ChiNode</code>/<code>ChiManyToMany</code> one subclass of <code>Entity</code> is created.</li>
+<li>An <a href="http://en.wikipedia.org/wiki/Asynchronous_module_definition">AMD</a> file referencing all domain classes is created in <em>public/js/model</em> (<em>app/public/js/model/_TypeList.js</em>, if the default model packages are used).</li>
 </ul>
 <h4><a class="anchor" id="generator_pr"></a>
 Protected regions</h4>
@@ -562,7 +579,7 @@ Protected regions</h4>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Apr 14 2015 23:54:39 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Thu May 14 2015 01:47:14 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

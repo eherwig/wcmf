@@ -49,6 +49,7 @@
                     <li><a href="configuration.html">Configuration</a></li>
                     <li><a href="permissions.html">Permissions</a></li>
                     <li><a href="i18n.html">I18N</a></li>
+                    <li><a href="tests.html">Tests</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -121,7 +122,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab75fc4e0d65efcbb007271092180c5be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html#ab75fc4e0d65efcbb007271092180c5be">processAction</a> (<a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_request.html">Request</a> $request)</td></tr>
+<tr class="memitem:ab75fc4e0d65efcbb007271092180c5be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html#ab75fc4e0d65efcbb007271092180c5be">processAction</a> (<a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a> $request)</td></tr>
 <tr class="separator:ab75fc4e0d65efcbb007271092180c5be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a20559544fdf4dcb457e258dc976cf8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html#a4a20559544fdf4dcb457e258dc976cf8">reset</a> ()</td></tr>
 <tr class="separator:a4a20559544fdf4dcb457e258dc976cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,7 +135,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">processAction </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_request.html">Request</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a>&#160;</td>
           <td class="paramname"><em>$request</em></td><td>)</td>
           <td></td>
         </tr>
@@ -145,11 +146,11 @@ Public Member Functions</h2></td></tr>
 <p>The <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html" title="ActionMapper implementations are responsible for instantiating and executing Controllers based on the...">ActionMapper</a> will instantiate the required <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html" title="Controller is the base class of all controllers. ">Controller</a> class as determined by the request's action key and delegates the request to it. </p><dl class="section note"><dt>Note</dt><dd>This method is static so that it can be used without an instance. (This is necessary to call it in onError() which cannot be a class method because php's set_error_handler() does not allow this). </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$request</td><td>A reference to a <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. ">Request</a> instance </td></tr>
+    <tr><td class="paramname">$request</td><td>A reference to a <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. ">Request</a> instance </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> instance </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> instance </dd></dl>
 
 <p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_action_mapper.html#ab75fc4e0d65efcbb007271092180c5be">DefaultActionMapper</a>.</p>
 
@@ -184,7 +185,7 @@ Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Apr 14 2015 23:54:44 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Thu May 14 2015 01:47:16 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

@@ -49,6 +49,7 @@
                     <li><a href="configuration.html">Configuration</a></li>
                     <li><a href="permissions.html">Permissions</a></li>
                     <li><a href="i18n.html">I18N</a></li>
+                    <li><a href="tests.html">Tests</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -120,7 +121,7 @@ Object Identifier</h3>
 Presentation</h2>
 <p>The <em>presentation layer</em> of a wCMF application enables users to interact with the domain model.</p>
 <p>Each interaction is initiated by a <em>request</em> and results in a <em>response</em>. In a web application the request data is sent by the user's browser to the server as GET or POST variables.</p>
-<p>wCMF's <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html"><code>Application</code></a> class transforms the request data into a <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance. This instance is then passed to a <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html"><code>ActionMapper</code></a> instance, which creates the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_response.html"><code>Response</code></a> instance and delegates the actual execution of the request to a <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> instance. Different controllers exist for different actions (e.g. <a class="el" href="classwcmf_1_1application_1_1controller_1_1_list_controller.html"><code>ListController</code></a> for listing objects, <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_controller.html"><code>SearchController</code></a> for searching objects).</p>
+<p>wCMF's <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html"><code>Application</code></a> class transforms the request data into a <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance. This instance is then passed to a <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html"><code>ActionMapper</code></a> instance, which creates the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html"><code>Response</code></a> instance and delegates the actual execution of the request to a <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> instance. Different controllers exist for different actions (e.g. <a class="el" href="classwcmf_1_1application_1_1controller_1_1_list_controller.html"><code>ListController</code></a> for listing objects, <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_controller.html"><code>SearchController</code></a> for searching objects).</p>
 <p>The controller is determined by matching specific request parameters against a list of so called <em>action keys</em> (see <a class="el" href="architecture.html#arch_actionkey">Action Key</a>). As the result of it's execution each controller returns action key parameters in the response data. If these parameters match an existing action key, the associated controller will be executed by passing the current response as input. In this way complex tasks may be executed by chaining several controller calls together.</p>
 <p>In order to support various data representations, a <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html"><code>Format</code></a> instance is associated with each request and response. The format is automatically determined by the HTTP <em>Content-Type</em> resp. <em>Accept</em> headers. <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html"><code>Format</code></a> implementations are responsible for de-/serializing the request and response data into the desired format (e.g. <em>JSON</em> or <em>SOAP</em>). <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_html_format.html"><code>HtmlFormat</code></a> especially uses a <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html"><code>View</code></a> instance to render the response data into a HTML page. wCMF's uses <a href="http://www.smarty.net/">Smarty</a> as the default template engine for HTML output.</p>
 <div class="image">
@@ -130,10 +131,10 @@ Presentation layer</div></div>
 <p> Please refer to the section <a class="el" href="presentation.html">Presentation</a> for a more detailed description of the presentation layer.</p>
 <h3><a class="anchor" id="arch_actionkey"></a>
 Action Key</h3>
-<p>An important concept of wCMF is that of <em>Action Keys</em>. An action key describes the state of the application together with the <b>action</b> to be performed next. The state, which the application is in, results from the current <b>controller</b> and the <b>context</b>, in which it is executed. Controllers must exist as classes, whereas contexts and actions may be defined freely.</p>
-<p>The format of the action keys is the following:</p>
+<p>An important concept of wCMF is that of <em>Action Keys</em>. An action key describes the state of the application together with the <b>action</b> to be performed next. The state, which the application is in, results from the current <b>controller</b> and the <b>context</b>, in which it is executed. Controllers must exist as classes, whereas contexts and actions may be arbitrary strings.</p>
+<p>The string representation of an action key is as follows:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;controller?context?action</div>
-</div><!-- fragment --><p>Currently wCMF uses action keys in three different fields:</p>
+</div><!-- fragment --><p>wCMF uses action keys for the following concerns:</p>
 <ol type="1">
 <li>In <b>routing definitions</b> controller names are assigned action keys. <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html"><code>ActionMapper</code></a> uses these definitions to execute the correct controller when the application is in a certain state.</li>
 <li>In <b>view definitions</b> template filenames are assigned to action keys. <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html"><code>View</code></a> determines the view template to be displayed for the current application state.</li>
@@ -149,9 +150,9 @@ Action Key</h3>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;7. ?context?</div>
 </div><!-- fragment --><p>As a rule of thumb the action key which describes the state of the application the most accurate is favored.</p>
 <p><b>Examples:</b></p>
-<p>Always execute the SaveController when action <em>update</em> is requested, no matter which state the application is in:</p>
+<p>Always execute <code>SaveController</code> when action <em>update</em> is requested, no matter which state the application is in:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;??update = wcmf\application\controller\SaveController</div>
-</div><!-- fragment --><p>Always execute the AuthorController when the application context is <em>author</em> as long as no action is specified:</p>
+</div><!-- fragment --><p>Always execute <code>AuthorController</code> when the application context is <em>author</em> as long as no action is specified:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;?author? = app\src\controller\AuthorController</div>
 </div><!-- fragment --><p>If no matching action key can be found, <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html"><code>ActionMapper</code></a> returns the last response.</p>
 <p>For details about configuring action keys see <a class="el" href="configuration.html">Configuration</a>. </p>
@@ -164,7 +165,7 @@ Action Key</h3>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Apr 14 2015 23:54:39 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Thu May 14 2015 01:47:14 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

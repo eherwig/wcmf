@@ -5,7 +5,7 @@ var indexSectionsWithContent =
   2: "w",
   3: "_abcdefghiklmnopqrstuvw",
   4: "$abcdeghilmnoprstuw",
-  5: "acgimp"
+  5: "acgimpt"
 };
 
 var indexSectionNames =

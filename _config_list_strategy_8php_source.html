@@ -49,6 +49,7 @@
                     <li><a href="configuration.html">Configuration</a></li>
                     <li><a href="permissions.html">Permissions</a></li>
                     <li><a href="i18n.html">I18N</a></li>
+                    <li><a href="tests.html">Tests</a></li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
@@ -115,59 +116,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl.html">wcmf\lib\presentation\control\lists\impl</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1core_1_1_object_factory.html">wcmf\lib\core\ObjectFactory</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1i18n_1_1_message.html">wcmf\lib\i18n\Message</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1_list_strategy.html">wcmf\lib\presentation\control\lists\ListStrategy</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * ConfigListStrategy implements list of key value pairs that is retrieved</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * from an configuration section.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * The following list definition(s) must be used in the input_type configuraton:</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @code</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * config:section // where section is the name of a configuration section</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * @endcode</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html">ConfigListStrategy</a> <span class="keyword">implements</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1_list_strategy.html">ListStrategy</a> {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">private</span> $_lists = array();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">   * @see ListStrategy::getList</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html#a3ef98c14aa37f9c51af467bcb88f9d29">   34</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html#a3ef98c14aa37f9c51af467bcb88f9d29">getList</a>($configuration, $language=null) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    $listKey = $configuration.$language;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (!isset($this-&gt;_lists[$listKey])) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      $config = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a25119d3df435b609991f58060ea482e2">ObjectFactory::getConfigurationInstance</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      $map = $config-&gt;getSection($configuration);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      $result = array();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <span class="keywordflow">foreach</span> ($map as $key =&gt; $value) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        $result[$key] = <a class="code" href="classwcmf_1_1lib_1_1i18n_1_1_message.html#acf1f5b17efed115f9c3f7caa809655d0">Message::get</a>($value, null, $language);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      $this-&gt;_lists[$listKey] = $result;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> $this-&gt;_lists[$listKey];</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">   * @see ListStrategy::isStatic</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html#a14c572b170d4db9139c414da70ce6fe2">   51</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html#a14c572b170d4db9139c414da70ce6fe2">isStatic</a>($configuration) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;?&gt;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1config_1_1_configuration_exception.html">wcmf\lib\config\ConfigurationException</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1core_1_1_object_factory.html">wcmf\lib\core\ObjectFactory</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1i18n_1_1_message.html">wcmf\lib\i18n\Message</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1_list_strategy.html">wcmf\lib\presentation\control\lists\ListStrategy</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * ConfigListStrategy implements a list of key/value pairs that is retrieved</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * from a configuration section.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * Configuration example:</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * @code</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * // configuration section EntityStage</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * {&quot;type&quot;:&quot;config&quot;,&quot;section&quot;:&quot;EntityStage&quot;}</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * @endcode</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html">ConfigListStrategy</a> <span class="keyword">implements</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1_list_strategy.html">ListStrategy</a> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">private</span> $_lists = array();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">   * @see ListStrategy::getList</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">   * $options is an associative array with key &#39;section&#39;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html#a98490b65ce90052b830a19d36d3d6d8f">   38</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html#a98490b65ce90052b830a19d36d3d6d8f">getList</a>($options, $language=null) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> (!isset($options[<span class="stringliteral">&#39;section&#39;</span>])) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a>(<span class="stringliteral">&quot;No &#39;pattern&#39; given in list options: &quot;</span>+$options);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    $section = $options[<span class="stringliteral">&#39;section&#39;</span>];</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    $listKey = $section.$language;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (!isset($this-&gt;_lists[$listKey])) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      $config = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a25119d3df435b609991f58060ea482e2">ObjectFactory::getConfigurationInstance</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      $map = $config-&gt;getSection($section);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      $result = array();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordflow">foreach</span> ($map as $key =&gt; $value) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        $result[$key] = <a class="code" href="classwcmf_1_1lib_1_1i18n_1_1_message.html#acf1f5b17efed115f9c3f7caa809655d0">Message::get</a>($value, null, $language);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      $this-&gt;_lists[$listKey] = $result;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> $this-&gt;_lists[$listKey];</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">   * @see ListStrategy::isStatic</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html#ac7d5e8d0b9f16671d86018e19ac4f7ce">   59</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html#ac7d5e8d0b9f16671d86018e19ac4f7ce">isStatic</a>($options) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;?&gt;</div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl.html">wcmf\lib\presentation\control\lists\impl</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00067">namespaces.php:67</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy_html_a14c572b170d4db9139c414da70ce6fe2"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html#a14c572b170d4db9139c414da70ce6fe2">wcmf\lib\presentation\control\lists\impl\ConfigListStrategy\isStatic</a></div><div class="ttdeci">isStatic($configuration)</div><div class="ttdef"><b>Definition:</b> <a href="_config_list_strategy_8php_source.html#l00051">ConfigListStrategy.php:51</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a25119d3df435b609991f58060ea482e2"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a25119d3df435b609991f58060ea482e2">wcmf\lib\core\ObjectFactory\getConfigurationInstance</a></div><div class="ttdeci">static getConfigurationInstance()</div><div class="ttdoc">Get the Configuration instance. </div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00072">ObjectFactory.php:72</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy_html_a3ef98c14aa37f9c51af467bcb88f9d29"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html#a3ef98c14aa37f9c51af467bcb88f9d29">wcmf\lib\presentation\control\lists\impl\ConfigListStrategy\getList</a></div><div class="ttdeci">getList($configuration, $language=null)</div><div class="ttdef"><b>Definition:</b> <a href="_config_list_strategy_8php_source.html#l00034">ConfigListStrategy.php:34</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1config_1_1_configuration_exception_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a25119d3df435b609991f58060ea482e2"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a25119d3df435b609991f58060ea482e2">wcmf\lib\core\ObjectFactory\getConfigurationInstance</a></div><div class="ttdeci">static getConfigurationInstance()</div><div class="ttdoc">Get the Configuration instance. </div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00073">ObjectFactory.php:73</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1i18n_1_1_message_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1i18n_1_1_message_html_acf1f5b17efed115f9c3f7caa809655d0"><div class="ttname"><a href="classwcmf_1_1lib_1_1i18n_1_1_message.html#acf1f5b17efed115f9c3f7caa809655d0">wcmf\lib\i18n\Message\get</a></div><div class="ttdeci">static get($message, $parameters=null, $lang='')</div><div class="ttdoc">Get a localized string. </div><div class="ttdef"><b>Definition:</b> <a href="_message_8php_source.html#l00075">Message.php:75</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1_list_strategy_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1_list_strategy.html">ListStrategy</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html">wcmf\lib\presentation\control\lists\impl\ConfigListStrategy</a></div><div class="ttdoc">ConfigListStrategy implements list of key value pairs that is retrieved from an configuration section...</div><div class="ttdef"><b>Definition:</b> <a href="_config_list_strategy_8php_source.html#l00027">ConfigListStrategy.php:27</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy_html_a98490b65ce90052b830a19d36d3d6d8f"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html#a98490b65ce90052b830a19d36d3d6d8f">wcmf\lib\presentation\control\lists\impl\ConfigListStrategy\getList</a></div><div class="ttdeci">getList($options, $language=null)</div><div class="ttdef"><b>Definition:</b> <a href="_config_list_strategy_8php_source.html#l00038">ConfigListStrategy.php:38</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html">wcmf\lib\presentation\control\lists\impl\ConfigListStrategy</a></div><div class="ttdoc">ConfigListStrategy implements a list of key/value pairs that is retrieved from a configuration sectio...</div><div class="ttdef"><b>Definition:</b> <a href="_config_list_strategy_8php_source.html#l00030">ConfigListStrategy.php:30</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1_list_strategy_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1_list_strategy.html">wcmf\lib\presentation\control\lists\ListStrategy</a></div><div class="ttdoc">ListStrategy defines the interface for classes that retrieve value lists. </div><div class="ttdef"><b>Definition:</b> <a href="_list_strategy_8php_source.html#l00019">ListStrategy.php:19</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_object_factory_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_object_factory.html">ObjectFactory</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1config_1_1_configuration_exception_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">wcmf\lib\config\ConfigurationException</a></div><div class="ttdoc">ConfigurationException signals an exception in the configuration. </div><div class="ttdef"><b>Definition:</b> <a href="_configuration_exception_8php_source.html#l00018">ConfigurationException.php:18</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy_html_ac7d5e8d0b9f16671d86018e19ac4f7ce"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html#ac7d5e8d0b9f16671d86018e19ac4f7ce">wcmf\lib\presentation\control\lists\impl\ConfigListStrategy\isStatic</a></div><div class="ttdeci">isStatic($options)</div><div class="ttdef"><b>Definition:</b> <a href="_config_list_strategy_8php_source.html#l00059">ConfigListStrategy.php:59</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -177,7 +188,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Apr 14 2015 23:54:39 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Thu May 14 2015 01:47:13 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
