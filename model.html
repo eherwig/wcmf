@@ -115,7 +115,7 @@ Modeling</h2>
 Generator workflow</div></div>
  <h3><a class="anchor" id="model_profile"></a>
 Chronos profile</h3>
-<p><em>Profiles</em> are used to extend UML for different domains. They consist of <b>stereotypes</b> and <b>tags</b> that are applied to model elements in order to express domain specific features. The following sections describe the stereotypes and tags of the <em>Chronos</em> profile that are used to define various aspects of a wCMF application. The complete <a href="https://raw.githubusercontent.com/iherwig/wcmf-default-app/master/model/chronos.profile.uml">Chronos profile</a> is available on GitHub.</p>
+<p><em>Profiles</em> are used to extend UML for different domains. They consist of <b>stereotypes</b> and <b>tags</b> that are applied to model elements to express domain specific features. The following sections describe the stereotypes and tags of the <em>Chronos</em> profile that are used to define various aspects of a wCMF application. The complete <a href="https://raw.githubusercontent.com/iherwig/wcmf-default-app/master/model/chronos.profile.uml">Chronos profile</a> is available on GitHub.</p>
 <p>You will notice that only a small part of UML is used to define the application and not all aspects of the application are defined in the model. Especially the actual behavior of controllers and domain classes is omitted, since we believe that this is more efficiently expressed in code. For simplicity and compatibility reasons all aspects can be modeled in <b>class diagrams</b> using <b>classes</b>, <b>attributes</b> and <b>associations</b>.</p>
 <dl class="section note"><dt>Note</dt><dd>UML elements and concepts that are not mentioned in the following sections are most likely not supported by the generator and will be ignored.</dd></dl>
 <h3><a class="anchor" id="model_classes"></a>
@@ -325,7 +325,7 @@ Example application flow</h4>
 <img src="flow.png" alt="flow.png"/>
 <div class="caption">
 Example application flow</div></div>
- <dl class="section note"><dt>Note</dt><dd>In order to simplify modeling the following default rule applies: If a controller has no view attached (meaning that execution of the following controller needs no user decision) and no <em>ChiActionKey</em> association starts from that controller, the application automatically chooses the preceding controller to execute next. For that reason the <em>ok</em> actions may be omitted in the diagram.</dd></dl>
+ <dl class="section note"><dt>Note</dt><dd>To simplify modeling the following default rule applies: If a controller has no view attached (meaning that execution of the following controller needs no user decision) and no <em>ChiActionKey</em> association starts from that controller, the application automatically chooses the preceding controller to execute next. For that reason the <em>ok</em> actions may be omitted in the diagram.</dd></dl>
 <h3><a class="anchor" id="model_config"></a>
 Configuration</h3>
 <p>The following <b>stereotypes</b> are used to model the application configuration.</p>
@@ -546,7 +546,7 @@ JavaScript Code</h4>
 </ul>
 <h4><a class="anchor" id="generator_pr"></a>
 Protected regions</h4>
-<p>The generator creates functional code, but of course <b>custom code</b> must be added in order to implement domain specific functionality. For this reason the generator adds sections that are enclosed in <code>PROTECTED REGION</code> tags, between which the user is supposed to place custom code. When re-generating the code later (e.g. because of model changes), this custom code will be preserved.</p>
+<p>The generator creates functional code, but of course <b>custom code</b> must be added to implement domain specific functionality. For this reason the generator adds sections that are enclosed in <code>PROTECTED REGION</code> tags, between which the user is supposed to place custom code. When re-generating the code later (e.g. because of model changes), this custom code will be preserved.</p>
 <p>An example of a class file containing protected regions is shown below.</p>
 <div class="fragment"><div class="line">&lt;?php<span class="comment"></span></div>
 <div class="line"><span class="comment">/**</span></div>
@@ -579,7 +579,7 @@ Protected regions</h4>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu May 14 2015 01:47:14 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Mon Jul 13 2015 00:29:49 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

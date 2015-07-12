@@ -127,6 +127,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ac251c698e149ab1993332ac517b0e9be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4a297bdbdd9d68a8721aa5889bf258a"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1util_1_1_u_r_i_util.html#ae4a297bdbdd9d68a8721aa5889bf258a">getPageURL</a> ()</td></tr>
 <tr class="separator:ae4a297bdbdd9d68a8721aa5889bf258a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab01175d637c5098a16d9ae07f9e63135"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1util_1_1_u_r_i_util.html#ab01175d637c5098a16d9ae07f9e63135">normalize</a> ($paths)</td></tr>
+<tr class="separator:ab01175d637c5098a16d9ae07f9e63135"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="adc0d0c750d79b2dd215d016a8a12d365"></a>
@@ -164,7 +166,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Convert an absolute URI to a relative code from <a href="http://www.webmasterworld.com/forum88/334.htm">http://www.webmasterworld.com/forum88/334.htm</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$abs_uri</td><td>Absolute URI to convert </td></tr>
+    <tr><td class="paramname">$abs_uri</td><td>Absolute URI to convert, may have a trailing filename </td></tr>
     <tr><td class="paramname">$base</td><td>Base URI </td></tr>
   </table>
   </dd>
@@ -215,7 +217,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_u_r_i_util_8php_source.html#l00060">60</a> of file <a class="el" href="_u_r_i_util_8php_source.html">URIUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_u_r_i_util_8php_source.html#l00065">65</a> of file <a class="el" href="_u_r_i_util_8php_source.html">URIUtil.php</a>.</p>
 
 </div>
 </div>
@@ -261,7 +263,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An associtative array with keys 'absolute' and 'relative' and the absolute and relative URI (as seen from the executed script) as values </dd></dl>
 
-<p>Definition at line <a class="el" href="_u_r_i_util_8php_source.html#l00104">104</a> of file <a class="el" href="_u_r_i_util_8php_source.html">URIUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_u_r_i_util_8php_source.html#l00114">114</a> of file <a class="el" href="_u_r_i_util_8php_source.html">URIUtil.php</a>.</p>
 
 </div>
 </div>
@@ -308,7 +310,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boolean whether the url is available </dd></dl>
 
-<p>Definition at line <a class="el" href="_u_r_i_util_8php_source.html#l00120">120</a> of file <a class="el" href="_u_r_i_util_8php_source.html">URIUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_u_r_i_util_8php_source.html#l00132">132</a> of file <a class="el" href="_u_r_i_util_8php_source.html">URIUtil.php</a>.</p>
 
 </div>
 </div>
@@ -333,7 +335,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_r_i_util_8php_source.html#l00149">149</a> of file <a class="el" href="_u_r_i_util_8php_source.html">URIUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_u_r_i_util_8php_source.html#l00161">161</a> of file <a class="el" href="_u_r_i_util_8php_source.html">URIUtil.php</a>.</p>
 
 </div>
 </div>
@@ -361,7 +363,41 @@ Static Public Member Functions</h2></td></tr>
 <p>Get the current page url. </p>
 <dl class="section return"><dt>Returns</dt><dd>The url of the page </dd></dl>
 
-<p>Definition at line <a class="el" href="_u_r_i_util_8php_source.html#l00162">162</a> of file <a class="el" href="_u_r_i_util_8php_source.html">URIUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_u_r_i_util_8php_source.html#l00174">174</a> of file <a class="el" href="_u_r_i_util_8php_source.html">URIUtil.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab01175d637c5098a16d9ae07f9e63135"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static normalize </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$paths</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Normalize slashes and remove drive names. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paths</td><td>Path to normalize or array of paths </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_u_r_i_util_8php_source.html#l00189">189</a> of file <a class="el" href="_u_r_i_util_8php_source.html">URIUtil.php</a>.</p>
 
 </div>
 </div>
@@ -374,7 +410,7 @@ Static Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu May 14 2015 01:47:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Mon Jul 13 2015 00:29:52 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

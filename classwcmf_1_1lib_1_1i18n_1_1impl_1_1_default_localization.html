@@ -112,18 +112,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p><a class="el" href="classwcmf_1_1lib_1_1i18n_1_1impl_1_1_default_localization.html" title="DefaultLocalization is a Localization implementation that saves translations in the store...">DefaultLocalization</a> is a <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html" title="Localization defines the interface for storing localized entity instances and retrieving them back...">Localization</a> implementation that saves translations in the store. </p>
 <p>Entity instances are localized value by value, where a translation of a value of one instance into a specific language is represented by one instance of the translation entity type (e.g. Translation).</p>
 <p>The translation entity type must have the attributes 'objectid', 'attribute', 'translation', 'language' with the appropriate getter and setter methods. It is defined calling the Localization::setTranslationType() method.</p>
+<p>A translation is only stored for values with the tag TRANSLATABLE (see AttributeDescription). This allows to exclude certain values e.g. date values from the translation process by omitting this tag.</p>
 <p>The default language is defined in the configuration key 'defaultLanguage' in section 'localization'.</p>
 <p>All languages available for translation are either defined in the configuration section 'languages', where each language has it's own entry: e.g. en = English or in a language entity type (e.g. Language). The language entity type must have the attributes 'code' and 'name' with the appropriate getter and setter methods. It is defined calling the Localization::setLanguageType() method. If translation entity type and configuration section are defined, the configuration section is preferred.</p>
-<p>To exclude values of a special type (like date values) from the translation, they may be omitted in the array that is defined calling the Localization::setInputTypes() method. This array lists all input_types whose translations are stored.</p>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00054">54</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00053">53</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for DefaultLocalization:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1i18n_1_1impl_1_1_default_localization__inherit__graph.svg" width="194" height="478"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1i18n_1_1impl_1_1_default_localization__inherit__graph.svg" width="194" height="463"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -134,8 +134,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a68cc1fd9b713d73e39500c31f374efaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a273525ece434b134f6b40ea22604d78c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1i18n_1_1impl_1_1_default_localization.html#a273525ece434b134f6b40ea22604d78c">setLanguageType</a> ($languageType)</td></tr>
 <tr class="separator:a273525ece434b134f6b40ea22604d78c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a306e3f3589a759d3a69d384c31c5cda8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1i18n_1_1impl_1_1_default_localization.html#a306e3f3589a759d3a69d384c31c5cda8">setInputTypes</a> (Array $inputTypes)</td></tr>
-<tr class="separator:a306e3f3589a759d3a69d384c31c5cda8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86d261451a43abd441bed48ab9203bb4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1i18n_1_1impl_1_1_default_localization.html#a86d261451a43abd441bed48ab9203bb4">getDefaultLanguage</a> ()</td></tr>
 <tr class="separator:a86d261451a43abd441bed48ab9203bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8689101a9f3029c75f9aa99491715ea9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1i18n_1_1impl_1_1_default_localization.html#a8689101a9f3029c75f9aa99491715ea9">getSupportedLanguages</a> ()</td></tr>
@@ -181,7 +179,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00066">66</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00064">64</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
 
 </div>
 </div>
@@ -207,7 +205,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00078">78</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00076">76</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
 
 </div>
 </div>
@@ -233,33 +231,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00089">89</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a306e3f3589a759d3a69d384c31c5cda8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">setInputTypes </td>
-          <td>(</td>
-          <td class="paramtype">Array&#160;</td>
-          <td class="paramname"><em>$inputTypes</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the input_types whose translations are stored. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">$inputTypes</td><td>Array </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00100">100</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00087">87</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
 
 </div>
 </div>
@@ -279,7 +251,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#a86d261451a43abd441bed48ab9203bb4">Localization</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00107">107</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00097">97</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
 
 </div>
 </div>
@@ -299,7 +271,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#a8689101a9f3029c75f9aa99491715ea9">Localization</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00115">115</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00105">105</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
 
 </div>
 </div>
@@ -336,7 +308,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#a6f60e1e1d81e363e7e0c8b894baa0eb6">Localization</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00138">138</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00128">128</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
 
 </div>
 </div>
@@ -379,7 +351,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#aecf5f93cd7a9c4d36ff3890879cb5209">Localization</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00148">148</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00138">138</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
 
 </div>
 </div>
@@ -438,7 +410,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00187">187</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00177">177</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
 
 </div>
 </div>
@@ -478,11 +450,11 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#aecf5f93cd7a9c4d36ff3890879cb5209" title="Load a translation of an entity for a specific language. ">Localization::loadTranslation()</a> </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Only values whose input_type property is listed in the 'inputTypes' key in the configuration 'localization' are stored. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Only values with tag TRANSLATABLE are stored. </dd></dl>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#a9ba2a0affbe9b5da9a496cc7bde6d15f">Localization</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00224">224</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00213">213</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
 
 </div>
 </div>
@@ -534,7 +506,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00249">249</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00238">238</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
 
 </div>
 </div>
@@ -565,7 +537,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#a733be1850b3f834667cab33e5a89ba9c">Localization</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00281">281</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00270">270</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
 
 </div>
 </div>
@@ -586,7 +558,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#abab43f95ff80fef63d72ebbf6d41e028">Localization</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00307">307</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_localization_8php_source.html#l00296">296</a> of file <a class="el" href="_default_localization_8php_source.html">DefaultLocalization.php</a>.</p>
 
 </div>
 </div>
@@ -599,7 +571,7 @@ Protected Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu May 14 2015 01:47:15 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Mon Jul 13 2015 00:29:50 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

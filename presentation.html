@@ -171,11 +171,11 @@ Routing</h3>
 <p>Routing is the process of selecting the correct <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> for a given request. wCMF distinguishes between <em>internal</em> and <em>external</em> routing.</p>
 <h4><a class="anchor" id="pres_routingint"></a>
 Internal routing</h4>
-<p>Internal routing takes place after the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance is created and initialized. wCMF inspects the <b>action key</b> formed from it's <em>sender</em>, <em>context</em> and <em>action</em> parameters (see <a class="el" href="architecture.html#arch_actionkey">Action Key</a>) to determine the controller to be executed next. The mapping of action keys to controllers is defined in the <code>ActionMapping</code> configuration section.</p>
-<p>If the executed controller together with the <em>context</em> and <em>action</em> parameters of the response match another action key, the corresponding controller will be executed afterwards. This allows to chain several actions together.</p>
+<p>Internal routing takes place after the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance is created and initialized. wCMF inspects the <b>action key</b> formed from it's <em>sender</em>, <em>context</em> and <em>action</em> parameters (see <a class="el" href="architecture.html#arch_actionkey">Action Key</a>) to determine the controller to be executed for the request. The mapping of action keys to controllers is defined in the <code>ActionMapping</code> configuration section.</p>
+<p>If the executed controller together with the <em>context</em> and <em>action</em> parameters of the response match another action key, the corresponding controller will be executed afterwards. This allows to chain several actions together. If no matching action key is found, the response is returned to the client.</p>
 <h4><a class="anchor" id="pres_routingext"></a>
 External routing</h4>
-<p>The mapping of the current <b>request uri</b> to an action key is called external routing. The default logic is implemented in the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html#a36e0e7579b8ab70ec7690b37dcdfa312"><code>DefaultRequest::initialize</code></a> method. The method matches the <em>path part</em> of the request uri against the entries of the <code>Routes</code> configuration section. Variables declared in path segments will be automatically passed as request parameters.</p>
+<p>The mapping of the current <b>request uri</b> to an <b>action key</b> is called external routing. The default mapping logic is implemented in the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html#a36e0e7579b8ab70ec7690b37dcdfa312"><code>DefaultRequest::initialize</code></a> method. The method matches the <em>path part</em> of the request uri against the entries of the <code>Routes</code> configuration section to find an appropriate action key. Variables declared in path segments will be automatically passed as request parameters.</p>
 <p>The following example configuration taken from the default application illustrates the concept:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Routes]</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;/ = action=cms</div>
@@ -188,10 +188,17 @@ External routing</h4>
 </ul>
 <h2><a class="anchor" id="pres_controllers"></a>
 Controllers</h2>
-<p><span class="label label-danger">TODO</span></p>
+<p>Controllers take the user input from the request and modify the model according to it. As a result a response is created which is presented to the user in a view or any other format.</p>
+<p>wCMF provides <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> as abstract base class for controller implementations. There are three important methods defined in this class, which are called by <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html"><code>ActionMapper</code></a> in the following order:</p>
+<ul>
+<li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a47a24ac0d700f62a9434d298ade72fb9"><code>Controller::initialize</code></a> is called directly after instantiation of the controller. The current <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> and <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html"><code>Response</code></a> instances are passed as parameters and subclasses may override this method to implement task specific initializations.</li>
+<li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a184909dab34698899937d810a9f5d393"><code>Controller::validate</code></a> is called afterwards to check the validity of the request parameters. The default implementation returns <em>true</em> and subclasses are assumed to override this method if necessary to do task specific validations.</li>
+<li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a4eadfceba84d61eda01f9828935cf8e5"><code>Controller::doExecute</code></a> is called finally. Subclasses must implement this method to define the actual behavior of the controller.</li>
+</ul>
 <h3><a class="anchor" id="pres_longrequest"></a>
 Long running requests</h3>
-<p><span class="label label-danger">TODO</span></p>
+<p>There are situations where you want to split a long running process into parts, because it's exceeding memory or time limits or simply to give the user feedback about the progress. By subclassing <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html"><code>BatchController</code></a> the implementation of this behavior is as simple as defining the steps of the process in the <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#aa969f966d1ab74704cbde9512d281d2c"><code>BatchController::getWorkPackage</code></a> method.</p>
+<p><a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a> is an example for a controller implementing a long running process. It is used to create a Lucene search index over all searchable entity objects. The process is split into collecting all object ids and then indexing them. In the final step the index is optimized.</p>
 <h2><a class="anchor" id="pres_views"></a>
 Views</h2>
 <p><span class="label label-danger">TODO</span></p>
@@ -213,7 +220,7 @@ Debugging/Logging</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu May 14 2015 01:47:14 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Mon Jul 13 2015 00:29:49 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

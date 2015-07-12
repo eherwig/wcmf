@@ -115,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">## Data model ## {#pers_datamodel}</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">The data model consists of domain classes whose instances are saved in the storage.</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">The following steps need to be accomplished in order to make domain class instances</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">The following steps need to be accomplished to make domain class instances</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">persistent.</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">- Definition and creation of the database tables, if using a database storage.</span></div>
@@ -169,7 +169,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">a database or anything else a mapper is able to handle. This approach also makes</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">it easy to connect an existing storage to a newly created wCMF application.</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">In order to simplify the implementation of mapper classes, wCMF already contains</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">To simplify the implementation of mapper classes, wCMF already contains</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">a class hierarchy for a common mapping approach, which maps each concrete class</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">to one database table ([Concrete Table Inheritance]</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">(http://martinfowler.com/eaaCatalog/concreteTableInheritance.html)). In this</span></div>
@@ -244,7 +244,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">  and</span></div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">  \link wcmf::lib::persistence::PersistentObject::getValueProperty `getValueProperty`\endlink/</span></div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">  \link wcmf::lib::persistence::PersistentObject::setValueProperty `setValueProperty`\endlink</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">- __Tags__ are a special property used on values in order to group them by certain</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">- __Tags__ are a special property used on values to group them by certain</span></div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">  aspects. For example the edit forms in the default application only display</span></div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">  domain class values that are tagged with `DATATYPE_ATTRIBUTE` and only those</span></div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">  attributes are editable in the translation form that are tagged with `TRANSLATABLE`.</span></div>
@@ -304,7 +304,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">performs _lazy loading_ by using _virtual proxies_ (instances of</span></div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">\link wcmf::lib::persistence::PersistentObjectProxy `PersistentObjectProxy`\endlink).</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">That means that related objects are retrieved from the store, only when they are</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">actually accessed. In order to perform _eager loading_, a</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">actually accessed. To perform _eager loading_, a</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">\link wcmf::lib::persistence::BuildDepth `BuildDepth`\endlink</span></div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">value may be passed in the method calls:</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment"></span></div>
@@ -361,7 +361,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="comment">#### Pagination #### {#pers_pagination}</span></div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="comment">In order to reduce the response time of your application when displaying large lists</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="comment">To reduce the response time of your application when displaying large lists</span></div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="comment">of objects, [pagination](http://en.wikipedia.org/wiki/Pagination#Pagination_in_web_content)</span></div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="comment">may be used. This technique splits the list into smaller parts (_pages_) that are displayed</span></div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="comment">one by one. In wCMF the class \link wcmf::lib::persistence::PagingInfo `PagingInfo`\endlink</span></div>
@@ -466,8 +466,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="comment">~~~~~~~~~~~~~</span></div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="comment">\link wcmf::lib::model::PersistentIterator `PersistentIterator`\endlink allows</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="comment">to traverse object graphs as well, but it&#39;s state may be persisted in order</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment">to split the iteration of large lists into smaller parts.</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="comment">to traverse object graphs as well, but it&#39;s state may be persisted to split the</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment">iteration of large lists into smaller parts.</span></div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="comment">~~~~~~~~~~~~~{.php}</span></div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="comment">// traverse 10 nodes starting from $oid</span></div>
@@ -552,8 +552,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;<span class="comment">\link wcmf::lib::persistence::validator::ValidateType `ValidateType`\endlink</span></div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;<span class="comment">implementations for validating different types of attributes. Each validation type</span></div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;<span class="comment">accepts configuration options, that are passed in as a string value. The format</span></div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;<span class="comment">of this value is completely up to the validator type implementation. In order</span></div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;<span class="comment">to define, which validation should be applied to a domain class attribute, the</span></div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;<span class="comment">of this value is completely up to the validator type implementation. To define</span></div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;<span class="comment">which validation should be applied to a domain class attribute, the</span></div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="comment">_tag_ `restrictions_match` is used in the model (see \ref model_chivalue).</span></div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;<span class="comment">Currently three validation types are supported:</span></div>
@@ -690,15 +690,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;<span class="comment">~~~~~~~~~~~~~</span></div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;<span class="comment">\note Even if not obtained explicitely, there is always a transaction existing</span></div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;<span class="comment">in the background, to which objects loaded from the store are attached. But in order</span></div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;<span class="comment">to persist changes when doing a commit, the transaction has to be set _active_</span></div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;<span class="comment">in the background, to which objects loaded from the store are attached. But to</span></div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;<span class="comment">persist changes when doing a commit, the transaction has to be set _active_</span></div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;<span class="comment">_before_ loading or creating the object.</span></div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;<span class="comment">There are situations where you want to let the current transaction __ignore changes__</span></div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;<span class="comment">made to newly created objects or objects loaded from the store. In these cases you</span></div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;<span class="comment">can use the method</span></div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;<span class="comment">\link wcmf::lib::persistence::Transaction::detach `Transaction::detach`\endlink</span></div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;<span class="comment">in order to disconnect the object from the transaction.</span></div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;<span class="comment">to disconnect the object from the transaction.</span></div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;<span class="comment">*/</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
@@ -709,7 +709,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu May 14 2015 01:47:11 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Mon Jul 13 2015 00:29:47 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

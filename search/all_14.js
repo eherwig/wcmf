@@ -49,7 +49,6 @@ var searchData=
   ['setheaders',['setHeaders',['../interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#ad62c7c9cad0e3ccfdbff9144c914090b',1,'wcmf\lib\presentation\ControllerMessage\setHeaders()'],['../classwcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message.html#ad62c7c9cad0e3ccfdbff9144c914090b',1,'wcmf\lib\presentation\impl\AbstractControllerMessage\setHeaders()']]],
   ['setindexpath',['setIndexPath',['../classwcmf_1_1lib_1_1search_1_1impl_1_1_lucene_search.html#a3a729e6e263564fe1bb3564457d69e70',1,'wcmf::lib::search::impl::LuceneSearch']]],
   ['setinput',['setInput',['../classwcmf_1_1lib_1_1search_1_1impl_1_1_analyzer.html#a5fb021be86a651cabfa5efa93db5adf0',1,'wcmf::lib::search::impl::Analyzer']]],
-  ['setinputtypes',['setInputTypes',['../classwcmf_1_1lib_1_1i18n_1_1impl_1_1_default_localization.html#a306e3f3589a759d3a69d384c31c5cda8',1,'wcmf::lib::i18n::impl::DefaultLocalization']]],
   ['setisintransaction',['setIsInTransaction',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a0094e453215f759a33d3b3ff396d7fae',1,'wcmf::lib::model::mapper::RDBMapper']]],
   ['setlanguagetype',['setLanguageType',['../classwcmf_1_1lib_1_1i18n_1_1impl_1_1_default_localization.html#a273525ece434b134f6b40ea22604d78c',1,'wcmf::lib::i18n::impl::DefaultLocalization']]],
   ['setliveupdate',['setLiveUpdate',['../classwcmf_1_1lib_1_1search_1_1impl_1_1_lucene_search.html#a02ceef988a11467f6bd04acc329f8556',1,'wcmf::lib::search::impl::LuceneSearch']]],
