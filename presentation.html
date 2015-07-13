@@ -126,7 +126,7 @@ Application</h2>
 <ul>
 <li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a8a93d7a699b6a01fa0dcdf47b9a357fd"><code>initialize</code></a> method is used to <b>setup</b> the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html"><code>Application</code></a>. It returns a <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance, that may be modified before execution.</li>
 <li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#ae40ac2db89d00ceca9183a1e5426b1f9"><code>run</code></a> method is called to <b>execute</b> the given request. The method returns a <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html"><code>Response</code></a> instance, that is not used in this example.</li>
-<li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a332beeec10cf9aa57bef49cf913bca78"><code>handleException</code></a> method is called, if an <b>exception</b> occurs. The method rolls back the database transaction and calls the <code>failure</code> action.</li>
+<li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a332beeec10cf9aa57bef49cf913bca78"><code>handleException</code></a> method is called, if an <b>exception</b> occurs. The method rolls back the database transaction and calls the <em>failure</em> action.</li>
 </ul>
 <p>The details of request execution are the topic of the next section.</p>
 <h2><a class="anchor" id="pres_request"></a>
@@ -179,8 +179,8 @@ Internal routing</h4>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;wcmf\application\controller\SearchIndexController??continue =</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                            wcmf\application\controller\SearchIndexController</div>
 </div><!-- fragment --><ul>
-<li>The first line states that the action <code>indexAll</code> called from <em>any</em> controller and in <em>any</em> context will invoke <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a>, which will set a state dependent action name on the response (see <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html"><code>BatchController</code></a>).</li>
-<li>The second line tells <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html"><code>ActionMapper</code></a> to re-invoke <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a>, if it was the last controller and the action is <code>continue</code>. So this action key only matches, if the last controller was <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a>.</li>
+<li>The first line states that the action <em>indexAll</em> called from <em>any</em> controller and in <em>any</em> context will invoke <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a>, which will set a state dependent action name on the response (see <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html"><code>BatchController</code></a>).</li>
+<li>The second line tells <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html"><code>ActionMapper</code></a> to re-invoke <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a>, if it was the last controller and the action is <em>continue</em>. So this action key only matches, if the last controller was <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a>.</li>
 </ul>
 <h4><a class="anchor" id="pres_routingext"></a>
 External routing</h4>
@@ -210,7 +210,7 @@ Error handling</h3>
 <p>By definition the application is not able to recover from a <em>fatal error</em>, meaning that it's not functioning correctly. An example would be a programming error or a missing vital resource. These errors normally need to be fixed by the application maintainer. In case of <em>non-fatal errors</em> a notice to the user is sufficient in most cases. A typical example would be invalid user input, that can be fixed by the user itself.</p>
 <p>In wCMF the following two strategies are recommended for handling these kind of situations:</p>
 <ul>
-<li>In case of a <b>fatal error</b>, an exception should be thrown. If it is not caught inside the application code, it will bubble up to the main script (usually <em>index.php</em>). In case the application is set up like in the <a class="el" href="presentation.html#pres_application">Application</a> section, the method <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a332beeec10cf9aa57bef49cf913bca78"><code>Application::handleException</code></a> will be called. This method rolls back the current transaction and calls the <code>failure</code> action, which is executed by <a class="el" href="classwcmf_1_1application_1_1controller_1_1_failure_controller.html"><code>FailureController</code></a> by default.</li>
+<li>In case of a <b>fatal error</b>, an exception should be thrown. If it is not caught inside the application code, it will bubble up to the main script (usually <em>index.php</em>). In case the application is set up like in the <a class="el" href="presentation.html#pres_application">Application</a> section, the method <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a332beeec10cf9aa57bef49cf913bca78"><code>Application::handleException</code></a> will be called. This method rolls back the current transaction and calls the <em>failure</em> action, which is executed by <a class="el" href="classwcmf_1_1application_1_1controller_1_1_failure_controller.html"><code>FailureController</code></a> by default.</li>
 <li>If a <b>non-fatal error</b> occurs, an instance of <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html"><code>ApplicationError</code></a> should be created and added to the response using the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a1713cbae7046bb8f8baa9cac224150ec"><code>Response::addError</code></a> method. The error class provides the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554"><code>ApplicationError::get</code></a> method to retrieve predefined errors. The following example shows how to signal an invalid <em>type</em> parameter while request validation:</li>
 </ul>
 <div class="fragment"><div class="line">$response-&gt;addError(ApplicationError::get(<span class="stringliteral">&#39;PARAMETER_INVALID&#39;</span>,</div>
@@ -240,7 +240,7 @@ Debugging/Logging</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Mon Jul 13 2015 20:29:37 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Mon Jul 13 2015 20:39:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
