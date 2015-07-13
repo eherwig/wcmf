@@ -173,6 +173,15 @@ Routing</h3>
 Internal routing</h4>
 <p>Internal routing takes place after the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance is created and initialized. wCMF inspects the <b>action key</b> formed from it's <em>sender</em>, <em>context</em> and <em>action</em> parameters (see <a class="el" href="architecture.html#arch_actionkey">Action Key</a>) to determine the controller to be executed for the request. The mapping of action keys to controllers is defined in the <code>ActionMapping</code> configuration section.</p>
 <p>If the executed controller together with the <em>context</em> and <em>action</em> parameters of the response match another action key, the corresponding controller will be executed afterwards. This allows to chain several actions together. If no matching action key is found, the response is returned to the client.</p>
+<p>The following code is taken from the default application configuration and shows the configuration of the indexing process (see <a class="el" href="presentation.html#pres_longrequest">Long running requests</a>):</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[ActionMapping]</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;??indexAll = wcmf\application\controller\SearchIndexController</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;wcmf\application\controller\SearchIndexController??continue =</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                            wcmf\application\controller\SearchIndexController</div>
+</div><!-- fragment --><ul>
+<li>The first line states that the action <code>indexAll</code> called from <em>any</em> controller and in <em>any</em> context will invoke <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a>, which will set a state dependent action name on the response (see <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html"><code>BatchController</code></a>).</li>
+<li>The second line tells <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html"><code>ActionMapper</code></a> to re-invoke <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a>, if it was the last controller and the action is <code>continue</code>. So this action key only matches, if the last controller was <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a>.</li>
+</ul>
 <h4><a class="anchor" id="pres_routingext"></a>
 External routing</h4>
 <p>The mapping of the current <b>request uri</b> to an <b>action key</b> is called external routing. The default mapping logic is implemented in the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html#a36e0e7579b8ab70ec7690b37dcdfa312"><code>DefaultRequest::initialize</code></a> method. The method matches the <em>path part</em> of the request uri against the entries of the <code>Routes</code> configuration section to find an appropriate action key. Variables declared in path segments will be automatically passed as request parameters.</p>
@@ -231,7 +240,7 @@ Debugging/Logging</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Mon Jul 13 2015 19:07:19 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Mon Jul 13 2015 20:29:37 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
