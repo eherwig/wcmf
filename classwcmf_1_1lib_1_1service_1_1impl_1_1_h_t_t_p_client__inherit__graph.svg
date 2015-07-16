@@ -24,7 +24,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="interfacewcmf_1_1lib_1_1service_1_1_remoting_client.html" target="_top" xlink:title="RemotingClient defines the interface for clients to be used with RemotingFacade. ">
+<g id="a_node2"><a xlink:href="interfacewcmf_1_1lib_1_1service_1_1_remoting_client.html" target="_top" xlink:title="RemotingClient defines the interface for clients to be used with RemotingServer. ">
 <polygon fill="white" stroke="black" points="4.5,-138.5 4.5,-195.5 87.5,-195.5 87.5,-138.5 4.5,-138.5"/>
 <text text-anchor="middle" x="46" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">RemotingClient</text>
 <polyline fill="none" stroke="black" points="4.5,-176.5 87.5,-176.5 "/>

@@ -421,18 +421,136 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="comment">actual [Dojo](https://dojotoolkit.org/) application, there is only one view mapping</span></div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="comment">for `RootController`.</span></div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="comment">## Caching ## {#pres_caching}</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="comment">### Device dependent views ###</span></div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="comment">&lt;span class=&quot;label label-danger&quot;&gt;TODO&lt;/span&gt;</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="comment">## Events ## {#pres_events}</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="comment">\link wcmf::lib::presentation::format::impl::HtmlFormat `HtmlFormat`\endlink</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="comment">allows to provide different versions of a view template. This is especially</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="comment">useful, if you want to deliver device dependent content for the same action key.</span></div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment">&lt;span class=&quot;label label-danger&quot;&gt;TODO&lt;/span&gt;</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="comment">## Logging ## {#pres_log}</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="comment">&lt;span class=&quot;label label-danger&quot;&gt;TODO&lt;/span&gt;</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment">To select a specific template version, the value `html_tpl_format` has to be set</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="comment">on the response instance. E.g. if the template file would be _home.tpl_, setting</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="comment">the value to _mobile_ would select the template file _home-mobile.tpl_. If the</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="comment">requested version does not exist, it is ignored and the default template is used</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="comment">(_home.tpl_ in this example).</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="comment">## Webservice APIs ##</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="comment">Besides the user interface driven default application wCMF provides APIs for</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="comment">using the application as a [web service](https://en.wikipedia.org/wiki/Web_service).</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="comment">These APIs provide create/read/update/delete</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="comment">([CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete))</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="comment">operations on all entity types.</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="comment">### RESTful API ###</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="comment">The [REST](https://en.wikipedia.org/wiki/Representational_state_transfer)ful</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="comment">interface is implemented in</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="comment">\link wcmf::application::controller::RESTController `RESTController`\endlink,</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="comment">which basically acts as a facade in front of the application. That means the</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="comment">controller checks the request data only and delegates the actual processing to</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="comment">the action specific controller.</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="comment">The following example shows the configuration of the RESTful interface in the</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="comment">default application:</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="comment">~~~~~~~~~~~~~{.ini}</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="comment">[Routes]</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="comment">/rest/{language}/{className} = action=restAction&amp;collection=1</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="comment">/rest/{language}/{className}/{id|[0-9]+} = action=restAction&amp;collection=0</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="comment">/rest/{language}/{className}/{sourceId|[0-9]+}/{relation} = action=restAction&amp;collection=1</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="comment">/rest/{language}/{className}/{sourceId|[0-9]+}/{relation}/{targetId|[0-9]+} = action=restAction&amp;collection=0</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment">[ActionMapping]</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment">??restAction = wcmf\application\controller\RESTController</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="comment">~~~~~~~~~~~~~</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="comment">The `Routes` configuration section defines the urls for the interface. They all</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="comment">call the action _restAction_ internally, which is handled by</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="comment">\link wcmf::application::controller::RESTController `RESTController`\endlink as</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment">defined in the `ActionMapping` section. For example the english version of</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment">the `Author` instance with id _1_ may be retrieved by making a GET request to</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="comment">the url &lt;em&gt;/rest/en/Author/1&lt;/em&gt;.</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="comment">### SOAP API ###</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="comment">wCMF uses the [NuSOAP](http://sourceforge.net/projects/nusoap/) library for</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="comment">implementing the SOAP interface. It consists of the</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="comment">\link wcmf::lib::service::SoapServer `SoapServer`\endlink and</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="comment">\link wcmf::application::controller::SOAPController `SOAPController`\endlink classes.</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment">The controller class handles all requests and delegates the processing to the</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="comment">server class. The service description in the</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="comment">[WSDL](https://en.wikipedia.org/wiki/Web_Services_Description_Language) format</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="comment">is generated by the code generator into a file called _soap-interface.php_</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="comment">(see \ref generator_artefacts_php).</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment">The following example shows the configuration of the SOAP interface in the</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="comment">default application:</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="comment">~~~~~~~~~~~~~{.ini}</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="comment">[Routes]</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="comment">/soap = action=soapAction</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="comment">[ActionMapping]</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="comment">??soapAction = wcmf\application\controller\SOAPController</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="comment">~~~~~~~~~~~~~</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="comment">The `Routes` configuration section defines that the url &lt;em&gt;/soap&lt;/em&gt; redirects</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="comment">to the action _soapAction_ internally. The `ActionMapping` section defines that</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="comment">this action is handled by</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="comment">\link wcmf::application::controller::SOAPController `SOAPController`\endlink.</span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="comment">The interface description is available at the url &lt;em&gt;/soap?wsdl&lt;/em&gt;.</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="comment">## Caching ## {#pres_caching}</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<span class="comment">Caching is an effective method to improve application performance. Caches in wCMF</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="comment">are supposed to be divided into sections, which hold key-value pairs (see</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="comment">\link wcmf::lib::io::Cache `Cache`\endlink interface). Cache instances may be</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="comment">defined in the application configuration and retrieved by using</span></div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="comment">\link wcmf::lib::core::ObjectFactory `ObjectFactory`\endlink, which makes it easy</span></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="comment">to exchange the underlying caching implementation.</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="comment">The following example shows the configuration of a</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="comment">\link wcmf::lib::io::impl::FileCache `FileCache`\endlink instance in the</span></div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="comment">default application:</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="comment">~~~~~~~~~~~~~{.ini}</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="comment">[Cache]</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="comment">__class = wcmf\lib\io\impl\FileCache</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="comment">cacheDir = app/cache/</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="comment">~~~~~~~~~~~~~</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="comment">The usage of this cache is illustrated in the code example:</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="comment">~~~~~~~~~~~~~{.php}</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;<span class="comment">$cache = ObjectFactory::getInstance(&#39;cache&#39;);</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="comment">$cacheSection = &#39;calculations&#39;;</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="comment">$cacheKey = &#39;resultA&#39;;</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="comment">if (!$cache-&gt;exists($cacheSection, $cacheKey)) {</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="comment">  // calculate the result and store it in the cache</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="comment">  $result = complexCalculationA();</span></div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="comment">  $cache-&gt;put($cacheSection, $cacheKey, $value);</span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;<span class="comment">else {</span></div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<span class="comment">  // retrieve the result from the cache</span></div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="comment">  $resultA = $cache-&gt;get($cacheSection, $cacheKey);</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<span class="comment">~~~~~~~~~~~~~</span></div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;<span class="comment">Supposed that `complexCalculationA` in this example takes long to finish, it</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="comment">should only run once at the first time the result is needed. So we check if</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;<span class="comment">_resultA_ is already cached and calculate it, if not. Since it is put it into the</span></div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;<span class="comment">cache after calculation, it can be retrieved _resultA_ directly from there the</span></div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;<span class="comment">next time it is needed.</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="comment">## Events ## {#pres_events}</span></div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<span class="comment">&lt;span class=&quot;label label-danger&quot;&gt;TODO&lt;/span&gt;</span></div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;<span class="comment">## Logging ## {#pres_log}</span></div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;<span class="comment">&lt;span class=&quot;label label-danger&quot;&gt;TODO&lt;/span&gt;</span></div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;<span class="comment">*/</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -442,7 +560,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Jul 16 2015 02:36:00 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Jul 17 2015 01:38:36 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
