@@ -2,7 +2,7 @@ var searchData=
 [
   ['handledelete',['handleDelete',['../classwcmf_1_1application_1_1controller_1_1_r_e_s_t_controller.html#ad09743bc46dc9b5e07195e17b4ad2ad7',1,'wcmf::application::controller::RESTController']]],
   ['handleerror',['handleError',['../classwcmf_1_1lib_1_1core_1_1_error_handler.html#a34a7b5c54d405faaeadd1ce6231fca0d',1,'wcmf\lib\core\ErrorHandler\handleError()'],['../classwcmf_1_1lib_1_1service_1_1impl_1_1_h_t_t_p_client.html#a46805c97d05b532aeca8c4de083c1cf8',1,'wcmf\lib\service\impl\HTTPClient\handleError()'],['../classwcmf_1_1lib_1_1service_1_1impl_1_1_r_p_c_client.html#a46805c97d05b532aeca8c4de083c1cf8',1,'wcmf\lib\service\impl\RPCClient\handleError()']]],
-  ['handleexception',['handleException',['../classwcmf_1_1lib_1_1presentation_1_1_application.html#a332beeec10cf9aa57bef49cf913bca78',1,'wcmf::lib::presentation::Application']]],
+  ['handleexception',['handleException',['../classwcmf_1_1lib_1_1presentation_1_1_application.html#ad277d25fb9f732225ef51009ab7c1988',1,'wcmf::lib::presentation::Application']]],
   ['handleget',['handleGet',['../classwcmf_1_1application_1_1controller_1_1_r_e_s_t_controller.html#aab871f0f0d56e95cb20c73ff9bd6b26e',1,'wcmf::application::controller::RESTController']]],
   ['handlepost',['handlePost',['../classwcmf_1_1application_1_1controller_1_1_r_e_s_t_controller.html#ae693a0270e0a8fa6e97eed77658f1987',1,'wcmf::application::controller::RESTController']]],
   ['handleput',['handlePut',['../classwcmf_1_1application_1_1controller_1_1_r_e_s_t_controller.html#a797c67d8eccf60a58ee8f589efd27c0a',1,'wcmf::application::controller::RESTController']]],

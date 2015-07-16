@@ -126,7 +126,7 @@ Application</h2>
 <ul>
 <li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a8a93d7a699b6a01fa0dcdf47b9a357fd"><code>initialize</code></a> method is used to <b>setup</b> the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html"><code>Application</code></a>. It returns a <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance, that may be modified before execution.</li>
 <li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#ae40ac2db89d00ceca9183a1e5426b1f9"><code>run</code></a> method is called to <b>execute</b> the given request. The method returns a <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html"><code>Response</code></a> instance, that is not used in this example.</li>
-<li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a332beeec10cf9aa57bef49cf913bca78"><code>handleException</code></a> method is called, if an <b>exception</b> occurs. The method rolls back the database transaction and calls the <em>failure</em> action.</li>
+<li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#ad277d25fb9f732225ef51009ab7c1988"><code>handleException</code></a> method is called, if an <b>exception</b> occurs. The method rolls back the database transaction and calls the <em>failure</em> action.</li>
 </ul>
 <p>The details of request execution are the topic of the next section.</p>
 <h2><a class="anchor" id="pres_request"></a>
@@ -156,6 +156,7 @@ Formats</h3>
 <li>The <code>Content-Type</code> header defines the <b>request</b> format</li>
 <li>The <code>Accept</code> header defines the <b>response</b> format</li>
 </ul>
+<p>To find the correct format, the <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">Media Type</a> value set in those headers is matched against the mime type of all registered formats (see <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html#ac06e9f7b10fca30eb41e41d4dc108b1c"><code>Format::getMimeType</code></a>).</p>
 <p>Formats are defined in the <code>Formats</code> configuration section as shown in the following example:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Formats]</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;html = $htmlFormat</div>
@@ -197,7 +198,7 @@ External routing</h4>
 </ul>
 <h2><a class="anchor" id="pres_controllers"></a>
 Controllers</h2>
-<p>Controllers take the user input from the request and modify the model according to it. As a result a response is created which is presented to the user in a view or any other format.</p>
+<p>Controllers take the user input from the request and modify the model according to it. As a result a response is created which is presented to the user in a view or any other format. Which controller is executed on a specific request is determined in the routing process (see <a class="el" href="presentation.html#pres_routing">Routing</a>).</p>
 <p>wCMF provides <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> as abstract base class for controller implementations. There are three important methods defined in this class, which are called by <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html"><code>ActionMapper</code></a> in the following order:</p>
 <ol type="1">
 <li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a47a24ac0d700f62a9434d298ade72fb9"><code>Controller::initialize</code></a> is called directly after instantiation of the controller. The current <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> and <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html"><code>Response</code></a> instances are passed as parameters and subclasses may override this method to implement task specific initializations.</li>
@@ -210,7 +211,7 @@ Error handling</h3>
 <p>By definition the application is not able to recover from a <em>fatal error</em>, meaning that it's not functioning correctly. An example would be a programming error or a missing vital resource. These errors normally need to be fixed by the application maintainer. In case of <em>non-fatal errors</em> a notice to the user is sufficient in most cases. A typical example would be invalid user input, that can be fixed by the user itself.</p>
 <p>In wCMF the following two strategies are recommended for handling these kind of situations:</p>
 <ul>
-<li>In case of a <b>fatal error</b>, an exception should be thrown. If it is not caught inside the application code, it will bubble up to the main script (usually <em>index.php</em>). In case the application is set up like in the <a class="el" href="presentation.html#pres_application">Application</a> section, the method <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a332beeec10cf9aa57bef49cf913bca78"><code>Application::handleException</code></a> will be called. This method rolls back the current transaction and calls the <em>failure</em> action, which is executed by <a class="el" href="classwcmf_1_1application_1_1controller_1_1_failure_controller.html"><code>FailureController</code></a> by default.</li>
+<li>In case of a <b>fatal error</b>, an exception should be thrown. If it is not caught inside the application code, it will bubble up to the main script (usually <em>index.php</em>). In case the application is set up like in the <a class="el" href="presentation.html#pres_application">Application</a> section, the method <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#ad277d25fb9f732225ef51009ab7c1988"><code>Application::handleException</code></a> will be called. This method rolls back the current transaction and calls the <em>failure</em> action, which is executed by <a class="el" href="classwcmf_1_1application_1_1controller_1_1_failure_controller.html"><code>FailureController</code></a> by default.</li>
 <li>If a <b>non-fatal error</b> occurs, an instance of <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html"><code>ApplicationError</code></a> should be created and added to the response using the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a1713cbae7046bb8f8baa9cac224150ec"><code>Response::addError</code></a> method. The error class provides the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554"><code>ApplicationError::get</code></a> method to retrieve predefined errors. The following example shows how to signal an invalid <em>type</em> parameter while request validation:</li>
 </ul>
 <div class="fragment"><div class="line">$response-&gt;addError(ApplicationError::get(<span class="stringliteral">&#39;PARAMETER_INVALID&#39;</span>,</div>
@@ -221,15 +222,28 @@ Long running requests</h3>
 <p><a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a> is an example for a controller implementing a long running process. It is used to create a Lucene search index over all searchable entity objects. The process is split into collecting all object ids and then indexing them. In the final step the index is optimized.</p>
 <h2><a class="anchor" id="pres_views"></a>
 Views</h2>
-<p><span class="label label-danger">TODO</span></p>
+<p>Views are used to present application information to the user. In a web application they are typically HTML pages displayed in the browser.</p>
+<p>In wCMF the response will be turned into an HTML page, if the <code>Accept</code> HTTP header is set to <em>text/html</em> (see <a class="el" href="presentation.html#pres_format">Formats</a>). The appropriate <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html"><code>Format</code></a> implementation is <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_html_format.html"><code>HtmlFormat</code></a>. It renders the response into a template file using the configured <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html"><code>View</code></a> implementation. The format of the template files depends on the chosen that implementation. Since different actions may require different views to be displayed, a mapping of action keys to view templates is defined in the <code>Views</code> configuration section.</p>
+<p>The following example shows the configuration of the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_smarty_view.html"><code>SmartyView</code></a> class and the mapping of action keys to views in the default application:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[View]</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;__class = wcmf\lib\presentation\view\impl\SmartyView</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;__shared = false</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;compileCheck = true</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;caching = false</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;cacheLifetime = 3600</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;cacheDir = app/cache/smarty/</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;[Views]</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;app\src\controller\RootController?? = app/src/views/cms.tpl</div>
+</div><!-- fragment --><p>Since the default application only uses an HTML page to bootstrap the actual <a href="https://dojotoolkit.org/">Dojo</a> application, there is only one view mapping for <code>RootController</code>.</p>
 <h2><a class="anchor" id="pres_caching"></a>
 Caching</h2>
 <p><span class="label label-danger">TODO</span></p>
 <h2><a class="anchor" id="pres_events"></a>
 Events</h2>
 <p><span class="label label-danger">TODO</span></p>
-<h2><a class="anchor" id="pres_debug_log"></a>
-Debugging/Logging</h2>
+<h2><a class="anchor" id="pres_log"></a>
+Logging</h2>
 <p><span class="label label-danger">TODO</span> </p>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
@@ -240,7 +254,7 @@ Debugging/Logging</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Mon Jul 13 2015 20:39:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Thu Jul 16 2015 02:36:03 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

@@ -176,28 +176,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">   * values that have a non-empty value are considered as translations and stored.</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">   * @param $object An instance of the entity type that holds the translations as values.</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">   * @param $lang The language of the translation.</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">   * @param $saveEmptyValues Boolean whether to save empty translations or not.</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">   *    Optional, default is false</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">   * @param $recursive Boolean whether to save translations for children too or not.</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">   *    Optional, default is true. For recursive use, the object must have a getChildren method.</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#a9ba2a0affbe9b5da9a496cc7bde6d15f">saveTranslation</a>($object, $lang, $saveEmptyValues=<span class="keyword">false</span>, $recursive=<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">   * Remove translations for a given entity.</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">   * @param $oid The id of the object</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">   * @param $lang The language of the translation to remove. If null, all translations</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">   *    will be deleted (default: _null_)</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#a733be1850b3f834667cab33e5a89ba9c">deleteTranslation</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid, $lang=null);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">   * Delete all translations for a given language.</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">   * @param $lang The language of the translations to remove</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#abab43f95ff80fef63d72ebbf6d41e028">deleteLanguage</a>($lang);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;?&gt;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">   * @param $recursive Boolean whether to save translations for children too or not.</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">   *    Optional, default is true. For recursive use, the object must have a getChildren method.</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#aaeae6c4f25aae12208b15d7524db347f">saveTranslation</a>($object, $lang, $recursive=<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">   * Remove translations for a given entity.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">   * @param $oid The id of the object</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">   * @param $lang The language of the translation to remove. If null, all translations</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">   *    will be deleted (default: _null_)</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#a733be1850b3f834667cab33e5a89ba9c">deleteTranslation</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid, $lang=null);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">   * Delete all translations for a given language.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">   * @param $lang The language of the translations to remove</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#abab43f95ff80fef63d72ebbf6d41e028">deleteLanguage</a>($lang);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;?&gt;</div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1i18n_1_1_localization_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html">wcmf\lib\i18n\Localization</a></div><div class="ttdoc">Localization defines the interface for storing localized entity instances and retrieving them back...</div><div class="ttdef"><b>Definition:</b> <a href="_localization_8php_source.html#l00031">Localization.php:31</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1i18n_1_1_localization_html_a733be1850b3f834667cab33e5a89ba9c"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#a733be1850b3f834667cab33e5a89ba9c">wcmf\lib\i18n\Localization\deleteTranslation</a></div><div class="ttdeci">deleteTranslation(ObjectId $oid, $lang=null)</div><div class="ttdoc">Remove translations for a given entity. </div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_object_id_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">wcmf\lib\persistence\ObjectId</a></div><div class="ttdoc">ObjectId is the unique identifier of an object. </div><div class="ttdef"><b>Definition:</b> <a href="_object_id_8php_source.html#l00027">ObjectId.php:27</a></div></div>
@@ -205,9 +203,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="namespacewcmf_1_1lib_1_1i18n_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1i18n.html">wcmf\lib\i18n</a></div><div class="ttdoc">I18N related interfaces and classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00016">namespaces.php:16</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1_object_id_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1i18n_1_1_localization_html_abab43f95ff80fef63d72ebbf6d41e028"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#abab43f95ff80fef63d72ebbf6d41e028">wcmf\lib\i18n\Localization\deleteLanguage</a></div><div class="ttdeci">deleteLanguage($lang)</div><div class="ttdoc">Delete all translations for a given language. </div></div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1i18n_1_1_localization_html_a9ba2a0affbe9b5da9a496cc7bde6d15f"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#a9ba2a0affbe9b5da9a496cc7bde6d15f">wcmf\lib\i18n\Localization\saveTranslation</a></div><div class="ttdeci">saveTranslation($object, $lang, $saveEmptyValues=false, $recursive=true)</div><div class="ttdoc">Save a translation of an entity for a specific language. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1i18n_1_1_localization_html_a86d261451a43abd441bed48ab9203bb4"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#a86d261451a43abd441bed48ab9203bb4">wcmf\lib\i18n\Localization\getDefaultLanguage</a></div><div class="ttdeci">getDefaultLanguage()</div><div class="ttdoc">Get the default language that is used in the store. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1i18n_1_1_localization_html_a8689101a9f3029c75f9aa99491715ea9"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#a8689101a9f3029c75f9aa99491715ea9">wcmf\lib\i18n\Localization\getSupportedLanguages</a></div><div class="ttdeci">getSupportedLanguages()</div><div class="ttdoc">Get all supported languages. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1i18n_1_1_localization_html_aaeae6c4f25aae12208b15d7524db347f"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#aaeae6c4f25aae12208b15d7524db347f">wcmf\lib\i18n\Localization\saveTranslation</a></div><div class="ttdeci">saveTranslation($object, $lang, $recursive=true)</div><div class="ttdoc">Save a translation of an entity for a specific language. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1i18n_1_1_localization_html_aecf5f93cd7a9c4d36ff3890879cb5209"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html#aecf5f93cd7a9c4d36ff3890879cb5209">wcmf\lib\i18n\Localization\loadTranslation</a></div><div class="ttdeci">loadTranslation($object, $lang, $useDefaults=true, $recursive=true)</div><div class="ttdoc">Load a translation of an entity for a specific language. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
@@ -218,7 +216,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Mon Jul 13 2015 20:39:16 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Thu Jul 16 2015 02:36:01 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
