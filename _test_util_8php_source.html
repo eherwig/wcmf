@@ -47,7 +47,7 @@
                     <li><a href="persistence.html">Persistence</a></li>
                     <li><a href="presentation.html">Presentation</a></li>
                     <li><a href="configuration.html">Configuration</a></li>
-                    <li><a href="permissions.html">Permissions</a></li>
+                    <li><a href="security.html">Security</a></li>
                     <li><a href="i18n.html">I18N</a></li>
                     <li><a href="tests.html">Tests</a></li>
                   </ul>
@@ -135,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">   * Set up the wcmf framework</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">   * @param configPath The path to the configuration directory</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">   * @param $configPath The path to the configuration directory</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1util_1_1_test_util.html#a34382d6d956020ac8b79b012d272d55b">   34</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1util_1_1_test_util.html#a34382d6d956020ac8b79b012d272d55b">initFramework</a>($configPath) {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a342b1676bf9651477ec79ed93f606244">ObjectFactory::clear</a>();</div>
@@ -199,7 +199,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">   * Turn authorization validation on/off.</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">   * @param Boolean whether to turn it off or on</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">   * @param $isAnonymous Boolean whether to turn it off or on</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1util_1_1_test_util.html#acbef7117227e7c3df987b8fef672fc33">   98</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1util_1_1_test_util.html#acbef7117227e7c3df987b8fef672fc33">runAnonymous</a>($isAnonymous) {</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span> (!self::$_nullPermissionManager) {</div>
@@ -212,7 +212,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">   * Process a request as if it was sent to main.php</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">   * @param request The Request instance</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">   * @param $request The Request instance</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">   * @return The Response instance (result of the last ActionMapper::processAction() call)</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1util_1_1_test_util.html#a2794c971a900a030a9cc328815b82f38">  112</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1util_1_1_test_util.html#a2794c971a900a030a9cc328815b82f38">simulateRequest</a>($request) {</div>
@@ -231,8 +231,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">   * Start a session. This is usefull for simulateRequest calls</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">   * @param user The name of the user</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">   * @param password The password of the user</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">   * @param $user The name of the user</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">   * @param $password The password of the user</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">   * @return The session id. Use this as data[&#39;sid&#39;] parameter for</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">   *    subsequent simulateRequest calls</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">   */</span></div>
@@ -271,9 +271,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">   * Call a protected/private method of an instance (PHP &gt;= 5.3.2)</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">   * @param instance The instance</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">   * @param methodName The method name</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">   * @param args An array of method arguments</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">   * @param $instance The instance</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">   * @param $methodName The method name</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">   * @param $args An array of method arguments</span></div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1util_1_1_test_util.html#ae386fda663c80e75465fd16204919f74">  172</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1util_1_1_test_util.html#ae386fda663c80e75465fd16204919f74">callProtectedMethod</a>($instance, $methodName, $args=null) {</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    $className = get_class($instance);</div>
@@ -297,7 +297,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">   * Enable the Zend_Db_Profiler for a given entity type.</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">   * @param type The entity type</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">   * @param $type The entity type</span></div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1util_1_1_test_util.html#aa43962e887a1db500c1cb82d62b1466e">  196</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1util_1_1_test_util.html#aa43962e887a1db500c1cb82d62b1466e">enableProfiler</a>($type) {</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    $mapper = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;persistenceFacade&#39;</span>)-&gt;getMapper($type);</div>
@@ -309,7 +309,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">   * Print the profile of the operations on a given entity type.</span></div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment">   * The profiler must have been enabled first</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">   * @param type The entity type</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">   * @param $type The entity type</span></div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1util_1_1_test_util.html#a4398a60259cf52339b03a74cc7e6642b">  208</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1util_1_1_test_util.html#a4398a60259cf52339b03a74cc7e6642b">printProfile</a>($type) {</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    $mapper = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;persistenceFacade&#39;</span>)-&gt;getMapper($type);</div>
@@ -381,7 +381,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Jul 17 2015 01:38:38 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sat Jul 18 2015 00:31:09 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

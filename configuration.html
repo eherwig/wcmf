@@ -47,7 +47,7 @@
                     <li><a href="persistence.html">Persistence</a></li>
                     <li><a href="presentation.html">Presentation</a></li>
                     <li><a href="configuration.html">Configuration</a></li>
-                    <li><a href="permissions.html">Permissions</a></li>
+                    <li><a href="security.html">Security</a></li>
                     <li><a href="i18n.html">I18N</a></li>
                     <li><a href="tests.html">Tests</a></li>
                   </ul>
@@ -102,7 +102,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><div class="has-toc"></div><h1><a class="anchor" id="conf_main"></a>
 Configuration</h1>
-<p>Application configuration is handled by implementations of <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html"><code>Configuration</code></a>. To use the configuration througout the application, an instance of the appropriate implementation is passed to <a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html"><code>ObjectFactory</code></a>. This class provides <a class="el" href="configuration.html#conf_di">Dependency injection</a> and access to the configuration.</p>
+<p>Application configuration is handled by implementations of <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html"><code>Configuration</code></a>. To use the configuration throughout the application, an instance of the appropriate implementation is passed to <a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html"><code>ObjectFactory</code></a>. This class provides <a class="el" href="configuration.html#conf_di">Dependency injection</a> and access to the configuration.</p>
+<p>The following code demonstrates how to set up and use the configuration in code:</p>
 <div class="fragment"><div class="line">$configPath = <span class="stringliteral">&#39;../config/&#39;</span>;</div>
 <div class="line">$configFile = <span class="stringliteral">&#39;config.ini&#39;</span>;</div>
 <div class="line"></div>
@@ -117,9 +118,10 @@ Configuration</h1>
 <div class="line"><span class="comment">// get a configuration value</span></div>
 <div class="line">$config = ObjectFactory::getConfigurationInstance();</div>
 <div class="line">$tz = $config-&gt;getValue(<span class="stringliteral">&#39;timezone&#39;</span>, <span class="stringliteral">&#39;application&#39;</span>);</div>
-</div><!-- fragment --><h2><a class="anchor" id="conf_format"></a>
+</div><!-- fragment --><p>If you are using the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html"><code>Application</code></a> class to bootstrap the application, the configuration setup is done automatically.</p>
+<h2><a class="anchor" id="conf_format"></a>
 Configuration Format</h2>
-<p>Currently wCMF provides an implementation for using the <a href="http://en.wikipedia.org/wiki/INI_file">INI file</a> format. <a class="el" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html"><code>InifileConfiguration</code></a> handles ini files that consist of <b>key-value pairs</b> that are grouped in <b>sections</b>.</p>
+<p>Currently wCMF provides an implementation for using the <a href="http://en.wikipedia.org/wiki/INI_file">INI file</a> format. <a class="el" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html"><code>InifileConfiguration</code></a> handles ini files that consist of <b>key-value pairs</b> that are grouped in <b>sections</b>:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[SectionA]</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;key1 = value1</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;key2 = value2</div>
@@ -185,28 +187,29 @@ Configuration for individual users</h2>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[RoleConfig]</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;administrators = admin.ini</div>
 </div><!-- fragment --><p>If a user is added to a listed role, the given configuration file will be automatically assigned to it, if no individual configuration is set yet.</p>
-<h2><a class="anchor" id="conf_default"></a>
-Default configuration files</h2>
-<p>The following sections describe the configuration files that are created from the default application's model.</p>
-<h3><a class="anchor" id="conf_config_ini"></a>
-config.ini</h3>
-<p><span class="label label-danger">TODO</span></p>
-<h3><a class="anchor" id="conf_permissions_ini"></a>
-permissions.ini</h3>
-<p><span class="label label-danger">TODO</span></p>
-<h3><a class="anchor" id="conf_presentation_ini"></a>
-presentation.ini</h3>
-<p><span class="label label-danger">TODO</span></p>
-<h3><a class="anchor" id="conf_security_ini"></a>
-security.ini</h3>
-<p><span class="label label-danger">TODO</span></p>
-<h3><a class="anchor" id="conf_server_ini"></a>
-server.ini</h3>
-<p><span class="label label-danger">TODO</span></p>
 <h2><a class="anchor" id="conf_logging"></a>
 Logging configuration</h2>
-<p><span class="label label-danger">TODO</span> </p>
-</div></div><!-- contents -->
+<p>wCMF uses <a href="http://logging.apache.org/log4php/">log4php</a> for logging. The logging configuration is expected to be stored in a file called <em>log4php.php</em>, located in the same directory as the other configuration files (see <a class="el" href="configuration.html#conf_format">Configuration Format</a>).</p>
+<p>The configuration is applied as follows:</p>
+<div class="fragment"><div class="line">$configPath = <span class="stringliteral">&#39;../config/&#39;</span>;</div>
+<div class="line">Log::configure($configPath.<span class="stringliteral">&#39;log4php.php&#39;</span>);</div>
+</div><!-- fragment --><p>If you are using the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html"><code>Application</code></a> class to bootstrap the application, the logging setup is done automatically.</p>
+<p>wCMF uses log4php's <a href="https://logging.apache.org/log4php/docs/configuration.html#PHP">PHP configuration format</a>. By default the log level is set to <code>ERROR</code> and a daily log file is created in the directory <em>app/log/</em>.</p>
+<p>Since in wCMF each class uses it's own logger named after the class, it's easy to set the log level for individual classes.</p>
+<p>The following configuration sets the log level of the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> class to <code>DEBUG</code>:</p>
+<div class="fragment"><div class="line"><span class="keywordflow">return</span> array(</div>
+<div class="line">  <span class="stringliteral">&#39;rootLogger&#39;</span> =&gt; array(</div>
+<div class="line">    <span class="stringliteral">&#39;level&#39;</span> =&gt; <span class="stringliteral">&#39;ERROR&#39;</span>,</div>
+<div class="line">    <span class="stringliteral">&#39;appenders&#39;</span> =&gt; array(<span class="stringliteral">&#39;dailyFile&#39;</span>, <span class="stringliteral">&#39;echo&#39;</span>),</div>
+<div class="line">  ),</div>
+<div class="line"></div>
+<div class="line">  <span class="stringliteral">&#39;loggers&#39;</span> =&gt; array(</div>
+<div class="line">    <span class="stringliteral">&#39;wcmf\lib\presentation\Controller&#39;</span> =&gt; array(<span class="stringliteral">&#39;level&#39;</span> =&gt; <span class="stringliteral">&#39;DEBUG&#39;</span>, <span class="stringliteral">&#39;appenders&#39;</span> =&gt; array(<span class="stringliteral">&#39;dailyFile&#39;</span>)),</div>
+<div class="line">  ),</div>
+<div class="line"></div>
+<div class="line">  ...</div>
+<div class="line">);</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <hr>
@@ -215,7 +218,7 @@ Logging configuration</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Jul 17 2015 01:38:38 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sat Jul 18 2015 00:31:09 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

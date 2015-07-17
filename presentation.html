@@ -47,7 +47,7 @@
                     <li><a href="persistence.html">Persistence</a></li>
                     <li><a href="presentation.html">Presentation</a></li>
                     <li><a href="configuration.html">Configuration</a></li>
-                    <li><a href="permissions.html">Permissions</a></li>
+                    <li><a href="security.html">Security</a></li>
                     <li><a href="i18n.html">I18N</a></li>
                     <li><a href="tests.html">Tests</a></li>
                   </ul>
@@ -135,7 +135,7 @@ Request processing</h2>
 <ol type="1">
 <li>The <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance is passed to <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html"><code>ActionMapper</code></a> for further processing.</li>
 <li>The <a class="el" href="architecture.html#arch_actionkey">Action Key</a> is determined from the request parameters.</li>
-<li><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html"><code>PermissionManager</code></a> is asked to authorize the action key for the current user (see <a class="el" href="permissions.html#perm_check">Checking permissions</a>).</li>
+<li><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html"><code>PermissionManager</code></a> is asked to authorize the action key for the current user (see perm_check).</li>
 <li>If authorization is successful, the request data is transformed into the internal application format (see <a class="el" href="presentation.html#pres_format">Formats</a>).</li>
 <li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> instance matching the request is determined (see <a class="el" href="presentation.html#pres_routing">Routing</a>) and executed.</li>
 <li>The <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html"><code>Response</code></a> instance is obtained after execution.</li>
@@ -286,10 +286,51 @@ Caching</h2>
 </div><!-- fragment --><p>Supposed that <code>complexCalculationA</code> in this example takes long to finish, it should only run once at the first time the result is needed. So we check if <em>resultA</em> is already cached and calculate it, if not. Since it is put it into the cache after calculation, it can be retrieved <em>resultA</em> directly from there the next time it is needed.</p>
 <h2><a class="anchor" id="pres_events"></a>
 Events</h2>
-<p><span class="label label-danger">TODO</span></p>
+<p>Events are a way to decouple parts of a software by introducing an indirect communication. They allow clients to react to certain application events without the event source knowing them. wCMF uses the <a href="https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern">publish-subscribe</a> messaging pattern, in which <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_event_manager.html"><code>EventManager</code></a> acts as the message broker. Subscribers use this class to register for certain <a class="el" href="classwcmf_1_1lib_1_1core_1_1_event.html"><code>Event</code></a> types and publishers to send the events.</p>
+<p>The following events are defined in wCMF:</p>
+<ul>
+<li><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_event.html"><code>PersistenceEvent</code></a> is sent whenever a <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html"><code>PersistentObject</code></a> instance is created, updated or deleted.</li>
+<li><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_property_change_event.html"><code>PropertyChangeEvent</code></a>, <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_value_change_event.html"><code>ValueChangeEvent</code></a> and <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_state_change_event.html"><code>StateChangeEvent</code></a> signal changes in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html"><code>PersistentObject</code></a> instances.</li>
+<li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_event.html"><code>ApplicationEvent</code></a> allows to listen to the different steps of the request handling process.</li>
+</ul>
+<p>The event system may be extended by custom events by inheriting from the <a class="el" href="classwcmf_1_1lib_1_1core_1_1_event.html"><code>Event</code></a> class.</p>
+<p>The class below is a basic example for a listener that subscribes to persistence events:</p>
+<div class="fragment"><div class="line"><span class="keyword">class </span>PersistenceEventListener {</div>
+<div class="line"></div>
+<div class="line">  <span class="keyword">public</span> <span class="keyword">function</span> __construct() {</div>
+<div class="line">    ObjectFactory::getInstance(<span class="stringliteral">&#39;eventManager&#39;</span>)-&gt;addListener(PersistenceEvent::NAME,</div>
+<div class="line">      array($this, <span class="stringliteral">&#39;persisted&#39;</span>));</div>
+<div class="line">  }</div>
+<div class="line"></div>
+<div class="line">  <span class="keyword">public</span> <span class="keyword">function</span> __destruct() {</div>
+<div class="line">    ObjectFactory::getInstance(<span class="stringliteral">&#39;eventManager&#39;</span>)-&gt;removeListener(PersistenceEvent::NAME,</div>
+<div class="line">      array($this, <span class="stringliteral">&#39;persisted&#39;</span>));</div>
+<div class="line">  }</div>
+<div class="line"><span class="comment"></span></div>
+<div class="line"><span class="comment">  /**</span></div>
+<div class="line"><span class="comment">     Listen to PersistenceEvent</span></div>
+<div class="line"><span class="comment">     @param $event PersistenceEvent instance</span></div>
+<div class="line"><span class="comment">   */</span></div>
+<div class="line">  <span class="keyword">public</span> <span class="keyword">function</span> persisted(PersistenceEvent $event) {</div>
+<div class="line">    <span class="comment">// do something on any create/update/delete</span></div>
+<div class="line">  }</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>To prevent memory leaks the <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_event_manager.html#ab5e39bf61897e33f13685e95c428e0bb"><code>EventManager::removeListener</code></a> method <b>must</b> be called, if the event listener is destroyed.</dd></dl>
+<p>To send a persistence event, the following code is used:</p>
+<div class="fragment"><div class="line">ObjectFactory::getInstance(<span class="stringliteral">&#39;eventManager&#39;</span>)-&gt;dispatch(PersistenceEvent::NAME,</div>
+<div class="line">        <span class="keyword">new</span> PersistenceEvent($object, PersistenceAction::UPDATE));</div>
+</div><!-- fragment --><h3>Implicit listener installation</h3>
+<p>In some cases you may want to install event listeners without explicitely instantiating them, because there is no appropriate place for that. For these cases the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html"><code>Application</code></a> class reads the <code>listeners</code> value of the <code>Application</code> configuration section and initializes all instances listed there.</p>
+<p>The default application defines two listeners as shown in the following example:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Application]</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;listeners = {Search, EventListener}</div>
+</div><!-- fragment --><p>Each entry in the <code>listeners</code> array is supposed to refer to an instance configuration (see <a class="el" href="configuration.html#conf_di">Dependency injection</a>).</p>
 <h2><a class="anchor" id="pres_log"></a>
 Logging</h2>
-<p><span class="label label-danger">TODO</span> </p>
+<p>wCMF uses <a href="http://logging.apache.org/log4php/">log4php</a> for logging. To simplify the usage, the <a class="el" href="classwcmf_1_1lib_1_1core_1_1_log.html"><code>Log</code></a> class acts as a facade to the library.</p>
+<p>The following example shows how to log an error message with a stack trace appended (see <a class="el" href="classwcmf_1_1lib_1_1core_1_1_error_handler.html#afac334117f677949dc59de17ccb4ff7e"><code>ErrorHandler::getStackTrace</code></a>):</p>
+<div class="fragment"><div class="line">Log::error(<span class="stringliteral">&quot;An error occured.\n&quot;</span>.ErrorHandler::getStackTrace(), __CLASS__);</div>
+</div><!-- fragment --><p>The second method parameter indicates the <b>logger name</b>. It's a good practice to set this to the <code>__CLASS__</code> constant, since this allows to enable/disable loggers by class names in the configuration (see <a class="el" href="configuration.html#conf_logging">Logging configuration</a>). </p>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -299,7 +340,7 @@ Logging</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Jul 17 2015 01:38:39 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sat Jul 18 2015 00:31:09 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

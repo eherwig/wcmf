@@ -89,7 +89,6 @@ var searchData=
   ['setvalueproperty',['setValueProperty',['../classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#ad97867d143202b45bd320c16258c5f3c',1,'wcmf::lib::persistence::PersistentObject']]],
   ['setvalues',['setValues',['../interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#aff186ea90b040b551518923b3ed87e24',1,'wcmf\lib\presentation\ControllerMessage\setValues()'],['../classwcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message.html#aff186ea90b040b551518923b3ed87e24',1,'wcmf\lib\presentation\impl\AbstractControllerMessage\setValues()']]],
   ['shouldoverride',['shouldOverride',['../classwcmf_1_1application_1_1controller_1_1_save_controller.html#a5e8669c3db9759c0ebafb0e3a9d41d63',1,'wcmf::application::controller::SaveController']]],
-  ['shutdown',['shutdown',['../classwcmf_1_1lib_1_1presentation_1_1_application.html#a482087c71391537bfe6fece68a58d420',1,'wcmf\lib\presentation\Application\shutdown()'],['../classwcmf_1_1lib_1_1search_1_1impl_1_1_lucene_search.html#a482087c71391537bfe6fece68a58d420',1,'wcmf\lib\search\impl\LuceneSearch\shutdown()']]],
   ['simulaterequest',['simulateRequest',['../classwcmf_1_1lib_1_1util_1_1_test_util.html#a2794c971a900a030a9cc328815b82f38',1,'wcmf::lib::util::TestUtil']]],
   ['slug',['slug',['../classwcmf_1_1lib_1_1util_1_1_string_util.html#ac47c15e74388dc0b45c395ded21ebaab',1,'wcmf::lib::util::StringUtil']]],
   ['splitquoted',['splitQuoted',['../classwcmf_1_1lib_1_1util_1_1_string_util.html#a75e68f62752a5f8312b852c920fd652d',1,'wcmf::lib::util::StringUtil']]],

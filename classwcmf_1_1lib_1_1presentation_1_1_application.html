@@ -47,7 +47,7 @@
                     <li><a href="persistence.html">Persistence</a></li>
                     <li><a href="presentation.html">Presentation</a></li>
                     <li><a href="configuration.html">Configuration</a></li>
-                    <li><a href="permissions.html">Permissions</a></li>
+                    <li><a href="security.html">Security</a></li>
                     <li><a href="i18n.html">I18N</a></li>
                     <li><a href="tests.html">Tests</a></li>
                   </ul>
@@ -118,14 +118,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a095c5d389db211932136b53f25f39685"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a095c5d389db211932136b53f25f39685">__construct</a> ()</td></tr>
 <tr class="separator:a095c5d389db211932136b53f25f39685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a421831a265621325e1fdd19aace0c758"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a421831a265621325e1fdd19aace0c758">__destruct</a> ()</td></tr>
+<tr class="separator:a421831a265621325e1fdd19aace0c758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a93d7a699b6a01fa0dcdf47b9a357fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a8a93d7a699b6a01fa0dcdf47b9a357fd">initialize</a> ($configPath='../config/', $mainConfigFile='config.ini', $defaultController='', $defaultContext='', $defaultAction='login')</td></tr>
 <tr class="separator:a8a93d7a699b6a01fa0dcdf47b9a357fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae40ac2db89d00ceca9183a1e5426b1f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#ae40ac2db89d00ceca9183a1e5426b1f9">run</a> (<a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a> $request)</td></tr>
 <tr class="separator:ae40ac2db89d00ceca9183a1e5426b1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad277d25fb9f732225ef51009ab7c1988"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#ad277d25fb9f732225ef51009ab7c1988">handleException</a> (\Exception $exception, <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a> $request=null)</td></tr>
 <tr class="separator:ad277d25fb9f732225ef51009ab7c1988"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a482087c71391537bfe6fece68a58d420"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a482087c71391537bfe6fece68a58d420">shutdown</a> ()</td></tr>
-<tr class="separator:a482087c71391537bfe6fece68a58d420"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e1c9232a2f881188175f584007eeafc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a4e1c9232a2f881188175f584007eeafc">outputHandler</a> ($buffer)</td></tr>
 <tr class="separator:a4e1c9232a2f881188175f584007eeafc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -151,6 +151,25 @@ Static Public Member Functions</h2></td></tr>
 <p>Constructor. </p>
 
 <p>Definition at line <a class="el" href="_application_8php_source.html#l00035">35</a> of file <a class="el" href="_application_8php_source.html">Application.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a421831a265621325e1fdd19aace0c758"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__destruct </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destructor. </p>
+
+<p>Definition at line <a class="el" href="_application_8php_source.html#l00045">45</a> of file <a class="el" href="_application_8php_source.html">Application.php</a>.</p>
 
 </div>
 </div>
@@ -210,7 +229,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. ">Request</a> instance representing the current HTTP request </dd></dl>
 
-<p>Definition at line <a class="el" href="_application_8php_source.html#l00053">53</a> of file <a class="el" href="_application_8php_source.html">Application.php</a>.</p>
+<p>Definition at line <a class="el" href="_application_8php_source.html#l00070">70</a> of file <a class="el" href="_application_8php_source.html">Application.php</a>.</p>
 
 </div>
 </div>
@@ -237,7 +256,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> instance </dd></dl>
 
-<p>Definition at line <a class="el" href="_application_8php_source.html#l00096">96</a> of file <a class="el" href="_application_8php_source.html">Application.php</a>.</p>
+<p>Definition at line <a class="el" href="_application_8php_source.html#l00113">113</a> of file <a class="el" href="_application_8php_source.html">Application.php</a>.</p>
 
 </div>
 </div>
@@ -274,27 +293,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_application_8php_source.html#l00112">112</a> of file <a class="el" href="_application_8php_source.html">Application.php</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a482087c71391537bfe6fece68a58d420"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">shutdown </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This method is called on script shutdown. </p>
-<dl class="section note"><dt>Note</dt><dd>must be public </dd></dl>
-
-<p>Definition at line <a class="el" href="_application_8php_source.html#l00137">137</a> of file <a class="el" href="_application_8php_source.html">Application.php</a>.</p>
+<p>Definition at line <a class="el" href="_application_8php_source.html#l00129">129</a> of file <a class="el" href="_application_8php_source.html">Application.php</a>.</p>
 
 </div>
 </div>
@@ -322,7 +321,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_application_8php_source.html#l00159">159</a> of file <a class="el" href="_application_8php_source.html">Application.php</a>.</p>
+<p>Definition at line <a class="el" href="_application_8php_source.html#l00156">156</a> of file <a class="el" href="_application_8php_source.html">Application.php</a>.</p>
 
 </div>
 </div>
@@ -350,7 +349,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Get an unique id for the application based on main script location. </p>
 <dl class="section return"><dt>Returns</dt><dd>The id </dd></dl>
 
-<p>Definition at line <a class="el" href="_application_8php_source.html#l00179">179</a> of file <a class="el" href="_application_8php_source.html">Application.php</a>.</p>
+<p>Definition at line <a class="el" href="_application_8php_source.html#l00176">176</a> of file <a class="el" href="_application_8php_source.html">Application.php</a>.</p>
 
 </div>
 </div>
@@ -363,7 +362,7 @@ Static Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Jul 17 2015 01:38:49 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sat Jul 18 2015 00:31:11 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

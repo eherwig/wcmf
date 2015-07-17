@@ -47,7 +47,7 @@
                     <li><a href="persistence.html">Persistence</a></li>
                     <li><a href="presentation.html">Presentation</a></li>
                     <li><a href="configuration.html">Configuration</a></li>
-                    <li><a href="permissions.html">Permissions</a></li>
+                    <li><a href="security.html">Security</a></li>
                     <li><a href="i18n.html">I18N</a></li>
                     <li><a href="tests.html">Tests</a></li>
                   </ul>
@@ -166,7 +166,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Set up the wcmf framework. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">configPath</td><td>The path to the configuration directory </td></tr>
+    <tr><td class="paramname">$configPath</td><td>The path to the configuration directory </td></tr>
   </table>
   </dd>
 </dl>
@@ -245,7 +245,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Turn authorization validation on/off. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Boolean</td><td>whether to turn it off or on </td></tr>
+    <tr><td class="paramname">$isAnonymous</td><td>Boolean whether to turn it off or on </td></tr>
   </table>
   </dd>
 </dl>
@@ -279,7 +279,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Process a request as if it was sent to main.php. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">request</td><td>The Request instance </td></tr>
+    <tr><td class="paramname">$request</td><td>The Request instance </td></tr>
   </table>
   </dd>
 </dl>
@@ -324,8 +324,8 @@ Static Public Member Functions</h2></td></tr>
 <p>Start a session. </p>
 <p>This is usefull for simulateRequest calls </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">user</td><td>The name of the user </td></tr>
-    <tr><td class="paramname">password</td><td>The password of the user </td></tr>
+    <tr><td class="paramname">$user</td><td>The name of the user </td></tr>
+    <tr><td class="paramname">$password</td><td>The password of the user </td></tr>
   </table>
   </dd>
 </dl>
@@ -448,9 +448,9 @@ Static Public Member Functions</h2></td></tr>
 <p>Call a protected/private method of an instance (PHP &gt;= 5.3.2) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">instance</td><td>The instance </td></tr>
-    <tr><td class="paramname">methodName</td><td>The method name </td></tr>
-    <tr><td class="paramname">args</td><td>An array of method arguments </td></tr>
+    <tr><td class="paramname">$instance</td><td>The instance </td></tr>
+    <tr><td class="paramname">$methodName</td><td>The method name </td></tr>
+    <tr><td class="paramname">$args</td><td>An array of method arguments </td></tr>
   </table>
   </dd>
 </dl>
@@ -510,7 +510,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Enable the Zend_Db_Profiler for a given entity type. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">type</td><td>The entity type </td></tr>
+    <tr><td class="paramname">$type</td><td>The entity type </td></tr>
   </table>
   </dd>
 </dl>
@@ -544,7 +544,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Print the profile of the operations on a given entity type. </p>
 <p>The profiler must have been enabled first </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">type</td><td>The entity type </td></tr>
+    <tr><td class="paramname">$type</td><td>The entity type </td></tr>
   </table>
   </dd>
 </dl>
@@ -587,7 +587,7 @@ Static Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Jul 17 2015 01:38:52 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sat Jul 18 2015 00:31:12 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

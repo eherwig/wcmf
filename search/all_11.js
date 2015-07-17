@@ -15,7 +15,6 @@ var searchData=
   ['permission_5fmodifier_5fdeny',['PERMISSION_MODIFIER_DENY',['../interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a07a7905d362aa5a7e5838463bbb1005f',1,'wcmf::lib::security::PermissionManager']]],
   ['permissioncontroller',['PermissionController',['../classwcmf_1_1application_1_1controller_1_1_permission_controller.html',1,'wcmf::application::controller']]],
   ['permissionmanager',['PermissionManager',['../interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html',1,'wcmf::lib::security']]],
-  ['permissions',['Permissions',['../permissions.html',1,'']]],
   ['persistence',['Persistence',['../persistence.html',1,'']]],
   ['persistenceaction',['PersistenceAction',['../classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html',1,'wcmf::lib::persistence']]],
   ['persistenceactionkeyprovider',['PersistenceActionKeyProvider',['../classwcmf_1_1lib_1_1config_1_1impl_1_1_persistence_action_key_provider.html',1,'wcmf::lib::config::impl']]],

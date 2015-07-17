@@ -1,4 +1,0 @@
-<map id="ControllerMessage" name="ControllerMessage">
-<area shape="rect" id="node2" href="$classwcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. " alt="" coords="5,321,164,457"/>
-<area shape="rect" id="node3" href="$classwcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. " alt="" coords="189,292,301,487"/>
-</map>
