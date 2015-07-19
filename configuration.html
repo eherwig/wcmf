@@ -54,7 +54,7 @@
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
-                <li><a href="#"><i class="fa fa-support"></i> Support</a></li>
+                <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
                 <li>
@@ -133,6 +133,7 @@ Configuration Format</h2>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Config]</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;include = {server.ini, persistence.ini, presentation.ini, security.ini}</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>While path values in the configuration are normally resolved relative to the value of the <code>WCMF_BASE</code> constant, the included files are expected to be located in the directory that is passed to the constructor of <a class="el" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html"><code>InifileConfiguration</code></a>.</dd></dl>
+<p>The possibility to include configuration files into others is useful, if you want to <b>separate varying parts</b> from static ones to simplify the deployment process. In the default application for example all server specific configuration (e.g. database connection) are separated into a file called <em>server.ini</em>.</p>
 <h2><a class="anchor" id="conf_di"></a>
 Dependency injection</h2>
 <p>wCMF supports <a href="http://en.wikipedia.org/wiki/Dependency_injection">Dependency injection</a> through the <a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html"><code>ObjectFactory</code></a> class. This class implements <em>setter injection</em>, which means that dependencies are either set through a <em>setter method</em> of the client class or a <em>public member variable</em>.</p>
@@ -187,6 +188,36 @@ Configuration for individual users</h2>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[RoleConfig]</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;administrators = admin.ini</div>
 </div><!-- fragment --><p>If a user is added to a listed role, the given configuration file will be automatically assigned to it, if no individual configuration is set yet.</p>
+<h2><a class="anchor" id="conf_default_app"></a>
+Default application configuration</h2>
+<p>The default application uses some special configuration sections:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Application]</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;title = WCMF TEST MODEL</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;color = #428BCA</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;localeDir = app/locale/</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;rootTypes = {Author, Book, Publisher}</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;language = en</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;timezone = Europe/Berlin</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;listeners = {Search, EventListener}</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;[Media]</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;uploadDir = app/public/media/</div>
+</div><!-- fragment --><ul>
+<li><code>Application</code><ul>
+<li><code>title</code> Application title</li>
+<li><code>color</code> Color to be used in the header of the login screen</li>
+<li><code>localeDir</code> Directory, where localization files are located (used by <a class="el" href="classwcmf_1_1lib_1_1i18n_1_1_message.html"><code>Message</code></a> class)</li>
+<li><code>language</code> UI language (used by <a class="el" href="classwcmf_1_1lib_1_1i18n_1_1_message.html"><code>Message</code></a> class)</li>
+<li><code>rootTypes</code> List of entity types to create tabs for</li>
+<li><code>timezone</code> Application timezone</li>
+<li><code>listeners</code> List of listeners to install (see <a class="el" href="presentation.html#pres_listeners">Implicit listener installation</a>)</li>
+</ul>
+</li>
+<li><code>Media</code><ul>
+<li><code>uploadDir</code> Directory, to which media files should be uploaded</li>
+</ul>
+</li>
+</ul>
 <h2><a class="anchor" id="conf_logging"></a>
 Logging configuration</h2>
 <p>wCMF uses <a href="http://logging.apache.org/log4php/">log4php</a> for logging. The logging configuration is expected to be stored in a file called <em>log4php.php</em>, located in the same directory as the other configuration files (see <a class="el" href="configuration.html#conf_format">Configuration Format</a>).</p>
@@ -218,7 +249,7 @@ Logging configuration</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jul 18 2015 00:31:09 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sun Jul 19 2015 16:32:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

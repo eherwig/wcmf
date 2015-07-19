@@ -54,7 +54,7 @@
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
-                <li><a href="#"><i class="fa fa-support"></i> Support</a></li>
+                <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
                 <li>
@@ -102,10 +102,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><div class="has-toc"></div><h1><a class="anchor" id="sec_main"></a>
 Security</h1>
+<p>Two key aspects of securing an application are <em>authentication</em> and <em>authorization</em>. While <b>authentication</b> is the process of determining the identity of a user, <b>authorization</b> means determining if the user is allowed to do what he or she is about to do.</p>
 <h2><a class="anchor" id="sec_authentication"></a>
 Authentication</h2>
-<p><span class="label label-danger">TODO</span></p>
-<h2><a class="anchor" id="sec_authorization"></a>
+<p>In wCMF Authentication is handled by implementations of <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager.html"><code>AuthenticationManager</code></a>.</p>
+<p>Currently the framework provides <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html"><code>DefaultAuthenticationManager</code></a>, which implements a <b>login/password</b> based authentication procedure. This is done by matching the given credentials against existing <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html"><code>User</code></a> instances, which are provided by <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_principal_factory.html"><code>PrincipalFactory</code></a>. <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_default_principal_factory.html"><code>DefaultPrincipalFactory</code></a> retrieves user instances from the storage.</p>
+<p>The following code demonstrates the authentication process as it is implemented in <a class="el" href="classwcmf_1_1application_1_1controller_1_1_login_controller.html"><code>LoginController</code></a>:</p>
+<div class="fragment"><div class="line">$authManager = ObjectFactory::getInstance(<span class="stringliteral">&#39;authenticationManager&#39;</span>);</div>
+<div class="line">$login = $request-&gt;getValue(<span class="stringliteral">&#39;user&#39;</span>);</div>
+<div class="line">$password = $request-&gt;getValue(<span class="stringliteral">&#39;password&#39;</span>);</div>
+<div class="line"></div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">  $authUser = $authManager-&gt;login($login, $password);</div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">catch</span> (<a class="code" href="namespace_exception.html">Exception</a> $ex) {</div>
+<div class="line">  Log::error(<span class="stringliteral">&quot;Could not log in: &quot;</span>.$ex, __CLASS__);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>The configuration of the authentication process in the default application looks like the following:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[AuthenticationManager]</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;__class = wcmf\lib\security\impl\DefaultAuthenticationManager</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;principalFactory = $principalFactory</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;[PrincipalFactory]</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;__class = wcmf\lib\security\principal\impl\DefaultPrincipalFactory</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;userType = app.src.model.wcmf.User</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;roleType = app.src.model.wcmf.Role</div>
+</div><!-- fragment --><h2><a class="anchor" id="sec_authorization"></a>
 Authorization</h2>
 <p><span class="label label-danger">TODO</span></p>
 <h3><a class="anchor" id="sec_perm_manage"></a>
@@ -123,7 +145,7 @@ Checking permissions</h3>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jul 18 2015 00:31:09 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sun Jul 19 2015 16:32:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

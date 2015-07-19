@@ -54,7 +54,7 @@
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
-                <li><a href="#"><i class="fa fa-support"></i> Support</a></li>
+                <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
                 <li>
@@ -126,43 +126,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html">DefaultAuthenticationManager</a> <span class="keyword">implements</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager.html">AuthenticationManager</a> {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">   * @see AuthenticationManager::login()</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html#a6090ba2dfd95fa92d36e39969ed9a5c7">   27</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html#a6090ba2dfd95fa92d36e39969ed9a5c7">login</a>($login, $password) {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    $config = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a25119d3df435b609991f58060ea482e2">ObjectFactory::getConfigurationInstance</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// try to receive the user with given credentials</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    $principalFactory = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;principalFactory&#39;</span>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    $user = $principalFactory-&gt;getUser($login, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// check if user exists</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    $loginOk = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> ($user != null) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      <span class="comment">// check password</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      $loginOk = $user-&gt;verifyPassword($password, $user-&gt;getPassword());</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <span class="keywordflow">if</span> ($loginOk) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">// load user config initially</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        $userConfig = $user-&gt;getConfig();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> (strlen($userConfig) &gt; 0) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;          $config-&gt;addConfiguration($userConfig);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> $user;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> null;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;?&gt;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">private</span> $_principalFactory = null;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">   * Set the PrincipalFacotry instance.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">   * @param $principalFactory String</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html#a375517fde95678ece26d099f429ee311">   30</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html#a375517fde95678ece26d099f429ee311">setPrincipalFactory</a>($principalFactory) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    $this-&gt;_principalFactory = $principalFactory;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">   * @see AuthenticationManager::login()</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html#a6090ba2dfd95fa92d36e39969ed9a5c7">   37</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html#a6090ba2dfd95fa92d36e39969ed9a5c7">login</a>($login, $password) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    $config = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a25119d3df435b609991f58060ea482e2">ObjectFactory::getConfigurationInstance</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// try to receive the user with given credentials</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    $user = $this-&gt;_principalFactory-&gt;getUser($login, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// check if user exists</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    $loginOk = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> ($user != null) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="comment">// check password</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      $loginOk = $user-&gt;verifyPassword($password, $user-&gt;getPassword());</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordflow">if</span> ($loginOk) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">// load user config initially</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        $userConfig = $user-&gt;getConfig();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (strlen($userConfig) &gt; 0) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;          $config-&gt;addConfiguration($userConfig);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> $user;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> null;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;?&gt;</div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager.html">wcmf\lib\security\AuthenticationManager</a></div><div class="ttdoc">AuthenticationManager implementations are used to handle all authentication requests. </div><div class="ttdef"><b>Definition:</b> <a href="_authentication_manager_8php_source.html#l00019">AuthenticationManager.php:19</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager_html_a6090ba2dfd95fa92d36e39969ed9a5c7"><div class="ttname"><a href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html#a6090ba2dfd95fa92d36e39969ed9a5c7">wcmf\lib\security\impl\DefaultAuthenticationManager\login</a></div><div class="ttdeci">login($login, $password)</div><div class="ttdef"><b>Definition:</b> <a href="_default_authentication_manager_8php_source.html#l00027">DefaultAuthenticationManager.php:27</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager_html_a375517fde95678ece26d099f429ee311"><div class="ttname"><a href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html#a375517fde95678ece26d099f429ee311">wcmf\lib\security\impl\DefaultAuthenticationManager\setPrincipalFactory</a></div><div class="ttdeci">setPrincipalFactory($principalFactory)</div><div class="ttdoc">Set the PrincipalFacotry instance. </div><div class="ttdef"><b>Definition:</b> <a href="_default_authentication_manager_8php_source.html#l00030">DefaultAuthenticationManager.php:30</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager_html_a6090ba2dfd95fa92d36e39969ed9a5c7"><div class="ttname"><a href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html#a6090ba2dfd95fa92d36e39969ed9a5c7">wcmf\lib\security\impl\DefaultAuthenticationManager\login</a></div><div class="ttdeci">login($login, $password)</div><div class="ttdef"><b>Definition:</b> <a href="_default_authentication_manager_8php_source.html#l00037">DefaultAuthenticationManager.php:37</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1security_1_1_authentication_manager_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1security_1_1_authentication_manager.html">AuthenticationManager</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html">wcmf\lib\security\impl\DefaultAuthenticationManager</a></div><div class="ttdoc">DefaultAuthenticationManager uses PrincipalFactory to get a User instance that matches the given logi...</div><div class="ttdef"><b>Definition:</b> <a href="_default_authentication_manager_8php_source.html#l00022">DefaultAuthenticationManager.php:22</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a25119d3df435b609991f58060ea482e2"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a25119d3df435b609991f58060ea482e2">wcmf\lib\core\ObjectFactory\getConfigurationInstance</a></div><div class="ttdeci">static getConfigurationInstance()</div><div class="ttdoc">Get the Configuration instance. </div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00073">ObjectFactory.php:73</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1security_1_1impl_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1security_1_1impl.html">wcmf\lib\security\impl</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00085">namespaces.php:85</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_object_factory_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_object_factory.html">ObjectFactory</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a0ebda2d4f8517d892a36a5c08e879415"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">wcmf\lib\core\ObjectFactory\getInstance</a></div><div class="ttdeci">static getInstance($name)</div><div class="ttdoc">Get an instance from the configuration. </div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00085">ObjectFactory.php:85</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -172,7 +181,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jul 18 2015 00:31:08 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sun Jul 19 2015 16:32:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

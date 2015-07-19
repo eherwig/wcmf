@@ -54,7 +54,7 @@
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
-                <li><a href="#"><i class="fa fa-support"></i> Support</a></li>
+                <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
                 <li>
@@ -143,7 +143,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">}</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">~~~~~~~~~~~~~</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">The example shows the three important public methods of the</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">The example shows the three important methods of the</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">\link wcmf::lib::presentation::Application `Application`\endlink class:</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">- The \link wcmf::lib::presentation::Application::initialize `initialize`\endlink</span></div>
@@ -173,7 +173,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">   processing.</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">2. The \ref arch_actionkey is determined from the request parameters.</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">3. \link wcmf::lib::security::PermissionManager `PermissionManager`\endlink is</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">   asked to authorize the action key for the current user (see \ref perm_check).</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">   asked to authorize the action key for the current user (see \ref sec_perm_check).</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">4. If authorization is successful, the request data is transformed into the internal</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">   application format (see \ref pres_format).</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">5. The \link wcmf::lib::presentation::Controller `Controller`\endlink instance</span></div>
@@ -607,7 +607,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        new PersistenceEvent($object, PersistenceAction::UPDATE));</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;~~~~~~~~~~~~~</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;### Implicit listener installation ###</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;### Implicit listener installation ### {#pres_listeners}</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;In some cases you may want to install event listeners without explicitely</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;instantiating them, because there is no appropriate place for that. For these</div>
@@ -652,7 +652,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jul 18 2015 00:31:07 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sun Jul 19 2015 16:32:30 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

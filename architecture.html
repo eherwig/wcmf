@@ -54,7 +54,7 @@
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
-                <li><a href="#"><i class="fa fa-support"></i> Support</a></li>
+                <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
                 <li>
@@ -150,13 +150,12 @@ Action Key</h3>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;7. ?context?</div>
 </div><!-- fragment --><p>As a rule of thumb the action key which describes the state of the application the most accurate is favored.</p>
 <p><b>Examples:</b></p>
-<p>Always execute <code>SaveController</code> when action <em>update</em> is requested, no matter which state the application is in:</p>
+<p>The following examples are taken from the <code>ActionMapping</code> configuration section, which defines which <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> to execute for a given action key (see <a class="el" href="presentation.html#pres_routingint">Internal routing</a>).</p>
+<p>Always execute <a class="el" href="classwcmf_1_1application_1_1controller_1_1_save_controller.html"><code>SaveController</code></a> when action <em>update</em> is requested, no matter which state the application is in:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;??update = wcmf\application\controller\SaveController</div>
 </div><!-- fragment --><p>Always execute <code>AuthorController</code> when the application context is <em>author</em> as long as no action is specified:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;?author? = app\src\controller\AuthorController</div>
-</div><!-- fragment --><p>If no matching action key can be found, <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html"><code>ActionMapper</code></a> returns the last response.</p>
-<p>For details about configuring action keys see <a class="el" href="configuration.html">Configuration</a>. </p>
-</div></div><!-- contents -->
+</div><!-- fragment --> </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <hr>
@@ -165,7 +164,7 @@ Action Key</h3>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jul 18 2015 00:31:09 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sun Jul 19 2015 16:32:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

@@ -54,7 +54,7 @@
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
-                <li><a href="#"><i class="fa fa-support"></i> Support</a></li>
+                <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
                 <li>
@@ -122,7 +122,7 @@ Application</h2>
 <div class="line">    echo(<span class="stringliteral">&quot;An unhandled exception occured. Please see log file for details.&quot;</span>);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>The example shows the three important public methods of the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html"><code>Application</code></a> class:</p>
+</div><!-- fragment --><p>The example shows the three important methods of the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html"><code>Application</code></a> class:</p>
 <ul>
 <li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#a8a93d7a699b6a01fa0dcdf47b9a357fd"><code>initialize</code></a> method is used to <b>setup</b> the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html"><code>Application</code></a>. It returns a <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance, that may be modified before execution.</li>
 <li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html#ae40ac2db89d00ceca9183a1e5426b1f9"><code>run</code></a> method is called to <b>execute</b> the given request. The method returns a <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html"><code>Response</code></a> instance, that is not used in this example.</li>
@@ -135,7 +135,7 @@ Request processing</h2>
 <ol type="1">
 <li>The <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance is passed to <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html"><code>ActionMapper</code></a> for further processing.</li>
 <li>The <a class="el" href="architecture.html#arch_actionkey">Action Key</a> is determined from the request parameters.</li>
-<li><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html"><code>PermissionManager</code></a> is asked to authorize the action key for the current user (see perm_check).</li>
+<li><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html"><code>PermissionManager</code></a> is asked to authorize the action key for the current user (see <a class="el" href="security.html#sec_perm_check">Checking permissions</a>).</li>
 <li>If authorization is successful, the request data is transformed into the internal application format (see <a class="el" href="presentation.html#pres_format">Formats</a>).</li>
 <li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> instance matching the request is determined (see <a class="el" href="presentation.html#pres_routing">Routing</a>) and executed.</li>
 <li>The <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html"><code>Response</code></a> instance is obtained after execution.</li>
@@ -319,7 +319,8 @@ Events</h2>
 <p>To send a persistence event, the following code is used:</p>
 <div class="fragment"><div class="line">ObjectFactory::getInstance(<span class="stringliteral">&#39;eventManager&#39;</span>)-&gt;dispatch(PersistenceEvent::NAME,</div>
 <div class="line">        <span class="keyword">new</span> PersistenceEvent($object, PersistenceAction::UPDATE));</div>
-</div><!-- fragment --><h3>Implicit listener installation</h3>
+</div><!-- fragment --><h3><a class="anchor" id="pres_listeners"></a>
+Implicit listener installation</h3>
 <p>In some cases you may want to install event listeners without explicitely instantiating them, because there is no appropriate place for that. For these cases the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application.html"><code>Application</code></a> class reads the <code>listeners</code> value of the <code>Application</code> configuration section and initializes all instances listed there.</p>
 <p>The default application defines two listeners as shown in the following example:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Application]</div>
@@ -340,7 +341,7 @@ Logging</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jul 18 2015 00:31:09 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sun Jul 19 2015 16:32:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

@@ -54,7 +54,7 @@
                 </li>
                 <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
                 <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
-                <li><a href="#"><i class="fa fa-support"></i> Support</a></li>
+                <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
               </ul>
               <ul class="nav navbar-nav pull-right">
                 <li>
@@ -165,25 +165,33 @@ Values, Properties and Tags</h4>
 </ul>
 <h3><a class="anchor" id="pers_config"></a>
 Configuration</h3>
-<p>The configuration tells the application which mapper classes are responsible for which domain classes. This assignment is defined in the <code>TypeMapping</code> configuration section. The following example shows the appropriate entries for the <code>Author</code> domain class:</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[TypeMapping]</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;app.src.model.Author = $app_src_model_AuthorRDBMapper</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;[app_src_model_AuthorRDBMapper]</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;__class = app\src\model\AuthorRDBMapper</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;connectionParams = $database</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;[Database]</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;dbType = sqlite</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;dbHostName = 127.0.0.1</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;dbName = app/test-db.sq3</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;dbUserName =</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;dbPassword =</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;dbCharSet = utf8</div>
-</div><!-- fragment --><p>See <a class="el" href="configuration.html">Configuration</a> for details about the configuration format.</p>
-<h2><a class="anchor" id="pers_node"></a>
+<p>Entry point of configuring the persistence layer is <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html"><code>PersistenceFacade</code></a> (see <a class="el" href="persistence.html#pers_usage">Usage</a>). The configuration mainly tells the facade which mapper classes are responsible for which domain classes. This assignment is defined in the <code>TypeMapping</code> configuration section. The following example shows the appropriate entries for the <code>Author</code> domain class:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[PersistenceFacade]</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;__class = wcmf\lib\persistence\impl\DefaultPersistenceFacade</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;mappers = $typeMapping</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;logging = false</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;logStrategy = $auditingLogStragegy</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;[AuditingLogStragegy]</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;__class = wcmf\lib\persistence\output\impl\AuditingOutputStrategy</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;[TypeMapping]</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;app.src.model.Author = $app_src_model_AuthorRDBMapper</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;[app_src_model_AuthorRDBMapper]</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;__class = app\src\model\AuthorRDBMapper</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;connectionParams = $database</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;[Database]</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;dbType = sqlite</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;dbHostName = 127.0.0.1</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;dbName = app/test-db.sq3</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;dbUserName =</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;dbPassword =</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;dbCharSet = utf8</div>
+</div><!-- fragment --><h2><a class="anchor" id="pers_usage"></a>
 Usage</h2>
-<p>The following sections show some basic examples for using the persistence layer.</p>
+<p><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html"><code>PersistenceFacade</code></a> is the main entry point to the persistence layer. It is used to create and retrieve <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html"><code>PersistentObject</code></a> instances. The following sections show some basic examples for using the persistence layer.</p>
 <h3><a class="anchor" id="pers_load"></a>
 Loading objects</h3>
 <div class="fragment"><div class="line">$oid = <span class="keyword">new</span> ObjectId(<span class="stringliteral">&#39;Author&#39;</span>, 1);</div>
@@ -307,8 +315,8 @@ Iterating objects</h3>
 <div class="line">  echo <span class="stringliteral">&quot;current object: &quot;</span>.$it-&gt;currentNode();</div>
 <div class="line">  $it-&gt;next();</div>
 <div class="line">}</div>
-</div><!-- fragment --><h3><a class="anchor" id="pers_modify"></a>
-Modifying objects</h3>
+</div><!-- fragment --><h3><a class="anchor" id="pers_create_modify"></a>
+Creating / Modifying objects</h3>
 <p>Domain class instances are created by calling the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html#a2088197336092f89458036911a002bef"><code>PersistenceFacade::create</code></a> method or simply the class constructor, where the first approach is preferred over the second because it also sets the default values on attributes.</p>
 <p>Changes on instances are persisted automatically, when the current transaction is committed (see <a class="el" href="persistence.html#pers_tx">Transactions</a>). Objects are removed from the store by calling the <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a13bdffdd926f26b825ea57066334ff01"><code>PersistentObject::delete</code></a> method.</p>
 <div class="fragment"><div class="line">$persistenceFacade = ObjectFactory::getInstance(<span class="stringliteral">&#39;persistenceFacade&#39;</span>);</div>
@@ -391,7 +399,16 @@ Locking</h3>
 <div class="line"></div>
 <div class="line"><span class="comment">// release lock later</span></div>
 <div class="line">$concurrencyManager-&gt;releaseLock($oid, $lockType);</div>
-</div><!-- fragment --><h2><a class="anchor" id="pers_tx"></a>
+</div><!-- fragment --><p>The actual storage and retrieval of <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html"><code>Lock</code></a> instances is delegated to <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock_handler.html"><code>LockHandler</code></a>. The following lines show the concurrency configuration in the default application:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[ConcurrencyManager]</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;__class = wcmf\lib\persistence\concurrency\impl\DefaultConcurrencyManager</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;lockHandler = $lockHandler</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;[LockHandler]</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;__class = wcmf\lib\persistence\concurrency\impl\DefaultLockHandler</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;lockType = app.src.model.wcmf.Lock</div>
+</div><!-- fragment --><p>As you can see the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock_handler.html"><code>LockHandler</code></a> implementation is exchangeable.</p>
+<h2><a class="anchor" id="pers_tx"></a>
 Transactions</h2>
 <p>wCMF supports <a href="http://en.wikipedia.org/wiki/Database_transaction">database transactions</a>. There is only <b>one transaction at the same time</b> and it may be obtained using the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html#ac67a68804da2dfc9131f341f3659e578"><code>PersistenceFacade::getTransaction</code></a> method. The transaction has an <em>active</em> state, which is set in the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a3a9793666e688407121d76d3a7e4db5d"><code>Transaction::begin</code></a> method and reset on commit or rollback.</p>
 <p>The following example shows, how to use transactions:</p>
@@ -424,7 +441,7 @@ Transactions</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jul 18 2015 00:31:09 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sun Jul 19 2015 16:32:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
