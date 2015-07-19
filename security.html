@@ -102,18 +102,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><div class="has-toc"></div><h1><a class="anchor" id="sec_main"></a>
 Security</h1>
-<p>Two key aspects of securing an application are <em>authentication</em> and <em>authorization</em>. While <b>authentication</b> is the process of determining the identity of a user, <b>authorization</b> means determining if the user is allowed to do what he or she is about to do.</p>
+<p>Two key aspects of securing an application are <em>authentication</em> and <em>authorization</em>. While <b>authentication</b> is the process of verifying the identity of a user, <b>authorization</b> means determining if the user is allowed to do what he or she is about to do. That implies that authentication is a precondition for authorization.</p>
+<h2><a class="anchor" id="sec_users_roles"></a>
+Users and Roles</h2>
+<p>Users are essential for an authentication system. In wCMF users are represented as instances of classes implementing the <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html"><code>User</code></a> interface. Since wCMF's authorization system is role based, users are organized in roles. Role classes implement the <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html"><code>Role</code></a> interface.</p>
 <h2><a class="anchor" id="sec_authentication"></a>
 Authentication</h2>
-<p>In wCMF Authentication is handled by implementations of <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager.html"><code>AuthenticationManager</code></a>.</p>
-<p>Currently the framework provides <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html"><code>DefaultAuthenticationManager</code></a>, which implements a <b>login/password</b> based authentication procedure. This is done by matching the given credentials against existing <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html"><code>User</code></a> instances, which are provided by <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_principal_factory.html"><code>PrincipalFactory</code></a>. <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_default_principal_factory.html"><code>DefaultPrincipalFactory</code></a> retrieves user instances from the storage.</p>
-<p>The following code demonstrates the authentication process as it is implemented in <a class="el" href="classwcmf_1_1application_1_1controller_1_1_login_controller.html"><code>LoginController</code></a>:</p>
-<div class="fragment"><div class="line">$authManager = ObjectFactory::getInstance(<span class="stringliteral">&#39;authenticationManager&#39;</span>);</div>
+<p>In wCMF authentication is handled by implementations of <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager.html"><code>AuthenticationManager</code></a>.</p>
+<p>Currently the framework provides <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html"><code>DefaultAuthenticationManager</code></a>, which implements a <b>login/password</b> based authentication procedure by matching the given user credentials against existing <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html"><code>User</code></a> instances. These instances are provided by implementations of <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_principal_factory.html"><code>PrincipalFactory</code></a>.</p>
+<p>The following code demonstrates the authentication process as implemented in <a class="el" href="classwcmf_1_1application_1_1controller_1_1_login_controller.html"><code>LoginController</code></a>:</p>
+<div class="fragment"><div class="line"><span class="comment">// get the user credentials from the request</span></div>
 <div class="line">$login = $request-&gt;getValue(<span class="stringliteral">&#39;user&#39;</span>);</div>
 <div class="line">$password = $request-&gt;getValue(<span class="stringliteral">&#39;password&#39;</span>);</div>
 <div class="line"></div>
 <div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">  <span class="comment">// try to login using the credentials</span></div>
+<div class="line">  $authManager = ObjectFactory::getInstance(<span class="stringliteral">&#39;authenticationManager&#39;</span>);</div>
 <div class="line">  $authUser = $authManager-&gt;login($login, $password);</div>
+<div class="line"></div>
+<div class="line">  <span class="comment">// set the authenticated user in the session</span></div>
+<div class="line">  $session = ObjectFactory::getInstance(<span class="stringliteral">&#39;session&#39;</span>);</div>
+<div class="line">  $session-&gt;setAuthUser($authUser);</div>
 <div class="line">}</div>
 <div class="line"><span class="keywordflow">catch</span> (<a class="code" href="namespace_exception.html">Exception</a> $ex) {</div>
 <div class="line">  Log::error(<span class="stringliteral">&quot;Could not log in: &quot;</span>.$ex, __CLASS__);</div>
@@ -127,11 +136,22 @@ Authentication</h2>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;__class = wcmf\lib\security\principal\impl\DefaultPrincipalFactory</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;userType = app.src.model.wcmf.User</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;roleType = app.src.model.wcmf.Role</div>
-</div><!-- fragment --><h2><a class="anchor" id="sec_authorization"></a>
+</div><!-- fragment --><p>Since <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_default_principal_factory.html"><code>DefaultPrincipalFactory</code></a> retrieves user instances from the storage, it needs to configured with the appropriate entity types. If required, the default user type may be replaced by custom implementations of <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html"><code>User</code></a>.</p>
+<dl class="section note"><dt>Note</dt><dd>The authenticated user, that is associated with the current session is obtained using the <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#a687dba7af92a5d45f6363b17fe941ff7"><code>Session::getAuthUser</code></a> method.</dd></dl>
+<h2><a class="anchor" id="sec_authorization"></a>
 Authorization</h2>
-<p><span class="label label-danger">TODO</span></p>
-<h3><a class="anchor" id="sec_perm_manage"></a>
-Permission management</h3>
+<p>The purpose of authorization is controlling access to application resources, which could be controllers or entity instances. To establish <b>access control</b>, rules have to defined in the first place an enforced afterwards.</p>
+<h3><a class="anchor" id="sec_perm"></a>
+Permissions</h3>
+<p>Access control rules are expressed as <em>permissions</em>. Permissions are either granted or denied to a role (see <a class="el" href="security.html#sec_users_roles">Users and Roles</a>). A permission in wCMF is a combination of a <em>resource</em>, a <em>context</em> and an <em>action</em> and the notation is similar to action keys (see <a class="el" href="architecture.html#arch_actionkey">Action Key</a>).</p>
+<p>A resource could be one of the following:</p>
+<ul>
+<li>Controller class name (e.g. <code>wcmf\application\controller\SaveController</code>)</li>
+<li>Type name (e.g. <code>app.src.model.wcmf.User</code>)</li>
+<li>Type and propery name (e.g. <code>app.src.model.wcmf.User.login</code>)</li>
+<li>Object id (e.g. <code>app.src.model.wcmf.User:123</code>)</li>
+<li>Object id and propery name (e.g. <code>app.src.model.wcmf.User:123.login</code>)</li>
+</ul>
 <p><span class="label label-danger">TODO</span></p>
 <h3><a class="anchor" id="sec_perm_check"></a>
 Checking permissions</h3>
@@ -145,7 +165,7 @@ Checking permissions</h3>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sun Jul 19 2015 16:32:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sun Jul 19 2015 23:54:28 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

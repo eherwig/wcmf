@@ -151,63 +151,64 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">   * @see Controller::doExecute()</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_user_controller.html#a4eadfceba84d61eda01f9828935cf8e5">   47</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_user_controller.html#a4eadfceba84d61eda01f9828935cf8e5">doExecute</a>() {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    $permissionManager = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;permissionManager&#39;</span>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    $persistenceFacade = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;persistenceFacade&#39;</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    $request = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">getRequest</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// change password</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// load model</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    $authUser = $permissionManager-&gt;getAuthUser();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// add permissions for this operation</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    $oidStr = $authUser-&gt;getOID()-&gt;__toString();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    $permissionManager-&gt;addTempPermission($oidStr, <span class="stringliteral">&#39;&#39;</span>, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html#add302975378da047de904daa059a332b">PersistenceAction::READ</a>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    $permissionManager-&gt;addTempPermission($oidStr, <span class="stringliteral">&#39;&#39;</span>, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html#aacb6276ab2690c4071ba0b38714321bc">PersistenceAction::UPDATE</a>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// start the persistence transaction</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    $transaction = $persistenceFacade-&gt;getTransaction();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    $transaction-&gt;begin();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      $this-&gt;<a class="code" href="classwcmf_1_1application_1_1controller_1_1_user_controller.html#a4d14c7d7f0240089188d07742aec4e7d">changePassword</a>($authUser, $request-&gt;getValue(<span class="stringliteral">&#39;oldpassword&#39;</span>),</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        $request-&gt;getValue(<span class="stringliteral">&#39;newpassword1&#39;</span>), $request-&gt;getValue(<span class="stringliteral">&#39;newpassword2&#39;</span>));</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      $transaction-&gt;commit();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">catch</span>(\<a class="code" href="namespace_exception.html">Exception</a> $ex) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      $response-&gt;addError(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a1f2f6ebfa3e2bed60cec09e80a525191">ApplicationError::fromException</a>($ex));</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      $transaction-&gt;rollback();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// remove temporary permissions</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    $permissionManager-&gt;clearTempPermissions();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// success</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    $response-&gt;setAction(<span class="stringliteral">&#39;ok&#39;</span>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">   * Change a users password.</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">   * @param $user The User instance</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">   * @param $oldPassword The old password of the user</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">   * @param $newPassword The new password for the user</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">   * @param $newPasswordRepeated The new password of the user again</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_user_controller.html#a4d14c7d7f0240089188d07742aec4e7d">   89</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_user_controller.html#a4d14c7d7f0240089188d07742aec4e7d">changePassword</a>(<a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">User</a> $user, $oldPassword, $newPassword, $newPasswordRepeated) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// check old password</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">if</span> (!$user-&gt;<a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a1dc46472e5da1bdd9776eb07691b7d0a">verifyPassword</a>($oldPassword, $user-&gt;<a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a04e0957baeb7acde9c0c86556da2d43f">getPassword</a>())) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_illegal_argument_exception.html">IllegalArgumentException</a>(<a class="code" href="classwcmf_1_1lib_1_1i18n_1_1_message.html#acf1f5b17efed115f9c3f7caa809655d0">Message::get</a>(<span class="stringliteral">&quot;The old password is incorrect&quot;</span>));</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span> (strlen($newPassword) == 0) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_illegal_argument_exception.html">IllegalArgumentException</a>(<a class="code" href="classwcmf_1_1lib_1_1i18n_1_1_message.html#acf1f5b17efed115f9c3f7caa809655d0">Message::get</a>(<span class="stringliteral">&quot;The password can&#39;t be empty&quot;</span>));</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span> ($newPassword != $newPasswordRepeated) {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_illegal_argument_exception.html">IllegalArgumentException</a>(<a class="code" href="classwcmf_1_1lib_1_1i18n_1_1_message.html#acf1f5b17efed115f9c3f7caa809655d0">Message::get</a>(<span class="stringliteral">&quot;The given passwords don&#39;t match&quot;</span>));</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// set password</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    $user-&gt;<a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a3e35c8d3dbb2c513c618a664389e0926">setPassword</a>($newPassword);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;?&gt;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    $session = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;session&#39;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    $permissionManager = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;permissionManager&#39;</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    $persistenceFacade = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;persistenceFacade&#39;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    $request = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">getRequest</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// change password</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// load model</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    $authUser = $session-&gt;getAuthUser();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// add permissions for this operation</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    $oidStr = $authUser-&gt;getOID()-&gt;__toString();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    $permissionManager-&gt;addTempPermission($oidStr, <span class="stringliteral">&#39;&#39;</span>, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html#add302975378da047de904daa059a332b">PersistenceAction::READ</a>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    $permissionManager-&gt;addTempPermission($oidStr, <span class="stringliteral">&#39;&#39;</span>, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html#aacb6276ab2690c4071ba0b38714321bc">PersistenceAction::UPDATE</a>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// start the persistence transaction</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    $transaction = $persistenceFacade-&gt;getTransaction();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    $transaction-&gt;begin();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      $this-&gt;<a class="code" href="classwcmf_1_1application_1_1controller_1_1_user_controller.html#a4d14c7d7f0240089188d07742aec4e7d">changePassword</a>($authUser, $request-&gt;getValue(<span class="stringliteral">&#39;oldpassword&#39;</span>),</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        $request-&gt;getValue(<span class="stringliteral">&#39;newpassword1&#39;</span>), $request-&gt;getValue(<span class="stringliteral">&#39;newpassword2&#39;</span>));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      $transaction-&gt;commit();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">catch</span>(\<a class="code" href="namespace_exception.html">Exception</a> $ex) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      $response-&gt;addError(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a1f2f6ebfa3e2bed60cec09e80a525191">ApplicationError::fromException</a>($ex));</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      $transaction-&gt;rollback();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// remove temporary permissions</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    $permissionManager-&gt;clearTempPermissions();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// success</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    $response-&gt;setAction(<span class="stringliteral">&#39;ok&#39;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">   * Change a users password.</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">   * @param $user The User instance</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">   * @param $oldPassword The old password of the user</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">   * @param $newPassword The new password for the user</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">   * @param $newPasswordRepeated The new password of the user again</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_user_controller.html#a4d14c7d7f0240089188d07742aec4e7d">   90</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_user_controller.html#a4d14c7d7f0240089188d07742aec4e7d">changePassword</a>(<a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">User</a> $user, $oldPassword, $newPassword, $newPasswordRepeated) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// check old password</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (!$user-&gt;<a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a1dc46472e5da1bdd9776eb07691b7d0a">verifyPassword</a>($oldPassword, $user-&gt;<a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a04e0957baeb7acde9c0c86556da2d43f">getPassword</a>())) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_illegal_argument_exception.html">IllegalArgumentException</a>(<a class="code" href="classwcmf_1_1lib_1_1i18n_1_1_message.html#acf1f5b17efed115f9c3f7caa809655d0">Message::get</a>(<span class="stringliteral">&quot;The old password is incorrect&quot;</span>));</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> (strlen($newPassword) == 0) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_illegal_argument_exception.html">IllegalArgumentException</a>(<a class="code" href="classwcmf_1_1lib_1_1i18n_1_1_message.html#acf1f5b17efed115f9c3f7caa809655d0">Message::get</a>(<span class="stringliteral">&quot;The password can&#39;t be empty&quot;</span>));</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> ($newPassword != $newPasswordRepeated) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_illegal_argument_exception.html">IllegalArgumentException</a>(<a class="code" href="classwcmf_1_1lib_1_1i18n_1_1_message.html#acf1f5b17efed115f9c3f7caa809655d0">Message::get</a>(<span class="stringliteral">&quot;The given passwords don&#39;t match&quot;</span>));</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// set password</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    $user-&gt;<a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a3e35c8d3dbb2c513c618a664389e0926">setPassword</a>($newPassword);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;?&gt;</div>
 <div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_adf1a35ad20e475c59cc0967d5764aa22"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">wcmf\lib\presentation\Controller\getRequest</a></div><div class="ttdeci">getRequest()</div><div class="ttdoc">Get the Request object. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00155">Controller.php:155</a></div></div>
 <div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_user_controller_html"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_user_controller.html">wcmf\application\controller\UserController</a></div><div class="ttdoc">UserController is used to change the current user&#39;s password. </div><div class="ttdef"><b>Definition:</b> <a href="_user_controller_8php_source.html#l00042">UserController.php:42</a></div></div>
 <div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_user_controller_html_a4eadfceba84d61eda01f9828935cf8e5"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_user_controller.html#a4eadfceba84d61eda01f9828935cf8e5">wcmf\application\controller\UserController\doExecute</a></div><div class="ttdeci">doExecute()</div><div class="ttdef"><b>Definition:</b> <a href="_user_controller_8php_source.html#l00047">UserController.php:47</a></div></div>
@@ -215,7 +216,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html">wcmf\lib\presentation\Controller</a></div><div class="ttdoc">Controller is the base class of all controllers. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00041">Controller.php:41</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_illegal_argument_exception_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_illegal_argument_exception.html">wcmf\lib\core\IllegalArgumentException</a></div><div class="ttdoc">IllegalArgumentException signals an exception in method arguments. </div><div class="ttdef"><b>Definition:</b> <a href="_illegal_argument_exception_8php_source.html#l00018">IllegalArgumentException.php:18</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_controller_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_controller.html">Controller</a></div></div>
-<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_user_controller_html_a4d14c7d7f0240089188d07742aec4e7d"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_user_controller.html#a4d14c7d7f0240089188d07742aec4e7d">wcmf\application\controller\UserController\changePassword</a></div><div class="ttdeci">changePassword(User $user, $oldPassword, $newPassword, $newPasswordRepeated)</div><div class="ttdoc">Change a users password. </div><div class="ttdef"><b>Definition:</b> <a href="_user_controller_8php_source.html#l00089">UserController.php:89</a></div></div>
+<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_user_controller_html_a4d14c7d7f0240089188d07742aec4e7d"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_user_controller.html#a4d14c7d7f0240089188d07742aec4e7d">wcmf\application\controller\UserController\changePassword</a></div><div class="ttdeci">changePassword(User $user, $oldPassword, $newPassword, $newPasswordRepeated)</div><div class="ttdoc">Change a users password. </div><div class="ttdef"><b>Definition:</b> <a href="_user_controller_8php_source.html#l00090">UserController.php:90</a></div></div>
 <div class="ttc" id="namespace_exception_html"><div class="ttname"><a href="namespace_exception.html">Exception</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_persistence_action_html_aacb6276ab2690c4071ba0b38714321bc"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html#aacb6276ab2690c4071ba0b38714321bc">wcmf\lib\persistence\PersistenceAction\UPDATE</a></div><div class="ttdeci">const UPDATE</div><div class="ttdef"><b>Definition:</b> <a href="_persistence_action_8php_source.html#l00023">PersistenceAction.php:23</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1i18n_1_1_message_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a></div></div>
@@ -242,7 +243,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sun Jul 19 2015 16:32:30 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sun Jul 19 2015 23:54:26 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

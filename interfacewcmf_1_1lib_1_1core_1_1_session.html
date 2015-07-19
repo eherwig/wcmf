@@ -111,13 +111,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html" title="Session is the interface for session implementations and defines access to session variables...">Session</a> is the interface for session implementations and defines access to session variables. </p>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_session_8php_source.html#l00019">19</a> of file <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
+<p>Definition at line <a class="el" href="_session_8php_source.html#l00021">21</a> of file <a class="el" href="_session_8php_source.html">Session.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for Session:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1core_1_1_session__inherit__graph.svg" width="122" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1core_1_1_session__inherit__graph.svg" width="126" height="595"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -136,6 +136,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa821bec12eaa7e0f649397c9675ff505"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa118461de946085fe42989193337044a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#aa118461de946085fe42989193337044a">destroy</a> ()</td></tr>
 <tr class="separator:aa118461de946085fe42989193337044a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a692dfe0c754d13a61681ff0680637752"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#a692dfe0c754d13a61681ff0680637752">setAuthUser</a> (<a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">User</a> $authUser)</td></tr>
+<tr class="separator:a692dfe0c754d13a61681ff0680637752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a687dba7af92a5d45f6363b17fe941ff7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#a687dba7af92a5d45f6363b17fe941ff7">getAuthUser</a> ()</td></tr>
+<tr class="separator:a687dba7af92a5d45f6363b17fe941ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b954c29d82b610903bb9c4bb50bba91"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#a5b954c29d82b610903bb9c4bb50bba91">addError</a> ($key, $error)</td></tr>
 <tr class="separator:a5b954c29d82b610903bb9c4bb50bba91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f30134d3cbab62eb305a5c45612b08f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#a5f30134d3cbab62eb305a5c45612b08f">getError</a> ($key)</td></tr>
@@ -321,6 +325,52 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a692dfe0c754d13a61681ff0680637752"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">setAuthUser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">User</a>&#160;</td>
+          <td class="paramname"><em>$authUser</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the authenticated user. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$authUser</td><td>User instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a692dfe0c754d13a61681ff0680637752">DefaultSession</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a687dba7af92a5d45f6363b17fe941ff7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getAuthUser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the authenticated user. </p>
+<dl class="section return"><dt>Returns</dt><dd>User instance. </dd></dl>
+
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a687dba7af92a5d45f6363b17fe941ff7">DefaultSession</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a5b954c29d82b610903bb9c4bb50bba91"></a>
 <div class="memitem">
 <div class="memproto">
@@ -433,7 +483,7 @@ Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sun Jul 19 2015 16:32:33 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sun Jul 19 2015 23:54:29 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

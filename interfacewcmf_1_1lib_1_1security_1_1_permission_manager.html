@@ -119,15 +119,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1security_1_1_permission_manager__inherit__graph.svg" width="806" height="507"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1security_1_1_permission_manager__inherit__graph.svg" width="806" height="478"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a692dfe0c754d13a61681ff0680637752"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a692dfe0c754d13a61681ff0680637752">setAuthUser</a> (<a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">User</a> $authUser)</td></tr>
-<tr class="separator:a692dfe0c754d13a61681ff0680637752"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a687dba7af92a5d45f6363b17fe941ff7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a687dba7af92a5d45f6363b17fe941ff7">getAuthUser</a> ()</td></tr>
-<tr class="separator:a687dba7af92a5d45f6363b17fe941ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a152d96cdd1ac6639609b9ac3e54f121e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a152d96cdd1ac6639609b9ac3e54f121e">authorize</a> ($resource, $context, $action, <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">User</a> $user=null)</td></tr>
 <tr class="separator:a152d96cdd1ac6639609b9ac3e54f121e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64a13b847c34c489832bfab8fc11d026"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a64a13b847c34c489832bfab8fc11d026">addTempPermission</a> ($resource, $context, $action)</td></tr>
@@ -155,48 +151,6 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a07a7905d362aa5a7e5838463bbb1005f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a692dfe0c754d13a61681ff0680637752"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">setAuthUser </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">User</a>&#160;</td>
-          <td class="paramname"><em>$authUser</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the authenticated user. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">$authUser</td><td>User instance. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a687dba7af92a5d45f6363b17fe941ff7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">getAuthUser </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the authenticated user. </p>
-<dl class="section return"><dt>Returns</dt><dd>User instance. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a152d96cdd1ac6639609b9ac3e54f121e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -246,7 +200,7 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">$resource</td><td>The resource to authorize (e.g. class name of the Controller or ObjectId instance). </td></tr>
     <tr><td class="paramname">$context</td><td>The context in which the action takes place. </td></tr>
     <tr><td class="paramname">$action</td><td>The action to process. </td></tr>
-    <tr><td class="paramname">$user</td><td>User instance to use for authorization (optional, default: the user obtained by getAuthUser method) </td></tr>
+    <tr><td class="paramname">$user</td><td>User instance to use for authorization (optional, default: the user obtained by Session::getAuthUser method) </td></tr>
   </table>
   </dd>
 </dl>
@@ -643,7 +597,7 @@ Public Attributes</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sun Jul 19 2015 16:32:35 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Sun Jul 19 2015 23:54:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
