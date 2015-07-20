@@ -134,7 +134,8 @@ Action Key</h3>
 <p>An important concept of wCMF is that of <em>Action Keys</em>. An action key describes the state of the application together with the <b>action</b> to be performed next. The state, which the application is in, results from the current <b>controller</b> and the <b>context</b>, in which it is executed. Controllers must exist as classes, whereas contexts and actions may be arbitrary strings.</p>
 <p>The string representation of an action key is as follows:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;controller?context?action</div>
-</div><!-- fragment --><p>wCMF uses action keys for the following concerns:</p>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Since question marks (?) are used to separate the parts of an action key, a question mark is not allowed inside the parts itself.</dd></dl>
+<p>wCMF uses action keys for the following concerns:</p>
 <ol type="1">
 <li>In <b>routing definitions</b> controller names are assigned action keys. <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html"><code>ActionMapper</code></a> uses these definitions to execute the correct controller when the application is in a certain state.</li>
 <li>In <b>view definitions</b> template filenames are assigned to action keys. <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html"><code>View</code></a> determines the view template to be displayed for the current application state.</li>
@@ -164,7 +165,7 @@ Action Key</h3>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sun Jul 19 2015 23:54:28 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Tue Jul 21 2015 01:08:00 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

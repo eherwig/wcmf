@@ -143,15 +143,43 @@ Authorization</h2>
 <p>The purpose of authorization is controlling access to application resources, which could be controllers or entity instances. To establish <b>access control</b>, rules have to defined in the first place an enforced afterwards.</p>
 <h3><a class="anchor" id="sec_perm"></a>
 Permissions</h3>
-<p>Access control rules are expressed as <em>permissions</em>. Permissions are either granted or denied to a role (see <a class="el" href="security.html#sec_users_roles">Users and Roles</a>). A permission in wCMF is a combination of a <em>resource</em>, a <em>context</em> and an <em>action</em> and the notation is similar to action keys (see <a class="el" href="architecture.html#arch_actionkey">Action Key</a>).</p>
-<p>A resource could be one of the following:</p>
+<p>Access control rules are expressed as <em>permissions</em>. Permissions are either granted or denied to a role (see <a class="el" href="security.html#sec_users_roles">Users and Roles</a>). Subject of a permission in wCMF is a combination of a <em>resource</em>, a <em>context</em> and an <em>action</em> and the notation is the same as for action keys (see <a class="el" href="architecture.html#arch_actionkey">Action Key</a>), except that the <em>controller</em> value is an arbitrary resource.</p>
+<p>If written as an equation, the left side of the permission is the action key, while the right side is the list of roles, that are involved. Each role has either a <em>+</em> or a <em>-</em> sign prepended, meaning the permission is granted to the role or denied. The following code shows the <b>format</b>:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;resource?context?action = +allowedRole -deniedRole ...</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Permissions may be formed from any string values for <em>resource</em>, <em>context</em> and <em>action</em> as long as they can be written as action key. Roles that are not listed in the permission are denied per default.</dd></dl>
+<p>Besides custom resources, wCMF supports the following <b>built-in resources</b>:</p>
 <ul>
-<li>Controller class name (e.g. <code>wcmf\application\controller\SaveController</code>)</li>
-<li>Type name (e.g. <code>app.src.model.wcmf.User</code>)</li>
-<li>Type and propery name (e.g. <code>app.src.model.wcmf.User.login</code>)</li>
-<li>Object id (e.g. <code>app.src.model.wcmf.User:123</code>)</li>
-<li>Object id and propery name (e.g. <code>app.src.model.wcmf.User:123.login</code>)</li>
+<li><b>Entity type</b> to restrict access on all instances of an entity type (e.g. <code>app.src.model.wcmf.User</code>)</li>
+<li><b>Entity property</b> to restrict access on a certain property of an entity type (e.g. <code>app.src.model.wcmf.User.login</code>)</li>
+<li><b>Entity instance</b> to restrict access on one entity instance (e.g. <code>app.src.model.wcmf.User:123</code>)</li>
+<li><b>Entity instance propery</b> to restrict access on a certain property of one entity instance (e.g. <code>app.src.model.wcmf.User:123.login</code>)</li>
 </ul>
+<p>The actions for these resources are properties of <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html"><code>PersistenceAction</code></a>, e.g. <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html#add302975378da047de904daa059a332b"><code>PersistenceAction::READ</code></a>.</p>
+<p>The following code shows some permission examples:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;; tester role is not allowed to update any authors except for the specified one</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;; tester role is not allowed to update any authors stage attribute</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;app.src.model.Author??update = -tester</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;app.src.model.Author:111??update = +tester</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;app.src.model.Author.stage??update = +administrators</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;; tester role is not allowed to update any publishers name except for the specified one</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;; tester role is not allowed to update any authors stage attribute</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;app.src.model.Publisher.name??update = -tester</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;app.src.model.Publisher:111.name??update = +tester</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;; tester role is not allowed to read any book name except for the specified one</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;app.src.model.Book??read = -tester</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;app.src.model.Book:111??read = +tester</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;; tester role is not allowed to read chapter 111 and due to inheritance also not chapter 222</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;app.src.model.Chapter:111??read = -tester +administrators</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;; custom permissions</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;customPermission??start = +tester</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;customPermission??stop = -tester</div>
+</div><!-- fragment --><h4>Default policy</h4>
+<p><span class="label label-danger">TODO</span></p>
+<h4>Permission inheritance</h4>
 <p><span class="label label-danger">TODO</span></p>
 <h3><a class="anchor" id="sec_perm_check"></a>
 Checking permissions</h3>
@@ -165,7 +193,7 @@ Checking permissions</h3>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sun Jul 19 2015 23:54:28 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Tue Jul 21 2015 01:08:00 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
