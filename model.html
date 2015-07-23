@@ -216,7 +216,8 @@ Example class diagram</h4>
 <img src="model.png" alt="model.png"/>
 <div class="caption">
 Example class diagram</div></div>
- <h4>Associations</h4>
+ <h4><a class="anchor" id="model_associations"></a>
+Associations</h4>
 <p>Relations between domain classes - e.g. parent-child relations - are modeled as associations. Three different <b>types of associations</b> are supported: <em>compositions</em>, <em>aggregations</em> and <em>one-directional associations</em> as shown in the following diagram.</p>
 <div class="image">
 <img src="associations.png" alt="associations.png"/>
@@ -235,7 +236,7 @@ Association types</div></div>
 <tr>
 <td>Association </td><td>No </td><td>No </td><td>Yes </td></tr>
 </table>
-<h5>Multiplicity</h5>
+<p><a class="anchor" id="invalid"></a></p><h5>Multiplicity</h5>
 <p>The multiplicity at the association ends limits the amount of instances that are allowed at that relation end. In a typical parent-child relation the parent end has a value of <code>1</code> and the child end has a value of <code>0..*</code> meaning that a child instance is connected to exactly one parent instance, while any number of child instances may be connected to the parent instance (including zero). This kind of relation is called <b>one-to-many relation</b> and is easy to realize in a database by using a <em>foreign key</em> column.</p>
 <p><b>Many-to-many relations</b> on the other hand allow an arbitrary number of instances at both ends and are typically realized in an database using a <em>junction table</em>. The Chronos profile allows for this by providing the <code>ChiManyToMany</code> stereotype. The following diagram shows how to model a many-to-many relation:</p>
 <div class="image">
@@ -243,16 +244,17 @@ Association types</div></div>
 <div class="caption">
 Many-to-many relation</div></div>
 <p> Using compositions ensures that many-to-many instances are deleted correctly, when the parent instances are deleted.</p>
-<h5>Navigability</h5>
+<p><a class="anchor" id="invalid"></a></p><h5>Navigability</h5>
 <p>Another aspect of associations is the use of <b>arrow ends</b> that define the navigability. If an arrow end is omitted on one end, instances at that end are not accessible from the other end. Regarding the database schema all three association types will result in the creation of a foreign key column in the child table that points to the parent table.</p>
-<h5>Multiple associations</h5>
+<p><a class="anchor" id="invalid"></a></p><h5>Multiple associations</h5>
 <p>Sometimes multiple associations have to be defined between two domain classes. For example if there are <code>Person</code> and <code>Task</code> domain classes and tasks should be associated with persons. If each task should have an owner and a creator, there will be two aggregations between the two domain classes. In order to allow wCMF to know which role a person has in relation to a given task, <b>role names</b> have to be assigned to the association ends.</p>
 <p>The following diagram illustrates the given example:</p>
 <div class="image">
 <img src="multiple-associations.png" alt="multiple-associations.png"/>
 <div class="caption">
 Role names in multiple associations</div></div>
- <h4>Inheritance</h4>
+ <h4><a class="anchor" id="model_inheritance"></a>
+Inheritance</h4>
 <p>If different domain classes should have the same attributes, a common base class can make these available to inheriting classes. An example may be an <code>EntityBase</code> type, which defines meta information like creation date and last modification date for all domain classes. The diagram below illustrates the concept.</p>
 <div class="image">
 <img src="inheritance.png" alt="inheritance.png"/>
@@ -580,7 +582,7 @@ Protected regions</h4>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Tue Jul 21 2015 01:08:00 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Jul 24 2015 01:42:20 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
