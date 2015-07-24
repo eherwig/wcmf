@@ -106,6 +106,7 @@ Security</h1>
 <h2><a class="anchor" id="sec_users_roles"></a>
 Users and Roles</h2>
 <p>Users are essential for an authentication system. In wCMF users are represented as instances of classes implementing the <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html"><code>User</code></a> interface. Since wCMF's authorization system is role based, users are organized in roles. Role classes implement the <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html"><code>Role</code></a> interface. A user could have multiple roles, while multiple users could have the same role.</p>
+<p>The concrete implementations of these interfaces are configured in <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_principal_factory.html"><code>PrincipalFactory</code></a>.</p>
 <h2><a class="anchor" id="sec_authentication"></a>
 Authentication</h2>
 <p>In wCMF authentication is handled by implementations of <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager.html"><code>AuthenticationManager</code></a>.</p>
@@ -127,7 +128,7 @@ Authentication</h2>
 <div class="line"><span class="keywordflow">catch</span> (<a class="code" href="namespace_exception.html">Exception</a> $ex) {</div>
 <div class="line">  Log::error(<span class="stringliteral">&quot;Could not log in: &quot;</span>.$ex, __CLASS__);</div>
 <div class="line">}</div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The authenticated user, that is associated with the current session is obtained using the <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#a687dba7af92a5d45f6363b17fe941ff7"><code>Session::getAuthUser</code></a> method. Until successful authentication, the user stored in the session is an instance of <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_anonymous_user.html"><code>AnonymousUser</code></a>.</dd></dl>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The user, that is associated with the current session - the <em>current user</em> - is obtained using the <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#a687dba7af92a5d45f6363b17fe941ff7"><code>Session::getAuthUser</code></a> method. Before successful authentication, this user is an instance of <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_anonymous_user.html"><code>AnonymousUser</code></a>. It will be replaced by an instance of the application's <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html"><code>User</code></a> type after successful authentication.</dd></dl>
 <p>The configuration of the authentication process in the default application looks like the following:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[AuthenticationManager]</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;__class = wcmf\lib\security\impl\DefaultAuthenticationManager</div>
@@ -204,19 +205,79 @@ Permission inheritance</div></div>
 <div class="line"><span class="comment">// custom permissions</span></div>
 <div class="line">customPermission??start = +tester</div>
 <div class="line">customPermission??stop = -tester</div>
-</div><!-- fragment --><h3><a class="anchor" id="sec_perm_create"></a>
-Creating permissions</h3>
-<p><span class="label label-danger">TODO</span></p>
+</div><!-- fragment --><h3><a class="anchor" id="sec_perm_manage"></a>
+Permission management</h3>
+<p>Permission management includes <em>creation</em>, <em>modification</em> and <em>deletion</em> of permissions as well as handling <em>authorization requests</em>. In an wCMF application an instance of <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html"><code>PermissionManager</code></a> is used for these tasks. It is configured in the <code>PermissionManager</code> configuration section.</p>
+<p>Generally there are two kinds of permissions to be defined in an application.</p>
+<ul>
+<li><em>Static permissions</em> are already known when the application is designed, e.g. restriction to entity types or controllers. Since these permissions are not likely to be changed by application users, they can be stored in the application configuration.</li>
+<li><em>Dynamic permissions</em> are defined on the application data. These permissions will be set when the appropriate data is created. To allow application users to change these permissions they are typically stored in the database.</li>
+</ul>
+<p>Different permission types require different ways of permission management, particularly regarding storing permissions. To support this wCMF provides several implementations of the <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html"><code>PermissionManager</code></a> interface:</p>
+<ul>
+<li><a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_static_permission_manager.html"><code>StaticPermissionManager</code></a> is used to retrieve permissions from the application configuration. The permissions are stored in the <code>Authorization</code> configuration section like shown in the following code:</li>
+</ul>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Authorization]</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;??login = +*</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;??logout = +*</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;??checkPermissions = +*</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;??checkPermissionsOfUser = +administrators</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;app.src.model.wcmf.User??read = +administrators</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;app.src.model.wcmf.User??update = +administrators</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;app.src.model.wcmf.User??delete = +administrators</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;app.src.model.wcmf.User??create = +administrators</div>
+</div><!-- fragment --><ul>
+<li><a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html"><code>DefaultPermissionManager</code></a> handles permissions that are stored in the database. The entity type that actually stores the permissions is required to have a <em>resource</em>, <em>context</em>, <em>action</em> and <em>roles</em> attribute and is defined in the application configuration. The following lines are taken from the configuration of the default application:</li>
+</ul>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[DefaultPermissionManager]</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;__class = wcmf\lib\security\impl\DefaultPermissionManager</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;permissionType = app.src.model.wcmf.Permission</div>
+</div><!-- fragment --><ul>
+<li><a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_chained_permission_manager.html"><code>ChainedPermissionManager</code></a> is used to combine different <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html"><code>PermissionManager</code></a> instances. When asked for authorization, it delegates the request to all it's managers, while creation, modification and deletion of permissions is always handled by the first contained manager. An example configuration of this manager is shown in the code below:</li>
+</ul>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[PermissionManager]</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;__class = wcmf\lib\security\impl\ChainedPermissionManager</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;managers = {$defaultPermissionManager, $staticPermissionManager}</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;[DefaultPermissionManager]</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;__class = wcmf\lib\security\impl\DefaultPermissionManager</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;permissionType = app.src.model.wcmf.Permission</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;[StaticPermissionManager]</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;__class = wcmf\lib\security\impl\StaticPermissionManager</div>
+</div><!-- fragment --><ul>
+<li><a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html"><code>NullPermissionManager</code></a> acts like there is no permission manager and is merely used for testing.</li>
+</ul>
+<p>All implementations inherit from <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html"><code>AbstractPermissionManager</code></a>, which already provides most of parts for handling authorization requests.</p>
 <h4><a class="anchor" id="sec_perm_temp"></a>
 Temporary permissions</h4>
-<p><span class="label label-danger">TODO</span></p>
-<h3><a class="anchor" id="sec_perm_check"></a>
+<p>There are situations, where a piece of code requires a certain permission in the context of the current user, which is not possible to grant throughout the whole application. For example, if a user wants to sign in to the application, <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_principal_factory.html"><code>PrincipalFactory</code></a> needs to provide a user instance although the anonymous user is not allowed to read user instances. To accomplish this, <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html"><code>PermissionManager</code></a> allows to set a transient, temporary permission like in the following example:</p>
+<div class="fragment"><div class="line">$permissionManager = ObjectFactory::getInstance(<span class="stringliteral">&#39;permissionManager&#39;</span>);</div>
+<div class="line">$persistenceFacade = ObjectFactory::getInstance(<span class="stringliteral">&#39;persistenceFacade&#39;</span>);</div>
+<div class="line">$userType = <span class="stringliteral">&#39;app.src.model.wcmf.User&#39;</span>;</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// set up a temporary permission to read the user instance for the given login</span></div>
+<div class="line">$permissionManager-&gt;addTempPermission($userType, <span class="stringliteral">&#39;&#39;</span>, PersistenceAction::READ);</div>
+<div class="line"></div>
+<div class="line">$user = $persistenceFacade-&gt;loadFirstObject($userType, BuildDepth::SINGLE,</div>
+<div class="line">            array(</div>
+<div class="line">                <span class="keyword">new</span> Criteria($userType, <span class="stringliteral">&#39;login&#39;</span>, <span class="charliteral">&#39;=&#39;</span>, $login)</div>
+<div class="line">            ), null);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// remove the temporary permission</span></div>
+<div class="line">$permissionManager-&gt;removeTempPermission($userType, <span class="stringliteral">&#39;&#39;</span>, PersistenceAction::READ);</div>
+</div><!-- fragment --><h3><a class="anchor" id="sec_perm_check"></a>
 Checking permissions</h3>
-<p>If a user has the permission to access a resource in the requested way can be tested by using the <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a152d96cdd1ac6639609b9ac3e54f121e"><code>PermissionManager::authorize</code></a> method. The method returns a boolean value indication whether authorization succeeded or not.</p>
+<p>To test, if a user has the permission to access a resource in the requested way the method <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a152d96cdd1ac6639609b9ac3e54f121e"><code>PermissionManager::authorize</code></a> is used. It returns a boolean value indicating whether the user is authorized or not.</p>
 <p>The following code shows how to determine, if the current user is allowed to read the given object:</p>
-<div class="fragment"><div class="line">$canRead = $permissionManager-&gt;authorize($$object-&gt;getOID(), <span class="stringliteral">&#39;&#39;</span>, PersistenceAction::READ);</div>
-</div><!-- fragment --><h4>Default policy</h4>
-<p><span class="label label-danger">TODO</span> </p>
+<div class="fragment"><div class="line">$canRead = $permissionManager-&gt;authorize($object-&gt;getOID(), <span class="stringliteral">&#39;&#39;</span>, PersistenceAction::READ);</div>
+</div><!-- fragment --><h4><a class="anchor" id="sec_perm_default_policies"></a>
+Default policies</h4>
+<p>Default policies answer the question, what happens if <b>no permission</b> is defined on a requested resource. These rules depend on the authentication status of the current user and are defined in <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html"><code>AbstractPermissionManager</code></a> as follows:</p>
+<ul>
+<li><em>Not authenticated</em>: Resource is <em>not accessible</em></li>
+<li><em>Authenticated</em>: Resource is <em>accessible</em> </li>
+</ul>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -226,7 +287,7 @@ Checking permissions</h3>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Jul 24 2015 01:42:20 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Fri Jul 24 2015 12:44:27 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>
