@@ -122,8 +122,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a25119d3df435b609991f58060ea482e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ebda2d4f8517d892a36a5c08e879415"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415">getInstance</a> ($name)</td></tr>
 <tr class="separator:a0ebda2d4f8517d892a36a5c08e879415"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2947b08fc976f7f4aed7727ee2e9992"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#aa2947b08fc976f7f4aed7727ee2e9992">getInstanceNames</a> ()</td></tr>
-<tr class="separator:aa2947b08fc976f7f4aed7727ee2e9992"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab03516bd9b8a9194921eb00721ec60d9"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#ab03516bd9b8a9194921eb00721ec60d9">registerInstance</a> ($name, $instance)</td></tr>
 <tr class="separator:ab03516bd9b8a9194921eb00721ec60d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a342b1676bf9651477ec79ed93f606244"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a342b1676bf9651477ec79ed93f606244">clear</a> ()</td></tr>
@@ -133,6 +131,8 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:aa85b50c42a07707a0a689acf88738431"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#aa85b50c42a07707a0a689acf88738431">resolveValue</a> ($value)</td></tr>
+<tr class="separator:aa85b50c42a07707a0a689acf88738431"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea620bf74d5a04692aad1e39861e4cb9"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#aea620bf74d5a04692aad1e39861e4cb9">getInterface</a> ($name)</td></tr>
 <tr class="separator:aea620bf74d5a04692aad1e39861e4cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -234,34 +234,6 @@ Static Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa2947b08fc976f7f4aed7727ee2e9992"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static getInstanceNames </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the names of the created shared instances. </p>
-<dl class="section return"><dt>Returns</dt><dd>Array </dd></dl>
-
-<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00107">107</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="ab03516bd9b8a9194921eb00721ec60d9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -303,7 +275,7 @@ Static Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00116">116</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00108">108</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
 
 </div>
 </div>
@@ -330,7 +302,7 @@ Static Protected Member Functions</h2></td></tr>
 
 <p>Delete all created instances. </p>
 
-<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00123">123</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00115">115</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
 
 </div>
 </div>
@@ -370,13 +342,48 @@ Static Protected Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$name</td><td>The name by which the instance may be retrieved later using <a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415" title="Get an instance from the configuration. ">ObjectFactory::getInstance()</a> </td></tr>
-    <tr><td class="paramname">$configuration</td><td>Associative array with key value pairs for instance properties and the special keys '__class' (optional, denotes the instance class name), '__shared' (optional, if true, the instance may be reused using <a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415" title="Get an instance from the configuration. ">ObjectFactory::getInstance()</a>) </td></tr>
+    <tr><td class="paramname">$configuration</td><td>Associative array with key value pairs for instance properties passed to the constructor, setters or public properties and the special keys '__class' (optional, denotes the instance class name), '__shared' (optional, if true, the instance may be reused using <a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a0ebda2d4f8517d892a36a5c08e879415" title="Get an instance from the configuration. ">ObjectFactory::getInstance()</a>) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Object </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00145">145</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00138">138</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa85b50c42a07707a0a689acf88738431"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static resolveValue </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resolve a configuration value into a parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Mixed </dd></dl>
+
+<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00226">226</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
 
 </div>
 </div>
@@ -411,7 +418,7 @@ Static Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Interface or null, if undefined </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00252">252</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00271">271</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
 
 </div>
 </div>
@@ -424,7 +431,7 @@ Static Protected Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Jul 24 2015 12:44:28 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Tue Jul 28 2015 00:29:18 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

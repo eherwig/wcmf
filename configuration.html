@@ -136,7 +136,7 @@ Configuration Format</h2>
 <p>The possibility to include configuration files into others is useful, if you want to <b>separate varying parts</b> from static ones to simplify the deployment process. In the default application for example all server specific configuration (e.g. database connection) are separated into a file called <em>server.ini</em>.</p>
 <h2><a class="anchor" id="conf_di"></a>
 Dependency injection</h2>
-<p>wCMF supports <a href="http://en.wikipedia.org/wiki/Dependency_injection">Dependency injection</a> through the <a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html"><code>ObjectFactory</code></a> class. This class implements <em>setter injection</em>, which means that dependencies are either set through a <em>setter method</em> of the client class or a <em>public member variable</em>.</p>
+<p>wCMF supports <a href="http://en.wikipedia.org/wiki/Dependency_injection">Dependency injection</a> through the <a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html"><code>ObjectFactory</code></a> class. This class implements <em>constructor</em> and <em>setter injection</em>, which means that dependencies are either set through the constructor or a <em>setter method</em> of the client class or a <em>public member variable</em>.</p>
 <p>Assembly details for client instances are defined in the application configuration in special sections containing a <code>__class</code> key. The value of the key denotes the class to be used to create the client instance. All other keys are mapped to setters/members of that class. Complex dependencies of an instance may be set by using the <code>$</code> notation, which refers to another configuration section. If a section does not contain a <code>__class</code> key it is instantiated as an associative array.</p>
 <p>The following example demonstrates the pattern by means of the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html"><code>PersistenceFacade</code></a> instance:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[PersistenceFacade]</div>
@@ -249,7 +249,7 @@ Logging configuration</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Jul 24 2015 12:44:27 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
+          Generated on Tue Jul 28 2015 00:29:16 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.9.1</small>
       </div>
     </div>
   </div>

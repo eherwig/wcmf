@@ -31,8 +31,8 @@
 <polyline fill="none" stroke="black" points="0,-104.5 104,-104.5 "/>
 <text text-anchor="start" x="8" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_serializer</text>
 <polyline fill="none" stroke="black" points="0,-85.5 104,-85.5 "/>
-<text text-anchor="start" x="8" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMimeType()</text>
-<text text-anchor="start" x="8" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSerializer()</text>
+<text text-anchor="start" x="8" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
+<text text-anchor="start" x="8" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMimeType()</text>
 <text text-anchor="start" x="8" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ printJSONResult()</text>
 <text text-anchor="start" x="8" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00"># afterSerialize()</text>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isSerializedNode()</text>
@@ -49,22 +49,23 @@
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
 <g id="a_node5"><a xlink:href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_soap_format.html" target="_top" xlink:title="SoapFormat realizes the SOAP request/response format. ">
-<polygon fill="white" stroke="black" points="122,-11.5 122,-112.5 226,-112.5 226,-11.5 122,-11.5"/>
-<text text-anchor="middle" x="174" y="-100.5" font-family="Helvetica,sans-Serif" font-size="10.00">SoapFormat</text>
-<polyline fill="none" stroke="black" points="122,-93.5 226,-93.5 "/>
-<text text-anchor="start" x="130" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_serializer</text>
-<polyline fill="none" stroke="black" points="122,-74.5 226,-74.5 "/>
-<text text-anchor="start" x="130" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMimeType()</text>
-<text text-anchor="start" x="130" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSerializer()</text>
-<text text-anchor="start" x="130" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isSerializedNode()</text>
-<text text-anchor="start" x="130" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00"># serializeNode()</text>
-<text text-anchor="start" x="130" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00"># deserializeNode()</text>
+<polygon fill="white" stroke="black" points="122,-6 122,-118 226,-118 226,-6 122,-6"/>
+<text text-anchor="middle" x="174" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">SoapFormat</text>
+<polyline fill="none" stroke="black" points="122,-99 226,-99 "/>
+<text text-anchor="start" x="130" y="-87" font-family="Helvetica,sans-Serif" font-size="10.00"># $_serializer</text>
+<polyline fill="none" stroke="black" points="122,-80 226,-80 "/>
+<text text-anchor="start" x="130" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
+<text text-anchor="start" x="130" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMimeType()</text>
+<text text-anchor="start" x="130" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSerializer()</text>
+<text text-anchor="start" x="130" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># isSerializedNode()</text>
+<text text-anchor="start" x="130" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># serializeNode()</text>
+<text text-anchor="start" x="130" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># deserializeNode()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
 <g id="edge4" class="edge"><title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M138.882,-150.795C143.987,-138.032 149.269,-124.828 154.137,-112.657"/>
+<path fill="none" stroke="midnightblue" d="M138.809,-150.977C143.167,-140.083 147.655,-128.862 151.908,-118.231"/>
 <polygon fill="none" stroke="midnightblue" points="135.487,-149.859 135.022,-160.444 141.986,-152.459 135.487,-149.859"/>
 </g>
 <!-- Node2 -->
