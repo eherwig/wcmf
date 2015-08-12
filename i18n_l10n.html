@@ -105,7 +105,7 @@ Internationalization &amp; localization</h1>
 <p><em>Internationalization</em> of an application requires to identify all language dependent resources and make them exchangeable for the actual <em>localization</em> into a specific language. This includes <b>static</b> and <b>dynamic texts</b> as well as <b>images</b>. Since images are referenced by their filename or represented as text (e.g. <em>base64</em> encoded), it is sufficient to focus on text.</p>
 <h2><a class="anchor" id="i18n_static"></a>
 Static text</h2>
-<p>Static text refers to text used in <b>application templates</b> or <b>messages</b> generated while the application is executed. To keep the application language agnostic only so called <em>text identifiers</em> are used in these places and the actual translation is retrieved by calling the <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html#aef9e1ab491290cf4f519d25c96043dbb"><code>Message::getText</code></a> method:</p>
+<p>Static text refers to text used in <b>application templates</b> or <b>messages</b> generated while the application is executed. To keep the application code language agnostic only so called <em>text identifiers</em> are used in these places and the actual translation is retrieved by calling the <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html#aef9e1ab491290cf4f519d25c96043dbb"><code>Message::getText</code></a> method:</p>
 <div class="fragment"><div class="line">$textId = <span class="stringliteral">&#39;An error occured&#39;</span>;</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// retrieve the translation</span></div>
@@ -115,13 +115,13 @@ Static text</h2>
 <div class="line"><span class="comment">// use the translation</span></div>
 <div class="line">$ex = <span class="keyword">new</span> <a class="code" href="namespace_exception.html">Exception</a>($errorText);</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Implementations of <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html"><code>Message</code></a> must return the <em>text identifier</em>, if no translation is found or the translation is empty. This helps to simplify the translation process, if the default language is used in <em>text identifiers</em>. In this case, no translation is required for the default language.</dd></dl>
-<p>If no language parameter is passed to the <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html#aef9e1ab491290cf4f519d25c96043dbb"><code>Message::getText</code></a> method, the returned translation will be in the application's <b>default language</b>. This language is determined in the following way:</p>
+<p>If no language parameter is passed to the <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html#aef9e1ab491290cf4f519d25c96043dbb"><code>Message::getText</code></a> method, the returned translation will be in the application's <b>default user interface language</b>. This language is determined in the following way:</p>
 <ol type="1">
 <li>Use the value of the <code>language</code> parameter of the <code>Message</code> configuration section</li>
 <li>If not defined use the value of the global variable <code>$_SERVER['HTTP_ACCEPT_LANGUAGE']</code></li>
 </ol>
 <p>If parts of the text vary depending on the application state, it is necessary to put <b>variables</b> into the text identifier. Variable names are <code>%0%</code>, <code>%1%</code>, ... and they are replaced in the order of the values passed into the <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html#aef9e1ab491290cf4f519d25c96043dbb"><code>Message::getText</code></a> method:</p>
-<div class="fragment"><div class="line">$textId = <span class="stringliteral">&#39;User %0$ is logged in since %1%&#39;</span>;</div>
+<div class="fragment"><div class="line">$textId = <span class="stringliteral">&#39;Logged in as %0% since %1%&#39;</span>;</div>
 <div class="line">$parameters = array($username, $date);</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// retrieve the translation</span></div>
@@ -130,8 +130,8 @@ Static text</h2>
 <div class="line"></div>
 <div class="line"><span class="comment">// use the translation</span></div>
 <div class="line">$view-&gt;setValue(<span class="stringliteral">&#39;loginMessage&#39;</span>, $loginMessage);</div>
-</div><!-- fragment --><h3><a class="anchor" id="i18n_static_trans"></a>
-Providing translations</h3>
+</div><!-- fragment --><h3><a class="anchor" id="i18n_static_locale"></a>
+Localization</h3>
 <p>Since <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html"><code>Message</code></a> defines the interface, it needs concrete implementations to actually get the translations. The <a class="el" href="classwcmf_1_1lib_1_1i18n_1_1impl_1_1_file_message.html"><code>FileMessage</code></a> class retrieves translations from the file system. It expects one file per language defining a language dependent array that maps text identifiers to translations. The language code (e.g. <em>en</em>) is used to identify the language of the translation. The file must be named like <em>messages_</em>code.<em>php</em>, the variable like <em>$messages_</em>code.</p>
 <p>The following <b>examples</b> show definitions for English (<em>en</em>) and German (<em>de</em>) texts, where the array keys are the text identifiers used in the application and the values are the translations in the appropriate language.</p>
 <p><em>messages_en.php</em></p>
@@ -153,26 +153,58 @@ Providing translations</h3>
 </div><!-- fragment --><p>The parameter <code>localeDir</code> defines the directory where <a class="el" href="classwcmf_1_1lib_1_1i18n_1_1impl_1_1_file_message.html"><code>FileMessage</code></a> searchs for translation files and the <code>language</code> parameter defines the application's default language.</p>
 <h3><a class="anchor" id="i18n_static_tpl"></a>
 Templates</h3>
-<p><span class="label label-danger">TODO</span></p>
-<h3><a class="anchor" id="i18n_static_tools"></a>
+<p>wCMF provides the <code>translate</code> plugin for embedding language dependent text into <em>Smarty</em> templates. The plugin is included automatically and used in the following way:</p>
+<div class="fragment"><div class="line">{translate text=<span class="stringliteral">&quot;An error occured&quot;</span>}</div>
+<div class="line"></div>
+<div class="line">{* with variables *}</div>
+<div class="line">{translate text=<span class="stringliteral">&quot;Logged in as %0% since %1%&quot;</span> r0=$login r1=$logindate}</div>
+</div><!-- fragment --><h3><a class="anchor" id="i18n_static_tools"></a>
 Tools</h3>
-<p><span class="label label-danger">TODO</span></p>
-<h2><a class="anchor" id="i18n_dynamic"></a>
+<p>The <a class="el" href="gettingstarted.html#app">default application</a> ships with a tool for finding translatable text and generating localization files from it. After installing the application it is available under <code><a href="http://localhost/wcmf-default-app/tools/locale/">http://localhost/wcmf-default-app/tools/locale/</a></code>.</p>
+<p>The tool uses <a class="el" href="classwcmf_1_1lib_1_1util_1_1_i18n_util.html"><code>I18nUtil</code></a> internally to search for occurrences of</p>
+<ul>
+<li><code>-&gt;getText('Text to translate', ...)</code> as used in <code>$message-&gt;getText('Text to translate', ...)</code> in PHP code</li>
+<li><code>{translate:"Text to translate" ...}</code> as used in Smarty templates</li>
+<li><code>Dict.translate("Text to translate", ...)</code> as used in the Javascript code of the <a class="el" href="gettingstarted.html#app">default application</a></li>
+</ul>
+<p><em>Text to translate</em> is supposed to be the message to be localized. The tool generates one localization file for each language puts it into the appropriate directory. It's capable of merging already existing translations into the newly generated files.</p>
+<p>The tool's configuration is defined in the file <em>config.ini</em> in the tool's directory and defaults to:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Application]</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;localeDir = app/locale/</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;[I18n]</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;searchDirs = {vendor/wcmf/wcmf/src/wcmf, app/}</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;exclude = {vendor, .git, .svn, test}</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;languages = {de, en}</div>
+</div><!-- fragment --><h2><a class="anchor" id="i18n_dynamic"></a>
 Model content</h2>
-<p><span class="label label-danger">TODO</span></p>
-<p><em>config.ini</em></p>
+<p>Model content is initially created in the application's <b>default model language</b>, which might differ from the <em>default user interface language</em> (see <a class="el" href="i18n_l10n.html#i18n_static">Static text</a>). Localization of this content is done by using implementations of <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html"><code>Localization</code></a>. There are several strategies for storing localized versions of the content, all having advantages and disadvantages regarding extensibility and performance.</p>
+<p>The idea behind the <a class="el" href="classwcmf_1_1lib_1_1i18n_1_1impl_1_1_default_localization.html"><code>DefaultLocalization</code></a> implementation is to keep the domain model clear of localization related attributes by storing translations in a separate entity type. Using one entity type for all content leads to more flexibility when extending the domain model.</p>
+<p>The <b>translation entity type</b> must have the following attributes:</p>
+<ul>
+<li><code>objectid</code> object id of the translated entity (e.g. <em>Book:1</em>)</li>
+<li><code>attribute</code> translated attribute (e.g. <em>title</em>)</li>
+<li><code>language</code> the language code of the translation (e.g. <em>en</em>)</li>
+<li><code>translation</code> the actual translation</li>
+</ul>
+<p>The supported content languages are either defined in the <code>Languages</code> configuration section (see below) or in the language entity type that is used by <a class="el" href="classwcmf_1_1lib_1_1i18n_1_1impl_1_1_default_localization.html"><code>DefaultLocalization</code></a>, if the configuration section does not exist.</p>
+<p>The <b>language entity type</b> must have the following attributes:</p>
+<ul>
+<li><code>code</code> language code (e.g. <em>en</em>)</li>
+<li><code>name</code> language name (e.g. <em>English</em>)</li>
+</ul>
+<p>The localization configuration of the <a class="el" href="gettingstarted.html#app">default application</a> is the following:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Localization]</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;__class = wcmf\lib\i18n\impl\DefaultLocalization</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;languageType = Language</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;translationType = Translation</div>
-</div><!-- fragment --><p><em>server.ini</em></p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Localization]</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;defaultLanguage = en</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;[Languages]</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;de = Deutsch</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;en = English</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;defaultLanguage = en</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;languageType = app.src.model.wcmf.Language</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;translationType = app.src.model.wcmf.Translation</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;[Languages]</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;de = Deutsch</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;en = English</div>
+</div><!-- fragment --><p>This means that the <em>default model language</em> is English and the <em>language entity type</em> is ignored, because the available languages are defined in the configuration. </p>
+</div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <hr>
@@ -181,7 +213,7 @@ Model content</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Aug 12 2015 17:39:20 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Thu Aug 13 2015 01:19:44 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

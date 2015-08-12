@@ -161,7 +161,7 @@ Values, Properties and Tags</h4>
 <ul>
 <li><b>Values</b> are the persistent attributes of a domain class. You can think of them as class members. Values are accessed using the methods <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a8c584efa272687554bd9abe5e83fe10c"><code>getValue</code></a> and <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a838057c0748db6d0db1d38fe5d06ef6b"><code>setValue</code></a>.</li>
 <li><b>Properties</b> apply to domain classes and domain class values. They describe static features like the <code>display_value</code> of the class or the <code>input_type</code> of a value. Properties are defined in the model as <em>tags</em> (see <a class="el" href="model.html#model_profile">Chronos profile</a>) and are accessed using the methods <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#aa54d71e15bac85c5f7a13e62b9933652"><code>getProperty</code></a>/ <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#aec9a68c84f392b3ae74cd70d552562b0"><code>setProperty</code></a> and <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a095af4f09e7aa62ba45e94a35c047c1d"><code>getValueProperty</code></a>/ <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#ad97867d143202b45bd320c16258c5f3c"><code>setValueProperty</code></a></li>
-<li><b>Tags</b> are a special property used on values to group them by certain aspects. For example the edit forms in the default application only display domain class values that are tagged with <code>DATATYPE_ATTRIBUTE</code> and only those attributes are editable in the translation form that are tagged with <code>TRANSLATABLE</code>. Tags are defined in the model using the <em>tag</em> <code>app_data_type</code> (see <a class="el" href="model.html#model_chivalue">ChiValue</a>).</li>
+<li><b>Tags</b> are a special property used on values to group them by certain aspects. For example the edit forms in the <a class="el" href="gettingstarted.html#app">default application</a> only display domain class values that are tagged with <code>DATATYPE_ATTRIBUTE</code> and only those attributes are editable in the translation form that are tagged with <code>TRANSLATABLE</code>. Tags are defined in the model using the <em>tag</em> <code>app_data_type</code> (see <a class="el" href="model.html#model_chivalue">ChiValue</a>).</li>
 </ul>
 <h3><a class="anchor" id="pers_config"></a>
 Configuration</h3>
@@ -399,7 +399,7 @@ Locking</h3>
 <div class="line"></div>
 <div class="line"><span class="comment">// release lock later</span></div>
 <div class="line">$concurrencyManager-&gt;releaseLock($oid, $lockType);</div>
-</div><!-- fragment --><p>The actual storage and retrieval of <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html"><code>Lock</code></a> instances is delegated to <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock_handler.html"><code>LockHandler</code></a>. The following lines show the concurrency configuration in the default application:</p>
+</div><!-- fragment --><p>The actual storage and retrieval of <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html"><code>Lock</code></a> instances is delegated to <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock_handler.html"><code>LockHandler</code></a>. The following lines show the concurrency configuration in the <a class="el" href="gettingstarted.html#app">default application</a>:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[ConcurrencyManager]</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;__class = wcmf\lib\persistence\concurrency\impl\DefaultConcurrencyManager</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;lockHandler = $lockHandler</div>
@@ -441,7 +441,7 @@ Transactions</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Aug 12 2015 17:39:20 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Thu Aug 13 2015 01:19:44 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

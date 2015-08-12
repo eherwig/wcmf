@@ -130,7 +130,7 @@ Authentication</h2>
 <div class="line">  $session-&gt;setAuthUser($authUser);</div>
 <div class="line">}</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The user, that is associated with the current session - the <em>current user</em> - is obtained using the <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#a687dba7af92a5d45f6363b17fe941ff7"><code>Session::getAuthUser</code></a> method. Before successful authentication, this user is an instance of <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_anonymous_user.html"><code>AnonymousUser</code></a>. It will be replaced by an instance of the application's <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html"><code>User</code></a> type after successful authentication.</dd></dl>
-<p>The configuration of the authentication process in the default application looks like the following:</p>
+<p>The configuration of the authentication process in the <a class="el" href="gettingstarted.html#app">default application</a> looks like the following:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[AuthenticationManager]</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;__class = wcmf\lib\security\impl\DefaultAuthenticationManager</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;principalFactory = $principalFactory</div>
@@ -228,7 +228,7 @@ Permission management</h3>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;app.src.model.wcmf.User??delete = +administrators</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;app.src.model.wcmf.User??create = +administrators</div>
 </div><!-- fragment --><ul>
-<li><a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html"><code>DefaultPermissionManager</code></a> handles permissions that are stored in the database. The entity type that actually stores the permissions is required to have a <em>resource</em>, <em>context</em>, <em>action</em> and <em>roles</em> attribute and is defined in the application configuration. The following lines are taken from the configuration of the default application:</li>
+<li><a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_permission_manager.html"><code>DefaultPermissionManager</code></a> handles permissions that are stored in the database. The entity type that actually stores the permissions is required to have a <em>resource</em>, <em>context</em>, <em>action</em> and <em>roles</em> attribute and is defined in the application configuration. The following lines are taken from the configuration of the <a class="el" href="gettingstarted.html#app">default application</a>:</li>
 </ul>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[DefaultPermissionManager]</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;__class = wcmf\lib\security\impl\DefaultPermissionManager</div>
@@ -288,7 +288,7 @@ Default policies</h4>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Aug 12 2015 17:39:20 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Thu Aug 13 2015 01:19:44 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

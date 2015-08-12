@@ -224,7 +224,7 @@ Associations</h4>
 <div class="caption">
 Association types</div></div>
 <p> It is important to understand how wCMF recognizes <b>parents and children</b> in an association. In case of compositions and aggregations the parent is always the class, that is connected with the diamond end of the association. Other associations are treated as parent-child relation, if they are only navigable in one direction, which is then defined as the child to parent direction.</p>
-<p>The association types differ in the treatment of children in case of <b>deletion</b> of the parent. In aggregations and normal associations children are not deleted, while composite children are deleted on parent deletion. On the other hand the default application allows <b>creation</b> of child instances in a composition, while the other two types only allow adding existing instances.</p>
+<p>The association types differ in the treatment of children in case of <b>deletion</b> of the parent. In aggregations and normal associations children are not deleted, while composite children are deleted on parent deletion. On the other hand the <a class="el" href="gettingstarted.html#app">default application</a> allows <b>creation</b> of child instances in a composition, while the other two types only allow adding existing instances.</p>
 <p>The following table summarizes the behavior of the different association types regarding the operations allowed on child instances:</p>
 <table class="doxtable">
 <tr>
@@ -357,7 +357,7 @@ Example configuration</h4>
 Example configuration</div></div>
  <h3><a class="anchor" id="model_default"></a>
 Default model</h3>
-<p>The wCMF default application inlcudes a demo UML model located in <code>model/model.uml</code>. It is a good starting point for own experiments. For those who want to start from scratch there are also base models in <em>model/base/cwm/</em> (for <a href="http://sourceforge.net/projects/olympos/">Chronos Web Modeler</a>) and <em>model/base/papyrus/</em> (for <a href="http://www.eclipse.org/papyrus/">Eclipse Papyrus</a>).</p>
+<p>The <a class="el" href="gettingstarted.html#app">default application</a> inlcudes a demo UML model located in <code>model/model.uml</code>. It is a good starting point for own experiments. For those who want to start from scratch there are also base models in <em>model/base/cwm/</em> (for <a href="http://sourceforge.net/projects/olympos/">Chronos Web Modeler</a>) and <em>model/base/papyrus/</em> (for <a href="http://www.eclipse.org/papyrus/">Eclipse Papyrus</a>).</p>
 <p>The default model has the following package structure:</p>
 <ul>
 <li><em>model</em><ul>
@@ -422,11 +422,11 @@ Default model</h3>
 </ul>
 </li>
 <li><b>controller</b> Controller package<ul>
-<li><code>«ChiController» RootController</code> Main controller of default application</li>
+<li><code>«ChiController» RootController</code> Main controller of <a class="el" href="gettingstarted.html#app">default application</a></li>
 </ul>
 </li>
 <li><b>views</b> Views package<ul>
-<li><code>«ChiView» cms</code> Main view of default application</li>
+<li><code>«ChiView» cms</code> Main view of <a class="el" href="gettingstarted.html#app">default application</a></li>
 </ul>
 </li>
 </ul>
@@ -515,7 +515,7 @@ java -Djava.library.path=<b><em>libPath</em></b> -jar ChronosGenerator.jar <b><e
 <tr>
 <td><em>targetDir</em> </td><td>Path to the generated files </td><td><em>../</em> </td></tr>
 </table>
-<p>The <b>default values</b> apply, if the generator is run from the <em>build</em> directory of the wCMF default application.</p>
+<p>The <b>default values</b> apply, if the generator is run from the <em>build</em> directory of the <a class="el" href="gettingstarted.html#app">default application</a>.</p>
 <p>Since the code generator is integrated into the <b>ant deployment script</b> of the application, it's also sufficient to run the following command in the <em>build</em> directory:</p>
 <pre>
 ant generate
@@ -582,7 +582,7 @@ Protected regions</h4>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Aug 12 2015 17:39:20 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Thu Aug 13 2015 01:19:44 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>
