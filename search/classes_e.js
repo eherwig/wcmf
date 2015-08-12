@@ -17,7 +17,7 @@ var searchData=
   ['persistenceoperation',['PersistenceOperation',['../classwcmf_1_1lib_1_1persistence_1_1_persistence_operation.html',1,'wcmf::lib::persistence']]],
   ['persistentiterator',['PersistentIterator',['../classwcmf_1_1lib_1_1model_1_1_persistent_iterator.html',1,'wcmf::lib::model']]],
   ['persistentlock',['PersistentLock',['../interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_persistent_lock.html',1,'wcmf::lib::persistence::concurrency']]],
-  ['persistentobject',['PersistentObject',['../classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html',1,'wcmf::lib::persistence']]],
+  ['persistentobject',['PersistentObject',['../interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html',1,'wcmf::lib::persistence']]],
   ['persistentobjectproxy',['PersistentObjectProxy',['../classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html',1,'wcmf::lib::persistence']]],
   ['pessimisticlockexception',['PessimisticLockException',['../classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_pessimistic_lock_exception.html',1,'wcmf::lib::persistence::concurrency']]],
   ['position',['Position',['../classwcmf_1_1lib_1_1model_1_1output_1_1_position.html',1,'wcmf::lib::model::output']]],

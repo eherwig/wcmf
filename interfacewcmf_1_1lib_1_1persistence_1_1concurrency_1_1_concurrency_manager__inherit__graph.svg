@@ -32,7 +32,7 @@
 <polyline fill="none" stroke="black" points="0,-115.5 139,-115.5 "/>
 <text text-anchor="middle" x="69.5" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <polyline fill="none" stroke="black" points="0,-96.5 139,-96.5 "/>
-<text text-anchor="start" x="8" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLockHandler()</text>
+<text text-anchor="start" x="8" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
 <text text-anchor="start" x="8" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ aquireLock()</text>
 <text text-anchor="start" x="8" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ releaseLock()</text>
 <text text-anchor="start" x="8" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ releaseLocks()</text>

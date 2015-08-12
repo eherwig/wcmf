@@ -1,5 +1,6 @@
 <map id="AbstractRole" name="AbstractRole">
-<area shape="rect" id="node2" href="$classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. " alt="" coords="5,365,244,707"/>
-<area shape="rect" id="node3" href="$classwcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject is the base class of all persistent objects. " alt="" coords="7,5,243,317"/>
-<area shape="rect" id="node4" href="$interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html" title="Role is the interface for user roles. " alt="" coords="268,490,363,582"/>
+<area shape="rect" id="node2" href="$classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. " alt="" coords="5,652,244,979"/>
+<area shape="rect" id="node3" href="$classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html" title="DefaultPersistentObject is the base class of all persistent objects. " alt="" coords="7,321,243,604"/>
+<area shape="rect" id="node4" href="$interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject defines the interface of all persistent objects. " alt="" coords="54,5,195,273"/>
+<area shape="rect" id="node5" href="$interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html" title="Role is the interface for user roles. " alt="" coords="268,769,363,861"/>
 </map>

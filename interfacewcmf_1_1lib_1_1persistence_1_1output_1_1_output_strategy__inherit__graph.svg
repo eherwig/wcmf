@@ -102,39 +102,41 @@
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
 <g id="a_node6"><a xlink:href="classwcmf_1_1lib_1_1persistence_1_1output_1_1impl_1_1_auditing_output_strategy.html" target="_top" xlink:title="AuditingOutputStrategy outputs object changes to the logger category AuditingOutputStrategy, loglevel info. ">
-<polygon fill="white" stroke="black" points="396,-226.5 396,-305.5 514,-305.5 514,-226.5 396,-226.5"/>
-<text text-anchor="middle" x="455" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">AuditingOutputStrategy</text>
-<polyline fill="none" stroke="black" points="396,-286.5 514,-286.5 "/>
-<text text-anchor="middle" x="455" y="-274.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="396,-267.5 514,-267.5 "/>
-<text text-anchor="start" x="404" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ writeHeader()</text>
-<text text-anchor="start" x="404" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ writeFooter()</text>
-<text text-anchor="start" x="404" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ writeObject()</text>
+<polygon fill="white" stroke="black" points="396,-221 396,-311 514,-311 514,-221 396,-221"/>
+<text text-anchor="middle" x="455" y="-299" font-family="Helvetica,sans-Serif" font-size="10.00">AuditingOutputStrategy</text>
+<polyline fill="none" stroke="black" points="396,-292 514,-292 "/>
+<text text-anchor="middle" x="455" y="-280" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="396,-273 514,-273 "/>
+<text text-anchor="start" x="404" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
+<text text-anchor="start" x="404" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ writeHeader()</text>
+<text text-anchor="start" x="404" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ writeFooter()</text>
+<text text-anchor="start" x="404" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00">+ writeObject()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge"><title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M363.606,-445.159C371.991,-435.965 380.187,-426.032 387,-416 410.643,-381.186 429.676,-336.826 441.528,-305.593"/>
+<path fill="none" stroke="midnightblue" d="M363.606,-445.159C371.991,-435.965 380.187,-426.032 387,-416 409.285,-383.185 427.475,-341.889 439.415,-311.1"/>
 <polygon fill="none" stroke="midnightblue" points="360.829,-443.004 356.546,-452.694 365.937,-447.79 360.829,-443.004"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
 <g id="a_node7"><a xlink:href="classwcmf_1_1lib_1_1persistence_1_1output_1_1impl_1_1_default_output_strategy.html" target="_top" xlink:title="DefaultOutputStrategy outputs an object&#39;s content to the Log category DefaultOutputStrategy. ">
-<polygon fill="white" stroke="black" points="532.5,-226.5 532.5,-305.5 645.5,-305.5 645.5,-226.5 532.5,-226.5"/>
-<text text-anchor="middle" x="589" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">DefaultOutputStrategy</text>
-<polyline fill="none" stroke="black" points="532.5,-286.5 645.5,-286.5 "/>
-<text text-anchor="middle" x="589" y="-274.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="532.5,-267.5 645.5,-267.5 "/>
-<text text-anchor="start" x="540.5" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ writeHeader()</text>
-<text text-anchor="start" x="540.5" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ writeFooter()</text>
-<text text-anchor="start" x="540.5" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ writeObject()</text>
+<polygon fill="white" stroke="black" points="532.5,-221 532.5,-311 645.5,-311 645.5,-221 532.5,-221"/>
+<text text-anchor="middle" x="589" y="-299" font-family="Helvetica,sans-Serif" font-size="10.00">DefaultOutputStrategy</text>
+<polyline fill="none" stroke="black" points="532.5,-292 645.5,-292 "/>
+<text text-anchor="middle" x="589" y="-280" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="532.5,-273 645.5,-273 "/>
+<text text-anchor="start" x="540.5" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
+<text text-anchor="start" x="540.5" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ writeHeader()</text>
+<text text-anchor="start" x="540.5" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">+ writeFooter()</text>
+<text text-anchor="start" x="540.5" y="-228" font-family="Helvetica,sans-Serif" font-size="10.00">+ writeObject()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
 <g id="edge6" class="edge"><title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M366.852,-484.014C412.976,-475.33 479.651,-456.379 523,-416 554.674,-386.496 572.063,-339.036 580.927,-305.623"/>
+<path fill="none" stroke="midnightblue" d="M366.852,-484.014C412.976,-475.33 479.651,-456.379 523,-416 552.915,-388.135 570.087,-344.254 579.37,-311.316"/>
 <polygon fill="none" stroke="midnightblue" points="365.99,-480.613 356.759,-485.813 367.218,-487.504 365.99,-480.613"/>
 </g>
 <!-- Node4 -->

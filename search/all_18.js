@@ -44,7 +44,7 @@ var searchData=
   ['validator',['validator',['../namespacewcmf_1_1lib_1_1persistence_1_1validator.html',1,'wcmf::lib::persistence']]],
   ['view',['view',['../namespacewcmf_1_1lib_1_1presentation_1_1view.html',1,'wcmf::lib::presentation']]],
   ['visitor',['visitor',['../namespacewcmf_1_1lib_1_1model_1_1visitor.html',1,'wcmf::lib::model']]],
-  ['warn',['warn',['../classwcmf_1_1lib_1_1core_1_1_log.html#a645862e7bcee0470686a7a9c6a0ab71b',1,'wcmf::lib::core::Log']]],
+  ['warn',['warn',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_log4php_logger.html#a3869c777f69fcd72fb106f42a5fdc9f3',1,'wcmf\lib\core\impl\Log4phpLogger\warn()'],['../classwcmf_1_1lib_1_1core_1_1impl_1_1_monolog_file_logger.html#a3869c777f69fcd72fb106f42a5fdc9f3',1,'wcmf\lib\core\impl\MonologFileLogger\warn()'],['../interfacewcmf_1_1lib_1_1core_1_1_logger.html#a3869c777f69fcd72fb106f42a5fdc9f3',1,'wcmf\lib\core\Logger\warn()']]],
   ['wcmf',['wcmf',['../namespacewcmf.html',1,'']]],
   ['work_5fpackages_5fvarname',['WORK_PACKAGES_VARNAME',['../classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a5d60608693b06c89358cd28e94b30bd0',1,'wcmf::application::controller::BatchController']]],
   ['writableconfiguration',['WritableConfiguration',['../interfacewcmf_1_1lib_1_1config_1_1_writable_configuration.html',1,'wcmf::lib::config']]],
