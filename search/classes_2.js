@@ -11,6 +11,7 @@ var searchData=
   ['configurationexception',['ConfigurationException',['../classwcmf_1_1lib_1_1config_1_1_configuration_exception.html',1,'wcmf::lib::config']]],
   ['controller',['Controller',['../classwcmf_1_1lib_1_1presentation_1_1_controller.html',1,'wcmf::lib::presentation']]],
   ['controllermessage',['ControllerMessage',['../interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html',1,'wcmf::lib::presentation']]],
+  ['controllertestcase',['ControllerTestCase',['../classwcmf_1_1test_1_1lib_1_1_controller_test_case.html',1,'wcmf::test::lib']]],
   ['copycontroller',['CopyController',['../classwcmf_1_1application_1_1controller_1_1_copy_controller.html',1,'wcmf::application::controller']]],
   ['criteria',['Criteria',['../classwcmf_1_1lib_1_1persistence_1_1_criteria.html',1,'wcmf::lib::persistence']]],
   ['csvutil',['CSVUtil',['../classwcmf_1_1lib_1_1util_1_1_c_s_v_util.html',1,'wcmf::lib::util']]]

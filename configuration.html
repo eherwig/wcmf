@@ -188,7 +188,7 @@ Dependency injection</h2>
 </ul>
 </li>
 <li><em>Setter injection of the remaining parameters</em>:<ul>
-<li>The <em>mappers</em> configuration parameter is not used in the constructor. The factory searches for a <em>setter method</em> (<em>setMappers</em>) or a public member variable (<em>$mappers</em>). Since the class defines a setter method, it us used to inject the dependency. The <code>TypeMapping</code> section does not contain a <code>__class</code> key, which means that the <em>mappers</em> property will be an associative array. In this example it maps class names (e.g. <em>app.src.model.wcmf.DBSequence</em>) to mapper instances (e.g. <code>DBSequenceRDBMapper</code>). Further sections show that the <em>connectionParams</em> property of the <code>DBSequenceRDBMapper</code> instance is set to an associative array describing the database connection (section <code>Database</code>).</li>
+<li>The <em>mappers</em> configuration parameter is not used in the constructor. The factory searches for a <em>setter method</em> (<em>setMappers</em>) or a public member variable (<em>$mappers</em>). Since the class defines a setter method, it is used to inject the dependency. The <code>TypeMapping</code> section does not contain a <code>__class</code> key, which means that the <em>mappers</em> property will be an associative array. In this example it maps class names (e.g. <em>app.src.model.wcmf.DBSequence</em>) to mapper instances (e.g. <code>DBSequenceRDBMapper</code>). Further sections show that the <em>connectionParams</em> property of the <code>DBSequenceRDBMapper</code> instance is set to an associative array describing the database connection (section <code>Database</code>).</li>
 </ul>
 </li>
 </ol>
@@ -301,7 +301,7 @@ log4php</h3>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Aug 13 2015 01:19:44 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Thu Aug 13 2015 14:20:21 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

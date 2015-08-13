@@ -51,6 +51,7 @@ var searchData=
   ['createdatabase',['createDatabase',['../classwcmf_1_1lib_1_1util_1_1_d_b_util.html#adfac4febbbd16ed994813d71a78b74c6',1,'wcmf::lib::util::DBUtil']]],
   ['createimpl',['createImpl',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#ad671c122481320dd88589c0cf19b1c77',1,'wcmf\lib\model\mapper\RDBMapper\createImpl()'],['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#ad671c122481320dd88589c0cf19b1c77',1,'wcmf\lib\persistence\impl\AbstractMapper\createImpl()']]],
   ['createinstance',['createInstance',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#adff4e78a9d6671117a987c2a6e0bbb2f',1,'wcmf::lib::core::impl::DefaultFactory']]],
+  ['createiterator',['createIterator',['../classwcmf_1_1test_1_1lib_1_1_array_data_set.html#a3c00fb4984719f4eec634dcf8962cc9b',1,'wcmf::test::lib::ArrayDataSet']]],
   ['createkey',['createKey',['../classwcmf_1_1lib_1_1config_1_1_action_key.html#a93814d3754ee709faec336fc3a4727d2',1,'wcmf::lib::config::ActionKey']]],
   ['createobject',['createObject',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#aa964429995d2e15009b092957d39502d',1,'wcmf::lib::model::mapper::RDBMapper']]],
   ['createobjectfromdata',['createObjectFromData',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a4a85fd8cf7a4e7550c02df4450d4bec0',1,'wcmf::lib::model::mapper::RDBMapper']]],

@@ -102,9 +102,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><div class="has-toc"></div><h1><a class="anchor" id="testing"></a>
 Testing</h1>
-<h2><a class="anchor" id="testing_unit"></a>
-Unit tests</h2>
-<p><span class="label label-danger">TODO</span> </p>
+<p>The tests shipping with wCMF are based on <a href="https://phpunit.de/">PHPUnit</a>. They are located in the <em>src/wcmf/test</em> directory.</p>
+<h2><a class="anchor" id="testing_run"></a>
+Running tests</h2>
+<p>To run all tests, execute the following command:</p>
+<div class="fragment"><div class="line">phpunit --bootstrap bootstrap.php --configuration configuration.xml</div>
+</div><!-- fragment --><p>The tests use PHP's built-in web server where necessary and operate on a file based database (<a href="https://www.sqlite.org/">SQLite</a>).</p>
+<h2><a class="anchor" id="testing_write"></a>
+Writing tests</h2>
+<p>To simplify setting up the testing enviroment, wCMF provides the <a class="el" href="classwcmf_1_1lib_1_1util_1_1_test_util.html"><code>TestUtil</code></a> class. It has methods for starting the test server, initializing the framework, starting sessions and simulating requests.</p>
+<p>For developing custom test cases, the following base classes may be used:</p>
+<ul>
+<li><a class="el" href="classwcmf_1_1test_1_1lib_1_1_base_test_case.html"><code>BaseTestCase</code></a> is used as base class for all test cases. It initializes the framework before each test.</li>
+<li><a class="el" href="classwcmf_1_1test_1_1lib_1_1_database_test_case.html"><code>DatabaseTestCase</code></a> adds database support for testing persistency related functionality.</li>
+<li><a class="el" href="classwcmf_1_1test_1_1lib_1_1_controller_test_case.html"><code>ControllerTestCase</code></a> adds a convenience method for running requests. </li>
+</ul>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -114,7 +126,7 @@ Unit tests</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Aug 13 2015 01:19:44 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Thu Aug 13 2015 14:20:21 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

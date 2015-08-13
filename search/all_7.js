@@ -14,6 +14,7 @@ var searchData=
   ['finishexport',['finishExport',['../classwcmf_1_1application_1_1controller_1_1_x_m_l_export_controller.html#ae44dbe1e4ab0266b5a090985ea10258f',1,'wcmf::application::controller::XMLExportController']]],
   ['fitintosquare',['fitIntoSquare',['../classwcmf_1_1lib_1_1util_1_1_graphics_util.html#aa860714adf80e86f2f5c4eefd82caa8a',1,'wcmf::lib::util::GraphicsUtil']]],
   ['fixedliststrategy',['FixedListStrategy',['../classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_fixed_list_strategy.html',1,'wcmf::lib::presentation::control::lists::impl']]],
+  ['fixqueryquotes',['fixQueryQuotes',['../classwcmf_1_1test_1_1lib_1_1_base_test_case.html#ad1a59c1e7dcb4ad6a7715ffef962920e',1,'wcmf::test::lib::BaseTestCase']]],
   ['flip',['flip',['../classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#ab7b978294481794664ea5ffa6530e020',1,'wcmf::lib::model::visitor::LayoutVisitor']]],
   ['format',['Format',['../interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html',1,'wcmf::lib::presentation::format']]],
   ['formatter',['Formatter',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html',1,'wcmf::lib::presentation::format']]],

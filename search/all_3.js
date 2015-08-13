@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['basetestcase',['BaseTestCase',['../classwcmf_1_1test_1_1lib_1_1_base_test_case.html',1,'wcmf::test::lib']]],
   ['batchcontroller',['BatchController',['../classwcmf_1_1application_1_1controller_1_1_batch_controller.html',1,'wcmf::application::controller']]],
   ['batchdisplaycontroller',['BatchDisplayController',['../classwcmf_1_1application_1_1controller_1_1_batch_display_controller.html',1,'wcmf::application::controller']]],
   ['before_5fexecute_5fcontroller',['BEFORE_EXECUTE_CONTROLLER',['../classwcmf_1_1lib_1_1presentation_1_1_application_event.html#a30945e9242bd00205411066022ce5c3e',1,'wcmf::lib::presentation::ApplicationEvent']]],
