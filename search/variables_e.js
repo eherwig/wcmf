@@ -13,5 +13,6 @@ var searchData=
   ['resource_5ftype_5fentity_5ftype',['RESOURCE_TYPE_ENTITY_TYPE',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html#a38b1d9157d752f519a2c7958bf459c5a',1,'wcmf::lib::security::impl::AbstractPermissionManager']]],
   ['resource_5ftype_5fentity_5ftype_5fproperty',['RESOURCE_TYPE_ENTITY_TYPE_PROPERTY',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html#a45d5cb295296121092598c59b41e2f58',1,'wcmf::lib::security::impl::AbstractPermissionManager']]],
   ['resource_5ftype_5fother',['RESOURCE_TYPE_OTHER',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html#a6a629f73254305352611fa4df08a3742',1,'wcmf::lib::security::impl::AbstractPermissionManager']]],
-  ['role_5finvalid',['ROLE_INVALID',['../namespacewcmf_1_1lib_1_1presentation.html#ae4022186fd45bedf4a9f2cf8d18f08f5',1,'wcmf::lib::presentation']]]
+  ['role_5finvalid',['ROLE_INVALID',['../namespacewcmf_1_1lib_1_1presentation.html#ae4022186fd45bedf4a9f2cf8d18f08f5',1,'wcmf::lib::presentation']]],
+  ['root_5fsection_5fname',['ROOT_SECTION_NAME',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_monolog_file_logger.html#a28081cafa1ae1255876ae6ae341568b5',1,'wcmf::lib::core::impl::MonologFileLogger']]]
 ];

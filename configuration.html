@@ -247,11 +247,11 @@ Logging configuration</h2>
 <h3><a class="anchor" id="conf_monolog"></a>
 Monolog</h3>
 <p>To use the <em>log4php</em> library, instantiate <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_monolog_file_logger.html"><code>MonologFileLogger</code></a> in the following way:</p>
-<div class="fragment"><div class="line">$logger = <span class="keyword">new</span> MonologFileLogger(<span class="stringliteral">&#39;main&#39;</span>, WCMF_BASE.<span class="stringliteral">&#39;app/config/logging.ini&#39;</span>);</div>
+<div class="fragment"><div class="line">$logger = <span class="keyword">new</span> MonologFileLogger(<span class="stringliteral">&#39;main&#39;</span>, WCMF_BASE.<span class="stringliteral">&#39;app/config/log.ini&#39;</span>);</div>
 <div class="line">LogManager::configure($logger);</div>
 </div><!-- fragment --><p><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_monolog_file_logger.html"><code>MonologFileLogger</code></a> is a simple wrapper class that allows logging to files or streams. The configuration is defined in the <a href="http://en.wikipedia.org/wiki/INI_file">INI file</a> format using the following sections and keys:</p>
 <ul>
-<li><code>root</code> section defines properties valid for all loggers unless otherwise stated<ul>
+<li><code>Root</code> section defines properties valid for all loggers unless otherwise stated<ul>
 <li><code>level</code> The default log level</li>
 <li><code>target</code> The logging target. This could be either a<ul>
 <li><em>directory</em> (e.g. <em>app/log/</em>) for daily rotating log files or a</li>
@@ -260,18 +260,18 @@ Monolog</h3>
 </li>
 </ul>
 </li>
-<li><code>loggers</code> section defines log levels for individual loggers<ul>
+<li><code>Logger</code> section defines log levels for individual loggers<ul>
 <li><em>logger name</em> (e.g. <em>wcmf\lib\presentation\Application</em>) is used as key and the log level (e.g. <code>DEBUG</code>) as value</li>
 </ul>
 </li>
 </ul>
 <p>Since in wCMF each class uses it's own logger named after the class name, setting up the log level for individual classes is straightforward.</p>
 <p>The following configuration sets the default log level to <code>ERROR</code> and the log level for the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> class to <code>DEBUG</code>:</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[root]</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Root]</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;level = ERROR</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;target = app/log/</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;[loggers]</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;[Logger]</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;wcmf\lib\presentation\Controller = DEBUG</div>
 </div><!-- fragment --><h3><a class="anchor" id="conf_log4php"></a>
 log4php</h3>
@@ -301,7 +301,7 @@ log4php</h3>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Aug 13 2015 14:20:21 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Fri Aug 14 2015 01:52:23 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

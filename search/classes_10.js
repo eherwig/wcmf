@@ -5,6 +5,7 @@ var searchData=
   ['searchcontroller',['SearchController',['../classwcmf_1_1application_1_1controller_1_1_search_controller.html',1,'wcmf::application::controller']]],
   ['searchindexcontroller',['SearchIndexController',['../classwcmf_1_1application_1_1controller_1_1_search_index_controller.html',1,'wcmf::application::controller']]],
   ['selectstatement',['SelectStatement',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement.html',1,'wcmf::lib::model::mapper']]],
+  ['seleniumtestcase',['SeleniumTestCase',['../classwcmf_1_1test_1_1lib_1_1_selenium_test_case.html',1,'wcmf::test::lib']]],
   ['session',['Session',['../interfacewcmf_1_1lib_1_1core_1_1_session.html',1,'wcmf::lib::core']]],
   ['smartyview',['SmartyView',['../classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_smarty_view.html',1,'wcmf::lib::presentation::view::impl']]],
   ['soapclient',['SoapClient',['../classwcmf_1_1lib_1_1service_1_1_soap_client.html',1,'wcmf::lib::service']]],
