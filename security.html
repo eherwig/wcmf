@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><div class="has-toc"></div><h1><a class="anchor" id="sec_main"></a>
 Security</h1>
-<p>Two key aspects of securing an application are <em>authentication</em> and <em>authorization</em>. While <b>authentication</b> is the process of verifying the identity of a user, <b>authorization</b> means determining if the user is allowed to do what he or she is about to do. That implies that authentication is a precondition for authorization.</p>
+<p>Two key aspects of securing an application are <em>authentication</em> and <em>authorization</em>. While <b>authentication</b> is the process of verifying the identity of a user, <b>authorization</b> means determining if the user is allowed to do what he or she is about to do. That implies that authentication is a precondition for authorization. Input <b>validation and filtering</b> is another aspect, which is especially important in web applications.</p>
 <h2><a class="anchor" id="sec_users_roles"></a>
 Users and Roles</h2>
 <p>Users are essential for an authentication system. In wCMF users are represented as instances of classes implementing the <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html"><code>User</code></a> interface. Since wCMF's authorization system is role based, users are organized in roles. Role classes implement the <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html"><code>Role</code></a> interface. A user could have multiple roles, while multiple users could have the same role.</p>
@@ -277,9 +277,28 @@ Default policies</h4>
 <p>Default policies answer the question, what happens if <b>no permission</b> is defined on a requested resource. These rules depend on the authentication status of the current user and are defined in <a class="el" href="classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html"><code>AbstractPermissionManager</code></a> as follows:</p>
 <ul>
 <li><em>Not authenticated</em>: Resource is <em>not accessible</em></li>
-<li><em>Authenticated</em>: Resource is <em>accessible</em> </li>
+<li><em>Authenticated</em>: Resource is <em>accessible</em></li>
 </ul>
-</div></div><!-- contents -->
+<h2><a class="anchor" id="sec_input"></a>
+Input</h2>
+<p>Generally all external input sent to the application should be considered harmful.</p>
+<p>In PHP this input is stored in so called <em>Superglobals</em>, e.g. <em>$_GET</em>, <em>$_POST</em>, <em>$_FILES</em>. To avoid using these global variables directly in code, wCMF encapsulates them in the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance and makes them available through the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a664ea399753a23ceeb585c084ae7de48"><code>Request::getValue</code></a> method. Besides the variable name this method defines the following optional parameters:</p>
+<ul>
+<li><code>$default</code> default value if the value is not contained in the request</li>
+<li><code>$filter</code> <a href="http://php.net/manual/en/filter.filters.php">filter</a> to be applied to the value</li>
+<li><code>$options</code> filter parameters if necessary</li>
+</ul>
+<p>The <code>$filter</code> and <code>$options</code> values are passed to the <a href="http://php.net/manual/en/function.filter-var.php">filter_var</a> function and the result is returned by the method.</p>
+<p>The following code demonstrates the usage:</p>
+<div class="fragment"><div class="line"><span class="comment">// validate an email value</span></div>
+<div class="line">$email = $request-&gt;getValue(<span class="stringliteral">&#39;email&#39;</span>, <span class="stringliteral">&#39;&#39;</span>, FILTER_VALIDATE_EMAIL);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// validate a date using a regular expression and</span></div>
+<div class="line"><span class="comment">// return the current date on failure</span></div>
+<div class="line">$today = date(<span class="stringliteral">&#39;Y-m-d&#39;</span>);</div>
+<div class="line">$options = array(<span class="stringliteral">&quot;options&quot;</span> =&gt; array(<span class="stringliteral">&quot;regexp&quot;</span> =&gt; <span class="stringliteral">&quot;/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/&quot;</span>));</div>
+<div class="line">$date = $request-&gt;getValue(<span class="stringliteral">&#39;date&#39;</span>, $today, FILTER_VALIDATE_REGEXP, $options);</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <hr>
@@ -288,7 +307,7 @@ Default policies</h4>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Aug 14 2015 02:04:40 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Fri Aug 14 2015 15:15:43 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>
