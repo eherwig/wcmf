@@ -11,19 +11,18 @@
 <polygon fill="white" stroke="none" points="-4,4 -4,-365 148,-365 148,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<polygon fill="#bfbfbf" stroke="black" points="12.5,-0.5 12.5,-79.5 131.5,-79.5 131.5,-0.5 12.5,-0.5"/>
-<text text-anchor="middle" x="72" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">MultipleActionController</text>
-<polyline fill="none" stroke="black" points="12.5,-60.5 131.5,-60.5 "/>
-<text text-anchor="middle" x="72" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="12.5,-41.5 131.5,-41.5 "/>
-<text text-anchor="start" x="20.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
+<polygon fill="#bfbfbf" stroke="black" points="12.5,-0.5 12.5,-68.5 131.5,-68.5 131.5,-0.5 12.5,-0.5"/>
+<text text-anchor="middle" x="72" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">MultipleActionController</text>
+<polyline fill="none" stroke="black" points="12.5,-49.5 131.5,-49.5 "/>
+<text text-anchor="middle" x="72" y="-37.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="12.5,-30.5 131.5,-30.5 "/>
 <text text-anchor="start" x="20.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00"># validate()</text>
 <text text-anchor="start" x="20.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00"># doExecute()</text>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
 <g id="a_node2"><a xlink:href="classwcmf_1_1lib_1_1presentation_1_1_controller.html" target="_top" xlink:title="Controller is the base class of all controllers. ">
-<polygon fill="white" stroke="black" points="0,-116.5 0,-360.5 144,-360.5 144,-116.5 0,-116.5"/>
+<polygon fill="white" stroke="black" points="0,-105.5 0,-360.5 144,-360.5 144,-105.5 0,-105.5"/>
 <text text-anchor="middle" x="72" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">Controller</text>
 <polyline fill="none" stroke="black" points="0,-341.5 144,-341.5 "/>
 <text text-anchor="middle" x="72" y="-329.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
@@ -40,19 +39,20 @@
 <text text-anchor="start" x="8" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getSession()</text>
 <text text-anchor="start" x="8" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getPersistenceFacade()</text>
 <text text-anchor="start" x="8" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getPermissionManager()</text>
-<text text-anchor="start" x="8" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getLocalization()</text>
-<text text-anchor="start" x="8" y="-167.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getMessage()</text>
-<text text-anchor="start" x="8" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getConfiguration()</text>
-<text text-anchor="start" x="8" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00"># assignResponseDefaults()</text>
-<text text-anchor="start" x="8" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isLocalizedRequest()</text>
-<text text-anchor="start" x="8" y="-123.5" font-family="Helvetica,sans-Serif" font-size="10.00"># checkLanguageParameter()</text>
+<text text-anchor="start" x="8" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getActionMapper()</text>
+<text text-anchor="start" x="8" y="-167.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getLocalization()</text>
+<text text-anchor="start" x="8" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getMessage()</text>
+<text text-anchor="start" x="8" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getConfiguration()</text>
+<text text-anchor="start" x="8" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00"># assignResponseDefaults()</text>
+<text text-anchor="start" x="8" y="-123.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isLocalizedRequest()</text>
+<text text-anchor="start" x="8" y="-112.5" font-family="Helvetica,sans-Serif" font-size="10.00"># checkLanguageParameter()</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M72,-106.402C72,-96.9406 72,-87.9388 72,-79.8074"/>
-<polygon fill="none" stroke="midnightblue" points="68.5001,-106.41 72,-116.41 75.5001,-106.41 68.5001,-106.41"/>
+<path fill="none" stroke="midnightblue" d="M72,-95.1653C72,-85.593 72,-76.6017 72,-68.646"/>
+<polygon fill="none" stroke="midnightblue" points="68.5001,-95.3318 72,-105.332 75.5001,-95.3319 68.5001,-95.3318"/>
 </g>
 </g>
 </svg>

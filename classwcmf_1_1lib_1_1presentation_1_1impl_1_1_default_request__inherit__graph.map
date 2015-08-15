@@ -1,5 +1,5 @@
 <map id="DefaultRequest" name="DefaultRequest">
-<area shape="rect" id="node2" href="$classwcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message.html" title="AbstractControllerMessage is the base class for request/response implementations. ..." alt="" coords="5,277,196,516"/>
-<area shape="rect" id="node3" href="$interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html" title="Messages are sent between Controllers and are used to transfer data between them. ..." alt="" coords="134,5,265,229"/>
-<area shape="rect" id="node4" href="$interfacewcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. " alt="" coords="220,336,379,457"/>
+<area shape="rect" id="node2" href="$classwcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message.html" title="AbstractControllerMessage is the base class for request/response implementations. ..." alt="" coords="5,277,196,531"/>
+<area shape="rect" id="node3" href="$interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html" title="Messages are sent between Controllers and are used to transfer data between them. ..." alt="" coords="137,5,288,229"/>
+<area shape="rect" id="node4" href="$interfacewcmf_1_1lib_1_1presentation_1_1_request.html" title="Request holds the request values that are used as input to Controller instances. " alt="" coords="220,336,429,472"/>
 </map>

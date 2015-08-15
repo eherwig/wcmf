@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d75c23162a2652451dce46d2e7e8aead.html">application</a></li><li class="navelem"><a class="el" href="dir_d4705990998dc57c6886494362019069.html">controller</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e659925bc7938c132ebc659cdfa3fb60.html">application</a></li><li class="navelem"><a class="el" href="dir_534cac7d4c5b7fef43abeb5786558088.html">controller</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -178,36 +178,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      $HTTP_RAW_POST_DATA = implode(<span class="stringliteral">&quot;\r\n&quot;</span>, file(<span class="stringliteral">&#39;php://input&#39;</span>));</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    $server-&gt;service($HTTP_RAW_POST_DATA);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    exit;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">   * Search</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">   * @param $query The search term</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">   * @return Array of SearchResultItem on success</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html#a523690ef8752be368a3589a600eee975">   83</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html#a523690ef8752be368a3589a600eee975">search</a>($query) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    global <a class="code" href="namespacewcmf_1_1application_1_1controller.html#ad135cc8a47e55f0829949cf62214170f">$server</a>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    $response = $server-&gt;doCall(<span class="stringliteral">&#39;search&#39;</span>, array(<span class="stringliteral">&#39;query&#39;</span> =&gt; $query));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    $result = array();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">foreach</span> ($response-&gt;getValue(<span class="stringliteral">&#39;list&#39;</span>) as $item) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      $result[] = array(<span class="stringliteral">&#39;type&#39;</span> =&gt; $item[<span class="stringliteral">&#39;type&#39;</span>], <span class="stringliteral">&#39;oid&#39;</span> =&gt; $item[<span class="stringliteral">&#39;oid&#39;</span>],</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="stringliteral">&#39;displayValue&#39;</span> =&gt; $item[<span class="stringliteral">&#39;displayValue&#39;</span>], <span class="stringliteral">&#39;summary&#39;</span> =&gt; $item[<span class="stringliteral">&#39;summary&#39;</span>]</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      );</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> array(<span class="stringliteral">&#39;return&#39;</span> =&gt; $result);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;?&gt;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// NOTE: the response is not used, because the SoapServer::service method</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// returns the data to the client but we need to make sure that there is</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// no further processing</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    $response-&gt;setFormatByName(<span class="stringliteral">&#39;null&#39;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    $response-&gt;setFinal();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">   * Search</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">   * @param $query The search term</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">   * @return Array of SearchResultItem on success</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html#a523690ef8752be368a3589a600eee975">   89</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html#a523690ef8752be368a3589a600eee975">search</a>($query) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    global <a class="code" href="namespacewcmf_1_1application_1_1controller.html#ad135cc8a47e55f0829949cf62214170f">$server</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    $response = $server-&gt;doCall(<span class="stringliteral">&#39;search&#39;</span>, array(<span class="stringliteral">&#39;query&#39;</span> =&gt; $query));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    $result = array();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">foreach</span> ($response-&gt;getValue(<span class="stringliteral">&#39;list&#39;</span>) as $item) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      $result[] = array(<span class="stringliteral">&#39;type&#39;</span> =&gt; $item[<span class="stringliteral">&#39;type&#39;</span>], <span class="stringliteral">&#39;oid&#39;</span> =&gt; $item[<span class="stringliteral">&#39;oid&#39;</span>],</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="stringliteral">&#39;displayValue&#39;</span> =&gt; $item[<span class="stringliteral">&#39;displayValue&#39;</span>], <span class="stringliteral">&#39;summary&#39;</span> =&gt; $item[<span class="stringliteral">&#39;summary&#39;</span>]</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      );</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> array(<span class="stringliteral">&#39;return&#39;</span> =&gt; $result);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;?&gt;</div>
 <div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html">wcmf\lib\presentation\Controller</a></div><div class="ttdoc">Controller is the base class of all controllers. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00047">Controller.php:47</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_controller_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_controller.html">Controller</a></div></div>
 <div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller_html_a4eadfceba84d61eda01f9828935cf8e5"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html#a4eadfceba84d61eda01f9828935cf8e5">wcmf\application\controller\SOAPController\doExecute</a></div><div class="ttdeci">doExecute()</div><div class="ttdef"><b>Definition:</b> <a href="_s_o_a_p_controller_8php_source.html#l00055">SOAPController.php:55</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1service_1_1_soap_server_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1service_1_1_soap_server.html">wcmf\lib\service\SoapServer</a></div><div class="ttdoc">SoapServer extends nusoap server to actually process requests inside the application context...</div><div class="ttdef"><b>Definition:</b> <a href="_soap_server_8php_source.html#l00027">SoapServer.php:27</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1application_1_1controller_html"><div class="ttname"><a href="namespacewcmf_1_1application_1_1controller.html">wcmf\application\controller</a></div><div class="ttdoc">Application controllers. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00003">namespaces.php:3</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a6c907e8af775e517a77037dd0164222f"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">wcmf\lib\presentation\Controller\getResponse</a></div><div class="ttdeci">getResponse()</div><div class="ttdoc">Get the Response instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00196">Controller.php:196</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1service_1_1_soap_server_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1service_1_1_soap_server.html">SoapServer</a></div></div>
 <div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller_html"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html">wcmf\application\controller\SOAPController</a></div><div class="ttdoc">SOAPController handles SOAP requests. </div><div class="ttdef"><b>Definition:</b> <a href="_s_o_a_p_controller_8php_source.html#l00050">SOAPController.php:50</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1application_1_1controller_html_ad135cc8a47e55f0829949cf62214170f"><div class="ttname"><a href="namespacewcmf_1_1application_1_1controller.html#ad135cc8a47e55f0829949cf62214170f">wcmf\application\controller\$server</a></div><div class="ttdeci">$server</div><div class="ttdoc">Global server instance used by the generated soap interface. </div><div class="ttdef"><b>Definition:</b> <a href="_s_o_a_p_controller_8php_source.html#l00019">SOAPController.php:19</a></div></div>
-<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller_html_a523690ef8752be368a3589a600eee975"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html#a523690ef8752be368a3589a600eee975">wcmf\application\controller\SOAPController\search</a></div><div class="ttdeci">static search($query)</div><div class="ttdoc">Search. </div><div class="ttdef"><b>Definition:</b> <a href="_s_o_a_p_controller_8php_source.html#l00083">SOAPController.php:83</a></div></div>
+<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller_html_a523690ef8752be368a3589a600eee975"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html#a523690ef8752be368a3589a600eee975">wcmf\application\controller\SOAPController\search</a></div><div class="ttdeci">static search($query)</div><div class="ttdoc">Search. </div><div class="ttdef"><b>Definition:</b> <a href="_s_o_a_p_controller_8php_source.html#l00089">SOAPController.php:89</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -217,7 +224,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Aug 14 2015 15:15:40 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sat Aug 15 2015 21:38:13 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

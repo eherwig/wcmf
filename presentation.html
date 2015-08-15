@@ -146,7 +146,7 @@ Request processing</h2>
 <li>The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> instance matching the request is determined (see <a class="el" href="presentation.html#pres_routing">Routing</a>) and executed.</li>
 <li>The <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html"><code>Response</code></a> instance is obtained after execution.</li>
 <li>The response data is transformed into the requested response format (see <a class="el" href="presentation.html#pres_format">Formats</a>).</li>
-<li>Execution returns to step 3, if a valid action key is contained in the response data and terminates, if not.</li>
+<li>Execution returns to step 3, if a valid action key is contained in the response data and terminates, if no action key is found or the response is finalized by calling the method <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a705216f429a96fe01fc29a3fefba3858"><code>Response::setFinal</code></a>.</li>
 </ol>
 <h3><a class="anchor" id="pres_format"></a>
 Formats</h3>
@@ -354,7 +354,7 @@ Logging</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Aug 14 2015 15:15:43 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sat Aug 15 2015 21:38:15 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

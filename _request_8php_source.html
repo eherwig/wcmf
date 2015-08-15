@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_2c167dadae1edee6396156038f705d0a.html">presentation</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_ef6d6a8be2e4a5ebed8a716caaca8b88.html">presentation</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -148,17 +148,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#ac65fa72dc443442b5875711701bad654">setResponseFormat</a>(<a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html">Format</a> $format);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">   * Get the message response format. If no explicit format is set, the</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">   * format is derived from the Content-Type header value, if existing.</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">   * If no format can be derived, the first format in the configuration</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">   * key &#39;Formats&#39; will be used.</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">   * @return Format instance</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#aae97bd0eb9148fbc922ee5f0a5ee23e0">getResponseFormat</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;?&gt;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">   * Set the desired response format</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">   * @param $name A key of the configuration section &#39;Formats&#39;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#a5cb60f6b2fd9016d8d77f6196d02bba4">setResponseFormatByName</a>($name);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">   * Get the message response format. If no explicit format is set, the</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">   * format is derived from the Content-Type header value, if existing.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">   * If no format can be derived, the first format in the configuration</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">   * key &#39;Formats&#39; will be used.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">   * @return Format instance</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#aae97bd0eb9148fbc922ee5f0a5ee23e0">getResponseFormat</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;?&gt;</div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html_ac65fa72dc443442b5875711701bad654"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#ac65fa72dc443442b5875711701bad654">wcmf\lib\presentation\Request\setResponseFormat</a></div><div class="ttdeci">setResponseFormat(Format $format)</div><div class="ttdoc">Set the desired response format. </div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1format_1_1_format_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html">Format</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html_a5cb60f6b2fd9016d8d77f6196d02bba4"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#a5cb60f6b2fd9016d8d77f6196d02bba4">wcmf\lib\presentation\Request\setResponseFormatByName</a></div><div class="ttdeci">setResponseFormatByName($name)</div><div class="ttdoc">Set the desired response format. </div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation.html">wcmf\lib\presentation</a></div><div class="ttdoc">Presentation related interfaces and classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00059">namespaces.php:59</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html">wcmf\lib\presentation\ControllerMessage</a></div><div class="ttdoc">Messages are sent between Controllers and are used to transfer data between them. ...</div><div class="ttdef"><b>Definition:</b> <a href="_controller_message_8php_source.html#l00024">ControllerMessage.php:24</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html_a36e0e7579b8ab70ec7690b37dcdfa312"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#a36e0e7579b8ab70ec7690b37dcdfa312">wcmf\lib\presentation\Request\initialize</a></div><div class="ttdeci">initialize($controller=null, $context=null, $action=null)</div><div class="ttdoc">Initialize the request instance from the HTTP request. </div></div>
@@ -175,7 +182,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Aug 14 2015 15:15:42 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sat Aug 15 2015 21:38:14 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

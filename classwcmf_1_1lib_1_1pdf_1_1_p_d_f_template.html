@@ -124,16 +124,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">  <span class="comment">// output the final page</span></div>
 <div class="line">  $downloadfile = <span class="stringliteral">&#39;wcmf.pdf&#39;</span>;</div>
-<div class="line">  header(<span class="stringliteral">&quot;Content-disposition: attachment; filename=$downloadfile&quot;</span>);</div>
-<div class="line">  header(<span class="stringliteral">&quot;Content-Type: application/force-download&quot;</span>);</div>
-<div class="line">  header(<span class="stringliteral">&quot;Content-Transfer-Encoding: binary&quot;</span>);</div>
-<div class="line">  header(<span class="stringliteral">&quot;Pragma: no-cache&quot;</span>);</div>
-<div class="line">  header(<span class="stringliteral">&quot;Expires: 0&quot;</span>);</div>
-<div class="line">  echo $template-&gt;output($downloadfile, <span class="charliteral">&#39;S&#39;</span>);</div>
+<div class="line">  $response-&gt;setFile($downloadfile, $template-&gt;output($downloadfile, <span class="charliteral">&#39;S&#39;</span>));</div>
 <div class="line">}</div>
 </div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00048">48</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
+<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00043">43</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -182,7 +177,7 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00060">60</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
+<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00055">55</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
 
 </div>
 </div>
@@ -209,7 +204,7 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00073">73</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
+<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00068">68</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
 
 </div>
 </div>
@@ -253,7 +248,7 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00087">87</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
+<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00082">82</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
 
 </div>
 </div>
@@ -292,7 +287,7 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The document string in case of dest = 'S', nothing else </dd></dl>
 
-<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00100">100</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
+<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00095">95</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
 
 </div>
 </div>
@@ -307,7 +302,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00050">50</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
+<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00045">45</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
 
 </div>
 </div>
@@ -321,7 +316,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00051">51</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
+<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00046">46</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
 
 </div>
 </div>
@@ -335,7 +330,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00052">52</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
+<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00047">47</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
 
 </div>
 </div>
@@ -349,7 +344,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00053">53</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
+<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00048">48</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
 
 </div>
 </div>
@@ -363,7 +358,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00054">54</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
+<p>Definition at line <a class="el" href="_p_d_f_template_8php_source.html#l00049">49</a> of file <a class="el" href="_p_d_f_template_8php_source.html">PDFTemplate.php</a>.</p>
 
 </div>
 </div>
@@ -376,7 +371,7 @@ Public Attributes</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Aug 14 2015 15:15:45 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sat Aug 15 2015 21:38:20 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

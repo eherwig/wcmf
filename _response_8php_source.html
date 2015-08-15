@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_2c167dadae1edee6396156038f705d0a.html">presentation</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_ef6d6a8be2e4a5ebed8a716caaca8b88.html">presentation</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -159,10 +159,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">   * @return String</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a9d21636071f529e2154051d3ea6e5921">getStatus</a>();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;?&gt;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">   * Set a file download.</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">   * NOTE: This automatically sets the response to final (see Response::setFinal)</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">   * @param $filename The name of the file, must be a real file, if no content is provided</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">   * @param $content File content, if in-memory only (optional)</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a90fe4a899bd59a7a8b67a24fba93be79">setFile</a>($filename, $content=<span class="stringliteral">&#39;&#39;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">   * Get the file download</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">   * @return Array with keys &#39;filename&#39; and &#39;content&#39; or null</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#adf61e733be7f62a3f4bedbe7d2e02ec2">getFile</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">   * Make sure there is no further processing after this response</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a705216f429a96fe01fc29a3fefba3858">setFinal</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">   * Check if the response forbids further processing or not</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">   * @return Boolean</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#af5e2c93992e760dc57f31b31ed354cfa">isFinal</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;?&gt;</div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">wcmf\lib\presentation\Response</a></div><div class="ttdoc">Response holds the response values that are used as output from Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_response_8php_source.html#l00020">Response.php:20</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html_a6455ffe4712c7e47106a9d8bc62ec69d"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a6455ffe4712c7e47106a9d8bc62ec69d">wcmf\lib\presentation\Response\STATUS_202</a></div><div class="ttdeci">const STATUS_202</div><div class="ttdef"><b>Definition:</b> <a href="_response_8php_source.html#l00024">Response.php:24</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html_a90fe4a899bd59a7a8b67a24fba93be79"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a90fe4a899bd59a7a8b67a24fba93be79">wcmf\lib\presentation\Response\setFile</a></div><div class="ttdeci">setFile($filename, $content='')</div><div class="ttdoc">Set a file download. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html_af5e2c93992e760dc57f31b31ed354cfa"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#af5e2c93992e760dc57f31b31ed354cfa">wcmf\lib\presentation\Response\isFinal</a></div><div class="ttdeci">isFinal()</div><div class="ttdoc">Check if the response forbids further processing or not. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html_a68cfcd21a8bbebba7002ba19b235c7c4"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a68cfcd21a8bbebba7002ba19b235c7c4">wcmf\lib\presentation\Response\STATUS_400</a></div><div class="ttdeci">const STATUS_400</div><div class="ttdef"><b>Definition:</b> <a href="_response_8php_source.html#l00027">Response.php:27</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html_a33b6ec12f934481bad7acbb577a8565d"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a33b6ec12f934481bad7acbb577a8565d">wcmf\lib\presentation\Response\getCacheId</a></div><div class="ttdeci">getCacheId()</div><div class="ttdoc">Get the cache id. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html_a7d02c100d684fe1dffc6cb3486a48511"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a7d02c100d684fe1dffc6cb3486a48511">wcmf\lib\presentation\Response\setStatus</a></div><div class="ttdeci">setStatus($status)</div><div class="ttdoc">Set the response HTTP status code. </div></div>
@@ -173,7 +200,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html">wcmf\lib\presentation\ControllerMessage</a></div><div class="ttdoc">Messages are sent between Controllers and are used to transfer data between them. ...</div><div class="ttdef"><b>Definition:</b> <a href="_controller_message_8php_source.html#l00024">ControllerMessage.php:24</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html_a9d21636071f529e2154051d3ea6e5921"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a9d21636071f529e2154051d3ea6e5921">wcmf\lib\presentation\Response\getStatus</a></div><div class="ttdeci">getStatus()</div><div class="ttdoc">Get the response HTTP status code. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html_a084e5b0378e368aa9ed8d2bbc77a55df"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a084e5b0378e368aa9ed8d2bbc77a55df">wcmf\lib\presentation\Response\STATUS_204</a></div><div class="ttdeci">const STATUS_204</div><div class="ttdef"><b>Definition:</b> <a href="_response_8php_source.html#l00025">Response.php:25</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html_adf61e733be7f62a3f4bedbe7d2e02ec2"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#adf61e733be7f62a3f4bedbe7d2e02ec2">wcmf\lib\presentation\Response\getFile</a></div><div class="ttdeci">getFile()</div><div class="ttdoc">Get the file download. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html_acb03b5f37b332b5d85c231148e236543"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#acb03b5f37b332b5d85c231148e236543">wcmf\lib\presentation\Response\STATUS_404</a></div><div class="ttdeci">const STATUS_404</div><div class="ttdef"><b>Definition:</b> <a href="_response_8php_source.html#l00028">Response.php:28</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html_a705216f429a96fe01fc29a3fefba3858"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a705216f429a96fe01fc29a3fefba3858">wcmf\lib\presentation\Response\setFinal</a></div><div class="ttdeci">setFinal()</div><div class="ttdoc">Make sure there is no further processing after this response. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -183,7 +212,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Aug 14 2015 15:15:42 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sat Aug 15 2015 21:38:14 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>
