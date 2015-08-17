@@ -9,6 +9,6 @@ var searchData=
   ['filter',['Filter',['../classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_filter.html',1,'wcmf::lib::persistence::validator::impl']]],
   ['fixedliststrategy',['FixedListStrategy',['../classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_fixed_list_strategy.html',1,'wcmf::lib::presentation::control::lists::impl']]],
   ['format',['Format',['../interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html',1,'wcmf::lib::presentation::format']]],
-  ['formatter',['Formatter',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html',1,'wcmf::lib::presentation::format']]],
+  ['formatter',['Formatter',['../interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html',1,'wcmf::lib::presentation::format']]],
   ['functionliststrategy',['FunctionListStrategy',['../classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_function_list_strategy.html',1,'wcmf::lib::presentation::control::lists::impl']]]
 ];

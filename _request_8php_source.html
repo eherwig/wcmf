@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_ef6d6a8be2e4a5ebed8a716caaca8b88.html">presentation</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_2c167dadae1edee6396156038f705d0a.html">presentation</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -115,63 +115,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * additional information.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1presentation.html">wcmf\lib\presentation</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html">wcmf\lib\presentation\format\Format</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * Request holds the request values that are used as input to</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * Controller instances. It is typically instantiated and filled by the</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * ActionMapper.</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">   22</a></span>&#160;<span class="keyword">interface </span><a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a> <span class="keyword">extends</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html">ControllerMessage</a> {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">   * Initialize the request instance from the HTTP request.</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">   * @param $controller The controller to call if none is given in request parameters (optional)</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">   * @param $context The context to set if none is given in request parameters (optional)</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">   * @param $action The action to perform if none is given in request parameters (optional)</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#a36e0e7579b8ab70ec7690b37dcdfa312">initialize</a>($controller=null, $context=null, $action=null);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">   * Get the HTTP method of the request</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">   * @return String</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#af3e37e1a6ed9b8c87f86f659873a83b7">getMethod</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">   * Set the desired response format</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">   * @param $format Format instance</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#ac65fa72dc443442b5875711701bad654">setResponseFormat</a>(<a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html">Format</a> $format);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">   * Set the desired response format</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">   * @param $name A key of the configuration section &#39;Formats&#39;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#a5cb60f6b2fd9016d8d77f6196d02bba4">setResponseFormatByName</a>($name);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">   * Get the message response format. If no explicit format is set, the</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">   * format is derived from the Content-Type header value, if existing.</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">   * If no format can be derived, the first format in the configuration</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">   * key &#39;Formats&#39; will be used.</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">   * @return Format instance</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#aae97bd0eb9148fbc922ee5f0a5ee23e0">getResponseFormat</a>();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;?&gt;</div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html_ac65fa72dc443442b5875711701bad654"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#ac65fa72dc443442b5875711701bad654">wcmf\lib\presentation\Request\setResponseFormat</a></div><div class="ttdeci">setResponseFormat(Format $format)</div><div class="ttdoc">Set the desired response format. </div></div>
-<div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1format_1_1_format_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html">Format</a></div></div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html_a5cb60f6b2fd9016d8d77f6196d02bba4"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#a5cb60f6b2fd9016d8d77f6196d02bba4">wcmf\lib\presentation\Request\setResponseFormatByName</a></div><div class="ttdeci">setResponseFormatByName($name)</div><div class="ttdoc">Set the desired response format. </div></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * Request holds the request values that are used as input to</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * Controller instances. It is typically instantiated and filled by the</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * ActionMapper.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">   20</a></span>&#160;<span class="keyword">interface </span><a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a> <span class="keyword">extends</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html">ControllerMessage</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">   * Initialize the request instance from the HTTP request.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">   * @param $controller The controller to call if none is given in request parameters (optional)</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">   * @param $context The context to set if none is given in request parameters (optional)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">   * @param $action The action to perform if none is given in request parameters (optional)</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#a36e0e7579b8ab70ec7690b37dcdfa312">initialize</a>($controller=null, $context=null, $action=null);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">   * Get the HTTP method of the request</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">   * @return String</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#af3e37e1a6ed9b8c87f86f659873a83b7">getMethod</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">   * Set the desired response format</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">   * @param $format A key of the configuration section &#39;Formats&#39;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#a981869bafbf329437860a1af3e093ee2">setResponseFormat</a>($format);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">   * Get the message response format. If no explicit format is set, the</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">   * format is derived from the Content-Type header value, if existing.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">   * If no format can be derived, the first format in the configuration</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">   * key &#39;Formats&#39; will be used.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">   * @return String</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#aae97bd0eb9148fbc922ee5f0a5ee23e0">getResponseFormat</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;?&gt;</div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation.html">wcmf\lib\presentation</a></div><div class="ttdoc">Presentation related interfaces and classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00059">namespaces.php:59</a></div></div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html">wcmf\lib\presentation\ControllerMessage</a></div><div class="ttdoc">Messages are sent between Controllers and are used to transfer data between them. ...</div><div class="ttdef"><b>Definition:</b> <a href="_controller_message_8php_source.html#l00024">ControllerMessage.php:24</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html_a981869bafbf329437860a1af3e093ee2"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#a981869bafbf329437860a1af3e093ee2">wcmf\lib\presentation\Request\setResponseFormat</a></div><div class="ttdeci">setResponseFormat($format)</div><div class="ttdoc">Set the desired response format. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html">wcmf\lib\presentation\ControllerMessage</a></div><div class="ttdoc">Messages are sent between Controllers and are used to transfer data between them. ...</div><div class="ttdef"><b>Definition:</b> <a href="_controller_message_8php_source.html#l00023">ControllerMessage.php:23</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html_a36e0e7579b8ab70ec7690b37dcdfa312"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#a36e0e7579b8ab70ec7690b37dcdfa312">wcmf\lib\presentation\Request\initialize</a></div><div class="ttdeci">initialize($controller=null, $context=null, $action=null)</div><div class="ttdoc">Initialize the request instance from the HTTP request. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html_aae97bd0eb9148fbc922ee5f0a5ee23e0"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#aae97bd0eb9148fbc922ee5f0a5ee23e0">wcmf\lib\presentation\Request\getResponseFormat</a></div><div class="ttdeci">getResponseFormat()</div><div class="ttdoc">Get the message response format. </div></div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">wcmf\lib\presentation\Request</a></div><div class="ttdoc">Request holds the request values that are used as input to Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_request_8php_source.html#l00022">Request.php:22</a></div></div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html">wcmf\lib\presentation\format\Format</a></div><div class="ttdoc">Format defines the interface for all format classes. </div><div class="ttdef"><b>Definition:</b> <a href="_format_8php_source.html#l00024">Format.php:24</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">wcmf\lib\presentation\Request</a></div><div class="ttdoc">Request holds the request values that are used as input to Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_request_8php_source.html#l00020">Request.php:20</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html_af3e37e1a6ed9b8c87f86f659873a83b7"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#af3e37e1a6ed9b8c87f86f659873a83b7">wcmf\lib\presentation\Request\getMethod</a></div><div class="ttdeci">getMethod()</div><div class="ttdoc">Get the HTTP method of the request. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
@@ -182,7 +171,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Aug 15 2015 21:38:14 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Mon Aug 17 2015 15:20:36 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

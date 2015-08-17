@@ -111,7 +111,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>Default <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html" title="ActionMapper implementations are responsible for instantiating and executing Controllers based on the...">ActionMapper</a> implementation. </p>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_default_action_mapper_8php_source.html#l00030">30</a> of file <a class="el" href="_default_action_mapper_8php_source.html">DefaultActionMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_action_mapper_8php_source.html#l00034">34</a> of file <a class="el" href="_default_action_mapper_8php_source.html">DefaultActionMapper.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for DefaultActionMapper:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -123,30 +123,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a095c5d389db211932136b53f25f39685"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_action_mapper.html#a095c5d389db211932136b53f25f39685">__construct</a> ()</td></tr>
-<tr class="separator:a095c5d389db211932136b53f25f39685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9baef91e8cb71fba74946ece947f8134"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_action_mapper.html#a9baef91e8cb71fba74946ece947f8134">__construct</a> (<a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html">Session</a> $session, <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html">PermissionManager</a> $permissionManager, <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_event_manager.html">EventManager</a> $eventManager, <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html">Formatter</a> $formatter, <a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html">Configuration</a> $configuration)</td></tr>
+<tr class="separator:a9baef91e8cb71fba74946ece947f8134"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab75fc4e0d65efcbb007271092180c5be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_action_mapper.html#ab75fc4e0d65efcbb007271092180c5be">processAction</a> (<a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a> $request)</td></tr>
 <tr class="separator:ab75fc4e0d65efcbb007271092180c5be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a20559544fdf4dcb457e258dc976cf8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_action_mapper.html#a4a20559544fdf4dcb457e258dc976cf8">reset</a> ()</td></tr>
 <tr class="separator:a4a20559544fdf4dcb457e258dc976cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a095c5d389db211932136b53f25f39685"></a>
+<a class="anchor" id="a9baef91e8cb71fba74946ece947f8134"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">__construct </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html">Session</a>&#160;</td>
+          <td class="paramname"><em>$session</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html">PermissionManager</a>&#160;</td>
+          <td class="paramname"><em>$permissionManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_event_manager.html">EventManager</a>&#160;</td>
+          <td class="paramname"><em>$eventManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html">Formatter</a>&#160;</td>
+          <td class="paramname"><em>$formatter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html">Configuration</a>&#160;</td>
+          <td class="paramname"><em>$configuration</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$session</td><td></td></tr>
+    <tr><td class="paramname">$permissionManager</td><td></td></tr>
+    <tr><td class="paramname">$eventManager</td><td></td></tr>
+    <tr><td class="paramname">$formatter</td><td></td></tr>
+    <tr><td class="paramname">$configuration</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="_default_action_mapper_8php_source.html#l00039">39</a> of file <a class="el" href="_default_action_mapper_8php_source.html">DefaultActionMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_action_mapper_8php_source.html#l00054">54</a> of file <a class="el" href="_default_action_mapper_8php_source.html">DefaultActionMapper.php</a>.</p>
 
 </div>
 </div>
@@ -168,7 +207,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html#ab75fc4e0d65efcbb007271092180c5be">ActionMapper</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_action_mapper_8php_source.html#l00048">48</a> of file <a class="el" href="_default_action_mapper_8php_source.html">DefaultActionMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_action_mapper_8php_source.html#l00072">72</a> of file <a class="el" href="_default_action_mapper_8php_source.html">DefaultActionMapper.php</a>.</p>
 
 </div>
 </div>
@@ -188,7 +227,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html#a4a20559544fdf4dcb457e258dc976cf8">ActionMapper</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_action_mapper_8php_source.html#l00167">167</a> of file <a class="el" href="_default_action_mapper_8php_source.html">DefaultActionMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_action_mapper_8php_source.html#l00186">186</a> of file <a class="el" href="_default_action_mapper_8php_source.html">DefaultActionMapper.php</a>.</p>
 
 </div>
 </div>
@@ -201,7 +240,7 @@ Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Aug 15 2015 21:38:22 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Mon Aug 17 2015 15:20:40 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

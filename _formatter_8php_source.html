@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_ef6d6a8be2e4a5ebed8a716caaca8b88.html">presentation</a></li><li class="navelem"><a class="el" href="dir_82c5bdeac6ff789f1ec5ef2e92639db3.html">format</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_2c167dadae1edee6396156038f705d0a.html">presentation</a></li><li class="navelem"><a class="el" href="dir_1f6e1aa37aff22067e601f662dcca2cb.html">format</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -116,94 +116,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1format.html">wcmf\lib\presentation\format</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1config_1_1_configuration_exception.html">wcmf\lib\config\ConfigurationException</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1_request.html">wcmf\lib\presentation\Request</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1_response.html">wcmf\lib\presentation\Response</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * Formatter is the single entry point for request/response formatting.</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * It chooses the configured formatter based on the format property of the request</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * by getting the value XXXFormat from the configuration section &#39;formats&#39;.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html">Formatter</a> {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">private</span> <span class="keyword">static</span> $_headersSent = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">   * Deserialize Request data into objects.</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">   * @param $request A reference to the Request instance</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#a7c8752b32b154d60303a2128c07f47fd">   32</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#a7c8752b32b154d60303a2128c07f47fd">deserialize</a>(<a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a> $request) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// get the formatter that should be used for this request format</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    $format = $request-&gt;<a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#ae3c4fbe3e8eb0d6755694bc597d6c52f">getFormat</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> ($format == null) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      <span class="comment">// the format must be given!</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a>(<span class="stringliteral">&quot;No content format defined for &quot;</span>.$request-&gt;__toString());</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    $format-&gt;deserialize($request);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">   * Serialize Response according to the output format.</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">   * @param $response A reference to the Response instance</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#ad93bbf55527356a07bf74a2744b552d2">   47</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#ad93bbf55527356a07bf74a2744b552d2">serialize</a>(<a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a> $response) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    self::$_headersSent = headers_sent();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    self::sendHeader(<span class="stringliteral">&#39;HTTP/1.1 &#39;</span>.$response-&gt;<a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a9d21636071f529e2154051d3ea6e5921">getStatus</a>());</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// if the response has a file, we send it and return</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    $file = $response-&gt;<a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#adf61e733be7f62a3f4bedbe7d2e02ec2">getFile</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> ($file) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      self::sendHeader(<span class="stringliteral">&quot;Content-Type: application/octet-stream&quot;</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      self::sendHeader(<span class="stringliteral">&#39;Content-Disposition: attachment; filename=&quot;&#39;</span>.basename($file[<span class="stringliteral">&#39;filename&#39;</span>]).<span class="charliteral">&#39;&quot;&#39;</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      self::sendHeader(<span class="stringliteral">&quot;Pragma: no-cache&quot;</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      self::sendHeader(<span class="stringliteral">&quot;Expires: 0&quot;</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      echo $file[<span class="stringliteral">&#39;content&#39;</span>];</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// default: delegate to response format</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    $format = $response-&gt;<a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#ae3c4fbe3e8eb0d6755694bc597d6c52f">getFormat</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> ($format == null) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="comment">// the response format must be given!</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a>(<span class="stringliteral">&quot;No response format defined for &quot;</span>.$response-&gt;__toString());</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    self::sendHeader(<span class="stringliteral">&quot;Content-Type: &quot;</span>.$format-&gt;getMimeType().<span class="stringliteral">&quot;; charset=utf-8&quot;</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">foreach</span> ($response-&gt;<a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a157e0005d82edaa21cbea07fdc5c62da">getHeaders</a>() as $name =&gt; $value) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      self::sendHeader($name.<span class="stringliteral">&#39;: &#39;</span>.$value);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    $format-&gt;serialize($response);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">   * Send the given header</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">   * @param $header</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#aa3f3f65edd55dbc8cbe561f59386624a">   79</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#aa3f3f65edd55dbc8cbe561f59386624a">sendHeader</a>($header) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span> (!self::$_headersSent) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      header($header);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;?&gt;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1_request.html">wcmf\lib\presentation\Request</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1_response.html">wcmf\lib\presentation\Response</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * Formatter is the single entry point for request/response formatting.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * It chooses the configured formatter based on the format property of the request</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * by getting the value XXXFormat from the configuration section &#39;formats&#39;.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html">   23</a></span>&#160;<span class="keyword">interface </span><a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html">Formatter</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">   * Get the format name for the given mime type.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">   * @param $mimeType The mime type</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">   * @return String</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#a62ddb7af6b860a1eb5ee229dfc296bce">getFormatFromMimeType</a>($mimeType);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">   * Deserialize Request data into objects.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">   * @param $request A reference to the Request instance</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#acb2095f37f32c58c51e1aeda95ec5c86">deserialize</a>(<a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a> $request);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">   * Serialize Response according to the output format.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">   * @param $response A reference to the Response instance</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#ad000903368fd66cfd404dda25c7bdf6d">serialize</a>(<a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a> $response);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;?&gt;</div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter_html_acb2095f37f32c58c51e1aeda95ec5c86"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#acb2095f37f32c58c51e1aeda95ec5c86">wcmf\lib\presentation\format\Formatter\deserialize</a></div><div class="ttdeci">deserialize(Request $request)</div><div class="ttdoc">Deserialize Request data into objects. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">wcmf\lib\presentation\Response</a></div><div class="ttdoc">Response holds the response values that are used as output from Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_response_8php_source.html#l00020">Response.php:20</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter_html_aa3f3f65edd55dbc8cbe561f59386624a"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#aa3f3f65edd55dbc8cbe561f59386624a">wcmf\lib\presentation\format\Formatter\sendHeader</a></div><div class="ttdeci">static sendHeader($header)</div><div class="ttdoc">Send the given header. </div><div class="ttdef"><b>Definition:</b> <a href="_formatter_8php_source.html#l00079">Formatter.php:79</a></div></div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message_html_ae3c4fbe3e8eb0d6755694bc597d6c52f"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#ae3c4fbe3e8eb0d6755694bc597d6c52f">wcmf\lib\presentation\ControllerMessage\getFormat</a></div><div class="ttdeci">getFormat()</div><div class="ttdoc">Get the message format. </div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter_html_ad93bbf55527356a07bf74a2744b552d2"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#ad93bbf55527356a07bf74a2744b552d2">wcmf\lib\presentation\format\Formatter\serialize</a></div><div class="ttdeci">static serialize(Response $response)</div><div class="ttdoc">Serialize Response according to the output format. </div><div class="ttdef"><b>Definition:</b> <a href="_formatter_8php_source.html#l00047">Formatter.php:47</a></div></div>
-<div class="ttc" id="namespacewcmf_1_1lib_1_1config_1_1_configuration_exception_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_request_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a></div></div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">wcmf\lib\presentation\Request</a></div><div class="ttdoc">Request holds the request values that are used as input to Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_request_8php_source.html#l00022">Request.php:22</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html">wcmf\lib\presentation\format\Formatter</a></div><div class="ttdoc">Formatter is the single entry point for request/response formatting. </div><div class="ttdef"><b>Definition:</b> <a href="_formatter_8php_source.html#l00023">Formatter.php:23</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter_html_a62ddb7af6b860a1eb5ee229dfc296bce"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#a62ddb7af6b860a1eb5ee229dfc296bce">wcmf\lib\presentation\format\Formatter\getFormatFromMimeType</a></div><div class="ttdeci">getFormatFromMimeType($mimeType)</div><div class="ttdoc">Get the format name for the given mime type. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">wcmf\lib\presentation\Request</a></div><div class="ttdoc">Request holds the request values that are used as input to Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_request_8php_source.html#l00020">Request.php:20</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1format_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1format.html">wcmf\lib\presentation\format</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00069">namespaces.php:69</a></div></div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html_a9d21636071f529e2154051d3ea6e5921"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a9d21636071f529e2154051d3ea6e5921">wcmf\lib\presentation\Response\getStatus</a></div><div class="ttdeci">getStatus()</div><div class="ttdoc">Get the response HTTP status code. </div></div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message_html_a157e0005d82edaa21cbea07fdc5c62da"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a157e0005d82edaa21cbea07fdc5c62da">wcmf\lib\presentation\ControllerMessage\getHeaders</a></div><div class="ttdeci">getHeaders()</div><div class="ttdoc">Get all key headers. </div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html">wcmf\lib\presentation\format\Formatter</a></div><div class="ttdoc">Formatter is the single entry point for request/response formatting. </div><div class="ttdef"><b>Definition:</b> <a href="_formatter_8php_source.html#l00024">Formatter.php:24</a></div></div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html_adf61e733be7f62a3f4bedbe7d2e02ec2"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#adf61e733be7f62a3f4bedbe7d2e02ec2">wcmf\lib\presentation\Response\getFile</a></div><div class="ttdeci">getFile()</div><div class="ttdoc">Get the file download. </div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter_html_a7c8752b32b154d60303a2128c07f47fd"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#a7c8752b32b154d60303a2128c07f47fd">wcmf\lib\presentation\format\Formatter\deserialize</a></div><div class="ttdeci">static deserialize(Request $request)</div><div class="ttdoc">Deserialize Request data into objects. </div><div class="ttdef"><b>Definition:</b> <a href="_formatter_8php_source.html#l00032">Formatter.php:32</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1config_1_1_configuration_exception_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">wcmf\lib\config\ConfigurationException</a></div><div class="ttdoc">ConfigurationException signals an exception in the configuration. </div><div class="ttdef"><b>Definition:</b> <a href="_configuration_exception_8php_source.html#l00018">ConfigurationException.php:18</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter_html_ad000903368fd66cfd404dda25c7bdf6d"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html#ad000903368fd66cfd404dda25c7bdf6d">wcmf\lib\presentation\format\Formatter\serialize</a></div><div class="ttdeci">serialize(Response $response)</div><div class="ttdoc">Serialize Response according to the output format. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -213,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Aug 15 2015 21:38:14 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Mon Aug 17 2015 15:20:36 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

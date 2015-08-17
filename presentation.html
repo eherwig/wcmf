@@ -150,7 +150,7 @@ Request processing</h2>
 </ol>
 <h3><a class="anchor" id="pres_format"></a>
 Formats</h3>
-<p>wCMF is designed to be able to consume various request formats and produce several response formats. While some clients communicate using <a href="http://en.wikipedia.org/wiki/JSON">JSON</a> format, others might prefer to encode data in <a href="http://en.wikipedia.org/wiki/XML">XML</a>. The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html"><code>Formatter</code></a> class is used to determine the required format and delegate the actual formatting to the correct <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html"><code>Format</code></a> implementation. wCMF currently provides the following <b>implementations</b>:</p>
+<p>wCMF is designed to be able to consume various request formats and produce several response formats. While some clients communicate using <a href="http://en.wikipedia.org/wiki/JSON">JSON</a> format, others might prefer to encode data in <a href="http://en.wikipedia.org/wiki/XML">XML</a>. <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html"><code>Formatter</code></a> is used to determine the required format and delegate the actual formatting to the correct <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html"><code>Format</code></a> implementation. wCMF currently provides the following <b>implementations</b>:</p>
 <ul>
 <li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_html_format.html"><code>HtmlFormat</code></a> expects all data to be sent as key-value-pairs. Object data are transferred in parameters named <code>value-</code><em>name-oid</em> (e.g. <code>value-title-Book:3</code>). Responses in this format are rendered as HTML views (see <a class="el" href="presentation.html#pres_views">Views</a>).</li>
 <li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_json_format.html"><code>JsonFormat</code></a> handles JSON encoded request data and encodes response data into the same format.</li>
@@ -354,7 +354,7 @@ Logging</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Aug 15 2015 21:38:15 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Mon Aug 17 2015 15:20:36 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

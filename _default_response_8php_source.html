@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_098d557315d7f619643768cc1b3ebd0d.html">lib</a></li><li class="navelem"><a class="el" href="dir_ef6d6a8be2e4a5ebed8a716caaca8b88.html">presentation</a></li><li class="navelem"><a class="el" href="dir_7cd7502e0ac7ade2a559bdb5848bd39b.html">impl</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_2c167dadae1edee6396156038f705d0a.html">presentation</a></li><li class="navelem"><a class="el" href="dir_b9d9e1470d66a4e75a0ceecc26c22516.html">impl</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -116,99 +116,111 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1impl.html">wcmf\lib\presentation\impl</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1_response.html">wcmf\lib\presentation\Response</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html">wcmf\lib\presentation\format\Formatter</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message.html">wcmf\lib\presentation\impl\AbstractControllerMessage</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * Default Response implementation.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html">DefaultResponse</a> <span class="keyword">extends</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message.html">AbstractControllerMessage</a> implements <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">private</span> $_cacheId = null;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">private</span> $_status = self::STATUS_200;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">private</span> $_file = null;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">private</span> $_isFinal = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">   * @see Response::setCacheId()</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a282c10d36405d8bdb86a8d8387de9bce">   31</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a282c10d36405d8bdb86a8d8387de9bce">setCacheId</a>($cacheId) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    $this-&gt;_cacheId = $cacheId;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">   * @see Response::getCacheId()</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a33b6ec12f934481bad7acbb577a8565d">   38</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a33b6ec12f934481bad7acbb577a8565d">getCacheId</a>() {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> $this-&gt;_cacheId;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">   * @see Response::setStatus()</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a7d02c100d684fe1dffc6cb3486a48511">   45</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a7d02c100d684fe1dffc6cb3486a48511">setStatus</a>($status) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    $this-&gt;_status = $status;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">   * @see Response::getStatus()</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a9d21636071f529e2154051d3ea6e5921">   52</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a9d21636071f529e2154051d3ea6e5921">getStatus</a>() {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> $this-&gt;_status;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">   * @see Response::setFile()</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a90fe4a899bd59a7a8b67a24fba93be79">   59</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a90fe4a899bd59a7a8b67a24fba93be79">setFile</a>($filename, $content=<span class="stringliteral">&#39;&#39;</span>) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> (strlen($content) == 0 &amp;&amp; file_exists($filename)) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      $content = file_get_contents($filename);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    $this-&gt;_file = array(</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="stringliteral">&#39;filename&#39;</span> =&gt; $filename,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="stringliteral">&#39;content&#39;</span> =&gt; $content</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    );</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a705216f429a96fe01fc29a3fefba3858">setFinal</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">   * @see Response::getFile()</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#adf61e733be7f62a3f4bedbe7d2e02ec2">   73</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#adf61e733be7f62a3f4bedbe7d2e02ec2">getFile</a>() {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> $this-&gt;_file;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">   * @see Response::setFinal()</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a705216f429a96fe01fc29a3fefba3858">   80</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a705216f429a96fe01fc29a3fefba3858">setFinal</a>() {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    $this-&gt;_isFinal = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">   * @see Response::isFinal()</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#af5e2c93992e760dc57f31b31ed354cfa">   87</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#af5e2c93992e760dc57f31b31ed354cfa">isFinal</a>() {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> $this-&gt;_isFinal;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;?&gt;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1presentation_1_1_response.html">wcmf\lib\presentation\Response</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * Default Response implementation.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html">DefaultResponse</a> <span class="keyword">extends</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message.html">AbstractControllerMessage</a> implements <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">private</span> $_cacheId = null;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">private</span> $_status = self::STATUS_200;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">private</span> $_file = null;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">private</span> $_isFinal = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">   * Constructor</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">   * @param $formatter</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a2693df1fb623ffc1b1b4a6e8b892c103">   33</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a2693df1fb623ffc1b1b4a6e8b892c103">__construct</a>(<a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html">Formatter</a> $formatter) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    parent::__construct($formatter);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">   * @see Response::setCacheId()</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a282c10d36405d8bdb86a8d8387de9bce">   40</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a282c10d36405d8bdb86a8d8387de9bce">setCacheId</a>($cacheId) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    $this-&gt;_cacheId = $cacheId;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">   * @see Response::getCacheId()</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a33b6ec12f934481bad7acbb577a8565d">   47</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a33b6ec12f934481bad7acbb577a8565d">getCacheId</a>() {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> $this-&gt;_cacheId;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">   * @see Response::setStatus()</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a7d02c100d684fe1dffc6cb3486a48511">   54</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a7d02c100d684fe1dffc6cb3486a48511">setStatus</a>($status) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    $this-&gt;_status = $status;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">   * @see Response::getStatus()</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a9d21636071f529e2154051d3ea6e5921">   61</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a9d21636071f529e2154051d3ea6e5921">getStatus</a>() {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> $this-&gt;_status;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">   * @see Response::setFile()</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a90fe4a899bd59a7a8b67a24fba93be79">   68</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a90fe4a899bd59a7a8b67a24fba93be79">setFile</a>($filename, $content=<span class="stringliteral">&#39;&#39;</span>) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (strlen($content) == 0 &amp;&amp; file_exists($filename)) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      $content = file_get_contents($filename);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    $this-&gt;_file = array(</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="stringliteral">&#39;filename&#39;</span> =&gt; $filename,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="stringliteral">&#39;content&#39;</span> =&gt; $content</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    );</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a705216f429a96fe01fc29a3fefba3858">setFinal</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">   * @see Response::getFile()</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#adf61e733be7f62a3f4bedbe7d2e02ec2">   82</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#adf61e733be7f62a3f4bedbe7d2e02ec2">getFile</a>() {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> $this-&gt;_file;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">   * @see Response::setFinal()</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a705216f429a96fe01fc29a3fefba3858">   89</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a705216f429a96fe01fc29a3fefba3858">setFinal</a>() {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    $this-&gt;_isFinal = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">   * @see Response::isFinal()</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#af5e2c93992e760dc57f31b31ed354cfa">   96</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#af5e2c93992e760dc57f31b31ed354cfa">isFinal</a>() {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> $this-&gt;_isFinal;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;?&gt;</div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">wcmf\lib\presentation\Response</a></div><div class="ttdoc">Response holds the response values that are used as output from Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_response_8php_source.html#l00020">Response.php:20</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_a9d21636071f529e2154051d3ea6e5921"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a9d21636071f529e2154051d3ea6e5921">wcmf\lib\presentation\impl\DefaultResponse\getStatus</a></div><div class="ttdeci">getStatus()</div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00052">DefaultResponse.php:52</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html">wcmf\lib\presentation\impl\DefaultResponse</a></div><div class="ttdoc">Default Response implementation. </div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00021">DefaultResponse.php:21</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_a9d21636071f529e2154051d3ea6e5921"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a9d21636071f529e2154051d3ea6e5921">wcmf\lib\presentation\impl\DefaultResponse\getStatus</a></div><div class="ttdeci">getStatus()</div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00061">DefaultResponse.php:61</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html">wcmf\lib\presentation\impl\DefaultResponse</a></div><div class="ttdoc">Default Response implementation. </div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00022">DefaultResponse.php:22</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message.html">AbstractControllerMessage</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_af5e2c93992e760dc57f31b31ed354cfa"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#af5e2c93992e760dc57f31b31ed354cfa">wcmf\lib\presentation\impl\DefaultResponse\isFinal</a></div><div class="ttdeci">isFinal()</div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00087">DefaultResponse.php:87</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_a90fe4a899bd59a7a8b67a24fba93be79"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a90fe4a899bd59a7a8b67a24fba93be79">wcmf\lib\presentation\impl\DefaultResponse\setFile</a></div><div class="ttdeci">setFile($filename, $content='')</div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00059">DefaultResponse.php:59</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_a705216f429a96fe01fc29a3fefba3858"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a705216f429a96fe01fc29a3fefba3858">wcmf\lib\presentation\impl\DefaultResponse\setFinal</a></div><div class="ttdeci">setFinal()</div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00080">DefaultResponse.php:80</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_a282c10d36405d8bdb86a8d8387de9bce"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a282c10d36405d8bdb86a8d8387de9bce">wcmf\lib\presentation\impl\DefaultResponse\setCacheId</a></div><div class="ttdeci">setCacheId($cacheId)</div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00031">DefaultResponse.php:31</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_adf61e733be7f62a3f4bedbe7d2e02ec2"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#adf61e733be7f62a3f4bedbe7d2e02ec2">wcmf\lib\presentation\impl\DefaultResponse\getFile</a></div><div class="ttdeci">getFile()</div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00073">DefaultResponse.php:73</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message.html">wcmf\lib\presentation\impl\AbstractControllerMessage</a></div><div class="ttdoc">AbstractControllerMessage is the base class for request/response implementations. ...</div><div class="ttdef"><b>Definition:</b> <a href="_abstract_controller_message_8php_source.html#l00026">AbstractControllerMessage.php:26</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_a2693df1fb623ffc1b1b4a6e8b892c103"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a2693df1fb623ffc1b1b4a6e8b892c103">wcmf\lib\presentation\impl\DefaultResponse\__construct</a></div><div class="ttdeci">__construct(Formatter $formatter)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00033">DefaultResponse.php:33</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_af5e2c93992e760dc57f31b31ed354cfa"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#af5e2c93992e760dc57f31b31ed354cfa">wcmf\lib\presentation\impl\DefaultResponse\isFinal</a></div><div class="ttdeci">isFinal()</div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00096">DefaultResponse.php:96</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_a90fe4a899bd59a7a8b67a24fba93be79"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a90fe4a899bd59a7a8b67a24fba93be79">wcmf\lib\presentation\impl\DefaultResponse\setFile</a></div><div class="ttdeci">setFile($filename, $content='')</div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00068">DefaultResponse.php:68</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_a705216f429a96fe01fc29a3fefba3858"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a705216f429a96fe01fc29a3fefba3858">wcmf\lib\presentation\impl\DefaultResponse\setFinal</a></div><div class="ttdeci">setFinal()</div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00089">DefaultResponse.php:89</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html">wcmf\lib\presentation\format\Formatter</a></div><div class="ttdoc">Formatter is the single entry point for request/response formatting. </div><div class="ttdef"><b>Definition:</b> <a href="_formatter_8php_source.html#l00023">Formatter.php:23</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_a282c10d36405d8bdb86a8d8387de9bce"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a282c10d36405d8bdb86a8d8387de9bce">wcmf\lib\presentation\impl\DefaultResponse\setCacheId</a></div><div class="ttdeci">setCacheId($cacheId)</div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00040">DefaultResponse.php:40</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_adf61e733be7f62a3f4bedbe7d2e02ec2"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#adf61e733be7f62a3f4bedbe7d2e02ec2">wcmf\lib\presentation\impl\DefaultResponse\getFile</a></div><div class="ttdeci">getFile()</div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00082">DefaultResponse.php:82</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message.html">wcmf\lib\presentation\impl\AbstractControllerMessage</a></div><div class="ttdoc">AbstractControllerMessage is the base class for request/response implementations. ...</div><div class="ttdef"><b>Definition:</b> <a href="_abstract_controller_message_8php_source.html#l00024">AbstractControllerMessage.php:24</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1impl_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1impl.html">wcmf\lib\presentation\impl</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00061">namespaces.php:61</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_a7d02c100d684fe1dffc6cb3486a48511"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a7d02c100d684fe1dffc6cb3486a48511">wcmf\lib\presentation\impl\DefaultResponse\setStatus</a></div><div class="ttdeci">setStatus($status)</div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00045">DefaultResponse.php:45</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_a33b6ec12f934481bad7acbb577a8565d"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a33b6ec12f934481bad7acbb577a8565d">wcmf\lib\presentation\impl\DefaultResponse\getCacheId</a></div><div class="ttdeci">getCacheId()</div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00038">DefaultResponse.php:38</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html">Formatter</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_a7d02c100d684fe1dffc6cb3486a48511"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a7d02c100d684fe1dffc6cb3486a48511">wcmf\lib\presentation\impl\DefaultResponse\setStatus</a></div><div class="ttdeci">setStatus($status)</div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00054">DefaultResponse.php:54</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response_html_a33b6ec12f934481bad7acbb577a8565d"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a33b6ec12f934481bad7acbb577a8565d">wcmf\lib\presentation\impl\DefaultResponse\getCacheId</a></div><div class="ttdeci">getCacheId()</div><div class="ttdef"><b>Definition:</b> <a href="_default_response_8php_source.html#l00047">DefaultResponse.php:47</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -218,7 +230,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Aug 15 2015 21:38:14 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Mon Aug 17 2015 15:20:36 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

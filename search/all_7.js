@@ -17,7 +17,7 @@ var searchData=
   ['fixqueryquotes',['fixQueryQuotes',['../classwcmf_1_1test_1_1lib_1_1_base_test_case.html#ad1a59c1e7dcb4ad6a7715ffef962920e',1,'wcmf::test::lib::BaseTestCase']]],
   ['flip',['flip',['../classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#ab7b978294481794664ea5ffa6530e020',1,'wcmf::lib::model::visitor::LayoutVisitor']]],
   ['format',['Format',['../interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html',1,'wcmf::lib::presentation::format']]],
-  ['formatter',['Formatter',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html',1,'wcmf::lib::presentation::format']]],
+  ['formatter',['Formatter',['../interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_formatter.html',1,'wcmf::lib::presentation::format']]],
   ['formatvalue',['formatValue',['../classwcmf_1_1application_1_1controller_1_1_x_m_l_export_controller.html#a0644ffdfd583dcd917f1340d4cf03f9e',1,'wcmf::application::controller::XMLExportController']]],
   ['fputsunicode',['fputsUnicode',['../classwcmf_1_1lib_1_1io_1_1_file_util.html#aa6760690808348739c7ca764415f26e0',1,'wcmf::lib::io::FileUtil']]],
   ['fromexception',['fromException',['../classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a1f2f6ebfa3e2bed60cec09e80a525191',1,'wcmf::lib::presentation::ApplicationError']]],
