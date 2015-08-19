@@ -7,6 +7,7 @@
     <meta name="description" content="A PHP framework for building reliable maintainable and extendable web applications">
     <meta name="keywords" content="PHP, web application framework, model driven development">
     <meta name="author" content="wemove digital solutions">
+    <link rel="shortcut icon" href="theme/images/favicon.ico">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -104,11 +105,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="jumbotron">
   <h1>wCMF</h1>
   <h2>A MDSD framework for building<br><kbd>reliable</kbd> <kbd>maintainable</kbd> and <kbd>extendable</kbd><br>web applications with PHP</h2>
+  <a href="gettingstarted.html" class="btn btn-success btn-lg">Getting started</a>
 </div>
 
 <h2>Model-Driven Software Development</h2>
-wCMF features a Model-Driven Software Development (<em>MDSD</em>) approach that puts your focus on the application domain and
-increases productivity significantly. Creating a wCMF-based application basically involves three steps:
+wCMF features a pragmatic Model-Driven Software Development (<em>MDSD</em>) approach that puts your focus on the application domain
+and increases productivity by taking over repetitive work. Creating a wCMF-based application basically involves three steps:
+
+<br><br>
 
 <div class="row">
   <div class="col-md-4"><h3><i class="fa fa-sitemap fa-2x pull-left"></i> Model</h3>
@@ -132,30 +136,41 @@ increases productivity significantly. Creating a wCMF-based application basicall
   </div>
 </div>
 
-<h2>Features</h2>
-</p>
-<ul>
-<li>Full featured object persistence layer:<ul>
-<li>Flexible mapper architecture with adapter to RDBMS</li>
-<li>Optimistic and pessimistic object locking</li>
-<li>Searching using template based object query and criteria api</li>
-<li>Query caching and eager relation loading</li>
-<li>Transaction support</li>
-</ul>
-</li>
-<li>Presentation layer based on the <a href="http://www.smarty.net/" target="_blank">Smarty Template Engine</a></li>
-<li>Configuration of the application flow through config files</li>
-<li>Dependency injection support</li>
-<li>Basic event processing</li>
-<li>Role based permission management (for actions, types, instances, instance properties)</li>
-<li><a href="http://framework.zend.com/manual/1.12/en/zend.search.lucene.overview.html" target="_blank">Lucene</a> search engine integration</li>
-<li>I18n support</li>
-<li>Flexible logging (<a href="https://github.com/Seldaek/monolog" target="_blank">Monolog</a>)</li>
-<li>SOAP and REST interface supporting CRUD operations on all objects</li>
-<li>Code generator for model-driven software development</li>
-<li>Available under an open source license (MIT)</li>
-<li>Modern <a href="https://dojotoolkit.org/">Dojo</a> based <a href="https://github.com/iherwig/wcmf-default-app">default application</a> for content management </li>
-</ul>
+<div class="row">
+  <h2>Features</h2>
+  <div class="col-md-6">
+    <ul>
+      <li>Full featured object persistence layer:
+        <ul>
+          <li>Flexible mapper architecture with adapter to RDBMS</li>
+          <li>Optimistic and pessimistic object locking</li>
+          <li>Searching using template based object query and criteria api</li>
+          <li>Query caching and eager relation loading</li>
+          <li>Transaction support</li>
+        </ul>
+      </li>
+      <li>Role based permission management (for actions, types, instances, instance properties)</li>
+      <li>Event system</li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <ul>
+      <li>Dependency injection support</li>
+      <li>Configuration of the application flow through config files</li>
+      <li><a href="http://www.smarty.net/" target="_blank">Smarty Template Engine</a> integration</li>
+      <li><a href="http://framework.zend.com/manual/1.12/en/zend.search.lucene.overview.html" target="_blank">Lucene</a> search engine integration</li>
+      <li>I18n support</li>
+      <li>Flexible logging (<a href="https://github.com/Seldaek/monolog" target="_blank">Monolog</a>)</li>
+      <li>SOAP and REST interface supporting CRUD operations on all objects</li>
+      <li>Code generator for model-driven software development</li>
+      <li>Modern <a href="https://dojotoolkit.org/">Dojo</a> based <a href="https://github.com/iherwig/wcmf-default-app">default application</a> for content management</li>
+    </ul>
+  </div>
+</div>
+
+<h3>License</h3>
+<p> wCMF is available under an open source license (<a href="https://github.com/iherwig/wcmf/blob/master/LICENSE">MIT License</a>).</p>
+ </p>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
@@ -165,7 +180,7 @@ increases productivity significantly. Creating a wCMF-based application basicall
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Mon Aug 17 2015 15:20:42 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Aug 19 2015 15:11:33 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>
