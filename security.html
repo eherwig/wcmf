@@ -180,33 +180,33 @@ Permission inheritance</div></div>
 <p> If access to the <code>Book</code> instance <em>Book A</em> is restricted for one role, the same restriction also applies for the <code>Chapter</code> instances belonging to it (<em>Chapter A1</em>, <em>Chapter A2</em>). An inherited access restriction can be removed by explicitly granting the permission on the object in question.</p>
 <h4>Examples</h4>
 <p>The following code shows some permission examples:</p>
-<div class="fragment"><div class="line"><span class="comment">// tester role is not allowed to update any authors except for the specified one</span></div>
-<div class="line"><span class="comment">// tester role is not allowed to update any authors stage attribute</span></div>
-<div class="line">app.src.model.Author??update = -tester</div>
-<div class="line">app.src.model.Author:111??update = +tester</div>
-<div class="line">app.src.model.Author.stage??update = +administrators</div>
-<div class="line"></div>
-<div class="line"><span class="comment">// tester role is not allowed to update any publishers name except for the specified one</span></div>
-<div class="line"><span class="comment">// tester role is not allowed to update any authors stage attribute</span></div>
-<div class="line">app.src.model.Publisher.name??update = -tester</div>
-<div class="line">app.src.model.Publisher:111.name??update = +tester</div>
-<div class="line"></div>
-<div class="line"><span class="comment">// tester role is not allowed to read any book name except for the specified one</span></div>
-<div class="line">app.src.model.Book??read = -tester</div>
-<div class="line">app.src.model.Book:111??read = +tester</div>
-<div class="line"></div>
-<div class="line"><span class="comment">// tester is not allowed to read chapter 111 and due to inheritance also not sub chapter 222,</span></div>
-<div class="line"><span class="comment">// and sub sub chapter 333, sub chapter 555 explicitly allowed and due to inheritance</span></div>
-<div class="line"><span class="comment">// also sub sub chapter 666</span></div>
-<div class="line">app.src.model.Chapter:111??read = -tester +administrators</div>
-<div class="line">app.src.model.Chapter:555??read = +tester +administrators</div>
-<div class="line"></div>
-<div class="line"><span class="comment">// tester role is not allowed to execute SaveController</span></div>
-<div class="line">wcmf\application\controller\SaveController?? = -tester</div>
-<div class="line"></div>
-<div class="line"><span class="comment">// custom permissions</span></div>
-<div class="line">customPermission??start = +tester</div>
-<div class="line">customPermission??stop = -tester</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;// tester role is not allowed to update any authors except for the specified one</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;// tester role is not allowed to update any authors stage attribute</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;app.src.model.Author??update = -tester</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;app.src.model.Author:111??update = +tester</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;app.src.model.Author.stage??update = +administrators</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;// tester role is not allowed to update any publishers name except for the specified one</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;// tester role is not allowed to update any authors stage attribute</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;app.src.model.Publisher.name??update = -tester</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;app.src.model.Publisher:111.name??update = +tester</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;// tester role is not allowed to read any book name except for the specified one</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;app.src.model.Book??read = -tester</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;app.src.model.Book:111??read = +tester</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;// tester is not allowed to read chapter 111 and due to inheritance also not sub chapter 222,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;// and sub sub chapter 333, sub chapter 555 explicitly allowed and due to inheritance</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;// also sub sub chapter 666</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;app.src.model.Chapter:111??read = -tester +administrators</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;app.src.model.Chapter:555??read = +tester +administrators</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;// tester role is not allowed to execute SaveController</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;wcmf\application\controller\SaveController?? = -tester</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;// custom permissions</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;customPermission??start = +tester</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;customPermission??stop = -tester</div>
 </div><!-- fragment --><h3><a class="anchor" id="sec_perm_manage"></a>
 Permission management</h3>
 <p>Permission management includes <em>creation</em>, <em>modification</em> and <em>deletion</em> of permissions as well as handling <em>authorization requests</em>. In an wCMF application an instance of <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html"><code>PermissionManager</code></a> is used for these tasks. It is configured in the <code>PermissionManager</code> configuration section.</p>
@@ -308,7 +308,7 @@ Input</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Aug 20 2015 11:23:28 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Thu Aug 20 2015 12:57:40 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

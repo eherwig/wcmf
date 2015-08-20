@@ -130,15 +130,21 @@ Prerequisites</h3>
 <li>Web server (e.g. Apache)</li>
 <li>PHP</li>
 <li>MySQL</li>
-<li>UML Modeling tool (e.g. <a href="http://www.eclipse.org/papyrus/">Eclipse Papyrus</a> or <a href="http://sourceforge.net/projects/olympos/">Chronos Web Modeler</a>)</li>
+<li><a href="https://getcomposer.org/">Composer</a></li>
 <li><a href="http://ant.apache.org/">Apache Ant</a> for code generation and deployment</li>
+</ul>
+<p>To modify the demo model you additionally need:</p>
+<ul>
+<li>UML Modeling tool (e.g. <a href="http://www.eclipse.org/papyrus/">Eclipse Papyrus</a> or <a href="http://sourceforge.net/projects/olympos/">Chronos Web Modeler</a>),</li>
 </ul>
 <h3><a class="anchor" id="app_install"></a>
 Installation</h3>
-<p>The application's source code may be forked or downloaded from <a href="https://github.com/iherwig/wcmf-default-app">GitHub</a>. After download, execute the following steps to get a running application:</p>
-<h4><a class="anchor" id="app_install_zip"></a>
-Unpack the code</h4>
-<p>Put the code into a directory accessible to your web server. You should see the following directories:</p>
+<p>We assume that the application's root directory is accessible to your web server and mapped to the url <code><a href="http://localhost/wcmf-default-app">http://localhost/wcmf-default-app</a></code>.</p>
+<h4><a class="anchor" id="app_install_github"></a>
+GitHub</h4>
+<p>The application's source code may be cloned from <a href="https://github.com/iherwig/wcmf-default-app">GitHub</a> using the following command</p>
+<div class="fragment"><div class="line">$ git clone https:<span class="comment">//github.com/iherwig/wcmf-default-app</span></div>
+</div><!-- fragment --><p>After that you should see the following directories:</p>
 <ul>
 <li><em>app</em><ul>
 <li><em>config</em></li>
@@ -153,18 +159,19 @@ Unpack the code</h4>
 <li><em>test</em></li>
 <li><em>tools</em></li>
 </ul>
-<p>We assume that the application's root directory is accessible via the url <code><a href="http://localhost/wcmf-default-app">http://localhost/wcmf-default-app</a></code>.</p>
-<h4><a class="anchor" id="app_install_composer"></a>
-Run Composer</h4>
 <p>The application uses Composer to manage external dependencies. Execute the following command in the root directory of the application to fetch them:</p>
-<div class="fragment"><div class="line">composer install</div>
+<div class="fragment"><div class="line">$ composer install</div>
+</div><!-- fragment --><h4><a class="anchor" id="app_install_composer"></a>
+Composer</h4>
+<p>Alternatively you can also use Composer to install the source code together with all dependencies:</p>
+<div class="fragment"><div class="line">$ composer create-project <a class="code" href="namespacewcmf.html">wcmf</a>/<a class="code" href="namespacewcmf.html">wcmf</a>-<span class="keywordflow">default</span>-app <a class="code" href="namespacewcmf.html">wcmf</a>-<span class="keywordflow">default</span>-app --stability dev</div>
 </div><!-- fragment --><h3><a class="anchor" id="app_model"></a>
 Model the domain</h3>
 <p>The application ships with a demo UML model that may be used as a quick start. It's located in <code>model/model.uml</code>. Base models for those who want to start from scratch are located in <em>model/base/cwm/</em> and <em>model/base/papyrus/</em>. An in-depth guide on modeling for wCMF may be found in the section <a class="el" href="model.html">Model</a>.</p>
 <h3><a class="anchor" id="app_gen"></a>
 Generate the code</h3>
 <p>A code generator is used to generate class- and configuration files from the domain model. Execute the following command in the <em>build</em> directory of the application in order to run the generator:</p>
-<div class="fragment"><div class="line">ant generate</div>
+<div class="fragment"><div class="line">$ ant generate</div>
 </div><!-- fragment --><h3><a class="anchor" id="app_db"></a>
 Setup the database connection</h3>
 <p>The database connection information is defined in the file <code>app/config/server.ini</code> and defaults to</p>
@@ -199,7 +206,7 @@ Open the application</h3>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Aug 20 2015 11:23:28 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Thu Aug 20 2015 12:57:40 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>
