@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>wCMF 4.0: Presentation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A PHP framework for building reliable maintainable and extendable web applications">
+  <meta name="description" content="A MDSD framework for building reliable, maintainable and extendable web applications with PHP">
   <meta name="keywords" content="PHP, web application framework, model driven development">
   <meta name="author" content="wemove digital solutions">
   <link rel="shortcut icon" href="theme/images/favicon.ico">
@@ -54,7 +54,7 @@
               </ul>
             </li>
             <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
-            <li><a href="https://github.com/iherwig/wcmf" target="_blank"><i class="fa fa-github"></i> Code</a></li>
+            <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
           <ul class="nav navbar-nav pull-right">
@@ -190,6 +190,14 @@ Internal routing</h4>
 <li>The first line states that the action <em>indexAll</em> called from <em>any</em> controller and in <em>any</em> context will invoke <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a>, which will set a state dependent action name on the response (see <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html"><code>BatchController</code></a>).</li>
 <li>The second line tells <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html"><code>ActionMapper</code></a> to re-invoke <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a>, if it was the last controller and the action is <em>continue</em>. So this action key only matches, if the last controller was <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a>.</li>
 </ul>
+<h5>Controller methods</h5>
+<p>The previous example maps the action keys to a controller class without specifying a method to be called. In these cases, the framework calls the default method <code>doExecute</code>, which must then be defined in the controller class (see <a class="el" href="presentation.html#pres_controllers">Controllers</a>).</p>
+<p>Alternatively a specific <b>controller method</b> to be called may be defined in the action mapping, like illustrated in the following example:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[ActionMapping]</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;??indexAll = wcmf\application\controller\SearchIndexController::doBegin</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;wcmf\application\controller\SearchIndexController??continue =</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                            wcmf\application\controller\SearchIndexController::doContinue</div>
+</div><!-- fragment --><p>In this case <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a> would have to define the methods <code>doBegin</code> and <code>doContinue</code> which are called for the appropriate action keys.</p>
 <h4><a class="anchor" id="pres_routingext"></a>
 External routing</h4>
 <p>The mapping of the current <b>request uri</b> to an <b>action key</b> is called external routing. The default mapping logic is implemented in the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html#a36e0e7579b8ab70ec7690b37dcdfa312"><code>DefaultRequest::initialize</code></a> method. The method matches the <em>path part</em> of the request uri against the entries of the <code>Routes</code> configuration section to find an appropriate action key. Variables declared in path segments will be automatically passed as request parameters.</p>
@@ -203,6 +211,13 @@ External routing</h4>
 <li>The second entry defines the <em>language</em> and <em>className</em> variables (surrounded by curly braces) and would be matched by the request uris <em>/rest/de/Author</em> or <em>/rest/en/Book</em>. The executed action would be <em>restAction</em>.</li>
 <li>The <em>id</em> variable in the third entry must be an integer because of the regular expression constraint <code>[0-9]+</code>.</li>
 </ul>
+<h5>HTTP methods</h5>
+<p>To restrict a path to one or more <b>HTTP methods</b>, they may be added in front of the route definition. In the following example the <em>cms</em> action is only available for the <em>GET</em> method, while the other actions accept <em>GET</em>, <em>POST</em>, <em>PUT</em> and <em>DELETE</em> requests:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Routes]</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;GET/ = action=cms</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;GET,POST,PUT,DELETE/rest/{language}/{className} = action=restAction&amp;collection=1</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;GET,POST,PUT,DELETE/rest/{language}/{className}/{id|[0-9]+} = action=restAction&amp;collection=0</div>
+</div><!-- fragment --><p>If no method is added to a route, all methods are accepted.</p>
 <h2><a class="anchor" id="pres_controllers"></a>
 Controllers</h2>
 <p>Controllers take the user input from the request and modify the model according to it. As a result a response is created which is presented to the user in a view or any other format. Which controller is executed on a specific request is determined in the routing process (see <a class="el" href="presentation.html#pres_routing">Routing</a>).</p>
@@ -210,7 +225,7 @@ Controllers</h2>
 <ol type="1">
 <li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a47a24ac0d700f62a9434d298ade72fb9"><code>Controller::initialize</code></a> is called directly after instantiation of the controller. The current <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> and <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html"><code>Response</code></a> instances are passed as parameters and subclasses may override this method to implement task specific initializations.</li>
 <li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a184909dab34698899937d810a9f5d393"><code>Controller::validate</code></a> is called afterwards to check the validity of the request parameters. The default implementation returns <em>true</em> and subclasses are assumed to override this method if necessary to do task specific validations.</li>
-<li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a4eadfceba84d61eda01f9828935cf8e5"><code>Controller::doExecute</code></a> is called finally. Subclasses must implement this method to define the actual behavior of the controller.</li>
+<li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a1909f4b7f8129c7790cb75de2ffbe1e4"><code>Controller::execute</code></a> is called finally. This method accepts a parameter, that defines the actual method to be called on the subclass. If the parameter is omitted it defaults to <code>doExecute</code> which must then be defined in the subclass.</li>
 </ol>
 <h3><a class="anchor" id="pres_errors"></a>
 Error handling</h3>
@@ -358,7 +373,7 @@ Logging</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sun Aug 30 2015 01:36:57 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 14 2015 02:29:31 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>
