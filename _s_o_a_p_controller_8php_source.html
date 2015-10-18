@@ -166,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    $server = <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1service_1_1_soap_server.html">SoapServer</a>();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// register search method</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    $server-&gt;register(<span class="stringliteral">&#39;wcmf\application\controller\SOAPController.search&#39;</span>,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    $server-&gt;register(<span class="stringliteral">&#39;search&#39;</span>,</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      array(<span class="stringliteral">&#39;query&#39;</span> =&gt; <span class="stringliteral">&#39;xsd:string&#39;</span>), array(<span class="stringliteral">&#39;return&#39;</span> =&gt; <span class="stringliteral">&#39;tns:SearchResultList&#39;</span>),</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      $server::TNS, $server-&gt;wsdl-&gt;endpoint.<span class="stringliteral">&#39;#search&#39;</span>, <span class="stringliteral">&#39;document&#39;</span>, <span class="stringliteral">&#39;literal&#39;</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    );</div>
@@ -175,37 +175,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    require(<span class="stringliteral">&quot;soap-interface.php&quot;</span>);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// invoke the service</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (!isset($HTTP_RAW_POST_DATA)) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      $HTTP_RAW_POST_DATA = implode(<span class="stringliteral">&quot;\r\n&quot;</span>, file(<span class="stringliteral">&#39;php://input&#39;</span>));</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    $server-&gt;service($HTTP_RAW_POST_DATA);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// NOTE: the response is not used, because the SoapServer::service method</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// returns the data to the client but we need to make sure that there is</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// no further processing</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    $response-&gt;setFormat(<span class="stringliteral">&#39;null&#39;</span>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    $response-&gt;setFinal();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">   * Search</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">   * @param $query The search term</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">   * @return Array of SearchResultItem on success</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html#a523690ef8752be368a3589a600eee975">   89</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html#a523690ef8752be368a3589a600eee975">search</a>($query) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    global <a class="code" href="namespacewcmf_1_1application_1_1controller.html#ad135cc8a47e55f0829949cf62214170f">$server</a>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    $response = $server-&gt;doCall(<span class="stringliteral">&#39;search&#39;</span>, array(<span class="stringliteral">&#39;query&#39;</span> =&gt; $query));</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    $result = array();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">foreach</span> ($response-&gt;getValue(<span class="stringliteral">&#39;list&#39;</span>) as $item) {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      $result[] = array(<span class="stringliteral">&#39;type&#39;</span> =&gt; $item[<span class="stringliteral">&#39;type&#39;</span>], <span class="stringliteral">&#39;oid&#39;</span> =&gt; $item[<span class="stringliteral">&#39;oid&#39;</span>],</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="stringliteral">&#39;displayValue&#39;</span> =&gt; $item[<span class="stringliteral">&#39;displayValue&#39;</span>], <span class="stringliteral">&#39;summary&#39;</span> =&gt; $item[<span class="stringliteral">&#39;summary&#39;</span>]</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      );</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> array(<span class="stringliteral">&#39;return&#39;</span> =&gt; $result);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;?&gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    $server-&gt;service(file_get_contents(<span class="stringliteral">&quot;php://input&quot;</span>));</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// NOTE: the response is not used, because the SoapServer::service method</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// returns the data to the client but we need to make sure that there is</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// no further processing</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    $response-&gt;setFormat(<span class="stringliteral">&#39;null&#39;</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    $response-&gt;setFinal();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">   * Search</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">   * @param $query The search term</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">   * @return Array of SearchResultItem on success</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html#a523690ef8752be368a3589a600eee975">   86</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html#a523690ef8752be368a3589a600eee975">search</a>($query) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    global <a class="code" href="namespacewcmf_1_1application_1_1controller.html#ad135cc8a47e55f0829949cf62214170f">$server</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    $response = $server-&gt;doCall(<span class="stringliteral">&#39;search&#39;</span>, array(<span class="stringliteral">&#39;query&#39;</span> =&gt; $query));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    $result = array();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">foreach</span> ($response-&gt;getValue(<span class="stringliteral">&#39;list&#39;</span>) as $item) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      $result[] = array(<span class="stringliteral">&#39;type&#39;</span> =&gt; $item[<span class="stringliteral">&#39;type&#39;</span>], <span class="stringliteral">&#39;oid&#39;</span> =&gt; $item[<span class="stringliteral">&#39;oid&#39;</span>],</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="stringliteral">&#39;displayValue&#39;</span> =&gt; $item[<span class="stringliteral">&#39;displayValue&#39;</span>], <span class="stringliteral">&#39;summary&#39;</span> =&gt; $item[<span class="stringliteral">&#39;summary&#39;</span>]</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      );</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> array(<span class="stringliteral">&#39;return&#39;</span> =&gt; $result);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;?&gt;</div>
 <div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html">wcmf\lib\presentation\Controller</a></div><div class="ttdoc">Controller is the base class of all controllers. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00048">Controller.php:48</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_controller_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_controller.html">Controller</a></div></div>
 <div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller_html_a4eadfceba84d61eda01f9828935cf8e5"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html#a4eadfceba84d61eda01f9828935cf8e5">wcmf\application\controller\SOAPController\doExecute</a></div><div class="ttdeci">doExecute()</div><div class="ttdef"><b>Definition:</b> <a href="_s_o_a_p_controller_8php_source.html#l00055">SOAPController.php:55</a></div></div>
@@ -215,7 +212,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="namespacewcmf_1_1lib_1_1service_1_1_soap_server_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1service_1_1_soap_server.html">SoapServer</a></div></div>
 <div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller_html"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html">wcmf\application\controller\SOAPController</a></div><div class="ttdoc">SOAPController handles SOAP requests. </div><div class="ttdef"><b>Definition:</b> <a href="_s_o_a_p_controller_8php_source.html#l00050">SOAPController.php:50</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1application_1_1controller_html_ad135cc8a47e55f0829949cf62214170f"><div class="ttname"><a href="namespacewcmf_1_1application_1_1controller.html#ad135cc8a47e55f0829949cf62214170f">wcmf\application\controller\$server</a></div><div class="ttdeci">$server</div><div class="ttdoc">Global server instance used by the generated soap interface. </div><div class="ttdef"><b>Definition:</b> <a href="_s_o_a_p_controller_8php_source.html#l00019">SOAPController.php:19</a></div></div>
-<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller_html_a523690ef8752be368a3589a600eee975"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html#a523690ef8752be368a3589a600eee975">wcmf\application\controller\SOAPController\search</a></div><div class="ttdeci">static search($query)</div><div class="ttdoc">Search. </div><div class="ttdef"><b>Definition:</b> <a href="_s_o_a_p_controller_8php_source.html#l00089">SOAPController.php:89</a></div></div>
+<div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller_html_a523690ef8752be368a3589a600eee975"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html#a523690ef8752be368a3589a600eee975">wcmf\application\controller\SOAPController\search</a></div><div class="ttdeci">static search($query)</div><div class="ttdoc">Search. </div><div class="ttdef"><b>Definition:</b> <a href="_s_o_a_p_controller_8php_source.html#l00086">SOAPController.php:86</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
       </div>
@@ -228,7 +225,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sun Oct 18 2015 03:58:57 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sun Oct 18 2015 23:21:03 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>
