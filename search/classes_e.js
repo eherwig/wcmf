@@ -4,7 +4,7 @@ var searchData=
   ['passwordservice',['PasswordService',['../classwcmf_1_1lib_1_1security_1_1principal_1_1_password_service.html',1,'wcmf::lib::security::principal']]],
   ['pathdescription',['PathDescription',['../classwcmf_1_1lib_1_1persistence_1_1_path_description.html',1,'wcmf::lib::persistence']]],
   ['pdf',['PDF',['../classwcmf_1_1lib_1_1pdf_1_1_p_d_f.html',1,'wcmf::lib::pdf']]],
-  ['pdfpage',['PDFPage',['../classwcmf_1_1lib_1_1pdf_1_1_p_d_f_page.html',1,'wcmf::lib::pdf']]],
+  ['pdfpage',['PDFPage',['../interfacewcmf_1_1lib_1_1pdf_1_1_p_d_f_page.html',1,'wcmf::lib::pdf']]],
   ['pdftemplate',['PDFTemplate',['../classwcmf_1_1lib_1_1pdf_1_1_p_d_f_template.html',1,'wcmf::lib::pdf']]],
   ['permissioncontroller',['PermissionController',['../classwcmf_1_1application_1_1controller_1_1_permission_controller.html',1,'wcmf::application::controller']]],
   ['permissionmanager',['PermissionManager',['../interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html',1,'wcmf::lib::security']]],

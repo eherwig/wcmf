@@ -1,6 +1,8 @@
 var searchData=
 [
   ['layoutvisitor',['LayoutVisitor',['../classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html',1,'wcmf::lib::model::visitor']]],
+  ['linkprocessor',['LinkProcessor',['../classwcmf_1_1lib_1_1presentation_1_1link_1_1_link_processor.html',1,'wcmf::lib::presentation::link']]],
+  ['linkprocessorstrategy',['LinkProcessorStrategy',['../interfacewcmf_1_1lib_1_1presentation_1_1link_1_1_link_processor_strategy.html',1,'wcmf::lib::presentation::link']]],
   ['listcontroller',['ListController',['../classwcmf_1_1application_1_1controller_1_1_list_controller.html',1,'wcmf::application::controller']]],
   ['liststrategy',['ListStrategy',['../interfacewcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1_list_strategy.html',1,'wcmf::lib::presentation::control::lists']]],
   ['localization',['Localization',['../interfacewcmf_1_1lib_1_1i18n_1_1_localization.html',1,'wcmf::lib::i18n']]],

@@ -22,5 +22,6 @@ var searchData=
   ['fputsunicode',['fputsUnicode',['../classwcmf_1_1lib_1_1io_1_1_file_util.html#aa6760690808348739c7ca764415f26e0',1,'wcmf::lib::io::FileUtil']]],
   ['fromexception',['fromException',['../classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a1f2f6ebfa3e2bed60cec09e80a525191',1,'wcmf::lib::presentation::ApplicationError']]],
   ['fromobject',['fromObject',['../classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html#a44afea04975deab052cb652ae6811031',1,'wcmf::lib::persistence::PersistentObjectProxy']]],
+  ['fromrql',['fromRql',['../classwcmf_1_1lib_1_1model_1_1_string_query.html#af6f08620bd790436cb143a6dcabf45a2',1,'wcmf::lib::model::StringQuery']]],
   ['functionliststrategy',['FunctionListStrategy',['../classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_function_list_strategy.html',1,'wcmf::lib::presentation::control::lists::impl']]]
 ];

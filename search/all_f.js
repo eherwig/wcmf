@@ -13,7 +13,8 @@ var searchData=
   ['nodeunifiedrdbmapper',['NodeUnifiedRDBMapper',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html',1,'wcmf::lib::model::mapper']]],
   ['nodeutil',['NodeUtil',['../classwcmf_1_1lib_1_1model_1_1_node_util.html',1,'wcmf::lib::model']]],
   ['nodevalueiterator',['NodeValueIterator',['../classwcmf_1_1lib_1_1model_1_1_node_value_iterator.html',1,'wcmf::lib::model']]],
-  ['normalize',['normalize',['../classwcmf_1_1lib_1_1util_1_1_u_r_i_util.html#ab01175d637c5098a16d9ae07f9e63135',1,'wcmf::lib::util::URIUtil']]],
+  ['normalizepaths',['normalizePaths',['../classwcmf_1_1lib_1_1util_1_1_u_r_i_util.html#ada506ae64236e0ac976372ef373ededf',1,'wcmf::lib::util::URIUtil']]],
+  ['normalizeslashes',['normalizeSlashes',['../classwcmf_1_1lib_1_1util_1_1_u_r_i_util.html#af7a696a05bc86abd718aab5b15da1967',1,'wcmf::lib::util::URIUtil']]],
   ['null',['NULL',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_s_q_l_const.html#a91a5a1066d3876aada829d106ede64d6',1,'wcmf::lib::model::mapper::SQLConst']]],
   ['null_5foid',['NULL_OID',['../classwcmf_1_1lib_1_1persistence_1_1_object_id.html#a194c2ee5508a35b5463eb63fc680c8b6',1,'wcmf::lib::persistence::ObjectId']]],
   ['nullcache',['NullCache',['../classwcmf_1_1lib_1_1io_1_1impl_1_1_null_cache.html',1,'wcmf::lib::io::impl']]],
@@ -23,6 +24,6 @@ var searchData=
   ['nullnode',['NullNode',['../classwcmf_1_1lib_1_1model_1_1_null_node.html',1,'wcmf::lib::model']]],
   ['nullpermissionmanager',['NullPermissionManager',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html',1,'wcmf::lib::security::impl']]],
   ['nullview',['NullView',['../classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_null_view.html',1,'wcmf::lib::presentation::view::impl']]],
-  ['num_5fsteps_5fvarname',['NUM_STEPS_VARNAME',['../classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a3a3f4de20180ac5036e01a95234b55eb',1,'wcmf::application::controller::BatchController']]],
+  ['num_5fsteps_5fvar',['NUM_STEPS_VAR',['../classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a3e60c3a3b30a97852be0f55bef8b74d8',1,'wcmf::application::controller::BatchController']]],
   ['numberoflines',['numberOfLines',['../classwcmf_1_1lib_1_1pdf_1_1_p_d_f.html#a80c9738f6fce78df6d9e3d3afb81c9c8',1,'wcmf::lib::pdf::PDF']]]
 ];

@@ -7,6 +7,6 @@ var searchData=
   ['indexedsearch',['IndexedSearch',['../interfacewcmf_1_1lib_1_1search_1_1_indexed_search.html',1,'wcmf::lib::search']]],
   ['inifileconfiguration',['InifileConfiguration',['../classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html',1,'wcmf::lib::config::impl']]],
   ['insertoperation',['InsertOperation',['../classwcmf_1_1lib_1_1persistence_1_1_insert_operation.html',1,'wcmf::lib::persistence']]],
-  ['internallink',['InternalLink',['../classwcmf_1_1lib_1_1presentation_1_1_internal_link.html',1,'wcmf::lib::presentation']]],
+  ['internallink',['InternalLink',['../classwcmf_1_1lib_1_1presentation_1_1link_1_1_internal_link.html',1,'wcmf::lib::presentation::link']]],
   ['ioexception',['IOException',['../classwcmf_1_1lib_1_1io_1_1_i_o_exception.html',1,'wcmf::lib::io']]]
 ];
