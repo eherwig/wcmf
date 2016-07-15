@@ -311,7 +311,7 @@ Application flow</h3>
 <tr>
 <td><em>ChiActionKey</em> </td><td>Association </td><td>Associates two <em>ChiController</em> instances (to define a control flow) or a <em>ChiView</em> with a <em>ChiController</em> (to define a view attachment), must be <em>one directional</em> </td><td></td></tr>
 </table>
-<dl class="section note"><dt>Note</dt><dd>Multiple action keys may be defined between controllers or controllers and views each one used in a different context or for a different action.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><em>ChiActionKey</em> realizes the concept of <em>action keys</em> (see <a class="el" href="architecture.html#arch_actionkey">Action Key</a>). Multiple action keys may be defined between controllers or controllers and views each one used in a different context and/or for a different action.</dd></dl>
 <h4><a class="anchor" id="model_chicontroller"></a>
 ChiController</h4>
 <p>No <b>tags</b> are defined on the <em>ChiController</em> stereotype.</p>
@@ -339,7 +339,8 @@ Example application flow</h4>
 <img src="flow.png" alt="flow.png"/>
 <div class="caption">
 Example application flow</div></div>
- <h4><a class="anchor" id="model_controller_methods"></a>
+ <dl class="section note"><dt>Note</dt><dd>If the <em>controller</em> value of the action key should be empty, meaning that the action can be triggered from <em>any</em> controller, the source of the <em>ChiActionKey</em> association must be the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> base class.</dd></dl>
+<h4><a class="anchor" id="model_controller_methods"></a>
 Controller methods</h4>
 <p>By default the framework calls the method <em>doExecute</em> on the current controller instance for any <em>context</em> and <em>action</em> value. For this reason an empty implementation of this method will be added by the generator.</p>
 <p>To distinguish different actions or contexts it is also possible to model several operations inside the controller class. To connect an action key to a controller method, the action key's end that points to the controller must be named like the method. The following diagram illustrates the concept:</p>
@@ -603,8 +604,8 @@ Protected regions</h4>
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <small>&copy; 2015 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sun Dec 6 2015 14:31:36 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+        <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Fri Jul 15 2016 22:20:41 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

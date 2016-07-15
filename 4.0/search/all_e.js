@@ -2,9 +2,9 @@ var searchData=
 [
   ['model_20driven_20development_20with_20php',['Model Driven Development with PHP',['../index.html',1,'']]],
   ['makeabsolute',['makeAbsolute',['../classwcmf_1_1lib_1_1util_1_1_u_r_i_util.html#ab91c6f392c7a6c9503ee045c534ccbc5',1,'wcmf::lib::util::URIUtil']]],
-  ['makeanchorlink',['makeAnchorLink',['../classwcmf_1_1lib_1_1presentation_1_1_internal_link.html#a0323ae545bfb5858178772aa06fce572',1,'wcmf::lib::presentation::InternalLink']]],
+  ['makeanchorlink',['makeAnchorLink',['../classwcmf_1_1lib_1_1presentation_1_1link_1_1_internal_link.html#a0323ae545bfb5858178772aa06fce572',1,'wcmf::lib::presentation::link::InternalLink']]],
   ['makegroup',['makeGroup',['../classwcmf_1_1lib_1_1model_1_1_object_query.html#aa7014fd04b5afbf3470733b16b63ed20',1,'wcmf::lib::model::ObjectQuery']]],
-  ['makelink',['makeLink',['../classwcmf_1_1lib_1_1presentation_1_1_internal_link.html#a8da7699657959057285985bc0671b381',1,'wcmf::lib::presentation::InternalLink']]],
+  ['makelink',['makeLink',['../classwcmf_1_1lib_1_1presentation_1_1link_1_1_internal_link.html#a8da7699657959057285985bc0671b381',1,'wcmf::lib::presentation::link::InternalLink']]],
   ['makenodeurlsrelative',['makeNodeUrlsRelative',['../classwcmf_1_1lib_1_1model_1_1_node_util.html#ad086232271e7506d5ca14f1373dcae05',1,'wcmf::lib::model::NodeUtil']]],
   ['makerelative',['makeRelative',['../classwcmf_1_1lib_1_1util_1_1_u_r_i_util.html#adc0d0c750d79b2dd215d016a8a12d365',1,'wcmf::lib::util::URIUtil']]],
   ['makeumis',['makeUmis',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_remote_capable_persistence_facade.html#a84e69c3b3809a96021ccc4c2fe7500d9',1,'wcmf::lib::persistence::impl::RemoteCapablePersistenceFacade']]],
