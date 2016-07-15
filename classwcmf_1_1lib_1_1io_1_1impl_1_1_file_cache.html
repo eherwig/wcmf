@@ -113,7 +113,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The cache is divided into different sections. All sections share the same base path.</p>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00025">25</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
+<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00027">27</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for FileCache:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -126,6 +126,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a095c5d389db211932136b53f25f39685"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#a095c5d389db211932136b53f25f39685">__construct</a> ()</td></tr>
 <tr class="separator:a095c5d389db211932136b53f25f39685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a421831a265621325e1fdd19aace0c758"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#a421831a265621325e1fdd19aace0c758">__destruct</a> ()</td></tr>
+<tr class="separator:a421831a265621325e1fdd19aace0c758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fc4a5c79db22df5e3d63528788c5113"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#a8fc4a5c79db22df5e3d63528788c5113">setCacheDir</a> ($cacheDir)</td></tr>
 <tr class="separator:a8fc4a5c79db22df5e3d63528788c5113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6cb0291eb519f7bfbca53472757a3f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#ae6cb0291eb519f7bfbca53472757a3f4">exists</a> ($section, $key)</td></tr>
@@ -138,6 +140,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a20738c2c4a77d11cbaf305c8aaf5f580"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c40f27bdcc44f4faf3fc044ee577af2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#a1c40f27bdcc44f4faf3fc044ee577af2">clearAll</a> ()</td></tr>
 <tr class="separator:a1c40f27bdcc44f4faf3fc044ee577af2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac35e6cdbcfbb3b11539bbecd9699a17d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#ac35e6cdbcfbb3b11539bbecd9699a17d">configChanged</a> (<a class="el" href="classwcmf_1_1lib_1_1config_1_1_config_change_event.html">ConfigChangeEvent</a> $event)</td></tr>
+<tr class="separator:ac35e6cdbcfbb3b11539bbecd9699a17d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a095c5d389db211932136b53f25f39685"></a>
@@ -155,7 +159,26 @@ Public Member Functions</h2></td></tr>
 
 <p>Constructor. </p>
 
-<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00034">34</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
+<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00036">36</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a421831a265621325e1fdd19aace0c758"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__destruct </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Desctructor. </p>
+
+<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00045">45</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
 
 </div>
 </div>
@@ -182,7 +205,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00043">43</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
+<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00055">55</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
 
 </div>
 </div>
@@ -213,7 +236,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1io_1_1_cache.html#ae6cb0291eb519f7bfbca53472757a3f4">Cache</a>.</p>
 
-<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00050">50</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
+<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00062">62</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
 
 </div>
 </div>
@@ -244,7 +267,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1io_1_1_cache.html#ae88a743f383e72aecb9fc49a102550db">Cache</a>.</p>
 
-<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00058">58</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
+<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00070">70</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
 
 </div>
 </div>
@@ -281,7 +304,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1io_1_1_cache.html#ab260d7514023adcf6fce8dddf8904579">Cache</a>.</p>
 
-<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00069">69</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
+<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00081">81</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
 
 </div>
 </div>
@@ -302,7 +325,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1io_1_1_cache.html#a20738c2c4a77d11cbaf305c8aaf5f580">Cache</a>.</p>
 
-<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00078">78</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
+<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00090">90</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
 
 </div>
 </div>
@@ -322,7 +345,33 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1io_1_1_cache.html#a1c40f27bdcc44f4faf3fc044ee577af2">Cache</a>.</p>
 
-<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00106">106</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
+<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00118">118</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac35e6cdbcfbb3b11539bbecd9699a17d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">configChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classwcmf_1_1lib_1_1config_1_1_config_change_event.html">ConfigChangeEvent</a>&#160;</td>
+          <td class="paramname"><em>$event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Listen to ConfigChangeEvents. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$event</td><td>ConfigChangeEvent instance </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_file_cache_8php_source.html#l00184">184</a> of file <a class="el" href="_file_cache_8php_source.html">FileCache.php</a>.</p>
 
 </div>
 </div>
@@ -338,7 +387,7 @@ Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Mon Jul 11 2016 18:34:14 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.11</small>
+          Generated on Fri Jul 15 2016 19:39:53 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.11</small>
       </div>
     </div>
   </div>

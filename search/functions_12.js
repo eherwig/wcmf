@@ -1,7 +1,6 @@
 var searchData=
 [
   ['read',['read',['../classwcmf_1_1application_1_1controller_1_1_r_e_s_t_controller.html#a64571309bfb3238c65fd3c2898f92440',1,'wcmf::application::controller::RESTController']]],
-  ['readcsvfile',['readCSVFile',['../classwcmf_1_1lib_1_1util_1_1_c_s_v_util.html#a67e5885fc8d45a46257c0d8a90b2bf9f',1,'wcmf::lib::util::CSVUtil']]],
   ['readinrelation',['readInRelation',['../classwcmf_1_1application_1_1controller_1_1_r_e_s_t_controller.html#ab5ef13371a7796eebd4c697e529bd690',1,'wcmf::application::controller::RESTController']]],
   ['readlist',['readList',['../classwcmf_1_1application_1_1controller_1_1_r_e_s_t_controller.html#aee705bf9176834253d9697d219639cbb',1,'wcmf::application::controller::RESTController']]],
   ['realpath',['realpath',['../classwcmf_1_1lib_1_1io_1_1_file_util.html#a28802a30d56b096333ecd305f02fccc3',1,'wcmf::lib::io::FileUtil']]],

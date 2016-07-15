@@ -127,8 +127,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a18deb92b771ebd591a2199acabbb2b8e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html#a18deb92b771ebd591a2199acabbb2b8e">__construct</a> ($type, $id=null, $prefix=null)</td></tr>
-<tr class="separator:a18deb92b771ebd591a2199acabbb2b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a184cdcc696adf142c49eaf27433f9ef5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html#a184cdcc696adf142c49eaf27433f9ef5">__construct</a> ($type, $id=array(), $prefix=null)</td></tr>
+<tr class="separator:a184cdcc696adf142c49eaf27433f9ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a333affb97cf092d50f3e59edaa9066"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html#a7a333affb97cf092d50f3e59edaa9066">getPrefix</a> ()</td></tr>
 <tr class="separator:a7a333affb97cf092d50f3e59edaa9066"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a830b5c75df72b32396701bc563fbe3c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html#a830b5c75df72b32396701bc563fbe3c7">getType</a> ()</td></tr>
@@ -167,7 +167,7 @@ Public Attributes</h2></td></tr>
 <tr class="separator:ad71988bbc6816f80670ab4d8e6228ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a18deb92b771ebd591a2199acabbb2b8e"></a>
+<a class="anchor" id="a184cdcc696adf142c49eaf27433f9ef5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -181,7 +181,7 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$id</em> = <code>null</code>, </td>
+          <td class="paramname"><em>$id</em> = <code>array()</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -201,7 +201,7 @@ Public Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$type</td><td>The type name of the object (either fully qualified or simple, if not ambiguous) </td></tr>
-    <tr><td class="paramname">$id</td><td>Either a single value or an array of values (for compound primary keys) identifying the object between others of the same type. If not given, a dummy id will be assigned (optional, default: <em>null</em>) </td></tr>
+    <tr><td class="paramname">$id</td><td>Either a single value or an array of values (for compound primary keys) identifying the object between others of the same type. If not given, a dummy id will be assigned (optional, default: empty array) </td></tr>
     <tr><td class="paramname">$prefix</td><td>A prefix for identifying a set of objects belonging to one storage in a distributed environment (optional, default: <em>null</em>) </td></tr>
   </table>
   </dd>
@@ -237,7 +237,7 @@ Public Attributes</h2></td></tr>
 <p>Get the NULL instance. </p>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00087">87</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00077">77</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
 
 </div>
 </div>
@@ -257,7 +257,7 @@ Public Attributes</h2></td></tr>
 <p>Get the prefix. </p>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00098">98</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00088">88</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
 
 </div>
 </div>
@@ -277,7 +277,7 @@ Public Attributes</h2></td></tr>
 <p>Get the type (including namespace) </p>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00106">106</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00096">96</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
 
 </div>
 </div>
@@ -297,7 +297,7 @@ Public Attributes</h2></td></tr>
 <p>Get the id. </p>
 <dl class="section return"><dt>Returns</dt><dd>Array </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00114">114</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00104">104</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
 
 </div>
 </div>
@@ -317,7 +317,7 @@ Public Attributes</h2></td></tr>
 <p>Get the first id. </p>
 <p>This is especially useful, when you know that this id only consists of one id. </p><dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00122">122</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00112">112</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
 
 </div>
 </div>
@@ -352,7 +352,7 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boolean </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00132">132</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00122">122</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
 
 </div>
 </div>
@@ -387,7 +387,7 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a> or null, if the id cannot be parsed </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00144">144</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00134">134</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
 
 </div>
 </div>
@@ -407,7 +407,7 @@ Public Attributes</h2></td></tr>
 <p>Get a string representation of the object id. </p>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00220">220</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00210">210</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
 
 </div>
 </div>
@@ -435,7 +435,7 @@ Public Attributes</h2></td></tr>
 <p>Get a dummy id ("wcmf" + unique 32 character string). </p>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00235">235</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00225">225</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
 
 </div>
 </div>
@@ -470,7 +470,7 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boolean </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00244">244</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00234">234</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
 
 </div>
 </div>
@@ -490,7 +490,7 @@ Public Attributes</h2></td></tr>
 <p>Check if this object id contains a dummy id. </p>
 <dl class="section return"><dt>Returns</dt><dd>Boolean </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00252">252</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00242">242</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
 
 </div>
 </div>
@@ -507,7 +507,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00286">286</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00276">276</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
 
 </div>
 </div>
@@ -525,7 +525,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00290">290</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00280">280</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
 
 </div>
 </div>
@@ -542,7 +542,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00298">298</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_id_8php_source.html#l00288">288</a> of file <a class="el" href="_object_id_8php_source.html">ObjectId.php</a>.</p>
 
 </div>
 </div>
@@ -573,7 +573,7 @@ Public Attributes</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Mon Jul 11 2016 18:34:15 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.11</small>
+          Generated on Fri Jul 15 2016 19:39:54 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.11</small>
       </div>
     </div>
   </div>

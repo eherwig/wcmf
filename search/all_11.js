@@ -7,6 +7,7 @@ var searchData=
   ['parse',['parse',['../classwcmf_1_1lib_1_1persistence_1_1_object_id.html#a2441c8f369adef96455b48af3467b42f',1,'wcmf::lib::persistence::ObjectId']]],
   ['parseinifile',['parseIniFile',['../classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html#a521bd6e0a41f31b174634d7e16338379',1,'wcmf::lib::config::impl::InifileConfiguration']]],
   ['parsekey',['parseKey',['../classwcmf_1_1lib_1_1config_1_1_action_key.html#a6c4ca38bddf98fcf275ee6c80ad5d4da',1,'wcmf::lib::config::ActionKey']]],
+  ['parseresource',['parseResource',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html#a48d6676f66fb9538256766fb370ef98f',1,'wcmf::lib::security::impl::AbstractPermissionManager']]],
   ['passwordservice',['PasswordService',['../classwcmf_1_1lib_1_1security_1_1principal_1_1_password_service.html',1,'wcmf::lib::security::principal']]],
   ['pathdescription',['PathDescription',['../classwcmf_1_1lib_1_1persistence_1_1_path_description.html',1,'wcmf::lib::persistence']]],
   ['pdf',['PDF',['../classwcmf_1_1lib_1_1pdf_1_1_p_d_f.html',1,'wcmf::lib::pdf']]],

@@ -13,5 +13,6 @@ var searchData=
   ['loggingcontroller',['LoggingController',['../classwcmf_1_1application_1_1controller_1_1_logging_controller.html',1,'wcmf::application::controller']]],
   ['logincontroller',['LoginController',['../classwcmf_1_1application_1_1controller_1_1_login_controller.html',1,'wcmf::application::controller']]],
   ['logmanager',['LogManager',['../classwcmf_1_1lib_1_1core_1_1_log_manager.html',1,'wcmf::lib::core']]],
-  ['lucenesearch',['LuceneSearch',['../classwcmf_1_1lib_1_1search_1_1impl_1_1_lucene_search.html',1,'wcmf::lib::search::impl']]]
+  ['lucenesearch',['LuceneSearch',['../classwcmf_1_1lib_1_1search_1_1impl_1_1_lucene_search.html',1,'wcmf::lib::search::impl']]],
+  ['luceneutf8analyzer',['LuceneUtf8Analyzer',['../classwcmf_1_1lib_1_1search_1_1impl_1_1_lucene_utf8_analyzer.html',1,'wcmf::lib::search::impl']]]
 ];

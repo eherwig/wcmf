@@ -15,6 +15,5 @@ var searchData=
   ['user',['User',['../interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html',1,'wcmf::lib::security::principal']]],
   ['user_5fgroup_5fname',['USER_GROUP_NAME',['../classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_anonymous_user.html#ab9e8cd5c2d042df93eb00fad37997ff6',1,'wcmf::lib::security::principal::impl::AnonymousUser']]],
   ['usercontroller',['UserController',['../classwcmf_1_1application_1_1controller_1_1_user_controller.html',1,'wcmf::application::controller']]],
-  ['utf8analyzer',['Utf8Analyzer',['../classwcmf_1_1lib_1_1search_1_1impl_1_1_utf8_analyzer.html',1,'wcmf::lib::search::impl']]],
   ['utf8encodemix',['utf8EncodeMix',['../classwcmf_1_1lib_1_1io_1_1_encoding_util.html#a5e21b5444317d02156e8e6f6528b36e9',1,'wcmf::lib::io::EncodingUtil']]]
 ];

@@ -1,14 +1,15 @@
 var searchData=
 [
-  ['oasis',['OASIS',['../classwcmf_1_1lib_1_1service_1_1_soap_client.html#a5b2d3b6a0e74f95b8c34ca825d0293bb',1,'wcmf::lib::service::SoapClient']]],
-  ['object_5fis_5flocked',['OBJECT_IS_LOCKED',['../namespacewcmf_1_1lib_1_1presentation.html#a2a5cddeb984c35030ec07f36f7c9352e',1,'wcmf::lib::presentation']]],
-  ['object_5fmap_5fvar',['OBJECT_MAP_VAR',['../classwcmf_1_1application_1_1controller_1_1_copy_controller.html#aa1a6648b484005b28c8b933d0dc3f23d',1,'wcmf::application::controller::CopyController']]],
-  ['offset_5fout_5fof_5fbounds',['OFFSET_OUT_OF_BOUNDS',['../namespacewcmf_1_1lib_1_1presentation.html#a6e41bfb80f10dc776f7fb8b2cf9655a8',1,'wcmf::lib::presentation']]],
-  ['oid_5finvalid',['OID_INVALID',['../namespacewcmf_1_1lib_1_1presentation.html#a9d605d6d6d5dc2597596f8e75772fca2',1,'wcmf::lib::presentation']]],
-  ['one_5fcall_5fvar',['ONE_CALL_VAR',['../classwcmf_1_1application_1_1controller_1_1_batch_controller.html#af73eaa0312b714fe5ae3b4e81e6ccf59',1,'wcmf::application::controller::BatchController']]],
-  ['operator_5fand',['OPERATOR_AND',['../classwcmf_1_1lib_1_1persistence_1_1_criteria.html#aecfb583df189a0066873cc163d1fe2a7',1,'wcmf::lib::persistence::Criteria']]],
-  ['operator_5for',['OPERATOR_OR',['../classwcmf_1_1lib_1_1persistence_1_1_criteria.html#a22ee5179bb121cf704f9be4c8581a913',1,'wcmf::lib::persistence::Criteria']]],
-  ['order_5fbottom',['ORDER_BOTTOM',['../classwcmf_1_1application_1_1controller_1_1_sort_controller.html#ac41b82d4e56329c031813af8a6fef168',1,'wcmf::application::controller::SortController']]],
-  ['order_5fnot_5fsupported',['ORDER_NOT_SUPPORTED',['../namespacewcmf_1_1lib_1_1presentation.html#ab1e865c601f4a74f1d1dc5d9d098eeaa',1,'wcmf::lib::presentation']]],
-  ['order_5fundefined',['ORDER_UNDEFINED',['../namespacewcmf_1_1lib_1_1presentation.html#ab80ba4aad49dc01e4b2c5f6f73187716',1,'wcmf::lib::presentation']]]
+  ['packages_5fvar',['PACKAGES_VAR',['../classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab3d68c379814aadbab70cef14a16a3e3',1,'wcmf::application::controller::BatchController']]],
+  ['parameter_5finvalid',['PARAMETER_INVALID',['../namespacewcmf_1_1lib_1_1presentation.html#af04b741cadf286fc515bf8077dd87f48',1,'wcmf::lib::presentation']]],
+  ['parameter_5fmissing',['PARAMETER_MISSING',['../namespacewcmf_1_1lib_1_1presentation.html#aa90dfb86ed7f5bde37bee0889da51fff',1,'wcmf::lib::presentation']]],
+  ['permission_5fdenied',['PERMISSION_DENIED',['../namespacewcmf_1_1lib_1_1presentation.html#a1724cbc77ce7e4704e6b24f068c02148',1,'wcmf::lib::presentation']]],
+  ['permission_5fmodifier_5fallow',['PERMISSION_MODIFIER_ALLOW',['../interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a4e34e2ff1951d49ebe88423999609413',1,'wcmf::lib::security::PermissionManager']]],
+  ['permission_5fmodifier_5fdeny',['PERMISSION_MODIFIER_DENY',['../interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a07a7905d362aa5a7e5838463bbb1005f',1,'wcmf::lib::security::PermissionManager']]],
+  ['property_5fcombine_5foperator',['PROPERTY_COMBINE_OPERATOR',['../classwcmf_1_1lib_1_1model_1_1_object_query.html#a955fb32d8f6d3d900eeaa8a32db05b26',1,'wcmf::lib::model::ObjectQuery']]],
+  ['property_5finitial_5foid',['PROPERTY_INITIAL_OID',['../classwcmf_1_1lib_1_1model_1_1_object_query.html#a03e9a49687d2b0ffdea0538aa5c008dc',1,'wcmf::lib::model::ObjectQuery']]],
+  ['property_5ftable_5fname',['PROPERTY_TABLE_NAME',['../classwcmf_1_1lib_1_1model_1_1_object_query.html#ab469259c7a9143b2226ccb00704a96f0',1,'wcmf::lib::model::ObjectQuery']]],
+  ['protocol_5fstr',['PROTOCOL_STR',['../classwcmf_1_1lib_1_1presentation_1_1link_1_1_internal_link.html#a92f5de329a69cb80372a4bee6a83b3f1',1,'wcmf::lib::presentation::link::InternalLink']]],
+  ['proxies_5fonly',['PROXIES_ONLY',['../classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#ad8e66505aa12ab235195acb721268093',1,'wcmf::lib::persistence::BuildDepth']]],
+  ['proxy_5fobjects_5fsession_5fvarname',['PROXY_OBJECTS_SESSION_VARNAME',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_remote_capable_persistence_facade.html#a5feed45231748ac82338fbb533a3da9b',1,'wcmf::lib::persistence::impl::RemoteCapablePersistenceFacade']]]
 ];
