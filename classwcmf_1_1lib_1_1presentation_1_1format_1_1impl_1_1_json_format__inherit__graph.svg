@@ -14,7 +14,7 @@
 <polygon fill="#bfbfbf" stroke="black" points="5,-0.5 5,-123.5 109,-123.5 109,-0.5 5,-0.5"/>
 <text text-anchor="middle" x="57" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">JsonFormat</text>
 <polyline fill="none" stroke="black" points="5,-104.5 109,-104.5 "/>
-<text text-anchor="start" x="13" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_serializer</text>
+<text text-anchor="start" x="13" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $serializer</text>
 <polyline fill="none" stroke="black" points="5,-85.5 109,-85.5 "/>
 <text text-anchor="start" x="13" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
 <text text-anchor="start" x="13" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMimeType()</text>

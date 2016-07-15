@@ -55,7 +55,7 @@
 <polygon fill="white" stroke="black" points="112,-0.5 112,-211.5 220,-211.5 220,-0.5 112,-0.5"/>
 <text text-anchor="middle" x="166" y="-199.5" font-family="Helvetica,sans-Serif" font-size="10.00">SmartyView</text>
 <polyline fill="none" stroke="black" points="112,-192.5 220,-192.5 "/>
-<text text-anchor="start" x="120" y="-180.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_view</text>
+<text text-anchor="start" x="120" y="-180.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $view</text>
 <polyline fill="none" stroke="black" points="112,-173.5 220,-173.5 "/>
 <text text-anchor="start" x="120" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
 <text text-anchor="start" x="120" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCompileCheck()</text>

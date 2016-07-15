@@ -14,8 +14,8 @@
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-189.5 115,-189.5 115,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="57.5" y="-177.5" font-family="Helvetica,sans-Serif" font-size="10.00">PersistentObjectProxy</text>
 <polyline fill="none" stroke="black" points="0,-170.5 115,-170.5 "/>
-<text text-anchor="start" x="8" y="-158.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_oid</text>
-<text text-anchor="start" x="8" y="-147.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_realSubject</text>
+<text text-anchor="start" x="8" y="-158.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $oid</text>
+<text text-anchor="start" x="8" y="-147.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $realSubject</text>
 <polyline fill="none" stroke="black" points="0,-140.5 115,-140.5 "/>
 <text text-anchor="start" x="8" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
 <text text-anchor="start" x="8" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getRealSubject()</text>
