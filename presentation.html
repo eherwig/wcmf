@@ -344,7 +344,7 @@ Caching</h2>
 <h3><a class="anchor" id="pres_response_caching"></a>
 Response caching</h3>
 <p>Besides setting caching headers by using the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a48ca020ea3da5f108feab0fa8efde068"><code>Response::setHeader</code></a> method, wCMF provides a convenient way to set the <code>Etag</code> and <code>Last Modified</code> headers on the response.</p>
-<p>All one needs to do is derive a <em>cache identifier</em> from the request data, that allows to distinguish different requests and set it on the response using the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a282c10d36405d8bdb86a8d8387de9bce"><code>Response::setCacheId</code></a> method. If the used <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html"><code>Format</code></a> is capable of caching (e.g. <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_html_format.html"><code>HtmlFormat</code></a>) it will take care of setting the <em>last modified date</em> from the cached data using the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#aa1e251e13642ae5b82484ea07d6eac64"><code>Response::setLastMofified</code></a> method. <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_default_formatter.html"><code>DefaultFormatter</code></a> will then use this information to create the <code>Etag</code> and <code>Last Modified</code> headers:</p>
+<p>All one needs to do is derive a <em>cache identifier</em> from the request data, that allows to distinguish different requests and set it on the response using the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a282c10d36405d8bdb86a8d8387de9bce"><code>Response::setCacheId</code></a> method. If the used <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html"><code>Format</code></a> is capable of caching (e.g. <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_html_format.html"><code>HtmlFormat</code></a>) it will provide the <em>last modified date</em> from the cached data. <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_default_formatter.html"><code>DefaultFormatter</code></a> will then use this information to create the <code>Etag</code> and <code>Last Modified</code> headers:</p>
 <div class="fragment"><div class="line">...</div>
 <div class="line">Cache-Control:<span class="keyword">public</span></div>
 <div class="line">ETag:<span class="stringliteral">&quot;93256174cf75e43ba8172a6ce01ceded&quot;</span></div>
@@ -426,7 +426,7 @@ Logging</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Oct 7 2016 22:45:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sat Oct 8 2016 00:59:25 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

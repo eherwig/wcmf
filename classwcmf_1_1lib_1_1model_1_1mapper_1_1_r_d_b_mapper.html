@@ -1482,7 +1482,7 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Subclasses must implement this method to define their object type. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$object</td><td>A reference to the object created with createObject method to which the data should be applied </td></tr>
+    <tr><td class="paramname">$object</td><td>PersistentObject instance created with createObject method to which the data should be applied </td></tr>
     <tr><td class="paramname">$objectData</td><td>An associative array with the data returned by execution of the database select statement (given by getSelectSQL). </td></tr>
   </table>
   </dd>
@@ -1518,7 +1518,7 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Subclasses must implement this method to define their object type. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$object</td><td>A reference to the object created with createObject method to which the data should be applied </td></tr>
+    <tr><td class="paramname">$object</td><td>PersistentObject instance created with createObject method to which the data should be applied </td></tr>
   </table>
   </dd>
 </dl>
@@ -1917,7 +1917,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A reference to the created object. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>PersitentObject </dd></dl>
 
 </div>
 </div>
@@ -1946,7 +1946,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Set the object primary key and foreign key values for storing the object in the database. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$object</td><td>A reference to the object to insert. </td></tr>
+    <tr><td class="paramname">$object</td><td>PersistentObject instance to insert. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2122,7 +2122,7 @@ In case of a sortable many to many relation, the sortkey value must also be sele
 <p>Get the SQL command to insert a object into the database. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$object</td><td>A reference to the object to insert. </td></tr>
+    <tr><td class="paramname">$object</td><td>PersistentObject instance to insert. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2155,7 +2155,7 @@ In case of a sortable many to many relation, the sortkey value must also be sele
 <p>Get the SQL command to update a object in the database. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$object</td><td>A reference to the object to update. </td></tr>
+    <tr><td class="paramname">$object</td><td>PersistentObject instance to update. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2309,7 +2309,7 @@ In case of a sortable many to many relation, the sortkey value must also be sele
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Oct 7 2016 22:45:21 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sat Oct 8 2016 00:59:33 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

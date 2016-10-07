@@ -546,7 +546,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="comment">   * Confirm save action on given Node value.</span></div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="comment">   * @note subclasses will override this to implement special application requirements.</span></div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<span class="comment">   * @param $node A reference to the Node to confirm.</span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<span class="comment">   * @param $node The Node instance to confirm.</span></div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;<span class="comment">   * @param $valueName The name of the value to save.</span></div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;<span class="comment">   * @param $newValue The new value to set.</span></div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;<span class="comment">   * @return Boolean whether the value should be changed (default: _true_).</span></div>
@@ -558,7 +558,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;<span class="comment">   * Confirm save action on given Node. This method is called before modify()</span></div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;<span class="comment">   * @note subclasses will override this to implement special application requirements.</span></div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;<span class="comment">   * @param $node A reference to the Node to confirm.</span></div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;<span class="comment">   * @param $node The Node instance to confirm.</span></div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;<span class="comment">   * @return Boolean whether the Node should be saved (default: _true_).</span></div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00457"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_save_controller.html#aaebcdd5bf4d104e0ae0b22f9b1fd6530">  457</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_save_controller.html#aaebcdd5bf4d104e0ae0b22f9b1fd6530">confirmSave</a>($node) {</div>
@@ -568,7 +568,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;<span class="comment">   * Called before save.</span></div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="comment">   * @note subclasses will override this to implement special application requirements.</span></div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;<span class="comment">   * @param $node A reference to the Node to be saved.</span></div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;<span class="comment">   * @param $node The Node instance to be saved.</span></div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;<span class="comment">   * @return Boolean whether the Node was modified (default: _false_).</span></div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00467"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_save_controller.html#aeb6624a71876a3f3bbe75380135d7cfc">  467</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_save_controller.html#aeb6624a71876a3f3bbe75380135d7cfc">beforeSave</a>($node) {</div>
@@ -578,7 +578,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;<span class="comment">   * Called after save.</span></div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;<span class="comment">   * @note subclasses will override this to implement special application requirements.</span></div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;<span class="comment">   * @param $node A reference to the Node saved.</span></div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;<span class="comment">   * @param $node The saved Node instance.</span></div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00476"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_save_controller.html#a8f232ef648138182611f76b93a8997fc">  476</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_save_controller.html#a8f232ef648138182611f76b93a8997fc">afterSave</a>($node) {}</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;}</div>
@@ -646,7 +646,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Oct 7 2016 22:45:13 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sat Oct 8 2016 00:59:21 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

@@ -496,8 +496,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="comment">   * Register a copied node in the session for later reference</span></div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="comment">   * @param $origNode A reference to the original node</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="comment">   * @param $copyNode A reference to the copied node</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="comment">   * @param $origNode The original Node instance</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="comment">   * @param $copyNode The copied Node instance</span></div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00395"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_copy_controller.html#a823495e057cd13b2aa84fc913a832f26">  395</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_copy_controller.html#a823495e057cd13b2aa84fc913a832f26">registerCopy</a>(<a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $origNode, <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $copyNode) {</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="comment">// store oid in the registry</span></div>
@@ -569,7 +569,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="comment">   * Modify the given Node before save action (Called only for the copied root Node, not for its children)</span></div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;<span class="comment">   * @note Subclasses will override this to implement special application requirements.</span></div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;<span class="comment">   * @param $node A reference to the Node to modify.</span></div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;<span class="comment">   * @param $node The Node instance to modify.</span></div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;<span class="comment">   * @return Boolean whether the Node was modified (default: false)</span></div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00468"></a><span class="lineno"><a class="line" href="classwcmf_1_1application_1_1controller_1_1_copy_controller.html#aed1f22bd7cbc1e41053fb78f4fcb345f">  468</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1application_1_1controller_1_1_copy_controller.html#aed1f22bd7cbc1e41053fb78f4fcb345f">modify</a>(<a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $node) {</div>
@@ -644,7 +644,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Oct 7 2016 22:45:13 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sat Oct 8 2016 00:59:21 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

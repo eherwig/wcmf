@@ -355,7 +355,7 @@ Static Protected Member Functions</h2></td></tr>
 <p>Get the display value for a <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> defined by the 'display_value' property. </p>
 <p>If the 'display_value' is an array ('|' separated strings) the pieces will be put together with ' - '. If search for 'display_value' gives no result the function returns an empty string. Example: 'name|text' shows the name of the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> together with the content of the text attribute </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$node</td><td>A reference to the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> to display </td></tr>
+    <tr><td class="paramname">$node</td><td><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> instance to display </td></tr>
     <tr><td class="paramname">$language</td><td>The language if values should be localized. Optional, default is Localization::getDefaultLanguage() </td></tr>
   </table>
   </dd>
@@ -408,7 +408,7 @@ Static Protected Member Functions</h2></td></tr>
 <p>Does the same as <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node_util.html#a048d90ae2bd98d78429eae26b804c756" title="Get the display value for a Node defined by the &#39;display_value&#39; property. ">NodeUtil::getDisplayValue</a> but returns the display value as associative array. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$node</td><td>A reference to the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> to display </td></tr>
+    <tr><td class="paramname">$node</td><td><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> instance to display </td></tr>
     <tr><td class="paramname">$language</td><td>The language if values should be localized. Optional, default is Localization::getDefaultLanguage() </td></tr>
   </table>
   </dd>
@@ -460,7 +460,7 @@ Static Protected Member Functions</h2></td></tr>
 <p>Make all urls matching a given base url in a <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> relative. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$node</td><td>A reference to the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> the holds the value </td></tr>
+    <tr><td class="paramname">$node</td><td><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> instance that holds the value </td></tr>
     <tr><td class="paramname">$baseUrl</td><td>The baseUrl to which matching urls will be made relative </td></tr>
     <tr><td class="paramname">$recursive</td><td>Boolean whether to recurse into child Nodes or not (default: true) </td></tr>
   </table>
@@ -507,7 +507,7 @@ Static Protected Member Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Translation in this case refers to mapping list values from the key to the value and should not be confused with localization, although values maybe localized using the language parameter. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$nodes</td><td>A reference to the array of Nodes </td></tr>
+    <tr><td class="paramname">$nodes</td><td>A reference to the array of <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> instances </td></tr>
     <tr><td class="paramname">$language</td><td>The language code, if the translated values should be localized. Optional, default is Localizat$objectgetDefaultLanguage() </td></tr>
   </table>
   </dd>
@@ -597,7 +597,7 @@ Static Protected Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Oct 7 2016 22:45:20 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sat Oct 8 2016 00:59:31 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

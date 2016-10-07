@@ -1099,7 +1099,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;<span class="comment">   * Apply the loaded object data to the object.</span></div>
 <div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;<span class="comment">   * @note Subclasses must implement this method to define their object type.</span></div>
-<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;<span class="comment">   * @param $object A reference to the object created with createObject method to which the data should be applied</span></div>
+<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;<span class="comment">   * @param $object PersistentObject instance created with createObject method to which the data should be applied</span></div>
 <div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;<span class="comment">   * @param $objectData An associative array with the data returned by execution of the database select statement</span></div>
 <div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;<span class="comment">   *          (given by getSelectSQL).</span></div>
 <div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;<span class="comment">   */</span></div>
@@ -1118,7 +1118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;<span class="comment">   * Apply the default data to the object.</span></div>
 <div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;<span class="comment">   * @note Subclasses must implement this method to define their object type.</span></div>
-<div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160;<span class="comment">   * @param $object A reference to the object created with createObject method to which the data should be applied</span></div>
+<div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160;<span class="comment">   * @param $object PersistentObject instance created with createObject method to which the data should be applied</span></div>
 <div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l01016"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a5dad8a77dc7889b2f4ba4da08c6416c9"> 1016</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a5dad8a77dc7889b2f4ba4da08c6416c9">applyDataOnCreate</a>(<a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $object) {</div>
 <div class="line"><a name="l01017"></a><span class="lineno"> 1017</span>&#160;    <span class="comment">// set object data</span></div>
@@ -1344,13 +1344,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;<span class="comment">   * Factory method for the supported object type.</span></div>
 <div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;<span class="comment">   * @param $oid The object id (maybe null)</span></div>
-<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;<span class="comment">   * @return A reference to the created object.</span></div>
+<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;<span class="comment">   * @return PersitentObject</span></div>
 <div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#aa964429995d2e15009b092957d39502d">createObject</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid=null);</div>
 <div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;<span class="comment">   * Set the object primary key and foreign key values for storing the object in the database.</span></div>
-<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;<span class="comment">   * @param $object A reference to the object to insert.</span></div>
+<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;<span class="comment">   * @param $object PersistentObject instance to insert.</span></div>
 <div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;<span class="comment">   * @note The object does not have the final object id set. If a new id value for a primary key column is needed.</span></div>
 <div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;<span class="comment">   * @note The prepared object will be used in the application afterwards. So values that are only to be modified for</span></div>
 <div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;<span class="comment">   * the storage process should be changed in getInsertSQL() and getUpdateSQL() only!</span></div>
@@ -1389,14 +1389,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;<span class="comment">   * Get the SQL command to insert a object into the database.</span></div>
-<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;<span class="comment">   * @param $object A reference to the object to insert.</span></div>
+<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;<span class="comment">   * @param $object PersistentObject instance to insert.</span></div>
 <div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;<span class="comment">   * @return Array of PersistenceOperation instances that insert a new object.</span></div>
 <div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#aeb05c1fb5f657ea80966507399e06a57">getInsertSQL</a>(<a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $object);</div>
 <div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;<span class="comment">   * Get the SQL command to update a object in the database.</span></div>
-<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;<span class="comment">   * @param $object A reference to the object to update.</span></div>
+<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;<span class="comment">   * @param $object PersistentObject instance to update.</span></div>
 <div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;<span class="comment">   * @return Array of PersistenceOperation instances that update an existing object.</span></div>
 <div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a1df9faa81e9b2c8bb54e2ef58a563ca8">getUpdateSQL</a>(<a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $object);</div>
@@ -1596,7 +1596,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Fri Oct 7 2016 22:45:14 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sat Oct 8 2016 00:59:22 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

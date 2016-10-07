@@ -42,7 +42,6 @@ var searchData=
   ['setindexpath',['setIndexPath',['../classwcmf_1_1lib_1_1search_1_1impl_1_1_lucene_search.html#a3a729e6e263564fe1bb3564457d69e70',1,'wcmf::lib::search::impl::LuceneSearch']]],
   ['setinput',['setInput',['../classwcmf_1_1lib_1_1search_1_1impl_1_1_lucene_utf8_analyzer.html#a5fb021be86a651cabfa5efa93db5adf0',1,'wcmf::lib::search::impl::LuceneUtf8Analyzer']]],
   ['setisintransaction',['setIsInTransaction',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a0094e453215f759a33d3b3ff396d7fae',1,'wcmf::lib::model::mapper::RDBMapper']]],
-  ['setlastmofified',['setLastMofified',['../classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#aa1e251e13642ae5b82484ea07d6eac64',1,'wcmf\lib\presentation\impl\DefaultResponse\setLastMofified()'],['../interfacewcmf_1_1lib_1_1presentation_1_1_response.html#aa1e251e13642ae5b82484ea07d6eac64',1,'wcmf\lib\presentation\Response\setLastMofified()']]],
   ['setliveupdate',['setLiveUpdate',['../classwcmf_1_1lib_1_1search_1_1impl_1_1_lucene_search.html#a02ceef988a11467f6bd04acc329f8556',1,'wcmf::lib::search::impl::LuceneSearch']]],
   ['setlocalsessionvalue',['setLocalSessionValue',['../classwcmf_1_1lib_1_1presentation_1_1_controller.html#a84051ded64678112f8d5ccd7b5270bf5',1,'wcmf::lib::presentation::Controller']]],
   ['setlocationheaderfromoid',['setLocationHeaderFromOid',['../classwcmf_1_1application_1_1controller_1_1_r_e_s_t_controller.html#a1fe15beaeecc461d0cac15961ce06b51',1,'wcmf::application::controller::RESTController']]],
