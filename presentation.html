@@ -200,7 +200,7 @@ Internal routing</h4>
 </div><!-- fragment --><p>In this case <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a> would have to define the methods <code>doBegin</code> and <code>doContinue</code> which are called for the appropriate action keys.</p>
 <h4><a class="anchor" id="pres_routingext"></a>
 External routing</h4>
-<p>The mapping of the current <b>request uri</b> to an <b>action key</b> is called external routing. The default mapping logic is implemented in the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html#affe4ce2b5c9a30ae73ce9dc35a33675d"><code>DefaultRequest::initialize</code></a> method. The method matches the <em>path part</em> of the request uri against the entries of the <code>Routes</code> configuration section to find an appropriate action key. Variables declared in path segments will be automatically passed as request parameters, but may be overwritten by explicit request parameters. The character <em>*</em> is used as wildcard.</p>
+<p>The mapping of the current <b>request uri</b> to an <b>action key</b> is called external routing. The default mapping logic is implemented in the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html#a36e0e7579b8ab70ec7690b37dcdfa312"><code>DefaultRequest::initialize</code></a> method. The method matches the <em>path part</em> of the request uri against the entries of the <code>Routes</code> configuration section to find an appropriate action key. Variables declared in path segments will be automatically passed as request parameters, but may be overwritten by explicit request parameters. The character <em>*</em> is used as wildcard.</p>
 <p>The following example configuration taken from the <a class="el" href="gettingstarted.html#app">default application</a> illustrates the concept:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Routes]</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;POST/session = action=login</div>
@@ -231,7 +231,7 @@ Controllers</h2>
 <li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a184909dab34698899937d810a9f5d393"><code>Controller::validate</code></a> is called afterwards to check the validity of the request parameters. The default implementation returns <em>true</em> and subclasses are assumed to override this method if necessary to do task specific validations.</li>
 <li><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a1df29271eb3c879e6ebf5c9f60ddc806"><code>Controller::execute</code></a> is called finally. This method accepts a parameter, that defines the actual method to be called on the subclass. If the parameter is omitted it defaults to <code>doExecute</code> which must then be defined in the subclass.</li>
 </ol>
-<p>Controllers can <em>redirect</em> to other controllers by using the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a3cab4378497eaa9422a09554c2749bec"><code>Controller::internalRedirect</code></a> or <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aa997fe786daa6afb5723d9ab98e8aba7"><code>Controller::externalRedirect</code></a> methods.</p>
+<p>Controllers can <em>redirect</em> to other controllers by using the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6b6af210231bea9e5116e98dbd08cb45"><code>Controller::redirect</code></a> method.</p>
 <p>If variables need be shared between several requests to one controller they can be stored in <em>local session variables</em> to avoid side effects (see <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a84051ded64678112f8d5ccd7b5270bf5"><code>Controller::setLocalSessionValue</code></a>).</p>
 <h3><a class="anchor" id="pres_errors"></a>
 Error handling</h3>
@@ -341,7 +341,25 @@ Caching</h2>
 <div class="line">  $resultA = $cache-&gt;get($cacheSection, $cacheKey);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>Supposed that <code>complexCalculationA</code> in this example takes long to finish, it should only run once at the first time the result is needed. So we check if <em>resultA</em> is already cached and calculate it, if not. Since it is put it into the cache after calculation, it can be retrieved <em>resultA</em> directly from there the next time it is needed.</p>
-<h2><a class="anchor" id="pres_events"></a>
+<h3><a class="anchor" id="pres_response_caching"></a>
+Response caching</h3>
+<p>Besides setting caching headers by using the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a48ca020ea3da5f108feab0fa8efde068"><code>Response::setHeader</code></a> method, wCMF provides a convenient way to set the <code>Etag</code> and <code>Last Modified</code> headers on the response.</p>
+<p>All one needs to do is derive a <em>cache identifier</em> from the request data, that allows to distinguish different requests and set it on the response using the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a282c10d36405d8bdb86a8d8387de9bce"><code>Response::setCacheId</code></a> method. If the used <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html"><code>Format</code></a> is capable of caching (e.g. <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_html_format.html"><code>HtmlFormat</code></a>) it will take care of setting the <em>last modified date</em> from the cached data using the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#aa1e251e13642ae5b82484ea07d6eac64"><code>Response::setLastMofified</code></a> method. <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_default_formatter.html"><code>DefaultFormatter</code></a> will then use this information to create the <code>Etag</code> and <code>Last Modified</code> headers:</p>
+<div class="fragment"><div class="line">...</div>
+<div class="line">Cache-Control:<span class="keyword">public</span></div>
+<div class="line">ETag:<span class="stringliteral">&quot;93256174cf75e43ba8172a6ce01ceded&quot;</span></div>
+<div class="line">Last-Modified:Fri, 07 Oct 2016 19:19:13 GMT</div>
+<div class="line">...</div>
+</div><!-- fragment --><p>Another advantage of using a <em>cache identifier</em> is the possibility to avoid expensive calculations in <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> implementations by using the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#afac82e816d0fc5049c3295f0d356acdb"><code>Response::isCached</code></a> method. The following example shows it's usage:</p>
+<div class="fragment"><div class="line"><span class="comment">// define a unique id for the request data and set it on the response</span></div>
+<div class="line">$cacheId = $pageId.$language;</div>
+<div class="line">$response-&gt;setCacheId($cacheId);</div>
+<div class="line"></div>
+<div class="line"><span class="keywordflow">if</span> (!$response-&gt;isCached()) {</div>
+<div class="line">  <span class="comment">// this will be executed only, if the response is not cached yet</span></div>
+<div class="line">  ...</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="pres_events"></a>
 Events</h2>
 <p>Events are a way to decouple parts of a software by introducing an indirect communication. They allow clients to react to certain application events without the event source knowing them. wCMF uses the <a href="https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern">publish-subscribe</a> messaging pattern, in which <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_event_manager.html"><code>EventManager</code></a> acts as the message broker. Subscribers use this class to register for certain <a class="el" href="classwcmf_1_1lib_1_1core_1_1_event.html"><code>Event</code></a> types and publishers to send the events.</p>
 <p>The following events are defined in wCMF:</p>
@@ -408,7 +426,7 @@ Logging</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jul 16 2016 15:58:55 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Fri Oct 7 2016 22:45:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

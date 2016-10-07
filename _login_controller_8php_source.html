@@ -234,48 +234,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">if</span> ($request-&gt;getAction() == <span class="stringliteral">&#39;login&#39;</span>) {</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      <span class="comment">// try to login</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        $authUser = $this-&gt;authenticationManager-&gt;login(</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                $request-&gt;getValue(<span class="stringliteral">&#39;user&#39;</span>), $request-&gt;getValue(<span class="stringliteral">&#39;password&#39;</span>));</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      <span class="keywordflow">catch</span> (\<a class="code" href="namespace_exception.html">Exception</a> $ex) {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        $authUser = null;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a2321df4f2f7d188b92b96fe63dc71a90">getLogger</a>()-&gt;error(<span class="stringliteral">&quot;Could not log in: &quot;</span>.$ex);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      }</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <span class="keywordflow">if</span> ($authUser) {</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="comment">// login succeeded</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        $session-&gt;clear();</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        $session-&gt;setAuthUser($authUser-&gt;getLogin());</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="comment">// return role names of the user</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        $roleNames = array();</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        $roles = $authUser-&gt;getRoles();</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">for</span> ($i=0, $count=<span class="keyword">sizeof</span>($roles); $i&lt;$count; $i++) {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;          $roleNames[] = $roles[$i]-&gt;getName();</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        $response-&gt;setValue(<span class="stringliteral">&#39;roles&#39;</span>, $roleNames);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        $response-&gt;setValue(<span class="stringliteral">&#39;sid&#39;</span>, $session-&gt;getID());</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        $response-&gt;setAction(<span class="stringliteral">&#39;ok&#39;</span>);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="comment">// login failed</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        $response-&gt;addError(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554">ApplicationError::get</a>(<span class="stringliteral">&#39;AUTHENTICATION_FAILED&#39;</span>));</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      }</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    elseif ($request-&gt;getAction() == <span class="stringliteral">&#39;logout&#39;</span>) {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      <span class="comment">// clear all session data</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      $session-&gt;destroy();</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      <span class="comment">// empty response</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      $response-&gt;clearValues();</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  }</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;?&gt;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        $authUser = $this-&gt;authenticationManager-&gt;login(array(</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="stringliteral">&#39;login&#39;</span> =&gt; $request-&gt;getValue(<span class="stringliteral">&#39;user&#39;</span>),</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="stringliteral">&#39;password&#39;</span> =&gt; $request-&gt;getValue(<span class="stringliteral">&#39;password&#39;</span>)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        ));</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      <span class="keywordflow">catch</span> (\<a class="code" href="namespace_exception.html">Exception</a> $ex) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        $authUser = null;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a2321df4f2f7d188b92b96fe63dc71a90">getLogger</a>()-&gt;error(<span class="stringliteral">&quot;Could not log in: &quot;</span>.$ex);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      <span class="keywordflow">if</span> ($authUser) {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="comment">// login succeeded</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        $session-&gt;clear();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        $session-&gt;setAuthUser($authUser-&gt;getLogin());</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="comment">// return role names of the user</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        $roleNames = array();</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        $roles = $authUser-&gt;getRoles();</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">for</span> ($i=0, $count=<span class="keyword">sizeof</span>($roles); $i&lt;$count; $i++) {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;          $roleNames[] = $roles[$i]-&gt;getName();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        $response-&gt;setValue(<span class="stringliteral">&#39;roles&#39;</span>, $roleNames);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        $response-&gt;setValue(<span class="stringliteral">&#39;sid&#39;</span>, $session-&gt;getID());</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        $response-&gt;setAction(<span class="stringliteral">&#39;ok&#39;</span>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="comment">// login failed</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        $response-&gt;addError(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554">ApplicationError::get</a>(<span class="stringliteral">&#39;AUTHENTICATION_FAILED&#39;</span>));</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    elseif ($request-&gt;getAction() == <span class="stringliteral">&#39;logout&#39;</span>) {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      <span class="comment">// clear all session data</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      $session-&gt;destroy();</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      <span class="comment">// empty response</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      $response-&gt;clearValues();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;?&gt;</div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">wcmf\lib\presentation\Response</a></div><div class="ttdoc">Response holds the response values that are used as output from Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_response_8php_source.html#l00020">Response.php:20</a></div></div>
 <div class="ttc" id="classwcmf_1_1application_1_1controller_1_1_login_controller_html_a184909dab34698899937d810a9f5d393"><div class="ttname"><a href="classwcmf_1_1application_1_1controller_1_1_login_controller.html#a184909dab34698899937d810a9f5d393">wcmf\application\controller\LoginController\validate</a></div><div class="ttdeci">validate()</div><div class="ttdef"><b>Definition:</b> <a href="_login_controller_8php_source.html#l00098">LoginController.php:98</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_adf1a35ad20e475c59cc0967d5764aa22"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">wcmf\lib\presentation\Controller\getRequest</a></div><div class="ttdeci">getRequest()</div><div class="ttdoc">Get the Request instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00237">Controller.php:237</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_adf1a35ad20e475c59cc0967d5764aa22"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">wcmf\lib\presentation\Controller\getRequest</a></div><div class="ttdeci">getRequest()</div><div class="ttdoc">Get the Request instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00226">Controller.php:226</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1i18n_1_1_localization_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html">wcmf\lib\i18n\Localization</a></div><div class="ttdoc">Localization defines the interface for storing localized entity instances and retrieving them back...</div><div class="ttdef"><b>Definition:</b> <a href="_localization_8php_source.html#l00032">Localization.php:32</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager.html">wcmf\lib\security\AuthenticationManager</a></div><div class="ttdoc">AuthenticationManager implementations are used to handle all authentication requests. </div><div class="ttdef"><b>Definition:</b> <a href="_authentication_manager_8php_source.html#l00019">AuthenticationManager.php:19</a></div></div>
@@ -306,9 +308,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_application_error_html_a7b6de2953b070910660cee9f229bc554"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554">wcmf\lib\presentation\ApplicationError\get</a></div><div class="ttdeci">static get($code, $data=null)</div><div class="ttdoc">Factory method for retrieving a predefind error instance. </div><div class="ttdef"><b>Definition:</b> <a href="_application_error_8php_source.html#l00141">ApplicationError.php:141</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_session_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_session.html">Session</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html">wcmf\lib\persistence\PersistenceFacade</a></div><div class="ttdoc">PersistenceFacade defines the interface for PersistenceFacade implementations. </div><div class="ttdef"><b>Definition:</b> <a href="_persistence_facade_8php_source.html#l00023">PersistenceFacade.php:23</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a2321df4f2f7d188b92b96fe63dc71a90"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a2321df4f2f7d188b92b96fe63dc71a90">wcmf\lib\presentation\Controller\getLogger</a></div><div class="ttdeci">getLogger()</div><div class="ttdoc">Get the Logger instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00253">Controller.php:253</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a6c907e8af775e517a77037dd0164222f"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">wcmf\lib\presentation\Controller\getResponse</a></div><div class="ttdeci">getResponse()</div><div class="ttdoc">Get the Response instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00245">Controller.php:245</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_aefa4c5bd150e2a7d525576d7959c6911"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aefa4c5bd150e2a7d525576d7959c6911">wcmf\lib\presentation\Controller\getSession</a></div><div class="ttdeci">getSession()</div><div class="ttdoc">Get the Session instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00261">Controller.php:261</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a2321df4f2f7d188b92b96fe63dc71a90"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a2321df4f2f7d188b92b96fe63dc71a90">wcmf\lib\presentation\Controller\getLogger</a></div><div class="ttdeci">getLogger()</div><div class="ttdoc">Get the Logger instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00242">Controller.php:242</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a6c907e8af775e517a77037dd0164222f"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">wcmf\lib\presentation\Controller\getResponse</a></div><div class="ttdeci">getResponse()</div><div class="ttdoc">Get the Response instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00234">Controller.php:234</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_aefa4c5bd150e2a7d525576d7959c6911"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aefa4c5bd150e2a7d525576d7959c6911">wcmf\lib\presentation\Controller\getSession</a></div><div class="ttdeci">getSession()</div><div class="ttdoc">Get the Session instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00250">Controller.php:250</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_application_error_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_application_error.html">ApplicationError</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
@@ -322,7 +324,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jul 16 2016 15:58:50 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Fri Oct 7 2016 22:45:13 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

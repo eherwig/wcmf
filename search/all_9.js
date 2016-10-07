@@ -16,6 +16,7 @@ var searchData=
   ['header',['Header',['../classwcmf_1_1lib_1_1pdf_1_1_p_d_f.html#af476ba4a046025587e6ca04f98918434',1,'wcmf::lib::pdf::PDF']]],
   ['hierarchicalformat',['HierarchicalFormat',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_hierarchical_format.html',1,'wcmf::lib::presentation::format::impl']]],
   ['history_5fnot_5fsupported',['HISTORY_NOT_SUPPORTED',['../namespacewcmf_1_1lib_1_1presentation.html#a6c467a87aedf64b9e2272dc3f8464218',1,'wcmf::lib::presentation']]],
+  ['historycontroller',['HistoryController',['../classwcmf_1_1application_1_1controller_1_1_history_controller.html',1,'wcmf::application::controller']]],
   ['htmlformat',['HtmlFormat',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_html_format.html',1,'wcmf::lib::presentation::format::impl']]],
   ['httpclient',['HTTPClient',['../classwcmf_1_1lib_1_1service_1_1impl_1_1_h_t_t_p_client.html',1,'wcmf::lib::service::impl']]]
 ];

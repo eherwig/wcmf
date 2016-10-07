@@ -366,11 +366,11 @@ Validation types</h3>
 <p>The actual validation is delegated to the <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1_validator.html"><code>Validator</code></a> class, which uses <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1validator_1_1_validate_type.html"><code>ValidateType</code></a> implementations for validating different types of attributes. Each validation type accepts configuration options, that are passed in as a string value. The format of this value is completely up to the validator type implementation. To define which validation should be applied to a domain class attribute, the <em>tag</em> <code>restrictions_match</code> is used in the model (see <a class="el" href="model.html#model_chivalue">ChiValue</a>).</p>
 <p>Currently three validation types are supported:</p>
 <p><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_filter.html"><code>Filter</code></a> validates against a PHP filter (see <a href="http://php.net/manual/en/function.filter-var.php">filter_var</a>), e.g. </p><div class="fragment"><div class="line"><span class="comment">// FILTER_VALIDATE_INT with min_range option and FILTER_FLAG_ALLOW_HEX flag</span></div>
-<div class="line">filter:<span class="keywordtype">int</span>|{<span class="stringliteral">&quot;options&quot;</span>:{<span class="stringliteral">&quot;min_range&quot;</span>:0},<span class="stringliteral">&quot;flags&quot;</span>:2}</div>
+<div class="line">filter:{<span class="stringliteral">&quot;type&quot;</span>:<span class="stringliteral">&quot;int&quot;</span>,<span class="stringliteral">&quot;options&quot;</span>:{<span class="stringliteral">&quot;options&quot;</span>:{<span class="stringliteral">&quot;min_range&quot;</span>:0},<span class="stringliteral">&quot;flags&quot;</span>:2}}</div>
 </div><!-- fragment --><p><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_image.html"><code>Image</code></a> checks <em>width</em> and <em>height</em> of the referred image file e.g. </p><div class="fragment"><div class="line"><span class="comment">// image width exactly 200px, height less than 100px</span></div>
 <div class="line">image:{<span class="stringliteral">&quot;width&quot;</span>:[200,1],<span class="stringliteral">&quot;height&quot;</span>:[100,0]}</div>
 </div><!-- fragment --><p><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1validator_1_1impl_1_1_reg_exp.html"><code>RegExp</code></a> validates against a regular expression (see <a href="http://php.net/manual/en/function.preg-match.php">preg_match</a>) e.g. </p><div class="fragment"><div class="line"><span class="comment">// integer or empty</span></div>
-<div class="line">regexp:^[0-9]*$</div>
+<div class="line">regexp:{<span class="stringliteral">&quot;pattern&quot;</span>:<span class="stringliteral">&quot;^[0-9]*$&quot;</span>}</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The validation type is derived from the part of the configuration string, that precedes the first colon.</dd></dl>
 <p>Custom validation types may be added in the configuration. For example after adding <code>myValidator</code> (implemented in <code>MyValidator</code> class):</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Validators]</div>
@@ -459,7 +459,7 @@ Transactions</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jul 16 2016 15:58:55 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Fri Oct 7 2016 22:45:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

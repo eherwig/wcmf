@@ -11,7 +11,7 @@
 <polygon fill="white" stroke="none" points="-4,4 -4,-608 375.5,-608 375.5,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<polygon fill="#bfbfbf" stroke="black" points="209,-524.5 209,-603.5 299,-603.5 299,-524.5 209,-524.5"/>
+<polygon fill="#bfbfbf" stroke="black" points="209,-513.5 209,-603.5 299,-603.5 299,-513.5 209,-513.5"/>
 <text text-anchor="middle" x="254" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00">Format</text>
 <polyline fill="none" stroke="black" points="209,-584.5 299,-584.5 "/>
 <text text-anchor="middle" x="254" y="-572.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
@@ -19,106 +19,109 @@
 <text text-anchor="start" x="217" y="-553.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMimeType()</text>
 <text text-anchor="start" x="217" y="-542.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ deserialize()</text>
 <text text-anchor="start" x="217" y="-531.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ serialize()</text>
+<text text-anchor="start" x="217" y="-520.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isCached()</text>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
 <g id="a_node2"><a xlink:href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_abstract_format.html" target="_top" xlink:title="AbstractFormat maybe used as base class for specialized formats. ">
-<polygon fill="white" stroke="black" points="142.5,-309.5 142.5,-487.5 249.5,-487.5 249.5,-309.5 142.5,-309.5"/>
-<text text-anchor="middle" x="196" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractFormat</text>
-<polyline fill="none" stroke="black" points="142.5,-468.5 249.5,-468.5 "/>
-<text text-anchor="middle" x="196" y="-456.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="142.5,-449.5 249.5,-449.5 "/>
-<text text-anchor="start" x="150.5" y="-437.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ deserialize()</text>
-<text text-anchor="start" x="150.5" y="-426.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ serialize()</text>
-<text text-anchor="start" x="150.5" y="-415.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getRequest()</text>
-<text text-anchor="start" x="150.5" y="-404.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getResponse()</text>
-<text text-anchor="start" x="150.5" y="-393.5" font-family="Helvetica,sans-Serif" font-size="10.00"># beforeDeserialize()</text>
-<text text-anchor="start" x="150.5" y="-382.5" font-family="Helvetica,sans-Serif" font-size="10.00"># deserializeValues()</text>
-<text text-anchor="start" x="150.5" y="-371.5" font-family="Helvetica,sans-Serif" font-size="10.00"># afterDeserialize()</text>
-<text text-anchor="start" x="150.5" y="-360.5" font-family="Helvetica,sans-Serif" font-size="10.00"># beforeSerialize()</text>
-<text text-anchor="start" x="150.5" y="-349.5" font-family="Helvetica,sans-Serif" font-size="10.00"># serializeValues()</text>
-<text text-anchor="start" x="150.5" y="-338.5" font-family="Helvetica,sans-Serif" font-size="10.00"># afterSerialize()</text>
-<text text-anchor="start" x="150.5" y="-327.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getNode()</text>
-<text text-anchor="start" x="150.5" y="-316.5" font-family="Helvetica,sans-Serif" font-size="10.00"># filterValue()</text>
+<polygon fill="white" stroke="black" points="142.5,-320.5 142.5,-476.5 249.5,-476.5 249.5,-320.5 142.5,-320.5"/>
+<text text-anchor="middle" x="196" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractFormat</text>
+<polyline fill="none" stroke="black" points="142.5,-457.5 249.5,-457.5 "/>
+<text text-anchor="middle" x="196" y="-445.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="142.5,-438.5 249.5,-438.5 "/>
+<text text-anchor="start" x="150.5" y="-426.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ deserialize()</text>
+<text text-anchor="start" x="150.5" y="-415.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ serialize()</text>
+<text text-anchor="start" x="150.5" y="-404.5" font-family="Helvetica,sans-Serif" font-size="10.00"># beforeDeserialize()</text>
+<text text-anchor="start" x="150.5" y="-393.5" font-family="Helvetica,sans-Serif" font-size="10.00"># deserializeValues()</text>
+<text text-anchor="start" x="150.5" y="-382.5" font-family="Helvetica,sans-Serif" font-size="10.00"># afterDeserialize()</text>
+<text text-anchor="start" x="150.5" y="-371.5" font-family="Helvetica,sans-Serif" font-size="10.00"># beforeSerialize()</text>
+<text text-anchor="start" x="150.5" y="-360.5" font-family="Helvetica,sans-Serif" font-size="10.00"># serializeValues()</text>
+<text text-anchor="start" x="150.5" y="-349.5" font-family="Helvetica,sans-Serif" font-size="10.00"># afterSerialize()</text>
+<text text-anchor="start" x="150.5" y="-338.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getNode()</text>
+<text text-anchor="start" x="150.5" y="-327.5" font-family="Helvetica,sans-Serif" font-size="10.00"># filterValue()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M236.903,-514.804C233.846,-506.185 230.575,-496.965 227.264,-487.632"/>
-<polygon fill="none" stroke="midnightblue" points="233.613,-515.998 240.255,-524.253 240.21,-513.658 233.613,-515.998"/>
+<path fill="none" stroke="midnightblue" d="M234.391,-504.082C231.136,-495.217 227.705,-485.869 224.287,-476.558"/>
+<polygon fill="none" stroke="midnightblue" points="231.112,-505.307 237.844,-513.488 237.683,-502.895 231.112,-505.307"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
 <g id="a_node7"><a xlink:href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_null_format.html" target="_top" xlink:title="NullFormat passes through the original request and response objects without modifying or transforming...">
-<polygon fill="white" stroke="black" points="268,-359 268,-438 358,-438 358,-359 268,-359"/>
-<text text-anchor="middle" x="313" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00">NullFormat</text>
-<polyline fill="none" stroke="black" points="268,-419 358,-419 "/>
-<text text-anchor="middle" x="313" y="-407" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="268,-400 358,-400 "/>
-<text text-anchor="start" x="276" y="-388" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMimeType()</text>
-<text text-anchor="start" x="276" y="-377" font-family="Helvetica,sans-Serif" font-size="10.00">+ deserialize()</text>
-<text text-anchor="start" x="276" y="-366" font-family="Helvetica,sans-Serif" font-size="10.00">+ serialize()</text>
+<polygon fill="white" stroke="black" points="268,-353.5 268,-443.5 358,-443.5 358,-353.5 268,-353.5"/>
+<text text-anchor="middle" x="313" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00">NullFormat</text>
+<polyline fill="none" stroke="black" points="268,-424.5 358,-424.5 "/>
+<text text-anchor="middle" x="313" y="-412.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="268,-405.5 358,-405.5 "/>
+<text text-anchor="start" x="276" y="-393.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMimeType()</text>
+<text text-anchor="start" x="276" y="-382.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ deserialize()</text>
+<text text-anchor="start" x="276" y="-371.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ serialize()</text>
+<text text-anchor="start" x="276" y="-360.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isCached()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
 <g id="edge6" class="edge"><title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M271.388,-514.816C280.194,-490.412 290.743,-461.179 299.016,-438.252"/>
-<polygon fill="none" stroke="midnightblue" points="268.084,-513.658 267.982,-524.253 274.669,-516.035 268.084,-513.658"/>
+<path fill="none" stroke="midnightblue" d="M273.962,-504.042C281.312,-484.36 289.546,-462.308 296.551,-443.55"/>
+<polygon fill="none" stroke="midnightblue" points="270.654,-502.896 270.435,-513.488 277.212,-505.344 270.654,-502.896"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
 <g id="a_node3"><a xlink:href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_hierarchical_format.html" target="_top" xlink:title="HierarchicalFormat maybe used as base class for formats that are able to represent hierarchical data ...">
-<polygon fill="white" stroke="black" points="56,-160.5 56,-272.5 170,-272.5 170,-160.5 56,-160.5"/>
-<text text-anchor="middle" x="113" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">HierarchicalFormat</text>
-<polyline fill="none" stroke="black" points="56,-253.5 170,-253.5 "/>
-<text text-anchor="middle" x="113" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="56,-234.5 170,-234.5 "/>
-<text text-anchor="start" x="64" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00"># deserializeValues()</text>
-<text text-anchor="start" x="64" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00"># serializeValues()</text>
-<text text-anchor="start" x="64" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isSerializedNode()</text>
-<text text-anchor="start" x="64" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isDeserializedNode()</text>
-<text text-anchor="start" x="64" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00"># serializeNode()</text>
-<text text-anchor="start" x="64" y="-167.5" font-family="Helvetica,sans-Serif" font-size="10.00"># deserializeNode()</text>
+<polygon fill="white" stroke="black" points="56,-171.5 56,-283.5 170,-283.5 170,-171.5 56,-171.5"/>
+<text text-anchor="middle" x="113" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">HierarchicalFormat</text>
+<polyline fill="none" stroke="black" points="56,-264.5 170,-264.5 "/>
+<text text-anchor="middle" x="113" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="56,-245.5 170,-245.5 "/>
+<text text-anchor="start" x="64" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00"># deserializeValues()</text>
+<text text-anchor="start" x="64" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00"># serializeValues()</text>
+<text text-anchor="start" x="64" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isSerializedNode()</text>
+<text text-anchor="start" x="64" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isDeserializedNode()</text>
+<text text-anchor="start" x="64" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00"># serializeNode()</text>
+<text text-anchor="start" x="64" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00"># deserializeNode()</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge"><title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M151.041,-299.999C146.741,-290.673 142.491,-281.455 138.477,-272.75"/>
-<polygon fill="none" stroke="midnightblue" points="147.985,-301.73 155.351,-309.346 154.342,-298.799 147.985,-301.73"/>
+<path fill="none" stroke="midnightblue" d="M153.721,-311.414C149.105,-302.016 144.502,-292.643 140.141,-283.762"/>
+<polygon fill="none" stroke="midnightblue" points="150.593,-312.985 158.143,-320.418 156.877,-309.899 150.593,-312.985"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
 <g id="a_node6"><a xlink:href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_html_format.html" target="_top" xlink:title="HtmlFormat realizes the HTML request/response format. ">
-<polygon fill="white" stroke="black" points="188.5,-171.5 188.5,-261.5 371.5,-261.5 371.5,-171.5 188.5,-171.5"/>
-<text text-anchor="middle" x="280" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">HtmlFormat</text>
-<polyline fill="none" stroke="black" points="188.5,-242.5 371.5,-242.5 "/>
-<text text-anchor="middle" x="280" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="188.5,-223.5 371.5,-223.5 "/>
-<text text-anchor="start" x="196.5" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMimeType()</text>
-<text text-anchor="start" x="196.5" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00"># deserializeValues()</text>
-<text text-anchor="start" x="196.5" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00"># serializeValues()</text>
+<polygon fill="white" stroke="black" points="188.5,-171.5 188.5,-283.5 371.5,-283.5 371.5,-171.5 188.5,-171.5"/>
+<text text-anchor="middle" x="280" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">HtmlFormat</text>
+<polyline fill="none" stroke="black" points="188.5,-264.5 371.5,-264.5 "/>
+<text text-anchor="middle" x="280" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="188.5,-245.5 371.5,-245.5 "/>
+<text text-anchor="start" x="196.5" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMimeType()</text>
+<text text-anchor="start" x="196.5" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isCached()</text>
+<text text-anchor="start" x="196.5" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00"># deserializeValues()</text>
+<text text-anchor="start" x="196.5" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00"># serializeValues()</text>
+<text text-anchor="start" x="196.5" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getTemplateFile()</text>
 <text text-anchor="start" x="196.5" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getValueDefFromInputControlName()</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node6 -->
 <g id="edge5" class="edge"><title>Node2&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M241.485,-300.032C247.749,-286.609 253.909,-273.41 259.402,-261.638"/>
-<polygon fill="none" stroke="midnightblue" points="238.196,-298.804 237.139,-309.346 244.539,-301.764 238.196,-298.804"/>
+<path fill="none" stroke="midnightblue" d="M238.788,-311.414C243.46,-302.016 248.118,-292.643 252.533,-283.762"/>
+<polygon fill="none" stroke="midnightblue" points="235.63,-309.906 234.313,-320.418 241.898,-313.021 235.63,-309.906"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
 <g id="a_node4"><a xlink:href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_json_format.html" target="_top" xlink:title="JsonFormat realizes the JSON request/response format. ">
-<polygon fill="white" stroke="black" points="0,-0.5 0,-123.5 104,-123.5 104,-0.5 0,-0.5"/>
-<text text-anchor="middle" x="52" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">JsonFormat</text>
-<polyline fill="none" stroke="black" points="0,-104.5 104,-104.5 "/>
-<text text-anchor="start" x="8" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $serializer</text>
-<polyline fill="none" stroke="black" points="0,-85.5 104,-85.5 "/>
-<text text-anchor="start" x="8" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
-<text text-anchor="start" x="8" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMimeType()</text>
+<polygon fill="white" stroke="black" points="0,-0.5 0,-134.5 104,-134.5 104,-0.5 0,-0.5"/>
+<text text-anchor="middle" x="52" y="-122.5" font-family="Helvetica,sans-Serif" font-size="10.00">JsonFormat</text>
+<polyline fill="none" stroke="black" points="0,-115.5 104,-115.5 "/>
+<text text-anchor="start" x="8" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $serializer</text>
+<polyline fill="none" stroke="black" points="0,-96.5 104,-96.5 "/>
+<text text-anchor="start" x="8" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
+<text text-anchor="start" x="8" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMimeType()</text>
+<text text-anchor="start" x="8" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isCached()</text>
 <text text-anchor="start" x="8" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ printJSONResult()</text>
 <text text-anchor="start" x="8" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00"># afterSerialize()</text>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isSerializedNode()</text>
@@ -129,19 +132,20 @@
 </g>
 <!-- Node3&#45;&gt;Node4 -->
 <g id="edge3" class="edge"><title>Node3&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M87.2312,-151.078C83.5956,-141.989 79.8681,-132.67 76.2622,-123.655"/>
-<polygon fill="none" stroke="midnightblue" points="84.014,-152.459 90.9776,-160.444 90.5133,-149.859 84.014,-152.459"/>
+<path fill="none" stroke="midnightblue" d="M87.9686,-161.664C84.519,-152.729 80.9729,-143.544 77.5147,-134.587"/>
+<polygon fill="none" stroke="midnightblue" points="84.7983,-163.171 91.6652,-171.239 91.3286,-160.65 84.7983,-163.171"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
 <g id="a_node5"><a xlink:href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_soap_format.html" target="_top" xlink:title="SoapFormat realizes the SOAP request/response format. ">
-<polygon fill="white" stroke="black" points="122,-6 122,-118 226,-118 226,-6 122,-6"/>
-<text text-anchor="middle" x="174" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">SoapFormat</text>
-<polyline fill="none" stroke="black" points="122,-99 226,-99 "/>
-<text text-anchor="start" x="130" y="-87" font-family="Helvetica,sans-Serif" font-size="10.00"># $serializer</text>
-<polyline fill="none" stroke="black" points="122,-80 226,-80 "/>
-<text text-anchor="start" x="130" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
-<text text-anchor="start" x="130" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMimeType()</text>
+<polygon fill="white" stroke="black" points="122,-6 122,-129 226,-129 226,-6 122,-6"/>
+<text text-anchor="middle" x="174" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">SoapFormat</text>
+<polyline fill="none" stroke="black" points="122,-110 226,-110 "/>
+<text text-anchor="start" x="130" y="-98" font-family="Helvetica,sans-Serif" font-size="10.00"># $serializer</text>
+<polyline fill="none" stroke="black" points="122,-91 226,-91 "/>
+<text text-anchor="start" x="130" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
+<text text-anchor="start" x="130" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMimeType()</text>
+<text text-anchor="start" x="130" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">+ isCached()</text>
 <text text-anchor="start" x="130" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSerializer()</text>
 <text text-anchor="start" x="130" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># isSerializedNode()</text>
 <text text-anchor="start" x="130" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># serializeNode()</text>
@@ -151,8 +155,8 @@
 </g>
 <!-- Node3&#45;&gt;Node5 -->
 <g id="edge4" class="edge"><title>Node3&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M138.809,-150.977C143.167,-140.083 147.655,-128.862 151.908,-118.231"/>
-<polygon fill="none" stroke="midnightblue" points="135.487,-149.859 135.022,-160.444 141.986,-152.459 135.487,-149.859"/>
+<path fill="none" stroke="midnightblue" d="M137.961,-161.847C142.139,-151.025 146.46,-139.833 150.597,-129.117"/>
+<polygon fill="none" stroke="midnightblue" points="134.671,-160.65 134.335,-171.239 141.202,-163.171 134.671,-160.65"/>
 </g>
 </g>
 </svg>

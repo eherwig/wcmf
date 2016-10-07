@@ -79,15 +79,15 @@
 <text text-anchor="start" x="12" y="-635.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getResponse()</text>
 <text text-anchor="start" x="12" y="-624.5" font-family="Helvetica,sans-Serif" font-size="10.00"># validate()</text>
 <text text-anchor="start" x="12" y="-613.5" font-family="Helvetica,sans-Serif" font-size="10.00"># executeSubAction()</text>
-<text text-anchor="start" x="12" y="-602.5" font-family="Helvetica,sans-Serif" font-size="10.00"># internalRedirect()</text>
-<text text-anchor="start" x="12" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00"># externalRedirect()</text>
-<text text-anchor="start" x="12" y="-580.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getLogger()</text>
-<text text-anchor="start" x="12" y="-569.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getSession()</text>
-<text text-anchor="start" x="12" y="-558.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getPersistenceFacade()</text>
-<text text-anchor="start" x="12" y="-547.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getPermissionManager()</text>
-<text text-anchor="start" x="12" y="-536.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getActionMapper()</text>
-<text text-anchor="start" x="12" y="-525.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getLocalization()</text>
-<text text-anchor="start" x="12" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 10 more...</text>
+<text text-anchor="start" x="12" y="-602.5" font-family="Helvetica,sans-Serif" font-size="10.00"># redirect()</text>
+<text text-anchor="start" x="12" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getLogger()</text>
+<text text-anchor="start" x="12" y="-580.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getSession()</text>
+<text text-anchor="start" x="12" y="-569.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getPersistenceFacade()</text>
+<text text-anchor="start" x="12" y="-558.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getPermissionManager()</text>
+<text text-anchor="start" x="12" y="-547.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getActionMapper()</text>
+<text text-anchor="start" x="12" y="-536.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getLocalization()</text>
+<text text-anchor="start" x="12" y="-525.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getMessage()</text>
+<text text-anchor="start" x="12" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
 </a>
 </g>
 </g>

@@ -118,13 +118,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1presentation_1_1_request__inherit__graph.svg" width="170" height="603"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1presentation_1_1_request__inherit__graph.svg" width="170" height="662"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:affe4ce2b5c9a30ae73ce9dc35a33675d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#affe4ce2b5c9a30ae73ce9dc35a33675d">initialize</a> (<a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a> $response, $controller=null, $context=null, $action=null)</td></tr>
-<tr class="separator:affe4ce2b5c9a30ae73ce9dc35a33675d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad90ad569340a3c13f0e71fe8f92427ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#ad90ad569340a3c13f0e71fe8f92427ee">setResponse</a> (<a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a> $response)</td></tr>
+<tr class="separator:ad90ad569340a3c13f0e71fe8f92427ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c907e8af775e517a77037dd0164222f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#a6c907e8af775e517a77037dd0164222f">getResponse</a> ()</td></tr>
+<tr class="separator:a6c907e8af775e517a77037dd0164222f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36e0e7579b8ab70ec7690b37dcdfa312"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#a36e0e7579b8ab70ec7690b37dcdfa312">initialize</a> ($controller=null, $context=null, $action=null)</td></tr>
+<tr class="separator:a36e0e7579b8ab70ec7690b37dcdfa312"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3e37e1a6ed9b8c87f86f659873a83b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#af3e37e1a6ed9b8c87f86f659873a83b7">getMethod</a> ()</td></tr>
 <tr class="separator:af3e37e1a6ed9b8c87f86f659873a83b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a981869bafbf329437860a1af3e093ee2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#a981869bafbf329437860a1af3e093ee2">setResponseFormat</a> ($format)</td></tr>
@@ -194,19 +198,59 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aada71735dcc56f4cae3b82c55e090e8d inherit pub_methods_interfacewcmf_1_1lib_1_1presentation_1_1_controller_message"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="affe4ce2b5c9a30ae73ce9dc35a33675d"></a>
+<a class="anchor" id="ad90ad569340a3c13f0e71fe8f92427ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">setResponse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a>&#160;</td>
+          <td class="paramname"><em>$response</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> instance belonging to the request. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$response</td><td><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html#ad90ad569340a3c13f0e71fe8f92427ee">DefaultRequest</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c907e8af775e517a77037dd0164222f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getResponse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> instance belonging to the request. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html" title="Response holds the response values that are used as output from Controller instances. ">Response</a> </dd></dl>
+
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html#a6c907e8af775e517a77037dd0164222f">DefaultRequest</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a36e0e7579b8ab70ec7690b37dcdfa312"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">initialize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a>&#160;</td>
-          <td class="paramname"><em>$response</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>$controller</em> = <code>null</code>, </td>
         </tr>
@@ -233,7 +277,6 @@ Public Member Functions</h2></td></tr>
 <p>Initialize the request instance from the HTTP request. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$response</td><td>The response instance belonging to the request </td></tr>
     <tr><td class="paramname">$controller</td><td>The controller to call if none is given in request parameters (optional) </td></tr>
     <tr><td class="paramname">$context</td><td>The context to set if none is given in request parameters (optional) </td></tr>
     <tr><td class="paramname">$action</td><td>The action to perform if none is given in request parameters (optional) </td></tr>
@@ -241,7 +284,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html#affe4ce2b5c9a30ae73ce9dc35a33675d">DefaultRequest</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html#a36e0e7579b8ab70ec7690b37dcdfa312">DefaultRequest</a>.</p>
 
 </div>
 </div>
@@ -323,7 +366,7 @@ Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jul 16 2016 15:59:04 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Fri Oct 7 2016 22:45:23 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

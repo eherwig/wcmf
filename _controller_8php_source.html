@@ -259,322 +259,293 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      }</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// prepare the response</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a570fd766e5395246e8fb34d8a317616c">assignResponseDefaults</a>();</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">if</span> ($isDebugEnabled) {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      $this-&gt;logger-&gt;debug(<span class="stringliteral">&#39;Response: &#39;</span>.$this-&gt;response);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// log errors</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    $errors = $this-&gt;response-&gt;getErrors();</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">for</span> ($i=0,$count=<span class="keyword">sizeof</span>($errors); $i&lt;$count; $i++) {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      $this-&gt;logger-&gt;error($errors[$i]-&gt;__toString());</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  }</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">   * Delegate the current request to another action. The context is the same as</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">   * the current context and the source controller will be set to this.</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment">   * The request and response format will be NullFormat which means that all</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">   * request values should be passed in the application internal format and</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">   * all response values will have that format. Execution will return to the</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">   * calling controller instance afterwards.</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">   * @param $action The name of the action to execute</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">   * @return Response instance</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ac6008411fc9e89758eba4519a3f0ece7">  178</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ac6008411fc9e89758eba4519a3f0ece7">executeSubAction</a>($action) {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    $curRequest = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">getRequest</a>();</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    $subRequest = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;request&#39;</span>);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    $subRequest-&gt;setSender(get_class($this));</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    $subRequest-&gt;setContext($curRequest-&gt;getContext());</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    $subRequest-&gt;setAction($action);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    $subRequest-&gt;setHeaders($curRequest-&gt;getHeaders());</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    $subRequest-&gt;setValues($curRequest-&gt;getValues());</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    $subRequest-&gt;setFormat(<span class="stringliteral">&#39;null&#39;</span>);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    $subRequest-&gt;setResponseFormat(<span class="stringliteral">&#39;null&#39;</span>);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    $subResponse = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;response&#39;</span>);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    $this-&gt;actionMapper-&gt;processAction($subRequest, $subResponse);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">return</span> $subResponse;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  }</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">   * Redirect to the given action with the given context and request data</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">   * internally. The method will not return a result to the calling</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">   * controller method. The calling method should return immediatly in order to</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">   * avoid any side effects of code executed after the redirect.</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">   * @param $action The name of the action to execute</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">   * @param $context The context</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">   * @param $data Associative array containing the request data</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a3cab4378497eaa9422a09554c2749bec">  202</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a3cab4378497eaa9422a09554c2749bec">internalRedirect</a>($action, $context, $data) {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    $request = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;request&#39;</span>);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    $request-&gt;setAction($action);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    $request-&gt;setContext($context);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    $request-&gt;setValues($data);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    $response = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;response&#39;</span>);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;actionMapper&#39;</span>)-&gt;processAction($request, $response);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  }</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment">   * Redirect to the given location with the given request data externally</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment">   * (HTTP status code 302). The method will not return a result to the calling</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">   * controller method. The calling method should return immediatly in order to</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">   * avoid any side effects of code executed after the redirect. The given data</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">   * are stored in the session under the given key.</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">   * @param $location The location to redirect to</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">   * @param $key The key used as session variable name (optional)</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">   * @param $data The data to be stored in the session (optional)</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aa997fe786daa6afb5723d9ab98e8aba7">  221</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aa997fe786daa6afb5723d9ab98e8aba7">externalRedirect</a>($location, $key=null, $data=null) {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">if</span> (strlen($key) &gt; 0 &amp;&amp; $data != null) {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;      $session = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aefa4c5bd150e2a7d525576d7959c6911">getSession</a>();</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;      $session-&gt;set($key, $data);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    }</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>();</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    $response-&gt;setHeader(<span class="stringliteral">&#39;Location&#39;</span>, $location);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    $response-&gt;setStatus(302);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    $response-&gt;setFormat(<span class="stringliteral">&#39;null&#39;</span>); <span class="comment">// prevent any rendering</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    $response-&gt;setFinal(); <span class="comment">// prevent any further processing</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  }</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">   * Get the Request instance.</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">   * @return Request</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">  237</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">getRequest</a>() {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">return</span> $this-&gt;request;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  }</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">   * Get the Response instance.</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment">   * @return Response</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">  245</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>() {</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">return</span> $this-&gt;response;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  }</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment">   * Get the Logger instance.</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment">   * @return Logger</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a2321df4f2f7d188b92b96fe63dc71a90">  253</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a2321df4f2f7d188b92b96fe63dc71a90">getLogger</a>() {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">return</span> $this-&gt;logger;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  }</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="comment">   * Get the Session instance.</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="comment">   * @return Session</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aefa4c5bd150e2a7d525576d7959c6911">  261</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aefa4c5bd150e2a7d525576d7959c6911">getSession</a>() {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">return</span> $this-&gt;session;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">   * Get the PersistenceFacade instance.</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment">   * @return PersistenceFacade</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ad01d1e66179edfeb910b32001222361d">  269</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ad01d1e66179edfeb910b32001222361d">getPersistenceFacade</a>() {</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">return</span> $this-&gt;persistenceFacade;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  }</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment">   * Get the PermissionManager instance.</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment">   * @return PermissionManager</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a1e14b9d668577f58a358b3f6674b0e98">  277</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a1e14b9d668577f58a358b3f6674b0e98">getPermissionManager</a>() {</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">return</span> $this-&gt;permissionManager;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  }</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="comment">   * Get the ActionMapper instance.</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment">   * @return ActionMapper</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a556d3a59c42fd2effebb419d1bbc9c4b">  285</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a556d3a59c42fd2effebb419d1bbc9c4b">getActionMapper</a>() {</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordflow">return</span> $this-&gt;actionMapper;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  }</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="comment">   * Get the Localization instance.</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="comment">   * @return Localization</span></div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#afac69a62adf2e318d7c97c9489a1eed7">  293</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#afac69a62adf2e318d7c97c9489a1eed7">getLocalization</a>() {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">return</span> $this-&gt;localization;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  }</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="comment">   * Get the Message instance.</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="comment">   * @return Message</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a0b0e611236742aac18ba1936d03ba89a">  301</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a0b0e611236742aac18ba1936d03ba89a">getMessage</a>() {</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">return</span> $this-&gt;message;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  }</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment">   * Get the Configuration instance.</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">   * @return Configuration</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ad6a7980e832ca964872fe29113ab1642">  309</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ad6a7980e832ca964872fe29113ab1642">getConfiguration</a>() {</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">return</span> $this-&gt;configuration;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  }</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="comment">   * Assign default variables to the response. This method is called after Controller execution.</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="comment">   * This method may be used by derived controller classes for convenient response setup.</span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a570fd766e5395246e8fb34d8a317616c">  317</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a570fd766e5395246e8fb34d8a317616c">assignResponseDefaults</a>() {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="comment">// return the last error</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    $errors = $this-&gt;response-&gt;getErrors();</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>($errors) &gt; 0) {</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;      $error = array_pop($errors);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;      $this-&gt;response-&gt;setValue(<span class="stringliteral">&#39;errorCode&#39;</span>, $error-&gt;getCode());</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;      $this-&gt;response-&gt;setValue(<span class="stringliteral">&#39;errorMessage&#39;</span>, $error-&gt;getMessage());</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;      $this-&gt;response-&gt;setValue(<span class="stringliteral">&#39;errorData&#39;</span>, $error-&gt;getData());</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;      $this-&gt;response-&gt;setStatus($error-&gt;getStatusCode());</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    }</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  }</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="comment">   * Check if the current request is localized. This is true,</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="comment">   * if it has a language parameter that is not equal to Localization::getDefaultLanguage().</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="comment">   * Throws an exception if a language is given which is not supported</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="comment">   * @return Boolean whether the request is localized or not</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ae7bef6946871537b4f9b4725330e6848">  335</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ae7bef6946871537b4f9b4725330e6848">isLocalizedRequest</a>() {</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;request-&gt;hasValue(<span class="stringliteral">&#39;language&#39;</span>)) {</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;      $language = $this-&gt;request-&gt;getValue(<span class="stringliteral">&#39;language&#39;</span>);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;      <span class="keywordflow">if</span> ($language != $this-&gt;localization-&gt;getDefaultLanguage()) {</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;      }</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    }</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  }</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="comment">   * Checks the language request parameter and adds an response error,</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="comment">   * if it is not contained in the Localization::getSupportedLanguages() list.</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="comment">   * @return Boolean</span></div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a87b623a9d1bd969d602c10eee8b40d04">  350</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a87b623a9d1bd969d602c10eee8b40d04">checkLanguageParameter</a>() {</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;request-&gt;hasValue(<span class="stringliteral">&#39;language&#39;</span>)) {</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;      $language = $this-&gt;request-&gt;getValue(<span class="stringliteral">&#39;language&#39;</span>);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;      <span class="keywordflow">if</span> (!in_array($language, array_keys($this-&gt;localization-&gt;getSupportedLanguages()))) {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        $this-&gt;response-&gt;addError(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554">ApplicationError::get</a>(<span class="stringliteral">&#39;PARAMETER_INVALID&#39;</span>,</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                array(<span class="stringliteral">&#39;invalidParameters&#39;</span> =&gt; array(<span class="stringliteral">&#39;language&#39;</span>))));</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;      }</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    }</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  }</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="comment">   * Create a CSRF token, store it in the session and set it in the response.</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment">   * The name of the response parameter is Controller::CSRF_TOKEN_PARAM.</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment">   * @param $name The name of the token to be used in Controller::validateCsrfToken()</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a83b01b7c7a64efde8a188728d83e7b7f">  367</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a83b01b7c7a64efde8a188728d83e7b7f">generateCsrfToken</a>($name) {</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="comment">// generate token and store in session</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    $token = base64_encode(openssl_random_pseudo_bytes(32));</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aefa4c5bd150e2a7d525576d7959c6911">getSession</a>()-&gt;set(self::CSRF_TOKEN_PARAM.<span class="charliteral">&#39;_&#39;</span>.$name, $token);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="comment">// set token in response</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>();</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    $response-&gt;setValue(self::CSRF_TOKEN_PARAM, $token);</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;  }</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="comment">   * Validate the CSRF token contained in the request against the token stored</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="comment">   * in the session. The name of the request parameter is Controller::CSRF_TOKEN_PARAM.</span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment">   * @param $name The name of the token as set in Controller::generateCsrfToken()</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="comment">   * @return boolean</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00383"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6bf263e747eb41d37aa1204ca9869e7a">  383</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6bf263e747eb41d37aa1204ca9869e7a">validateCsrfToken</a>($name) {</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="comment">// get token from session</span></div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    $session = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aefa4c5bd150e2a7d525576d7959c6911">getSession</a>();</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    $tokenKey = self::CSRF_TOKEN_PARAM.<span class="charliteral">&#39;_&#39;</span>.$name;</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keywordflow">if</span> (!$session-&gt;exist($tokenKey)) {</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    }</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    $storedToken = $session-&gt;get($tokenKey);</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    $session-&gt;remove($tokenKey);</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="comment">// compare session token with request token</span></div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    $token = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">getRequest</a>()-&gt;getValue(self::CSRF_TOKEN_PARAM);</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <span class="keywordflow">return</span> $token === $storedToken;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// return the last error</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    $errors = $this-&gt;response-&gt;getErrors();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>($errors) &gt; 0) {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      $error = array_pop($errors);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      $this-&gt;response-&gt;setValue(<span class="stringliteral">&#39;errorCode&#39;</span>, $error-&gt;getCode());</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      $this-&gt;response-&gt;setValue(<span class="stringliteral">&#39;errorMessage&#39;</span>, $error-&gt;getMessage());</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      $this-&gt;response-&gt;setValue(<span class="stringliteral">&#39;errorData&#39;</span>, $error-&gt;getData());</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      $this-&gt;response-&gt;setStatus($error-&gt;getStatusCode());</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">// log errors</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">for</span> ($i=0,$count=<span class="keyword">sizeof</span>($errors); $i&lt;$count; $i++) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      $this-&gt;logger-&gt;error($errors[$i]-&gt;__toString());</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">if</span> ($isDebugEnabled) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;      $this-&gt;logger-&gt;debug(<span class="stringliteral">&#39;Response: &#39;</span>.$this-&gt;response);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">   * Delegate the current request to another action. The context is the same as</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">   * the current context and the source controller will be set to this.</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">   * The request and response format will be NullFormat which means that all</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">   * request values should be passed in the application internal format and</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">   * all response values will have that format. Execution will return to the</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment">   * calling controller instance afterwards.</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">   * @param $action The name of the action to execute</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">   * @return Response instance</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ac6008411fc9e89758eba4519a3f0ece7">  185</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ac6008411fc9e89758eba4519a3f0ece7">executeSubAction</a>($action) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    $curRequest = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">getRequest</a>();</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    $subRequest = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;request&#39;</span>);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    $subRequest-&gt;setSender(get_class($this));</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    $subRequest-&gt;setContext($curRequest-&gt;getContext());</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    $subRequest-&gt;setAction($action);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    $subRequest-&gt;setHeaders($curRequest-&gt;getHeaders());</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    $subRequest-&gt;setValues($curRequest-&gt;getValues());</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    $subRequest-&gt;setFormat(<span class="stringliteral">&#39;null&#39;</span>);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    $subRequest-&gt;setResponseFormat(<span class="stringliteral">&#39;null&#39;</span>);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    $subResponse = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;response&#39;</span>);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    $this-&gt;actionMapper-&gt;processAction($subRequest, $subResponse);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">return</span> $subResponse;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">   * Redirect to the given location with the given request data externally</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">   * (HTTP status code 302). The method will not return a result to the calling</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">   * controller method. The calling method should return immediatly in order to</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">   * avoid any side effects of code executed after the redirect. The given data</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment">   * are stored in the session under the given key.</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">   * @param $location The location to redirect to</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment">   * @param $key The key used as session variable name (optional)</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment">   * @param $data The data to be stored in the session (optional)</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6b6af210231bea9e5116e98dbd08cb45">  210</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6b6af210231bea9e5116e98dbd08cb45">redirect</a>($location, $key=null, $data=null) {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">if</span> (strlen($key) &gt; 0 &amp;&amp; $data != null) {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;      $session = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aefa4c5bd150e2a7d525576d7959c6911">getSession</a>();</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      $session-&gt;set($key, $data);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>();</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    $response-&gt;setHeader(<span class="stringliteral">&#39;Location&#39;</span>, $location);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    $response-&gt;setStatus(302);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    $response-&gt;setFormat(<span class="stringliteral">&#39;null&#39;</span>); <span class="comment">// prevent any rendering</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    $response-&gt;setFinal(); <span class="comment">// prevent any further processing</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  }</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">   * Get the Request instance.</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">   * @return Request</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">  226</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">getRequest</a>() {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">return</span> $this-&gt;request;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  }</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">   * Get the Response instance.</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">   * @return Response</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">  234</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>() {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">return</span> $this-&gt;response;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  }</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">   * Get the Logger instance.</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">   * @return Logger</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a2321df4f2f7d188b92b96fe63dc71a90">  242</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a2321df4f2f7d188b92b96fe63dc71a90">getLogger</a>() {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">return</span> $this-&gt;logger;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  }</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment">   * Get the Session instance.</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="comment">   * @return Session</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aefa4c5bd150e2a7d525576d7959c6911">  250</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aefa4c5bd150e2a7d525576d7959c6911">getSession</a>() {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">return</span> $this-&gt;session;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  }</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="comment">   * Get the PersistenceFacade instance.</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="comment">   * @return PersistenceFacade</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ad01d1e66179edfeb910b32001222361d">  258</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ad01d1e66179edfeb910b32001222361d">getPersistenceFacade</a>() {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">return</span> $this-&gt;persistenceFacade;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  }</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment">   * Get the PermissionManager instance.</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">   * @return PermissionManager</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a1e14b9d668577f58a358b3f6674b0e98">  266</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a1e14b9d668577f58a358b3f6674b0e98">getPermissionManager</a>() {</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">return</span> $this-&gt;permissionManager;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  }</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment">   * Get the ActionMapper instance.</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment">   * @return ActionMapper</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a556d3a59c42fd2effebb419d1bbc9c4b">  274</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a556d3a59c42fd2effebb419d1bbc9c4b">getActionMapper</a>() {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">return</span> $this-&gt;actionMapper;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="comment">   * Get the Localization instance.</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="comment">   * @return Localization</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#afac69a62adf2e318d7c97c9489a1eed7">  282</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#afac69a62adf2e318d7c97c9489a1eed7">getLocalization</a>() {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">return</span> $this-&gt;localization;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  }</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="comment">   * Get the Message instance.</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="comment">   * @return Message</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a0b0e611236742aac18ba1936d03ba89a">  290</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a0b0e611236742aac18ba1936d03ba89a">getMessage</a>() {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">return</span> $this-&gt;message;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  }</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="comment">   * Get the Configuration instance.</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="comment">   * @return Configuration</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ad6a7980e832ca964872fe29113ab1642">  298</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ad6a7980e832ca964872fe29113ab1642">getConfiguration</a>() {</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">return</span> $this-&gt;configuration;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  }</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="comment">   * Check if the current request is localized. This is true,</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="comment">   * if it has a language parameter that is not equal to Localization::getDefaultLanguage().</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="comment">   * Throws an exception if a language is given which is not supported</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment">   * @return Boolean whether the request is localized or not</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ae7bef6946871537b4f9b4725330e6848">  308</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ae7bef6946871537b4f9b4725330e6848">isLocalizedRequest</a>() {</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;request-&gt;hasValue(<span class="stringliteral">&#39;language&#39;</span>)) {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;      $language = $this-&gt;request-&gt;getValue(<span class="stringliteral">&#39;language&#39;</span>);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;      <span class="keywordflow">if</span> ($language != $this-&gt;localization-&gt;getDefaultLanguage()) {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;      }</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    }</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  }</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="comment">   * Checks the language request parameter and adds an response error,</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="comment">   * if it is not contained in the Localization::getSupportedLanguages() list.</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="comment">   * @return Boolean</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a87b623a9d1bd969d602c10eee8b40d04">  323</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a87b623a9d1bd969d602c10eee8b40d04">checkLanguageParameter</a>() {</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">if</span> ($this-&gt;request-&gt;hasValue(<span class="stringliteral">&#39;language&#39;</span>)) {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;      $language = $this-&gt;request-&gt;getValue(<span class="stringliteral">&#39;language&#39;</span>);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;      <span class="keywordflow">if</span> (!in_array($language, array_keys($this-&gt;localization-&gt;getSupportedLanguages()))) {</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        $this-&gt;response-&gt;addError(<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554">ApplicationError::get</a>(<span class="stringliteral">&#39;PARAMETER_INVALID&#39;</span>,</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                array(<span class="stringliteral">&#39;invalidParameters&#39;</span> =&gt; array(<span class="stringliteral">&#39;language&#39;</span>))));</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;      }</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    }</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  }</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="comment">   * Create a CSRF token, store it in the session and set it in the response.</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="comment">   * The name of the response parameter is Controller::CSRF_TOKEN_PARAM.</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="comment">   * @param $name The name of the token to be used in Controller::validateCsrfToken()</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a83b01b7c7a64efde8a188728d83e7b7f">  340</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a83b01b7c7a64efde8a188728d83e7b7f">generateCsrfToken</a>($name) {</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="comment">// generate token and store in session</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    $token = base64_encode(openssl_random_pseudo_bytes(32));</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aefa4c5bd150e2a7d525576d7959c6911">getSession</a>()-&gt;set(self::CSRF_TOKEN_PARAM.<span class="charliteral">&#39;_&#39;</span>.$name, $token);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="comment">// set token in response</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    $response = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a>();</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    $response-&gt;setValue(self::CSRF_TOKEN_PARAM, $token);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  }</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="comment">   * Validate the CSRF token contained in the request against the token stored</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="comment">   * in the session. The name of the request parameter is Controller::CSRF_TOKEN_PARAM.</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="comment">   * @param $name The name of the token as set in Controller::generateCsrfToken()</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="comment">   * @return boolean</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6bf263e747eb41d37aa1204ca9869e7a">  356</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6bf263e747eb41d37aa1204ca9869e7a">validateCsrfToken</a>($name) {</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="comment">// get token from session</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    $session = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aefa4c5bd150e2a7d525576d7959c6911">getSession</a>();</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    $tokenKey = self::CSRF_TOKEN_PARAM.<span class="charliteral">&#39;_&#39;</span>.$name;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keywordflow">if</span> (!$session-&gt;exist($tokenKey)) {</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    }</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    $storedToken = $session-&gt;get($tokenKey);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    $session-&gt;remove($tokenKey);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="comment">// compare session token with request token</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    $token = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">getRequest</a>()-&gt;getValue(self::CSRF_TOKEN_PARAM);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordflow">return</span> $token === $storedToken;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  }</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="comment">   * Set the value of a local session variable.</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="comment">   * @param $key The key (name) of the session vaiable.</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment">   * @param $default The default value if the key is not defined (optional, default: _null_)</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="comment">   * @return The session var or null if it doesn&#39;t exist.</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a0c6fcf144028e40a3fc6a94987a4155f">  377</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a0c6fcf144028e40a3fc6a94987a4155f">getLocalSessionValue</a>($key, $default=null) {</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    $sessionVarname = get_class($this);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    $localValues = $this-&gt;session-&gt;get($sessionVarname, null);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keywordflow">return</span> array_key_exists($key, $localValues) ? $localValues[$key] : $default;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;  }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="comment">   * Get the value of a local session variable.</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="comment">   * @param $key The key (name) of the session vaiable.</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="comment">   * @param $value The value of the session variable.</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a84051ded64678112f8d5ccd7b5270bf5">  388</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a84051ded64678112f8d5ccd7b5270bf5">setLocalSessionValue</a>($key, $value) {</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    $sessionVarname = get_class($this);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    $localValues = $this-&gt;session-&gt;get($sessionVarname, null);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keywordflow">if</span> ($localValues == null) {</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;      $localValues = array();</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    }</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    $localValues[$key] = $value;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    $this-&gt;session-&gt;set($sessionVarname, $localValues);</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;  }</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<span class="comment">   * Set the value of a local session variable.</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<span class="comment">   * Remove all local session values.</span></div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="comment">   * @param $key The key (name) of the session vaiable.</span></div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="comment">   * @param $default The default value if the key is not defined (optional, default: _null_)</span></div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="comment">   * @return The session var or null if it doesn&#39;t exist.</span></div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00404"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a0c6fcf144028e40a3fc6a94987a4155f">  404</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a0c6fcf144028e40a3fc6a94987a4155f">getLocalSessionValue</a>($key, $default=null) {</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    $sessionVarname = get_class($this);</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    $localValues = $this-&gt;session-&gt;get($sessionVarname, null);</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keywordflow">return</span> array_key_exists($key, $localValues) ? $localValues[$key] : $default;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;  }</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="comment">   * Get the value of a local session variable.</span></div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="comment">   * @param $key The key (name) of the session vaiable.</span></div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="comment">   * @param $value The value of the session variable.</span></div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00415"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a84051ded64678112f8d5ccd7b5270bf5">  415</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a84051ded64678112f8d5ccd7b5270bf5">setLocalSessionValue</a>($key, $value) {</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    $sessionVarname = get_class($this);</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    $localValues = $this-&gt;session-&gt;get($sessionVarname, null);</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="keywordflow">if</span> ($localValues == null) {</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;      $localValues = array();</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    }</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    $localValues[$key] = $value;</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    $this-&gt;session-&gt;set($sessionVarname, $localValues);</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;  }</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="comment">   * Remove all local session values.</span></div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;<span class="comment">   * @param $key The key (name) of the session vaiable.</span></div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;<span class="comment">   * @param $value The value of the session variable.</span></div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00430"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a12b40afde936c7acc5995799eab8cd5c">  430</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a12b40afde936c7acc5995799eab8cd5c">clearLocalSessionValues</a>() {</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    $sessionVarname = get_class($this);</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    $this-&gt;session-&gt;remove($sessionVarname);</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;  }</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;}</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;?&gt;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="comment">   * @param $value The value of the session variable.</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00403"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a12b40afde936c7acc5995799eab8cd5c">  403</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a12b40afde936c7acc5995799eab8cd5c">clearLocalSessionValues</a>() {</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    $sessionVarname = get_class($this);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    $this-&gt;session-&gt;remove($sessionVarname);</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  }</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;}</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;?&gt;</div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a6b6af210231bea9e5116e98dbd08cb45"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6b6af210231bea9e5116e98dbd08cb45">wcmf\lib\presentation\Controller\redirect</a></div><div class="ttdeci">redirect($location, $key=null, $data=null)</div><div class="ttdoc">Redirect to the given location with the given request data externally (HTTP status code 302)...</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00210">Controller.php:210</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">wcmf\lib\presentation\Response</a></div><div class="ttdoc">Response holds the response values that are used as output from Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_response_8php_source.html#l00020">Response.php:20</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_adf1a35ad20e475c59cc0967d5764aa22"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">wcmf\lib\presentation\Controller\getRequest</a></div><div class="ttdeci">getRequest()</div><div class="ttdoc">Get the Request instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00237">Controller.php:237</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_adf1a35ad20e475c59cc0967d5764aa22"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">wcmf\lib\presentation\Controller\getRequest</a></div><div class="ttdeci">getRequest()</div><div class="ttdoc">Get the Request instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00226">Controller.php:226</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1i18n_1_1_localization_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1i18n_1_1_localization.html">wcmf\lib\i18n\Localization</a></div><div class="ttdoc">Localization defines the interface for storing localized entity instances and retrieving them back...</div><div class="ttdef"><b>Definition:</b> <a href="_localization_8php_source.html#l00032">Localization.php:32</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1config_1_1_configuration_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1config_1_1_configuration.html">Configuration</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a0b0e611236742aac18ba1936d03ba89a"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a0b0e611236742aac18ba1936d03ba89a">wcmf\lib\presentation\Controller\getMessage</a></div><div class="ttdeci">getMessage()</div><div class="ttdoc">Get the Message instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00301">Controller.php:301</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a0b0e611236742aac18ba1936d03ba89a"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a0b0e611236742aac18ba1936d03ba89a">wcmf\lib\presentation\Controller\getMessage</a></div><div class="ttdeci">getMessage()</div><div class="ttdoc">Get the Message instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00290">Controller.php:290</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html">wcmf\lib\presentation\Controller</a></div><div class="ttdoc">Controller is the base class of all controllers. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00049">Controller.php:49</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a570fd766e5395246e8fb34d8a317616c"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a570fd766e5395246e8fb34d8a317616c">wcmf\lib\presentation\Controller\assignResponseDefaults</a></div><div class="ttdeci">assignResponseDefaults()</div><div class="ttdoc">Assign default variables to the response. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00317">Controller.php:317</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_aa997fe786daa6afb5723d9ab98e8aba7"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aa997fe786daa6afb5723d9ab98e8aba7">wcmf\lib\presentation\Controller\externalRedirect</a></div><div class="ttdeci">externalRedirect($location, $key=null, $data=null)</div><div class="ttdoc">Redirect to the given location with the given request data externally (HTTP status code 302)...</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00221">Controller.php:221</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_illegal_argument_exception_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_illegal_argument_exception.html">wcmf\lib\core\IllegalArgumentException</a></div><div class="ttdoc">IllegalArgumentException signals an exception in method arguments. </div><div class="ttdef"><b>Definition:</b> <a href="_illegal_argument_exception_8php_source.html#l00018">IllegalArgumentException.php:18</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message_html_ac7649262e730e1de9adea658b485ac1a"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#ac7649262e730e1de9adea658b485ac1a">wcmf\lib\presentation\ControllerMessage\setSender</a></div><div class="ttdeci">setSender($sender)</div><div class="ttdoc">Set the name of the sending Controller. </div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation.html">wcmf\lib\presentation</a></div><div class="ttdoc">Presentation related interfaces and classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00059">namespaces.php:59</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a1e14b9d668577f58a358b3f6674b0e98"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a1e14b9d668577f58a358b3f6674b0e98">wcmf\lib\presentation\Controller\getPermissionManager</a></div><div class="ttdeci">getPermissionManager()</div><div class="ttdoc">Get the PermissionManager instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00277">Controller.php:277</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a3cab4378497eaa9422a09554c2749bec"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a3cab4378497eaa9422a09554c2749bec">wcmf\lib\presentation\Controller\internalRedirect</a></div><div class="ttdeci">internalRedirect($action, $context, $data)</div><div class="ttdoc">Redirect to the given action with the given context and request data internally. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00202">Controller.php:202</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a12b40afde936c7acc5995799eab8cd5c"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a12b40afde936c7acc5995799eab8cd5c">wcmf\lib\presentation\Controller\clearLocalSessionValues</a></div><div class="ttdeci">clearLocalSessionValues()</div><div class="ttdoc">Remove all local session values. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00430">Controller.php:430</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_ae7bef6946871537b4f9b4725330e6848"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ae7bef6946871537b4f9b4725330e6848">wcmf\lib\presentation\Controller\isLocalizedRequest</a></div><div class="ttdeci">isLocalizedRequest()</div><div class="ttdoc">Check if the current request is localized. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00335">Controller.php:335</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a1e14b9d668577f58a358b3f6674b0e98"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a1e14b9d668577f58a358b3f6674b0e98">wcmf\lib\presentation\Controller\getPermissionManager</a></div><div class="ttdeci">getPermissionManager()</div><div class="ttdoc">Get the PermissionManager instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00266">Controller.php:266</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a12b40afde936c7acc5995799eab8cd5c"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a12b40afde936c7acc5995799eab8cd5c">wcmf\lib\presentation\Controller\clearLocalSessionValues</a></div><div class="ttdeci">clearLocalSessionValues()</div><div class="ttdoc">Remove all local session values. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00403">Controller.php:403</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_ae7bef6946871537b4f9b4725330e6848"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ae7bef6946871537b4f9b4725330e6848">wcmf\lib\presentation\Controller\isLocalizedRequest</a></div><div class="ttdeci">isLocalizedRequest()</div><div class="ttdoc">Check if the current request is localized. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00308">Controller.php:308</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1i18n_1_1_localization_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1i18n_1_1_localization.html">Localization</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_log_manager_html_a0c195d83bf1cd47fb46a428e77f82b08"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_log_manager.html#a0c195d83bf1cd47fb46a428e77f82b08">wcmf\lib\core\LogManager\getLogger</a></div><div class="ttdeci">static getLogger($name)</div><div class="ttdoc">Get the logger with the given name. </div><div class="ttdef"><b>Definition:</b> <a href="_log_manager_8php_source.html#l00035">LogManager.php:35</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_afac69a62adf2e318d7c97c9489a1eed7"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#afac69a62adf2e318d7c97c9489a1eed7">wcmf\lib\presentation\Controller\getLocalization</a></div><div class="ttdeci">getLocalization()</div><div class="ttdoc">Get the Localization instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00293">Controller.php:293</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_afac69a62adf2e318d7c97c9489a1eed7"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#afac69a62adf2e318d7c97c9489a1eed7">wcmf\lib\presentation\Controller\getLocalization</a></div><div class="ttdeci">getLocalization()</div><div class="ttdoc">Get the Localization instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00282">Controller.php:282</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_request_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a0c6fcf144028e40a3fc6a94987a4155f"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a0c6fcf144028e40a3fc6a94987a4155f">wcmf\lib\presentation\Controller\getLocalSessionValue</a></div><div class="ttdeci">getLocalSessionValue($key, $default=null)</div><div class="ttdoc">Set the value of a local session variable. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00404">Controller.php:404</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a0c6fcf144028e40a3fc6a94987a4155f"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a0c6fcf144028e40a3fc6a94987a4155f">wcmf\lib\presentation\Controller\getLocalSessionValue</a></div><div class="ttdeci">getLocalSessionValue($key, $default=null)</div><div class="ttdoc">Set the value of a local session variable. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00377">Controller.php:377</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1_persistence_facade_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html">PersistenceFacade</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a11fc3766874ff733f8c4c7e3fc5152a6"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">wcmf\lib\core\ObjectFactory\getInstance</a></div><div class="ttdeci">static getInstance($name, $dynamicConfiguration=array())</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00047">ObjectFactory.php:47</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a6bf263e747eb41d37aa1204ca9869e7a"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6bf263e747eb41d37aa1204ca9869e7a">wcmf\lib\presentation\Controller\validateCsrfToken</a></div><div class="ttdeci">validateCsrfToken($name)</div><div class="ttdoc">Validate the CSRF token contained in the request against the token stored in the session. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00383">Controller.php:383</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a6bf263e747eb41d37aa1204ca9869e7a"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6bf263e747eb41d37aa1204ca9869e7a">wcmf\lib\presentation\Controller\validateCsrfToken</a></div><div class="ttdeci">validateCsrfToken($name)</div><div class="ttdoc">Validate the CSRF token contained in the request against the token stored in the session. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00356">Controller.php:356</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1i18n_1_1_message_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">wcmf\lib\i18n\Message</a></div><div class="ttdoc">Message is used to get localized messages to be used in the user interface. </div><div class="ttdef"><b>Definition:</b> <a href="_message_8php_source.html#l00023">Message.php:23</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a87b623a9d1bd969d602c10eee8b40d04"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a87b623a9d1bd969d602c10eee8b40d04">wcmf\lib\presentation\Controller\checkLanguageParameter</a></div><div class="ttdeci">checkLanguageParameter()</div><div class="ttdoc">Checks the language request parameter and adds an response error, if it is not contained in the Local...</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00350">Controller.php:350</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a87b623a9d1bd969d602c10eee8b40d04"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a87b623a9d1bd969d602c10eee8b40d04">wcmf\lib\presentation\Controller\checkLanguageParameter</a></div><div class="ttdeci">checkLanguageParameter()</div><div class="ttdoc">Checks the language request parameter and adds an response error, if it is not contained in the Local...</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00323">Controller.php:323</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1core_1_1_session_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1core_1_1_session.html">wcmf\lib\core\Session</a></div><div class="ttdoc">Session is the interface for session implementations and defines access to session variables...</div><div class="ttdef"><b>Definition:</b> <a href="_session_8php_source.html#l00019">Session.php:19</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_ad6a7980e832ca964872fe29113ab1642"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ad6a7980e832ca964872fe29113ab1642">wcmf\lib\presentation\Controller\getConfiguration</a></div><div class="ttdeci">getConfiguration()</div><div class="ttdoc">Get the Configuration instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00309">Controller.php:309</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a83b01b7c7a64efde8a188728d83e7b7f"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a83b01b7c7a64efde8a188728d83e7b7f">wcmf\lib\presentation\Controller\generateCsrfToken</a></div><div class="ttdeci">generateCsrfToken($name)</div><div class="ttdoc">Create a CSRF token, store it in the session and set it in the response. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00367">Controller.php:367</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_ad6a7980e832ca964872fe29113ab1642"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ad6a7980e832ca964872fe29113ab1642">wcmf\lib\presentation\Controller\getConfiguration</a></div><div class="ttdeci">getConfiguration()</div><div class="ttdoc">Get the Configuration instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00298">Controller.php:298</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a83b01b7c7a64efde8a188728d83e7b7f"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a83b01b7c7a64efde8a188728d83e7b7f">wcmf\lib\presentation\Controller\generateCsrfToken</a></div><div class="ttdeci">generateCsrfToken($name)</div><div class="ttdoc">Create a CSRF token, store it in the session and set it in the response. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00340">Controller.php:340</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">wcmf\lib\presentation\Request</a></div><div class="ttdoc">Request holds the request values that are used as input to Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_request_8php_source.html#l00018">Request.php:18</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a84051ded64678112f8d5ccd7b5270bf5"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a84051ded64678112f8d5ccd7b5270bf5">wcmf\lib\presentation\Controller\setLocalSessionValue</a></div><div class="ttdeci">setLocalSessionValue($key, $value)</div><div class="ttdoc">Get the value of a local session variable. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00415">Controller.php:415</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a84051ded64678112f8d5ccd7b5270bf5"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a84051ded64678112f8d5ccd7b5270bf5">wcmf\lib\presentation\Controller\setLocalSessionValue</a></div><div class="ttdeci">setLocalSessionValue($key, $value)</div><div class="ttdoc">Get the value of a local session variable. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00388">Controller.php:388</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1i18n_1_1_message_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a184909dab34698899937d810a9f5d393"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a184909dab34698899937d810a9f5d393">wcmf\lib\presentation\Controller\validate</a></div><div class="ttdeci">validate()</div><div class="ttdoc">Check if the request is valid. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00121">Controller.php:121</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_log_manager_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_log_manager.html">LogManager</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_ac6008411fc9e89758eba4519a3f0ece7"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ac6008411fc9e89758eba4519a3f0ece7">wcmf\lib\presentation\Controller\executeSubAction</a></div><div class="ttdeci">executeSubAction($action)</div><div class="ttdoc">Delegate the current request to another action. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00178">Controller.php:178</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_ac6008411fc9e89758eba4519a3f0ece7"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ac6008411fc9e89758eba4519a3f0ece7">wcmf\lib\presentation\Controller\executeSubAction</a></div><div class="ttdeci">executeSubAction($action)</div><div class="ttdoc">Delegate the current request to another action. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00185">Controller.php:185</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_permission_manager_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html">wcmf\lib\security\PermissionManager</a></div><div class="ttdoc">PermissionManager implementations are used to handle all authorization requests. </div><div class="ttdef"><b>Definition:</b> <a href="_permission_manager_8php_source.html#l00020">PermissionManager.php:20</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1config_1_1_configuration_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html">wcmf\lib\config\Configuration</a></div><div class="ttdoc">Implementations of Configuration give access to the application configuration. </div><div class="ttdef"><b>Definition:</b> <a href="_configuration_8php_source.html#l00032">Configuration.php:32</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1security_1_1_permission_manager_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1security_1_1_permission_manager.html">PermissionManager</a></div></div>
@@ -588,11 +559,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a47a24ac0d700f62a9434d298ade72fb9"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a47a24ac0d700f62a9434d298ade72fb9">wcmf\lib\presentation\Controller\initialize</a></div><div class="ttdeci">initialize(Request $request, Response $response)</div><div class="ttdoc">Initialize the Controller with request/response data. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00106">Controller.php:106</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html">wcmf\lib\persistence\PersistenceFacade</a></div><div class="ttdoc">PersistenceFacade defines the interface for PersistenceFacade implementations. </div><div class="ttdef"><b>Definition:</b> <a href="_persistence_facade_8php_source.html#l00023">PersistenceFacade.php:23</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_object_factory_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_object_factory.html">ObjectFactory</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a2321df4f2f7d188b92b96fe63dc71a90"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a2321df4f2f7d188b92b96fe63dc71a90">wcmf\lib\presentation\Controller\getLogger</a></div><div class="ttdeci">getLogger()</div><div class="ttdoc">Get the Logger instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00253">Controller.php:253</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a556d3a59c42fd2effebb419d1bbc9c4b"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a556d3a59c42fd2effebb419d1bbc9c4b">wcmf\lib\presentation\Controller\getActionMapper</a></div><div class="ttdeci">getActionMapper()</div><div class="ttdoc">Get the ActionMapper instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00285">Controller.php:285</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a6c907e8af775e517a77037dd0164222f"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">wcmf\lib\presentation\Controller\getResponse</a></div><div class="ttdeci">getResponse()</div><div class="ttdoc">Get the Response instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00245">Controller.php:245</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_aefa4c5bd150e2a7d525576d7959c6911"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aefa4c5bd150e2a7d525576d7959c6911">wcmf\lib\presentation\Controller\getSession</a></div><div class="ttdeci">getSession()</div><div class="ttdoc">Get the Session instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00261">Controller.php:261</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_ad01d1e66179edfeb910b32001222361d"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ad01d1e66179edfeb910b32001222361d">wcmf\lib\presentation\Controller\getPersistenceFacade</a></div><div class="ttdeci">getPersistenceFacade()</div><div class="ttdoc">Get the PersistenceFacade instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00269">Controller.php:269</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a2321df4f2f7d188b92b96fe63dc71a90"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a2321df4f2f7d188b92b96fe63dc71a90">wcmf\lib\presentation\Controller\getLogger</a></div><div class="ttdeci">getLogger()</div><div class="ttdoc">Get the Logger instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00242">Controller.php:242</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a556d3a59c42fd2effebb419d1bbc9c4b"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a556d3a59c42fd2effebb419d1bbc9c4b">wcmf\lib\presentation\Controller\getActionMapper</a></div><div class="ttdeci">getActionMapper()</div><div class="ttdoc">Get the ActionMapper instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00274">Controller.php:274</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a6c907e8af775e517a77037dd0164222f"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">wcmf\lib\presentation\Controller\getResponse</a></div><div class="ttdeci">getResponse()</div><div class="ttdoc">Get the Response instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00234">Controller.php:234</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_aefa4c5bd150e2a7d525576d7959c6911"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aefa4c5bd150e2a7d525576d7959c6911">wcmf\lib\presentation\Controller\getSession</a></div><div class="ttdeci">getSession()</div><div class="ttdoc">Get the Session instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00250">Controller.php:250</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_ad01d1e66179edfeb910b32001222361d"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ad01d1e66179edfeb910b32001222361d">wcmf\lib\presentation\Controller\getPersistenceFacade</a></div><div class="ttdeci">getPersistenceFacade()</div><div class="ttdoc">Get the PersistenceFacade instance. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00258">Controller.php:258</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
       </div>
@@ -605,7 +576,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jul 16 2016 15:58:54 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Fri Oct 7 2016 22:45:16 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

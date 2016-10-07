@@ -126,17 +126,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager.html">   19</a></span>&#160;<span class="keyword">interface </span><a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager.html">AuthenticationManager</a> {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">   * Create an authenticated user for the given credentials.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">   * @param $login The login to use</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">   * @param $password The password to use</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">   * @return User instance if successfull, null else</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager.html#a6090ba2dfd95fa92d36e39969ed9a5c7">login</a>($login, $password);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;?&gt;</div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager_html_a6090ba2dfd95fa92d36e39969ed9a5c7"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager.html#a6090ba2dfd95fa92d36e39969ed9a5c7">wcmf\lib\security\AuthenticationManager\login</a></div><div class="ttdeci">login($login, $password)</div><div class="ttdoc">Create an authenticated user for the given credentials. </div></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">   * Authenticate using the given credentials.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">   * @param $credentials Associative array with implementation specific keys</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">   * @return User instance if successfull, null else</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager.html#a1c06a7b91e844722f8925d270059b009">login</a>($credentials);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;?&gt;</div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1security_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1security.html">wcmf\lib\security</a></div><div class="ttdoc">Security related interfaces and classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00083">namespaces.php:83</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager.html">wcmf\lib\security\AuthenticationManager</a></div><div class="ttdoc">AuthenticationManager implementations are used to handle all authentication requests. </div><div class="ttdef"><b>Definition:</b> <a href="_authentication_manager_8php_source.html#l00019">AuthenticationManager.php:19</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager_html_a1c06a7b91e844722f8925d270059b009"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1_authentication_manager.html#a1c06a7b91e844722f8925d270059b009">wcmf\lib\security\AuthenticationManager\login</a></div><div class="ttdeci">login($credentials)</div><div class="ttdoc">Authenticate using the given credentials. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
       </div>
@@ -149,7 +148,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jul 16 2016 15:58:54 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Fri Oct 7 2016 22:45:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

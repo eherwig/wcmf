@@ -171,15 +171,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#a45a60e1d1f1ed4fd76d709c504e87589">isCached</a>($tplFile, $cacheId=null);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">   * Get the template filename for the view from the configfile for the given action key.</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">   * @param $controller The name of the controller</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">   * @param $context The name of the context</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">   * @param $action The name of the action</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">   * @return The filename of the template or false, if no view is defined</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#ae914476664014895052ce1905fe582b8">getTemplate</a>($controller, $context, $action);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;?&gt;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">   * Get the date of the cache entry, if the view is cached</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">   * @param $tplFile The template file</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">   * @param $cacheId The id of the view (@see Controller::getCacheId())</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">   * @return DateTime or null, if not cached</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#a8bdb0eb789f21425af4c236c5afe9532">getCacheDate</a>($tplFile, $cacheId=null);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">   * Get the template filename for the view from the configfile for the given action key.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">   * @param $controller The name of the controller</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">   * @param $context The name of the context</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">   * @param $action The name of the action</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">   * @return The filename of the template or false, if no view is defined</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#ae914476664014895052ce1905fe582b8">getTemplate</a>($controller, $context, $action);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;?&gt;</div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view_html_a8bdb0eb789f21425af4c236c5afe9532"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#a8bdb0eb789f21425af4c236c5afe9532">wcmf\lib\presentation\view\View\getCacheDate</a></div><div class="ttdeci">static getCacheDate($tplFile, $cacheId=null)</div><div class="ttdoc">Get the date of the cache entry, if the view is cached. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view_html_ae914476664014895052ce1905fe582b8"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#ae914476664014895052ce1905fe582b8">wcmf\lib\presentation\view\View\getTemplate</a></div><div class="ttdeci">static getTemplate($controller, $context, $action)</div><div class="ttdoc">Get the template filename for the view from the configfile for the given action key. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view_html_ae1df87df22fcd64f8298d22239b189b8"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#ae1df87df22fcd64f8298d22239b189b8">wcmf\lib\presentation\view\View\clearAllValues</a></div><div class="ttdeci">clearAllValues()</div><div class="ttdoc">Clear all values in the view. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view_html_a70a0fe08035189260c72e32a9e20d30c"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#a70a0fe08035189260c72e32a9e20d30c">wcmf\lib\presentation\view\View\getValues</a></div><div class="ttdeci">getValues()</div><div class="ttdoc">Get all values from the view. </div></div>
@@ -202,7 +211,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jul 16 2016 15:58:54 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Fri Oct 7 2016 22:45:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

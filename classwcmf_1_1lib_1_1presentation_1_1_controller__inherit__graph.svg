@@ -23,15 +23,15 @@
 <text text-anchor="start" x="1262" y="-646.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getResponse()</text>
 <text text-anchor="start" x="1262" y="-635.5" font-family="Helvetica,sans-Serif" font-size="10.00"># validate()</text>
 <text text-anchor="start" x="1262" y="-624.5" font-family="Helvetica,sans-Serif" font-size="10.00"># executeSubAction()</text>
-<text text-anchor="start" x="1262" y="-613.5" font-family="Helvetica,sans-Serif" font-size="10.00"># internalRedirect()</text>
-<text text-anchor="start" x="1262" y="-602.5" font-family="Helvetica,sans-Serif" font-size="10.00"># externalRedirect()</text>
-<text text-anchor="start" x="1262" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getLogger()</text>
-<text text-anchor="start" x="1262" y="-580.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getSession()</text>
-<text text-anchor="start" x="1262" y="-569.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getPersistenceFacade()</text>
-<text text-anchor="start" x="1262" y="-558.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getPermissionManager()</text>
-<text text-anchor="start" x="1262" y="-547.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getActionMapper()</text>
-<text text-anchor="start" x="1262" y="-536.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getLocalization()</text>
-<text text-anchor="start" x="1262" y="-525.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 10 more...</text>
+<text text-anchor="start" x="1262" y="-613.5" font-family="Helvetica,sans-Serif" font-size="10.00"># redirect()</text>
+<text text-anchor="start" x="1262" y="-602.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getLogger()</text>
+<text text-anchor="start" x="1262" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getSession()</text>
+<text text-anchor="start" x="1262" y="-580.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getPersistenceFacade()</text>
+<text text-anchor="start" x="1262" y="-569.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getPermissionManager()</text>
+<text text-anchor="start" x="1262" y="-558.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getActionMapper()</text>
+<text text-anchor="start" x="1262" y="-547.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getLocalization()</text>
+<text text-anchor="start" x="1262" y="-536.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getMessage()</text>
+<text text-anchor="start" x="1262" y="-525.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
@@ -177,9 +177,9 @@
 <path fill="none" stroke="midnightblue" d="M1244.05,-614.096C1165.7,-595.654 1043.86,-556.724 965.5,-482 946.704,-464.076 933.99,-438.003 925.84,-415.685"/>
 <polygon fill="none" stroke="midnightblue" points="1243.32,-617.521 1253.85,-616.352 1244.89,-610.699 1243.32,-617.521"/>
 </g>
-<!-- Node15 -->
-<g id="node15" class="node"><title>Node15</title>
-<g id="a_node15"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_logging_controller.html" target="_top" xlink:title="LoggingController is used to log a message in the backend log. ">
+<!-- Node16 -->
+<g id="node16" class="node"><title>Node16</title>
+<g id="a_node16"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_logging_controller.html" target="_top" xlink:title="LoggingController is used to log a message in the backend log. ">
 <polygon fill="white" stroke="black" points="974.5,-342 974.5,-399 1066.5,-399 1066.5,-342 974.5,-342"/>
 <text text-anchor="middle" x="1020.5" y="-387" font-family="Helvetica,sans-Serif" font-size="10.00">LoggingController</text>
 <polyline fill="none" stroke="black" points="974.5,-380 1066.5,-380 "/>
@@ -189,14 +189,14 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node15 -->
-<g id="edge14" class="edge"><title>Node1&#45;&gt;Node15</title>
+<!-- Node1&#45;&gt;Node16 -->
+<g id="edge15" class="edge"><title>Node1&#45;&gt;Node16</title>
 <path fill="none" stroke="midnightblue" d="M1244.58,-596.942C1192.26,-571.915 1123.63,-532.727 1076.5,-482 1054.1,-457.893 1038.47,-423.132 1029.52,-399.062"/>
 <polygon fill="none" stroke="midnightblue" points="1243.28,-600.199 1253.82,-601.296 1246.26,-593.867 1243.28,-600.199"/>
 </g>
-<!-- Node16 -->
-<g id="node16" class="node"><title>Node16</title>
-<g id="a_node16"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_login_controller.html" target="_top" xlink:title="LoginController handles the login process. ">
+<!-- Node17 -->
+<g id="node17" class="node"><title>Node17</title>
+<g id="a_node17"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_login_controller.html" target="_top" xlink:title="LoginController handles the login process. ">
 <polygon fill="white" stroke="black" points="1085,-325.5 1085,-415.5 1168,-415.5 1168,-325.5 1085,-325.5"/>
 <text text-anchor="middle" x="1126.5" y="-403.5" font-family="Helvetica,sans-Serif" font-size="10.00">LoginController</text>
 <polyline fill="none" stroke="black" points="1085,-396.5 1168,-396.5 "/>
@@ -209,14 +209,14 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node16 -->
-<g id="edge15" class="edge"><title>Node1&#45;&gt;Node16</title>
+<!-- Node1&#45;&gt;Node17 -->
+<g id="edge16" class="edge"><title>Node1&#45;&gt;Node17</title>
 <path fill="none" stroke="midnightblue" d="M1246.34,-562.593C1222.48,-538.735 1197.11,-510.591 1177.5,-482 1163.46,-461.526 1151.56,-436.567 1142.8,-415.555"/>
 <polygon fill="none" stroke="midnightblue" points="1244.12,-565.316 1253.69,-569.856 1249.04,-560.337 1244.12,-565.316"/>
 </g>
-<!-- Node17 -->
-<g id="node17" class="node"><title>Node17</title>
-<g id="a_node17"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_media_controller.html" target="_top" xlink:title="MediaController integrates elFinder (https://github.com/Studio&#45;42/elFinder) into wCMF. ">
+<!-- Node18 -->
+<g id="node18" class="node"><title>Node18</title>
+<g id="a_node18"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_media_controller.html" target="_top" xlink:title="MediaController integrates elFinder (https://github.com/Studio&#45;42/elFinder) into wCMF. ">
 <polygon fill="white" stroke="black" points="1186.5,-331 1186.5,-410 1306.5,-410 1306.5,-331 1186.5,-331"/>
 <text text-anchor="middle" x="1246.5" y="-398" font-family="Helvetica,sans-Serif" font-size="10.00">MediaController</text>
 <polyline fill="none" stroke="black" points="1186.5,-391 1306.5,-391 "/>
@@ -228,14 +228,14 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node17 -->
-<g id="edge16" class="edge"><title>Node1&#45;&gt;Node17</title>
+<!-- Node1&#45;&gt;Node18 -->
+<g id="edge17" class="edge"><title>Node1&#45;&gt;Node18</title>
 <path fill="none" stroke="midnightblue" d="M1285.39,-508.409C1275.3,-472.909 1264.98,-436.55 1257.5,-410.23"/>
 <polygon fill="none" stroke="midnightblue" points="1282.12,-509.727 1288.22,-518.39 1288.86,-507.815 1282.12,-509.727"/>
 </g>
-<!-- Node18 -->
-<g id="node18" class="node"><title>Node18</title>
-<g id="a_node18"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_message_controller.html" target="_top" xlink:title="MessageController is used to get all messages translated to the given language. ">
+<!-- Node19 -->
+<g id="node19" class="node"><title>Node19</title>
+<g id="a_node19"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_message_controller.html" target="_top" xlink:title="MessageController is used to get all messages translated to the given language. ">
 <polygon fill="white" stroke="black" points="1324.5,-331 1324.5,-410 1462.5,-410 1462.5,-331 1324.5,-331"/>
 <text text-anchor="middle" x="1393.5" y="-398" font-family="Helvetica,sans-Serif" font-size="10.00">MessageController</text>
 <polyline fill="none" stroke="black" points="1324.5,-391 1462.5,-391 "/>
@@ -247,14 +247,14 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node18 -->
-<g id="edge17" class="edge"><title>Node1&#45;&gt;Node18</title>
+<!-- Node1&#45;&gt;Node19 -->
+<g id="edge18" class="edge"><title>Node1&#45;&gt;Node19</title>
 <path fill="none" stroke="midnightblue" d="M1354.08,-508.409C1364.3,-472.909 1374.77,-436.55 1382.35,-410.23"/>
 <polygon fill="none" stroke="midnightblue" points="1350.61,-507.812 1351.2,-518.39 1357.34,-509.749 1350.61,-507.812"/>
 </g>
-<!-- Node19 -->
-<g id="node19" class="node"><title>Node19</title>
-<g id="a_node19"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_multiple_action_controller.html" target="_top" xlink:title="MultipleActionController executes multiple actions by passing them to the appropriate controllers and...">
+<!-- Node20 -->
+<g id="node20" class="node"><title>Node20</title>
+<g id="a_node20"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_multiple_action_controller.html" target="_top" xlink:title="MultipleActionController executes multiple actions by passing them to the appropriate controllers and...">
 <polygon fill="white" stroke="black" points="1481,-336.5 1481,-404.5 1600,-404.5 1600,-336.5 1481,-336.5"/>
 <text text-anchor="middle" x="1540.5" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">MultipleActionController</text>
 <polyline fill="none" stroke="black" points="1481,-385.5 1600,-385.5 "/>
@@ -265,14 +265,14 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node19 -->
-<g id="edge18" class="edge"><title>Node1&#45;&gt;Node19</title>
+<!-- Node1&#45;&gt;Node20 -->
+<g id="edge19" class="edge"><title>Node1&#45;&gt;Node20</title>
 <path fill="none" stroke="midnightblue" d="M1392.5,-565.041C1418.84,-540.416 1447.88,-511.152 1471.5,-482 1491.15,-457.751 1509.67,-427.535 1522.56,-404.832"/>
 <polygon fill="none" stroke="midnightblue" points="1390.1,-562.494 1385.14,-571.86 1394.86,-567.626 1390.1,-562.494"/>
 </g>
-<!-- Node20 -->
-<g id="node20" class="node"><title>Node20</title>
-<g id="a_node20"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_permission_controller.html" target="_top" xlink:title="PermissionController checks, gets and sets permissions. ">
+<!-- Node21 -->
+<g id="node21" class="node"><title>Node21</title>
+<g id="a_node21"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_permission_controller.html" target="_top" xlink:title="PermissionController checks, gets and sets permissions. ">
 <polygon fill="white" stroke="black" points="1618,-336.5 1618,-404.5 1725,-404.5 1725,-336.5 1618,-336.5"/>
 <text text-anchor="middle" x="1671.5" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">PermissionController</text>
 <polyline fill="none" stroke="black" points="1618,-385.5 1725,-385.5 "/>
@@ -283,14 +283,14 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node20 -->
-<g id="edge19" class="edge"><title>Node1&#45;&gt;Node20</title>
+<!-- Node1&#45;&gt;Node21 -->
+<g id="edge20" class="edge"><title>Node1&#45;&gt;Node21</title>
 <path fill="none" stroke="midnightblue" d="M1394.79,-604.507C1458.14,-581.287 1547.98,-540.902 1609.5,-482 1632.14,-460.322 1648.79,-428.54 1659.1,-404.619"/>
 <polygon fill="none" stroke="midnightblue" points="1393.47,-601.262 1385.25,-607.947 1395.85,-607.847 1393.47,-601.262"/>
 </g>
-<!-- Node21 -->
-<g id="node21" class="node"><title>Node21</title>
-<g id="a_node21"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_r_e_s_t_controller.html" target="_top" xlink:title="RESTController handles requests sent from a dstore/Rest client. ">
+<!-- Node22 -->
+<g id="node22" class="node"><title>Node22</title>
+<g id="a_node22"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_r_e_s_t_controller.html" target="_top" xlink:title="RESTController handles requests sent from a dstore/Rest client. ">
 <polygon fill="white" stroke="black" points="1743,-265 1743,-476 1892,-476 1892,-265 1743,-265"/>
 <text text-anchor="middle" x="1817.5" y="-464" font-family="Helvetica,sans-Serif" font-size="10.00">RESTController</text>
 <polyline fill="none" stroke="black" points="1743,-457 1892,-457 "/>
@@ -314,14 +314,14 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node21 -->
-<g id="edge20" class="edge"><title>Node1&#45;&gt;Node21</title>
+<!-- Node1&#45;&gt;Node22 -->
+<g id="edge21" class="edge"><title>Node1&#45;&gt;Node22</title>
 <path fill="none" stroke="midnightblue" d="M1395.04,-615.625C1483.32,-597.644 1630.54,-558.268 1734.5,-482 1737.31,-479.942 1740.06,-477.763 1742.76,-475.482"/>
 <polygon fill="none" stroke="midnightblue" points="1394.22,-612.219 1385.1,-617.61 1395.59,-619.084 1394.22,-612.219"/>
 </g>
-<!-- Node22 -->
-<g id="node22" class="node"><title>Node22</title>
-<g id="a_node22"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_save_controller.html" target="_top" xlink:title="SaveController is a controller that saves Node data. ">
+<!-- Node23 -->
+<g id="node23" class="node"><title>Node23</title>
+<g id="a_node23"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_save_controller.html" target="_top" xlink:title="SaveController is a controller that saves Node data. ">
 <polygon fill="white" stroke="black" points="1910.5,-276 1910.5,-465 2024.5,-465 2024.5,-276 1910.5,-276"/>
 <text text-anchor="middle" x="1967.5" y="-453" font-family="Helvetica,sans-Serif" font-size="10.00">SaveController</text>
 <polyline fill="none" stroke="black" points="1910.5,-446 2024.5,-446 "/>
@@ -343,14 +343,14 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node22 -->
-<g id="edge21" class="edge"><title>Node1&#45;&gt;Node22</title>
+<!-- Node1&#45;&gt;Node23 -->
+<g id="edge22" class="edge"><title>Node1&#45;&gt;Node23</title>
 <path fill="none" stroke="midnightblue" d="M1395.42,-627.394C1514.58,-622.009 1747.76,-596.345 1901.5,-482 1908.04,-477.133 1914.06,-471.407 1919.58,-465.166"/>
 <polygon fill="none" stroke="midnightblue" points="1395.15,-623.903 1385.3,-627.815 1395.44,-630.897 1395.15,-623.903"/>
 </g>
-<!-- Node23 -->
-<g id="node23" class="node"><title>Node23</title>
-<g id="a_node23"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html" target="_top" xlink:title="SOAPController handles SOAP requests. ">
+<!-- Node24 -->
+<g id="node24" class="node"><title>Node24</title>
+<g id="a_node24"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html" target="_top" xlink:title="SOAPController handles SOAP requests. ">
 <polygon fill="white" stroke="black" points="2042.5,-336.5 2042.5,-404.5 2128.5,-404.5 2128.5,-336.5 2042.5,-336.5"/>
 <text text-anchor="middle" x="2085.5" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">SOAPController</text>
 <polyline fill="none" stroke="black" points="2042.5,-385.5 2128.5,-385.5 "/>
@@ -361,14 +361,14 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node23 -->
-<g id="edge22" class="edge"><title>Node1&#45;&gt;Node23</title>
+<!-- Node1&#45;&gt;Node24 -->
+<g id="edge23" class="edge"><title>Node1&#45;&gt;Node24</title>
 <path fill="none" stroke="midnightblue" d="M1395.5,-621.496C1558.43,-605.142 1934.61,-559.812 2033.5,-482 2057.83,-462.858 2071.32,-429.609 2078.42,-404.57"/>
 <polygon fill="none" stroke="midnightblue" points="1394.68,-618.06 1385.08,-622.532 1395.38,-625.026 1394.68,-618.06"/>
 </g>
-<!-- Node24 -->
-<g id="node24" class="node"><title>Node24</title>
-<g id="a_node24"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_sort_controller.html" target="_top" xlink:title="SortController is used to change the order of nodes. ">
+<!-- Node25 -->
+<g id="node25" class="node"><title>Node25</title>
+<g id="a_node25"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_sort_controller.html" target="_top" xlink:title="SortController is used to change the order of nodes. ">
 <polygon fill="white" stroke="black" points="2146.5,-292.5 2146.5,-448.5 2260.5,-448.5 2260.5,-292.5 2146.5,-292.5"/>
 <text text-anchor="middle" x="2203.5" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00">SortController</text>
 <polyline fill="none" stroke="black" points="2146.5,-429.5 2260.5,-429.5 "/>
@@ -387,14 +387,14 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node24 -->
-<g id="edge23" class="edge"><title>Node1&#45;&gt;Node24</title>
+<!-- Node1&#45;&gt;Node25 -->
+<g id="edge24" class="edge"><title>Node1&#45;&gt;Node25</title>
 <path fill="none" stroke="midnightblue" d="M1395.17,-622.929C1574.08,-608.516 2017.15,-565.187 2137.5,-482 2150,-473.36 2160.52,-461.514 2169.22,-448.774"/>
 <polygon fill="none" stroke="midnightblue" points="1394.74,-619.452 1385.05,-623.736 1395.3,-626.43 1394.74,-619.452"/>
 </g>
-<!-- Node25 -->
-<g id="node25" class="node"><title>Node25</title>
-<g id="a_node25"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_tree_controller.html" target="_top" xlink:title="TreeController is used to visualize nodes in a tree view. ">
+<!-- Node26 -->
+<g id="node26" class="node"><title>Node26</title>
+<g id="a_node26"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_tree_controller.html" target="_top" xlink:title="TreeController is used to visualize nodes in a tree view. ">
 <polygon fill="white" stroke="black" points="2278.5,-303.5 2278.5,-437.5 2380.5,-437.5 2380.5,-303.5 2278.5,-303.5"/>
 <text text-anchor="middle" x="2329.5" y="-425.5" font-family="Helvetica,sans-Serif" font-size="10.00">TreeController</text>
 <polyline fill="none" stroke="black" points="2278.5,-418.5 2380.5,-418.5 "/>
@@ -411,14 +411,14 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node25 -->
-<g id="edge24" class="edge"><title>Node1&#45;&gt;Node25</title>
+<!-- Node1&#45;&gt;Node26 -->
+<g id="edge25" class="edge"><title>Node1&#45;&gt;Node26</title>
 <path fill="none" stroke="midnightblue" d="M1395.35,-625.364C1594.8,-615.803 2128.31,-581.349 2269.5,-482 2285.21,-470.945 2297.21,-454.433 2306.19,-437.523"/>
 <polygon fill="none" stroke="midnightblue" points="1395.07,-621.873 1385.25,-625.84 1395.4,-628.865 1395.07,-621.873"/>
 </g>
-<!-- Node26 -->
-<g id="node26" class="node"><title>Node26</title>
-<g id="a_node26"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_user_controller.html" target="_top" xlink:title="UserController is used to change the current user&#39;s password. ">
+<!-- Node27 -->
+<g id="node27" class="node"><title>Node27</title>
+<g id="a_node27"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_user_controller.html" target="_top" xlink:title="UserController is used to change the current user&#39;s password. ">
 <polygon fill="white" stroke="black" points="2399,-331 2399,-410 2504,-410 2504,-331 2399,-331"/>
 <text text-anchor="middle" x="2451.5" y="-398" font-family="Helvetica,sans-Serif" font-size="10.00">UserController</text>
 <polyline fill="none" stroke="black" points="2399,-391 2504,-391 "/>
@@ -430,14 +430,14 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node26 -->
-<g id="edge25" class="edge"><title>Node1&#45;&gt;Node26</title>
+<!-- Node1&#45;&gt;Node27 -->
+<g id="edge26" class="edge"><title>Node1&#45;&gt;Node27</title>
 <path fill="none" stroke="midnightblue" d="M1395.54,-626.725C1612.09,-620.352 2226.91,-592.702 2389.5,-482 2414.32,-465.101 2430.3,-434.807 2439.81,-410.208"/>
 <polygon fill="none" stroke="midnightblue" points="1395.12,-623.236 1385.23,-627.021 1395.32,-630.233 1395.12,-623.236"/>
 </g>
-<!-- Node27 -->
-<g id="node27" class="node"><title>Node27</title>
-<g id="a_node27"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_value_list_controller.html" target="_top" xlink:title="ValueListController is used to resolve lists for input_type definitions. ">
+<!-- Node28 -->
+<g id="node28" class="node"><title>Node28</title>
+<g id="a_node28"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_value_list_controller.html" target="_top" xlink:title="ValueListController is used to resolve lists for input_type definitions. ">
 <polygon fill="white" stroke="black" points="2522.5,-336.5 2522.5,-404.5 2620.5,-404.5 2620.5,-336.5 2522.5,-336.5"/>
 <text text-anchor="middle" x="2571.5" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">ValueListController</text>
 <polyline fill="none" stroke="black" points="2522.5,-385.5 2620.5,-385.5 "/>
@@ -448,8 +448,8 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node27 -->
-<g id="edge26" class="edge"><title>Node1&#45;&gt;Node27</title>
+<!-- Node1&#45;&gt;Node28 -->
+<g id="edge27" class="edge"><title>Node1&#45;&gt;Node28</title>
 <path fill="none" stroke="midnightblue" d="M1395.1,-628.179C1628.17,-625.834 2330.88,-608.218 2513.5,-482 2539.7,-463.892 2554.94,-430.145 2563.16,-404.69"/>
 <polygon fill="none" stroke="midnightblue" points="1394.99,-624.68 1385.02,-628.274 1395.05,-631.68 1394.99,-624.68"/>
 </g>
@@ -589,23 +589,42 @@
 </g>
 <!-- Node14 -->
 <g id="node14" class="node"><title>Node14</title>
-<g id="a_node14"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_search_controller.html" target="_top" xlink:title="SearchController executes a search and returns matching objects in a paged list. ">
-<polygon fill="white" stroke="black" points="869,-66.5 869,-156.5 958,-156.5 958,-66.5 869,-66.5"/>
-<text text-anchor="middle" x="913.5" y="-144.5" font-family="Helvetica,sans-Serif" font-size="10.00">SearchController</text>
-<polyline fill="none" stroke="black" points="869,-137.5 958,-137.5 "/>
-<text text-anchor="middle" x="913.5" y="-125.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="869,-118.5 958,-118.5 "/>
-<text text-anchor="start" x="877" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
-<text text-anchor="start" x="877" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># validate()</text>
-<text text-anchor="start" x="877" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getObjects()</text>
-<text text-anchor="start" x="877" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># modifyModel()</text>
+<g id="a_node14"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_history_controller.html" target="_top" xlink:title="HistoryController returns a list of last changed entity instances. ">
+<polygon fill="white" stroke="black" points="815,-72 815,-151 904,-151 904,-72 815,-72"/>
+<text text-anchor="middle" x="859.5" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">HistoryController</text>
+<polyline fill="none" stroke="black" points="815,-132 904,-132 "/>
+<text text-anchor="middle" x="859.5" y="-120" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="815,-113 904,-113 "/>
+<text text-anchor="start" x="823" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00"># validate()</text>
+<text text-anchor="start" x="823" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"># getObjects()</text>
+<text text-anchor="start" x="823" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00"># modifyModel()</text>
 </a>
 </g>
 </g>
 <!-- Node13&#45;&gt;Node14 -->
 <g id="edge13" class="edge"><title>Node13&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M913.5,-315.273C913.5,-268.057 913.5,-200.469 913.5,-156.533"/>
-<polygon fill="none" stroke="midnightblue" points="910,-315.32 913.5,-325.32 917,-315.32 910,-315.32"/>
+<path fill="none" stroke="midnightblue" d="M902.149,-315.48C891.806,-266.255 876.784,-194.76 867.605,-151.073"/>
+<polygon fill="none" stroke="midnightblue" points="898.736,-316.254 904.217,-325.32 905.586,-314.814 898.736,-316.254"/>
+</g>
+<!-- Node15 -->
+<g id="node15" class="node"><title>Node15</title>
+<g id="a_node15"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_search_controller.html" target="_top" xlink:title="SearchController executes a search and returns matching objects in a paged list. ">
+<polygon fill="white" stroke="black" points="922,-66.5 922,-156.5 1011,-156.5 1011,-66.5 922,-66.5"/>
+<text text-anchor="middle" x="966.5" y="-144.5" font-family="Helvetica,sans-Serif" font-size="10.00">SearchController</text>
+<polyline fill="none" stroke="black" points="922,-137.5 1011,-137.5 "/>
+<text text-anchor="middle" x="966.5" y="-125.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="922,-118.5 1011,-118.5 "/>
+<text text-anchor="start" x="930" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
+<text text-anchor="start" x="930" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># validate()</text>
+<text text-anchor="start" x="930" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getObjects()</text>
+<text text-anchor="start" x="930" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># modifyModel()</text>
+</a>
+</g>
+</g>
+<!-- Node13&#45;&gt;Node15 -->
+<g id="edge14" class="edge"><title>Node13&#45;&gt;Node15</title>
+<path fill="none" stroke="midnightblue" d="M924.683,-315.273C934.42,-268.057 948.359,-200.469 957.419,-156.533"/>
+<polygon fill="none" stroke="midnightblue" points="921.203,-314.819 922.611,-325.32 928.059,-316.233 921.203,-314.819"/>
 </g>
 </g>
 </svg>

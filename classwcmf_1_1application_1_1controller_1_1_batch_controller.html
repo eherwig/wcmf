@@ -145,7 +145,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td><em>out</em> <code>numberOfSteps</code> </td><td>Total number of steps </td></tr>
 <tr>
-<td><em>out</em> <code>displayText</code> </td><td>The display text for the current step </td></tr>
+<td><em>out</em> <code>displayText</code> </td><td>The display text for the next step (since the first request) </td></tr>
 <tr>
 <td><em>out</em> <code>status</code> </td><td>The value of the response action </td></tr>
 <tr>
@@ -210,8 +210,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a6f2ef7d2d349d3ef7c8a913e110d58f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0e75dc0967afe71da4d6bd46d7a500b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab0e75dc0967afe71da4d6bd46d7a500b">addWorkPackage</a> ($name, $size, $oids, $callback, $args=null)</td></tr>
 <tr class="separator:ab0e75dc0967afe71da4d6bd46d7a500b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a032673e3a0cc074048a113b86776d992"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a032673e3a0cc074048a113b86776d992">processPart</a> ()</td></tr>
-<tr class="separator:a032673e3a0cc074048a113b86776d992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9a3e191499fb8ae2008f646819712c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ae9a3e191499fb8ae2008f646819712c7">processPart</a> ($step)</td></tr>
+<tr class="separator:ae9a3e191499fb8ae2008f646819712c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a858996df90c7181ae4da50654ff11160"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a858996df90c7181ae4da50654ff11160">getRequestValue</a> ($name)</td></tr>
 <tr class="separator:a858996df90c7181ae4da50654ff11160"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade8916e986adac77ff3766e90615fa9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ade8916e986adac77ff3766e90615fa9a">getNumberOfSteps</a> ()</td></tr>
@@ -229,10 +229,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a184909dab34698899937d810a9f5d393 inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6008411fc9e89758eba4519a3f0ece7 inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ac6008411fc9e89758eba4519a3f0ece7">executeSubAction</a> ($action)</td></tr>
 <tr class="separator:ac6008411fc9e89758eba4519a3f0ece7 inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cab4378497eaa9422a09554c2749bec inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a3cab4378497eaa9422a09554c2749bec">internalRedirect</a> ($action, $context, $data)</td></tr>
-<tr class="separator:a3cab4378497eaa9422a09554c2749bec inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa997fe786daa6afb5723d9ab98e8aba7 inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aa997fe786daa6afb5723d9ab98e8aba7">externalRedirect</a> ($location, $key=null, $data=null)</td></tr>
-<tr class="separator:aa997fe786daa6afb5723d9ab98e8aba7 inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b6af210231bea9e5116e98dbd08cb45 inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6b6af210231bea9e5116e98dbd08cb45">redirect</a> ($location, $key=null, $data=null)</td></tr>
+<tr class="separator:a6b6af210231bea9e5116e98dbd08cb45 inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2321df4f2f7d188b92b96fe63dc71a90 inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a2321df4f2f7d188b92b96fe63dc71a90">getLogger</a> ()</td></tr>
 <tr class="separator:a2321df4f2f7d188b92b96fe63dc71a90 inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefa4c5bd150e2a7d525576d7959c6911 inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#aefa4c5bd150e2a7d525576d7959c6911">getSession</a> ()</td></tr>
@@ -249,8 +247,6 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a0b0e611236742aac18ba1936d03ba89a inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6a7980e832ca964872fe29113ab1642 inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ad6a7980e832ca964872fe29113ab1642">getConfiguration</a> ()</td></tr>
 <tr class="separator:ad6a7980e832ca964872fe29113ab1642 inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a570fd766e5395246e8fb34d8a317616c inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a570fd766e5395246e8fb34d8a317616c">assignResponseDefaults</a> ()</td></tr>
-<tr class="separator:a570fd766e5395246e8fb34d8a317616c inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7bef6946871537b4f9b4725330e6848 inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ae7bef6946871537b4f9b4725330e6848">isLocalizedRequest</a> ()</td></tr>
 <tr class="separator:ae7bef6946871537b4f9b4725330e6848 inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87b623a9d1bd969d602c10eee8b40d04 inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a87b623a9d1bd969d602c10eee8b40d04">checkLanguageParameter</a> ()</td></tr>
@@ -346,7 +342,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the number of the current step (1..number of steps). </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of the current step </dd></dl>
 
-<p>Definition at line <a class="el" href="_batch_controller_8php_source.html#l00188">188</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
+<p>Definition at line <a class="el" href="_batch_controller_8php_source.html#l00194">194</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
 
 </div>
 </div>
@@ -416,11 +412,11 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_batch_controller_8php_source.html#l00205">205</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
+<p>Definition at line <a class="el" href="_batch_controller_8php_source.html#l00209">209</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a032673e3a0cc074048a113b86776d992"></a>
+<a class="anchor" id="ae9a3e191499fb8ae2008f646819712c7"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -430,7 +426,8 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">processPart </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$step</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -441,9 +438,15 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Process the next step. </p>
+<p>Process the given step (1-base). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$step</td><td>The step to process </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="_batch_controller_8php_source.html#l00252">252</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
+<p>Definition at line <a class="el" href="_batch_controller_8php_source.html#l00257">257</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
 
 </div>
 </div>
@@ -478,7 +481,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Mixed </dd></dl>
 
-<p>Definition at line <a class="el" href="_batch_controller_8php_source.html#l00277">277</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
+<p>Definition at line <a class="el" href="_batch_controller_8php_source.html#l00282">282</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
 
 </div>
 </div>
@@ -506,7 +509,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the number of steps to process. </p>
 <dl class="section return"><dt>Returns</dt><dd>Integer </dd></dl>
 
-<p>Definition at line <a class="el" href="_batch_controller_8php_source.html#l00286">286</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
+<p>Definition at line <a class="el" href="_batch_controller_8php_source.html#l00291">291</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
 
 </div>
 </div>
@@ -540,7 +543,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_batch_controller_8php_source.html#l00294">294</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
+<p>Definition at line <a class="el" href="_batch_controller_8php_source.html#l00299">299</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
 
 </div>
 </div>
@@ -568,7 +571,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get the filename of the file to download at the end of processing. </p>
 <dl class="section return"><dt>Returns</dt><dd>String of null, if no download is created. </dd></dl>
 
-<p>Definition at line <a class="el" href="_batch_controller_8php_source.html#l00302">302</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
+<p>Definition at line <a class="el" href="_batch_controller_8php_source.html#l00309">309</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
 
 </div>
 </div>
@@ -630,7 +633,7 @@ Protected Member Functions</h2></td></tr>
 <p>Clean up after all tasks are finished. </p>
 <dl class="section note"><dt>Note</dt><dd>Suclasses may override this to do custom clean up, but should call the parent method. </dd></dl>
 
-<p>Definition at line <a class="el" href="_batch_controller_8php_source.html#l00321">321</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
+<p>Definition at line <a class="el" href="_batch_controller_8php_source.html#l00328">328</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
 
 </div>
 </div>
@@ -731,7 +734,7 @@ Protected Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jul 16 2016 15:58:56 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Fri Oct 7 2016 22:45:18 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

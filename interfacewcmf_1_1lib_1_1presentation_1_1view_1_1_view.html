@@ -119,7 +119,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view__inherit__graph.svg" width="304" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view__inherit__graph.svg" width="304" height="551"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -141,6 +141,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:af5b55597bf6435397d8a7f6f6b3a2fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45a60e1d1f1ed4fd76d709c504e87589"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#a45a60e1d1f1ed4fd76d709c504e87589">isCached</a> ($tplFile, $cacheId=null)</td></tr>
 <tr class="separator:a45a60e1d1f1ed4fd76d709c504e87589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bdb0eb789f21425af4c236c5afe9532"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#a8bdb0eb789f21425af4c236c5afe9532">getCacheDate</a> ($tplFile, $cacheId=null)</td></tr>
+<tr class="separator:a8bdb0eb789f21425af4c236c5afe9532"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae914476664014895052ce1905fe582b8"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#ae914476664014895052ce1905fe582b8">getTemplate</a> ($controller, $context, $action)</td></tr>
 <tr class="separator:ae914476664014895052ce1905fe582b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -372,6 +374,53 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8bdb0eb789f21425af4c236c5afe9532"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static getCacheDate </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$tplFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$cacheId</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the date of the cache entry, if the view is cached. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$tplFile</td><td>The template file </td></tr>
+    <tr><td class="paramname">$cacheId</td><td>The id of the view (</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>Controller::getCacheId()) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>DateTime or null, if not cached </dd></dl>
+
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_smarty_view.html#a8bdb0eb789f21425af4c236c5afe9532">SmartyView</a>, and <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_null_view.html#a8bdb0eb789f21425af4c236c5afe9532">NullView</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ae914476664014895052ce1905fe582b8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -437,7 +486,7 @@ Static Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jul 16 2016 15:59:05 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Fri Oct 7 2016 22:45:24 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>
