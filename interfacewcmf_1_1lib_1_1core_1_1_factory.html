@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -119,15 +125,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1core_1_1_factory__inherit__graph.svg" width="154" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1core_1_1_factory__inherit__graph.svg" width="154" height="478"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a293cb7dbd49db9a4819cd264ec75e0a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a293cb7dbd49db9a4819cd264ec75e0a3">getInstance</a> ($name, $dynamicConfiguration=array())</td></tr>
 <tr class="separator:a293cb7dbd49db9a4819cd264ec75e0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2209f0362a332d8edf0350e401d5429e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a2209f0362a332d8edf0350e401d5429e">getClassInstance</a> ($class, $dynamicConfiguration=array())</td></tr>
-<tr class="separator:a2209f0362a332d8edf0350e401d5429e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6383944c055628b90214804d41eaf538"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a6383944c055628b90214804d41eaf538">getNewInstance</a> ($name, $dynamicConfiguration=array())</td></tr>
+<tr class="separator:a6383944c055628b90214804d41eaf538"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae80e3e07db0cee27a64c6517840b96e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#ae80e3e07db0cee27a64c6517840b96e7">getInstanceOf</a> ($class, $dynamicConfiguration=array())</td></tr>
+<tr class="separator:ae80e3e07db0cee27a64c6517840b96e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaf1352491b4375c7b928e48b7fe1777"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#aeaf1352491b4375c7b928e48b7fe1777">registerInstance</a> ($name, $instance)</td></tr>
 <tr class="separator:aeaf1352491b4375c7b928e48b7fe1777"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a726ead1b43545328f430d48501a5da68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a726ead1b43545328f430d48501a5da68">addInterfaces</a> (array $interfaces)</td></tr>
@@ -161,7 +169,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get an instance from the configuration. </p>
-<dl class="section note"><dt>Note</dt><dd>Instance names are treated case insensitive </dd></dl>
+<p>Instances created with this method might be shared (depending on the __shared configuration property). </p><dl class="section note"><dt>Note</dt><dd>Instance names are treated case insensitive </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$name</td><td>The name of the instance (section, where the instance is defined) </td></tr>
@@ -175,12 +183,51 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2209f0362a332d8edf0350e401d5429e"></a>
+<a class="anchor" id="a6383944c055628b90214804d41eaf538"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">getClassInstance </td>
+          <td class="memname">getNewInstance </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$dynamicConfiguration</em> = <code>array()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a new instance from the configuration. </p>
+<p>Instances created with this method are not shared. </p><dl class="section note"><dt>Note</dt><dd>Instance names are treated case insensitive </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$name</td><td>The name of the instance (section, where the instance is defined) </td></tr>
+    <tr><td class="paramname">$dynamicConfiguration</td><td>Associative array with key value pairs for dynamic instance properties (optional) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Object </dd></dl>
+
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#a6383944c055628b90214804d41eaf538">DefaultFactory</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae80e3e07db0cee27a64c6517840b96e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getInstanceOf </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>$class</em>, </td>
@@ -209,7 +256,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Object </dd></dl>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#a2209f0362a332d8edf0350e401d5429e">DefaultFactory</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#ae80e3e07db0cee27a64c6517840b96e7">DefaultFactory</a>.</p>
 
 </div>
 </div>
@@ -308,7 +355,7 @@ Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:29 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:27 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -103,28 +109,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">DefaultSession Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Default session implementation. </p>
+<div class="textblock"><p><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html" title="DefaultSession uses the default PHP session implementation: ">DefaultSession</a> uses the default PHP session implementation: </p>
+<ul>
+<li>server side storage</li>
+<li>session id sent as a cookie to the client</li>
+</ul>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00034">34</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00026">26</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for DefaultSession:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session__inherit__graph.svg" width="126" height="478"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session__inherit__graph.svg" width="167" height="647"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a095c5d389db211932136b53f25f39685"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a095c5d389db211932136b53f25f39685">__construct</a> ()</td></tr>
-<tr class="separator:a095c5d389db211932136b53f25f39685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a81f1364d5d70f4d03a219f3edeac3d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a9a81f1364d5d70f4d03a219f3edeac3d">__construct</a> (<a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html">Configuration</a> $configuration)</td></tr>
+<tr class="separator:a9a81f1364d5d70f4d03a219f3edeac3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a421831a265621325e1fdd19aace0c758"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a421831a265621325e1fdd19aace0c758">__destruct</a> ()</td></tr>
 <tr class="separator:a421831a265621325e1fdd19aace0c758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30dd7fff4fec7a39f9be9d27d4b22a59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a30dd7fff4fec7a39f9be9d27d4b22a59">getID</a> ()</td></tr>
@@ -145,24 +157,41 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aaef73f42e89ca88b82bbbabb8688c9a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a687dba7af92a5d45f6363b17fe941ff7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a687dba7af92a5d45f6363b17fe941ff7">getAuthUser</a> ()</td></tr>
 <tr class="separator:a687dba7af92a5d45f6363b17fe941ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:afcb6d99ed51e5929890e5031f7366b89"><td class="memItemLeft" align="right" valign="top">CONST&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#afcb6d99ed51e5929890e5031f7366b89">AUTH_USER_NAME</a> = 'auth_user'</td></tr>
+<tr class="separator:afcb6d99ed51e5929890e5031f7366b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a99225dc2c9cffcb1461ac3ed402c4cef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a99225dc2c9cffcb1461ac3ed402c4cef">getCookiePrefix</a> ()</td></tr>
+<tr class="separator:a99225dc2c9cffcb1461ac3ed402c4cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a095c5d389db211932136b53f25f39685"></a>
+<a class="anchor" id="a9a81f1364d5d70f4d03a219f3edeac3d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">__construct </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html">Configuration</a>&#160;</td>
+          <td class="paramname"><em>$configuration</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$configuration</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00041">41</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00036">36</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
 
 </div>
 </div>
@@ -179,7 +208,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00052">52</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00059">59</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
 
 </div>
 </div>
@@ -200,7 +229,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#a30dd7fff4fec7a39f9be9d27d4b22a59">Session</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00059">59</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00066">66</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
 
 </div>
 </div>
@@ -231,7 +260,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#a499d39d1876a05b20e1ca8e8a1c2b466">Session</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00066">66</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00073">73</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
 
 </div>
 </div>
@@ -262,7 +291,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#aab787bd83f84f4215dceb35f7c305eee">Session</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00077">77</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00084">84</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
 
 </div>
 </div>
@@ -283,7 +312,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#a95483af4e2c07dc9893fe058b026bd5d">Session</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00084">84</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00091">91</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
 
 </div>
 </div>
@@ -304,7 +333,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#ae5c48a5e6b4931e5a57f81be51de6ea2">Session</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00091">91</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00098">98</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
 
 </div>
 </div>
@@ -324,7 +353,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#aa821bec12eaa7e0f649397c9675ff505">Session</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00099">99</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00106">106</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
 
 </div>
 </div>
@@ -344,7 +373,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#aa118461de946085fe42989193337044a">Session</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00106">106</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00113">113</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
 
 </div>
 </div>
@@ -365,7 +394,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#aaef73f42e89ca88b82bbbabb8688c9a4">Session</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00114">114</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00121">121</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
 
 </div>
 </div>
@@ -385,7 +414,50 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#a687dba7af92a5d45f6363b17fe941ff7">Session</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00125">125</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00132">132</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a99225dc2c9cffcb1461ac3ed402c4cef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">getCookiePrefix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the cookie prefix. </p>
+<dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
+
+<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00145">145</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="afcb6d99ed51e5929890e5031f7366b89"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CONST AUTH_USER_NAME = 'auth_user'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_default_session_8php_source.html#l00028">28</a> of file <a class="el" href="_default_session_8php_source.html">DefaultSession.php</a>.</p>
 
 </div>
 </div>
@@ -401,7 +473,7 @@ Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:30 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:28 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

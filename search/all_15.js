@@ -5,6 +5,7 @@ var searchData=
   ['tests',['Tests',['../tests.html',1,'']]],
   ['testutil',['TestUtil',['../classwcmf_1_1lib_1_1util_1_1_test_util.html',1,'wcmf::lib::util']]],
   ['tns',['TNS',['../classwcmf_1_1lib_1_1service_1_1_soap_server.html#a1780c150b2478badfefe4361b9ce88fd',1,'wcmf::lib::service::SoapServer']]],
+  ['token_5fheader',['TOKEN_HEADER',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_auth_token_session.html#ac0fdab9c3d020ad1c3a16e01e43c81b8',1,'wcmf\lib\core\impl\AuthTokenSession\TOKEN_HEADER()'],['../classwcmf_1_1lib_1_1core_1_1impl_1_1_client_side_session.html#ac0fdab9c3d020ad1c3a16e01e43c81b8',1,'wcmf\lib\core\impl\ClientSideSession\TOKEN_HEADER()']]],
   ['trace',['trace',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_log4php_logger.html#a558ad529db33c8c8ae5e6eb2de2a4312',1,'wcmf::lib::core::impl::Log4phpLogger']]],
   ['transaction',['Transaction',['../interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html',1,'wcmf::lib::persistence']]],
   ['transformrequest',['transformRequest',['../classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request_listener.html#aa9e708daf523f8fcd645e09b1e82fef4',1,'wcmf::lib::presentation::impl::DefaultRequestListener']]],

@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -125,7 +131,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">   18</a></span>&#160;<span class="keyword">interface </span><a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a> <span class="keyword">extends</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html">ControllerMessage</a> {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">   * Set the Response instance belonging to the request.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">   * Set the Response instance belonging to the request and vice versa.</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">   * @param $response Response</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#ad90ad569340a3c13f0e71fe8f92427ee">setResponse</a>(<a class="code" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a> $response);</div>
@@ -174,7 +180,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html_aae97bd0eb9148fbc922ee5f0a5ee23e0"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#aae97bd0eb9148fbc922ee5f0a5ee23e0">wcmf\lib\presentation\Request\getResponseFormat</a></div><div class="ttdeci">getResponseFormat()</div><div class="ttdoc">Get the message response format. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html">wcmf\lib\presentation\Request</a></div><div class="ttdoc">Request holds the request values that are used as input to Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_request_8php_source.html#l00018">Request.php:18</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html_a6c907e8af775e517a77037dd0164222f"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#a6c907e8af775e517a77037dd0164222f">wcmf\lib\presentation\Request\getResponse</a></div><div class="ttdeci">getResponse()</div><div class="ttdoc">Get the Response instance belonging to the request. </div></div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html_ad90ad569340a3c13f0e71fe8f92427ee"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#ad90ad569340a3c13f0e71fe8f92427ee">wcmf\lib\presentation\Request\setResponse</a></div><div class="ttdeci">setResponse(Response $response)</div><div class="ttdoc">Set the Response instance belonging to the request. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html_ad90ad569340a3c13f0e71fe8f92427ee"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#ad90ad569340a3c13f0e71fe8f92427ee">wcmf\lib\presentation\Request\setResponse</a></div><div class="ttdeci">setResponse(Response $response)</div><div class="ttdoc">Set the Response instance belonging to the request and vice versa. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_request_html_af3e37e1a6ed9b8c87f86f659873a83b7"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html#af3e37e1a6ed9b8c87f86f659873a83b7">wcmf\lib\presentation\Request\getMethod</a></div><div class="ttdeci">getMethod()</div><div class="ttdoc">Get the HTTP method of the request. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
@@ -188,7 +194,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:24 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:24 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

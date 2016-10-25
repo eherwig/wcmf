@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -203,19 +209,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#a4d9813fea8525b19a1d370eeb8fe41d6">   98</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#a4d9813fea8525b19a1d370eeb8fe41d6">serialize</a>() {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#a4d9813fea8525b19a1d370eeb8fe41d6">serialize</a>(array(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#a4d9813fea8525b19a1d370eeb8fe41d6">serialize</a>($this-&gt;objectId),</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#a4d9813fea8525b19a1d370eeb8fe41d6">serialize</a>(array($this-&gt;type, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#a4d9813fea8525b19a1d370eeb8fe41d6">serialize</a>($this-&gt;objectId),</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        $this-&gt;login, $this-&gt;created, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#a4d9813fea8525b19a1d370eeb8fe41d6">serialize</a>($this-&gt;currentState)));</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
 <div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#a91b3cb8a65e42152cacf1cf222bd26f6">  103</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#a91b3cb8a65e42152cacf1cf222bd26f6">unserialize</a>($data) {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    $parts = <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#a91b3cb8a65e42152cacf1cf222bd26f6">unserialize</a>($data);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    $this-&gt;objectId = <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#a91b3cb8a65e42152cacf1cf222bd26f6">unserialize</a>($parts[0]);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    $this-&gt;login = $parts[1];</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    $this-&gt;created = $parts[2];</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    $this-&gt;currentState = <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#a91b3cb8a65e42152cacf1cf222bd26f6">unserialize</a>($parts[3]);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;?&gt;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    $this-&gt;type = $parts[0];</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    $this-&gt;objectId = <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#a91b3cb8a65e42152cacf1cf222bd26f6">unserialize</a>($parts[1]);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    $this-&gt;login = $parts[2];</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    $this-&gt;created = $parts[3];</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    $this-&gt;currentState = <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#a91b3cb8a65e42152cacf1cf222bd26f6">unserialize</a>($parts[4]);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;?&gt;</div>
 <div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock_html_a2b8331c5da70a3c47701bdfc3b54b656"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#a2b8331c5da70a3c47701bdfc3b54b656">wcmf\lib\persistence\concurrency\Lock\getObjectId</a></div><div class="ttdeci">getObjectId()</div><div class="ttdoc">Get the oid of the locked object. </div><div class="ttdef"><b>Definition:</b> <a href="_lock_8php_source.html#l00060">Lock.php:60</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1concurrency_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1concurrency.html">wcmf\lib\persistence\concurrency</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00046">namespaces.php:46</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock_html_ad5101064fad184bea4caff0b27a1ad6c"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#ad5101064fad184bea4caff0b27a1ad6c">wcmf\lib\persistence\concurrency\Lock\setCurrentState</a></div><div class="ttdeci">setCurrentState($currentState)</div><div class="ttdoc">Set the original state of the object in case of an optimistic lock. </div><div class="ttdef"><b>Definition:</b> <a href="_lock_8php_source.html#l00085">Lock.php:85</a></div></div>
@@ -241,7 +248,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:23 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:23 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

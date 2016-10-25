@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -283,7 +289,46 @@ Default policies</h4>
 <li><em>Not authenticated</em>: Resource is <em>not accessible</em></li>
 <li><em>Authenticated</em>: Resource is <em>accessible</em></li>
 </ul>
-<h2><a class="anchor" id="sec_input"></a>
+<h2><a class="anchor" id="sec_session"></a>
+Sessions</h2>
+<h3><a class="anchor" id="sec_session_impl"></a>
+Session implementations</h3>
+<p>wCMF provides the following <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html"><code>Session</code></a> implementations:</p>
+<ul>
+<li><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html"><code>DefaultSession</code></a></li>
+<li><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_auth_token_session.html"><code>AuthTokenSession</code></a></li>
+<li><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_client_side_session.html"><code>ClientSideSession</code></a></li>
+</ul>
+<h3><a class="anchor" id="sec_input_csrf"></a>
+CSRF protection</h3>
+<p>To avoid <a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery">CSRF</a> vulnerabilities in a web application, forms are usually protected by using <em>CSRF tokens</em>. The <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a83b01b7c7a64efde8a188728d83e7b7f"><code>Controller::generateCsrfToken</code></a> method is used to generate a unique token value for each form display. The token is validated by using the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6bf263e747eb41d37aa1204ca9869e7a"><code>Controller::validateCsrfToken</code></a> method when the form is submitted. For proper identification, tokens are referenced by a name (e.g. the form's name) which is passed to these methods.</p>
+<p>The following example demonstrates the usage of these methods.</p>
+<p>A new token value is generated each time the form is displayed:</p>
+<div class="fragment"><div class="line"><span class="keyword">class </span>UserController {</div>
+<div class="line"></div>
+<div class="line">  <span class="keyword">public</span> <span class="keyword">function</span> render() {</div>
+<div class="line"></div>
+<div class="line">    $this-&gt;generateCsrfToken(<span class="stringliteral">&#39;login&#39;</span>);</div>
+<div class="line"></div>
+<div class="line">  }</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>This creates the <code>csrf_token</code> response variable. The variable is used to add the token as a hidden field to the form:</p>
+<div class="fragment"><div class="line">&lt;input type=<span class="stringliteral">&quot;hidden&quot;</span> name=<span class="stringliteral">&quot;csrf_token&quot;</span> value=<span class="stringliteral">&quot;{$csrf_token}&quot;</span>&gt;</div>
+</div><!-- fragment --><p>After form submission the controller validates the token and acts appropriately:</p>
+<div class="fragment"><div class="line"><span class="keyword">class </span>UserController {</div>
+<div class="line"></div>
+<div class="line">  <span class="keyword">public</span> <span class="keyword">function</span> login() {</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!$this-&gt;validateCsrfToken(<span class="stringliteral">&#39;login&#39;</span>)) {</div>
+<div class="line">      <span class="comment">// error</span></div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span> {</div>
+<div class="line">      <span class="comment">// do login</span></div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">  }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="sec_input"></a>
 Input</h2>
 <p>Generally all external input sent to the application should be considered harmful.</p>
 <p>In PHP this input is stored in so called <em>Superglobals</em>, e.g. <em>$_GET</em>, <em>$_POST</em>, <em>$_FILES</em>. To avoid using these global variables directly in code, wCMF encapsulates them in the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance and makes them available through the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a664ea399753a23ceeb585c084ae7de48"><code>Request::getValue</code></a> method. Besides the variable name this method defines the following optional parameters:</p>
@@ -314,7 +359,7 @@ Input</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:25 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:25 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

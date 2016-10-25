@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -296,19 +302,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">   * @return String</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keyword">private</span> <span class="keyword">function</span> prepareMessage($message) {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">return</span> is_string($message) ? $message : <a class="code" href="classwcmf_1_1lib_1_1util_1_1_string_util.html#ae46769839b493da0198c8df8910ef756">StringUtil::getDump</a>($message);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  }</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">   * Check if the given target is a stream resource</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">   * @param $target</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">   * @return Boolean</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <span class="keyword">private</span> <span class="keyword">function</span> isStreamTarget($target) {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">return</span> preg_match(<span class="stringliteral">&#39;/^.+?:\/\//&#39;</span>, $target);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  }</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;?&gt;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">return</span> is_string($message) ? $message :</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      (is_object($message) &amp;&amp; method_exists($message, <span class="stringliteral">&#39;__toString&#39;</span>) ? $message-&gt;__toString() :</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <a class="code" href="classwcmf_1_1lib_1_1util_1_1_string_util.html#ae46769839b493da0198c8df8910ef756">StringUtil::getDump</a>($message));</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  }</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">   * Check if the given target is a stream resource</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">   * @param $target</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">   * @return Boolean</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="keyword">private</span> <span class="keyword">function</span> isStreamTarget($target) {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">return</span> preg_match(<span class="stringliteral">&#39;/^.+?:\/\//&#39;</span>, $target);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;}</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;?&gt;</div>
 <div class="ttc" id="namespace_monolog_1_1_processor_1_1_introspection_processor_html"><div class="ttname"><a href="namespace_monolog_1_1_processor_1_1_introspection_processor.html">IntrospectionProcessor</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1core_1_1impl_1_1_monolog_file_logger_html_a8d1211f6f08eef712b4cfc80f22895b2"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1impl_1_1_monolog_file_logger.html#a8d1211f6f08eef712b4cfc80f22895b2">wcmf\lib\core\impl\MonologFileLogger\fatal</a></div><div class="ttdeci">fatal($message)</div><div class="ttdef"><b>Definition:</b> <a href="_monolog_file_logger_8php_source.html#l00112">MonologFileLogger.php:112</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1util_1_1_string_util_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1util_1_1_string_util.html">StringUtil</a></div></div>
@@ -351,7 +359,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:22 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:22 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

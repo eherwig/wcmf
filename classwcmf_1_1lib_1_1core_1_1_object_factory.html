@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -129,8 +135,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:afc370f4105a7f394ec8b99e756161a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11fc3766874ff733f8c4c7e3fc5152a6"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">getInstance</a> ($name, $dynamicConfiguration=array())</td></tr>
 <tr class="separator:a11fc3766874ff733f8c4c7e3fc5152a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1b6be6b367bd53db92d8d7f76da9345"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#aa1b6be6b367bd53db92d8d7f76da9345">getClassInstance</a> ($class, $dynamicConfiguration=array())</td></tr>
-<tr class="separator:aa1b6be6b367bd53db92d8d7f76da9345"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b5ec0a5cbb0ad2e5d1977c0bd69291c"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a1b5ec0a5cbb0ad2e5d1977c0bd69291c">getNewInstance</a> ($name, $dynamicConfiguration=array())</td></tr>
+<tr class="separator:a1b5ec0a5cbb0ad2e5d1977c0bd69291c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab40efa1cc62e59f63c3dfef25fbdb7ec"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#ab40efa1cc62e59f63c3dfef25fbdb7ec">getInstanceOf</a> ($class, $dynamicConfiguration=array())</td></tr>
+<tr class="separator:ab40efa1cc62e59f63c3dfef25fbdb7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab03516bd9b8a9194921eb00721ec60d9"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#ab03516bd9b8a9194921eb00721ec60d9">registerInstance</a> ($name, $instance)</td></tr>
 <tr class="separator:ab03516bd9b8a9194921eb00721ec60d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a342b1676bf9651477ec79ed93f606244"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a342b1676bf9651477ec79ed93f606244">clear</a> ()</td></tr>
@@ -236,7 +244,7 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa1b6be6b367bd53db92d8d7f76da9345"></a>
+<a class="anchor" id="a1b5ec0a5cbb0ad2e5d1977c0bd69291c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -244,7 +252,44 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static getClassInstance </td>
+          <td class="memname">static getNewInstance </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$dynamicConfiguration</em> = <code>array()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a6383944c055628b90214804d41eaf538" title="Get a new instance from the configuration. ">Factory::getNewInstance()</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00055">55</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab40efa1cc62e59f63c3dfef25fbdb7ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static getInstanceOf </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>$class</em>, </td>
@@ -267,9 +312,9 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a2209f0362a332d8edf0350e401d5429e" title="Create an instance of a class. ">Factory::getClassInstance()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#ae80e3e07db0cee27a64c6517840b96e7" title="Create an instance of a class. ">Factory::getInstanceOf()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00055">55</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00063">63</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
 
 </div>
 </div>
@@ -306,7 +351,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#aeaf1352491b4375c7b928e48b7fe1777" title="Register a shared instance with a given name. ">Factory::registerInstance()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00063">63</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00071">71</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
 
 </div>
 </div>
@@ -325,7 +370,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a726ead1b43545328f430d48501a5da68" title="Add interfaces that instances must implement. ">Factory::addInterfaces()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00071">71</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00079">79</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
 
 </div>
 </div>
@@ -351,7 +396,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#aa821bec12eaa7e0f649397c9675ff505" title="Delete all created instances. ">Factory::clear()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00079">79</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
+<p>Definition at line <a class="el" href="_object_factory_8php_source.html#l00087">87</a> of file <a class="el" href="_object_factory_8php_source.html">ObjectFactory.php</a>.</p>
 
 </div>
 </div>
@@ -367,7 +412,7 @@ Static Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:29 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:28 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

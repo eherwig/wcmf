@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -269,6 +275,13 @@ Searching objects</h3>
 <div class="line"><span class="comment">// load all Article instances with titles starting with A and release date 2014 or later</span></div>
 <div class="line">$articles = ObjectFactory::getInstance(&#39;persistenceFacade&#39;)-&gt;loadObjects(&quot;Article&quot;, BuildDepth::SINGLE, $criteria);</div>
 </div><!-- fragment --><p>In this example all <code>Article</code> instances with titles starting with <em>A</em> and release date <em>2014 or later</em> are loaded.</p>
+<h4><a class="anchor" id="pers_search_null"></a>
+Null values</h4>
+<p>Null values are matched/not matched using the following criteria:</p>
+<div class="fragment"><div class="line"><span class="keyword">new</span> Criteria(<span class="stringliteral">&quot;Article&quot;</span>, <span class="stringliteral">&quot;title&quot;</span>, <span class="stringliteral">&quot;=&quot;</span>, null); <span class="comment">// translates to Article.title IS NULL</span></div>
+<div class="line"><span class="keyword">new</span> Criteria(<span class="stringliteral">&quot;Article&quot;</span>, <span class="stringliteral">&quot;title&quot;</span>, <span class="stringliteral">&quot;!=&quot;</span>, null); <span class="comment">// translates to Article.title IS NOT NULL</span></div>
+</div><!-- fragment --><h4><a class="anchor" id="pers_search_object_queries"></a>
+Object queries</h4>
 <p>More complex use cases are supported by the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_object_query.html"><code>ObjectQuery</code></a> class. For example it allows to set search constraints on connected objects as shown in the following example:</p>
 <div class="fragment"><div class="line"><span class="comment">// create a Author query</span></div>
 <div class="line">$query = <span class="keyword">new</span> ObjectQuery(<span class="stringliteral">&#39;Author&#39;</span>);</div>
@@ -459,7 +472,7 @@ Transactions</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:25 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:25 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

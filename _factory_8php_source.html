@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -126,50 +132,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html">   19</a></span>&#160;<span class="keyword">interface </span><a class="code" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html">Factory</a> {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">   * Get an instance from the configuration.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">   * @note Instance names are treated case insensitive</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">   * @param $name The name of the instance (section, where the instance is defined)</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">   * @param $dynamicConfiguration Associative array with key value pairs for</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">   * dynamic instance properties (optional)</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">   * @return Object</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a293cb7dbd49db9a4819cd264ec75e0a3">getInstance</a>($name, $dynamicConfiguration=array());</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">   * Create an instance of a class. Instances created with this method are not shared.</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">   * @param $class The name of the class</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">   * @param $dynamicConfiguration Associative array with key value pairs for</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">   * dynamic instance properties (optional)</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">   * @return Object</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a2209f0362a332d8edf0350e401d5429e">getClassInstance</a>($class, $dynamicConfiguration=array());</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">   * Register a shared instance with a given name.</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">   * @note Instance names are treated case insensitive</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">   * @param $name The name of the instance.</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">   * @param $instance The instance</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#aeaf1352491b4375c7b928e48b7fe1777">registerInstance</a>($name, $instance);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">   * Add interfaces that instances must implement.</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">   * @param $interfaces Associative array with instance names as keys and interface names as values.</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a726ead1b43545328f430d48501a5da68">addInterfaces</a>(array $interfaces);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">   * Delete all created instances.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">   * Get an instance from the configuration. Instances created with this method</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">   * might be shared (depending on the __shared configuration property).</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">   * @note Instance names are treated case insensitive</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">   * @param $name The name of the instance (section, where the instance is defined)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">   * @param $dynamicConfiguration Associative array with key value pairs for</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">   * dynamic instance properties (optional)</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">   * @return Object</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a293cb7dbd49db9a4819cd264ec75e0a3">getInstance</a>($name, $dynamicConfiguration=array());</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">   * Get a new instance from the configuration. Instances created with this method are not shared.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">   * @note Instance names are treated case insensitive</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">   * @param $name The name of the instance (section, where the instance is defined)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">   * @param $dynamicConfiguration Associative array with key value pairs for</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">   * dynamic instance properties (optional)</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">   * @return Object</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a6383944c055628b90214804d41eaf538">getNewInstance</a>($name, $dynamicConfiguration=array());</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">   * Create an instance of a class. Instances created with this method are not shared.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">   * @param $class The name of the class</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">   * @param $dynamicConfiguration Associative array with key value pairs for</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">   * dynamic instance properties (optional)</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">   * @return Object</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#ae80e3e07db0cee27a64c6517840b96e7">getInstanceOf</a>($class, $dynamicConfiguration=array());</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">   * Register a shared instance with a given name.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">   * @note Instance names are treated case insensitive</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">   * @param $name The name of the instance.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">   * @param $instance The instance</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#aa821bec12eaa7e0f649397c9675ff505">clear</a>();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;?&gt;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#aeaf1352491b4375c7b928e48b7fe1777">registerInstance</a>($name, $instance);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">   * Add interfaces that instances must implement.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">   * @param $interfaces Associative array with instance names as keys and interface names as values.</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a726ead1b43545328f430d48501a5da68">addInterfaces</a>(array $interfaces);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">   * Delete all created instances.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#aa821bec12eaa7e0f649397c9675ff505">clear</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;?&gt;</div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1core_1_1_factory_html_a293cb7dbd49db9a4819cd264ec75e0a3"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a293cb7dbd49db9a4819cd264ec75e0a3">wcmf\lib\core\Factory\getInstance</a></div><div class="ttdeci">getInstance($name, $dynamicConfiguration=array())</div><div class="ttdoc">Get an instance from the configuration. </div></div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1core_1_1_factory_html_a2209f0362a332d8edf0350e401d5429e"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a2209f0362a332d8edf0350e401d5429e">wcmf\lib\core\Factory\getClassInstance</a></div><div class="ttdeci">getClassInstance($class, $dynamicConfiguration=array())</div><div class="ttdoc">Create an instance of a class. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1core_1_1_factory_html_a726ead1b43545328f430d48501a5da68"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a726ead1b43545328f430d48501a5da68">wcmf\lib\core\Factory\addInterfaces</a></div><div class="ttdeci">addInterfaces(array $interfaces)</div><div class="ttdoc">Add interfaces that instances must implement. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1core_1_1_factory_html_aeaf1352491b4375c7b928e48b7fe1777"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#aeaf1352491b4375c7b928e48b7fe1777">wcmf\lib\core\Factory\registerInstance</a></div><div class="ttdeci">registerInstance($name, $instance)</div><div class="ttdoc">Register a shared instance with a given name. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1core_1_1_factory_html_a6383944c055628b90214804d41eaf538"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a6383944c055628b90214804d41eaf538">wcmf\lib\core\Factory\getNewInstance</a></div><div class="ttdeci">getNewInstance($name, $dynamicConfiguration=array())</div><div class="ttdoc">Get a new instance from the configuration. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1core_1_1_factory_html_aa821bec12eaa7e0f649397c9675ff505"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#aa821bec12eaa7e0f649397c9675ff505">wcmf\lib\core\Factory\clear</a></div><div class="ttdeci">clear()</div><div class="ttdoc">Delete all created instances. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1core_1_1_factory_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1core_1_1_factory.html">wcmf\lib\core\Factory</a></div><div class="ttdoc">Interface for Factory implementations. </div><div class="ttdef"><b>Definition:</b> <a href="_factory_8php_source.html#l00019">Factory.php:19</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1core_1_1_factory_html_ae80e3e07db0cee27a64c6517840b96e7"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#ae80e3e07db0cee27a64c6517840b96e7">wcmf\lib\core\Factory\getInstanceOf</a></div><div class="ttdeci">getInstanceOf($class, $dynamicConfiguration=array())</div><div class="ttdoc">Create an instance of a class. </div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1core_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core.html">wcmf\lib\core</a></div><div class="ttdoc">Core classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00011">namespaces.php:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
@@ -183,7 +201,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:22 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:21 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

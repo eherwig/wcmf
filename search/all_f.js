@@ -13,8 +13,6 @@ var searchData=
   ['nodeunifiedrdbmapper',['NodeUnifiedRDBMapper',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html',1,'wcmf::lib::model::mapper']]],
   ['nodeutil',['NodeUtil',['../classwcmf_1_1lib_1_1model_1_1_node_util.html',1,'wcmf::lib::model']]],
   ['nodevalueiterator',['NodeValueIterator',['../classwcmf_1_1lib_1_1model_1_1_node_value_iterator.html',1,'wcmf::lib::model']]],
-  ['normalizepaths',['normalizePaths',['../classwcmf_1_1lib_1_1util_1_1_u_r_i_util.html#ada506ae64236e0ac976372ef373ededf',1,'wcmf::lib::util::URIUtil']]],
-  ['normalizeslashes',['normalizeSlashes',['../classwcmf_1_1lib_1_1util_1_1_u_r_i_util.html#af7a696a05bc86abd718aab5b15da1967',1,'wcmf::lib::util::URIUtil']]],
   ['null',['NULL',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_s_q_l_const.html#a91a5a1066d3876aada829d106ede64d6',1,'wcmf::lib::model::mapper::SQLConst']]],
   ['null_5foid',['NULL_OID',['../classwcmf_1_1lib_1_1persistence_1_1_object_id.html#a194c2ee5508a35b5463eb63fc680c8b6',1,'wcmf::lib::persistence::ObjectId']]],
   ['nullcache',['NullCache',['../classwcmf_1_1lib_1_1io_1_1impl_1_1_null_cache.html',1,'wcmf::lib::io::impl']]],

@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -138,7 +144,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory__inherit__graph.svg" width="154" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory__inherit__graph.svg" width="154" height="478"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -147,8 +153,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9a81f1364d5d70f4d03a219f3edeac3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a293cb7dbd49db9a4819cd264ec75e0a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#a293cb7dbd49db9a4819cd264ec75e0a3">getInstance</a> ($name, $dynamicConfiguration=array())</td></tr>
 <tr class="separator:a293cb7dbd49db9a4819cd264ec75e0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2209f0362a332d8edf0350e401d5429e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#a2209f0362a332d8edf0350e401d5429e">getClassInstance</a> ($class, $dynamicConfiguration=array())</td></tr>
-<tr class="separator:a2209f0362a332d8edf0350e401d5429e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6383944c055628b90214804d41eaf538"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#a6383944c055628b90214804d41eaf538">getNewInstance</a> ($name, $dynamicConfiguration=array())</td></tr>
+<tr class="separator:a6383944c055628b90214804d41eaf538"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae80e3e07db0cee27a64c6517840b96e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#ae80e3e07db0cee27a64c6517840b96e7">getInstanceOf</a> ($class, $dynamicConfiguration=array())</td></tr>
+<tr class="separator:ae80e3e07db0cee27a64c6517840b96e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaf1352491b4375c7b928e48b7fe1777"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#aeaf1352491b4375c7b928e48b7fe1777">registerInstance</a> ($name, $instance)</td></tr>
 <tr class="separator:aeaf1352491b4375c7b928e48b7fe1777"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a726ead1b43545328f430d48501a5da68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#a726ead1b43545328f430d48501a5da68">addInterfaces</a> (array $interfaces)</td></tr>
@@ -237,12 +245,43 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2209f0362a332d8edf0350e401d5429e"></a>
+<a class="anchor" id="a6383944c055628b90214804d41eaf538"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">getClassInstance </td>
+          <td class="memname">getNewInstance </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$dynamicConfiguration</em> = <code>array()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a6383944c055628b90214804d41eaf538" title="Get a new instance from the configuration. ">Factory::getNewInstance()</a> </dd></dl>
+
+<p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a6383944c055628b90214804d41eaf538">Factory</a>.</p>
+
+<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00144">144</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae80e3e07db0cee27a64c6517840b96e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getInstanceOf </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>$class</em>, </td>
@@ -260,11 +299,11 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a2209f0362a332d8edf0350e401d5429e" title="Create an instance of a class. ">Factory::getClassInstance()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#ae80e3e07db0cee27a64c6517840b96e7" title="Create an instance of a class. ">Factory::getInstanceOf()</a> </dd></dl>
 
-<p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a2209f0362a332d8edf0350e401d5429e">Factory</a>.</p>
+<p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#ae80e3e07db0cee27a64c6517840b96e7">Factory</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00144">144</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00156">156</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
 
 </div>
 </div>
@@ -295,7 +334,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#aeaf1352491b4375c7b928e48b7fe1777">Factory</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00157">157</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00169">169</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
 
 </div>
 </div>
@@ -316,7 +355,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a726ead1b43545328f430d48501a5da68">Factory</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00165">165</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00177">177</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
 
 </div>
 </div>
@@ -336,7 +375,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#aa821bec12eaa7e0f649397c9675ff505">Factory</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00172">172</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00184">184</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
 
 </div>
 </div>
@@ -371,7 +410,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00181">181</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00193">193</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
 
 </div>
 </div>
@@ -429,7 +468,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Object </dd></dl>
 
-<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00198">198</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00210">210</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
 
 </div>
 </div>
@@ -464,7 +503,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Mixed </dd></dl>
 
-<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00319">319</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00331">331</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
 
 </div>
 </div>
@@ -499,7 +538,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Interface or null, if undefined </dd></dl>
 
-<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00364">364</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_factory_8php_source.html#l00376">376</a> of file <a class="el" href="_default_factory_8php_source.html">DefaultFactory.php</a>.</p>
 
 </div>
 </div>
@@ -635,7 +674,7 @@ Protected Attributes</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:30 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:28 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

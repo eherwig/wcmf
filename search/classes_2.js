@@ -3,6 +3,7 @@ var searchData=
   ['cache',['Cache',['../interfacewcmf_1_1lib_1_1io_1_1_cache.html',1,'wcmf::lib::io']]],
   ['chainedpermissionmanager',['ChainedPermissionManager',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_chained_permission_manager.html',1,'wcmf::lib::security::impl']]],
   ['classloader',['ClassLoader',['../classwcmf_1_1lib_1_1core_1_1_class_loader.html',1,'wcmf::lib::core']]],
+  ['clientsidesession',['ClientSideSession',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_client_side_session.html',1,'wcmf::lib::core::impl']]],
   ['concurrencycontroller',['ConcurrencyController',['../classwcmf_1_1application_1_1controller_1_1_concurrency_controller.html',1,'wcmf::application::controller']]],
   ['concurrencymanager',['ConcurrencyManager',['../interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html',1,'wcmf::lib::persistence::concurrency']]],
   ['configactionkeyprovider',['ConfigActionKeyProvider',['../classwcmf_1_1lib_1_1config_1_1impl_1_1_config_action_key_provider.html',1,'wcmf::lib::config::impl']]],

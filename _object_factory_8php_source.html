@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -157,56 +163,65 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">   * @see Factory::getClassInstance()</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">   * @see Factory::getNewInstance()</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#aa1b6be6b367bd53db92d8d7f76da9345">   55</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#aa1b6be6b367bd53db92d8d7f76da9345">getClassInstance</a>($class, $dynamicConfiguration=array()) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a1b5ec0a5cbb0ad2e5d1977c0bd69291c">   55</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a1b5ec0a5cbb0ad2e5d1977c0bd69291c">getNewInstance</a>($name, $dynamicConfiguration=array()) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    self::checkConfig();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> self::$factory-&gt;getClassInstance($class, $dynamicConfiguration);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> self::$factory-&gt;getNewInstance($name, $dynamicConfiguration);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">   * @see Factory::registerInstance()</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">   * @see Factory::getInstanceOf()</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#ab03516bd9b8a9194921eb00721ec60d9">   63</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#ab03516bd9b8a9194921eb00721ec60d9">registerInstance</a>($name, $instance) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#ab40efa1cc62e59f63c3dfef25fbdb7ec">   63</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#ab40efa1cc62e59f63c3dfef25fbdb7ec">getInstanceOf</a>($class, $dynamicConfiguration=array()) {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    self::checkConfig();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    self::$factory-&gt;registerInstance($name, $instance);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> self::$factory-&gt;getInstanceOf($class, $dynamicConfiguration);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">   * @see Factory::addInterfaces()</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">   * @see Factory::registerInstance()</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a860191ca1c784f19b4cc8300f356edc7">   71</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a860191ca1c784f19b4cc8300f356edc7">addInterfaces</a>($interfaces) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#ab03516bd9b8a9194921eb00721ec60d9">   71</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#ab03516bd9b8a9194921eb00721ec60d9">registerInstance</a>($name, $instance) {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    self::checkConfig();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    self::$factory-&gt;addInterfaces($interfaces);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    self::$factory-&gt;registerInstance($name, $instance);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">   * @see Factory::clear()</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">   * @see Factory::addInterfaces()</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a342b1676bf9651477ec79ed93f606244">   79</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a342b1676bf9651477ec79ed93f606244">clear</a>() {</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a860191ca1c784f19b4cc8300f356edc7">   79</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a860191ca1c784f19b4cc8300f356edc7">addInterfaces</a>($interfaces) {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    self::checkConfig();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    self::$factory-&gt;clear();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    self::$factory-&gt;addInterfaces($interfaces);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  }</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">   * Check if the configuration is valid.</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">   * @see Factory::clear()</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">function</span> checkConfig() {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (self::$factory == null) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a>(<span class="stringliteral">&#39;No Factory instance provided. Do this by calling the configure() method.&#39;</span>);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;?&gt;</div>
-<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_aa1b6be6b367bd53db92d8d7f76da9345"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#aa1b6be6b367bd53db92d8d7f76da9345">wcmf\lib\core\ObjectFactory\getClassInstance</a></div><div class="ttdeci">static getClassInstance($class, $dynamicConfiguration=array())</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00055">ObjectFactory.php:55</a></div></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a342b1676bf9651477ec79ed93f606244">   87</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a342b1676bf9651477ec79ed93f606244">clear</a>() {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    self::checkConfig();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    self::$factory-&gt;clear();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">   * Check if the configuration is valid.</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">function</span> checkConfig() {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (self::$factory == null) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a>(<span class="stringliteral">&#39;No Factory instance provided. Do this by calling the configure() method.&#39;</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;?&gt;</div>
 <div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_afc370f4105a7f394ec8b99e756161a9b"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#afc370f4105a7f394ec8b99e756161a9b">wcmf\lib\core\ObjectFactory\isConfigured</a></div><div class="ttdeci">static isConfigured()</div><div class="ttdoc">Check if the factory is configured. </div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00040">ObjectFactory.php:40</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a342b1676bf9651477ec79ed93f606244"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a342b1676bf9651477ec79ed93f606244">wcmf\lib\core\ObjectFactory\clear</a></div><div class="ttdeci">static clear()</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00079">ObjectFactory.php:79</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a860191ca1c784f19b4cc8300f356edc7"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a860191ca1c784f19b4cc8300f356edc7">wcmf\lib\core\ObjectFactory\addInterfaces</a></div><div class="ttdeci">addInterfaces($interfaces)</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00071">ObjectFactory.php:71</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a342b1676bf9651477ec79ed93f606244"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a342b1676bf9651477ec79ed93f606244">wcmf\lib\core\ObjectFactory\clear</a></div><div class="ttdeci">static clear()</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00087">ObjectFactory.php:87</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_ab40efa1cc62e59f63c3dfef25fbdb7ec"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#ab40efa1cc62e59f63c3dfef25fbdb7ec">wcmf\lib\core\ObjectFactory\getInstanceOf</a></div><div class="ttdeci">static getInstanceOf($class, $dynamicConfiguration=array())</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00063">ObjectFactory.php:63</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a860191ca1c784f19b4cc8300f356edc7"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a860191ca1c784f19b4cc8300f356edc7">wcmf\lib\core\ObjectFactory\addInterfaces</a></div><div class="ttdeci">addInterfaces($interfaces)</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00079">ObjectFactory.php:79</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1config_1_1_configuration_exception_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a11fc3766874ff733f8c4c7e3fc5152a6"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">wcmf\lib\core\ObjectFactory\getInstance</a></div><div class="ttdeci">static getInstance($name, $dynamicConfiguration=array())</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00047">ObjectFactory.php:47</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html">wcmf\lib\core\ObjectFactory</a></div><div class="ttdoc">ObjectFactory implements the service locator pattern by wrapping a Factory instance and providing sta...</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00024">ObjectFactory.php:24</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_ab03516bd9b8a9194921eb00721ec60d9"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#ab03516bd9b8a9194921eb00721ec60d9">wcmf\lib\core\ObjectFactory\registerInstance</a></div><div class="ttdeci">static registerInstance($name, $instance)</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00063">ObjectFactory.php:63</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_ab03516bd9b8a9194921eb00721ec60d9"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#ab03516bd9b8a9194921eb00721ec60d9">wcmf\lib\core\ObjectFactory\registerInstance</a></div><div class="ttdeci">static registerInstance($name, $instance)</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00071">ObjectFactory.php:71</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1core_1_1_factory_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1core_1_1_factory.html">wcmf\lib\core\Factory</a></div><div class="ttdoc">Interface for Factory implementations. </div><div class="ttdef"><b>Definition:</b> <a href="_factory_8php_source.html#l00019">Factory.php:19</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a1b5ec0a5cbb0ad2e5d1977c0bd69291c"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a1b5ec0a5cbb0ad2e5d1977c0bd69291c">wcmf\lib\core\ObjectFactory\getNewInstance</a></div><div class="ttdeci">static getNewInstance($name, $dynamicConfiguration=array())</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00055">ObjectFactory.php:55</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1config_1_1_configuration_exception_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">wcmf\lib\config\ConfigurationException</a></div><div class="ttdoc">ConfigurationException signals an exception in the configuration. </div><div class="ttdef"><b>Definition:</b> <a href="_configuration_exception_8php_source.html#l00018">ConfigurationException.php:18</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_aad68e477a898d82686dcc48bde74f070"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#aad68e477a898d82686dcc48bde74f070">wcmf\lib\core\ObjectFactory\configure</a></div><div class="ttdeci">static configure(Factory $factory)</div><div class="ttdoc">Configure the factory. </div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00032">ObjectFactory.php:32</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1core_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core.html">wcmf\lib\core</a></div><div class="ttdoc">Core classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00011">namespaces.php:11</a></div></div>
@@ -222,7 +237,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:22 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:22 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

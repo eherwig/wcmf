@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -104,7 +110,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a83b01b7c7a64efde8a188728d83e7b7f">Controller</a>
 </li>
 <li>get()
-: <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a499d39d1876a05b20e1ca8e8a1c2b466">DefaultSession</a>
+: <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_client_side_session.html#a499d39d1876a05b20e1ca8e8a1c2b466">ClientSideSession</a>
+, <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a499d39d1876a05b20e1ca8e8a1c2b466">DefaultSession</a>
 , <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#a499d39d1876a05b20e1ca8e8a1c2b466">Session</a>
 , <a class="el" href="interfacewcmf_1_1lib_1_1io_1_1_cache.html#ae88a743f383e72aecb9fc49a102550db">Cache</a>
 , <a class="el" href="classwcmf_1_1lib_1_1io_1_1impl_1_1_file_cache.html#ae88a743f383e72aecb9fc49a102550db">FileCache</a>
@@ -166,7 +173,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a13c2aa2c26e87335f437ce62926a8ccc">PersistenceMapper</a>
 </li>
 <li>getAuthUser()
-: <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a687dba7af92a5d45f6363b17fe941ff7">DefaultSession</a>
+: <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_auth_token_session.html#a687dba7af92a5d45f6363b17fe941ff7">AuthTokenSession</a>
+, <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_client_side_session.html#a687dba7af92a5d45f6363b17fe941ff7">ClientSideSession</a>
+, <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a687dba7af92a5d45f6363b17fe941ff7">DefaultSession</a>
 , <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#a687dba7af92a5d45f6363b17fe941ff7">Session</a>
 , <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1impl_1_1_default_lock_handler.html#a687dba7af92a5d45f6363b17fe941ff7">DefaultLockHandler</a>
 </li>
@@ -217,11 +226,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>getChildrenEx()
 : <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#aedb81ded0f3ec4dbbbdb734014fc5de3">Node</a>
-</li>
-<li>getClassInstance()
-: <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a2209f0362a332d8edf0350e401d5429e">Factory</a>
-, <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#a2209f0362a332d8edf0350e401d5429e">DefaultFactory</a>
-, <a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#aa1b6be6b367bd53db92d8d7f76da9345">ObjectFactory</a>
 </li>
 <li>getCode()
 : <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#ab5e24da53b4a0d0848b18c1e832f47ff">ApplicationError</a>
@@ -276,6 +280,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>getControllerName()
 : <a class="el" href="classwcmf_1_1test_1_1lib_1_1_controller_test_case.html#a1b465007a1196146db46a2890a1391a8">ControllerTestCase</a>
+</li>
+<li>getCookiePrefix()
+: <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_client_side_session.html#a99225dc2c9cffcb1461ac3ed402c4cef">ClientSideSession</a>
+, <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a99225dc2c9cffcb1461ac3ed402c4cef">DefaultSession</a>
 </li>
 <li>getCopy()
 : <a class="el" href="classwcmf_1_1application_1_1controller_1_1_copy_controller.html#a61d7958d10a50fcd3966305bc98a41b2">CopyController</a>
@@ -456,7 +464,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_persistence_action_key_provider.html#a12251d0c022e9e21c137a105ff683f13">PersistenceActionKeyProvider</a>
 </li>
 <li>getID()
-: <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a30dd7fff4fec7a39f9be9d27d4b22a59">DefaultSession</a>
+: <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_client_side_session.html#a30dd7fff4fec7a39f9be9d27d4b22a59">ClientSideSession</a>
+, <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#a30dd7fff4fec7a39f9be9d27d4b22a59">DefaultSession</a>
 , <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_session.html#a30dd7fff4fec7a39f9be9d27d4b22a59">Session</a>
 </li>
 <li>getId()
@@ -490,6 +499,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a293cb7dbd49db9a4819cd264ec75e0a3">Factory</a>
 , <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#a293cb7dbd49db9a4819cd264ec75e0a3">DefaultFactory</a>
 , <a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory</a>
+</li>
+<li>getInstanceOf()
+: <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#ae80e3e07db0cee27a64c6517840b96e7">Factory</a>
+, <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#ae80e3e07db0cee27a64c6517840b96e7">DefaultFactory</a>
+, <a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#ab40efa1cc62e59f63c3dfef25fbdb7ec">ObjectFactory</a>
 </li>
 <li>getInterface()
 : <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#afd94af857dc8d9ddb48f8cdebc91ad4c">DefaultFactory</a>
@@ -619,6 +633,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_reference_description.html#a3d0963e68bb313b163a73f2803c64600">ReferenceDescription</a>
 , <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_role.html#a3d0963e68bb313b163a73f2803c64600">AbstractRole</a>
 , <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html#a3d0963e68bb313b163a73f2803c64600">Role</a>
+</li>
+<li>getNewInstance()
+: <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html#a6383944c055628b90214804d41eaf538">Factory</a>
+, <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#a6383944c055628b90214804d41eaf538">DefaultFactory</a>
+, <a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a1b5ec0a5cbb0ad2e5d1977c0bd69291c">ObjectFactory</a>
 </li>
 <li>getNewValue()
 : <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_property_change_event.html#a72b60645d8a8254dffee46120b9d0900">PropertyChangeEvent</a>
@@ -759,9 +778,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>getPageSize()
 : <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html#a33b4768492c075cc44f18e80eb97c756">PagingInfo</a>
-</li>
-<li>getPageURL()
-: <a class="el" href="classwcmf_1_1lib_1_1util_1_1_u_r_i_util.html#ae4a297bdbdd9d68a8721aa5889bf258a">URIUtil</a>
 </li>
 <li>getParameterPosition()
 : <a class="el" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a3d9f8336d2d52622a626a11d5c5ff344">ObjectQuery</a>
@@ -1115,6 +1131,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_many_to_many_relation_description.html#a70e2f14712b1571549cc80598654e1ae">RDBManyToManyRelationDescription</a>
 , <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_relation_description.html#a70e2f14712b1571549cc80598654e1ae">RelationDescription</a>
 </li>
+<li>getTokenData()
+: <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_client_side_session.html#ac9f834778bbb1fafd9045d6d1fe10e31">ClientSideSession</a>
+</li>
+<li>getTokenIssuer()
+: <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_client_side_session.html#a56097c2a3a1a37db7e7a1e62fc672c88">ClientSideSession</a>
+</li>
+<li>getTokenSigner()
+: <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_client_side_session.html#a3a8f2e885d3901c37abe8c347c6d7820">ClientSideSession</a>
+</li>
 <li>getTotalCount()
 : <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html#a6cfa3aa502ba0cfe2eb5a3949e6e7e1b">PagingInfo</a>
 </li>
@@ -1242,7 +1267,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:48 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:39 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

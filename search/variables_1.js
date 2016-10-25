@@ -9,6 +9,8 @@ var searchData=
   ['attrib_5ftype',['ATTRIB_TYPE',['../classwcmf_1_1lib_1_1model_1_1_node_comparator.html#a470eed2a677967c0fb3fafecd419bdab',1,'wcmf::lib::model::NodeComparator']]],
   ['attribute_5fname_5finvalid',['ATTRIBUTE_NAME_INVALID',['../namespacewcmf_1_1lib_1_1presentation.html#ac6ec36e67bd853ae2914644b426e920a',1,'wcmf::lib::presentation']]],
   ['attribute_5fvalue_5finvalid',['ATTRIBUTE_VALUE_INVALID',['../namespacewcmf_1_1lib_1_1presentation.html#a709f4d8f48d3f912830a79fdb22e27ad',1,'wcmf::lib::presentation']]],
+  ['auth_5ftype',['AUTH_TYPE',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_client_side_session.html#a651b69ac8852cddc45d5adae1d0f708e',1,'wcmf::lib::core::impl::ClientSideSession']]],
+  ['auth_5fuser_5fname',['AUTH_USER_NAME',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_client_side_session.html#adab73328747ad0ee9695df14bd0e384c',1,'wcmf\lib\core\impl\ClientSideSession\AUTH_USER_NAME()'],['../classwcmf_1_1lib_1_1core_1_1impl_1_1_default_session.html#afcb6d99ed51e5929890e5031f7366b89',1,'wcmf\lib\core\impl\DefaultSession\AUTH_USER_NAME()']]],
   ['authentication_5ffailed',['AUTHENTICATION_FAILED',['../namespacewcmf_1_1lib_1_1presentation.html#a38c0d81e1eec961deb6524432c0bcaf0',1,'wcmf::lib::presentation']]],
   ['authorization_5fsection',['AUTHORIZATION_SECTION',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_static_permission_manager.html#a3a51070e492fb719641f9cdba64ba112',1,'wcmf::lib::security::impl::StaticPermissionManager']]]
 ];

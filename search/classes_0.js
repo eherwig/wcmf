@@ -23,5 +23,6 @@ var searchData=
   ['attributedescription',['AttributeDescription',['../classwcmf_1_1lib_1_1persistence_1_1_attribute_description.html',1,'wcmf::lib::persistence']]],
   ['auditingoutputstrategy',['AuditingOutputStrategy',['../classwcmf_1_1lib_1_1persistence_1_1output_1_1impl_1_1_auditing_output_strategy.html',1,'wcmf::lib::persistence::output::impl']]],
   ['authenticationmanager',['AuthenticationManager',['../interfacewcmf_1_1lib_1_1security_1_1_authentication_manager.html',1,'wcmf::lib::security']]],
-  ['authorizationexception',['AuthorizationException',['../classwcmf_1_1lib_1_1security_1_1_authorization_exception.html',1,'wcmf::lib::security']]]
+  ['authorizationexception',['AuthorizationException',['../classwcmf_1_1lib_1_1security_1_1_authorization_exception.html',1,'wcmf::lib::security']]],
+  ['authtokensession',['AuthTokenSession',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_auth_token_session.html',1,'wcmf::lib::core::impl']]]
 ];

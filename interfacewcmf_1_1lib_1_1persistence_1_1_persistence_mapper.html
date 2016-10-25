@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -753,7 +759,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Load a <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject defines the interface of all persistent objects. ">PersistentObject</a> instance from the storage. </p>
-<dl class="section note"><dt>Note</dt><dd>PersistentMapper implementations must call the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#afc96ce03b1c876abdaafc59a03b3e9ff" title="This method is called always after loading the object from the store. ">PersistentObject::afterLoad()</a> lifecycle callcack on each loaded object and register it at the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html" title="PersistenceFacade defines the interface for PersistenceFacade implementations. ">PersistenceFacade</a> using the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a12fd9a70f621456c73bcc92098348806" title="Register a loaded object. ">Transaction::registerLoaded()</a> method. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>PersistentMapper implementations must call the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#afc96ce03b1c876abdaafc59a03b3e9ff" title="This method is called always after loading the object from the store. ">PersistentObject::afterLoad()</a> lifecycle callcack on each loaded object and attach it to the current transaction using the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a24a0881da50c6149b528b034d729a15b" title="Attach an object to the transaction. ">Transaction::attach()</a> method. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$oid</td><td>The object id of the object to construct </td></tr>
@@ -1113,7 +1119,7 @@ Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:35 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:31 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

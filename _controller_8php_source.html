@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -291,7 +297,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ac6008411fc9e89758eba4519a3f0ece7">  185</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#ac6008411fc9e89758eba4519a3f0ece7">executeSubAction</a>($action) {</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    $curRequest = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">getRequest</a>();</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    $subRequest = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;request&#39;</span>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    $subRequest = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a1b5ec0a5cbb0ad2e5d1977c0bd69291c">ObjectFactory::getNewInstance</a>(<span class="stringliteral">&#39;request&#39;</span>);</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    $subRequest-&gt;setSender(get_class($this));</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    $subRequest-&gt;setContext($curRequest-&gt;getContext());</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    $subRequest-&gt;setAction($action);</div>
@@ -299,7 +305,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    $subRequest-&gt;setValues($curRequest-&gt;getValues());</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    $subRequest-&gt;setFormat(<span class="stringliteral">&#39;null&#39;</span>);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    $subRequest-&gt;setResponseFormat(<span class="stringliteral">&#39;null&#39;</span>);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    $subResponse = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;response&#39;</span>);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    $subResponse = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a1b5ec0a5cbb0ad2e5d1977c0bd69291c">ObjectFactory::getNewInstance</a>(<span class="stringliteral">&#39;response&#39;</span>);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    $this-&gt;actionMapper-&gt;processAction($subRequest, $subResponse);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">return</span> $subResponse;</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  }</div>
@@ -533,7 +539,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_request_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a0c6fcf144028e40a3fc6a94987a4155f"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a0c6fcf144028e40a3fc6a94987a4155f">wcmf\lib\presentation\Controller\getLocalSessionValue</a></div><div class="ttdeci">getLocalSessionValue($key, $default=null)</div><div class="ttdoc">Set the value of a local session variable. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00377">Controller.php:377</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1_persistence_facade_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html">PersistenceFacade</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a11fc3766874ff733f8c4c7e3fc5152a6"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">wcmf\lib\core\ObjectFactory\getInstance</a></div><div class="ttdeci">static getInstance($name, $dynamicConfiguration=array())</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00047">ObjectFactory.php:47</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a6bf263e747eb41d37aa1204ca9869e7a"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6bf263e747eb41d37aa1204ca9869e7a">wcmf\lib\presentation\Controller\validateCsrfToken</a></div><div class="ttdeci">validateCsrfToken($name)</div><div class="ttdoc">Validate the CSRF token contained in the request against the token stored in the session. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00356">Controller.php:356</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1i18n_1_1_message_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">wcmf\lib\i18n\Message</a></div><div class="ttdoc">Message is used to get localized messages to be used in the user interface. </div><div class="ttdef"><b>Definition:</b> <a href="_message_8php_source.html#l00023">Message.php:23</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a87b623a9d1bd969d602c10eee8b40d04"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a87b623a9d1bd969d602c10eee8b40d04">wcmf\lib\presentation\Controller\checkLanguageParameter</a></div><div class="ttdeci">checkLanguageParameter()</div><div class="ttdoc">Checks the language request parameter and adds an response error, if it is not contained in the Local...</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00323">Controller.php:323</a></div></div>
@@ -552,6 +557,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html">wcmf\lib\presentation\ActionMapper</a></div><div class="ttdoc">ActionMapper implementations are responsible for instantiating and executing Controllers based on the...</div><div class="ttdef"><b>Definition:</b> <a href="_action_mapper_8php_source.html#l00021">ActionMapper.php:21</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_application_error_html_a7b6de2953b070910660cee9f229bc554"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554">wcmf\lib\presentation\ApplicationError\get</a></div><div class="ttdeci">static get($code, $data=null)</div><div class="ttdoc">Factory method for retrieving a predefind error instance. </div><div class="ttdef"><b>Definition:</b> <a href="_application_error_8php_source.html#l00141">ApplicationError.php:141</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_illegal_argument_exception_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_illegal_argument_exception.html">IllegalArgumentException</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a1b5ec0a5cbb0ad2e5d1977c0bd69291c"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a1b5ec0a5cbb0ad2e5d1977c0bd69291c">wcmf\lib\core\ObjectFactory\getNewInstance</a></div><div class="ttdeci">static getNewInstance($name, $dynamicConfiguration=array())</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00055">ObjectFactory.php:55</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_session_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_session.html">Session</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a1df29271eb3c879e6ebf5c9f60ddc806"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a1df29271eb3c879e6ebf5c9f60ddc806">wcmf\lib\presentation\Controller\execute</a></div><div class="ttdeci">execute($method=null)</div><div class="ttdoc">Execute the Controller resulting in its action processed. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00131">Controller.php:131</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1_controller_html_a1866f1ac334aa1a5c2c39b4e5178c92c"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a1866f1ac334aa1a5c2c39b4e5178c92c">wcmf\lib\presentation\Controller\__construct</a></div><div class="ttdeci">__construct(Session $session, PersistenceFacade $persistenceFacade, PermissionManager $permissionManager, ActionMapper $actionMapper, Localization $localization, Message $message, Configuration $configuration)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8php_source.html#l00075">Controller.php:75</a></div></div>
@@ -576,7 +582,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:24 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:24 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

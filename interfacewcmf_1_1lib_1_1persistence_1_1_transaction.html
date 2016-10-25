@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -119,19 +125,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1persistence_1_1_transaction__inherit__graph.svg" width="150" height="683"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1persistence_1_1_transaction__inherit__graph.svg" width="150" height="654"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a12fd9a70f621456c73bcc92098348806"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a12fd9a70f621456c73bcc92098348806">registerLoaded</a> (<a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $object)</td></tr>
-<tr class="separator:a12fd9a70f621456c73bcc92098348806"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe0f145e544cde35169aea2b22f9ea69"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#afe0f145e544cde35169aea2b22f9ea69">registerNew</a> (<a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $object)</td></tr>
-<tr class="separator:afe0f145e544cde35169aea2b22f9ea69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf1303bc778beb879c4daf93daf59f03"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#aaf1303bc778beb879c4daf93daf59f03">registerDirty</a> (<a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $object)</td></tr>
-<tr class="separator:aaf1303bc778beb879c4daf93daf59f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05d0d89f09f068d8ae386663ce353fec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a05d0d89f09f068d8ae386663ce353fec">registerDeleted</a> (<a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $object)</td></tr>
-<tr class="separator:a05d0d89f09f068d8ae386663ce353fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a9793666e688407121d76d3a7e4db5d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a3a9793666e688407121d76d3a7e4db5d">begin</a> ()</td></tr>
 <tr class="separator:a3a9793666e688407121d76d3a7e4db5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5674c27d4a92f6228565010eacbb9cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#af5674c27d4a92f6228565010eacbb9cb">commit</a> ()</td></tr>
@@ -140,119 +138,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afa549adf79e3f8c09fe8f903dd5fbfa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa56a17bc66c1081fad1cca3a488224c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#aa56a17bc66c1081fad1cca3a488224c3">isActive</a> ()</td></tr>
 <tr class="separator:aa56a17bc66c1081fad1cca3a488224c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdec445fe4ebbe9e754ef08965a431c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#afdec445fe4ebbe9e754ef08965a431c7">getLoaded</a> (<a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid)</td></tr>
-<tr class="separator:afdec445fe4ebbe9e754ef08965a431c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24a0881da50c6149b528b034d729a15b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a24a0881da50c6149b528b034d729a15b">attach</a> (<a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $object)</td></tr>
+<tr class="separator:a24a0881da50c6149b528b034d729a15b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8602b5996ccc25be7603f59f5b019ef5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a8602b5996ccc25be7603f59f5b019ef5">detach</a> (<a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid)</td></tr>
 <tr class="separator:a8602b5996ccc25be7603f59f5b019ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdec445fe4ebbe9e754ef08965a431c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#afdec445fe4ebbe9e754ef08965a431c7">getLoaded</a> (<a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid)</td></tr>
+<tr class="separator:afdec445fe4ebbe9e754ef08965a431c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a362cc3afebeadb3f8b97453a0251e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a5a362cc3afebeadb3f8b97453a0251e3">getObjects</a> ()</td></tr>
 <tr class="separator:a5a362cc3afebeadb3f8b97453a0251e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a12fd9a70f621456c73bcc92098348806"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">registerLoaded </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a>&#160;</td>
-          <td class="paramname"><em>$object</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Register a loaded object. </p>
-<p>Mappers must call this method on each loaded object. The returned object is the registered instance. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">$object</td><td><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject defines the interface of all persistent objects. ">PersistentObject</a> instance </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject defines the interface of all persistent objects. ">PersistentObject</a> instance </dd></dl>
-
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_transaction.html#a12fd9a70f621456c73bcc92098348806">DefaultTransaction</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afe0f145e544cde35169aea2b22f9ea69"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">registerNew </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a>&#160;</td>
-          <td class="paramname"><em>$object</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Register a newly created object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">$object</td><td><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject defines the interface of all persistent objects. ">PersistentObject</a> instance </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_transaction.html#afe0f145e544cde35169aea2b22f9ea69">DefaultTransaction</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aaf1303bc778beb879c4daf93daf59f03"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">registerDirty </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a>&#160;</td>
-          <td class="paramname"><em>$object</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Register a dirty object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">$object</td><td><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject defines the interface of all persistent objects. ">PersistentObject</a> instance </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_transaction.html#aaf1303bc778beb879c4daf93daf59f03">DefaultTransaction</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a05d0d89f09f068d8ae386663ce353fec"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">registerDeleted </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a>&#160;</td>
-          <td class="paramname"><em>$object</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Register a deleted object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">$object</td><td><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject defines the interface of all persistent objects. ">PersistentObject</a> instance </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_transaction.html#a05d0d89f09f068d8ae386663ce353fec">DefaultTransaction</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a3a9793666e688407121d76d3a7e4db5d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -332,30 +227,30 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afdec445fe4ebbe9e754ef08965a431c7"></a>
+<a class="anchor" id="a24a0881da50c6149b528b034d729a15b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">getLoaded </td>
+          <td class="memname">attach </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a>&#160;</td>
-          <td class="paramname"><em>$oid</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a>&#160;</td>
+          <td class="paramname"><em>$object</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get a loaded object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Attach an object to the transaction. </p>
+<p>The returned object is the attached instance. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$oid</td><td><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a> of the object </td></tr>
+    <tr><td class="paramname">$object</td><td>The object </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject defines the interface of all persistent objects. ">PersistentObject</a> instance or null if not loaded yet </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject defines the interface of all persistent objects. ">PersistentObject</a> </dd></dl>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_transaction.html#afdec445fe4ebbe9e754ef08965a431c7">DefaultTransaction</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_transaction.html#a24a0881da50c6149b528b034d729a15b">DefaultTransaction</a>.</p>
 
 </div>
 </div>
@@ -382,6 +277,33 @@ Public Member Functions</h2></td></tr>
 </dl>
 
 <p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_transaction.html#a8602b5996ccc25be7603f59f5b019ef5">DefaultTransaction</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afdec445fe4ebbe9e754ef08965a431c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getLoaded </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a>&#160;</td>
+          <td class="paramname"><em>$oid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a loaded object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$oid</td><td><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a> of the object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject defines the interface of all persistent objects. ">PersistentObject</a> instance or null if not loaded yet </dd></dl>
+
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_transaction.html#afdec445fe4ebbe9e754ef08965a431c7">DefaultTransaction</a>.</p>
 
 </div>
 </div>
@@ -417,7 +339,7 @@ Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:35 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

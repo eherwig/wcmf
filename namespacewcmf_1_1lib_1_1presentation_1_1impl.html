@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -126,9 +132,9 @@ Classes</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:abf17cb2dba2ed17cb28aa5f37deb5293"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacewcmf_1_1lib_1_1presentation_1_1impl.html#abf17cb2dba2ed17cb28aa5f37deb5293">$message</a> = <a class="el" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory::getInstance</a>('message')</td></tr>
 <tr class="separator:abf17cb2dba2ed17cb28aa5f37deb5293"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16b4144c68d902118bab2b4549051e85"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacewcmf_1_1lib_1_1presentation_1_1impl.html#a16b4144c68d902118bab2b4549051e85">ROUTE_NOT_FOUND</a> serialize(array('ROUTE_NOT_FOUND', <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a31a68e08704b95f676ca98e296f82533">ApplicationError::LEVEL_ERROR</a>, 404, $message-&gt;getText('No route matching the request path can be found.') ))</td></tr>
+<tr class="memitem:a16b4144c68d902118bab2b4549051e85"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacewcmf_1_1lib_1_1presentation_1_1impl.html#a16b4144c68d902118bab2b4549051e85">ROUTE_NOT_FOUND</a> serialize(array('ROUTE_NOT_FOUND', <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a2476288171fae603f5232088e70f0b75">ApplicationError::LEVEL_WARNING</a>, 404, $message-&gt;getText('No route matching the request path can be found.') ))</td></tr>
 <tr class="separator:a16b4144c68d902118bab2b4549051e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acffff8e2ecbdf15d204d775cca6d3f4d"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacewcmf_1_1lib_1_1presentation_1_1impl.html#acffff8e2ecbdf15d204d775cca6d3f4d">METHOD_NOT_ALLOWED</a> serialize(array('METHOD_NOT_ALLOWED', <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a31a68e08704b95f676ca98e296f82533">ApplicationError::LEVEL_ERROR</a>, 405, $message-&gt;getText('The HTTP method is not allowed on the requested path.') ))</td></tr>
+<tr class="memitem:acffff8e2ecbdf15d204d775cca6d3f4d"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacewcmf_1_1lib_1_1presentation_1_1impl.html#acffff8e2ecbdf15d204d775cca6d3f4d">METHOD_NOT_ALLOWED</a> serialize(array('METHOD_NOT_ALLOWED', <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a2476288171fae603f5232088e70f0b75">ApplicationError::LEVEL_WARNING</a>, 405, $message-&gt;getText('The HTTP method is not allowed on the requested path.') ))</td></tr>
 <tr class="separator:acffff8e2ecbdf15d204d775cca6d3f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -153,7 +159,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const ROUTE_NOT_FOUND serialize(array('ROUTE_NOT_FOUND', <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a31a68e08704b95f676ca98e296f82533">ApplicationError::LEVEL_ERROR</a>, 404, $message-&gt;getText('No route matching the request path can be found.') ))</td>
+          <td class="memname">const ROUTE_NOT_FOUND serialize(array('ROUTE_NOT_FOUND', <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a2476288171fae603f5232088e70f0b75">ApplicationError::LEVEL_WARNING</a>, 404, $message-&gt;getText('No route matching the request path can be found.') ))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -167,7 +173,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const METHOD_NOT_ALLOWED serialize(array('METHOD_NOT_ALLOWED', <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a31a68e08704b95f676ca98e296f82533">ApplicationError::LEVEL_ERROR</a>, 405, $message-&gt;getText('The HTTP method is not allowed on the requested path.') ))</td>
+          <td class="memname">const METHOD_NOT_ALLOWED serialize(array('METHOD_NOT_ALLOWED', <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a2476288171fae603f5232088e70f0b75">ApplicationError::LEVEL_WARNING</a>, 405, $message-&gt;getText('The HTTP method is not allowed on the requested path.') ))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -188,7 +194,7 @@ Variables</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:40 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:34 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

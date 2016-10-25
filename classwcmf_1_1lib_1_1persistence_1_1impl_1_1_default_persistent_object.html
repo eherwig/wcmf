@@ -53,7 +53,13 @@
                 <li><a href="tests.html">Tests</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tags"></i> Versions <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="4.0/index.html">4.0.x</a></li>
+                <li><a href="4.1/index.html">4.1.x</a></li>
+              </ul>
+            </li>
+            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -125,10 +131,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2a705460d381534e14bc69b9dd4fe224"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#a2a705460d381534e14bc69b9dd4fe224">__construct</a> (<a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid=null)</td></tr>
-<tr class="separator:a2a705460d381534e14bc69b9dd4fe224"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61834deae88099596d01576a81701dde"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#a61834deae88099596d01576a81701dde">initialize</a> (array $data)</td></tr>
-<tr class="separator:a61834deae88099596d01576a81701dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b65b6b63f6e69bd23ce69f609d38338"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#a1b65b6b63f6e69bd23ce69f609d38338">__construct</a> (<a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid=null, array $initialData=null)</td></tr>
+<tr class="separator:a1b65b6b63f6e69bd23ce69f609d38338"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a830b5c75df72b32396701bc563fbe3c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#a830b5c75df72b32396701bc563fbe3c7">getType</a> ()</td></tr>
 <tr class="separator:a830b5c75df72b32396701bc563fbe3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16aa52eac17a3f79894854eaf52739bd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#a16aa52eac17a3f79894854eaf52739bd">getMapper</a> ()</td></tr>
@@ -232,7 +236,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a2f444140d375d5c63def72413cadcb47 inherit pub_attribs_interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a2a705460d381534e14bc69b9dd4fe224"></a>
+<a class="anchor" id="a1b65b6b63f6e69bd23ce69f609d38338"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -240,8 +244,18 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">__construct </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a>&#160;</td>
-          <td class="paramname"><em>$oid</em> = <code>null</code></td><td>)</td>
+          <td class="paramname"><em>$oid</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">array&#160;</td>
+          <td class="paramname"><em>$initialData</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -251,36 +265,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$oid</td><td><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html" title="ObjectId is the unique identifier of an object. ">ObjectId</a> instance (optional) </td></tr>
+    <tr><td class="paramname">$initialData</td><td>Associative array with initial attribute data to override default data (optional) </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00058">58</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00059">59</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a61834deae88099596d01576a81701dde"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">initialize </td>
-          <td>(</td>
-          <td class="paramtype">array&#160;</td>
-          <td class="paramname"><em>$data</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a61834deae88099596d01576a81701dde" title="Initialize the object with a set of data. ">PersistentObject::initialize()</a> </dd></dl>
-
-<p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a61834deae88099596d01576a81701dde">PersistentObject</a>.</p>
-
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00078">78</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a830b5c75df72b32396701bc563fbe3c7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -297,7 +291,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a830b5c75df72b32396701bc563fbe3c7">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00106">106</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00116">116</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -317,7 +311,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a16aa52eac17a3f79894854eaf52739bd">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00113">113</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00123">123</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -337,7 +331,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#ac886ae95a746f43906bb3b2515092440">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00123">123</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00133">133</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -358,7 +352,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a4a093aabef8d7727642c708970c71589">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00130">130</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00140">140</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -403,7 +397,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00140">140</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00150">150</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -423,7 +417,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#afbf787ced76807989fb3093e1772c5a1">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00159">159</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00169">169</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -444,7 +438,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a94042b70768a686decc42594ef36bbd6">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00166">166</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00176">176</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -464,7 +458,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a13bdffdd926f26b825ea57066334ff01">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00198">198</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00208">208</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -484,7 +478,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#ad0cb87b388bc74d63dc884accdca8713">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00206">206</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00216">216</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -515,7 +509,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a115ec18b7ada8663ff813968dd2f5633">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00222">222</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00232">232</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -536,7 +530,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#af00f8db169b979a60ecaf4b550836010">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00235">235</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00245">245</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -556,7 +550,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a5d4231f684d0e52b41bf69afb0bb9fbe">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00247">247</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00257">257</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -577,7 +571,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#acfb42c80e11f54475303ae3a58a33994">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00276">276</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00286">286</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -598,7 +592,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#aa6c147a602f20f3527d8607186fa253f">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00282">282</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00292">292</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -619,7 +613,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a4a7f9241f789f5326d4213c9097437cf">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00288">288</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00298">298</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -640,7 +634,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#afc96ce03b1c876abdaafc59a03b3e9ff">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00294">294</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00304">304</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -661,7 +655,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a70a4db65b19348b3903ae88a82baee62">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00300">300</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00310">310</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -682,7 +676,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#afae845016f4e0f43e4214a22d3567b73">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00306">306</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00316">316</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -703,7 +697,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a9439df4bc17e08751f6571b30397c340">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00312">312</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00322">322</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -724,7 +718,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a39a8bcc2a5e284c64b58c3e2b6ddea81">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00318">318</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00328">328</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -745,7 +739,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a8c584efa272687554bd9abe5e83fe10c">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00323">323</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00333">333</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -788,7 +782,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a838057c0748db6d0db1d38fe5d06ef6b">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00333">333</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00343">343</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -833,7 +827,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00367">367</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00377">377</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -854,7 +848,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a270bd65d789405427f5005ef5b0e0f38">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00374">374</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00384">384</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -875,7 +869,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#ab11a5b90edec335b251652cd73876317">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00381">381</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00391">391</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -896,7 +890,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#ae9e66f6d2e3d0c1b687818677939e3f1">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00390">390</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00400">400</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -933,7 +927,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a13b1f354a0c2390b7807ac389f78bd4a">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00410">410</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00420">420</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -985,7 +979,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00422">422</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00432">432</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1005,7 +999,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a6e19f1226f93bea2b036d404f58412e9">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00447">447</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00457">457</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1025,7 +1019,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a21e59648f0cae7225441015bb21b8b20">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00454">454</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00464">464</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1045,7 +1039,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a756a28909cda55de0256078569533aa2">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00461">461</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00471">471</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1066,7 +1060,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#aa54d71e15bac85c5f7a13e62b9933652">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00468">468</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00478">478</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1097,7 +1091,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#aec9a68c84f392b3ae74cd70d552562b0">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00485">485</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00495">495</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1117,7 +1111,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a6c948a23a84e4e613957afb3d6532a7c">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00495">495</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00505">505</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1148,7 +1142,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a095af4f09e7aa62ba45e94a35c047c1d">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00503">503</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00513">513</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1185,7 +1179,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#ad97867d143202b45bd320c16258c5f3c">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00525">525</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00535">535</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1206,7 +1200,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a4994c60ede3191c63465f96dfa36abdb">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00535">535</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00545">545</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1227,7 +1221,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a91b10951978a3d34b2c3d38437627014">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00550">550</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00560">560</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1248,7 +1242,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a10c4f56b4c915a4a77e75a3b4452240b">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00569">569</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00579">579</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1268,7 +1262,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a5bf63e4ac70cfd9d97e3f2eab936ec8b">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00576">576</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00586">586</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1288,7 +1282,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Get a string representation of the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject defines the interface of all persistent objects. ">PersistentObject</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00620">620</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00630">630</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1305,7 +1299,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00624">624</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00634">634</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1323,7 +1317,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00629">629</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
+<p>Definition at line <a class="el" href="_default_persistent_object_8php_source.html#l00639">639</a> of file <a class="el" href="_default_persistent_object_8php_source.html">DefaultPersistentObject.php</a>.</p>
 
 </div>
 </div>
@@ -1339,7 +1333,7 @@ Additional Inherited Members</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Oct 8 2016 00:59:37 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Oct 26 2016 00:16:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>
