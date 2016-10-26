@@ -19,17 +19,17 @@
 <text text-anchor="start" x="162" y="-924.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ STATE_NEW</text>
 <text text-anchor="start" x="162" y="-913.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ STATE_DELETED</text>
 <polyline fill="none" stroke="black" points="154,-906.5 260,-906.5 "/>
-<text text-anchor="start" x="162" y="-894.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getType()</text>
-<text text-anchor="start" x="162" y="-883.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMapper()</text>
-<text text-anchor="start" x="162" y="-872.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getOID()</text>
-<text text-anchor="start" x="162" y="-861.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOID()</text>
-<text text-anchor="start" x="162" y="-850.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getState()</text>
-<text text-anchor="start" x="162" y="-839.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setState()</text>
-<text text-anchor="start" x="162" y="-828.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ delete()</text>
-<text text-anchor="start" x="162" y="-817.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __clone()</text>
-<text text-anchor="start" x="162" y="-806.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ copyValues()</text>
-<text text-anchor="start" x="162" y="-795.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ mergeValues()</text>
-<text text-anchor="start" x="162" y="-784.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 27 more...</text>
+<text text-anchor="start" x="162" y="-894.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ initialize()</text>
+<text text-anchor="start" x="162" y="-883.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getType()</text>
+<text text-anchor="start" x="162" y="-872.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMapper()</text>
+<text text-anchor="start" x="162" y="-861.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getOID()</text>
+<text text-anchor="start" x="162" y="-850.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOID()</text>
+<text text-anchor="start" x="162" y="-839.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getState()</text>
+<text text-anchor="start" x="162" y="-828.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setState()</text>
+<text text-anchor="start" x="162" y="-817.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ delete()</text>
+<text text-anchor="start" x="162" y="-806.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __clone()</text>
+<text text-anchor="start" x="162" y="-795.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ copyValues()</text>
+<text text-anchor="start" x="162" y="-784.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 28 more...</text>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
@@ -40,16 +40,16 @@
 <text text-anchor="middle" x="125" y="-709.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <polyline fill="none" stroke="black" points="36.5,-702.5 213.5,-702.5 "/>
 <text text-anchor="start" x="44.5" y="-690.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
-<text text-anchor="start" x="44.5" y="-679.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getType()</text>
-<text text-anchor="start" x="44.5" y="-668.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMapper()</text>
-<text text-anchor="start" x="44.5" y="-657.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getOID()</text>
-<text text-anchor="start" x="44.5" y="-646.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOID()</text>
-<text text-anchor="start" x="44.5" y="-635.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getState()</text>
-<text text-anchor="start" x="44.5" y="-624.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setState()</text>
-<text text-anchor="start" x="44.5" y="-613.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ delete()</text>
-<text text-anchor="start" x="44.5" y="-602.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __clone()</text>
-<text text-anchor="start" x="44.5" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ copyValues()</text>
-<text text-anchor="start" x="44.5" y="-580.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 31 more...</text>
+<text text-anchor="start" x="44.5" y="-679.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ initialize()</text>
+<text text-anchor="start" x="44.5" y="-668.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getType()</text>
+<text text-anchor="start" x="44.5" y="-657.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMapper()</text>
+<text text-anchor="start" x="44.5" y="-646.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getOID()</text>
+<text text-anchor="start" x="44.5" y="-635.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOID()</text>
+<text text-anchor="start" x="44.5" y="-624.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getState()</text>
+<text text-anchor="start" x="44.5" y="-613.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setState()</text>
+<text text-anchor="start" x="44.5" y="-602.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ delete()</text>
+<text text-anchor="start" x="44.5" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __clone()</text>
+<text text-anchor="start" x="44.5" y="-580.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 32 more...</text>
 <text text-anchor="start" x="44.5" y="-569.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setOIDInternal()</text>
 <text text-anchor="start" x="44.5" y="-558.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setValueInternal()</text>
 <text text-anchor="start" x="44.5" y="-547.5" font-family="Helvetica,sans-Serif" font-size="10.00"># validateValueAgainstValidateType()</text>
@@ -67,8 +67,8 @@
 <polygon fill="white" stroke="black" points="231.5,-546 231.5,-735 346.5,-735 346.5,-546 231.5,-546"/>
 <text text-anchor="middle" x="289" y="-723" font-family="Helvetica,sans-Serif" font-size="10.00">PersistentObjectProxy</text>
 <polyline fill="none" stroke="black" points="231.5,-716 346.5,-716 "/>
-<text text-anchor="start" x="239.5" y="-704" font-family="Helvetica,sans-Serif" font-size="10.00"># $oid</text>
-<text text-anchor="start" x="239.5" y="-693" font-family="Helvetica,sans-Serif" font-size="10.00"># $realSubject</text>
+<text text-anchor="start" x="239.5" y="-704" font-family="Helvetica,sans-Serif" font-size="10.00"># $_oid</text>
+<text text-anchor="start" x="239.5" y="-693" font-family="Helvetica,sans-Serif" font-size="10.00"># $_realSubject</text>
 <polyline fill="none" stroke="black" points="231.5,-686 346.5,-686 "/>
 <text text-anchor="start" x="239.5" y="-674" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
 <text text-anchor="start" x="239.5" y="-663" font-family="Helvetica,sans-Serif" font-size="10.00">+ getRealSubject()</text>

@@ -1,4 +1,4 @@
 <map id="CopyController" name="CopyController">
-<area shape="rect" id="node2" href="$classwcmf_1_1application_1_1controller_1_1_batch_controller.html" title="BatchController is used to process complex, longer running actions, that need to be divided into seve..." alt="" coords="5,351,191,648"/>
-<area shape="rect" id="node3" href="$classwcmf_1_1lib_1_1presentation_1_1_controller.html" title="Controller is the base class of all controllers. " alt="" coords="11,5,185,303"/>
+<area shape="rect" id="node2" href="$classwcmf_1_1application_1_1controller_1_1_batch_controller.html" title="BatchController is used to process complex, longer running actions, that need to be divided into seve..." alt="" coords="5,395,244,648"/>
+<area shape="rect" id="node3" href="$classwcmf_1_1lib_1_1presentation_1_1_controller.html" title="Controller is the base class of all controllers. " alt="" coords="29,5,221,347"/>
 </map>
