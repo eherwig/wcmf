@@ -48,7 +48,7 @@
 <text text-anchor="start" x="8" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getBooleanValue()</text>
 <text text-anchor="start" x="8" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 12 more...</text>
 <text text-anchor="start" x="8" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00"># processFile()</text>
-<text text-anchor="start" x="8" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00"># _parse_ini_file()</text>
+<text text-anchor="start" x="8" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00"># parseIniFile()</text>
 <text text-anchor="start" x="8" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00"># processValues()</text>
 <text text-anchor="start" x="8" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"># processValue()</text>
 <text text-anchor="start" x="8" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># configMerge()</text>
@@ -57,7 +57,7 @@
 <text text-anchor="start" x="8" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># unserialize()</text>
 <text text-anchor="start" x="8" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getSerializeFilename()</text>
 <text text-anchor="start" x="8" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00"># checkFileDate()</text>
-<text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00"># clearAllCache()</text>
+<text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00"># configChanged()</text>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00"># buildLookupTable()</text>
 <text text-anchor="start" x="8" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00"># lookup()</text>
 </a>
