@@ -1,6 +1,7 @@
 var searchData=
 [
   ['fatal',['fatal',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_log4php_logger.html#a8d1211f6f08eef712b4cfc80f22895b2',1,'wcmf\lib\core\impl\Log4phpLogger\fatal()'],['../classwcmf_1_1lib_1_1core_1_1impl_1_1_monolog_file_logger.html#a8d1211f6f08eef712b4cfc80f22895b2',1,'wcmf\lib\core\impl\MonologFileLogger\fatal()'],['../interfacewcmf_1_1lib_1_1core_1_1_logger.html#a8d1211f6f08eef712b4cfc80f22895b2',1,'wcmf\lib\core\Logger\fatal()']]],
+  ['fileexists',['fileExists',['../classwcmf_1_1lib_1_1io_1_1_file_util.html#ad5437b000c04701df10097d59652df73',1,'wcmf::lib::io::FileUtil']]],
   ['filter',['filter',['../classwcmf_1_1lib_1_1model_1_1_node.html#a5849a1f83d8d9003b7b9ead0a731937b',1,'wcmf::lib::model::Node']]],
   ['filtervalue',['filterValue',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_abstract_format.html#ab8e263d5b941af8fa12419ec1dba6664',1,'wcmf::lib::presentation::format::impl::AbstractFormat']]],
   ['find',['find',['../classwcmf_1_1lib_1_1search_1_1impl_1_1_lucene_search.html#a5bb35dd607d805d55f4fabadf08414de',1,'wcmf\lib\search\impl\LuceneSearch\find()'],['../interfacewcmf_1_1lib_1_1search_1_1_search.html#a5bb35dd607d805d55f4fabadf08414de',1,'wcmf\lib\search\Search\find()']]],
