@@ -30,7 +30,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html" target="_top" xlink:title="InifileConfiguration reads the application configuraiton from ini files. ">
+<g id="a_node2"><a xlink:href="classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html" target="_top" xlink:title="InifileConfiguration reads the application configuration from ini files. ">
 <polygon fill="white" stroke="black" points="0,-0.5 0,-310.5 122,-310.5 122,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="61" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">InifileConfiguration</text>
 <polyline fill="none" stroke="black" points="0,-291.5 122,-291.5 "/>

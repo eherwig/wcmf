@@ -334,20 +334,18 @@ Input</h2>
 <p>In PHP this input is stored in so called <em>Superglobals</em>, e.g. <em>$_GET</em>, <em>$_POST</em>, <em>$_FILES</em>. To avoid using these global variables directly in code, wCMF encapsulates them in the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance and makes them available through the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a2abdec7bee6d1b9dd8c24a13f59991ae"><code>Request::getValue</code></a> method. Besides the variable name this method defines the following optional parameters:</p>
 <ul>
 <li><code>$default</code> default value if the value is not contained in the request</li>
-<li><code>$filter</code> <a href="http://php.net/manual/en/filter.filters.php">filter</a> to be applied to the value</li>
-<li><code>$options</code> filter parameters if necessary</li>
+<li><code>$validateDesc</code> description of the validation to be applied to the value</li>
 </ul>
-<p>The <code>$filter</code> and <code>$options</code> values are passed to the <a href="http://php.net/manual/en/function.filter-var.php">filter_var</a> function and the result is returned by the method.</p>
+<p>The <code>$validateDesc</code> parameter is passed to the <a class="el" href="classwcmf_1_1lib_1_1validation_1_1_validator.html#a0e51e24a6fac156c7d8f95a06b87919a"><code>Validator::validate</code></a> method and <code>null</code> is returned if validation fails.</p>
 <p>The following code demonstrates the usage:</p>
 <div class="fragment"><div class="line"><span class="comment">// validate an email value</span></div>
-<div class="line">$email = $request-&gt;getValue(<span class="stringliteral">&#39;email&#39;</span>, <span class="stringliteral">&#39;&#39;</span>, FILTER_VALIDATE_EMAIL);</div>
+<div class="line">$email = $request-&gt;getValue(<span class="stringliteral">&#39;email&#39;</span>, <span class="stringliteral">&#39;&#39;</span>, <span class="stringliteral">&#39;filter:{&quot;type&quot;:&quot;validate_email&quot;}&#39;</span>);</div>
 <div class="line"></div>
-<div class="line"><span class="comment">// validate a date using a regular expression and</span></div>
-<div class="line"><span class="comment">// return the current date on failure</span></div>
+<div class="line"><span class="comment">// validate a date using a regular expression and return the current date on failure</span></div>
 <div class="line">$today = date(<span class="stringliteral">&#39;Y-m-d&#39;</span>);</div>
-<div class="line">$options = array(<span class="stringliteral">&quot;options&quot;</span> =&gt; array(<span class="stringliteral">&quot;regexp&quot;</span> =&gt; <span class="stringliteral">&quot;/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/&quot;</span>));</div>
-<div class="line">$date = $request-&gt;getValue(<span class="stringliteral">&#39;date&#39;</span>, $today, FILTER_VALIDATE_REGEXP, $options);</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+<div class="line">$date = $request-&gt;getValue(<span class="stringliteral">&#39;date&#39;</span>, $today, <span class="stringliteral">&#39;regex:{&quot;pattern&quot;:&quot;/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/&quot;}&#39;</span>);</div>
+</div><!-- fragment --><p>For more information about validation see <a class="el" href="persistence.html#pers_validation">Validation</a>. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
       </div>
     </div>
@@ -359,7 +357,7 @@ Input</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Dec 7 2016 22:47:12 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Dec 7 2016 23:40:44 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>
