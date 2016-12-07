@@ -132,13 +132,14 @@ Configuration Format</h2>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;[SectionB]</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;key3 = value3</div>
-</div><!-- fragment --><p>Additionally it defines <b>array values</b> (enclosed in curly braces) and <b>inclusion</b> of additional files. Included files are defined in the <code>include</code> key of the <code>Config</code> section. If a configuration section exists in both files, the values are merged, whereby values in the current file override values from included files. This behavior is comparable to the concept of inheritance and can be disabled by adding the <code>__inherit</code> configuration key to the section and setting it to <em>false</em>.</p>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Configuration section and key names are treated case-insensitive.</dd></dl>
+<p>Additionally it defines <b>array values</b> (enclosed in curly braces) and <b>inclusion</b> of additional files. Included files are defined in the <code>include</code> key of the <code>Config</code> section. If a configuration section with the same name exists in both files, the values are merged, whereby values in the current file override values from included files. This behavior is comparable to the concept of inheritance and can be disabled by adding the <code>__inherit</code> configuration key to the section and setting it to <em>false</em>.</p>
 <p>The following example shows how to include an array of additional configuration files to separate concerns:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Config]</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;include = {server.ini, persistence.ini, presentation.ini, security.ini}</div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>While path values in the configuration are normally resolved relative to the value of the <code>WCMF_BASE</code> constant, the included files are expected to be located in the directory that is passed to the constructor of <a class="el" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html"><code>InifileConfiguration</code></a>.</dd></dl>
+</div><!-- fragment --><p>Configuration sections from following files override identically named sections from preceding files.</p>
+<dl class="section note"><dt>Note</dt><dd>While path values in the configuration are normally resolved relative to the value of the <code>WCMF_BASE</code> constant, the included files are expected to be located in the directory that is passed to the constructor of <a class="el" href="classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html"><code>InifileConfiguration</code></a>.</dd></dl>
 <p>The possibility to include configuration files into others is useful, if you want to <b>separate varying parts</b> from static ones to simplify the deployment process. In the <a class="el" href="gettingstarted.html#app">default application</a> for example all server specific configuration (e.g. database connection) are separated into a file called <em>server.ini</em>.</p>
-<dl class="section note"><dt>Note</dt><dd>Configuration section and key names are treated case-insensitive.</dd></dl>
 <h2><a class="anchor" id="conf_di"></a>
 Dependency injection</h2>
 <p>wCMF supports <a href="http://en.wikipedia.org/wiki/Dependency_injection">Dependency injection</a> through <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_factory.html"><code>ObjectFactory</code></a> and it's <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html"><code>DefaultFactory</code></a> implementation. This class implements <em>constructor</em> and <em>setter injection</em>, which means that dependencies are either set through the <em>constructor</em> or a <em>setter method</em> of the client class or a <em>public member variable</em>.</p>
@@ -325,7 +326,7 @@ log4php</h3>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Nov 2 2016 23:36:38 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Dec 7 2016 22:47:12 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

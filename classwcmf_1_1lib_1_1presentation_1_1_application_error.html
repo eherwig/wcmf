@@ -118,7 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html" title="ApplicationError is used to signal errors that occur while processing a request. ">ApplicationError</a> is used to signal errors that occur while processing a request. </p>
-<p>This class allows to use predefined errors by using the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554" title="Factory method for retrieving a predefind error instance. ">ApplicationError::get()</a> method. Errors are defined in the following way:</p>
+<p>This class allows to use predefined errors by using the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a7b6de2953b070910660cee9f229bc554" title="Factory method for retrieving a predefined error instance. ">ApplicationError::get()</a> method. Errors are defined in the following way:</p>
 <div class="fragment"><div class="line">$message = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;message&#39;</span>);</div>
 <div class="line">define(<span class="stringliteral">&#39;GENERAL_ERROR&#39;</span>, serialize(array(<span class="stringliteral">&#39;GENERAL_ERROR&#39;</span>, <a class="code" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html#a31a68e08704b95f676ca98e296f82533">ApplicationError::LEVEL_ERROR</a>, 400,</div>
 <div class="line">  $message-&gt;getText(<span class="stringliteral">&#39;An unspecified error occured.&#39;</span>)</div>
@@ -183,7 +183,7 @@ Public Attributes</h2></td></tr>
 <p>Get the error code. </p>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00076">76</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
+<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00078">78</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
 
 </div>
 </div>
@@ -203,7 +203,7 @@ Public Attributes</h2></td></tr>
 <p>Get the error level. </p>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00084">84</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
+<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00086">86</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
 
 </div>
 </div>
@@ -223,7 +223,7 @@ Public Attributes</h2></td></tr>
 <p>Get the associated HTTP status code. </p>
 <dl class="section return"><dt>Returns</dt><dd>Integer </dd></dl>
 
-<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00092">92</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
+<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00094">94</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
 
 </div>
 </div>
@@ -243,7 +243,7 @@ Public Attributes</h2></td></tr>
 <p>Get the error message. </p>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00100">100</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
+<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00102">102</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
 
 </div>
 </div>
@@ -269,7 +269,7 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00109">109</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
+<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00111">111</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
 
 </div>
 </div>
@@ -289,7 +289,7 @@ Public Attributes</h2></td></tr>
 <p>Get the error data. </p>
 <dl class="section return"><dt>Returns</dt><dd>Mixed </dd></dl>
 
-<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00117">117</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
+<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00119">119</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
 
 </div>
 </div>
@@ -309,7 +309,7 @@ Public Attributes</h2></td></tr>
 <p>Get a string representation of the error. </p>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00125">125</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
+<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00127">127</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
 
 </div>
 </div>
@@ -345,7 +345,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Factory method for retrieving a predefind error instance. </p>
+<p>Factory method for retrieving a predefined error instance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$code</td><td>An error code </td></tr>
@@ -355,7 +355,7 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html" title="ApplicationError is used to signal errors that occur while processing a request. ">ApplicationError</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00141">141</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
+<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00143">143</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
 
 </div>
 </div>
@@ -401,7 +401,7 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html" title="ApplicationError is used to signal errors that occur while processing a request. ">ApplicationError</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00158">158</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
+<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00161">161</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
 
 </div>
 </div>
@@ -436,7 +436,7 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_application_error.html" title="ApplicationError is used to signal errors that occur while processing a request. ">ApplicationError</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00168">168</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
+<p>Definition at line <a class="el" href="_application_error_8php_source.html#l00171">171</a> of file <a class="el" href="_application_error_8php_source.html">ApplicationError.php</a>.</p>
 
 </div>
 </div>
@@ -509,7 +509,7 @@ Public Attributes</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Nov 2 2016 23:36:48 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Dec 7 2016 22:47:23 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

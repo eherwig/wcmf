@@ -229,7 +229,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#a293cb7dbd49db9a4819cd264ec75e0a3">  116</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#a293cb7dbd49db9a4819cd264ec75e0a3">getInstance</a>($name, $dynamicConfiguration=array()) {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    $instance = null;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">if</span> (in_array($name, $this-&gt;currentStack)) {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      <span class="keywordflow">throw</span> new \Exception(<span class="stringliteral">&quot;Circular dependency detected: &quot;</span>.join(<span class="stringliteral">&#39; - &#39;</span>, $this-&gt;currentStack));</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      <span class="keywordflow">throw</span> new \Exception(<span class="stringliteral">&quot;Circular dependency detected: &quot;</span>.join(<span class="stringliteral">&#39; - &#39;</span>, $this-&gt;currentStack).<span class="stringliteral">&quot; - [&quot;</span>.$name.<span class="stringliteral">&quot;]&quot;</span>);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    $this-&gt;currentStack[] = $name;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
@@ -247,7 +247,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      <a class="code" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#ab2a3e8712b2462d01e8ebacaa08bafa7">$configuration</a> = array_merge($staticConfiguration, $dynamicConfiguration);</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      $instance = $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#adff4e78a9d6671117a987c2a6e0bbb2f">createInstance</a>($name, <a class="code" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#ab2a3e8712b2462d01e8ebacaa08bafa7">$configuration</a>, $instanceKey);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    $this-&gt;currentStack = array();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    array_pop($this-&gt;currentStack);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> $instance;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  }</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment"></span></div>
@@ -530,7 +530,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Nov 2 2016 23:36:34 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Dec 7 2016 22:47:08 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

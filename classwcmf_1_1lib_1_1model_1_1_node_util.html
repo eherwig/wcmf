@@ -358,24 +358,17 @@ Static Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the display value for a <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> defined by the 'display_value' property. </p>
-<p>If the 'display_value' is an array ('|' separated strings) the pieces will be put together with ' - '. If search for 'display_value' gives no result the function returns an empty string. Example: 'name|text' shows the name of the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> together with the content of the text attribute </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Get the display value for a <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> defined by the 'displayValues' property. </p>
+<p>If the 'displayValues' property is an array the items will be put together with ' - '. If the 'displayValues' property is empty the function returns an empty string. Example: 'name,text' shows the name of the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> together with the content of the text attribute </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$node</td><td><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> instance to display </td></tr>
     <tr><td class="paramname">$language</td><td>The language if values should be localized. Optional, default is Localization::getDefaultLanguage() </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>The display type is configured via the display_type property of a value. It describes how the value should be displayed. The description is of the form<div class="fragment"><div class="line">type </div>
-</div><!-- fragment --> or<div class="fragment"><div class="line">type[attributes] </div>
-</div><!-- fragment --><ul>
-<li>type: text|image|link</li>
-<li>attributes: a string of attributes used in the HTML definition (e.g. 'height="50"') </li>
-</ul>
-</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>The display string </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_util_8php_source.html#l00156">156</a> of file <a class="el" href="_node_util_8php_source.html">NodeUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_util_8php_source.html#l00152">152</a> of file <a class="el" href="_node_util_8php_source.html">NodeUtil.php</a>.</p>
 
 </div>
 </div>
@@ -411,7 +404,7 @@ Static Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Does the same as <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node_util.html#a048d90ae2bd98d78429eae26b804c756" title="Get the display value for a Node defined by the &#39;display_value&#39; property. ">NodeUtil::getDisplayValue</a> but returns the display value as associative array. </p>
+<p>Does the same as <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node_util.html#a048d90ae2bd98d78429eae26b804c756" title="Get the display value for a Node defined by the &#39;displayValues&#39; property. ">NodeUtil::getDisplayValue</a> but returns the display values as associative array. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$node</td><td><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> instance to display </td></tr>
@@ -419,9 +412,9 @@ Static Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The display array </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Array of strings </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_util_8php_source.html#l00166">166</a> of file <a class="el" href="_node_util_8php_source.html">NodeUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_util_8php_source.html#l00162">162</a> of file <a class="el" href="_node_util_8php_source.html">NodeUtil.php</a>.</p>
 
 </div>
 </div>
@@ -473,7 +466,7 @@ Static Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_node_util_8php_source.html#l00207">207</a> of file <a class="el" href="_node_util_8php_source.html">NodeUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_util_8php_source.html#l00202">202</a> of file <a class="el" href="_node_util_8php_source.html">NodeUtil.php</a>.</p>
 
 </div>
 </div>
@@ -519,7 +512,7 @@ Static Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_node_util_8php_source.html#l00253">253</a> of file <a class="el" href="_node_util_8php_source.html">NodeUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_util_8php_source.html#l00248">248</a> of file <a class="el" href="_node_util_8php_source.html">NodeUtil.php</a>.</p>
 
 </div>
 </div>
@@ -553,7 +546,7 @@ Static Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_node_util_8php_source.html#l00281">281</a> of file <a class="el" href="_node_util_8php_source.html">NodeUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_util_8php_source.html#l00276">276</a> of file <a class="el" href="_node_util_8php_source.html">NodeUtil.php</a>.</p>
 
 </div>
 </div>
@@ -587,7 +580,7 @@ Static Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_node_util_8php_source.html#l00296">296</a> of file <a class="el" href="_node_util_8php_source.html">NodeUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_util_8php_source.html#l00290">290</a> of file <a class="el" href="_node_util_8php_source.html">NodeUtil.php</a>.</p>
 
 </div>
 </div>
@@ -603,7 +596,7 @@ Static Protected Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Nov 2 2016 23:36:43 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Dec 7 2016 22:47:17 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

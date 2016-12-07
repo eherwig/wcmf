@@ -125,7 +125,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message__inherit__graph.svg" width="522" height="823"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message__inherit__graph.svg" width="522" height="794"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -164,8 +165,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8e7aaacf604710d7f853f3261d84b9fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff186ea90b040b551518923b3ed87e24"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#aff186ea90b040b551518923b3ed87e24">setValues</a> (array $values)</td></tr>
 <tr class="separator:aff186ea90b040b551518923b3ed87e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a664ea399753a23ceeb585c084ae7de48"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a664ea399753a23ceeb585c084ae7de48">getValue</a> ($name, $default=null, $filter=null, $options=null)</td></tr>
-<tr class="separator:a664ea399753a23ceeb585c084ae7de48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2abdec7bee6d1b9dd8c24a13f59991ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a2abdec7bee6d1b9dd8c24a13f59991ae">getValue</a> ($name, $default=null, $validateDesc=null)</td></tr>
+<tr class="separator:a2abdec7bee6d1b9dd8c24a13f59991ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ed9eb2f9604c765cbeec644fb8bd428"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a1ed9eb2f9604c765cbeec644fb8bd428">getBooleanValue</a> ($name, $default=false)</td></tr>
 <tr class="separator:a1ed9eb2f9604c765cbeec644fb8bd428"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70a0fe08035189260c72e32a9e20d30c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a70a0fe08035189260c72e32a9e20d30c">getValues</a> ()</td></tr>
@@ -556,7 +557,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Check for existance of a header. </p>
+<p>Check for existence of a header. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$name</td><td>The name of the header </td></tr>
@@ -632,7 +633,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a664ea399753a23ceeb585c084ae7de48"></a>
+<a class="anchor" id="a2abdec7bee6d1b9dd8c24a13f59991ae"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -652,13 +653,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$filter</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$options</em> = <code>null</code>&#160;</td>
+          <td class="paramname"><em>$validateDesc</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -673,14 +668,13 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">$name</td><td>The name of the variable </td></tr>
     <tr><td class="paramname">$default</td><td>The default value if the value is not defined (optional, default: <em>null</em>) </td></tr>
-    <tr><td class="paramname">$filter</td><td>PHP filter constant (FILTER_SANITIZE/FILTER_VALIDATE) to be applied to the value (optional, default: <em>null</em>) </td></tr>
-    <tr><td class="paramname">$options</td><td>Filter parameters (optional, default: <em>null</em>) </td></tr>
+    <tr><td class="paramname">$validateDesc</td><td>An validation description to be used with Validator::validate() (optional, default: <em>null</em>) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The (filtered) value or default, if it does not exist </dd></dl>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message.html#a664ea399753a23ceeb585c084ae7de48">AbstractControllerMessage</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message.html#a2abdec7bee6d1b9dd8c24a13f59991ae">AbstractControllerMessage</a>.</p>
 
 </div>
 </div>
@@ -801,7 +795,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Check for existance of a value. </p>
+<p>Check for existence of a value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$name</td><td>The name of the variable </td></tr>
@@ -1001,7 +995,7 @@ Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Nov 2 2016 23:36:48 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Dec 7 2016 22:47:24 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

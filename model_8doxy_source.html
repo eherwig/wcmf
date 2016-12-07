@@ -184,14 +184,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">| Tag | Description | Example | Default value</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">|-----|-------------|---------|--------------</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">| _initparams_ | Name of the configuration section, which defines initialization parameters for the \link wcmf::lib::persistence::PersistenceMapper `PersistenceMapper`\endlink instance | _database_ | _database_</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">| _display_value_ | Attributes to display in a list view: A single attribute name or \|-separated list of attribute names | _name\|date_ | |</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">| _display_value_ | Attributes to display in a list view: A single attribute name or comma separated list of attribute names | _name,date_ | |</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">| _orderby_ | Definition of default sorting: _none_ (no order), _sortkey_ (generates a _sortkey_ column, that is used for explicit sorting) or the name of any attribute optionally followed by _ASC_ or _DESC_ | _name ASC_ | _none_</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">| _is_searchable_ | Boolean, indicating whether this type should be included in the default search | _true_ | _true_</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">| _is_soap_ | Boolean, indicating whether this type should be exposed to the SOAP interface | _true_ | _true_</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">| _table_name_ | The name of the database table in which instances will be stored | _Author_ | Class name</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">| _pk_name_ | The name of the primary key column: A single value or \|-separated list of values (the generator will add this automatically, if there is no appropriate attribute) | _fk_user_id\|fk_role_id_ | _id_</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">| _child_order_ | The order of the associated child types: A single type or \|-separated list of types | _Image\|Textblock\|Attachment_ in Article type | |</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">| _parent_order_ | The order of the associated parent types: A single type or \|-separated list of types | _Author\|Publisher_ in Article type | |</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">| _pk_name_ | The name of the primary key column: A single value or comma separated list of values (the generator will add this automatically, if there is no appropriate attribute) | _fk_user_id,fk_role_id_ | _id_</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">| _child_order_ | The order of the associated relations: A comma separated list of role names | _Author,Publisher,Image,Textblock,Attachment_ in Article type | |</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">| _parent_order_ | _not used_ | | |</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">\note Some of these tags are accessible in the application through the</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">\link wcmf::lib::persistence::PersistentObject::getProperty `PersistentObject::getProperty`\endlink</span></div>
@@ -203,12 +203,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">| Tag | Description | Example | Default value</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">|-----|-------------|---------|--------------</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">| _app_data_type_ | Application specific attribute tags: A single value or \|-separated list of values (see \ref pers_values) | _TAG_A\|TAG_B_ | _DATATYPE_ATTRIBUTE_</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">| _app_data_type_ | Application specific attribute tags: A single value or comma separated list of values (see \ref pers_values) | _TAG_A,TAG_B_ | _DATATYPE_ATTRIBUTE_</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">| _db_data_type_ | The attribute&#39;s database type | _TEXT_ | _VARCHAR(255)_ |</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">| _is_editable_ | Boolean, indicating whether this attribute is editable | _true_ | _true_</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">| _input_type_ | Name of the attribute&#39;s input control as listed in the _InputTypes_ configuration section and additional configuration encoded as JSON string | _filebrowser_ or _ckeditor:{&quot;toolbarSet&quot;:&quot;full&quot;}_ | _text_</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">| _display_type_ | Name of the attribute&#39;s display type as listed in the _DisplayTypes_ configuration section | _image_ | _text_</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">| _restrictions_match_ | Name of the attribute&#39;s validation type as listed in the _Validator_ configuration section (see \ref pers_validation) and additional configuration encoded as JSON string | _regexp:{&quot;pattern&quot;:&quot;^[0-9]*$&quot;}_ or _image:{&quot;height&quot;:[300,0]}_ | |</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">| _restrictions_match_ | Name of the attribute&#39;s validation type or comma separated list of validation types as listed in the _Validator_ configuration section (see \ref pers_validation) and additional configuration encoded as JSON string | _date,required_ or _regexp:{&quot;pattern&quot;:&quot;^[0-9]*$&quot;}_ or _image:{&quot;height&quot;:[300,0]}_ | |</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">| _restrictions_not_match_ | _not used_ | | |</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">| _restrictions_description_ | Validation description used in case of a validation error | _The value must be an integer or empty_ | |</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">| _column_name_ | The name of the database column in which the attribute will be stored | _name_ | Attribute name</span></div>
@@ -689,7 +689,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Nov 2 2016 23:36:33 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Dec 7 2016 22:47:07 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

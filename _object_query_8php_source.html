@@ -615,151 +615,171 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_unknown_field_exception.html">UnknownFieldException</a>($orderAttribute, <span class="stringliteral">&quot;The sort field name &#39;&quot;</span>.$orderAttribute.<span class="stringliteral">&quot;&#39; is unknown&quot;</span>);</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;      }</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    }</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;  }</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;<span class="comment">   * Get an array of parameter values for the given criteria</span></div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;<span class="comment">   * @param $criteria An array of Criteria instances that define conditions on the object&#39;s attributes (maybe null)</span></div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;<span class="comment">   * @param $parameterOrder Array defining the parameter order</span></div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;<span class="comment">   * @return Array</span></div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00513"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a607369c9995ea76f669d7fa8cbb320da">  513</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a607369c9995ea76f669d7fa8cbb320da">getParameters</a>($criteria, array $parameterOrder) {</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    $parameters = array();</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    <span class="comment">// flatten conditions</span></div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    $criteriaFlat = array();</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    $persistenceFacade = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;persistenceFacade&#39;</span>);</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    <span class="keywordflow">foreach</span> ($criteria as $key =&gt; $curCriteria) {</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;      <span class="keywordflow">foreach</span> ($curCriteria as $criterion) {</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        <span class="keywordflow">if</span> ($criterion instanceof <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html">Criteria</a>) {</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;          $mapper = $persistenceFacade-&gt;getMapper($criterion-&gt;getType());</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;          $valueName = $criterion-&gt;getAttribute();</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;          $attributeDesc = $mapper-&gt;getAttribute($valueName);</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;          <span class="keywordflow">if</span> ($attributeDesc) {</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;            $criteriaFlat[] = $criterion;</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;          }</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        }</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;      }</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    }</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="comment">// get parameters in order</span></div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <span class="keywordflow">foreach</span> ($parameterOrder as $placeholder =&gt; $index) {</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;      $parameters[$placeholder] = $criteriaFlat[$index]-&gt;getValue();</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    }</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <span class="keywordflow">return</span> $parameters;</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;  }</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;</div>
-<div class="line"><a name="l00537"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a3d9f8336d2d52622a626a11d5c5ff344">  537</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a3d9f8336d2d52622a626a11d5c5ff344">getParameterPosition</a>($criterion, $criteria) {</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    $i=0;</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    <span class="keywordflow">foreach</span> ($criteria as $key =&gt; $curCriteria) {</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;      <span class="keywordflow">foreach</span> ($curCriteria as $curCriterion) {</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        <span class="keywordflow">if</span> ($curCriterion instanceof <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html">Criteria</a>) {</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;          <span class="keywordflow">if</span> ($curCriterion-&gt;__toString() === $criterion-&gt;__toString()) {</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;            <span class="keywordflow">return</span> $i;</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;          }</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;          $i++;</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="comment">// add order columns to selected columns as required for distinct queries</span></div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    $order = $selectStmt-&gt;getRawState(SelectStatement::ORDER);</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>($order) &gt; 0) {</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;      $columnNames = array_keys($selectStmt-&gt;getRawState(SelectStatement::COLUMNS));</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;      <span class="keywordflow">foreach</span>($order as $curOrderBy) {</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        $orderByParts = preg_split(<span class="stringliteral">&#39;/ /&#39;</span>, $curOrderBy);</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        $orderAttribute = $orderByParts[0];</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        $orderType = null;</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        <span class="keywordflow">if</span> (strpos($orderAttribute, <span class="charliteral">&#39;.&#39;</span>) &gt; 0) {</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;          <span class="comment">// the type is included in the attribute</span></div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;          $orderAttributeParts = preg_split(<span class="stringliteral">&#39;/\./&#39;</span>, $orderAttribute);</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;          $orderAttribute = array_pop($orderAttributeParts);</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;          $orderType = join(<span class="charliteral">&#39;.&#39;</span>, $orderAttributeParts);</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;        }</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        <span class="keywordflow">if</span> (!in_array($orderAttribute, $columnNames)) {</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;          $selectStmt-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement.html#aef315db4382907d17eff9dfb14c1d7c2">addColumns</a>(array($orderAttribute), $orderType);</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        }</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;      }</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    }</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;  }</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;<span class="comment">   * Get an array of parameter values for the given criteria</span></div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;<span class="comment">   * @param $criteria An array of Criteria instances that define conditions on the object&#39;s attributes (maybe null)</span></div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;<span class="comment">   * @param $parameterOrder Array defining the parameter order</span></div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;<span class="comment">   * @return Array</span></div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00532"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a607369c9995ea76f669d7fa8cbb320da">  532</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a607369c9995ea76f669d7fa8cbb320da">getParameters</a>($criteria, array $parameterOrder) {</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    $parameters = array();</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <span class="comment">// flatten conditions</span></div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    $criteriaFlat = array();</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    $persistenceFacade = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;persistenceFacade&#39;</span>);</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <span class="keywordflow">foreach</span> ($criteria as $key =&gt; $curCriteria) {</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;      <span class="keywordflow">foreach</span> ($curCriteria as $criterion) {</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        <span class="keywordflow">if</span> ($criterion instanceof <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html">Criteria</a>) {</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;          $mapper = $persistenceFacade-&gt;getMapper($criterion-&gt;getType());</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;          $valueName = $criterion-&gt;getAttribute();</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;          $attributeDesc = $mapper-&gt;getAttribute($valueName);</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;          <span class="keywordflow">if</span> ($attributeDesc) {</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;            $criteriaFlat[] = $criterion;</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;          }</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        }</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;      }</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    }</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;  }</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;<span class="comment">   * Reset internal variables. Must be called after buildQuery</span></div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00554"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#abead7814fde773824324e583aa7325b2">  554</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#abead7814fde773824324e583aa7325b2">resetInternals</a>() {</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    $this-&gt;processedNodes = array();</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    $this-&gt;parameterOrder = array();</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    $this-&gt;involvedTypes = array();</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    $this-&gt;aliasCounter = 1;</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;  }</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;<span class="comment">   * Get the table name for the template and calculate an alias if</span></div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;<span class="comment">   * necessary.</span></div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;<span class="comment">   * @param $tpl The object template</span></div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;<span class="comment">   * @return Associative array with keys &#39;name&#39;, &#39;alias&#39;</span></div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00567"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#ae6df6465b7f7b865fb1e03435a4a37c4">  567</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#ae6df6465b7f7b865fb1e03435a4a37c4">processTableName</a>(<a class="code" href="classwcmf_1_1lib_1_1model_1_1_node.html">Node</a> $tpl) {</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    $mapper = self::getMapper($tpl-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#a830b5c75df72b32396701bc563fbe3c7">getType</a>());</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    $mapperTableName = $mapper-&gt;getRealTableName();</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    $tableName = $tpl-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#aa54d71e15bac85c5f7a13e62b9933652">getProperty</a>(self::PROPERTY_TABLE_NAME);</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    <span class="keywordflow">if</span> ($tableName == null) {</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;      $tableName = $mapperTableName;</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;      <span class="comment">// if the template is the child of another node of the same type,</span></div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;      <span class="comment">// we must use a table alias</span></div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;      $parents = $tpl-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1_node.html#ab1ec03cfb438f9a1b3273cbfeb136a0e">getParentsEx</a>(null, null, $tpl-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#a830b5c75df72b32396701bc563fbe3c7">getType</a>());</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;      <span class="keywordflow">foreach</span> ($parents as $curParent) {</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;        $curParentTableName = $curParent-&gt;getProperty(self::PROPERTY_TABLE_NAME);</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;        <span class="keywordflow">if</span> ($curParentTableName == $tableName) {</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;          $tableName .= <span class="charliteral">&#39;_&#39;</span>.($this-&gt;aliasCounter++);</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        }</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;      }</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;      <span class="comment">// set the table name for later reference</span></div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;      $tpl-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#aec9a68c84f392b3ae74cd70d552562b0">setProperty</a>(self::PROPERTY_TABLE_NAME, $tableName);</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    }</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <span class="keywordflow">return</span> array(<span class="stringliteral">&#39;name&#39;</span> =&gt; $mapperTableName, <span class="stringliteral">&#39;alias&#39;</span> =&gt; $tableName);</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;  }</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;<span class="comment">   * Listen to ValueChangeEvents</span></div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;<span class="comment">   * @param $event ValueChangeEvent instance</span></div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00595"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#af365fe8648194210bb7cafcd78900546">  595</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#af365fe8648194210bb7cafcd78900546">valueChanged</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_value_change_event.html">ValueChangeEvent</a> $event) {</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    $object = $event-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_value_change_event.html#a8ecaa7401cc1e1144cb98698a9658ebc">getObject</a>();</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    $name = $event-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_value_change_event.html#a6d3c39a6d4a82210361ca77b2e6e1fac">getValueName</a>();</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    $initialOid = $object-&gt;getProperty(self::PROPERTY_INITIAL_OID);</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <span class="keywordflow">if</span> (isset($this-&gt;observedObjects[$initialOid])) {</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;      $newValue = $event-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_value_change_event.html#a72b60645d8a8254dffee46120b9d0900">getNewValue</a>();</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;      <span class="comment">// make a criteria from newValue and make sure that all properties are set</span></div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;      <span class="keywordflow">if</span> (!($newValue instanceof <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html">Criteria</a>)) {</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        <span class="comment">// LIKE fallback, if the value is not a Criteria instance</span></div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;        $mapper = self::getMapper($object-&gt;getType());</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        $pkNames = $mapper-&gt;getPkNames();</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;        <span class="keywordflow">if</span> (!in_array($name, $pkNames)) {</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;          <span class="comment">// use like condition on any attribute, if it&#39;s a string</span></div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;          <span class="comment">// other value changes will be ignored!</span></div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;          <span class="keywordflow">if</span> (is_string($newValue)) {</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;            $newValue = <span class="keyword">new</span> Criteria($object-&gt;getType(), $name, <span class="stringliteral">&#39;LIKE&#39;</span>, <span class="charliteral">&#39;%&#39;</span>.$newValue.<span class="charliteral">&#39;%&#39;</span>);</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;          }</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        }</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;          <span class="comment">// don&#39;t search for pk names with LIKE</span></div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;          $newValue = <span class="keyword">new</span> Criteria($object-&gt;getType(), $name, <span class="charliteral">&#39;=&#39;</span>, $newValue);</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;        }</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;      }</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;      <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;        <span class="comment">// make sure that type and name are set even if the Criteria is constructed</span></div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;        <span class="comment">// via Criteria::forValue()</span></div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;        $newValue-&gt;setType($object-&gt;getType());</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        $newValue-&gt;setAttribute($name);</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;      }</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;      $oid = $object-&gt;getOID()-&gt;__toString();</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;      <span class="comment">// store change in internal array to have it when constructing the query</span></div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;      <span class="keywordflow">if</span> (!isset($this-&gt;conditions[$oid])) {</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;        $this-&gt;conditions[$oid] = array();</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;      }</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;      $this-&gt;conditions[$oid][$name] = $newValue;</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    }</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;  }</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;}</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;?&gt;</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    <span class="comment">// get parameters in order</span></div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    <span class="keywordflow">foreach</span> ($parameterOrder as $placeholder =&gt; $index) {</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;      $parameters[$placeholder] = $criteriaFlat[$index]-&gt;getValue();</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    }</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <span class="keywordflow">return</span> $parameters;</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;  }</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;</div>
+<div class="line"><a name="l00556"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a3d9f8336d2d52622a626a11d5c5ff344">  556</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a3d9f8336d2d52622a626a11d5c5ff344">getParameterPosition</a>($criterion, $criteria) {</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    $i=0;</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <span class="keywordflow">foreach</span> ($criteria as $key =&gt; $curCriteria) {</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;      <span class="keywordflow">foreach</span> ($curCriteria as $curCriterion) {</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        <span class="keywordflow">if</span> ($curCriterion instanceof <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html">Criteria</a>) {</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;          <span class="keywordflow">if</span> ($curCriterion-&gt;__toString() === $criterion-&gt;__toString()) {</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;            <span class="keywordflow">return</span> $i;</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;          }</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;          $i++;</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        }</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;      }</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    }</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;  }</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;<span class="comment">   * Reset internal variables. Must be called after buildQuery</span></div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00573"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#abead7814fde773824324e583aa7325b2">  573</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#abead7814fde773824324e583aa7325b2">resetInternals</a>() {</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    $this-&gt;processedNodes = array();</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    $this-&gt;parameterOrder = array();</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    $this-&gt;involvedTypes = array();</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    $this-&gt;aliasCounter = 1;</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;  }</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;<span class="comment">   * Get the table name for the template and calculate an alias if</span></div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;<span class="comment">   * necessary.</span></div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;<span class="comment">   * @param $tpl The object template</span></div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;<span class="comment">   * @return Associative array with keys &#39;name&#39;, &#39;alias&#39;</span></div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00586"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#ae6df6465b7f7b865fb1e03435a4a37c4">  586</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#ae6df6465b7f7b865fb1e03435a4a37c4">processTableName</a>(<a class="code" href="classwcmf_1_1lib_1_1model_1_1_node.html">Node</a> $tpl) {</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    $mapper = self::getMapper($tpl-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#a830b5c75df72b32396701bc563fbe3c7">getType</a>());</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    $mapperTableName = $mapper-&gt;getRealTableName();</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    $tableName = $tpl-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#aa54d71e15bac85c5f7a13e62b9933652">getProperty</a>(self::PROPERTY_TABLE_NAME);</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <span class="keywordflow">if</span> ($tableName == null) {</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;      $tableName = $mapperTableName;</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;      <span class="comment">// if the template is the child of another node of the same type,</span></div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;      <span class="comment">// we must use a table alias</span></div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;      $parents = $tpl-&gt;<a class="code" href="classwcmf_1_1lib_1_1model_1_1_node.html#ab1ec03cfb438f9a1b3273cbfeb136a0e">getParentsEx</a>(null, null, $tpl-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#a830b5c75df72b32396701bc563fbe3c7">getType</a>());</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;      <span class="keywordflow">foreach</span> ($parents as $curParent) {</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        $curParentTableName = $curParent-&gt;getProperty(self::PROPERTY_TABLE_NAME);</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        <span class="keywordflow">if</span> ($curParentTableName == $tableName) {</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;          $tableName .= <span class="charliteral">&#39;_&#39;</span>.($this-&gt;aliasCounter++);</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        }</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;      }</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;      <span class="comment">// set the table name for later reference</span></div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;      $tpl-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#aec9a68c84f392b3ae74cd70d552562b0">setProperty</a>(self::PROPERTY_TABLE_NAME, $tableName);</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    }</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <span class="keywordflow">return</span> array(<span class="stringliteral">&#39;name&#39;</span> =&gt; $mapperTableName, <span class="stringliteral">&#39;alias&#39;</span> =&gt; $tableName);</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;  }</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;<span class="comment">   * Listen to ValueChangeEvents</span></div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;<span class="comment">   * @param $event ValueChangeEvent instance</span></div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00614"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#af365fe8648194210bb7cafcd78900546">  614</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#af365fe8648194210bb7cafcd78900546">valueChanged</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_value_change_event.html">ValueChangeEvent</a> $event) {</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    $object = $event-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_value_change_event.html#a8ecaa7401cc1e1144cb98698a9658ebc">getObject</a>();</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    $name = $event-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_value_change_event.html#a6d3c39a6d4a82210361ca77b2e6e1fac">getValueName</a>();</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    $initialOid = $object-&gt;getProperty(self::PROPERTY_INITIAL_OID);</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <span class="keywordflow">if</span> (isset($this-&gt;observedObjects[$initialOid])) {</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;      $newValue = $event-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_value_change_event.html#a72b60645d8a8254dffee46120b9d0900">getNewValue</a>();</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;      <span class="comment">// make a criteria from newValue and make sure that all properties are set</span></div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;      <span class="keywordflow">if</span> (!($newValue instanceof <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html">Criteria</a>)) {</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        <span class="comment">// LIKE fallback, if the value is not a Criteria instance</span></div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        $mapper = self::getMapper($object-&gt;getType());</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        $pkNames = $mapper-&gt;getPkNames();</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        <span class="keywordflow">if</span> (!in_array($name, $pkNames)) {</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;          <span class="comment">// use like condition on any attribute, if it&#39;s a string</span></div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;          <span class="comment">// other value changes will be ignored!</span></div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;          <span class="keywordflow">if</span> (is_string($newValue)) {</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;            $newValue = <span class="keyword">new</span> Criteria($object-&gt;getType(), $name, <span class="stringliteral">&#39;LIKE&#39;</span>, <span class="charliteral">&#39;%&#39;</span>.$newValue.<span class="charliteral">&#39;%&#39;</span>);</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;          }</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        }</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;          <span class="comment">// don&#39;t search for pk names with LIKE</span></div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;          $newValue = <span class="keyword">new</span> Criteria($object-&gt;getType(), $name, <span class="charliteral">&#39;=&#39;</span>, $newValue);</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;        }</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;      }</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;      <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        <span class="comment">// make sure that type and name are set even if the Criteria is constructed</span></div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        <span class="comment">// via Criteria::forValue()</span></div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        $newValue-&gt;setType($object-&gt;getType());</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        $newValue-&gt;setAttribute($name);</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;      }</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;      $oid = $object-&gt;getOID()-&gt;__toString();</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;      <span class="comment">// store change in internal array to have it when constructing the query</span></div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;      <span class="keywordflow">if</span> (!isset($this-&gt;conditions[$oid])) {</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;        $this-&gt;conditions[$oid] = array();</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;      }</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;      $this-&gt;conditions[$oid][$name] = $newValue;</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;    }</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;  }</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;}</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;?&gt;</div>
 <div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_object_query_html_a421831a265621325e1fdd19aace0c758"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a421831a265621325e1fdd19aace0c758">wcmf\lib\model\ObjectQuery\__destruct</a></div><div class="ttdeci">__destruct()</div><div class="ttdoc">Desctructor. </div><div class="ttdef"><b>Definition:</b> <a href="_object_query_8php_source.html#l00142">ObjectQuery.php:142</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1_value_change_event_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1_value_change_event.html">ValueChangeEvent</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object_html_a830b5c75df72b32396701bc563fbe3c7"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a830b5c75df72b32396701bc563fbe3c7">wcmf\lib\persistence\PersistentObject\getType</a></div><div class="ttdeci">getType()</div><div class="ttdoc">Get the type of the object. </div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement_html_a7f0a4e752a9b88d4989ef0726c0bb330"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement.html#a7f0a4e752a9b88d4989ef0726c0bb330">wcmf\lib\model\mapper\SelectStatement\NO_CACHE</a></div><div class="ttdeci">const NO_CACHE</div><div class="ttdef"><b>Definition:</b> <a href="_select_statement_8php_source.html#l00026">SelectStatement.php:26</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_object_query_html_abead7814fde773824324e583aa7325b2"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_object_query.html#abead7814fde773824324e583aa7325b2">wcmf\lib\model\ObjectQuery\resetInternals</a></div><div class="ttdeci">resetInternals()</div><div class="ttdoc">Reset internal variables. </div><div class="ttdef"><b>Definition:</b> <a href="_object_query_8php_source.html#l00554">ObjectQuery.php:554</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement_html_aef315db4382907d17eff9dfb14c1d7c2"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement.html#aef315db4382907d17eff9dfb14c1d7c2">wcmf\lib\model\mapper\SelectStatement\addColumns</a></div><div class="ttdeci">addColumns(array $columns, $joinName=null)</div><div class="ttdoc">Add columns to the statement. </div><div class="ttdef"><b>Definition:</b> <a href="_select_statement_8php_source.html#l00183">SelectStatement.php:183</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_object_query_html_abead7814fde773824324e583aa7325b2"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_object_query.html#abead7814fde773824324e583aa7325b2">wcmf\lib\model\ObjectQuery\resetInternals</a></div><div class="ttdeci">resetInternals()</div><div class="ttdoc">Reset internal variables. </div><div class="ttdef"><b>Definition:</b> <a href="_object_query_8php_source.html#l00573">ObjectQuery.php:573</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1model_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1model.html">wcmf\lib\model</a></div><div class="ttdoc">Node related interfaces and classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00026">namespaces.php:26</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_node_html_ab1ec03cfb438f9a1b3273cbfeb136a0e"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_node.html#ab1ec03cfb438f9a1b3273cbfeb136a0e">wcmf\lib\model\Node\getParentsEx</a></div><div class="ttdeci">getParentsEx(ObjectId $oid=null, $role=null, $type=null, $values=null, $properties=null, $useRegExp=true)</div><div class="ttdoc">Get the parents that match given conditions. </div><div class="ttdef"><b>Definition:</b> <a href="_node_8php_source.html#l00639">Node.php:639</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_object_query_html_a3d9f8336d2d52622a626a11d5c5ff344"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a3d9f8336d2d52622a626a11d5c5ff344">wcmf\lib\model\ObjectQuery\getParameterPosition</a></div><div class="ttdeci">getParameterPosition($criterion, $criteria)</div><div class="ttdef"><b>Definition:</b> <a href="_object_query_8php_source.html#l00537">ObjectQuery.php:537</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_object_query_html_a3d9f8336d2d52622a626a11d5c5ff344"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a3d9f8336d2d52622a626a11d5c5ff344">wcmf\lib\model\ObjectQuery\getParameterPosition</a></div><div class="ttdeci">getParameterPosition($criterion, $criteria)</div><div class="ttdef"><b>Definition:</b> <a href="_object_query_8php_source.html#l00556">ObjectQuery.php:556</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object_html_ac886ae95a746f43906bb3b2515092440"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#ac886ae95a746f43906bb3b2515092440">wcmf\lib\persistence\PersistentObject\getOID</a></div><div class="ttdeci">getOID()</div><div class="ttdoc">Get the object id of the PersistentObject. </div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object_html_aa54d71e15bac85c5f7a13e62b9933652"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#aa54d71e15bac85c5f7a13e62b9933652">wcmf\lib\persistence\impl\DefaultPersistentObject\getProperty</a></div><div class="ttdeci">getProperty($name)</div><div class="ttdef"><b>Definition:</b> <a href="_default_persistent_object_8php_source.html#l00484">DefaultPersistentObject.php:484</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1_persistent_object_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_abstract_query_html_aa880eb606d973df771b6405aa18733f2"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_abstract_query.html#aa880eb606d973df771b6405aa18733f2">wcmf\lib\model\AbstractQuery\getQueryString</a></div><div class="ttdeci">getQueryString($buildDepth=BuildDepth::SINGLE, $orderby=null)</div><div class="ttdoc">Get the query serialized to a string. </div><div class="ttdef"><b>Definition:</b> <a href="_abstract_query_8php_source.html#l00059">AbstractQuery.php:59</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_value_change_event_html_a8ecaa7401cc1e1144cb98698a9658ebc"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_value_change_event.html#a8ecaa7401cc1e1144cb98698a9658ebc">wcmf\lib\persistence\ValueChangeEvent\getObject</a></div><div class="ttdeci">getObject()</div><div class="ttdoc">Get the object whose value has changed. </div><div class="ttdef"><b>Definition:</b> <a href="_value_change_event_8php_source.html#l00049">ValueChangeEvent.php:49</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_object_query_html_aa7014fd04b5afbf3470733b16b63ed20"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_object_query.html#aa7014fd04b5afbf3470733b16b63ed20">wcmf\lib\model\ObjectQuery\makeGroup</a></div><div class="ttdeci">makeGroup($templates, $combineOperator=Criteria::OPERATOR_AND)</div><div class="ttdoc">Group different templates together to realize brackets in the query. </div><div class="ttdef"><b>Definition:</b> <a href="_object_query_8php_source.html#l00236">ObjectQuery.php:236</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_object_query_html_ae6df6465b7f7b865fb1e03435a4a37c4"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_object_query.html#ae6df6465b7f7b865fb1e03435a4a37c4">wcmf\lib\model\ObjectQuery\processTableName</a></div><div class="ttdeci">processTableName(Node $tpl)</div><div class="ttdoc">Get the table name for the template and calculate an alias if necessary. </div><div class="ttdef"><b>Definition:</b> <a href="_object_query_8php_source.html#l00567">ObjectQuery.php:567</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_object_query_html_ae6df6465b7f7b865fb1e03435a4a37c4"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_object_query.html#ae6df6465b7f7b865fb1e03435a4a37c4">wcmf\lib\model\ObjectQuery\processTableName</a></div><div class="ttdeci">processTableName(Node $tpl)</div><div class="ttdoc">Get the table name for the template and calculate an alias if necessary. </div><div class="ttdef"><b>Definition:</b> <a href="_object_query_8php_source.html#l00586">ObjectQuery.php:586</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_value_change_event_html_a6d3c39a6d4a82210361ca77b2e6e1fac"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_value_change_event.html#a6d3c39a6d4a82210361ca77b2e6e1fac">wcmf\lib\persistence\ValueChangeEvent\getValueName</a></div><div class="ttdeci">getValueName()</div><div class="ttdoc">Get the name of the value that has changed. </div><div class="ttdef"><b>Definition:</b> <a href="_value_change_event_8php_source.html#l00057">ValueChangeEvent.php:57</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1_criteria_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1_criteria.html">Criteria</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_object_query_html_a03e9a49687d2b0ffdea0538aa5c008dc"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a03e9a49687d2b0ffdea0538aa5c008dc">wcmf\lib\model\ObjectQuery\PROPERTY_INITIAL_OID</a></div><div class="ttdeci">const PROPERTY_INITIAL_OID</div><div class="ttdef"><b>Definition:</b> <a href="_object_query_8php_source.html#l00109">ObjectQuery.php:109</a></div></div>
@@ -806,13 +826,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_illegal_argument_exception_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_illegal_argument_exception.html">IllegalArgumentException</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_object_query_html_ab469259c7a9143b2226ccb00704a96f0"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_object_query.html#ab469259c7a9143b2226ccb00704a96f0">wcmf\lib\model\ObjectQuery\PROPERTY_TABLE_NAME</a></div><div class="ttdeci">const PROPERTY_TABLE_NAME</div><div class="ttdef"><b>Definition:</b> <a href="_object_query_8php_source.html#l00108">ObjectQuery.php:108</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement.html">wcmf\lib\model\mapper\SelectStatement</a></div><div class="ttdoc">Select statement. </div><div class="ttdef"><b>Definition:</b> <a href="_select_statement_8php_source.html#l00024">SelectStatement.php:24</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_object_query_html_a607369c9995ea76f669d7fa8cbb320da"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a607369c9995ea76f669d7fa8cbb320da">wcmf\lib\model\ObjectQuery\getParameters</a></div><div class="ttdeci">getParameters($criteria, array $parameterOrder)</div><div class="ttdoc">Get an array of parameter values for the given criteria. </div><div class="ttdef"><b>Definition:</b> <a href="_object_query_8php_source.html#l00513">ObjectQuery.php:513</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_object_query_html_a607369c9995ea76f669d7fa8cbb320da"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a607369c9995ea76f669d7fa8cbb320da">wcmf\lib\model\ObjectQuery\getParameters</a></div><div class="ttdeci">getParameters($criteria, array $parameterOrder)</div><div class="ttdoc">Get an array of parameter values for the given criteria. </div><div class="ttdef"><b>Definition:</b> <a href="_object_query_8php_source.html#l00532">ObjectQuery.php:532</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1_paging_info_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1_paging_info.html">PagingInfo</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_object_factory_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_object_factory.html">ObjectFactory</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_build_depth_html_af33f2aced1762d825db23934d1b3205b"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b">wcmf\lib\persistence\BuildDepth\SINGLE</a></div><div class="ttdeci">const SINGLE</div><div class="ttdef"><b>Definition:</b> <a href="_build_depth_8php_source.html#l00022">BuildDepth.php:22</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_abstract_query_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_abstract_query.html">wcmf\lib\model\AbstractQuery</a></div><div class="ttdoc">AbstractQuery is the base class for all query classes. </div><div class="ttdef"><b>Definition:</b> <a href="_abstract_query_8php_source.html#l00027">AbstractQuery.php:27</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_one_to_many_relation_description_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_one_to_many_relation_description.html">wcmf\lib\model\mapper\RDBOneToManyRelationDescription</a></div><div class="ttdoc">Instances of RDBOneToManyRelationDescription describe a one to many relation from &#39;this&#39; end (one) to...</div><div class="ttdef"><b>Definition:</b> <a href="_r_d_b_one_to_many_relation_description_8php_source.html#l00021">RDBOneToManyRelationDescription.php:21</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_object_query_html_af365fe8648194210bb7cafcd78900546"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_object_query.html#af365fe8648194210bb7cafcd78900546">wcmf\lib\model\ObjectQuery\valueChanged</a></div><div class="ttdeci">valueChanged(ValueChangeEvent $event)</div><div class="ttdoc">Listen to ValueChangeEvents. </div><div class="ttdef"><b>Definition:</b> <a href="_object_query_8php_source.html#l00595">ObjectQuery.php:595</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_object_query_html_af365fe8648194210bb7cafcd78900546"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_object_query.html#af365fe8648194210bb7cafcd78900546">wcmf\lib\model\ObjectQuery\valueChanged</a></div><div class="ttdeci">valueChanged(ValueChangeEvent $event)</div><div class="ttdoc">Listen to ValueChangeEvents. </div><div class="ttdef"><b>Definition:</b> <a href="_object_query_8php_source.html#l00614">ObjectQuery.php:614</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_many_to_one_relation_description_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_many_to_one_relation_description.html">RDBManyToOneRelationDescription</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_node_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_node.html">wcmf\lib\model\Node</a></div><div class="ttdoc">Node adds the concept of relations to PersistentObject. </div><div class="ttdef"><b>Definition:</b> <a href="_node_8php_source.html#l00034">Node.php:34</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1_value_change_event_html_a244352f035b82b20b0efa506167fd862"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1_value_change_event.html#a244352f035b82b20b0efa506167fd862">wcmf\lib\persistence\ValueChangeEvent\NAME</a></div><div class="ttdeci">const NAME</div><div class="ttdef"><b>Definition:</b> <a href="_value_change_event_8php_source.html#l00024">ValueChangeEvent.php:24</a></div></div>
@@ -829,7 +849,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Nov 2 2016 23:36:35 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Dec 7 2016 22:47:09 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

@@ -1,15 +1,13 @@
 var searchData=
 [
-  ['packages_5fvar',['PACKAGES_VAR',['../classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab3d68c379814aadbab70cef14a16a3e3',1,'wcmf::application::controller::BatchController']]],
-  ['parameter_5finvalid',['PARAMETER_INVALID',['../namespacewcmf_1_1lib_1_1presentation.html#af04b741cadf286fc515bf8077dd87f48',1,'wcmf::lib::presentation']]],
-  ['parameter_5fmissing',['PARAMETER_MISSING',['../namespacewcmf_1_1lib_1_1presentation.html#aa90dfb86ed7f5bde37bee0889da51fff',1,'wcmf::lib::presentation']]],
-  ['permission_5fdenied',['PERMISSION_DENIED',['../namespacewcmf_1_1lib_1_1presentation.html#a1724cbc77ce7e4704e6b24f068c02148',1,'wcmf::lib::presentation']]],
-  ['permission_5fmodifier_5fallow',['PERMISSION_MODIFIER_ALLOW',['../interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a4e34e2ff1951d49ebe88423999609413',1,'wcmf::lib::security::PermissionManager']]],
-  ['permission_5fmodifier_5fdeny',['PERMISSION_MODIFIER_DENY',['../interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a07a7905d362aa5a7e5838463bbb1005f',1,'wcmf::lib::security::PermissionManager']]],
-  ['property_5fcombine_5foperator',['PROPERTY_COMBINE_OPERATOR',['../classwcmf_1_1lib_1_1model_1_1_object_query.html#a955fb32d8f6d3d900eeaa8a32db05b26',1,'wcmf::lib::model::ObjectQuery']]],
-  ['property_5finitial_5foid',['PROPERTY_INITIAL_OID',['../classwcmf_1_1lib_1_1model_1_1_object_query.html#a03e9a49687d2b0ffdea0538aa5c008dc',1,'wcmf::lib::model::ObjectQuery']]],
-  ['property_5ftable_5fname',['PROPERTY_TABLE_NAME',['../classwcmf_1_1lib_1_1model_1_1_object_query.html#ab469259c7a9143b2226ccb00704a96f0',1,'wcmf::lib::model::ObjectQuery']]],
-  ['protocol_5fstr',['PROTOCOL_STR',['../classwcmf_1_1lib_1_1presentation_1_1link_1_1_internal_link.html#a92f5de329a69cb80372a4bee6a83b3f1',1,'wcmf::lib::presentation::link::InternalLink']]],
-  ['proxies_5fonly',['PROXIES_ONLY',['../classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#ad8e66505aa12ab235195acb721268093',1,'wcmf::lib::persistence::BuildDepth']]],
-  ['proxy_5fobjects_5fsession_5fvarname',['PROXY_OBJECTS_SESSION_VARNAME',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_remote_capable_persistence_facade.html#a5feed45231748ac82338fbb533a3da9b',1,'wcmf::lib::persistence::impl::RemoteCapablePersistenceFacade']]]
+  ['session_5fvarname',['SESSION_VARNAME',['../classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1impl_1_1_default_lock_handler.html#a3bfacaf0ac887efa249e0cf4353e4db9',1,'wcmf::lib::persistence::concurrency::impl::DefaultLockHandler']]],
+  ['sids_5fsession_5fvarname',['SIDS_SESSION_VARNAME',['../classwcmf_1_1lib_1_1service_1_1impl_1_1_r_p_c_client.html#a1f8e2d08ea24f0a4892ccb0e9a7ea448',1,'wcmf::lib::service::impl::RPCClient']]],
+  ['single',['SINGLE',['../classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b',1,'wcmf::lib::persistence::BuildDepth']]],
+  ['sorttype_5fasc',['SORTTYPE_ASC',['../classwcmf_1_1lib_1_1model_1_1_node_comparator.html#ab7b4e939aa13501d3e5bc54c40fa0eb3',1,'wcmf::lib::model::NodeComparator']]],
+  ['sorttype_5fdesc',['SORTTYPE_DESC',['../classwcmf_1_1lib_1_1model_1_1_node_comparator.html#af580a503f69c7dbed71a36cdee2c8e0c',1,'wcmf::lib::model::NodeComparator']]],
+  ['state_5fclean',['STATE_CLEAN',['../interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a1b944c776949e9c0660f4d7b08cf6a55',1,'wcmf::lib::persistence::PersistentObject']]],
+  ['state_5fdeleted',['STATE_DELETED',['../interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a2f444140d375d5c63def72413cadcb47',1,'wcmf::lib::persistence::PersistentObject']]],
+  ['state_5fdirty',['STATE_DIRTY',['../interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a53f40b6aa8360fb891d6516dea517b57',1,'wcmf::lib::persistence::PersistentObject']]],
+  ['state_5fnew',['STATE_NEW',['../interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#af47c6a5b8aefd132e8709b8aa2a4edfc',1,'wcmf::lib::persistence::PersistentObject']]],
+  ['step_5fvar',['STEP_VAR',['../classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a375e3a8043bbbd4061ea06e857ffee73',1,'wcmf::application::controller::BatchController']]]
 ];

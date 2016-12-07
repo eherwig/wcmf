@@ -1,6 +1,12 @@
 var searchData=
 [
-  ['name',['NAME',['../classwcmf_1_1lib_1_1config_1_1_config_change_event.html#a244352f035b82b20b0efa506167fd862',1,'wcmf\lib\config\ConfigChangeEvent\NAME()'],['../classwcmf_1_1lib_1_1persistence_1_1_persistence_event.html#a244352f035b82b20b0efa506167fd862',1,'wcmf\lib\persistence\PersistenceEvent\NAME()'],['../classwcmf_1_1lib_1_1persistence_1_1_property_change_event.html#a244352f035b82b20b0efa506167fd862',1,'wcmf\lib\persistence\PropertyChangeEvent\NAME()'],['../classwcmf_1_1lib_1_1persistence_1_1_state_change_event.html#a244352f035b82b20b0efa506167fd862',1,'wcmf\lib\persistence\StateChangeEvent\NAME()'],['../classwcmf_1_1lib_1_1persistence_1_1_value_change_event.html#a244352f035b82b20b0efa506167fd862',1,'wcmf\lib\persistence\ValueChangeEvent\NAME()'],['../classwcmf_1_1lib_1_1presentation_1_1_application_event.html#a244352f035b82b20b0efa506167fd862',1,'wcmf\lib\presentation\ApplicationEvent\NAME()']]],
-  ['no_5fcache',['NO_CACHE',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement.html#a7f0a4e752a9b88d4989ef0726c0bb330',1,'wcmf::lib::model::mapper::SelectStatement']]],
-  ['num_5fsteps_5fvar',['NUM_STEPS_VAR',['../classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a3e60c3a3b30a97852be0f55bef8b74d8',1,'wcmf::application::controller::BatchController']]]
+  ['packages_5fvar',['PACKAGES_VAR',['../classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab3d68c379814aadbab70cef14a16a3e3',1,'wcmf::application::controller::BatchController']]],
+  ['permission_5fmodifier_5fallow',['PERMISSION_MODIFIER_ALLOW',['../interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a4e34e2ff1951d49ebe88423999609413',1,'wcmf::lib::security::PermissionManager']]],
+  ['permission_5fmodifier_5fdeny',['PERMISSION_MODIFIER_DENY',['../interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a07a7905d362aa5a7e5838463bbb1005f',1,'wcmf::lib::security::PermissionManager']]],
+  ['property_5fcombine_5foperator',['PROPERTY_COMBINE_OPERATOR',['../classwcmf_1_1lib_1_1model_1_1_object_query.html#a955fb32d8f6d3d900eeaa8a32db05b26',1,'wcmf::lib::model::ObjectQuery']]],
+  ['property_5finitial_5foid',['PROPERTY_INITIAL_OID',['../classwcmf_1_1lib_1_1model_1_1_object_query.html#a03e9a49687d2b0ffdea0538aa5c008dc',1,'wcmf::lib::model::ObjectQuery']]],
+  ['property_5ftable_5fname',['PROPERTY_TABLE_NAME',['../classwcmf_1_1lib_1_1model_1_1_object_query.html#ab469259c7a9143b2226ccb00704a96f0',1,'wcmf::lib::model::ObjectQuery']]],
+  ['protocol_5fstr',['PROTOCOL_STR',['../classwcmf_1_1lib_1_1presentation_1_1link_1_1_internal_link.html#a92f5de329a69cb80372a4bee6a83b3f1',1,'wcmf::lib::presentation::link::InternalLink']]],
+  ['proxies_5fonly',['PROXIES_ONLY',['../classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#ad8e66505aa12ab235195acb721268093',1,'wcmf::lib::persistence::BuildDepth']]],
+  ['proxy_5fobjects_5fsession_5fvarname',['PROXY_OBJECTS_SESSION_VARNAME',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_remote_capable_persistence_facade.html#a5feed45231748ac82338fbb533a3da9b',1,'wcmf::lib::persistence::impl::RemoteCapablePersistenceFacade']]]
 ];

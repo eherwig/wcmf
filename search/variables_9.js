@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['maptype_5fhorizontal',['MAPTYPE_HORIZONTAL',['../classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#abffce6787aaee2eb8a0e404f6e308ec8',1,'wcmf::lib::model::visitor::LayoutVisitor']]],
-  ['maptype_5fvertical',['MAPTYPE_VERTICAL',['../classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#aa6b3c81b89002413398e8e1f3bd7e31c',1,'wcmf::lib::model::visitor::LayoutVisitor']]],
-  ['max',['MAX',['../classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#aea7ca06e97d0ffa2d7764c79dece2bd5',1,'wcmf::lib::persistence::BuildDepth']]],
-  ['method_5fnot_5fallowed',['METHOD_NOT_ALLOWED',['../namespacewcmf_1_1lib_1_1presentation_1_1impl.html#acffff8e2ecbdf15d204d775cca6d3f4d',1,'wcmf::lib::presentation::impl']]]
+  ['oasis',['OASIS',['../classwcmf_1_1lib_1_1service_1_1_soap_client.html#a5b2d3b6a0e74f95b8c34ca825d0293bb',1,'wcmf::lib::service::SoapClient']]],
+  ['object_5fmap_5fvar',['OBJECT_MAP_VAR',['../classwcmf_1_1application_1_1controller_1_1_copy_controller.html#aa1a6648b484005b28c8b933d0dc3f23d',1,'wcmf::application::controller::CopyController']]],
+  ['one_5fcall_5fvar',['ONE_CALL_VAR',['../classwcmf_1_1application_1_1controller_1_1_batch_controller.html#af73eaa0312b714fe5ae3b4e81e6ccf59',1,'wcmf::application::controller::BatchController']]],
+  ['operator_5fand',['OPERATOR_AND',['../classwcmf_1_1lib_1_1persistence_1_1_criteria.html#aecfb583df189a0066873cc163d1fe2a7',1,'wcmf::lib::persistence::Criteria']]],
+  ['operator_5for',['OPERATOR_OR',['../classwcmf_1_1lib_1_1persistence_1_1_criteria.html#a22ee5179bb121cf704f9be4c8581a913',1,'wcmf::lib::persistence::Criteria']]],
+  ['order_5fbottom',['ORDER_BOTTOM',['../classwcmf_1_1application_1_1controller_1_1_sort_controller.html#ac41b82d4e56329c031813af8a6fef168',1,'wcmf::application::controller::SortController']]]
 ];

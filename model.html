@@ -151,7 +151,7 @@ ChiNode / ChiManyToMany</h4>
 <tr>
 <td><em>initparams</em> </td><td>Name of the configuration section, which defines initialization parameters for the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html"><code>PersistenceMapper</code></a> instance </td><td><em>database</em> </td><td><em>database</em> </td></tr>
 <tr>
-<td><em>display_value</em> </td><td>Attributes to display in a list view: A single attribute name or |-separated list of attribute names </td><td><em>name|date</em> </td><td></td></tr>
+<td><em>display_value</em> </td><td>Attributes to display in a list view: A single attribute name or comma separated list of attribute names </td><td><em>name,date</em> </td><td></td></tr>
 <tr>
 <td><em>orderby</em> </td><td>Definition of default sorting: <em>none</em> (no order), <em>sortkey</em> (generates a <em>sortkey</em> column, that is used for explicit sorting) or the name of any attribute optionally followed by <em>ASC</em> or <em>DESC</em> </td><td><em>name ASC</em> </td><td><em>none</em> </td></tr>
 <tr>
@@ -161,11 +161,11 @@ ChiNode / ChiManyToMany</h4>
 <tr>
 <td><em>table_name</em> </td><td>The name of the database table in which instances will be stored </td><td><em>Author</em> </td><td>Class name </td></tr>
 <tr>
-<td><em>pk_name</em> </td><td>The name of the primary key column: A single value or |-separated list of values (the generator will add this automatically, if there is no appropriate attribute) </td><td><em>fk_user_id|fk_role_id</em> </td><td><em>id</em> </td></tr>
+<td><em>pk_name</em> </td><td>The name of the primary key column: A single value or comma separated list of values (the generator will add this automatically, if there is no appropriate attribute) </td><td><em>fk_user_id,fk_role_id</em> </td><td><em>id</em> </td></tr>
 <tr>
-<td><em>child_order</em> </td><td>The order of the associated child types: A single type or |-separated list of types </td><td><em>Image|Textblock|Attachment</em> in Article type </td><td></td></tr>
+<td><em>child_order</em> </td><td>The order of the associated relations: A comma separated list of role names </td><td><em>Author,Publisher,Image,Textblock,Attachment</em> in Article type </td><td></td></tr>
 <tr>
-<td><em>parent_order</em> </td><td>The order of the associated parent types: A single type or |-separated list of types </td><td><em>Author|Publisher</em> in Article type </td><td></td></tr>
+<td><em>parent_order</em> </td><td><em>not used</em> </td><td></td><td></td></tr>
 </table>
 <dl class="section note"><dt>Note</dt><dd>Some of these tags are accessible in the application through the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#aa54d71e15bac85c5f7a13e62b9933652"><code>PersistentObject::getProperty</code></a> method.</dd></dl>
 <h4><a class="anchor" id="model_chivalue"></a>
@@ -175,7 +175,7 @@ ChiValue</h4>
 <tr>
 <th>Tag </th><th>Description </th><th>Example </th><th>Default value  </th></tr>
 <tr>
-<td><em>app_data_type</em> </td><td>Application specific attribute tags: A single value or |-separated list of values (see <a class="el" href="persistence.html#pers_values">Values, Properties and Tags</a>) </td><td><em>TAG_A|TAG_B</em> </td><td><em>DATATYPE_ATTRIBUTE</em> </td></tr>
+<td><em>app_data_type</em> </td><td>Application specific attribute tags: A single value or comma separated list of values (see <a class="el" href="persistence.html#pers_values">Values, Properties and Tags</a>) </td><td><em>TAG_A,TAG_B</em> </td><td><em>DATATYPE_ATTRIBUTE</em> </td></tr>
 <tr>
 <td><em>db_data_type</em> </td><td>The attribute's database type </td><td><em>TEXT</em> </td><td><em>VARCHAR(255)</em> </td></tr>
 <tr>
@@ -185,7 +185,7 @@ ChiValue</h4>
 <tr>
 <td><em>display_type</em> </td><td>Name of the attribute's display type as listed in the <em>DisplayTypes</em> configuration section </td><td><em>image</em> </td><td><em>text</em> </td></tr>
 <tr>
-<td><em>restrictions_match</em> </td><td>Name of the attribute's validation type as listed in the <em>Validator</em> configuration section (see <a class="el" href="persistence.html#pers_validation">Validation</a>) and additional configuration encoded as JSON string </td><td><em>regexp:{"pattern":"^[0-9]*$"}</em> or <em>image:{"height":[300,0]}</em> </td><td></td></tr>
+<td><em>restrictions_match</em> </td><td>Name of the attribute's validation type or comma separated list of validation types as listed in the <em>Validator</em> configuration section (see <a class="el" href="persistence.html#pers_validation">Validation</a>) and additional configuration encoded as JSON string </td><td><em>date,required</em> or <em>regexp:{"pattern":"^[0-9]*$"}</em> or <em>image:{"height":[300,0]}</em> </td><td></td></tr>
 <tr>
 <td><em>restrictions_not_match</em> </td><td><em>not used</em> </td><td></td><td></td></tr>
 <tr>
@@ -611,7 +611,7 @@ Protected regions</h4>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Nov 2 2016 23:36:38 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Dec 7 2016 22:47:12 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

@@ -331,7 +331,7 @@ CSRF protection</h3>
 </div><!-- fragment --><h2><a class="anchor" id="sec_input"></a>
 Input</h2>
 <p>Generally all external input sent to the application should be considered harmful.</p>
-<p>In PHP this input is stored in so called <em>Superglobals</em>, e.g. <em>$_GET</em>, <em>$_POST</em>, <em>$_FILES</em>. To avoid using these global variables directly in code, wCMF encapsulates them in the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance and makes them available through the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a664ea399753a23ceeb585c084ae7de48"><code>Request::getValue</code></a> method. Besides the variable name this method defines the following optional parameters:</p>
+<p>In PHP this input is stored in so called <em>Superglobals</em>, e.g. <em>$_GET</em>, <em>$_POST</em>, <em>$_FILES</em>. To avoid using these global variables directly in code, wCMF encapsulates them in the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> instance and makes them available through the <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a2abdec7bee6d1b9dd8c24a13f59991ae"><code>Request::getValue</code></a> method. Besides the variable name this method defines the following optional parameters:</p>
 <ul>
 <li><code>$default</code> default value if the value is not contained in the request</li>
 <li><code>$filter</code> <a href="http://php.net/manual/en/filter.filters.php">filter</a> to be applied to the value</li>
@@ -359,7 +359,7 @@ Input</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Nov 2 2016 23:36:38 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Dec 7 2016 22:47:12 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

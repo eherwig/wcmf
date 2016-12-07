@@ -2,8 +2,6 @@ var searchData=
 [
   ['packages_5fvar',['PACKAGES_VAR',['../classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab3d68c379814aadbab70cef14a16a3e3',1,'wcmf::application::controller::BatchController']]],
   ['paginginfo',['PagingInfo',['../classwcmf_1_1lib_1_1persistence_1_1_paging_info.html',1,'wcmf::lib::persistence']]],
-  ['parameter_5finvalid',['PARAMETER_INVALID',['../namespacewcmf_1_1lib_1_1presentation.html#af04b741cadf286fc515bf8077dd87f48',1,'wcmf::lib::presentation']]],
-  ['parameter_5fmissing',['PARAMETER_MISSING',['../namespacewcmf_1_1lib_1_1presentation.html#aa90dfb86ed7f5bde37bee0889da51fff',1,'wcmf::lib::presentation']]],
   ['parse',['parse',['../classwcmf_1_1lib_1_1persistence_1_1_object_id.html#a2441c8f369adef96455b48af3467b42f',1,'wcmf::lib::persistence::ObjectId']]],
   ['parseinifile',['parseIniFile',['../classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html#a521bd6e0a41f31b174634d7e16338379',1,'wcmf::lib::config::impl::InifileConfiguration']]],
   ['parsekey',['parseKey',['../classwcmf_1_1lib_1_1config_1_1_action_key.html#a6c4ca38bddf98fcf275ee6c80ad5d4da',1,'wcmf::lib::config::ActionKey']]],
@@ -13,7 +11,6 @@ var searchData=
   ['pdf',['PDF',['../classwcmf_1_1lib_1_1pdf_1_1_p_d_f.html',1,'wcmf::lib::pdf']]],
   ['pdfpage',['PDFPage',['../interfacewcmf_1_1lib_1_1pdf_1_1_p_d_f_page.html',1,'wcmf::lib::pdf']]],
   ['pdftemplate',['PDFTemplate',['../classwcmf_1_1lib_1_1pdf_1_1_p_d_f_template.html',1,'wcmf::lib::pdf']]],
-  ['permission_5fdenied',['PERMISSION_DENIED',['../namespacewcmf_1_1lib_1_1presentation.html#a1724cbc77ce7e4704e6b24f068c02148',1,'wcmf::lib::presentation']]],
   ['permission_5fmodifier_5fallow',['PERMISSION_MODIFIER_ALLOW',['../interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a4e34e2ff1951d49ebe88423999609413',1,'wcmf::lib::security::PermissionManager']]],
   ['permission_5fmodifier_5fdeny',['PERMISSION_MODIFIER_DENY',['../interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a07a7905d362aa5a7e5838463bbb1005f',1,'wcmf::lib::security::PermissionManager']]],
   ['permissioncontroller',['PermissionController',['../classwcmf_1_1application_1_1controller_1_1_permission_controller.html',1,'wcmf::application::controller']]],

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['infinite',['INFINITE',['../classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#aa77abffeefb50083440c805c0fd76695',1,'wcmf::lib::persistence::BuildDepth']]],
-  ['internal_5fvalue_5fprefix',['INTERNAL_VALUE_PREFIX',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a80fbec4be0b7c98d509869ff85aafa0c',1,'wcmf::lib::model::mapper::RDBMapper']]],
-  ['iterator_5fid_5fvar',['ITERATOR_ID_VAR',['../classwcmf_1_1application_1_1controller_1_1_batch_display_controller.html#aef4bdb64520065b290126e7c395fabe0',1,'wcmf\application\controller\BatchDisplayController\ITERATOR_ID_VAR()'],['../classwcmf_1_1application_1_1controller_1_1_copy_controller.html#aef4bdb64520065b290126e7c395fabe0',1,'wcmf\application\controller\CopyController\ITERATOR_ID_VAR()'],['../classwcmf_1_1application_1_1controller_1_1_x_m_l_export_controller.html#aef4bdb64520065b290126e7c395fabe0',1,'wcmf\application\controller\XMLExportController\ITERATOR_ID_VAR()']]]
+  ['maptype_5fhorizontal',['MAPTYPE_HORIZONTAL',['../classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#abffce6787aaee2eb8a0e404f6e308ec8',1,'wcmf::lib::model::visitor::LayoutVisitor']]],
+  ['maptype_5fvertical',['MAPTYPE_VERTICAL',['../classwcmf_1_1lib_1_1model_1_1visitor_1_1_layout_visitor.html#aa6b3c81b89002413398e8e1f3bd7e31c',1,'wcmf::lib::model::visitor::LayoutVisitor']]],
+  ['max',['MAX',['../classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#aea7ca06e97d0ffa2d7764c79dece2bd5',1,'wcmf::lib::persistence::BuildDepth']]]
 ];

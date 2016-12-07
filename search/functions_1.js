@@ -1,7 +1,7 @@
 var searchData=
 [
   ['acceptvisitor',['acceptVisitor',['../classwcmf_1_1lib_1_1model_1_1_node.html#a4ce8d24adc3fbd548db104f9b98b962d',1,'wcmf::lib::model::Node']]],
-  ['addcolumns',['addColumns',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html#ae0bf54c91f9bad7d011bc0f7fb9fe2d1',1,'wcmf::lib::model::mapper::NodeUnifiedRDBMapper']]],
+  ['addcolumns',['addColumns',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html#ae0bf54c91f9bad7d011bc0f7fb9fe2d1',1,'wcmf\lib\model\mapper\NodeUnifiedRDBMapper\addColumns()'],['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement.html#aef315db4382907d17eff9dfb14c1d7c2',1,'wcmf\lib\model\mapper\SelectStatement\addColumns()']]],
   ['addconfiguration',['addConfiguration',['../interfacewcmf_1_1lib_1_1config_1_1_configuration.html#adbc60917b6870516162d2a30d5e1521f',1,'wcmf\lib\config\Configuration\addConfiguration()'],['../classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html#adbc60917b6870516162d2a30d5e1521f',1,'wcmf\lib\config\impl\InifileConfiguration\addConfiguration()']]],
   ['addcriteria',['addCriteria',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html#a384f0251f66e5d505faa28b07877e13f',1,'wcmf::lib::model::mapper::NodeUnifiedRDBMapper']]],
   ['adderror',['addError',['../interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html#a1713cbae7046bb8f8baa9cac224150ec',1,'wcmf\lib\presentation\ControllerMessage\addError()'],['../classwcmf_1_1lib_1_1presentation_1_1impl_1_1_abstract_controller_message.html#a1713cbae7046bb8f8baa9cac224150ec',1,'wcmf\lib\presentation\impl\AbstractControllerMessage\addError()']]],
