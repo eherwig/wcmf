@@ -198,20 +198,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">   * @see Factory::clear()</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a342b1676bf9651477ec79ed93f606244">   87</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a342b1676bf9651477ec79ed93f606244">clear</a>() {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    self::checkConfig();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    self::$factory-&gt;clear();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">   * Check if the configuration is valid.</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">function</span> checkConfig() {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (self::$factory == null) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a>(<span class="stringliteral">&#39;No Factory instance provided. Do this by calling the configure() method.&#39;</span>);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;?&gt;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (self::$factory != null) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      self::$factory-&gt;clear();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    self::$factory = null;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">   * Check if the configuration is valid.</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">function</span> checkConfig() {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (self::$factory == null) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a>(<span class="stringliteral">&#39;No Factory instance provided. Do this by calling the configure() method.&#39;</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;?&gt;</div>
 <div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_afc370f4105a7f394ec8b99e756161a9b"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#afc370f4105a7f394ec8b99e756161a9b">wcmf\lib\core\ObjectFactory\isConfigured</a></div><div class="ttdeci">static isConfigured()</div><div class="ttdoc">Check if the factory is configured. </div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00040">ObjectFactory.php:40</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a342b1676bf9651477ec79ed93f606244"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a342b1676bf9651477ec79ed93f606244">wcmf\lib\core\ObjectFactory\clear</a></div><div class="ttdeci">static clear()</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00087">ObjectFactory.php:87</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_ab40efa1cc62e59f63c3dfef25fbdb7ec"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#ab40efa1cc62e59f63c3dfef25fbdb7ec">wcmf\lib\core\ObjectFactory\getInstanceOf</a></div><div class="ttdeci">static getInstanceOf($class, $dynamicConfiguration=array())</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00063">ObjectFactory.php:63</a></div></div>
@@ -237,7 +239,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Dec 7 2016 23:40:39 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sat Dec 31 2016 00:35:05 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

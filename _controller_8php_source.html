@@ -258,7 +258,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">// return the last error</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    $errors = $this-&gt;response-&gt;getErrors();</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    $errors = array_merge($this-&gt;request-&gt;getErrors(), $this-&gt;response-&gt;getErrors());</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>($errors) &gt; 0) {</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;      $error = array_pop($errors);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      $this-&gt;response-&gt;setValue(<span class="stringliteral">&#39;errorCode&#39;</span>, $error-&gt;getCode());</div>
@@ -578,7 +578,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Dec 7 2016 23:40:41 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sat Dec 31 2016 00:35:08 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

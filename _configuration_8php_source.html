@@ -173,69 +173,70 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">   * Get a section.</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">   * @param $section The section to return.</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">   * @return Array holding the key/value pairs belonging to the section.</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">   * @throws ConfigurationException if the section does not exist</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a69b8f6a56f006f65cdfdb8a8884eb420">getSection</a>($section);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">   * Check if a configuration value exists.</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">   * @param $key The name of the value.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">   * @param $section The section the value belongs to.</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">   * @return Boolean</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a71b2cd5459406a4e51de66135416d16c">hasValue</a>($key, $section);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">   * Get a configuration value.</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">   * @param $key The name of the entry.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">   * @param $section The section the key belongs to.</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">   * @return The configuration value.</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">   * @throws ConfigurationException if the value does not exist</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#ade8987dcf8041a3c7724604177be53bd">getValue</a>($key, $section);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">   * Get a value from the configuration as boolean if it represents a boolean.</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">   * @param $key The name of the entry.</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">   * @param $section The section the key belongs to.</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">   * @return Boolean or the original value.</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">   * @throws ConfigurationException if the value does not exist</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#afc7bdbf49e8c614de9ddf9176a87af7c">getBooleanValue</a>($key, $section);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">   * Get a directory value from the configuration.</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">   * The value will interpreted as directory relative to WCMF_BASE and</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">   * returned as absolute path.</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">   * @param $key The name of the entry.</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">   * @param $section The section the key belongs to.</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">   * @return The configuration value.</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">   * @throws ConfigurationException if the value does not exist</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a735dc312f405fb15076d16e459af8b8c">getDirectoryValue</a>($key, $section);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">   * Get a file value from the configuration.</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">   * The value will interpreted as file relative to WCMF_BASE and</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">   * returned as absolute path.</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">   * @param $key The name of the entry.</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">   * @param $section The section the key belongs to.</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">   * @return The configuration value.</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">   * @throws ConfigurationException if the value does not exist</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#aaaf925fc2efaab606cbbddfddf93c277">getFileValue</a>($key, $section);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">   * Get a configuration key.</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">   * @param $value The value of the entry.</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">   * @param $section The section the value belongs to.</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">   * @return The configuration key.</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">   * @throws ConfigurationException if the key does not exist</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a92fb64ddc3e58d0dc5fb0361657797af">getKey</a>($value, $section);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;?&gt;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">   * @param $includeMeta Boolean whether to include section meta data keys (optional, default: false)</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">   * @return Array holding the key/value pairs belonging to the section.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">   * @throws ConfigurationException if the section does not exist</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a58a68c84b362b3cff5fd9b1c41080f78">getSection</a>($section, $includeMeta=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">   * Check if a configuration value exists.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">   * @param $key The name of the value.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">   * @param $section The section the value belongs to.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">   * @return Boolean</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a71b2cd5459406a4e51de66135416d16c">hasValue</a>($key, $section);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">   * Get a configuration value.</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">   * @param $key The name of the entry.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">   * @param $section The section the key belongs to.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">   * @return The configuration value.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">   * @throws ConfigurationException if the value does not exist</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#ade8987dcf8041a3c7724604177be53bd">getValue</a>($key, $section);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">   * Get a value from the configuration as boolean if it represents a boolean.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">   * @param $key The name of the entry.</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">   * @param $section The section the key belongs to.</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">   * @return Boolean or the original value.</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">   * @throws ConfigurationException if the value does not exist</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#afc7bdbf49e8c614de9ddf9176a87af7c">getBooleanValue</a>($key, $section);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">   * Get a directory value from the configuration.</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">   * The value will interpreted as directory relative to WCMF_BASE and</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">   * returned as absolute path.</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">   * @param $key The name of the entry.</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">   * @param $section The section the key belongs to.</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">   * @return The configuration value.</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">   * @throws ConfigurationException if the value does not exist</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a735dc312f405fb15076d16e459af8b8c">getDirectoryValue</a>($key, $section);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">   * Get a file value from the configuration.</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">   * The value will interpreted as file relative to WCMF_BASE and</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">   * returned as absolute path.</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">   * @param $key The name of the entry.</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">   * @param $section The section the key belongs to.</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">   * @return The configuration value.</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">   * @throws ConfigurationException if the value does not exist</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#aaaf925fc2efaab606cbbddfddf93c277">getFileValue</a>($key, $section);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">   * Get a configuration key.</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">   * @param $value The value of the entry.</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">   * @param $section The section the value belongs to.</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">   * @return The configuration key.</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">   * @throws ConfigurationException if the key does not exist</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a92fb64ddc3e58d0dc5fb0361657797af">getKey</a>($value, $section);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;?&gt;</div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1config_1_1_configuration_html_a92fb64ddc3e58d0dc5fb0361657797af"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a92fb64ddc3e58d0dc5fb0361657797af">wcmf\lib\config\Configuration\getKey</a></div><div class="ttdeci">getKey($value, $section)</div><div class="ttdoc">Get a configuration key. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1config_1_1_configuration_html_afc7bdbf49e8c614de9ddf9176a87af7c"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#afc7bdbf49e8c614de9ddf9176a87af7c">wcmf\lib\config\Configuration\getBooleanValue</a></div><div class="ttdeci">getBooleanValue($key, $section)</div><div class="ttdoc">Get a value from the configuration as boolean if it represents a boolean. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1config_1_1_configuration_html_a55ad87c7b53d1748156bb15250d26e02"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a55ad87c7b53d1748156bb15250d26e02">wcmf\lib\config\Configuration\getConfigurations</a></div><div class="ttdeci">getConfigurations()</div><div class="ttdoc">Get a list of available configurations. </div></div>
@@ -245,9 +246,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="interfacewcmf_1_1lib_1_1config_1_1_configuration_html_aaaf925fc2efaab606cbbddfddf93c277"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#aaaf925fc2efaab606cbbddfddf93c277">wcmf\lib\config\Configuration\getFileValue</a></div><div class="ttdeci">getFileValue($key, $section)</div><div class="ttdoc">Get a file value from the configuration. </div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1config_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1config.html">wcmf\lib\config</a></div><div class="ttdoc">Configuration related interfaces and classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00006">namespaces.php:6</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1config_1_1_configuration_html_a735dc312f405fb15076d16e459af8b8c"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a735dc312f405fb15076d16e459af8b8c">wcmf\lib\config\Configuration\getDirectoryValue</a></div><div class="ttdeci">getDirectoryValue($key, $section)</div><div class="ttdoc">Get a directory value from the configuration. </div></div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1config_1_1_configuration_html_a69b8f6a56f006f65cdfdb8a8884eb420"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a69b8f6a56f006f65cdfdb8a8884eb420">wcmf\lib\config\Configuration\getSection</a></div><div class="ttdeci">getSection($section)</div><div class="ttdoc">Get a section. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1config_1_1_configuration_html_ac1f543e7e36a77057d0049cee985a5f8"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#ac1f543e7e36a77057d0049cee985a5f8">wcmf\lib\config\Configuration\getSections</a></div><div class="ttdeci">getSections()</div><div class="ttdoc">Get all section names. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1config_1_1_configuration_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html">wcmf\lib\config\Configuration</a></div><div class="ttdoc">Implementations of Configuration give access to the application configuration. </div><div class="ttdef"><b>Definition:</b> <a href="_configuration_8php_source.html#l00032">Configuration.php:32</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1config_1_1_configuration_html_a58a68c84b362b3cff5fd9b1c41080f78"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a58a68c84b362b3cff5fd9b1c41080f78">wcmf\lib\config\Configuration\getSection</a></div><div class="ttdeci">getSection($section, $includeMeta=false)</div><div class="ttdoc">Get a section. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1config_1_1_configuration_html_a71b2cd5459406a4e51de66135416d16c"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1config_1_1_configuration.html#a71b2cd5459406a4e51de66135416d16c">wcmf\lib\config\Configuration\hasValue</a></div><div class="ttdeci">hasValue($key, $section)</div><div class="ttdoc">Check if a configuration value exists. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
@@ -261,7 +262,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Dec 7 2016 23:40:39 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sat Dec 31 2016 00:35:05 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

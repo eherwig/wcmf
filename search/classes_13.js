@@ -1,7 +1,7 @@
 var searchData=
 [
   ['validatetype',['ValidateType',['../interfacewcmf_1_1lib_1_1validation_1_1_validate_type.html',1,'wcmf::lib::validation']]],
-  ['validationexception',['ValidationException',['../classwcmf_1_1lib_1_1persistence_1_1_validation_exception.html',1,'wcmf::lib::persistence']]],
+  ['validationexception',['ValidationException',['../classwcmf_1_1lib_1_1validation_1_1_validation_exception.html',1,'wcmf::lib::validation']]],
   ['validator',['Validator',['../classwcmf_1_1lib_1_1validation_1_1_validator.html',1,'wcmf::lib::validation']]],
   ['valuechangeevent',['ValueChangeEvent',['../classwcmf_1_1lib_1_1persistence_1_1_value_change_event.html',1,'wcmf::lib::persistence']]],
   ['valuelistcontroller',['ValueListController',['../classwcmf_1_1application_1_1controller_1_1_value_list_controller.html',1,'wcmf::application::controller']]],
