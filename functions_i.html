@@ -59,7 +59,13 @@
                 <li><a href="4.0/index.html">4.0.x</a></li>
               </ul>
             </li>
-            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-file-text-o"></i> API <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="annotated.html">Classes</a></li>
+                <li><a href="hierarchy.html">Hierarchy</a></li>
+                <li><a href="globals.html">Globals</a></li>
+              </ul>
+            </li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -145,6 +151,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>isActive()
 : <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_transaction.html#aa56a17bc66c1081fad1cca3a488224c3">DefaultTransaction</a>
 , <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#aa56a17bc66c1081fad1cca3a488224c3">Transaction</a>
+, <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_user.html#aa56a17bc66c1081fad1cca3a488224c3">AbstractUser</a>
+, <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_anonymous_user.html#aa56a17bc66c1081fad1cca3a488224c3">AnonymousUser</a>
+, <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#aa56a17bc66c1081fad1cca3a488224c3">User</a>
 </li>
 <li>isCached()
 : <a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement.html#afac82e816d0fc5049c3295f0d356acdb">SelectStatement</a>
@@ -202,9 +211,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>isIgnoringTotalCount()
 : <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html#a9373826473325aab8ececc3101f26270">PagingInfo</a>
-</li>
-<li>isImage()
-: <a class="el" href="classwcmf_1_1lib_1_1util_1_1_graphics_util.html#ac5ecce661b162c2a327865b54609f61d">GraphicsUtil</a>
 </li>
 <li>isInfoEnabled()
 : <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_log4php_logger.html#aad07dacdac7ca4c24fc32b0709e0e732">Log4phpLogger</a>
@@ -292,26 +298,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>isStopped()
 : <a class="el" href="classwcmf_1_1lib_1_1core_1_1_event.html#aaf3350830f5be65c2a8521c0c937c73c">Event</a>
 </li>
+<li>isSuperUser()
+: <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_user.html#a23dfdea3cf4ed0120dc730749799d768">AbstractUser</a>
+, <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_anonymous_user.html#a23dfdea3cf4ed0120dc730749799d768">AnonymousUser</a>
+, <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a23dfdea3cf4ed0120dc730749799d768">User</a>
+</li>
 <li>isTokenValid()
 : <a class="el" href="classwcmf_1_1lib_1_1core_1_1impl_1_1_auth_token_session.html#a089c89965cac689e0114478ca6545740">AuthTokenSession</a>
 </li>
 <li>isTranslatingValues()
 : <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_remote_capable_persistence_facade.html#a8f6f32c89d7e5b0100df3e11da4368a2">RemoteCapablePersistenceFacade</a>
 </li>
-<li>isUtf8()
-: <a class="el" href="classwcmf_1_1lib_1_1io_1_1_encoding_util.html#a179507b167903e4bbdf95572e24bbe61">EncodingUtil</a>
-</li>
 <li>isValid()
 : <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html#ae5321966f3ade3b4c4ec05477a1e508e">ObjectId</a>
-</li>
-<li>isValidImageDimension()
-: <a class="el" href="classwcmf_1_1lib_1_1util_1_1_graphics_util.html#a88f060a084b47c41675452350ec55dd2">GraphicsUtil</a>
-</li>
-<li>isValidImageHeight()
-: <a class="el" href="classwcmf_1_1lib_1_1util_1_1_graphics_util.html#a99b9f005b553a9b5a91679c78cc49801">GraphicsUtil</a>
-</li>
-<li>isValidImageWidth()
-: <a class="el" href="classwcmf_1_1lib_1_1util_1_1_graphics_util.html#af8d6efa1e7737a745072e9ef87a8be65">GraphicsUtil</a>
 </li>
 <li>isValidTarget()
 : <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1link_1_1_link_processor_strategy.html#a8cf73d5b624946c2a87098ab48e5c9b9">LinkProcessorStrategy</a>
@@ -344,8 +343,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Dec 31 2016 00:35:24 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+        <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Thu Jan 12 2017 02:28:21 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

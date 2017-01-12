@@ -9,7 +9,6 @@ var searchData=
   ['processaction',['processAction',['../interfacewcmf_1_1lib_1_1presentation_1_1_action_mapper.html#a4d68a33b0d9c6e61bf901380282e38ca',1,'wcmf\lib\presentation\ActionMapper\processAction()'],['../classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_action_mapper.html#a4d68a33b0d9c6e61bf901380282e38ca',1,'wcmf\lib\presentation\impl\DefaultActionMapper\processAction()']]],
   ['processdeletes',['processDeletes',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_transaction.html#addcfa75e9354e43a93293d1f96f5bc9d',1,'wcmf::lib::persistence::impl::DefaultTransaction']]],
   ['processfile',['processFile',['../classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html#abb5963ed6995c61059ab5ebdc2c022ec',1,'wcmf::lib::config::impl::InifileConfiguration']]],
-  ['processimagefunction',['processImageFunction',['../classwcmf_1_1lib_1_1util_1_1_graphics_util.html#aaa97c6bae08d50b54ff3c7a269f823b2',1,'wcmf::lib::util::GraphicsUtil']]],
   ['processinserts',['processInserts',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_transaction.html#a488bb4ebc3d3458b54fed896640f25db',1,'wcmf::lib::persistence::impl::DefaultTransaction']]],
   ['processlinks',['processLinks',['../classwcmf_1_1lib_1_1presentation_1_1link_1_1_link_processor.html#a57bfcd5c264e71060d0b73a453ab7cc1',1,'wcmf::lib::presentation::link::LinkProcessor']]],
   ['processobjecttemplate',['processObjectTemplate',['../classwcmf_1_1lib_1_1model_1_1_object_query.html#a3b416d1770ad4d135d742b4623f59d13',1,'wcmf::lib::model::ObjectQuery']]],

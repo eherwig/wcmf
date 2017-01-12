@@ -59,7 +59,13 @@
                 <li><a href="4.0/index.html">4.0.x</a></li>
               </ul>
             </li>
-            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-file-text-o"></i> API <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="annotated.html">Classes</a></li>
+                <li><a href="hierarchy.html">Hierarchy</a></li>
+                <li><a href="globals.html">Globals</a></li>
+              </ul>
+            </li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -114,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2016 wemove digital solutions GmbH</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2017 wemove digital solutions GmbH</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Licensed under the terms of the MIT License.</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
@@ -171,42 +177,70 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a6306304e3c13c3f774a69104d27cf0d7">verifyPassword</a>($password);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">   * Set the configuration file of the user.</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">   * @param $config The configuration file of the user.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">   * Set if the user is active.</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">   * @param $isActive Boolean whether the user is active or not</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#afbdb41bfc6dd8dc9b0b56b062fe04477">setConfig</a>($config);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a7cfba2a50da0d1c9d152ed208044d14c">setIsActive</a>($isActive);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">   * Get the configuration file of the user.</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">   * @return The configuration file of the user.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">   * Check if the user is active.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">   * @return Boolean.</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a628300eb8464467d9344c7c59cc8770b">getConfig</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#aa56a17bc66c1081fad1cca3a488224c3">isActive</a>();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">   * Check for a certain role in the user roles.</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">   * @param $roleName The role name to check for. e.g. &quot;administrators&quot;</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">   * @return Boolean whether the user has the role</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a87dea6afe9a6dd197bc48ffe49f5bebd">hasRole</a>($roleName);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">   * Get the roles of a user.</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">   * @return Array of role names</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#aa676cae5ee8d7fb6862a8724adc2660d">getRoles</a>();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;?&gt;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">   * Set if the user is super user (can&#39;t be inactive).</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">   * @param $isSuperUser Boolean whether the user is super user or not</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#aa19df8114b67aefbb784477bfc52d80a">setIsSuperUser</a>($isSuperUser);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">   * Check if the user is super user (can&#39;t be inactive).</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">   * @return Boolean</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a23dfdea3cf4ed0120dc730749799d768">isSuperUser</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">   * Set the configuration file of the user.</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">   * @param $config The configuration file of the user.</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#afbdb41bfc6dd8dc9b0b56b062fe04477">setConfig</a>($config);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">   * Get the configuration file of the user.</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">   * @return The configuration file of the user.</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a628300eb8464467d9344c7c59cc8770b">getConfig</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">   * Check for a certain role in the user roles.</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">   * @param $roleName The role name to check for. e.g. &quot;administrators&quot;</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">   * @return Boolean whether the user has the role</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a87dea6afe9a6dd197bc48ffe49f5bebd">hasRole</a>($roleName);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">   * Get the roles of a user.</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">   * @return Array of role names</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#aa676cae5ee8d7fb6862a8724adc2660d">getRoles</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;?&gt;</div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html_aa676cae5ee8d7fb6862a8724adc2660d"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#aa676cae5ee8d7fb6862a8724adc2660d">wcmf\lib\security\principal\User\getRoles</a></div><div class="ttdeci">getRoles()</div><div class="ttdoc">Get the roles of a user. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html_aa3bdb4795cdc0b406946e175a1dd96cd"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#aa3bdb4795cdc0b406946e175a1dd96cd">wcmf\lib\security\principal\User\setLogin</a></div><div class="ttdeci">setLogin($login)</div><div class="ttdoc">Set the login of the user. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html_afbdb41bfc6dd8dc9b0b56b062fe04477"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#afbdb41bfc6dd8dc9b0b56b062fe04477">wcmf\lib\security\principal\User\setConfig</a></div><div class="ttdeci">setConfig($config)</div><div class="ttdoc">Set the configuration file of the user. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html_a6306304e3c13c3f774a69104d27cf0d7"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a6306304e3c13c3f774a69104d27cf0d7">wcmf\lib\security\principal\User\verifyPassword</a></div><div class="ttdeci">verifyPassword($password)</div><div class="ttdoc">Verify the given password against the password of the user. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html_a628300eb8464467d9344c7c59cc8770b"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a628300eb8464467d9344c7c59cc8770b">wcmf\lib\security\principal\User\getConfig</a></div><div class="ttdeci">getConfig()</div><div class="ttdoc">Get the configuration file of the user. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html">wcmf\lib\security\principal\User</a></div><div class="ttdoc">User is the interface for users. </div><div class="ttdef"><b>Definition:</b> <a href="_user_8php_source.html#l00018">User.php:18</a></div></div>
-<div class="ttc" id="namespacewcmf_1_1lib_1_1security_1_1principal_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1security_1_1principal.html">wcmf\lib\security\principal</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00087">namespaces.php:87</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1security_1_1principal_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1security_1_1principal.html">wcmf\lib\security\principal</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00090">namespaces.php:90</a></div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html_a23dfdea3cf4ed0120dc730749799d768"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a23dfdea3cf4ed0120dc730749799d768">wcmf\lib\security\principal\User\isSuperUser</a></div><div class="ttdeci">isSuperUser()</div><div class="ttdoc">Check if the user is super user (can&#39;t be inactive). </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html_aa19df8114b67aefbb784477bfc52d80a"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#aa19df8114b67aefbb784477bfc52d80a">wcmf\lib\security\principal\User\setIsSuperUser</a></div><div class="ttdeci">setIsSuperUser($isSuperUser)</div><div class="ttdoc">Set if the user is super user (can&#39;t be inactive). </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html_a04e0957baeb7acde9c0c86556da2d43f"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a04e0957baeb7acde9c0c86556da2d43f">wcmf\lib\security\principal\User\getPassword</a></div><div class="ttdeci">getPassword()</div><div class="ttdoc">Get the password of the user. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html_a3e35c8d3dbb2c513c618a664389e0926"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a3e35c8d3dbb2c513c618a664389e0926">wcmf\lib\security\principal\User\setPassword</a></div><div class="ttdeci">setPassword($password)</div><div class="ttdoc">Set the password of the user. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html_a87dea6afe9a6dd197bc48ffe49f5bebd"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a87dea6afe9a6dd197bc48ffe49f5bebd">wcmf\lib\security\principal\User\hasRole</a></div><div class="ttdeci">hasRole($roleName)</div><div class="ttdoc">Check for a certain role in the user roles. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html_ac886ae95a746f43906bb3b2515092440"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#ac886ae95a746f43906bb3b2515092440">wcmf\lib\security\principal\User\getOID</a></div><div class="ttdeci">getOID()</div><div class="ttdoc">Get the object id of the user. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html_a7cfba2a50da0d1c9d152ed208044d14c"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a7cfba2a50da0d1c9d152ed208044d14c">wcmf\lib\security\principal\User\setIsActive</a></div><div class="ttdeci">setIsActive($isActive)</div><div class="ttdoc">Set if the user is active. </div></div>
+<div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html_aa56a17bc66c1081fad1cca3a488224c3"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#aa56a17bc66c1081fad1cca3a488224c3">wcmf\lib\security\principal\User\isActive</a></div><div class="ttdeci">isActive()</div><div class="ttdoc">Check if the user is active. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user_html_a827998aa84c36eb4260c248cd4797e9b"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_user.html#a827998aa84c36eb4260c248cd4797e9b">wcmf\lib\security\principal\User\getLogin</a></div><div class="ttdeci">getLogin()</div><div class="ttdoc">Get the login of the user. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
@@ -219,8 +253,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Dec 31 2016 00:35:09 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+        <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Thu Jan 12 2017 02:28:09 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

@@ -59,7 +59,13 @@
                 <li><a href="4.0/index.html">4.0.x</a></li>
               </ul>
             </li>
-            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-file-text-o"></i> API <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="annotated.html">Classes</a></li>
+                <li><a href="hierarchy.html">Hierarchy</a></li>
+                <li><a href="globals.html">Globals</a></li>
+              </ul>
+            </li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -114,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2016 wemove digital solutions GmbH</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2017 wemove digital solutions GmbH</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Licensed under the terms of the MIT License.</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
@@ -165,7 +171,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// check if user exists</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    $loginOk = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> ($user != null) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> ($user != null &amp;&amp; $user-&gt;isActive()) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="comment">// check password</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      $loginOk = $user-&gt;verifyPassword($password);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">if</span> ($loginOk) {</div>
@@ -189,7 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a11fc3766874ff733f8c4c7e3fc5152a6"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">wcmf\lib\core\ObjectFactory\getInstance</a></div><div class="ttdeci">static getInstance($name, $dynamicConfiguration=array())</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00047">ObjectFactory.php:47</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1security_1_1principal_1_1_principal_factory_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1security_1_1principal_1_1_principal_factory.html">PrincipalFactory</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_principal_factory_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_principal_factory.html">wcmf\lib\security\principal\PrincipalFactory</a></div><div class="ttdoc">PrincipalFactory implementations are used to retrieve User and Role instances. </div><div class="ttdef"><b>Definition:</b> <a href="_principal_factory_8php_source.html#l00019">PrincipalFactory.php:19</a></div></div>
-<div class="ttc" id="namespacewcmf_1_1lib_1_1security_1_1impl_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1security_1_1impl.html">wcmf\lib\security\impl</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00085">namespaces.php:85</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1security_1_1impl_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1security_1_1impl.html">wcmf\lib\security\impl</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00088">namespaces.php:88</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager_html_a1cb73e452eea4a518471630e43d4cb26"><div class="ttname"><a href="classwcmf_1_1lib_1_1security_1_1impl_1_1_default_authentication_manager.html#a1cb73e452eea4a518471630e43d4cb26">wcmf\lib\security\impl\DefaultAuthenticationManager\__construct</a></div><div class="ttdeci">__construct(PrincipalFactory $principalFactory)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="_default_authentication_manager_8php_source.html#l00032">DefaultAuthenticationManager.php:32</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_illegal_argument_exception_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_illegal_argument_exception.html">IllegalArgumentException</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_object_factory_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_object_factory.html">ObjectFactory</a></div></div>
@@ -204,8 +210,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Dec 31 2016 00:35:09 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+        <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Thu Jan 12 2017 02:28:08 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

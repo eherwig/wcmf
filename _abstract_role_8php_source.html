@@ -59,7 +59,13 @@
                 <li><a href="4.0/index.html">4.0.x</a></li>
               </ul>
             </li>
-            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-file-text-o"></i> API <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="annotated.html">Classes</a></li>
+                <li><a href="hierarchy.html">Hierarchy</a></li>
+                <li><a href="globals.html">Globals</a></li>
+              </ul>
+            </li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -114,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2016 wemove digital solutions GmbH</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2017 wemove digital solutions GmbH</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Licensed under the terms of the MIT License.</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
@@ -124,10 +130,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewcmf_1_1lib_1_1security_1_1principal_1_1impl.html">wcmf\lib\security\principal\impl</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1core_1_1_object_factory.html">wcmf\lib\core\ObjectFactory</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1model_1_1_node.html">wcmf\lib\model\Node</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1i18n_1_1_message.html">wcmf\lib\i18n\Message</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1persistence_1_1_validation_exception.html">wcmf\lib\persistence\ValidationException</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html">wcmf\lib\security\principal\Role</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1i18n_1_1_message.html">wcmf\lib\i18n\Message</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1model_1_1_node.html">wcmf\lib\model\Node</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html">wcmf\lib\security\principal\Role</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1validation_1_1_validation_exception.html">wcmf\lib\validation\ValidationException</a>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Default implementation of a role.</span></div>
@@ -160,12 +166,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// the name is expected to be stored in the &#39;name&#39; value</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> ($name == <span class="stringliteral">&#39;name&#39;</span>) {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keywordflow">if</span> (strlen(trim($value)) == 0) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> ValidationException($name, $value, $message-&gt;<a class="code" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html#aef9e1ab491290cf4f519d25c96043dbb">getText</a>(<span class="stringliteral">&quot;The role requires a name&quot;</span>));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1validation_1_1_validation_exception.html">ValidationException</a>($name, $value, $message-&gt;<a class="code" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html#aef9e1ab491290cf4f519d25c96043dbb">getText</a>(<span class="stringliteral">&quot;The role requires a name&quot;</span>));</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      $principalFactory = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;principalFactory&#39;</span>);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      $role = $principalFactory-&gt;getRole($value);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="keywordflow">if</span> ($role != null &amp;&amp; $role-&gt;getOID() != $this-&gt;<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#ac886ae95a746f43906bb3b2515092440">getOID</a>()) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> ValidationException($name, $value, $message-&gt;<a class="code" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html#aef9e1ab491290cf4f519d25c96043dbb">getText</a>(<span class="stringliteral">&quot;The role &#39;%0%&#39; already exists&quot;</span>, array($value)));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1validation_1_1_validation_exception.html">ValidationException</a>($name, $value, $message-&gt;<a class="code" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html#aef9e1ab491290cf4f519d25c96043dbb">getText</a>(<span class="stringliteral">&quot;The role &#39;%0%&#39; already exists&quot;</span>, array($value)));</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
@@ -179,15 +185,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object_html_ac886ae95a746f43906bb3b2515092440"><div class="ttname"><a href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#ac886ae95a746f43906bb3b2515092440">wcmf\lib\persistence\impl\DefaultPersistentObject\getOID</a></div><div class="ttdeci">getOID()</div><div class="ttdef"><b>Definition:</b> <a href="_default_persistent_object_8php_source.html#l00134">DefaultPersistentObject.php:134</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a11fc3766874ff733f8c4c7e3fc5152a6"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">wcmf\lib\core\ObjectFactory\getInstance</a></div><div class="ttdeci">static getInstance($name, $dynamicConfiguration=array())</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00047">ObjectFactory.php:47</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1i18n_1_1_message_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">wcmf\lib\i18n\Message</a></div><div class="ttdoc">Message is used to get localized messages to be used in the user interface. </div><div class="ttdef"><b>Definition:</b> <a href="_message_8php_source.html#l00023">Message.php:23</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1validation_1_1_validation_exception_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1validation_1_1_validation_exception.html">ValidationException</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1model_1_1_node_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1model_1_1_node.html">Node</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1i18n_1_1_message_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1i18n_1_1_message_html_aef9e1ab491290cf4f519d25c96043dbb"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html#aef9e1ab491290cf4f519d25c96043dbb">wcmf\lib\i18n\Message\getText</a></div><div class="ttdeci">getText($message, $parameters=null, $lang='')</div><div class="ttdoc">Get a localized string. </div></div>
-<div class="ttc" id="namespacewcmf_1_1lib_1_1security_1_1principal_1_1impl_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1security_1_1principal_1_1impl.html">wcmf\lib\security\principal\impl</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00089">namespaces.php:89</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1security_1_1principal_1_1impl_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1security_1_1principal_1_1impl.html">wcmf\lib\security\principal\impl</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00092">namespaces.php:92</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_role_html_a2fe666694997d047711d7653eca2f132"><div class="ttname"><a href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_role.html#a2fe666694997d047711d7653eca2f132">wcmf\lib\security\principal\impl\AbstractRole\setName</a></div><div class="ttdeci">setName($name)</div><div class="ttdef"><b>Definition:</b> <a href="_abstract_role_8php_source.html#l00029">AbstractRole.php:29</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1security_1_1principal_1_1_role_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1security_1_1principal_1_1_role.html">Role</a></div></div>
-<div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_1_1_validation_exception_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence_1_1_validation_exception.html">ValidationException</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_object_factory_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_object_factory.html">ObjectFactory</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_role_html_a3d0963e68bb313b163a73f2803c64600"><div class="ttname"><a href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_role.html#a3d0963e68bb313b163a73f2803c64600">wcmf\lib\security\principal\impl\AbstractRole\getName</a></div><div class="ttdeci">getName()</div><div class="ttdef"><b>Definition:</b> <a href="_abstract_role_8php_source.html#l00036">AbstractRole.php:36</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1validation_1_1_validation_exception_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1validation_1_1_validation_exception.html">wcmf\lib\validation\ValidationException</a></div><div class="ttdoc">ValidationException signals an exception in validation. </div><div class="ttdef"><b>Definition:</b> <a href="_validation_exception_8php_source.html#l00018">ValidationException.php:18</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_node_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_node.html">wcmf\lib\model\Node</a></div><div class="ttdoc">Node adds the concept of relations to PersistentObject. </div><div class="ttdef"><b>Definition:</b> <a href="_node_8php_source.html#l00034">Node.php:34</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
@@ -200,8 +207,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Dec 31 2016 00:35:09 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+        <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Thu Jan 12 2017 02:28:09 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

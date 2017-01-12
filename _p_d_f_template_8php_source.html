@@ -59,7 +59,13 @@
                 <li><a href="4.0/index.html">4.0.x</a></li>
               </ul>
             </li>
-            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-file-text-o"></i> API <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="annotated.html">Classes</a></li>
+                <li><a href="hierarchy.html">Hierarchy</a></li>
+                <li><a href="globals.html">Globals</a></li>
+              </ul>
+            </li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -114,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2016 wemove digital solutions GmbH</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2017 wemove digital solutions GmbH</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Licensed under the terms of the MIT License.</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
@@ -246,7 +252,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="namespacewcmf_1_1lib_1_1pdf_1_1_p_d_f_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1pdf_1_1_p_d_f.html">PDF</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_template_html_a6e68d07ae3f6afb3d4957a1a922d39f0"><div class="ttname"><a href="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_template.html#a6e68d07ae3f6afb3d4957a1a922d39f0">wcmf\lib\pdf\PDFTemplate\setPages</a></div><div class="ttdeci">setPages($pages, $cycle=false, $data=null)</div><div class="ttdoc">Set the PDFPage instances used to write the content to the template. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_f_template_8php_source.html#l00081">PDFTemplate.php:81</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1pdf_1_1_p_d_f_page_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1pdf_1_1_p_d_f_page.html">PDFPage</a></div></div>
-<div class="ttc" id="namespacewcmf_1_1lib_1_1pdf_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1pdf.html">wcmf\lib\pdf</a></div><div class="ttdoc">PDF related interfaces and classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00037">namespaces.php:37</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1pdf_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1pdf.html">wcmf\lib\pdf</a></div><div class="ttdoc">PDF related interfaces and classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00040">namespaces.php:40</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_template_html_afb4d8fed5d293f024135d28bad5dc648"><div class="ttname"><a href="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_template.html#afb4d8fed5d293f024135d28bad5dc648">wcmf\lib\pdf\PDFTemplate\setTemplate</a></div><div class="ttdeci">setTemplate($filename)</div><div class="ttdoc">Set the template filename. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_f_template_8php_source.html#l00067">PDFTemplate.php:67</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_template_html_a2dd76887ffe698b5492233ff7494e076"><div class="ttname"><a href="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_template.html#a2dd76887ffe698b5492233ff7494e076">wcmf\lib\pdf\PDFTemplate\__construct</a></div><div class="ttdeci">__construct($pdf)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_f_template_8php_source.html#l00054">PDFTemplate.php:54</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1pdf_1_1_p_d_f_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1pdf_1_1_p_d_f.html">wcmf\lib\pdf\PDF</a></div><div class="ttdoc">PDF extends FPDF/FPDI. </div><div class="ttdef"><b>Definition:</b> <a href="_p_d_f_8php_source.html#l00029">PDF.php:29</a></div></div>
@@ -261,8 +267,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Dec 31 2016 00:35:06 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+        <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Thu Jan 12 2017 02:28:07 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

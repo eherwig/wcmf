@@ -59,7 +59,13 @@
                 <li><a href="4.0/index.html">4.0.x</a></li>
               </ul>
             </li>
-            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-file-text-o"></i> API <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="annotated.html">Classes</a></li>
+                <li><a href="hierarchy.html">Hierarchy</a></li>
+                <li><a href="globals.html">Globals</a></li>
+              </ul>
+            </li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -114,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2016 wemove digital solutions GmbH</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2017 wemove digital solutions GmbH</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Licensed under the terms of the MIT License.</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
@@ -126,8 +132,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1core_1_1_session.html">wcmf\lib\core\Session</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * Obfuscator allows to obfuscate strings. By passing an objuscated string</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * to the method Obfuscator::unveil() the orginal string is returned.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * Obfuscator allows to obfuscate strings. By passing an obfuscated string</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * to the method Obfuscator::unveil() the original string is returned.</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * This is especially useful, if you want to place a secret string inside a client view</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * as a parameter and want to get the original string back as the request is processed.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
@@ -196,7 +202,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;?&gt;</div>
-<div class="ttc" id="namespacewcmf_1_1lib_1_1util_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1util.html">wcmf\lib\util</a></div><div class="ttdoc">Utility classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00097">namespaces.php:97</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1util_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1util.html">wcmf\lib\util</a></div><div class="ttdoc">Utility classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00100">namespaces.php:100</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1util_1_1_obfuscator_html_a11576f80cd7e90aaf1175e8aa993cbbb"><div class="ttname"><a href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html#a11576f80cd7e90aaf1175e8aa993cbbb">wcmf\lib\util\Obfuscator\obfuscate</a></div><div class="ttdeci">obfuscate($str)</div><div class="ttdoc">Get an obfuscated string. </div><div class="ttdef"><b>Definition:</b> <a href="_obfuscator_8php_source.html#l00043">Obfuscator.php:43</a></div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1core_1_1_session_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1core_1_1_session.html">wcmf\lib\core\Session</a></div><div class="ttdoc">Session is the interface for session implementations and defines access to session variables...</div><div class="ttdef"><b>Definition:</b> <a href="_session_8php_source.html#l00019">Session.php:19</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1util_1_1_obfuscator_html_a8d7e295eddad26a4d908095b24dde3d3"><div class="ttname"><a href="classwcmf_1_1lib_1_1util_1_1_obfuscator.html#a8d7e295eddad26a4d908095b24dde3d3">wcmf\lib\util\Obfuscator\__construct</a></div><div class="ttdeci">__construct(Session $session)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="_obfuscator_8php_source.html#l00034">Obfuscator.php:34</a></div></div>
@@ -214,8 +220,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Dec 31 2016 00:35:09 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+        <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Thu Jan 12 2017 02:28:09 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

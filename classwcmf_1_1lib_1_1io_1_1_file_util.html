@@ -59,7 +59,13 @@
                 <li><a href="4.0/index.html">4.0.x</a></li>
               </ul>
             </li>
-            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-file-text-o"></i> API <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="annotated.html">Classes</a></li>
+                <li><a href="hierarchy.html">Hierarchy</a></li>
+                <li><a href="globals.html">Globals</a></li>
+              </ul>
+            </li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -136,14 +142,16 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a7d07a78b2f3eeac1528926e463e66bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a47f13770af8d28000d469905a02d69"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a5a47f13770af8d28000d469905a02d69">copyRecDir</a> ($source, $dest)</td></tr>
 <tr class="separator:a5a47f13770af8d28000d469905a02d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea7a754facedfed79eae2a831f5af5a9"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#aea7a754facedfed79eae2a831f5af5a9">mkdirRec</a> ($dirname)</td></tr>
-<tr class="separator:aea7a754facedfed79eae2a831f5af5a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66abae90510762992fdf615c6cf676d0"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a66abae90510762992fdf615c6cf676d0">mkdirRec</a> ($dirname, $perm=0775)</td></tr>
+<tr class="separator:a66abae90510762992fdf615c6cf676d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8fb65c968a19034a98703518846e51c"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#ac8fb65c968a19034a98703518846e51c">emptyDir</a> ($dirname)</td></tr>
 <tr class="separator:ac8fb65c968a19034a98703518846e51c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28802a30d56b096333ecd305f02fccc3"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a28802a30d56b096333ecd305f02fccc3">realpath</a> ($path)</td></tr>
 <tr class="separator:a28802a30d56b096333ecd305f02fccc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a786d7248a38a0b652e126dcc377c9089"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a786d7248a38a0b652e126dcc377c9089">sanitizeFilename</a> ($file)</td></tr>
 <tr class="separator:a786d7248a38a0b652e126dcc377c9089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a05e99bdaef21b437615de66ba8c211"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a2a05e99bdaef21b437615de66ba8c211">fixFilename</a> ($file)</td></tr>
+<tr class="separator:a2a05e99bdaef21b437615de66ba8c211"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5437b000c04701df10097d59652df73"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#ad5437b000c04701df10097d59652df73">fileExists</a> ($file)</td></tr>
 <tr class="separator:ad5437b000c04701df10097d59652df73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -198,7 +206,7 @@ Static Public Member Functions</h2></td></tr>
     <tr><td class="paramname">$mediaFile</td><td>An assoziative array with the following keys: 'name', 'type', 'tmp_name' (typically a $_FILES entry) </td></tr>
     <tr><td class="paramname">$destName</td><td>The destination file name </td></tr>
     <tr><td class="paramname">$mimeTypes</td><td>An array holding the allowed mimetypes, null if arbitrary (default: <em>null</em>) </td></tr>
-    <tr><td class="paramname">$override</td><td>Boolean whether an existing file should be overridden, if false an unque id will be placed in the filename to prevent overriding (default: <em>true</em>) </td></tr>
+    <tr><td class="paramname">$override</td><td>Boolean whether an existing file should be overridden, if false an unique id will be placed in the filename to prevent overriding (default: <em>true</em>) </td></tr>
   </table>
   </dd>
 </dl>
@@ -239,7 +247,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Definition at line <a class="el" href="_file_util_8php_source.html#l00068">68</a> of file <a class="el" href="_file_util_8php_source.html">FileUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_file_util_8php_source.html#l00067">67</a> of file <a class="el" href="_file_util_8php_source.html">FileUtil.php</a>.</p>
 
 </div>
 </div>
@@ -284,7 +292,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_file_util_8php_source.html#l00088">88</a> of file <a class="el" href="_file_util_8php_source.html">FileUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_file_util_8php_source.html#l00087">87</a> of file <a class="el" href="_file_util_8php_source.html">FileUtil.php</a>.</p>
 
 </div>
 </div>
@@ -332,7 +340,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_file_util_8php_source.html#l00100">100</a> of file <a class="el" href="_file_util_8php_source.html">FileUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_file_util_8php_source.html#l00099">99</a> of file <a class="el" href="_file_util_8php_source.html">FileUtil.php</a>.</p>
 
 </div>
 </div>
@@ -380,7 +388,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_file_util_8php_source.html#l00140">140</a> of file <a class="el" href="_file_util_8php_source.html">FileUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_file_util_8php_source.html#l00139">139</a> of file <a class="el" href="_file_util_8php_source.html">FileUtil.php</a>.</p>
 
 </div>
 </div>
@@ -425,7 +433,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_file_util_8php_source.html#l00181">181</a> of file <a class="el" href="_file_util_8php_source.html">FileUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_file_util_8php_source.html#l00180">180</a> of file <a class="el" href="_file_util_8php_source.html">FileUtil.php</a>.</p>
 
 </div>
 </div>
@@ -470,11 +478,11 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_file_util_8php_source.html#l00198">198</a> of file <a class="el" href="_file_util_8php_source.html">FileUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_file_util_8php_source.html#l00197">197</a> of file <a class="el" href="_file_util_8php_source.html">FileUtil.php</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aea7a754facedfed79eae2a831f5af5a9"></a>
+<a class="anchor" id="a66abae90510762992fdf615c6cf676d0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -485,8 +493,18 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">static mkdirRec </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$dirname</em></td><td>)</td>
+          <td class="paramname"><em>$dirname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$perm</em> = <code>0775</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -500,6 +518,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$dirname</td><td>The name of the directory </td></tr>
+    <tr><td class="paramname">$perm</td><td>The permission for the new directories (default: 0775) </td></tr>
   </table>
   </dd>
 </dl>
@@ -612,6 +631,41 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2a05e99bdaef21b437615de66ba8c211"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static fixFilename </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fix the name of an existing file to be used with php file functions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$file</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String or null, if the file does not exist </dd></dl>
+
+<p>Definition at line <a class="el" href="_file_util_8php_source.html#l00287">287</a> of file <a class="el" href="_file_util_8php_source.html">FileUtil.php</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ad5437b000c04701df10097d59652df73"></a>
 <div class="memitem">
 <div class="memproto">
@@ -643,7 +697,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boolean </dd></dl>
 
-<p>Definition at line <a class="el" href="_file_util_8php_source.html#l00287">287</a> of file <a class="el" href="_file_util_8php_source.html">FileUtil.php</a>.</p>
+<p>Definition at line <a class="el" href="_file_util_8php_source.html#l00305">305</a> of file <a class="el" href="_file_util_8php_source.html">FileUtil.php</a>.</p>
 
 </div>
 </div>
@@ -658,8 +712,8 @@ Static Public Member Functions</h2></td></tr>
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Dec 31 2016 00:35:13 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+        <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Thu Jan 12 2017 02:28:12 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

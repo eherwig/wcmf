@@ -59,7 +59,13 @@
                 <li><a href="4.0/index.html">4.0.x</a></li>
               </ul>
             </li>
-            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-file-text-o"></i> API <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="annotated.html">Classes</a></li>
+                <li><a href="hierarchy.html">Hierarchy</a></li>
+                <li><a href="globals.html">Globals</a></li>
+              </ul>
+            </li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -114,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2016 wemove digital solutions GmbH</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2017 wemove digital solutions GmbH</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Licensed under the terms of the MIT License.</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
@@ -170,7 +176,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="interfacewcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html">wcmf\lib\presentation\Response</a></div><div class="ttdoc">Response holds the response values that are used as output from Controller instances. </div><div class="ttdef"><b>Definition:</b> <a href="_response_8php_source.html#l00020">Response.php:20</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_response_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_response.html">Response</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1format_1_1_format_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html">Format</a></div></div>
-<div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1format_1_1impl_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1format_1_1impl.html">wcmf\lib\presentation\format\impl</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00071">namespaces.php:71</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1format_1_1impl_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1format_1_1impl.html">wcmf\lib\presentation\format\impl</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00074">namespaces.php:74</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1presentation_1_1_request_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1presentation_1_1_request.html">Request</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_null_format_html_ac06e9f7b10fca30eb41e41d4dc108b1c"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_null_format.html#ac06e9f7b10fca30eb41e41d4dc108b1c">wcmf\lib\presentation\format\impl\NullFormat\getMimeType</a></div><div class="ttdeci">getMimeType()</div><div class="ttdef"><b>Definition:</b> <a href="_null_format_8php_source.html#l00028">NullFormat.php:28</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_null_format_html_ad000903368fd66cfd404dda25c7bdf6d"><div class="ttname"><a href="classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_null_format.html#ad000903368fd66cfd404dda25c7bdf6d">wcmf\lib\presentation\format\impl\NullFormat\serialize</a></div><div class="ttdeci">serialize(Response $response)</div><div class="ttdef"><b>Definition:</b> <a href="_null_format_8php_source.html#l00040">NullFormat.php:40</a></div></div>
@@ -191,8 +197,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Dec 31 2016 00:35:08 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+        <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Thu Jan 12 2017 02:28:08 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

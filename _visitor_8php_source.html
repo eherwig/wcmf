@@ -59,7 +59,13 @@
                 <li><a href="4.0/index.html">4.0.x</a></li>
               </ul>
             </li>
-            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-file-text-o"></i> API <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="annotated.html">Classes</a></li>
+                <li><a href="hierarchy.html">Hierarchy</a></li>
+                <li><a href="globals.html">Globals</a></li>
+              </ul>
+            </li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -114,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php<span class="comment"></span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * wCMF - wemove Content Management Framework</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2016 wemove digital solutions GmbH</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005-2017 wemove digital solutions GmbH</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Licensed under the terms of the MIT License.</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
@@ -186,7 +192,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;?&gt;</div>
 <div class="ttc" id="classwcmf_1_1lib_1_1model_1_1visitor_1_1_visitor_html_aa999d1dd7744c5e4ada864a159fb447b"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_visitor.html#aa999d1dd7744c5e4ada864a159fb447b">wcmf\lib\model\visitor\Visitor\doPreVisit</a></div><div class="ttdeci">doPreVisit()</div><div class="ttdoc">Subclasses may override this method to do any operations before the visiting process here...</div><div class="ttdef"><b>Definition:</b> <a href="_visitor_8php_source.html#l00066">Visitor.php:66</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1model_1_1_node_iterator_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1_node_iterator.html">wcmf\lib\model\NodeIterator</a></div><div class="ttdoc">NodeIterator is used to iterate over a tree/list built of Nodes using a Depth-First-Algorithm. </div><div class="ttdef"><b>Definition:</b> <a href="_node_iterator_8php_source.html#l00036">NodeIterator.php:36</a></div></div>
-<div class="ttc" id="namespacewcmf_1_1lib_1_1model_1_1visitor_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1model_1_1visitor.html">wcmf\lib\model\visitor</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00034">namespaces.php:34</a></div></div>
+<div class="ttc" id="namespacewcmf_1_1lib_1_1model_1_1visitor_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1model_1_1visitor.html">wcmf\lib\model\visitor</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00037">namespaces.php:37</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1model_1_1visitor_1_1_visitor_html_a735a5eb4d987dd1d867f189c1024879a"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_visitor.html#a735a5eb4d987dd1d867f189c1024879a">wcmf\lib\model\visitor\Visitor\startIterator</a></div><div class="ttdeci">startIterator(NodeIterator $iterator)</div><div class="ttdoc">Start the visiting process by iterating over all objects using the given NodeIterator. </div><div class="ttdef"><b>Definition:</b> <a href="_visitor_8php_source.html#l00034">Visitor.php:34</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1model_1_1_node_iterator_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1model_1_1_node_iterator.html">NodeIterator</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1model_1_1visitor_1_1_visitor_html_a046add2906606187db74bdc59fada9be"><div class="ttname"><a href="classwcmf_1_1lib_1_1model_1_1visitor_1_1_visitor.html#a046add2906606187db74bdc59fada9be">wcmf\lib\model\visitor\Visitor\startArray</a></div><div class="ttdeci">startArray($array)</div><div class="ttdoc">Start the visiting process by iterating over all elements of a given array. </div><div class="ttdef"><b>Definition:</b> <a href="_visitor_8php_source.html#l00047">Visitor.php:47</a></div></div>
@@ -204,8 +210,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Dec 31 2016 00:35:06 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+        <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Thu Jan 12 2017 02:28:07 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

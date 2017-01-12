@@ -59,7 +59,13 @@
                 <li><a href="4.0/index.html">4.0.x</a></li>
               </ul>
             </li>
-            <li><a href="annotated.html"><i class="fa fa-file-text-o"></i> API</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-file-text-o"></i> API <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="annotated.html">Classes</a></li>
+                <li><a href="hierarchy.html">Hierarchy</a></li>
+                <li><a href="globals.html">Globals</a></li>
+              </ul>
+            </li>
             <li><a href="https://github.com/iherwig/wcmf"><i class="fa fa-github"></i> Code</a></li>
             <li><a href="support.html"><i class="fa fa-support"></i> Support</a></li>
           </ul>
@@ -118,14 +124,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a5a47f13770af8d28000d469905a02d69">copyRecDir</a>($source, $dest)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#ac8fb65c968a19034a98703518846e51c">emptyDir</a>($dirname)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#ad5437b000c04701df10097d59652df73">fileExists</a>($file)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#aa6760690808348739c7ca764415f26e0">fputsUnicode</a>($fp, $str)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a48cb8d019c5b3ef533e1761128b6355d">getDirectories</a>($directory, $pattern='/./', $prependDirectoryName=false, $recursive=false)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#abd816fb149dc0232a90404ad85ceb628">getFiles</a>($directory, $pattern='/./', $prependDirectoryName=false, $recursive=false)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a8b5eb97106d5c0dbbd67eef7c507add7">getMimeType</a>($file)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#aea7a754facedfed79eae2a831f5af5a9">mkdirRec</a>($dirname)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a28802a30d56b096333ecd305f02fccc3">realpath</a>($path)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a786d7248a38a0b652e126dcc377c9089">sanitizeFilename</a>($file)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a2e8c037c7d90e9f78db96eacb46ef7fe">uploadFile</a>($mediaFile, $destName, $mimeTypes=null, $override=true)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a2a05e99bdaef21b437615de66ba8c211">fixFilename</a>($file)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#aa6760690808348739c7ca764415f26e0">fputsUnicode</a>($fp, $str)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a48cb8d019c5b3ef533e1761128b6355d">getDirectories</a>($directory, $pattern='/./', $prependDirectoryName=false, $recursive=false)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#abd816fb149dc0232a90404ad85ceb628">getFiles</a>($directory, $pattern='/./', $prependDirectoryName=false, $recursive=false)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a8b5eb97106d5c0dbbd67eef7c507add7">getMimeType</a>($file)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a66abae90510762992fdf615c6cf676d0">mkdirRec</a>($dirname, $perm=0775)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a28802a30d56b096333ecd305f02fccc3">realpath</a>($path)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a786d7248a38a0b652e126dcc377c9089">sanitizeFilename</a>($file)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html#a2e8c037c7d90e9f78db96eacb46ef7fe">uploadFile</a>($mediaFile, $destName, $mimeTypes=null, $override=true)</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_file_util.html">FileUtil</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
       </div>
@@ -137,8 +144,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <small>&copy; 2016 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Dec 31 2016 00:35:13 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+        <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
+          Generated on Thu Jan 12 2017 02:28:12 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>
