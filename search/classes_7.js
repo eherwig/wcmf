@@ -4,6 +4,7 @@ var searchData=
   ['illegalargumentexception',['IllegalArgumentException',['../classwcmf_1_1lib_1_1core_1_1_illegal_argument_exception.html',1,'wcmf::lib::core']]],
   ['image',['Image',['../classwcmf_1_1lib_1_1validation_1_1impl_1_1_image.html',1,'wcmf::lib::validation::impl']]],
   ['imageoutputstrategy',['ImageOutputStrategy',['../classwcmf_1_1lib_1_1model_1_1output_1_1_image_output_strategy.html',1,'wcmf::lib::model::output']]],
+  ['imageutil',['ImageUtil',['../classwcmf_1_1lib_1_1io_1_1_image_util.html',1,'wcmf::lib::io']]],
   ['indexedsearch',['IndexedSearch',['../interfacewcmf_1_1lib_1_1search_1_1_indexed_search.html',1,'wcmf::lib::search']]],
   ['inifileconfiguration',['InifileConfiguration',['../classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html',1,'wcmf::lib::config::impl']]],
   ['insertoperation',['InsertOperation',['../classwcmf_1_1lib_1_1persistence_1_1_insert_operation.html',1,'wcmf::lib::persistence']]],
