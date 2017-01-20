@@ -378,11 +378,12 @@ Creating / Modifying objects</h3>
 <div class="line">$tx-&gt;commit();</div>
 </div><!-- fragment --><h2><a class="anchor" id="pers_validation"></a>
 Validation</h2>
-<p>Before persisting objects, their content has to be validated according to the application requirements. Validation is handled in <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a13b1f354a0c2390b7807ac389f78bd4a"><code>PersistentObject::validateValue</code></a> (for a single attribute) or <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#ae9e66f6d2e3d0c1b687818677939e3f1"><code>PersistentObject::validateValues</code></a> (for the complete instance). These methods are called when values are changed via <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a838057c0748db6d0db1d38fe5d06ef6b"><code>PersistentObject::setValue</code></a> or right before persisting the object in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#aa39e50f302f70bdb719120f322d49cc6"><code>AbstractMapper::save</code></a>. Both validation methods throw a <a class="el" href=""><code>ValidationException</code></a>, if validation fails.</p>
+<p>Before persisting objects, their content has to be validated according to the application requirements. Validation is handled in <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a1a79f61fa591ebe2550b187c1544e1d1"><code>PersistentObject::validateValue</code></a> (for a single attribute) or <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a27828d8e8c0fc9a21c24e2ed0d319a79"><code>PersistentObject::validateValues</code></a> (for the complete instance). These methods are called when values are changed via <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a838057c0748db6d0db1d38fe5d06ef6b"><code>PersistentObject::setValue</code></a> or right before persisting the object in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#aa39e50f302f70bdb719120f322d49cc6"><code>AbstractMapper::save</code></a>. Both validation methods throw a <a class="el" href=""><code>ValidationException</code></a>, if validation fails.</p>
 <h3><a class="anchor" id="pers_validation_types"></a>
 Validation types</h3>
-<p>The actual validation is delegated to the <a class="el" href="classwcmf_1_1lib_1_1validation_1_1_validator.html"><code>Validator</code></a> class, which uses <a class="el" href="interfacewcmf_1_1lib_1_1validation_1_1_validate_type.html"><code>ValidateType</code></a> implementations for validating different types of attributes. Each validation type accepts configuration options, that are passed in as a string value. The format of this value is completely up to the validator type implementation. To define which validation should be applied to a domain class attribute, the <em>tag</em> <code>restrictions_match</code> is used in the model (see <a class="el" href="model.html#model_chivalue">ChiValue</a>).</p>
-<p>Currently the following validation types exist:</p>
+<p>The actual validation is delegated to the <a class="el" href="classwcmf_1_1lib_1_1validation_1_1_validator.html#a53caf4e6a104095444452928dea631ad"><code>Validator::validate</code></a> method, which gets a <b>validation description string</b> passed. This string defines a single <a class="el" href="interfacewcmf_1_1lib_1_1validation_1_1_validate_type.html"><code>ValidateType</code></a> or a combination of those. The <a class="el" href="interfacewcmf_1_1lib_1_1validation_1_1_validate_type.html#af2ceef2ee3666226001c8566ff66718b"><code>ValidateType::validate</code></a> method accepts an associative array of configuration options, that is encoded into a JSON string when being used in the validation description string. An additional <b>validation context</b> might be passed to the method (e.g. the entity instance and the currently validated entity attribute), when validation entity values.</p>
+<p>To define which validation should be applied to a domain class attribute, the <em>tag</em> <code>restrictions_match</code> is used in the model (see <a class="el" href="model.html#model_chivalue">ChiValue</a>).</p>
+<p>Currently the following validation types exist (the examples show their usage in a validation description string):</p>
 <p><a class="el" href="classwcmf_1_1lib_1_1validation_1_1impl_1_1_date.html"><code>Date</code></a> validates against a date format, e.g. </p><div class="fragment"><div class="line"><span class="comment">// validate against the default date format (&#39;Y-m-d&#39;)</span></div>
 <div class="line">date</div>
 <div class="line"></div>
@@ -395,6 +396,11 @@ Validation types</h3>
 </div><!-- fragment --><p><a class="el" href="classwcmf_1_1lib_1_1validation_1_1impl_1_1_reg_exp.html"><code>RegExp</code></a> validates against a regular expression (see <a href="http://php.net/manual/en/function.preg-match.php">preg_match</a>) e.g. </p><div class="fragment"><div class="line"><span class="comment">// integer or empty</span></div>
 <div class="line">regexp:{<span class="stringliteral">&quot;pattern&quot;</span>:<span class="stringliteral">&quot;/^[0-9]*$/&quot;</span>}</div>
 </div><!-- fragment --><p><a class="el" href="classwcmf_1_1lib_1_1validation_1_1impl_1_1_required.html"><code>Required</code></a> checks if the value is not empty e.g. </p><div class="fragment"><div class="line">required</div>
+</div><!-- fragment --><p><a class="el" href="classwcmf_1_1lib_1_1validation_1_1impl_1_1_unique.html"><code>Unique</code></a> checks if the value is unique regarding the given entity attribute e.g. </p><div class="fragment"><div class="line"><span class="comment">// explicitly define Keyword.name as being unique ...</span></div>
+<div class="line">unique:{<span class="stringliteral">&quot;type&quot;</span>:<span class="stringliteral">&quot;Keyword&quot;</span>,<span class="stringliteral">&quot;value&quot;</span>:<span class="stringliteral">&quot;name&quot;</span>}</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// ... or implicitly when used in the entity validation context of the Keyword.name</span></div>
+<div class="line">unique</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The validation type is derived from the part of the configuration string, that precedes the first colon.</dd></dl>
 <p>Custom validation types may be added in the configuration. For example after adding <code>myValidator</code> (implemented in <code>MyValidator</code> class):</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;[Validators]</div>
@@ -409,7 +415,7 @@ Validation types</h3>
 <div class="fragment"><div class="line">myValidator:custom_configuration_string_passed_by_MyValidator</div>
 </div><!-- fragment --><h3><a class="anchor" id="pers_validation_custom"></a>
 Complex validation</h3>
-<p>The described validation types only operate on one attribute. If more complex validation is required, e.g. if dependencies between several attributes exist, the method <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a13b1f354a0c2390b7807ac389f78bd4a"><code>PersistentObject::validateValue</code></a> may be overriden in the appropriate domain class.</p>
+<p>The described validation types only operate on one attribute. If more complex validation is required, e.g. if dependencies between several attributes exist, the method <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a1a79f61fa591ebe2550b187c1544e1d1"><code>PersistentObject::validateValue</code></a> may be overriden in the appropriate domain class.</p>
 <h2><a class="anchor" id="pers_concurrency"></a>
 Concurrency</h2>
 <p>When two or more users try to access the same object at the same time problems like <em>lost updates</em> might occur. These issues are avoided by <em>concurrency control</em> mechanisms, typically <em>object locking</em>.</p>
@@ -483,7 +489,7 @@ Transactions</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jan 14 2017 13:50:20 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Fri Jan 20 2017 01:36:01 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['unique',['Unique',['../classwcmf_1_1lib_1_1validation_1_1impl_1_1_unique.html',1,'wcmf::lib::validation::impl']]],
   ['unknownfieldexception',['UnknownFieldException',['../classwcmf_1_1lib_1_1persistence_1_1_unknown_field_exception.html',1,'wcmf::lib::persistence']]],
   ['updateoperation',['UpdateOperation',['../classwcmf_1_1lib_1_1persistence_1_1_update_operation.html',1,'wcmf::lib::persistence']]],
   ['uriutil',['URIUtil',['../classwcmf_1_1lib_1_1util_1_1_u_r_i_util.html',1,'wcmf::lib::util']]],

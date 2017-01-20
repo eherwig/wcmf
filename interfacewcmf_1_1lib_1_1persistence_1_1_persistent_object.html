@@ -184,10 +184,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab11a5b90edec335b251652cd73876317"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91b10951978a3d34b2c3d38437627014"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a91b10951978a3d34b2c3d38437627014">getValueNames</a> ($excludeTransient=false)</td></tr>
 <tr class="separator:a91b10951978a3d34b2c3d38437627014"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9e66f6d2e3d0c1b687818677939e3f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#ae9e66f6d2e3d0c1b687818677939e3f1">validateValues</a> (<a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a> $message)</td></tr>
-<tr class="separator:ae9e66f6d2e3d0c1b687818677939e3f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13b1f354a0c2390b7807ac389f78bd4a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a13b1f354a0c2390b7807ac389f78bd4a">validateValue</a> ($name, $value, <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a> $message)</td></tr>
-<tr class="separator:a13b1f354a0c2390b7807ac389f78bd4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27828d8e8c0fc9a21c24e2ed0d319a79"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a27828d8e8c0fc9a21c24e2ed0d319a79">validateValues</a> ()</td></tr>
+<tr class="separator:a27828d8e8c0fc9a21c24e2ed0d319a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a79f61fa591ebe2550b187c1544e1d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a1a79f61fa591ebe2550b187c1544e1d1">validateValue</a> ($name, $value)</td></tr>
+<tr class="separator:a1a79f61fa591ebe2550b187c1544e1d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e19f1226f93bea2b036d404f58412e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a6e19f1226f93bea2b036d404f58412e9">getChangedValues</a> ()</td></tr>
 <tr class="separator:a6e19f1226f93bea2b036d404f58412e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21e59648f0cae7225441015bb21b8b20"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a21e59648f0cae7225441015bb21b8b20">getOriginalValues</a> ()</td></tr>
@@ -783,33 +783,26 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae9e66f6d2e3d0c1b687818677939e3f1"></a>
+<a class="anchor" id="a27828d8e8c0fc9a21c24e2ed0d319a79"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">validateValues </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a>&#160;</td>
-          <td class="paramname"><em>$message</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Validate all values by calling <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a13b1f354a0c2390b7807ac389f78bd4a" title="Check if data may be set. ">PersistentObject::validateValue()</a> Throws a ValidationException in case of invalid data. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">$message</td><td>The Message instance used to provide translations. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Validate all values by calling <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a1a79f61fa591ebe2550b187c1544e1d1" title="Check if data may be set. ">PersistentObject::validateValue()</a> Throws a ValidationException in case of invalid data. </p>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#ae9e66f6d2e3d0c1b687818677939e3f1">DefaultPersistentObject</a>, and <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html#ae9e66f6d2e3d0c1b687818677939e3f1">PersistentObjectProxy</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#a27828d8e8c0fc9a21c24e2ed0d319a79">DefaultPersistentObject</a>, and <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html#a27828d8e8c0fc9a21c24e2ed0d319a79">PersistentObjectProxy</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a13b1f354a0c2390b7807ac389f78bd4a"></a>
+<a class="anchor" id="a1a79f61fa591ebe2550b187c1544e1d1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -823,13 +816,7 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a>&#160;</td>
-          <td class="paramname"><em>$message</em>&#160;</td>
+          <td class="paramname"><em>$value</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -843,13 +830,12 @@ Public Attributes</h2></td></tr>
 <p>The method is also called, when setting a value. Controller may call this method before setting data and saving the object. Throws a ValidationException in case of invalid data. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$name</td><td>The name of the item to set. </td></tr>
-    <tr><td class="paramname">$value</td><td>The value of the item. </td></tr>
-    <tr><td class="paramname">$message</td><td>The Message instance used to provide translations. The default implementation calls PersistentObject::validateValueAgainstValidateType(). </td></tr>
+    <tr><td class="paramname">$value</td><td>The value of the item. The default implementation calls PersistentObject::validateValueAgainstValidateType(). </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#a13b1f354a0c2390b7807ac389f78bd4a">DefaultPersistentObject</a>, <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html#a13b1f354a0c2390b7807ac389f78bd4a">PersistentObjectProxy</a>, <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_user.html#a13b1f354a0c2390b7807ac389f78bd4a">AbstractUser</a>, and <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_role.html#a13b1f354a0c2390b7807ac389f78bd4a">AbstractRole</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#a1a79f61fa591ebe2550b187c1544e1d1">DefaultPersistentObject</a>, <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html#a1a79f61fa591ebe2550b187c1544e1d1">PersistentObjectProxy</a>, <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_user.html#a1a79f61fa591ebe2550b187c1544e1d1">AbstractUser</a>, and <a class="el" href="classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_abstract_role.html#a1a79f61fa591ebe2550b187c1544e1d1">AbstractRole</a>.</p>
 
 </div>
 </div>
@@ -1209,7 +1195,7 @@ Public Attributes</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jan 14 2017 13:50:25 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Fri Jan 20 2017 01:36:07 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

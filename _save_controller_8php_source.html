@@ -309,7 +309,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keywordflow">if</span> (!$isFile || ($isFile &amp;&amp; <span class="keyword">sizeof</span>($curRequestValue) &gt; 0)) {</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;              <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                <span class="comment">// validate the new value</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                $curNode-&gt;validateValue($curValueName, $curRequestValue, $message);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                $curNode-&gt;validateValue($curValueName, $curRequestValue);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                <span class="keywordflow">if</span> ($this-&gt;<a class="code" href="classwcmf_1_1application_1_1controller_1_1_save_controller.html#a0dc9caec0748ff737c4165ad28c808f3">confirmSaveValue</a>($curNode, $curValueName, $curRequestValue)) {</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                  <span class="comment">// set the new value</span></div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                  $oldValue = $curNode-&gt;getValue($curValueName);</div>
@@ -667,7 +667,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jan 14 2017 13:50:15 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Fri Jan 20 2017 01:35:56 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

@@ -2,6 +2,7 @@ var searchData=
 [
   ['unbound',['UNBOUND',['../classwcmf_1_1application_1_1controller_1_1_sort_controller.html#ae82de25db40925ac9549db32a68b9528',1,'wcmf::application::controller::SortController']]],
   ['underscoretocamelcase',['underScoreToCamelCase',['../classwcmf_1_1lib_1_1util_1_1_string_util.html#ae8693e889e7ba2a04d6b500258c8d093',1,'wcmf::lib::util::StringUtil']]],
+  ['unique',['Unique',['../classwcmf_1_1lib_1_1validation_1_1impl_1_1_unique.html',1,'wcmf::lib::validation::impl']]],
   ['unknownfieldexception',['UnknownFieldException',['../classwcmf_1_1lib_1_1persistence_1_1_unknown_field_exception.html',1,'wcmf::lib::persistence']]],
   ['unserialize',['unserialize',['../classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html#a738ebd2c4dc9abc9e0cd4deb58fadd55',1,'wcmf\lib\config\impl\InifileConfiguration\unserialize()'],['../classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_lock.html#a91b3cb8a65e42152cacf1cf222bd26f6',1,'wcmf\lib\persistence\concurrency\Lock\unserialize()'],['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#ac2f3a0997c46fd9bb24fe4190f738eb0',1,'wcmf\lib\persistence\impl\DefaultPersistentObject\unserialize()'],['../classwcmf_1_1lib_1_1persistence_1_1_object_id.html#a91b3cb8a65e42152cacf1cf222bd26f6',1,'wcmf\lib\persistence\ObjectId\unserialize()']]],
   ['unveil',['unveil',['../classwcmf_1_1lib_1_1util_1_1_obfuscator.html#a5e2f53dbf7ce7543a08470d4daed909d',1,'wcmf::lib::util::Obfuscator']]],

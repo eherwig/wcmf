@@ -130,27 +130,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1config_1_1_configuration_exception.html">wcmf\lib\config\ConfigurationException</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1core_1_1_object_factory.html">wcmf\lib\core\ObjectFactory</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;use <a class="code" href="namespacewcmf_1_1lib_1_1i18n_1_1_message.html">wcmf\lib\i18n\Message</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * Validator is is the single entry point for validation.</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * It chooses the configured validateType based on the validateTypeDesc parameter</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * from the configuration section &#39;validators&#39;.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1validation_1_1_validator.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1validation_1_1_validator.html">Validator</a> {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">   * Validate the given value against the given validateType description.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">   * @param $value The value to validate</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">   * @param $validateDesc A string in the form validateTypeA,validateTypeB:optionsB, where</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">   *     validateType is a key in the configuration section &#39;validators&#39; and</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">   *     options is a JSON encoded object as used in the &#39;restrictions_match&#39; definition</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">   * @param $message The Message instance used to provide translations</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * Validator is is the single entry point for validation.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * It chooses the configured validateType based on the validateTypeDesc parameter</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * from the configuration section &#39;validators&#39;.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @author ingo herwig &lt;ingo@wemove.com&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1validation_1_1_validator.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classwcmf_1_1lib_1_1validation_1_1_validator.html">Validator</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">   * Validate the given value against the given validateType description.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">   * @param $value The value to validate</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">   * @param $validateDesc A string in the form validateTypeA,validateTypeB:optionsB, where</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">   *     validateType is a key in the configuration section &#39;validators&#39; and</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">   *     options is a JSON encoded object as used in the &#39;validate_type&#39; definition</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">   * @param $context An associative array describing the validation context which will be passed</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">   *     to the ValidateType::validate() method (optional)</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">   * @return Boolean</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1validation_1_1_validator.html#a0e51e24a6fac156c7d8f95a06b87919a">   35</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1validation_1_1_validator.html#a0e51e24a6fac156c7d8f95a06b87919a">validate</a>($value, $validateDesc, <a class="code" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a> $message) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1validation_1_1_validator.html#a53caf4e6a104095444452928dea631ad">   35</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1validation_1_1_validator.html#a53caf4e6a104095444452928dea631ad">validate</a>($value, $validateDesc, $context=null) {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// get validator list</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    $validators = array();</div>
@@ -181,43 +181,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordflow">if</span> ($validateOptions !== null) {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        $decodedOptions = json_decode($validateOptions, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> ($decodedOptions === null) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;          <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a>($message-&gt;<a class="code" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html#aef9e1ab491290cf4f519d25c96043dbb">getText</a>(<span class="stringliteral">&quot;No valid JSON format: %1%&quot;</span>,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                  array($validateOptions)));</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        $validateOptions = $decodedOptions;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keywordflow">if</span> (!$validatorInstance-&gt;validate($value, $message, $validateOptions)) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// all validators passed</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">   * Get the ValidateType instance for the given name.</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">   * @param $validateTypeName The validate type&#39;s name</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">   * @return ValidateType instance</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1validation_1_1_validator.html#ab8258f67a13deca9afe548e79d57fb03">   85</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1validation_1_1_validator.html#ab8258f67a13deca9afe548e79d57fb03">getValidateType</a>($validateTypeName) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    $validatorTypes = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;validators&#39;</span>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (!isset($validatorTypes[$validateTypeName])) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a>(<span class="stringliteral">&quot;Configuration section &#39;Validators&#39; does not contain a validator named: &quot;</span>.$validateTypeName);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> $validatorTypes[$validateTypeName];</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;?&gt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;          <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a>(<span class="stringliteral">&quot;No valid JSON format: &quot;</span>.$validateOptions);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        $validateOptions = $decodedOptions;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordflow">if</span> (!$validatorInstance-&gt;validate($value, $validateOptions, $context)) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// all validators passed</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">   * Get the ValidateType instance for the given name.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">   * @param $validateTypeName The validate type&#39;s name</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">   * @return ValidateType instance</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classwcmf_1_1lib_1_1validation_1_1_validator.html#ab8258f67a13deca9afe548e79d57fb03">   84</a></span>&#160;  <span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="classwcmf_1_1lib_1_1validation_1_1_validator.html#ab8258f67a13deca9afe548e79d57fb03">getValidateType</a>($validateTypeName) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    $validatorTypes = <a class="code" href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">ObjectFactory::getInstance</a>(<span class="stringliteral">&#39;validators&#39;</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (!isset($validatorTypes[$validateTypeName])) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a>(<span class="stringliteral">&quot;Configuration section &#39;Validators&#39; does not contain a validator named: &quot;</span>.$validateTypeName);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> $validatorTypes[$validateTypeName];</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;?&gt;</div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1validation_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1validation.html">wcmf\lib\validation</a></div><div class="ttdoc">&#160; </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00054">namespaces.php:54</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1config_1_1_configuration_exception_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1config_1_1_configuration_exception.html">ConfigurationException</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1validation_1_1_validator_html_ab8258f67a13deca9afe548e79d57fb03"><div class="ttname"><a href="classwcmf_1_1lib_1_1validation_1_1_validator.html#ab8258f67a13deca9afe548e79d57fb03">wcmf\lib\validation\Validator\getValidateType</a></div><div class="ttdeci">static getValidateType($validateTypeName)</div><div class="ttdoc">Get the ValidateType instance for the given name. </div><div class="ttdef"><b>Definition:</b> <a href="_validator_8php_source.html#l00085">Validator.php:85</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1validation_1_1_validator_html_ab8258f67a13deca9afe548e79d57fb03"><div class="ttname"><a href="classwcmf_1_1lib_1_1validation_1_1_validator.html#ab8258f67a13deca9afe548e79d57fb03">wcmf\lib\validation\Validator\getValidateType</a></div><div class="ttdeci">static getValidateType($validateTypeName)</div><div class="ttdoc">Get the ValidateType instance for the given name. </div><div class="ttdef"><b>Definition:</b> <a href="_validator_8php_source.html#l00084">Validator.php:84</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1core_1_1_object_factory_html_a11fc3766874ff733f8c4c7e3fc5152a6"><div class="ttname"><a href="classwcmf_1_1lib_1_1core_1_1_object_factory.html#a11fc3766874ff733f8c4c7e3fc5152a6">wcmf\lib\core\ObjectFactory\getInstance</a></div><div class="ttdeci">static getInstance($name, $dynamicConfiguration=array())</div><div class="ttdef"><b>Definition:</b> <a href="_object_factory_8php_source.html#l00047">ObjectFactory.php:47</a></div></div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1i18n_1_1_message_html"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">wcmf\lib\i18n\Message</a></div><div class="ttdoc">Message is used to get localized messages to be used in the user interface. </div><div class="ttdef"><b>Definition:</b> <a href="_message_8php_source.html#l00023">Message.php:23</a></div></div>
-<div class="ttc" id="namespacewcmf_1_1lib_1_1i18n_1_1_message_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a></div></div>
-<div class="ttc" id="interfacewcmf_1_1lib_1_1i18n_1_1_message_html_aef9e1ab491290cf4f519d25c96043dbb"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html#aef9e1ab491290cf4f519d25c96043dbb">wcmf\lib\i18n\Message\getText</a></div><div class="ttdeci">getText($message, $parameters=null, $lang='')</div><div class="ttdoc">Get a localized string. </div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1validation_1_1_validator_html_a0e51e24a6fac156c7d8f95a06b87919a"><div class="ttname"><a href="classwcmf_1_1lib_1_1validation_1_1_validator.html#a0e51e24a6fac156c7d8f95a06b87919a">wcmf\lib\validation\Validator\validate</a></div><div class="ttdeci">static validate($value, $validateDesc, Message $message)</div><div class="ttdoc">Validate the given value against the given validateType description. </div><div class="ttdef"><b>Definition:</b> <a href="_validator_8php_source.html#l00035">Validator.php:35</a></div></div>
-<div class="ttc" id="classwcmf_1_1lib_1_1validation_1_1_validator_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1validation_1_1_validator.html">wcmf\lib\validation\Validator</a></div><div class="ttdoc">Validator is is the single entry point for validation. </div><div class="ttdef"><b>Definition:</b> <a href="_validator_8php_source.html#l00024">Validator.php:24</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1validation_1_1_validator_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1validation_1_1_validator.html">wcmf\lib\validation\Validator</a></div><div class="ttdoc">Validator is is the single entry point for validation. </div><div class="ttdef"><b>Definition:</b> <a href="_validator_8php_source.html#l00023">Validator.php:23</a></div></div>
+<div class="ttc" id="classwcmf_1_1lib_1_1validation_1_1_validator_html_a53caf4e6a104095444452928dea631ad"><div class="ttname"><a href="classwcmf_1_1lib_1_1validation_1_1_validator.html#a53caf4e6a104095444452928dea631ad">wcmf\lib\validation\Validator\validate</a></div><div class="ttdeci">static validate($value, $validateDesc, $context=null)</div><div class="ttdoc">Validate the given value against the given validateType description. </div><div class="ttdef"><b>Definition:</b> <a href="_validator_8php_source.html#l00035">Validator.php:35</a></div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1core_1_1_object_factory_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1core_1_1_object_factory.html">ObjectFactory</a></div></div>
 <div class="ttc" id="classwcmf_1_1lib_1_1config_1_1_configuration_exception_html"><div class="ttname"><a href="classwcmf_1_1lib_1_1config_1_1_configuration_exception.html">wcmf\lib\config\ConfigurationException</a></div><div class="ttdoc">ConfigurationException signals an exception in the configuration. </div><div class="ttdef"><b>Definition:</b> <a href="_configuration_exception_8php_source.html#l00018">ConfigurationException.php:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -232,7 +228,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Sat Jan 14 2017 13:50:19 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Fri Jan 20 2017 01:36:01 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>
