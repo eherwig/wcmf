@@ -1,8 +1,7 @@
 <map id="BatchController" name="BatchController">
-<area shape="rect" id="node3" href="$classwcmf_1_1application_1_1controller_1_1_batch_display_controller.html" title="BatchDisplayController is used to load a tree of Node instances recursivly and return them in lists o..." alt="" coords="5,733,169,957"/>
-<area shape="rect" id="node4" href="$classwcmf_1_1application_1_1controller_1_1_copy_controller.html" title="CopyController is used to copy or move Node instances. " alt="" coords="194,703,349,986"/>
-<area shape="rect" id="node5" href="$classwcmf_1_1application_1_1controller_1_1_c_s_v_export_controller.html" title="CSVExportController exports instances of one type into a CSV file. " alt="" coords="373,769,516,920"/>
-<area shape="rect" id="node6" href="$classwcmf_1_1application_1_1controller_1_1_search_index_controller.html" title="SearchIndexController creates a Lucene index from the complete datastore. " alt="" coords="541,769,690,920"/>
-<area shape="rect" id="node7" href="$classwcmf_1_1application_1_1controller_1_1_x_m_l_export_controller.html" title="XMLExportController exports the content tree into an XML file. " alt="" coords="714,696,941,993"/>
-<area shape="rect" id="node2" href="$classwcmf_1_1lib_1_1presentation_1_1_controller.html" title="Controller is the base class of all controllers. " alt="" coords="357,5,532,303"/>
+<area shape="rect" id="node3" href="$classwcmf_1_1application_1_1controller_1_1_batch_display_controller.html" title="BatchDisplayController is used to load a tree of Node instances recursivly and return them in lists o..." alt="" coords="5,725,169,935"/>
+<area shape="rect" id="node4" href="$classwcmf_1_1application_1_1controller_1_1_copy_controller.html" title="CopyController is used to copy or move Node instances. " alt="" coords="194,703,335,957"/>
+<area shape="rect" id="node5" href="$classwcmf_1_1application_1_1controller_1_1_search_index_controller.html" title="SearchIndexController creates a Lucene index from the complete datastore. " alt="" coords="359,762,509,898"/>
+<area shape="rect" id="node6" href="$classwcmf_1_1application_1_1controller_1_1_x_m_l_export_controller.html" title="XMLExportController exports the content tree into an XML file. " alt="" coords="533,696,759,964"/>
+<area shape="rect" id="node2" href="$classwcmf_1_1lib_1_1presentation_1_1_controller.html" title="Controller is the base class of all controllers. " alt="" coords="253,5,445,347"/>
 </map>

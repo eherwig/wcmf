@@ -1,0 +1,10 @@
+digraph "GenericFormat"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{GenericFormat\n||+ getMimeType()\l+ isCached()\l+ getCacheDate()\l# deserializeValues()\l# sendHeaders()\l# serializeValues()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{AbstractFormat\n||+ deserialize()\l+ serialize()\l# beforeDeserialize()\l# deserializeValues()\l# afterDeserialize()\l# beforeSerialize()\l# sendHeaders()\l# serializeValues()\l# afterSerialize()\l# getNode()\l# sendHeader()\l# filterValue()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_abstract_format.html",tooltip="AbstractFormat is used as base class for specialized formats. "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{Format\n||+ getMimeType()\l+ deserialize()\l+ serialize()\l+ isCached()\l+ getCacheDate()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html",tooltip="Format defines the interface for all format classes. "];
+}

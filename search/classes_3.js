@@ -26,5 +26,6 @@ var searchData=
   ['dionysosnodeserializer',['DionysosNodeSerializer',['../classwcmf_1_1lib_1_1model_1_1impl_1_1_dionysos_node_serializer.html',1,'wcmf::lib::model::impl']]],
   ['displaycontroller',['DisplayController',['../classwcmf_1_1application_1_1controller_1_1_display_controller.html',1,'wcmf::application::controller']]],
   ['dojonodeserializer',['DojoNodeSerializer',['../classwcmf_1_1lib_1_1model_1_1impl_1_1_dojo_node_serializer.html',1,'wcmf::lib::model::impl']]],
-  ['dotoutputstrategy',['DotOutputStrategy',['../classwcmf_1_1lib_1_1model_1_1output_1_1_dot_output_strategy.html',1,'wcmf::lib::model::output']]]
+  ['dotoutputstrategy',['DotOutputStrategy',['../classwcmf_1_1lib_1_1model_1_1output_1_1_dot_output_strategy.html',1,'wcmf::lib::model::output']]],
+  ['downloadformat',['DownloadFormat',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_download_format.html',1,'wcmf::lib::presentation::format::impl']]]
 ];
