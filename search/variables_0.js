@@ -67,6 +67,7 @@ var searchData=
   ['_24realsubject',['$realSubject',['../classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html#a7c1934d44bc2186775433b5b6d51bb6f',1,'wcmf::lib::persistence::PersistentObjectProxy']]],
   ['_24recursive',['$recursive',['../classwcmf_1_1lib_1_1model_1_1_node_value_iterator.html#a5b731394eb03319fc434a103599dda26',1,'wcmf::lib::model::NodeValueIterator']]],
   ['_24requiredinterfaces',['$requiredInterfaces',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html#a9b82b44e23d30f1845c6e398c1518934',1,'wcmf::lib::core::impl::DefaultFactory']]],
+  ['_24scale',['$scale',['../classwcmf_1_1lib_1_1model_1_1output_1_1_image_output_strategy.html#a8457a6fc43abd2acbbeae26b8b7aa79f',1,'wcmf::lib::model::output::ImageOutputStrategy']]],
   ['_24serializer',['$serializer',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_json_format.html#a28c67e2682522dbcaa99e6b438bdbfdd',1,'wcmf\lib\presentation\format\impl\JsonFormat\$serializer()'],['../classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_soap_format.html#a28c67e2682522dbcaa99e6b438bdbfdd',1,'wcmf\lib\presentation\format\impl\SoapFormat\$serializer()']]],
   ['_24server',['$server',['../namespacewcmf_1_1application_1_1controller.html#ad135cc8a47e55f0829949cf62214170f',1,'wcmf::application::controller']]],
   ['_24session',['$session',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html#abefb3c26429d514777313e9a63d7cbac',1,'wcmf::lib::security::impl::AbstractPermissionManager']]],
@@ -95,8 +96,6 @@ var searchData=
   ['_24view',['$view',['../classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_smarty_view.html#acccf2eac8663e0cebe8101e90fbab089',1,'wcmf::lib::presentation::view::impl::SmartyView']]],
   ['_24width',['$width',['../classwcmf_1_1lib_1_1model_1_1output_1_1_image_output_strategy.html#a5795120b4b324bc4ca83f1e6fdce7d57',1,'wcmf::lib::model::output::ImageOutputStrategy']]],
   ['_24x',['$x',['../classwcmf_1_1lib_1_1model_1_1output_1_1_position.html#af3a16c5f0dd7a74cf9acf6a49fff73a7',1,'wcmf::lib::model::output::Position']]],
-  ['_24xscale',['$xscale',['../classwcmf_1_1lib_1_1model_1_1output_1_1_image_output_strategy.html#a8ab633c0368f2ecfa32491972766ada9',1,'wcmf::lib::model::output::ImageOutputStrategy']]],
   ['_24y',['$y',['../classwcmf_1_1lib_1_1model_1_1output_1_1_position.html#a77b973d137fb33212e018b042df6e3e7',1,'wcmf::lib::model::output::Position']]],
-  ['_24yscale',['$yscale',['../classwcmf_1_1lib_1_1model_1_1output_1_1_image_output_strategy.html#a17f431ea4bd0e8d7ff55bbba78a67b97',1,'wcmf::lib::model::output::ImageOutputStrategy']]],
   ['_24z',['$z',['../classwcmf_1_1lib_1_1model_1_1output_1_1_position.html#a7359f3ea32073ea20d3176243cb5f86d',1,'wcmf::lib::model::output::Position']]]
 ];

@@ -1,18 +1,12 @@
 var searchData=
 [
-  ['read',['READ',['../classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html#add302975378da047de904daa059a332b',1,'wcmf::lib::persistence::PersistenceAction']]],
-  ['registry_5fvar',['REGISTRY_VAR',['../classwcmf_1_1application_1_1controller_1_1_batch_display_controller.html#af55dc8f9e5917efa9fb50d8dd144c1b5',1,'wcmf::application::controller::BatchDisplayController']]],
-  ['relation_5fstate_5finitialized',['RELATION_STATE_INITIALIZED',['../classwcmf_1_1lib_1_1model_1_1_node.html#aa2339f175b50aa2cdd1b4cc3950c0587',1,'wcmf::lib::model::Node']]],
-  ['relation_5fstate_5finitializing',['RELATION_STATE_INITIALIZING',['../classwcmf_1_1lib_1_1model_1_1_node.html#a4dc8bfbca867999ca51a3923e6a8ffb0',1,'wcmf::lib::model::Node']]],
-  ['relation_5fstate_5floaded',['RELATION_STATE_LOADED',['../classwcmf_1_1lib_1_1model_1_1_node.html#a6ae60ad651124608a8dc99f144058f27',1,'wcmf::lib::model::Node']]],
-  ['relation_5fstate_5funinitialized',['RELATION_STATE_UNINITIALIZED',['../classwcmf_1_1lib_1_1model_1_1_node.html#a6729718117a7d6b4bcb7f96fc93e57e0',1,'wcmf::lib::model::Node']]],
-  ['remote_5fobjects_5fsession_5fvarname',['REMOTE_OBJECTS_SESSION_VARNAME',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_remote_capable_persistence_facade.html#a43d4e2719577f3e9978482fc611f7e65',1,'wcmf::lib::persistence::impl::RemoteCapablePersistenceFacade']]],
-  ['request_5fvar',['REQUEST_VAR',['../classwcmf_1_1application_1_1controller_1_1_batch_controller.html#abfdca9e1c77b4ddb4180f463cab3b99c',1,'wcmf::application::controller::BatchController']]],
-  ['required',['REQUIRED',['../classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#a4af9e891afe0982a6bc3b1338da3dfe6',1,'wcmf::lib::persistence::BuildDepth']]],
-  ['resource_5ftype_5fentity_5finstance',['RESOURCE_TYPE_ENTITY_INSTANCE',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html#a0d52a63df2f0a252ba0004ae57fd97fa',1,'wcmf::lib::security::impl::AbstractPermissionManager']]],
-  ['resource_5ftype_5fentity_5finstance_5fproperty',['RESOURCE_TYPE_ENTITY_INSTANCE_PROPERTY',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html#a4b1bbea41d4fe323f9c91ec40ee02015',1,'wcmf::lib::security::impl::AbstractPermissionManager']]],
-  ['resource_5ftype_5fentity_5ftype',['RESOURCE_TYPE_ENTITY_TYPE',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html#a38b1d9157d752f519a2c7958bf459c5a',1,'wcmf::lib::security::impl::AbstractPermissionManager']]],
-  ['resource_5ftype_5fentity_5ftype_5fproperty',['RESOURCE_TYPE_ENTITY_TYPE_PROPERTY',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html#a45d5cb295296121092598c59b41e2f58',1,'wcmf::lib::security::impl::AbstractPermissionManager']]],
-  ['resource_5ftype_5fother',['RESOURCE_TYPE_OTHER',['../classwcmf_1_1lib_1_1security_1_1impl_1_1_abstract_permission_manager.html#a6a629f73254305352611fa4df08a3742',1,'wcmf::lib::security::impl::AbstractPermissionManager']]],
-  ['root_5fsection_5fname',['ROOT_SECTION_NAME',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_monolog_file_logger.html#a28081cafa1ae1255876ae6ae341568b5',1,'wcmf::lib::core::impl::MonologFileLogger']]]
+  ['packages_5fvar',['PACKAGES_VAR',['../classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab3d68c379814aadbab70cef14a16a3e3',1,'wcmf::application::controller::BatchController']]],
+  ['permission_5fmodifier_5fallow',['PERMISSION_MODIFIER_ALLOW',['../interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a4e34e2ff1951d49ebe88423999609413',1,'wcmf::lib::security::PermissionManager']]],
+  ['permission_5fmodifier_5fdeny',['PERMISSION_MODIFIER_DENY',['../interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html#a07a7905d362aa5a7e5838463bbb1005f',1,'wcmf::lib::security::PermissionManager']]],
+  ['property_5fcombine_5foperator',['PROPERTY_COMBINE_OPERATOR',['../classwcmf_1_1lib_1_1model_1_1_object_query.html#a955fb32d8f6d3d900eeaa8a32db05b26',1,'wcmf::lib::model::ObjectQuery']]],
+  ['property_5finitial_5foid',['PROPERTY_INITIAL_OID',['../classwcmf_1_1lib_1_1model_1_1_object_query.html#a03e9a49687d2b0ffdea0538aa5c008dc',1,'wcmf::lib::model::ObjectQuery']]],
+  ['property_5ftable_5fname',['PROPERTY_TABLE_NAME',['../classwcmf_1_1lib_1_1model_1_1_object_query.html#ab469259c7a9143b2226ccb00704a96f0',1,'wcmf::lib::model::ObjectQuery']]],
+  ['protocol_5fstr',['PROTOCOL_STR',['../classwcmf_1_1lib_1_1presentation_1_1link_1_1_internal_link.html#a92f5de329a69cb80372a4bee6a83b3f1',1,'wcmf::lib::presentation::link::InternalLink']]],
+  ['proxies_5fonly',['PROXIES_ONLY',['../classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#ad8e66505aa12ab235195acb721268093',1,'wcmf::lib::persistence::BuildDepth']]],
+  ['proxy_5fobjects_5fsession_5fvarname',['PROXY_OBJECTS_SESSION_VARNAME',['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_remote_capable_persistence_facade.html#a5feed45231748ac82338fbb533a3da9b',1,'wcmf::lib::persistence::impl::RemoteCapablePersistenceFacade']]]
 ];
