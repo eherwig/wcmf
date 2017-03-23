@@ -1,0 +1,12 @@
+digraph "PersistenceOperation"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{PersistenceOperation\n|# $type\l# $values\l# $criteria\l|+ __construct()\l+ getType()\l+ getValues()\l+ getCriteria()\l+ __toString()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node1 [label="{DeleteOperation\n||+ __construct()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwcmf_1_1lib_1_1persistence_1_1_delete_operation.html",tooltip="DeleteOperation holds data necessary to accomplish an delete operation on the persistent store..."];
+  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{InsertOperation\n||+ __construct()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwcmf_1_1lib_1_1persistence_1_1_insert_operation.html",tooltip="InsertOperation holds data necessary to accomplish an insert operation on the persistent store..."];
+  Node0 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{UpdateOperation\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwcmf_1_1lib_1_1persistence_1_1_update_operation.html",tooltip="UpdateOperation instances hold data necessary to accomplish an update operation on the persistent sto..."];
+}

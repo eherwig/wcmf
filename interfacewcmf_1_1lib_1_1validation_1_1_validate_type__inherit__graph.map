@@ -1,8 +1,0 @@
-<map id="ValidateType" name="ValidateType">
-<area shape="rect" id="node2" href="$classwcmf_1_1lib_1_1validation_1_1impl_1_1_date.html" title="Date validates against the specified date format. " alt="" coords="5,131,159,208"/>
-<area shape="rect" id="node3" href="$classwcmf_1_1lib_1_1validation_1_1impl_1_1_filter.html" title="Filter validates against the given php filter. " alt="" coords="183,131,269,208"/>
-<area shape="rect" id="node4" href="$classwcmf_1_1lib_1_1validation_1_1impl_1_1_image.html" title="Image validates an image value. " alt="" coords="293,131,378,208"/>
-<area shape="rect" id="node5" href="$classwcmf_1_1lib_1_1validation_1_1impl_1_1_reg_exp.html" title="RegExp validates against the given regular expression. " alt="" coords="402,131,487,208"/>
-<area shape="rect" id="node6" href="$classwcmf_1_1lib_1_1validation_1_1impl_1_1_required.html" title="Required checks if the value is not empty. " alt="" coords="511,131,597,208"/>
-<area shape="rect" id="node7" href="$classwcmf_1_1lib_1_1validation_1_1impl_1_1_unique.html" title="Unique checks if the value is unique regarding the given entity attribute. " alt="" coords="621,131,706,208"/>
-</map>

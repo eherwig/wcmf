@@ -1,0 +1,10 @@
+digraph "AbstractQuery"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{AbstractQuery\n||+ execute()\l+ getQueryString()\l+ getLastQueryString()\l# getQueryType()\l# buildQuery()\l# executeInternal()\l# getConnection()\l# getMapper()\l# checkMapper()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node1 [label="{ObjectQuery\n|+ PROPERTY_COMBINE_OPERATOR\l+ PROPERTY_TABLE_NAME\l+ PROPERTY_INITIAL_OID\l|+ __construct()\l+ __destruct()\l+ getId()\l+ getObjectTemplate()\l+ registerObjectTemplate()\l+ makeGroup()\l+ getQueryCondition()\l+ valueChanged()\l# getQueryType()\l# buildQuery()\l# processObjectTemplate()\l# processOrderBy()\l# getParameters()\l# getParameterPosition()\l# resetInternals()\l# processTableName()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwcmf_1_1lib_1_1model_1_1_object_query.html",tooltip="ObjectQuery implements a template based object query. "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{StringQuery\n||+ setConditionString()\l+ fromRql()\l# buildQuery()\l# mapToDatabase()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwcmf_1_1lib_1_1model_1_1_string_query.html",tooltip="StringQuery executes queries from a string representation. "];
+}

@@ -1,0 +1,16 @@
+digraph "ListStrategy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{ListStrategy\n||+ getList()\l+ isStatic()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node1 [label="{ConfigListStrategy\n||+ getList()\l+ isStatic()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_config_list_strategy.html",tooltip="ConfigListStrategy implements a list of key/value pairs that is retrieved from a configuration sectio..."];
+  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{FileListStrategy\n||+ getList()\l+ isStatic()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_file_list_strategy.html",tooltip="FileListStrategy implements a list of key value pairs that is retrieved from an configuration section..."];
+  Node0 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{FixedListStrategy\n||+ getList()\l+ isStatic()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_fixed_list_strategy.html",tooltip="FixedListStrategy implements a constant list of key/value pairs. "];
+  Node0 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{FunctionListStrategy\n||+ getList()\l+ isStatic()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_function_list_strategy.html",tooltip="FunctionListStrategy implements a list of key/value pairs that is retrieved by a global function..."];
+  Node0 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node5 [label="{NodeListStrategy\n||+ getList()\l+ isStatic()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwcmf_1_1lib_1_1presentation_1_1control_1_1lists_1_1impl_1_1_node_list_strategy.html",tooltip="NodeListStrategy implements a list of entities that is retrieved from the store, where the keys are t..."];
+}

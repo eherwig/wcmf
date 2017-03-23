@@ -1,0 +1,10 @@
+digraph "InifileConfiguration"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{InifileConfiguration\n||+ __construct()\l+ getConfigPath()\l+ getConfigurations()\l+ addConfiguration()\l+ getSections()\l+ hasSection()\l+ getSection()\l+ hasValue()\l+ getValue()\l+ getBooleanValue()\land 12 more...\l# processFile()\l# parseIniFile()\l# processValues()\l# processValue()\l# configMerge()\l# getConfigIncludes()\l# serialize()\l# unserialize()\l# getSerializeFilename()\l# checkFileDate()\l# configChanged()\l# buildLookupTable()\l# lookup()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node1 [label="{Configuration\n||+ getConfigurations()\l+ addConfiguration()\l+ getSections()\l+ hasSection()\l+ getSection()\l+ hasValue()\l+ getValue()\l+ getBooleanValue()\l+ getDirectoryValue()\l+ getFileValue()\l+ getKey()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interfacewcmf_1_1lib_1_1config_1_1_configuration.html",tooltip="Implementations of Configuration give access to the application configuration. "];
+  Node2 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{WritableConfiguration\n||+ isEditable()\l+ isModified()\l+ createSection()\l+ removeSection()\l+ renameSection()\l+ setValue()\l+ removeKey()\l+ renameKey()\l+ writeConfiguration()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interfacewcmf_1_1lib_1_1config_1_1_writable_configuration.html",tooltip="Implementations of WritableConfiguration allow to change the whole or parts of the configuration and ..."];
+}
