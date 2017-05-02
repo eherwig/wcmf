@@ -4,6 +4,7 @@ var searchData=
   ['_24attribute',['$attribute',['../classwcmf_1_1lib_1_1persistence_1_1_criteria.html#aa40a783088b6397bb3d2c53c856114fd',1,'wcmf::lib::persistence::Criteria']]],
   ['_24bgcolor',['$bgColor',['../classwcmf_1_1lib_1_1model_1_1output_1_1_image_output_strategy.html#ab82a04539e3f3415ec35adedf87b141f',1,'wcmf::lib::model::output::ImageOutputStrategy']]],
   ['_24border',['$border',['../classwcmf_1_1lib_1_1model_1_1output_1_1_image_output_strategy.html#abb3c880c6024841924696a2da6c4eb3a',1,'wcmf::lib::model::output::ImageOutputStrategy']]],
+  ['_24cache',['$cache',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_json_format.html#ac2dc76d756ec398393d4b1d23659276c',1,'wcmf::lib::presentation::format::impl::JsonFormat']]],
   ['_24cachedsql',['$cachedSql',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement.html#a9ee338c7ba7b1b6d65911f4e4f07682d',1,'wcmf::lib::model::mapper::SelectStatement']]],
   ['_24column',['$column',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_attribute_description.html#a60e9ae05178c483ab3d9ff5c2399a463',1,'wcmf::lib::model::mapper::RDBAttributeDescription']]],
   ['_24combineoperator',['$combineOperator',['../classwcmf_1_1lib_1_1persistence_1_1_criteria.html#a5c160630f1be66a21fac031a65ea65f1',1,'wcmf::lib::persistence::Criteria']]],

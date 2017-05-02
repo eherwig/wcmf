@@ -1,8 +1,0 @@
-digraph "DefaultLocalization"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  Node0 [label="{DefaultLocalization\n||+ __construct()\l+ getDefaultLanguage()\l+ getSupportedLanguages()\l+ loadTranslatedObject()\l+ loadTranslation()\l+ saveTranslation()\l+ deleteTranslation()\l+ deleteLanguage()\l# loadTranslationImpl()\l# saveTranslationImpl()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node1 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
-  Node1 [label="{Localization\n||+ getDefaultLanguage()\l+ getSupportedLanguages()\l+ loadTranslatedObject()\l+ loadTranslation()\l+ saveTranslation()\l+ deleteTranslation()\l+ deleteLanguage()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interfacewcmf_1_1lib_1_1i18n_1_1_localization.html",tooltip="Localization defines the interface for storing localized entity instances and retrieving them back..."];
-}

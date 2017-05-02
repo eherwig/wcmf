@@ -1,8 +1,0 @@
-digraph "Formatter"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  Node0 [label="{Formatter\n||+ getFormat()\l+ getFormatFromMimeType()\l+ deserialize()\l+ serialize()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
-  Node1 [label="{DefaultFormatter\n||+ __construct()\l+ getFormat()\l+ getFormatFromMimeType()\l+ deserialize()\l+ serialize()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_default_formatter.html",tooltip="Default Formatter implementation. "];
-}

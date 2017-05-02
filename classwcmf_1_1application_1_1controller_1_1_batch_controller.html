@@ -123,7 +123,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html" title="BatchController is used to process complex, longer running actions, that need to be divided into seve...">BatchController</a> is used to process complex, longer running actions, that need to be divided into several requests to overcome resource limits and provide progress information to the user. </p>
-<p>Conceptionally the process is divided into subactions (<em>work packages</em>), that are called sequentially. Depending on the progress, the controller sets different actions on the response as result of one execution.</p>
+<p>Conceptually the process is divided into sub actions (<em>work packages</em>), that are called sequentially. Depending on the progress, the controller sets different actions on the response as result of one execution.</p>
 <p><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html" title="BatchController is used to process complex, longer running actions, that need to be divided into seve...">BatchController</a> only sets up the infrastructure, the concrete process is defined by creating a subclass and implementing the abstract methods (mainly <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#aa969f966d1ab74704cbde9512d281d2c" title="Get definitions of work packages. ">BatchController::getWorkPackage()</a>).</p>
 <p>The controller supports the following actions:</p>
 <div class="controller-action"> <div> <b>Action</b> <em>default</em> </div> <div> Initialize the work packages and process the first action. <table class="doxtable">
@@ -420,7 +420,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Add a work package to session. </p>
-<p>This package will be devided into sub packages of given size. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This package will be divided into sub packages of given size. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$name</td><td>Display name of the package (will be supplemented by startNumber-endNumber, e.g. '1-7', '8-14', ...) </td></tr>
     <tr><td class="paramname">$size</td><td>Size of one sub package. This defines how many of the oids will be passed to the callback in one call (e.g. '7' means pass 7 oids per call) </td></tr>
@@ -430,7 +430,7 @@ Protected Member Functions</h2></td></tr>
 <li>optionally array parameter (the additional arguments) </li>
 </ol>
 </td></tr>
-    <tr><td class="paramname">$args</td><td>Assoziative array of additional callback arguments (application specific) (default: <em>null</em>) </td></tr>
+    <tr><td class="paramname">$args</td><td>Associative array of additional callback arguments (application specific) (default: <em>null</em>) </td></tr>
   </table>
   </dd>
 </dl>
@@ -640,7 +640,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This function gets called on first initialization run as often until it returns null. This allows to define different static work packages. If you would like to add work packages dynamically on subsequent runs this may be done by directly calling the <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab0e75dc0967afe71da4d6bd46d7a500b" title="Add a work package to session. ">BatchController::addWorkPackage()</a> method. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>A work packages description as assoziative array with keys 'name', 'size', 'oids', 'callback' as required for <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab0e75dc0967afe71da4d6bd46d7a500b" title="Add a work package to session. ">BatchController::addWorkPackage()</a> method or null to terminate. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A work packages description as associative array with keys 'name', 'size', 'oids', 'callback' as required for <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab0e75dc0967afe71da4d6bd46d7a500b" title="Add a work package to session. ">BatchController::addWorkPackage()</a> method or null to terminate. </dd></dl>
 
 </div>
 </div>
@@ -668,7 +668,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clean up after all tasks are finished. </p>
-<dl class="section note"><dt>Note</dt><dd>Suclasses may override this to do custom clean up, but should call the parent method. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Subclasses may override this to do custom clean up, but should call the parent method. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_batch_controller_8php_source.html#l00330">330</a> of file <a class="el" href="_batch_controller_8php_source.html">BatchController.php</a>.</p>
 
@@ -783,7 +783,7 @@ Protected Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Mar 23 2017 11:32:48 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.13</small>
+          Generated on Tue May 2 2017 17:14:04 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.13</small>
       </div>
     </div>
   </div>

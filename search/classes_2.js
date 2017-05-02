@@ -16,5 +16,6 @@ var searchData=
   ['controllertestcase',['ControllerTestCase',['../classwcmf_1_1test_1_1lib_1_1_controller_test_case.html',1,'wcmf::test::lib']]],
   ['copycontroller',['CopyController',['../classwcmf_1_1application_1_1controller_1_1_copy_controller.html',1,'wcmf::application::controller']]],
   ['criteria',['Criteria',['../classwcmf_1_1lib_1_1persistence_1_1_criteria.html',1,'wcmf::lib::persistence']]],
-  ['csvexportcontroller',['CSVExportController',['../classwcmf_1_1application_1_1controller_1_1_c_s_v_export_controller.html',1,'wcmf::application::controller']]]
+  ['csvexportcontroller',['CSVExportController',['../classwcmf_1_1application_1_1controller_1_1_c_s_v_export_controller.html',1,'wcmf::application::controller']]],
+  ['csvimportcontroller',['CSVImportController',['../classwcmf_1_1application_1_1controller_1_1_c_s_v_import_controller.html',1,'wcmf::application::controller']]]
 ];

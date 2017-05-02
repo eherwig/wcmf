@@ -1,8 +1,0 @@
-digraph "SelectStatement"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  Node0 [label="{SelectStatement\n|+ NO_CACHE\l+ CACHE_KEY\l# $id\l# $type\l# $parameters\l# $meta\l# $cachedSql\l|+ __construct()\l+ __toString()\l+ getId()\l+ getType()\l+ isCached()\l+ setMeta()\l+ getMeta()\l+ setParameters()\l+ getParameters()\l+ getRowCount()\land 7 more...\l+ get()\l# getAdapter()\l# getCacheSection()\l# getCacheId()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node1 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
-  Node1 [label="{Select\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-}

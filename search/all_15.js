@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['tags_5fto_5fclose_5fvar',['TAGS_TO_CLOSE_VAR',['../classwcmf_1_1application_1_1controller_1_1_x_m_l_export_controller.html#a695b3143f9ae9a1508eabafec680de0f',1,'wcmf::application::controller::XMLExportController']]],
   ['teardown',['tearDown',['../classwcmf_1_1test_1_1lib_1_1_database_test_case.html#a80fe3d17e658907fc75346a0ec9d6fc7',1,'wcmf\test\lib\DatabaseTestCase\tearDown()'],['../classwcmf_1_1test_1_1lib_1_1_selenium_test_case.html#a80fe3d17e658907fc75346a0ec9d6fc7',1,'wcmf\test\lib\SeleniumTestCase\tearDown()']]],
   ['tests',['Tests',['../tests.html',1,'']]],
   ['testutil',['TestUtil',['../classwcmf_1_1lib_1_1util_1_1_test_util.html',1,'wcmf::lib::util']]],
