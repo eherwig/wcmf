@@ -10,6 +10,8 @@
  */
 namespace wcmf\lib\pdf;
 
+use FPDI;
+
 if (!class_exists('FPDI')) {
     throw new \wcmf\lib\config\ConfigurationException(
             'wcmf\lib\pdf\PDF requires '.
@@ -26,11 +28,11 @@ if (!class_exists('FPDI')) {
  */
 class PDF extends FPDI {
 
-  var $_pageStarted = false;
-  var $_pageEnded = false;
+  private $pageStarted = false;
+  private $pageEnded = false;
 
   /**
-   * Overriden to set the template on the page
+   * Overridden to set the template on the page
    */
   public function Header() {
     parent::Header();
@@ -41,16 +43,16 @@ class PDF extends FPDI {
    * Call this method when rendering a new page
    */
   public function startPage() {
-    $this->_pageStarted = true;
-    $this->_pageEnded = false;
+    $this->pageStarted = true;
+    $this->pageEnded = false;
   }
 
   /**
    * Call this method when rendering a page finished
    */
   public function endPage() {
-    $this->_pageEnded = true;
-    $this->_pageStarted = false;
+    $this->pageEnded = true;
+    $this->pageStarted = false;
   }
 
   /**
@@ -58,7 +60,7 @@ class PDF extends FPDI {
    * @return Boolean
    */
   public function isPageStarted() {
-    return $this->_pageStarted;
+    return $this->pageStarted;
   }
 
   /**
@@ -66,7 +68,7 @@ class PDF extends FPDI {
    * @return Boolean
    */
   public function isPageEnded() {
-    return $this->_pageEnded;
+    return $this->pageEnded;
   }
 
   /**
@@ -129,7 +131,7 @@ class PDF extends FPDI {
       $w=$this->w-$this->rMargin-$this->x;
     }
     $wmax=($w-2*$this->cMargin)*1000/$this->FontSize;
-    $s=str_replace("\r",'',$txt);
+    $s=str_replace("\r", '', $txt);
     $nb=strlen($s);
     if($nb>0 && $s[$nb-1]=="\n") {
       $nb--;

@@ -35,7 +35,7 @@ class DisplayControllerTest extends ControllerTestCase {
   protected function getDataSet() {
     return new ArrayDataSet(array(
       'DBSequence' => array(
-        array('id' => 1),
+        array('table' => ''),
       ),
       'User' => array(
         array('id' => 0, 'login' => 'admin', 'name' => 'Administrator', 'password' => '$2y$10$WG2E.dji.UcGzNZF2AlkvOb7158PwZpM2KxwkC6FJdKr4TQC9JXYm', 'config' => ''),
@@ -68,7 +68,6 @@ class DisplayControllerTest extends ControllerTestCase {
     $response = $this->runRequest('read', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
     $obj = $response->getValue('object');
     $this->assertEquals('Administrator', $obj->getValue('name'));
 
@@ -100,7 +99,6 @@ class DisplayControllerTest extends ControllerTestCase {
     $response = $this->runRequest('read', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
     $translatedObj = $response->getValue('object');
     $this->assertEquals('Administrator [de]', $translatedObj->getValue('name'));
 
@@ -141,7 +139,6 @@ class DisplayControllerTest extends ControllerTestCase {
     $response = $this->runRequest('read', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
     $translatedObj = $response->getValue('object');
     $translatedChild = $translatedObj->getFirstChild();
     $this->assertEquals('Value [de]', $translatedChild->getValue('val'));

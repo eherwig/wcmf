@@ -28,12 +28,12 @@ use wcmf\lib\util\TestUtil;
  */
 class LockingTest extends DatabaseTestCase {
 
-  private $_bookOidStr = 'Book:777';
+  private $bookOidStr = 'Book:777';
 
   protected function getDataSet() {
     return new ArrayDataSet(array(
       'DBSequence' => array(
-        array('id' => 1),
+        array('table' => ''),
       ),
       'User' => array(
         array('id' => 555, 'login' => 'user1', 'password' => '$2y$10$iBjiDZ8XyK1gCOV6m5lbO.2ur42K7M1zSpm.NU7u5g3mYTi2kiu02', 'config' => ''),
@@ -48,7 +48,7 @@ class LockingTest extends DatabaseTestCase {
   }
 
   public function testPessimisticLock() {
-    $oid = ObjectId::parse($this->_bookOidStr);
+    $oid = ObjectId::parse($this->bookOidStr);
 
     // lock
     $sid1 = TestUtil::startSession('user1', 'user1');
@@ -72,7 +72,7 @@ class LockingTest extends DatabaseTestCase {
   }
 
   public function testPessimisticConcurrentLock() {
-    $oid = ObjectId::parse($this->_bookOidStr);
+    $oid = ObjectId::parse($this->bookOidStr);
 
     // user 1 locks the object
     $sid1 = TestUtil::startSession('user1', 'user1');
@@ -96,7 +96,7 @@ class LockingTest extends DatabaseTestCase {
   }
 
   public function testPessimisticConcurrentUpdate() {
-    $oid = ObjectId::parse($this->_bookOidStr);
+    $oid = ObjectId::parse($this->bookOidStr);
 
     // user 1 locks the object
     $sid1 = TestUtil::startSession('user1', 'user1');
@@ -127,7 +127,7 @@ class LockingTest extends DatabaseTestCase {
   }
 
   public function testPessimisticConcurrentDelete() {
-    $oid = ObjectId::parse($this->_bookOidStr);
+    $oid = ObjectId::parse($this->bookOidStr);
 
     // user 1 locks the object
     $sid1 = TestUtil::startSession('user1', 'user1');
@@ -156,7 +156,7 @@ class LockingTest extends DatabaseTestCase {
   }
 
   public function testOptimisticLock() {
-    $oid = ObjectId::parse($this->_bookOidStr);
+    $oid = ObjectId::parse($this->bookOidStr);
 
     // user 1 locks the object and modifies it
     $sid1 = TestUtil::startSession('user1', 'user1');
@@ -178,7 +178,7 @@ class LockingTest extends DatabaseTestCase {
   }
 
   public function testOptimisticConcurrentUpdate() {
-    $oid = ObjectId::parse($this->_bookOidStr);
+    $oid = ObjectId::parse($this->bookOidStr);
 
     // user 1 locks the object
     $sid1 = TestUtil::startSession('user1', 'user1');
@@ -209,7 +209,7 @@ class LockingTest extends DatabaseTestCase {
   }
 
   public function testOptimisticConcurrentDelete() {
-    $oid = ObjectId::parse($this->_bookOidStr);
+    $oid = ObjectId::parse($this->bookOidStr);
 
     // user 1 locks the object
     $sid1 = TestUtil::startSession('user1', 'user1');

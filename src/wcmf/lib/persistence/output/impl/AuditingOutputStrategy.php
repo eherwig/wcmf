@@ -11,7 +11,7 @@
 namespace wcmf\lib\persistence\output\impl;
 
 use wcmf\lib\core\LogManager;
-use wcmf\lib\core\Session;
+use wcmf\lib\core\ObjectFactory;
 use wcmf\lib\persistence\output\OutputStrategy;
 use wcmf\lib\persistence\PersistentObject;
 
@@ -23,17 +23,14 @@ use wcmf\lib\persistence\PersistentObject;
  */
 class AuditingOutputStrategy implements OutputStrategy {
 
-  private static $_logger = null;
-  private $_session = null;
+  private static $logger = null;
 
   /**
    * Constructor
-   * @param $session
    */
-  public function __construct(Session $session) {
-    $this->_session = $session;
-    if (self::$_logger == null) {
-      self::$_logger = LogManager::getLogger(__CLASS__);
+  public function __construct() {
+    if (self::$logger == null) {
+      self::$logger = LogManager::getLogger(__CLASS__);
     }
   }
 
@@ -55,13 +52,14 @@ class AuditingOutputStrategy implements OutputStrategy {
    * @see OutputStrategy::writeObject
    */
   public function writeObject(PersistentObject $obj) {
-    if (self::$_logger->isInfoEnabled()) {
-      $user = $this->_session->getAuthUser();
+    if (self::$logger->isInfoEnabled()) {
+      $session = ObjectFactory::getInstance('session');
+      $authUserLogin = $session->getAuthUser();
 
       switch ($state = $obj->getState()) {
         // log insert action
         case PersistentObject::STATE_NEW:
-          self::$_logger->info('INSERT '.$obj->getOID().': '.str_replace("\n", " ", $obj->__toString()).' USER: '.$user->getLogin());
+          self::$logger->info('INSERT '.$obj->getOID().': '.str_replace("\n", " ", $obj->__toString()).' USER: '.$authUserLogin);
           break;
         // log update action
         case PersistentObject::STATE_DIRTY:
@@ -82,12 +80,12 @@ class AuditingOutputStrategy implements OutputStrategy {
               $diff .= $value['name'].':'.serialize($value['old']).'->'.serialize($value['new']).' ';
             }
           }
-          self::$_logger->info('SAVE '.$obj->getOID().': '.$diff.' USER: '.$user->getLogin());
+          self::$logger->info('SAVE '.$obj->getOID().': '.$diff.' USER: '.$authUserLogin);
           break;
         // log delete action
         case PersistentObject::STATE_DELETED:
           // get old object from storage
-          self::$_logger->info('DELETE '.$obj->getOID().': '.str_replace("\n", " ", $obj->__toString()).' USER: '.$user->getLogin());
+          self::$logger->info('DELETE '.$obj->getOID().': '.str_replace("\n", " ", $obj->__toString()).' USER: '.$authUserLogin);
           break;
       }
     }

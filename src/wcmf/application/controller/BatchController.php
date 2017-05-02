@@ -10,6 +10,7 @@
  */
 namespace wcmf\application\controller;
 
+use wcmf\lib\persistence\ObjectId;
 use wcmf\lib\presentation\ApplicationError;
 use wcmf\lib\presentation\ApplicationException;
 use wcmf\lib\presentation\Controller;
@@ -41,8 +42,9 @@ use wcmf\lib\presentation\Response;
  * | _out_ `stepNumber`    | The current step starting with 1, ending with _numberOfSteps_+1
  * | _out_ `numberOfSteps` | Total number of steps
  * | _out_ `displayText`   | The display text for the current step
+ * | _out_ `status`        | The value of the response action
  * | __Response Actions__  | |
- * | `next`                | The process is not finished and `continue` should be called as next action
+ * | `progress`            | The process is not finished and `continue` should be called as next action
  * | `download`            | The process is finished and the next call to `continue` will trigger the file download
  * | `done`                | The process is finished
  * </div>
@@ -57,8 +59,9 @@ use wcmf\lib\presentation\Response;
  * | _out_ `stepNumber`    | The current step starting with 1, ending with _numberOfSteps_+1
  * | _out_ `numberOfSteps` | Total number of steps
  * | _out_ `displayText`   | The display text for the current step
+ * | _out_ `status`        | The value of the response action
  * | __Response Actions__  | |
- * | `next`                | The process is not finished and `continue` should be called as next action
+ * | `progress`            | The process is not finished and `continue` should be called as next action
  * | `download`            | The process is finished and the next call to `continue` will trigger the file download
  * | `done`                | The process is finished
  * </div>
@@ -69,14 +72,15 @@ use wcmf\lib\presentation\Response;
 abstract class BatchController extends Controller {
 
   // session name constants
-  const ONE_CALL_SESSION_VARNAME = 'BatchController.oneCall';
-  const STEP_SESSION_VARNAME = 'BatchController.curStep';
-  const NUM_STEPS_VARNAME = 'BatchController.numSteps';
-  const DOWNLOAD_STEP = 'BatchController.downloadStep'; // signals that the next continue action triggers the download
-  const WORK_PACKAGES_VARNAME = 'BatchController.workPackages';
+  const REQUEST_VAR = 'request';
+  const ONE_CALL_VAR = 'oneCall';
+  const STEP_VAR = 'step';
+  const NUM_STEPS_VAR = 'numSteps';
+  const DOWNLOAD_STEP_VAR = 'downloadStep'; // signals that the next continue action triggers the download
+  const PACKAGES_VAR = 'packages';
 
-  private $_curStep = 1;
-  private $_workPackages = array();
+  private $curStep = 1;
+  private $workPackages = array();
 
   /**
    * @see Controller::initialize()
@@ -84,31 +88,26 @@ abstract class BatchController extends Controller {
   public function initialize(Request $request, Response $response) {
     parent::initialize($request, $response);
 
-    $session = $this->getSession();
     if ($request->getAction() == 'continue') {
       // get step for current call from session
-      if ($session->exist(self::STEP_SESSION_VARNAME)) {
-        $this->_curStep = $session->get(self::STEP_SESSION_VARNAME);
-      }
-      else {
+      $this->curStep = $this->getLocalSessionValue(self::STEP_VAR);
+      if ($this->curStep == null) {
         throw new ApplicationException($request, $response, ApplicationError::getGeneral("Current step undefined."));
       }
       // get workpackage definition for current call from session
-      if ($session->exist(self::WORK_PACKAGES_VARNAME)) {
-        $this->_workPackages = $session->get(self::WORK_PACKAGES_VARNAME);
-      }
-      else {
+      $this->workPackages = $this->getLocalSessionValue(self::PACKAGES_VAR);
+      if ($this->workPackages == null) {
         throw new ApplicationException($request, $response, ApplicationError::getGeneral("Work packages undefined."));
       }
     }
     else {
-      // first call, initialize step session variable
-      $this->_curStep = 1;
-      $session->set(self::ONE_CALL_SESSION_VARNAME, $request->getBooleanValue('oneCall', false));
-
-      $tmpArray = array();
-      $session->set(self::WORK_PACKAGES_VARNAME, $tmpArray);
-      $session->set(self::DOWNLOAD_STEP, false);
+      // initialize session variables
+      $this->setLocalSessionValue(self::ONE_CALL_VAR, $request->getBooleanValue('oneCall', false));
+      $this->setLocalSessionValue(self::REQUEST_VAR, $request->getValues());
+      $this->setLocalSessionValue(self::PACKAGES_VAR, array());
+      $this->setLocalSessionValue(self::STEP_VAR, 0);
+      $this->setLocalSessionValue(self::NUM_STEPS_VAR, 0);
+      $this->setLocalSessionValue(self::DOWNLOAD_STEP_VAR, false);
 
       // define work packages
       $number = 0;
@@ -127,21 +126,23 @@ abstract class BatchController extends Controller {
         throw new ApplicationException($request, $response, ApplicationError::getGeneral("No work packages."));
       }
     }
-    $nextStep = $this->_curStep+1;
-    $session->set(self::STEP_SESSION_VARNAME, $nextStep);
+
+    // next step
+    $this->curStep = $this->getLocalSessionValue(self::STEP_VAR);
+    $this->setLocalSessionValue(self::STEP_VAR, ++$this->curStep);
   }
 
   /**
    * @see Controller::doExecute()
    */
   protected function doExecute() {
-    $session = $this->getSession();
     $response = $this->getResponse();
 
     // check if a download was triggered in the last step
-    if ($session->get(self::DOWNLOAD_STEP) == true) {
+    if ($this->getLocalSessionValue(self::DOWNLOAD_STEP_VAR) == true) {
       $file = $this->getDownloadFile();
-      $response->setFile($file);
+      $response->setFile($file, true);
+      $this->cleanup();
       return;
     }
 
@@ -151,29 +152,33 @@ abstract class BatchController extends Controller {
     if ($curStep <= $numberOfSteps) {
       $this->processPart();
 
+      // update local variables after processing
+      $numberOfSteps = $this->getNumberOfSteps();
+
+      // set response data
       $response->setValue('stepNumber', $curStep);
       $response->setValue('numberOfSteps', $numberOfSteps);
       $response->setValue('displayText', $this->getDisplayText($curStep));
     }
 
     // check if we are finished or should continue
-    // (number of packages may have changed while processing)
-    $numberOfSteps = $this->getNumberOfSteps();
-    if ($curStep >= $numberOfSteps || $session->get(self::ONE_CALL_SESSION_VARNAME) == true) {
+    if ($curStep >= $numberOfSteps || $this->getLocalSessionValue(self::ONE_CALL_VAR) == true) {
       // finished -> check for download
       $file = $this->getDownloadFile();
       if ($file) {
         $response->setAction('download');
-        $session->set(self::DOWNLOAD_STEP, true);
+        $this->setLocalSessionValue(self::DOWNLOAD_STEP_VAR, true);
       }
       else {
         $response->setAction('done');
+        $this->cleanup();
       }
     }
     else {
       // proceed
-      $response->setAction('next');
+      $response->setAction('progress');
     }
+    $response->setValue('status', $response->getAction());
   }
 
   /**
@@ -183,14 +188,14 @@ abstract class BatchController extends Controller {
   protected function getStepNumber() {
     // since we actally call processPart() in the second step,
     // return the real step number reduced by one
-    return $this->_curStep;
+    return $this->curStep;
   }
 
   /**
    * Add a work package to session. This package will be devided into sub packages of given size.
    * @param $name Display name of the package (will be supplemented by startNumber-endNumber, e.g. '1-7', '8-14', ...)
    * @param $size Size of one sub package. This defines how many of the oids will be passed to the callback in one call (e.g. '7' means pass 7 oids per call)
-   * @param $oids An array of object ids (or other application specific package identifiers) with _at least one value_ that will be distributed into sub packages of given size
+   * @param $oids An array of object ids (or other application specific package identifiers) that will be distributed into sub packages of given size
    * @param $callback The name of method to call for this package type.
    *      The callback method must accept the following parameters:
    *      1. array parameter (the object ids to process in the current call)
@@ -200,39 +205,27 @@ abstract class BatchController extends Controller {
   protected function addWorkPackage($name, $size, $oids, $callback, $args=null) {
     $request = $this->getRequest();
     $response = $this->getResponse();
-    if ($size < 1) {
-      throw new ApplicationException($request, $response,
-              ApplicationError::getGeneral("Wrong work package description '".$name."': Size must be at least 1."));
-    }
-    if (sizeOf($oids) == 0) {
-      throw new ApplicationException($request, $response,
-              ApplicationError::getGeneral("Wrong work package description '".$name."': No oids given."));
-    }
     if (strlen($callback) == 0) {
       throw new ApplicationException($request, $response,
               ApplicationError::getGeneral("Wrong work package description '".$name."': No callback given."));
     }
 
-    $session = $this->getSession();
-    $workPackages = $session->get(self::WORK_PACKAGES_VARNAME);
-
+    $workPackages = $this->getLocalSessionValue(self::PACKAGES_VAR);
     $counter = 1;
-    $total = sizeOf($oids);
-    while(sizeOf($oids) > 0) {
+    $total = sizeof($oids);
+    while(sizeof($oids) > 0) {
       $items = array();
-      for($i=0; $i<$size; $i++) {
+      for($i=0; $i<$size && sizeof($oids)>0; $i++) {
         $nextItem = array_shift($oids);
-        if($nextItem !== null) {
-          $items[] = $nextItem;
-        }
+        $items[] = sprintf('%s', $nextItem);
       }
 
       // define status text
       $start = $counter;
-      $end = ($counter+sizeOf($items)-1);
+      $end = ($counter+sizeof($items)-1);
       $stepsText = $counter;
       if ($start != $end) {
-        $stepsText .= '-'.($counter+sizeOf($items)-1);
+        $stepsText .= '-'.($counter+sizeof($items)-1);
       }
       $statusText = "";
       if ($total > 1) {
@@ -246,29 +239,44 @@ abstract class BatchController extends Controller {
       $workPackages[] = $curWorkPackage;
       $counter += $size;
     }
-    $session->set(self::WORK_PACKAGES_VARNAME, $workPackages);
-    $session->set(self::NUM_STEPS_VARNAME, sizeOf($workPackages));
+    $this->workPackages = $workPackages;
 
-    $this->_workPackages = $workPackages;
+    // update session
+    $this->setLocalSessionValue(self::PACKAGES_VAR, $workPackages);
+    $this->setLocalSessionValue(self::NUM_STEPS_VAR, sizeof($workPackages));
   }
 
   /**
    * Process the next step.
    */
   protected function processPart() {
-    $curWorkPackageDef = $this->_workPackages[$this->getStepNumber()-1];
+    $curWorkPackageDef = $this->workPackages[$this->getStepNumber()-1];
+    $request = $this->getRequest();
+    $response = $this->getResponse();
     if (strlen($curWorkPackageDef['callback']) == 0) {
       throw new ApplicationException($request, $response, ApplicationError::getGeneral("Empty callback name."));
     }
-    else {
-      if (!method_exists($this, $curWorkPackageDef['callback'])) {
-        throw new ApplicationException($request, $response,
-                ApplicationError::getGeneral("Method '".$curWorkPackageDef['callback']."' must be implemented by ".get_class($this)));
-      }
-      else {
-        call_user_func(array($this, $curWorkPackageDef['callback']), $curWorkPackageDef['oids'], $curWorkPackageDef['args']);
-      }
+    if (!method_exists($this, $curWorkPackageDef['callback'])) {
+      throw new ApplicationException($request, $response,
+              ApplicationError::getGeneral("Method '".$curWorkPackageDef['callback']."' must be implemented by ".get_class($this)));
     }
+
+    // unserialize oids
+    $oids = array_map(function($oidStr) {
+      $oid = ObjectId::parse($oidStr);
+      return $oid != null ? $oid : $oidStr;
+    }, $curWorkPackageDef['oids']);
+    call_user_func(array($this, $curWorkPackageDef['callback']), $oids, $curWorkPackageDef['args']);
+  }
+
+  /**
+   * Get a value from the initial request.
+   * @param $name The name of the value
+   * @return Mixed
+   */
+  protected function getRequestValue($name) {
+    $requestValues = $this->getLocalSessionValue(self::REQUEST_VAR);
+    return isset($requestValues[$name]) ? $requestValues[$name] : null;
   }
 
   /**
@@ -276,7 +284,7 @@ abstract class BatchController extends Controller {
    * @return Integer
    */
   protected function getNumberOfSteps() {
-    return $this->getSession()->get(self::NUM_STEPS_VARNAME);
+    return $this->getLocalSessionValue(self::NUM_STEPS_VAR);
   }
 
   /**
@@ -284,7 +292,7 @@ abstract class BatchController extends Controller {
    * @param $step The step number
    */
   protected function getDisplayText($step) {
-    return $this->getMessage()->getText("Processing")." ".$this->_workPackages[$step-1]['name']." ...";
+    return $this->workPackages[$step-1]['name']." ...";
   }
 
   /**
@@ -305,5 +313,13 @@ abstract class BatchController extends Controller {
    *         as required for BatchController::addWorkPackage() method or null to terminate.
    */
   protected abstract function getWorkPackage($number);
+
+  /**
+   * Clean up after all tasks are finished.
+   * @note Suclasses may override this to do custom clean up, but should call the parent method.
+   */
+  protected function cleanup() {
+    $this->clearLocalSessionValues();
+  }
 }
 ?>

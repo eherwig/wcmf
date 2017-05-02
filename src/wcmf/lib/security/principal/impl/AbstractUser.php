@@ -25,9 +25,9 @@ use wcmf\lib\security\principal\User;
  */
 abstract class AbstractUser extends Node implements User {
 
-  private $_roles = null;
+  private $roles = null;
 
-  private static $_roleConfig = null;
+  private static $roleConfig = null;
 
   /**
    * @see User::setLogin()
@@ -60,8 +60,8 @@ abstract class AbstractUser extends Node implements User {
   /**
    * @see User::verifyPassword()
    */
-  public function verifyPassword($password, $passwordHash) {
-    return PasswordService::verify($password, $passwordHash);
+  public function verifyPassword($password) {
+    return PasswordService::verify($password, $this->getPassword());
   }
 
   /**
@@ -95,11 +95,11 @@ abstract class AbstractUser extends Node implements User {
    * @see User::getRoles()
    */
   public function getRoles() {
-    if (!$this->_roles) {
+    if (!$this->roles) {
       $principalFactory = ObjectFactory::getInstance('principalFactory');
-      $this->_roles = $principalFactory->getUserRoles($this, true);
+      $this->roles = $principalFactory->getUserRoles($this, true);
     }
-    return $this->_roles;
+    return $this->roles;
   }
 
   /**
@@ -123,11 +123,8 @@ abstract class AbstractUser extends Node implements User {
   protected function ensureHashedPassword() {
     // the password is expected to be stored in the 'password' value
     $password = $this->getValue('password');
-    if (strlen($password) > 0) {
-      $info = password_get_info($password);
-      if ($info['algo'] != PASSWORD_BCRYPT) {
-        $this->setValue('password', PasswordService::hash($password));
-      }
+    if (strlen($password) > 0 && !PasswordService::isHashed($password)) {
+      $this->setValue('password', PasswordService::hash($password));
     }
   }
 
@@ -176,9 +173,13 @@ abstract class AbstractUser extends Node implements User {
       if (strlen(trim($value)) == 0) {
         throw new ValidationException($message->getText("The user requires a login name"));
       }
+      if ($value == AnonymousUser::USER_GROUP_NAME) {
+        throw new ValidationException($message->getText("The login '%0%' is not allowed",
+                array(AnonymousUser::USER_GROUP_NAME)));
+      }
       $principalFactory = ObjectFactory::getInstance('principalFactory');
       $user = $principalFactory->getUser($value);
-      if ($user != null && $user->getOID() != $this->getOID()) {
+      if ($user != null && $user->getLogin() == $value && $user->getOID() != $this->getOID()) {
         throw new ValidationException($message->getText("The login '%0%' already exists", array($value)));
       }
     }
@@ -197,14 +198,14 @@ abstract class AbstractUser extends Node implements User {
    * @return Array with role names as keys and config file names as values
    */
   protected static function getRoleConfigs() {
-    if (self::$_roleConfig == null) {
+    if (self::$roleConfig == null) {
       // load role config if existing
       $config = ObjectFactory::getInstance('configuration');
       if (($roleConfig = $config->getSection('roleconfig')) !== false) {
-        self::$_roleConfig = $roleConfig;
+        self::$roleConfig = $roleConfig;
       }
     }
-    return self::$_roleConfig;
+    return self::$roleConfig;
   }
 }
 ?>

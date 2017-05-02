@@ -23,20 +23,20 @@ use wcmf\lib\persistence\PersistentObjectProxy;
 /**
  * DojoNodeSerializer is used to serialize Nodes into the Dojo rest format and
  * vice versa. The format of serialized Nodes is defined in the Dojo documentation (See:
- * http://dojotoolkit.org/reference-guide/1.8/quickstart/rest.html)
+ * http://dojotoolkit.org/reference-guide/1.10/quickstart/rest.html)
  *
  * @author ingo herwig <ingo@wemove.com>
  */
 class DojoNodeSerializer extends AbstractNodeSerializer {
 
-  private $_persistenceFacade = null;
+  private $persistenceFacade = null;
 
   /**
    * Constructor
    * @param $persistenceFacade
    */
   public function __construct(PersistenceFacade $persistenceFacade) {
-    $this->_persistenceFacade = $persistenceFacade;
+    $this->persistenceFacade = $persistenceFacade;
   }
 
   /**
@@ -68,7 +68,7 @@ class DojoNodeSerializer extends AbstractNodeSerializer {
 
     // don't create all values by default (-> don't use PersistenceFacade::create() directly,
     // just for determining the class)
-    $class = get_class($this->_persistenceFacade->create($oid->getType(), BuildDepth::SINGLE));
+    $class = get_class($this->persistenceFacade->create($oid->getType(), BuildDepth::SINGLE));
     $node = new $class;
 
     $remainingData = array();

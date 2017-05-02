@@ -23,6 +23,7 @@ use wcmf\lib\presentation\ApplicationEvent;
 use wcmf\lib\presentation\ApplicationException;
 use wcmf\lib\presentation\format\Formatter;
 use wcmf\lib\presentation\Request;
+use wcmf\lib\presentation\Response;
 use wcmf\lib\security\PermissionManager;
 use wcmf\lib\security\principal\impl\AnonymousUser;
 
@@ -33,15 +34,13 @@ use wcmf\lib\security\principal\impl\AnonymousUser;
  */
 class DefaultActionMapper implements ActionMapper {
 
-  private static $_logger = null;
+  private static $logger = null;
 
-  private $_lastResponses = array();
-  private $_session = null;
-  private $_permissionManager = null;
-  private $_eventManager = null;
-  private $_formatter = null;
-  private $_configuration = null;
-
+  private $session = null;
+  private $permissionManager = null;
+  private $eventManager = null;
+  private $formatter = null;
+  private $configuration = null;
 
   /**
    * Constructor
@@ -56,44 +55,42 @@ class DefaultActionMapper implements ActionMapper {
           EventManager $eventManager,
           Formatter $formatter,
           Configuration $configuration) {
-    if (self::$_logger == null) {
-      self::$_logger = LogManager::getLogger(__CLASS__);
+    if (self::$logger == null) {
+      self::$logger = LogManager::getLogger(__CLASS__);
     }
-    $this->_session = $session;
-    $this->_permissionManager = $permissionManager;
-    $this->_eventManager = $eventManager;
-    $this->_formatter = $formatter;
-    $this->_configuration = $configuration;
+    $this->session = $session;
+    $this->permissionManager = $permissionManager;
+    $this->eventManager = $eventManager;
+    $this->formatter = $formatter;
+    $this->configuration = $configuration;
   }
 
   /**
    * @see ActionMapper::processAction()
    */
-  public function processAction(Request $request) {
-    $isDebugEnabled = self::$_logger->isDebugEnabled();
+  public function processAction(Request $request, Response $response) {
+    $isDebugEnabled = self::$logger->isDebugEnabled();
 
-    $this->_eventManager->dispatch(ApplicationEvent::NAME, new ApplicationEvent(
+    $this->eventManager->dispatch(ApplicationEvent::NAME, new ApplicationEvent(
             ApplicationEvent::BEFORE_ROUTE_ACTION, $request));
-    $actionKeyProvider = new ConfigActionKeyProvider($this->_configuration, 'actionmapping');
+    $actionKeyProvider = new ConfigActionKeyProvider($this->configuration, 'actionmapping');
 
     $referrer = $request->getSender();
     $context = $request->getContext();
     $action = $request->getAction();
-    $response = ObjectFactory::getInstance('response');
     $response->setSender($referrer);
     $response->setContext($context);
     $response->setFormat($request->getResponseFormat());
 
     // check authorization for controller/context/action triple
-    if (!$this->_permissionManager->authorize($referrer, $context, $action)) {
-      $authUser = $this->_session->getAuthUser();
-      if ($authUser instanceof AnonymousUser) {
-        self::$_logger->error("Session invalid. The request was: ".$request->__toString());
+    if (!$this->permissionManager->authorize($referrer, $context, $action)) {
+      $authUserLogin = $this->session->getAuthUser();
+      if ($authUserLogin == AnonymousUser::USER_GROUP_NAME) {
+        self::$logger->error("Session invalid. The request was: ".$request->__toString());
         throw new ApplicationException($request, $response, ApplicationError::get('SESSION_INVALID'));
       }
       else {
-        $login = $authUser->getLogin();
-        self::$_logger->error("Authorization failed for '".$referrer.'?'.$context.'?'.$action."' user '".$login."'");
+        self::$logger->error("Authorization failed for '".$referrer.'?'.$context.'?'.$action."' user '".$authUserLogin."'");
         throw new ApplicationException($request, $response, ApplicationError::get('PERMISSION_DENIED'));
       }
     }
@@ -102,21 +99,21 @@ class DefaultActionMapper implements ActionMapper {
     $actionKey = ActionKey::getBestMatch($actionKeyProvider, $referrer, $context, $action);
 
     if ($isDebugEnabled) {
-      self::$_logger->debug($referrer."?".$context."?".$action.' -> '.$actionKey);
+      self::$logger->debug($referrer."?".$context."?".$action.' -> '.$actionKey);
     }
 
-    $controllerClass = null;
     if (strlen($actionKey) == 0) {
-      // return last response, if action key is not defined
-      $lastResponse = array_pop($this->_lastResponses);
-      return $lastResponse;
+      // return, if action key is not defined
+      return;
     }
-    else {
-      // get next controller
-      $controllerDef = $this->_configuration->getValue($actionKey, 'actionmapping');
-    }
+
+    // get next controller
+    $controllerClass = null;
+    $controllerDef = $this->configuration->getValue($actionKey, 'actionmapping');
     if (strlen($controllerDef) == 0) {
-      throw new ApplicationException($request, $response, "No controller found for best action key ".$actionKey.". Request was $referrer?$context?$action");
+      self::$logger->error("No controller found for best action key ".$actionKey.
+              ". Request was $referrer?$context?$action");
+      throw new ApplicationException($request, $response, ApplicationError::get('ACTION_INVALID'));
     }
 
     // check if the controller definition contains a method besides the class name
@@ -133,49 +130,47 @@ class DefaultActionMapper implements ActionMapper {
 
     // everything is right in place, start processing
     if ($isDebugEnabled) {
-      self::$_logger->debug("Request: ".$request->__toString());
+      self::$logger->debug("Request: ".$request->__toString());
     }
-    $this->_formatter->deserialize($request);
+    $this->formatter->deserialize($request);
 
     // initialize controller
     if ($isDebugEnabled) {
-      self::$_logger->debug("Execute ".$controllerClass." with request: ".$request->__toString());
+      self::$logger->debug("Execute ".$controllerClass." with request: ".$request->__toString());
     }
-    $this->_eventManager->dispatch(ApplicationEvent::NAME, new ApplicationEvent(
+    $this->eventManager->dispatch(ApplicationEvent::NAME, new ApplicationEvent(
             ApplicationEvent::BEFORE_INITIALIZE_CONTROLLER, $request, $response, $controllerObj));
     $controllerObj->initialize($request, $response);
 
     // execute controller
-    $this->_eventManager->dispatch(ApplicationEvent::NAME, new ApplicationEvent(
+    $this->eventManager->dispatch(ApplicationEvent::NAME, new ApplicationEvent(
             ApplicationEvent::BEFORE_EXECUTE_CONTROLLER, $request, $response, $controllerObj));
     $controllerObj->execute($controllerMethod);
-    $this->_eventManager->dispatch(ApplicationEvent::NAME, new ApplicationEvent(
+    $this->eventManager->dispatch(ApplicationEvent::NAME, new ApplicationEvent(
             ApplicationEvent::AFTER_EXECUTE_CONTROLLER, $request, $response, $controllerObj));
 
     // check if an action key exists for the return action
     $nextActionKey = ActionKey::getBestMatch($actionKeyProvider, $controllerClass,
             $response->getContext(), $response->getAction());
     if ($isDebugEnabled) {
-      self::$_logger->debug("Next action key: ".$nextActionKey);
+      self::$logger->debug("Next action key: ".$nextActionKey);
     }
 
     // terminate, if there is no next action key or the response is final
     $terminate = strlen($nextActionKey) == 0 || $response->isFinal();
     if ($terminate) {
       if ($isDebugEnabled) {
-        self::$_logger->debug("Terminate");
+        self::$logger->debug("Terminate");
       }
       // stop processing
-      $this->_formatter->serialize($response);
-      return $response;
+      $this->formatter->serialize($response);
+      return;
     }
 
     // proceed with next action key
     if ($isDebugEnabled) {
-      self::$_logger->debug("Processing next action");
+      self::$logger->debug("Processing next action");
     }
-    // store last response
-    $this->_lastResponses[] = $response;
 
     // set the request based on the result
     $nextRequest = ObjectFactory::getInstance('request');
@@ -186,14 +181,8 @@ class DefaultActionMapper implements ActionMapper {
     $nextRequest->setValues($response->getValues());
     $nextRequest->setErrors($response->getErrors());
     $nextRequest->setResponseFormat($request->getResponseFormat());
-    $this->processAction($nextRequest);
-  }
-
-  /**
-   * @see ActionMapper::reset()
-   */
-  public function reset() {
-    $this->_lastResponses = array();
+    $nextResponse = ObjectFactory::getInstance('response');
+    $this->processAction($nextRequest, $nextResponse);
   }
 }
 ?>

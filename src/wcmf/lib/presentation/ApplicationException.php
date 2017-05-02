@@ -21,9 +21,9 @@ use wcmf\lib\presentation\Response;
  */
 class ApplicationException extends \Exception {
 
-  private $_request = null;
-  private $_response = null;
-  private $_error = null;
+  private $request = null;
+  private $response = null;
+  private $error = null;
 
   /**
    * Constructor
@@ -34,9 +34,12 @@ class ApplicationException extends \Exception {
   public function __construct(Request $request, Response $response,
     ApplicationError $error) {
 
-    $this->_request = $request;
-    $this->_response = $response;
-    $this->_error = $error;
+    // set status code on response
+    $response->setStatus($error->getStatusCode());
+
+    $this->request = $request;
+    $this->response = $response;
+    $this->error = $error;
 
     parent::__construct($error->getMessage());
   }
@@ -46,7 +49,7 @@ class ApplicationException extends \Exception {
    * @return The Request instance
    */
   public function getRequest() {
-    return $this->_request;
+    return $this->request;
   }
 
   /**
@@ -54,7 +57,7 @@ class ApplicationException extends \Exception {
    * @return The Response instance
    */
   public function getResponse() {
-    return $this->_response;
+    return $this->response;
   }
 
   /**
@@ -62,7 +65,7 @@ class ApplicationException extends \Exception {
    * @return The ApplicationError instance
    */
   public function getError() {
-    return $this->_error;
+    return $this->error;
   }
 }
 ?>

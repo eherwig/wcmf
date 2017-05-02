@@ -129,17 +129,17 @@ class TestUtil {
   /**
    * Process a request as if it was sent to main.php
    * @param $request The Request instance
-   * @return The Response instance (result of the last ActionMapper::processAction() call)
+   * @return The Response instance (result of the last ActionMapper::processAction call)
    */
   public static function simulateRequest($request) {
     // set format
     $request->setFormat('null');
     $request->setResponseFormat('null');
 
-    // reset the action mapper, because otherwise all requests would be cumulated
+    // run request
     $actionMapper = ObjectFactory::getInstance('actionMapper');
-    $actionMapper->reset();
-    $response = $actionMapper->processAction($request);
+    $response = ObjectFactory::getInstance('response');
+    $actionMapper->processAction($request, $response);
     return $response;
   }
 
@@ -156,7 +156,7 @@ class TestUtil {
     $authUser = $authManager->login($user, $password);
     if ($authUser) {
       $session->clear();
-      $session->setAuthUser($authUser);
+      $session->setAuthUser($authUser->getLogin());
     }
     else {
       throw new \RuntimeException("Session could not be started for user '$user'");

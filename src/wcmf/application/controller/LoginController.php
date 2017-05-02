@@ -54,7 +54,7 @@ use wcmf\lib\security\PermissionManager;
  */
 class LoginController extends Controller {
 
-  private $_authenticationManager = null;
+  private $authenticationManager = null;
 
   /**
    * Constructor
@@ -77,7 +77,7 @@ class LoginController extends Controller {
           AuthenticationManager $authenticationManager) {
     parent::__construct($session, $persistenceFacade, $permissionManager,
             $actionMapper, $localization, $message, $configuration);
-    $this->_authenticationManager = $authenticationManager;
+    $this->authenticationManager = $authenticationManager;
   }
 
   /**
@@ -127,7 +127,7 @@ class LoginController extends Controller {
     if ($request->getAction() == 'login') {
       // try to login
       try {
-        $authUser = $this->_authenticationManager->login(
+        $authUser = $this->authenticationManager->login(
                 $request->getValue('user'), $request->getValue('password'));
       }
       catch (\Exception $ex) {
@@ -138,7 +138,7 @@ class LoginController extends Controller {
       if ($authUser) {
         // login succeeded
         $session->clear();
-        $session->setAuthUser($authUser);
+        $session->setAuthUser($authUser->getLogin());
 
         // return role names of the user
         $roleNames = array();

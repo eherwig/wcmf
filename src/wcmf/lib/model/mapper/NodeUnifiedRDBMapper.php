@@ -41,7 +41,7 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
 
   const CACHE_KEY = 'mapper';
 
-  private $_fkRelations = null;
+  private $fkRelations = null;
 
   /**
    * @see RDBMapper::prepareForStorage()
@@ -114,7 +114,7 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
               $thisEndRelation = $relationDesc->getThisEndRelation();
               $otherEndRelation = $relationDesc->getOtherEndRelation();
               $nmType = $thisEndRelation->getOtherType();
-              $nmObj = $this->_persistenceFacade->create($nmType);
+              $nmObj = $this->persistenceFacade->create($nmType);
               // add the parent nodes to the many to many object, don't
               // update the other side of the relation, because there may be no
               // relation defined to the many to many object
@@ -157,44 +157,66 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
       }
 
       // changed order
-      $orderedNodes = $object->getNodeOrder();
-      // order changes only make sense for arrays with more than one element
-      if (sizeof($orderedNodes) > 1) {
-        $relatives = array();
-        $sortkeyValues = array();
-        $orderDirection = null;
-        foreach ($orderedNodes as $curNode) {
-          // find the role of the node
-          $curRelationDesc = $object->getNodeRelation($curNode);
-          if ($curRelationDesc != null) {
-            // find the sortkey
-            $otherMapper = $curRelationDesc->getOtherMapper();
-            $sortkeyDef = $otherMapper->getSortkey($curRelationDesc->getThisRole());
-            if ($sortkeyDef != null) {
-              $sortkeyName = $sortkeyDef['sortFieldName'];
-              // take the order direction from the first node
-              // (different order directions do not make sense)
-              $orderDirection = $orderDirection == null ? $sortkeyDef['sortDirection'] : $orderDirection;
-              // in a many to many relation, we have to modify the order of the relation objects
-              if ($curRelationDesc instanceof RDBManyToManyRelationDescription) {
-                  $nmObjects = $this->loadRelationObjects(PersistentObjectProxy::fromObject($object),
-                        PersistentObjectProxy::fromObject($curNode), $curRelationDesc);
-                  $curNode = $nmObjects[0];
-              }
-              // collect the objects and sortkey definitions
-              $relatives[] = array('object' => $curNode, 'sortFieldName' => $sortkeyName);
-              // collect the sortkey values
-              $sortkeyValues[] = $curNode->getValue($sortkeyName);
+      $nodeOrder = $object->getNodeOrder();
+      if ($nodeOrder != null) {
+        $containerMapper = $object->getMapper();
+        $orderedList = $nodeOrder['ordered'];
+        $movedList = $nodeOrder['moved'];
+        $movedLookup = $movedList != null ? array_reduce($movedList, function($result, $item) {
+          $result[$item->getOID()->__toString()] = true;
+          return $result;
+        }, array()) : array();
+        $role = $nodeOrder['role'];
+        $defaultRelationDesc = $role != null ? $containerMapper->getRelation($role) : null;
+        for ($i=0, $count=sizeof($orderedList); $i<$count; $i++) {
+          $orderedNode = $orderedList[$i];
+
+          // check if node is repositioned
+          if ($movedList == null || isset($movedLookup[$orderedNode->getOID()->__toString()])) {
+
+            // determine the sortkey regarding the container object
+            $relationDesc = $defaultRelationDesc != null ? $defaultRelationDesc :
+                $object->getNodeRelation($orderedNode);
+            $sortkeyDef = $orderedNode->getMapper()->getSortkey($relationDesc->getThisRole());
+            $sortkey = $sortkeyDef['sortFieldName'];
+            $sortNode = $this->getSortableObject(PersistentObjectProxy::fromObject($object),
+                    PersistentObjectProxy::fromObject($orderedNode), $relationDesc);
+
+            // get previous sortkey value
+            $prevValue = null;
+            if ($i > 0) {
+              $prevNode = $orderedList[$i-1];
+              $relationDescPrev = $defaultRelationDesc != null ? $defaultRelationDesc :
+                  $object->getNodeRelation($prevNode);
+              $sortkeyDefPrev = $prevNode->getMapper()->getSortkey($relationDescPrev->getThisRole());
+              $prevSortNode = $this->getSortableObject(PersistentObjectProxy::fromObject($object),
+                    PersistentObjectProxy::fromObject($prevNode), $relationDesc);
+              $prevValue = $prevSortNode->getValue($sortkeyDefPrev['sortFieldName']);
             }
+
+            // get next sortkey value
+            $nextValue = null;
+            if ($i < $count-1) {
+              $nextNode = $orderedList[$i+1];
+              $relationDescNext = $defaultRelationDesc != null ? $defaultRelationDesc :
+                  $object->getNodeRelation($nextNode);
+              $sortkeyDefNext = $nextNode->getMapper()->getSortkey($relationDescNext->getThisRole());
+              $nextSortNode = $this->getSortableObject(PersistentObjectProxy::fromObject($object),
+                    PersistentObjectProxy::fromObject($nextNode), $relationDesc);
+              $nextValue = $nextSortNode->getValue($sortkeyDefNext['sortFieldName']);
+            }
+
+            // set edge values
+            if ($prevValue == null) {
+              $prevValue = ceil($nextValue-1);
+            }
+            if ($nextValue == null) {
+              $nextValue = ceil($prevValue+1);
+            }
+
+            // set the sortkey value to the average
+            $sortNode->setValue($sortkey, ($nextValue+$prevValue)/2);
           }
-        }
-        // sort the values
-        $sortFuntion = $orderDirection == 'DESC' ? 'rsort' : 'sort';
-        $sortFuntion($sortkeyValues);
-        // set the values on the objects
-        for ($i=0, $count=sizeof($relatives); $i<$count; $i++) {
-          $curRelative = $relatives[$i];
-          $curRelative['object']->setValue($curRelative['sortFieldName'], $sortkeyValues[$i]);
         }
       }
     }
@@ -204,9 +226,9 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
   /**
    * @see RDBMapper::getSelectSQL()
    */
-  public function getSelectSQL($criteria=null, $alias=null, $orderby=null, PagingInfo $pagingInfo=null, $queryId=null) {
+  public function getSelectSQL($criteria=null, $alias=null, $attributes=null, $orderby=null, PagingInfo $pagingInfo=null, $queryId=null) {
     // use own query id, if none is given
-    $queryId = $queryId == null ? $this->getCacheKey($alias, $criteria, $orderby, $pagingInfo) : $queryId;
+    $queryId = $queryId == null ? $this->getCacheKey($alias, $attributes, $criteria, $orderby, $pagingInfo) : $queryId;
 
     $selectStmt = SelectStatement::get($this, $queryId);
     if (!$selectStmt->isCached()) {
@@ -223,7 +245,7 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
       }
 
       // columns
-      $this->addColumns($selectStmt, $tableName);
+      $this->addColumns($selectStmt, $tableName, $attributes);
 
       // condition
       $bind = $this->addCriteria($selectStmt, $criteria, $tableName);
@@ -290,7 +312,7 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
     }
 
     // statement
-    $queryId = $this->getCacheKey($otherRole.sizeof($otherObjectProxies), $criteria, $orderby, $pagingInfo);
+    $queryId = $this->getCacheKey($otherRole.sizeof($otherObjectProxies), null, $criteria, $orderby, $pagingInfo);
     $selectStmt = SelectStatement::get($this, $queryId);
     if (!$selectStmt->isCached()) {
       // initialize the statement
@@ -340,7 +362,7 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
     }
 
     // statement
-    $queryId = $this->getCacheKey($otherRole.sizeof($otherObjectProxies), $criteria, $orderby, $pagingInfo);
+    $queryId = $this->getCacheKey($otherRole.sizeof($otherObjectProxies), null, $criteria, $orderby, $pagingInfo);
     $selectStmt = SelectStatement::get($this, $queryId);
     if (!$selectStmt->isCached()) {
       // initialize the statement
@@ -377,7 +399,7 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
           PagingInfo $pagingInfo=null) {
     $thisRelationDesc = $relationDescription->getThisEndRelation();
     $otherRelationDesc = $relationDescription->getOtherEndRelation();
-    $nmMapper = $this->_persistenceFacade->getMapper($thisRelationDesc->getOtherType());
+    $nmMapper = $this->persistenceFacade->getMapper($thisRelationDesc->getOtherType());
     $otherFkAttr = $nmMapper->getAttribute($otherRelationDesc->getFkName());
     $nmTablename = $nmMapper->getRealTableName();
 
@@ -393,7 +415,7 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
     }
 
     // statement
-    $queryId = $this->getCacheKey($otherRole.sizeof($otherObjectProxies), $criteria, $orderby, $pagingInfo);
+    $queryId = $this->getCacheKey($otherRole.sizeof($otherObjectProxies), null, $criteria, $orderby, $pagingInfo);
     $selectStmt = SelectStatement::get($this, $queryId);
     if (!$selectStmt->isCached()) {
       // initialize the statement
@@ -488,13 +510,15 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
    * Add the columns to a given select statement.
    * @param $selectStmt The select statement (instance of SelectStatement)
    * @param $tableName The table name
+   * @param $attributes Array of attribute names (optional)
    * @return SelectStatement
    */
-  protected function addColumns(SelectStatement $selectStmt, $tableName) {
+  protected function addColumns(SelectStatement $selectStmt, $tableName, $attributes=null) {
     // columns
     $attributeDescs = $this->getAttributes();
     foreach($attributeDescs as $curAttributeDesc) {
-      if (!($curAttributeDesc instanceof ReferenceDescription)) {
+      $name = $curAttributeDesc->getName();
+      if (($attributes == null || in_array($name, $attributes)) && !($curAttributeDesc instanceof ReferenceDescription)) {
         $selectStmt->columns(array($curAttributeDesc->getName() => $curAttributeDesc->getColumn()), $tableName);
       }
     }
@@ -516,8 +540,10 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
     foreach($this->getReferences() as $curReferenceDesc) {
       $referencedType = $curReferenceDesc->getOtherType();
       $referencedValue = $curReferenceDesc->getOtherName();
-      $relationDesc = $this->getRelation($referencedType);
-      $otherMapper = $this->_persistenceFacade->getMapper($relationDesc->getOtherType());
+      $relationDescs = $this->getRelationsByType($referencedType);
+      // get relation try role name if ambiguous
+      $relationDesc = sizeof($relationDescs) == 1 ? $relationDescs[0] : $this->getRelation($referencedType);
+      $otherMapper = $this->persistenceFacade->getMapper($relationDesc->getOtherType());
       if ($otherMapper) {
         $otherTable = $otherMapper->getRealTableName();
         $otherAttributeDesc = $otherMapper->getAttribute($referencedValue);
@@ -528,7 +554,7 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
             $references[$otherTable]['attributes'] = array();
 
             $tableNameQ = $this->quoteIdentifier($tableName);
-            $otherTableQ = $this->quoteIdentifier($otherTable);
+            $otherTableQ = $this->quoteIdentifier($otherTable.'Ref');
 
             // determine the join condition
             if ($relationDesc instanceof RDBManyToOneRelationDescription) {
@@ -561,7 +587,7 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
     }
     // add references from each referenced table
     foreach($references as $otherTable => $curReference) {
-      $selectStmt->joinLeft($otherTable, $curReference['joinCond'], $curReference['attributes']);
+      $selectStmt->joinLeft(array($otherTable.'Ref' => $otherTable), $curReference['joinCond'], $curReference['attributes']);
     }
     return $selectStmt;
   }
@@ -668,7 +694,7 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
   }
 
   /**
-   * Convert values for before storage
+   * Convert values before putting into storage
    * @param $values Associative Array
    * @return Associative Array
    */
@@ -690,6 +716,24 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
   }
 
   /**
+   * Get the object which carries the sortkey in the relation of the given object
+   * and relative.
+   * @param PersistentObjectProxy $objectProxy
+   * @param PersistentObjectProxy $relativeProxy
+   * @param RelationDescription $relationDesc The relation description
+   * @return PersistentObjectProxy
+   */
+  protected function getSortableObject(PersistentObjectProxy $objectProxy,
+          PersistentObjectProxy $relativeProxy, RelationDescription $relationDesc) {
+    // in a many to many relation, we have to modify the order of the relation objects
+    if ($relationDesc instanceof RDBManyToManyRelationDescription) {
+        $nmObjects = $this->loadRelationObjects($objectProxy, $relativeProxy, $relationDesc);
+        return $nmObjects[0];
+    }
+    return $relativeProxy;
+  }
+
+  /**
    * Load the relation objects in a many to many relation from the database.
    * @param $objectProxy The proxy at this end of the relation.
    * @param $relativeProxy The proxy at the other end of the relation.
@@ -700,7 +744,7 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
   protected function loadRelationObjects(PersistentObjectProxy $objectProxy,
           PersistentObjectProxy $relativeProxy, RDBManyToManyRelationDescription $relationDesc,
           $includeTransaction=false) {
-    $nmMapper = $this->_persistenceFacade->getMapper($relationDesc->getThisEndRelation()->getOtherType());
+    $nmMapper = $this->persistenceFacade->getMapper($relationDesc->getThisEndRelation()->getOtherType());
     $nmType = $nmMapper->getType();
 
     $thisId = $objectProxy->getOID()->getFirstId();
@@ -716,15 +760,15 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
     $nmObjects = $nmMapper->loadObjects($nmType, BuildDepth::SINGLE, $criteria);
 
     if ($includeTransaction) {
-      $transaction = $this->_persistenceFacade->getTransaction();
+      $transaction = $this->persistenceFacade->getTransaction();
       $objects = $transaction->getObjects();
       foreach ($objects as $object) {
         if ($object->getType() == $nmType && $object instanceof Node) {
           // we expect single valued relation ends
           $thisEndObject = $object->getValue($thisEndRelation->getThisRole());
           $otherEndObject = $object->getValue($otherEndRelation->getOtherRole());
-          if ($objectProxy->getRealSubject() == $thisEndObject &&
-                  $relativeProxy->getRealSubject() == $otherEndObject) {
+          if ($objectProxy->getOID() == $thisEndObject->getOID() &&
+                  $relativeProxy->getOID() == $otherEndObject->getOID()) {
             $nmObjects[] = $object;
           }
         }
@@ -753,16 +797,16 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
    * @return An array of RDBManyToOneRelationDescription instances
    */
   protected function getForeignKeyRelations() {
-    if ($this->_fkRelations == null) {
-      $this->_fkRelations = array();
+    if ($this->fkRelations == null) {
+      $this->fkRelations = array();
       $relationDescs = $this->getRelations();
       foreach($relationDescs as $relationDesc) {
         if ($relationDesc instanceof RDBManyToOneRelationDescription) {
-          $this->_fkRelations[] = $relationDesc;
+          $this->fkRelations[] = $relationDesc;
         }
       }
     }
-    return $this->_fkRelations;
+    return $this->fkRelations;
   }
 
   /**
@@ -797,21 +841,25 @@ abstract class NodeUnifiedRDBMapper extends RDBMapper {
 
   /**
    * Get a unique string for the given parameter values
-   * @param $string
+   * @param $alias
+   * @param $attributeArray
    * @param $criteriaArray
-   * @param $stringArray
+   * @param $orderArray
    * @param $pagingInfo
    * @return String
    */
-  protected function getCacheKey($string, $criteriaArray, $stringArray, PagingInfo $pagingInfo=null) {
-    $result = $this->getRealTableName().','.$string.',';
+  protected function getCacheKey($alias, $attributeArray, $criteriaArray, $orderArray, PagingInfo $pagingInfo=null) {
+    $result = $this->getRealTableName().','.$alias.',';
+    if ($attributeArray != null) {
+      $result .= join(',', $attributeArray);
+    }
     if ($criteriaArray != null) {
       foreach ($criteriaArray as $c) {
         $result .= $c->getId();
       }
     }
-    if ($stringArray != null) {
-      $result .= join(',', $stringArray);
+    if ($orderArray != null) {
+      $result .= join(',', $orderArray);
     }
     if ($pagingInfo != null) {
       $result .= $pagingInfo->getOffset().','.$pagingInfo->getPageSize();

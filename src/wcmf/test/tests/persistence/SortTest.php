@@ -25,13 +25,13 @@ use wcmf\lib\util\TestUtil;
  */
 class SortTest extends DatabaseTestCase {
 
-  private $_chapterOidStr = 'Chapter:12345';
-  private $_publisherOidStr = 'Publisher:12345';
+  private $chapterOidStr = 'Chapter:12345';
+  private $publisherOidStr = 'Publisher:12345';
 
   protected function getDataSet() {
     return new ArrayDataSet(array(
       'DBSequence' => array(
-        array('id' => 1),
+        array('table' => ''),
       ),
       'User' => array(
         array('id' => 0, 'login' => 'admin', 'name' => 'Administrator', 'password' => '$2y$10$WG2E.dji.UcGzNZF2AlkvOb7158PwZpM2KxwkC6FJdKr4TQC9JXYm', 'config' => ''),
@@ -86,21 +86,23 @@ class SortTest extends DatabaseTestCase {
     $transaction = ObjectFactory::getInstance('persistenceFacade')->getTransaction();
     $transaction->begin();
     // get the existing order
-    $chapter1 = $persistenceFacade->load(ObjectId::parse($this->_chapterOidStr));
+    $chapter1 = $persistenceFacade->load(ObjectId::parse($this->chapterOidStr));
     $subChapters1 = $chapter1->getValue("SubChapter");
+    $orderedChapters = array();
     $chapterOids = array();
     for ($i=0, $count=sizeof($subChapters1); $i<$count; $i++) {
+      $orderedChapters[] = $subChapters1[$i];
       $chapterOids[] = $subChapters1[$i]->getOID()->__toString();
     }
     // put last into first place
-    $lastChapter = array_pop($subChapters1);
-    array_unshift($subChapters1, $lastChapter);
-    $chapter1->setNodeOrder($subChapters1);
+    $lastChapter = array_pop($orderedChapters);
+    array_unshift($orderedChapters, $lastChapter);
+    $chapter1->setNodeOrder($orderedChapters);
     $transaction->commit();
 
     // reload
     $transaction->begin();
-    $chapter2 = $persistenceFacade->load(ObjectId::parse($this->_chapterOidStr), 1);
+    $chapter2 = $persistenceFacade->load(ObjectId::parse($this->chapterOidStr), 1);
     $subChapters2 = $chapter2->getChildrenEx(null, "SubChapter");
     $this->assertEquals($chapterOids[0], $subChapters2[1]->getOID()->__toString());
     $this->assertEquals($chapterOids[1], $subChapters2[2]->getOID()->__toString());
@@ -117,21 +119,23 @@ class SortTest extends DatabaseTestCase {
     $transaction = ObjectFactory::getInstance('persistenceFacade')->getTransaction();
     $transaction->begin();
     // get the existing order
-    $publisher1 = $persistenceFacade->load(ObjectId::parse($this->_publisherOidStr));
+    $publisher1 = $persistenceFacade->load(ObjectId::parse($this->publisherOidStr));
     $authors1 = $publisher1->getValue("Author");
+    $orderedAuthors = array();
     $authorOids = array();
     for ($i=0, $count=sizeof($authors1); $i<$count; $i++) {
+      $orderedAuthors[] = $authors1[$i];
       $authorOids[] = $authors1[$i]->getOID()->__toString();
     }
     // put last into first place
-    $lastAuthor = array_pop($authors1);
-    array_unshift($authors1, $lastAuthor);
-    $publisher1->setNodeOrder($authors1);
+    $lastAuthor = array_pop($orderedAuthors);
+    array_unshift($orderedAuthors, $lastAuthor);
+    $publisher1->setNodeOrder($orderedAuthors);
     $transaction->commit();
 
     // reload
     $transaction->begin();
-    $publisher2 = $persistenceFacade->load(ObjectId::parse($this->_publisherOidStr), 1);
+    $publisher2 = $persistenceFacade->load(ObjectId::parse($this->publisherOidStr), 1);
     $authors2 = $publisher2->getChildrenEx(null, "Author");
     $this->assertEquals($authorOids[0], $authors2[1]->getOID()->__toString());
     $this->assertEquals($authorOids[1], $authors2[2]->getOID()->__toString());
@@ -147,23 +151,24 @@ class SortTest extends DatabaseTestCase {
 
     $transaction = ObjectFactory::getInstance('persistenceFacade')->getTransaction();
     $transaction->begin();
-
-    $chapter1 = $persistenceFacade->load(ObjectId::parse($this->_chapterOidStr), 1);
-    $children1 = $chapter1->getChildren();
     // get the existing order
+    $chapter1 = $persistenceFacade->load(ObjectId::parse($this->chapterOidStr), 1);
+    $children1 = $chapter1->getChildren();
+    $orderedChildren = array();
     $childOids = array();
     for ($i=0, $count=sizeof($children1); $i<$count; $i++) {
+      $orderedChildren[] = $children1[$i];
       $childOids[] = $children1[$i]->getOID()->__toString();
     }
     // put last into first place
-    $lastChild = array_pop($children1);
-    array_unshift($children1, $lastChild);
-    $chapter1->setNodeOrder($children1);
+    $lastChild = array_pop($orderedChildren);
+    array_unshift($orderedChildren, $lastChild);
+    $chapter1->setNodeOrder($orderedChildren);
     $transaction->commit();
 
     // reload
     $transaction->begin();
-    $chapter2 = $persistenceFacade->load(ObjectId::parse($this->_chapterOidStr), 1);
+    $chapter2 = $persistenceFacade->load(ObjectId::parse($this->chapterOidStr), 1);
     $children2 = $chapter2->getChildren();
     $comparator = new NodeSortkeyComparator($chapter2, $children2);
     usort($children2, array($comparator, 'compare'));

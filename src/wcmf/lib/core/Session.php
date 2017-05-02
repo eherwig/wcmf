@@ -10,8 +10,6 @@
  */
 namespace wcmf\lib\core;
 
-use wcmf\lib\security\principal\User;
-
 /**
  * Session is the interface for session implementations
  * and defines access to session variables.
@@ -27,14 +25,15 @@ interface Session {
   public function getID();
 
   /**
-   * Returns the value of an session variable
+   * Returns the value of a session variable
    * @param $key The key (name) of the session vaiable.
+   * @param $default The default value if the key is not defined (optional, default: _null_)
    * @return The session var or null if it doesn't exist.
    */
-  public function get($key);
+  public function get($key, $default=null);
 
   /**
-   * Sets the value of an session variable.
+   * Sets the value of a session variable.
    * @param $key The key (name) of the session vaiable.
    * @param $value The value of the session variable.
    */
@@ -64,39 +63,14 @@ interface Session {
   public function destroy();
 
   /**
-   * Set the authenticated user.
-   * @param $authUser User instance.
+   * Set the login of authenticated user.
+   * @param $login Login name of the user
    */
-  public function setAuthUser(User $authUser);
+  public function setAuthUser($login);
 
   /**
-   * Get the authenticated user.
-   * @return User instance.
+   * Get the login of the authenticated user.
+   * @return String
    */
   public function getAuthUser();
-
-  /**
-   * Add an error to the session data.
-   * @param $key The identifier of the error
-   * @param $error The error message
-   */
-  public function addError($key, $error);
-
-  /**
-   * Get an error stored in the session data.
-   * @param $key The identifier of the error
-   * @return The error message
-   */
-  public function getError($key);
-
-  /**
-   * Get all errors stored in the session data.
-   * @return The error message
-   */
-  public function getErrors();
-
-  /**
-   * Clear the session error data.
-   */
-  public function clearErrors();
 }

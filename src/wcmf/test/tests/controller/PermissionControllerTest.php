@@ -35,7 +35,7 @@ class PermissionControllerTest extends ControllerTestCase {
   protected function getDataSet() {
     return new ArrayDataSet(array(
       'DBSequence' => array(
-        array('id' => 1),
+        array('table' => ''),
       ),
       'User' => array(
         array('id' => 0, 'login' => 'admin', 'password' => '$2y$10$WG2E.dji.UcGzNZF2AlkvOb7158PwZpM2KxwkC6FJdKr4TQC9JXYm', 'config' => 'permissions.ini'),
@@ -86,7 +86,6 @@ class PermissionControllerTest extends ControllerTestCase {
     $response = $this->runRequest('checkPermissions', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
     $result = $response->getValue('result');
     $this->assertEquals(12, sizeof($result));
 
@@ -135,7 +134,6 @@ class PermissionControllerTest extends ControllerTestCase {
     $response = $this->runRequest('checkPermissionsOfUser', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
     $result = $response->getValue('result');
     $this->assertEquals(12, sizeof($result));
 
@@ -163,14 +161,11 @@ class PermissionControllerTest extends ControllerTestCase {
 
     // simulate get permissions call
     $data = array(
-      'resource' => 'app.src.model.wcmf.User',
-      'context' => '',
-      'action' => 'read'
+      'operation' => 'app.src.model.wcmf.User??read'
     );
     $response = $this->runRequest('getPermissions', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
     $result = $response->getValue('result');
     $this->assertEquals(2, sizeof($result['allow']));
 
@@ -189,9 +184,7 @@ class PermissionControllerTest extends ControllerTestCase {
 
     // simulate set permissions call
     $data = array(
-      'resource' => 'app.src.model.wcmf.User',
-      'context' => '',
-      'action' => 'read',
+      'operation' => 'app.src.model.wcmf.User??read',
       'permissions' => array(
         'allow' => array('administrators'),
         'deny' => array('tester'),
@@ -201,12 +194,8 @@ class PermissionControllerTest extends ControllerTestCase {
     $response = $this->runRequest('setPermissions', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
-
     $data = array(
-      'resource' => 'app.src.model.wcmf.User',
-      'context' => '',
-      'action' => 'read'
+      'operation' => 'app.src.model.wcmf.User??read'
     );
     $response = $this->runRequest('getPermissions', $data);
     $result = $response->getValue('result');
@@ -227,14 +216,11 @@ class PermissionControllerTest extends ControllerTestCase {
 
     // simulate get permissions call
     $data = array(
-      'resource' => 'Chapter:111',
-      'context' => 'test',
-      'action' => 'delete'
+      'operation' => 'Chapter:111?test?delete'
     );
     $response = $this->runRequest('getPermissions', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
     $result = $response->getValue('result');
     $this->assertEquals(1, sizeof($result['allow']));
     $this->assertEquals(1, sizeof($result['deny']));
@@ -242,20 +228,14 @@ class PermissionControllerTest extends ControllerTestCase {
 
     // simulate set permissions call
     $data = array(
-      'resource' => 'Chapter:111',
-      'context' => 'test',
-      'action' => 'delete',
+      'operation' => 'Chapter:111?test?delete',
       'permissions' => null
     );
     $response = $this->runRequest('setPermissions', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
-
     $data = array(
-      'resource' => 'Chapter:111',
-      'context' => 'test',
-      'action' => 'delete'
+      'operation' => 'Chapter:111?test?delete'
     );
     $response = $this->runRequest('getPermissions', $data);
     $result = $response->getValue('result');
@@ -280,16 +260,13 @@ class PermissionControllerTest extends ControllerTestCase {
     $response = $this->runRequest('checkPermissionsOfUser', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
     $result = $response->getValue('result');
     $this->assertEquals(1, sizeof($result));
     $this->assertTrue($result['app.src.model.Chapter:111??delete']);
 
     // simulate set permissions call
     $data = array(
-      'resource' => $oid,
-      'context' => '',
-      'action' => 'delete',
+      'operation' => $oid.'??delete',
       'permissions' => array(
         'allow' => array(),
         'deny' => array('administrators'),
@@ -299,8 +276,6 @@ class PermissionControllerTest extends ControllerTestCase {
     $response = $this->runRequest('setPermissions', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
-
     // simulate get permissions of user call
     $data = array(
       'operations' => array($oid.'??delete'),
@@ -309,7 +284,6 @@ class PermissionControllerTest extends ControllerTestCase {
     $response = $this->runRequest('checkPermissionsOfUser', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
     $result = $response->getValue('result');
     $this->assertEquals(1, sizeof($result));
     $this->assertFalse($result['app.src.model.Chapter:111??delete']);

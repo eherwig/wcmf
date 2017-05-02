@@ -16,8 +16,8 @@ use wcmf\lib\presentation\Controller;
 use wcmf\lib\util\StringUtil;
 
 /**
- * MultipleActionController executes multiple actions by passing them do the
- * appropriate controllers and returning all results as once.
+ * MultipleActionController executes multiple actions by passing them to the
+ * appropriate controllers and returning all results at once.
  *
  * The controller supports the following actions:
  *
@@ -28,7 +28,7 @@ use wcmf\lib\util\StringUtil;
  * | Parameter              | Description
  * |------------------------|-------------------------
  * | _in_ `data`            | An associative array with unique/sortable keys and values that describe an action to perform
- * | _out_ `data`           | An associative array with the same keys and values that describe the resonse of each action
+ * | _out_ `data`           | An associative array with the same keys and values that describe the response of each action
  * | __Response Actions__   | |
  * | `ok`                   | In all cases
  * </div>
@@ -139,10 +139,11 @@ class MultipleActionController extends Controller {
       $requestPart->setValues($params);
       $requestPart->setFormat('null');
       $requestPart->setResponseFormat('null');
+      $responsePart = ObjectFactory::getInstance('response');
 
       // execute the request
       try {
-        $responsePart = $this->getActionMapper()->processAction($requestPart);
+        $this->getActionMapper()->processAction($requestPart, $responsePart);
       }
       catch (\Exception $ex) {
         $exceptions[] = $ex;

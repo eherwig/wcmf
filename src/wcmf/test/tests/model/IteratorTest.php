@@ -27,11 +27,11 @@ use wcmf\lib\util\TestUtil;
  */
 class IteratorTest extends DatabaseTestCase {
 
-  private $_authorOid = 'Author:202';
-  private $_publisherOid = 'Publisher:200';
-  private $_bookOid = 'Book:203';
+  private $authorOid = 'Author:202';
+  private $publisherOid = 'Publisher:200';
+  private $bookOid = 'Book:203';
 
-  private $_expectedResultsAuthor = array(
+  private $expectedResultsAuthor = array(
     array("app.src.model.Author:202", 0),
     array("app.src.model.Chapter:303", 1),
     array("app.src.model.Chapter:300", 2),
@@ -42,7 +42,7 @@ class IteratorTest extends DatabaseTestCase {
     array("app.src.model.Book:203", 2),
   );
 
-  private $_expectedResultsPublisher = array(
+  private $expectedResultsPublisher = array(
     array("app.src.model.Publisher:200", 0),
     array("app.src.model.Book:203", 1),
     array("app.src.model.Chapter:300", 2),
@@ -53,7 +53,7 @@ class IteratorTest extends DatabaseTestCase {
     array("app.src.model.Chapter:303", 2),
   );
 
-  private $_expectedResultsBook = array(
+  private $expectedResultsBook = array(
     array("app.src.model.Book:203", 0),
     array("app.src.model.Chapter:300", 1),
     array("app.src.model.Chapter:302", 2),
@@ -64,7 +64,7 @@ class IteratorTest extends DatabaseTestCase {
   protected function getDataSet() {
     return new ArrayDataSet(array(
       'DBSequence' => array(
-        array('id' => 1),
+        array('table' => ''),
       ),
       'User' => array(
         array('id' => 0, 'login' => 'admin', 'name' => 'Administrator', 'password' => '$2y$10$WG2E.dji.UcGzNZF2AlkvOb7158PwZpM2KxwkC6FJdKr4TQC9JXYm', 'config' => ''),
@@ -105,31 +105,31 @@ class IteratorTest extends DatabaseTestCase {
     $persistenceFacade = ObjectFactory::getInstance('persistenceFacade');
     $session = ObjectFactory::getInstance('session');
 
-    $iterator1 = new PersistentIterator($persistenceFacade, $session,
-            ObjectId::parse($this->_authorOid));
+    $iterator1 = new PersistentIterator('PersistentIterator1', $persistenceFacade, $session,
+            ObjectId::parse($this->authorOid));
     $count1 = 0;
     foreach($iterator1 as $depth => $oid) {
-      $expectedResult = $this->_expectedResultsAuthor[$count1];
+      $expectedResult = $this->expectedResultsAuthor[$count1];
       $this->assertEquals($expectedResult[0], $oid);
       $this->assertEquals($expectedResult[1], $depth);
       $count1++;
     }
 
-    $iterator2 = new PersistentIterator($persistenceFacade, $session,
-            ObjectId::parse($this->_publisherOid));
+    $iterator2 = new PersistentIterator('PersistentIterator2', $persistenceFacade, $session,
+            ObjectId::parse($this->publisherOid));
     $count2 = 0;
     foreach($iterator2 as $depth => $oid) {
-      $expectedResult = $this->_expectedResultsPublisher[$count2];
+      $expectedResult = $this->expectedResultsPublisher[$count2];
       $this->assertEquals($expectedResult[0], $oid);
       $this->assertEquals($expectedResult[1], $depth);
       $count2++;
     }
 
-    $iterator3 = new PersistentIterator($persistenceFacade, $session,
-            ObjectId::parse($this->_bookOid));
+    $iterator3 = new PersistentIterator('PersistentIterator3', $persistenceFacade, $session,
+            ObjectId::parse($this->bookOid));
     $count3 = 0;
     foreach($iterator3 as $depth => $oid) {
-      $expectedResult = $this->_expectedResultsBook[$count3];
+      $expectedResult = $this->expectedResultsBook[$count3];
       $this->assertEquals($expectedResult[0], $oid);
       $this->assertEquals($expectedResult[1], $depth);
       $count3++;
@@ -142,26 +142,26 @@ class IteratorTest extends DatabaseTestCase {
     TestUtil::startSession('admin', 'admin');
     $persistenceFacade = ObjectFactory::getInstance('persistenceFacade');
 
-    $iterator1 = new NodeIterator($persistenceFacade->load(ObjectId::parse($this->_authorOid)));
+    $iterator1 = new NodeIterator($persistenceFacade->load(ObjectId::parse($this->authorOid)));
     $count1 = 0;
     foreach($iterator1 as $oidStr => $obj) {
-      $expectedResult = $this->_expectedResultsAuthor[$count1];
+      $expectedResult = $this->expectedResultsAuthor[$count1];
       $this->assertEquals($expectedResult[0], $oidStr);
       $count1++;
     }
 
-    $iterator2 = new NodeIterator($persistenceFacade->load(ObjectId::parse($this->_publisherOid)));
+    $iterator2 = new NodeIterator($persistenceFacade->load(ObjectId::parse($this->publisherOid)));
     $count2 = 0;
     foreach($iterator2 as $oidStr => $obj) {
-      $expectedResult = $this->_expectedResultsPublisher[$count2];
+      $expectedResult = $this->expectedResultsPublisher[$count2];
       $this->assertEquals($expectedResult[0], $oidStr);
       $count2++;
     }
 
-    $iterator3 = new NodeIterator($persistenceFacade->load(ObjectId::parse($this->_bookOid)));
+    $iterator3 = new NodeIterator($persistenceFacade->load(ObjectId::parse($this->bookOid)));
     $count3 = 0;
     foreach($iterator3 as $oidStr => $obj) {
-      $expectedResult = $this->_expectedResultsBook[$count3];
+      $expectedResult = $this->expectedResultsBook[$count3];
       $this->assertEquals($expectedResult[0], $oidStr);
       $count3++;
     }
@@ -173,7 +173,7 @@ class IteratorTest extends DatabaseTestCase {
     TestUtil::startSession('admin', 'admin');
     $persistenceFacade = ObjectFactory::getInstance('persistenceFacade');
 
-    $node = $persistenceFacade->load(ObjectId::parse($this->_publisherOid));
+    $node = $persistenceFacade->load(ObjectId::parse($this->publisherOid));
     $node->setValue('name', 'original name');
     $nodeIter = new NodeIterator($node);
     $count = 0;
@@ -192,12 +192,12 @@ class IteratorTest extends DatabaseTestCase {
     TestUtil::startSession('admin', 'admin');
     $persistenceFacade = ObjectFactory::getInstance('persistenceFacade');
 
-    $node = $persistenceFacade->load(ObjectId::parse($this->_publisherOid));
+    $node = $persistenceFacade->load(ObjectId::parse($this->publisherOid));
     $valueIter = new NodeValueIterator($node, true);
     $count = 0;
     for($valueIter->rewind(); $valueIter->valid(); $valueIter->next()) {
       $curIterNode = $valueIter->currentNode();
-      $this->assertEquals($this->_publisherOid, $curIterNode->getOID()->__toString());
+      $this->assertEquals($this->publisherOid, $curIterNode->getOID()->__toString());
       $this->assertEquals($curIterNode->getValue($valueIter->key()), $valueIter->current());
       $count++;
     }

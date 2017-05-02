@@ -21,7 +21,7 @@ class AnonymousUser implements User {
 
   const USER_GROUP_NAME = 'anonymous';
 
-  private $_config = null;
+  private $config = null;
 
   /**
    * @see User::getOID()
@@ -57,7 +57,7 @@ class AnonymousUser implements User {
   /**
    * @see User::verifyPassword
    */
-  public function verifyPassword($password, $passwordHash) {
+  public function verifyPassword($password) {
     return false;
   }
 
@@ -65,14 +65,14 @@ class AnonymousUser implements User {
    * @see User::setConfig()
    */
   public function setConfig($config) {
-    $this->_config = $config;
+    $this->config = $config;
   }
 
   /**
    * @see User::getConfig()
    */
   public function getConfig() {
-    return $this->_config;
+    return $this->config;
   }
 
   /**

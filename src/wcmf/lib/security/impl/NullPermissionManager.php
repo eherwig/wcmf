@@ -19,17 +19,24 @@ use wcmf\lib\security\PermissionManager;
  */
 class NullPermissionManager extends AbstractPermissionManager implements PermissionManager {
 
-  private static $_policies = array(
+  private static $policies = array(
     'allow' => array(),
     'deny' => array(),
     'default' => true
   );
 
   /**
+   * @see PermissionManager::authorize()
+   */
+  public function authorize($resource, $context, $action, $login=null) {
+    return true;
+  }
+
+  /**
    * @see PermissionManager::getPermissions()
    */
   public function getPermissions($resource, $context, $action) {
-    return self::$_policies;
+    return self::$policies;
   }
 
   /**

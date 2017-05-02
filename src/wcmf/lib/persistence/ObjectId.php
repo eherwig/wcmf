@@ -24,21 +24,21 @@ use wcmf\lib\core\ObjectFactory;
  *
  * @author ingo herwig <ingo@wemove.com>
  */
-class ObjectId {
+class ObjectId implements \Serializable, \JsonSerializable {
 
   const DELIMITER = ':';
 
-  private $_prefix;
-  private $_fqType;
-  private $_id;
-  private $_strVal = null;
+  private $prefix;
+  private $fqType;
+  private $id;
+  private $strVal = null;
 
-  private static $_dummyIdPattern = 'wcmf[A-Za-z0-9]{32}';
-  private static $_idPattern = null;
-  private static $_delimiterPattern = null;
-  private static $_numPkKeys = array();
+  private static $dummyIdPattern = 'wcmf[A-Za-z0-9]{32}';
+  private static $idPattern = null;
+  private static $delimiterPattern = null;
+  private static $numPkKeys = array();
 
-  private static $_nullOID = null;
+  private static $nullOID = null;
 
   /**
    * Constructor.
@@ -47,37 +47,37 @@ class ObjectId {
    * the object between others of the same type. If not given, a dummy id will be
    * assigned (optional, default: _null_)
    * @param $prefix A prefix for identifying a set of objects belonging to one storage in a
-   * distributed enviroment
+   * distributed environment (optional, default: _null_)
    * @note If id is an array, the order of the values must match the order of the primary key names given
    * by PersistenceMapper::getPkNames().
    */
   public function __construct($type, $id=null, $prefix=null) {
-    $this->_prefix = $prefix;
+    $this->prefix = $prefix;
     $persistenceFacade = ObjectFactory::getInstance('persistenceFacade');
-    $this->_fqType = $type != 'NULL' ? $persistenceFacade->getFullyQualifiedType($type) : 'NULL';
+    $this->fqType = $type != 'NULL' ? $persistenceFacade->getFullyQualifiedType($type) : 'NULL';
 
     // get given primary keys
     if ($id != null) {
       if (!is_array($id)) {
-        $this->_id = array($id);
+        $this->id = array($id);
       }
       else {
-        $this->_id = $id;
+        $this->id = $id;
       }
     }
     else {
-      $this->_id = array();
+      $this->id = array();
     }
 
     // add dummy ids for missing primary key values
     $numPKs = self::getNumberOfPKs($type);
-    while (sizeof($this->_id) < $numPKs) {
-      $this->_id[] = self::getDummyId();
+    while (sizeof($this->id) < $numPKs) {
+      $this->id[] = self::getDummyId();
     }
 
     // set strVal immediatly otherwise object comparison will fail in
     // cases where __toString was only called on one instance
-    $this->_strVal = $this->__toString();
+    $this->strVal = $this->__toString();
   }
 
   /**
@@ -85,10 +85,10 @@ class ObjectId {
    * @return String
    */
   public static function NULL_OID() {
-    if (self::$_nullOID == null) {
-      self::$_nullOID = new ObjectId('NULL');
+    if (self::$nullOID == null) {
+      self::$nullOID = new ObjectId('NULL');
     }
-    return self::$_nullOID;
+    return self::$nullOID;
   }
 
   /**
@@ -96,7 +96,7 @@ class ObjectId {
    * @return String
    */
   public function getPrefix() {
-    return $this->_prefix;
+    return $this->prefix;
   }
 
   /**
@@ -104,7 +104,7 @@ class ObjectId {
    * @return String
    */
   public function getType() {
-    return $this->_fqType;
+    return $this->fqType;
   }
 
   /**
@@ -112,15 +112,15 @@ class ObjectId {
    * @return Array
    */
   public function getId() {
-    return $this->_id;
+    return $this->id;
   }
 
   /**
-   * Get the first id. This is especially usefull, when you know that this id only consists of one id.
+   * Get the first id. This is especially useful, when you know that this id only consists of one id.
    * @return String
    */
   public function getFirstId() {
-    return $this->_id[0];
+    return $this->id[0];
   }
 
   /**
@@ -147,27 +147,48 @@ class ObjectId {
       return $oid;
     }
 
+    $oidParts = self::parseOidString($oid);
+    $type = $oidParts['type'];
+    $ids = $oidParts['id'];
+    $prefix = $oidParts['prefix'];
+
+    // check the type
+    if (!ObjectFactory::getInstance('persistenceFacade')->isKnownType($type)) {
+      return null;
+    }
+
+    // check if number of ids match the type
+    $numPks = self::getNumberOfPKs($type);
+    if ($numPks == null || $numPks != sizeof($ids)) {
+      return null;
+    }
+
+    return new ObjectID($type, $ids, $prefix);
+  }
+
+  /**
+   * Parse the given object id string into it's parts
+   * @param $oid The string
+   * @return Associative array with keys 'type', 'id', 'prefix'
+   */
+  private static function parseOidString($oid) {
     if (strlen($oid) == 0) {
       return null;
     }
 
-    if (self::$_delimiterPattern == null) {
-      self::$_delimiterPattern = '/'.self::DELIMITER.'/';
-    }
-
-    $oidParts = preg_split(self::$_delimiterPattern, $oid);
+    $oidParts = preg_split(self::getDelimiterPattern(), $oid);
     if (sizeof($oidParts) < 2) {
       return null;
     }
 
-    if (self::$_idPattern == null) {
-      self::$_idPattern = '/^[0-9]*$|^'.self::$_dummyIdPattern.'$/';
+    if (self::$idPattern == null) {
+      self::$idPattern = '/^[0-9]*$|^'.self::$dummyIdPattern.'$/';
     }
 
     // get the ids from the oid
     $ids = array();
     $nextPart = array_pop($oidParts);
-    while($nextPart !== null && preg_match(self::$_idPattern, $nextPart) == 1) {
+    while($nextPart !== null && preg_match(self::$idPattern, $nextPart) == 1) {
       $intNextPart = (int)$nextPart;
       if ($nextPart == (string)$intNextPart) {
         $ids[] = $intNextPart;
@@ -181,20 +202,15 @@ class ObjectId {
 
     // get the type
     $type = $nextPart;
-    if (!ObjectFactory::getInstance('persistenceFacade')->isKnownType($type)) {
-      return null;
-    }
-
-    // check if number of ids match the type
-    $numPks = self::getNumberOfPKs($type);
-    if ($numPks == null || $numPks != sizeof($ids)) {
-      return null;
-    }
 
     // get the prefix
     $prefix = join(self::DELIMITER, $oidParts);
 
-    return new ObjectID($type, $ids, $prefix);
+    return array(
+      'type' => $type,
+      'id' => $ids,
+      'prefix' => $prefix
+    );
   }
 
   /**
@@ -202,14 +218,14 @@ class ObjectId {
    * @return String
    */
   public function __toString() {
-    if ($this->_strVal == null) {
-      $oidStr = $this->_fqType.self::DELIMITER.join(self::DELIMITER, $this->_id);
-      if (strlen(trim($this->_prefix)) > 0) {
-        $oidStr = $this->_prefix.self::DELIMITER.$oidStr;
+    if ($this->strVal == null) {
+      $oidStr = $this->fqType.self::DELIMITER.join(self::DELIMITER, $this->id);
+      if (strlen(trim($this->prefix)) > 0) {
+        $oidStr = $this->prefix.self::DELIMITER.$oidStr;
       }
-      $this->_strVal = $oidStr;
+      $this->strVal = $oidStr;
     }
-    return $this->_strVal;
+    return $this->strVal;
   }
 
   /**
@@ -248,16 +264,39 @@ class ObjectId {
    * @return Integer (1 if the type is unknown)
    */
   private static function getNumberOfPKs($type) {
-    if (!isset(self::$_numPkKeys[$type])) {
+    if (!isset(self::$numPkKeys[$type])) {
       $numPKs = 1;
       $persistenceFacade = ObjectFactory::getInstance('persistenceFacade');
       if ($persistenceFacade->isKnownType($type)) {
         $mapper = $persistenceFacade->getMapper($type);
         $numPKs = sizeof($mapper->getPKNames());
       }
-      self::$_numPkKeys[$type] = $numPKs;
+      self::$numPkKeys[$type] = $numPKs;
     }
-    return self::$_numPkKeys[$type];
+    return self::$numPkKeys[$type];
+  }
+
+  private static function getDelimiterPattern() {
+    if (self::$delimiterPattern == null) {
+      self::$delimiterPattern = '/'.self::DELIMITER.'/';
+    }
+    return self::$delimiterPattern;
+  }
+
+  public function serialize() {
+    return $this->__toString();
+  }
+
+  public function unserialize($data) {
+    $oidParts = self::parseOidString($data);
+    $this->prefix = $oidParts['prefix'];
+    $this->fqType = $oidParts['type'];
+    $this->id = $oidParts['id'];
+    $this->strVal = $this->__toString();
+  }
+
+  public function jsonSerialize() {
+    return $this->__toString();
   }
 }
 ?>

@@ -10,13 +10,11 @@
  */
 namespace wcmf\application\controller;
 
-use wcmf\lib\security\AuthorizationException;
 use wcmf\lib\model\NodeUtil;
 use wcmf\lib\model\StringQuery;
 use wcmf\lib\persistence\BuildDepth;
 use wcmf\lib\persistence\PagingInfo;
 use wcmf\lib\persistence\PersistenceAction;
-use wcmf\lib\persistence\UnknownFieldException;
 use wcmf\lib\presentation\ApplicationError;
 use wcmf\lib\presentation\Controller;
 use wcmf\lib\util\Obfuscator;
@@ -57,13 +55,31 @@ class ListController extends Controller {
   protected function validate() {
     $request = $this->getRequest();
     $response = $this->getResponse();
+    if (!$request->hasValue('className') ||
+      !$this->getPersistenceFacade()->isKnownType($request->getValue('className')))
+    {
+      $response->addError(ApplicationError::get('PARAMETER_INVALID',
+        array('invalidParameters' => array('className'))));
+      return false;
+    }
+    // check for permission to read instances of className
+    if (!$this->getPermissionManager()->authorize($request->getValue('className'), '', PersistenceAction::READ)) {
+      $response->addError(ApplicationError::get('PERMISSION_DENIED'));
+      return false;
+    }
     if($request->hasValue('limit') && intval($request->getValue('limit')) < 0) {
       $this->getLogger()->warn(ApplicationError::get('LIMIT_NEGATIVE'));
+    }
+    if ($request->hasValue('sortFieldName') &&
+      !$this->getPersistenceFacade()->getMapper($request->getValue('className'))->hasAttribute($request->hasValue('sortFieldName'))) {
+      $response->addError(ApplicationError::get('SORT_FIELD_UNKNOWN'));
+      return false;
     }
     if($request->hasValue('sortDirection')) {
       $sortDirection = $request->getValue('sortDirection');
       if (strtolower($sortDirection) != 'asc' && strtolower($sortDirection) != 'desc') {
         $response->addError(ApplicationError::get('SORT_DIRECTION_UNKNOWN'));
+        return false;
       }
     }
     if (!$this->checkLanguageParameter()) {
@@ -108,7 +124,7 @@ class ListController extends Controller {
     if (strlen($orderBy) > 0) {
       $sortArray = array($orderBy." ".$request->getValue('sortDirection'));
     }
-    // get the object ids
+    // get the objects
     $objects = $this->getObjects($className, $query, $sortArray, $pagingInfo);
 
     // collect the nodes
@@ -127,7 +143,7 @@ class ListController extends Controller {
     if ($this->isLocalizedRequest()) {
       $localization = $this->getLocalization();
       for ($i=0,$count=sizeof($nodes); $i<$count; $i++) {
-        $nodes[$i] = $localization->loadTranslation($nodes[$i], $this->_request->getValue('language'), true, true);
+        $nodes[$i] = $localization->loadTranslation($nodes[$i], $request->getValue('language'), true, true);
       }
     }
 
@@ -158,30 +174,13 @@ class ListController extends Controller {
     if (!$persistenceFacade->isKnownType($type)) {
       return array();
     }
-    $permissionManager = $this->getPermissionManager();
-    if (!$permissionManager->authorize($type, '', PersistenceAction::READ)) {
-      $message = $this->getMessage();
-      throw new AuthorizationException($message->getText("Authorization failed for action '%0%' on '%1%'.",
-              array($message->getText('read'), $persistenceFacade->getSimpleType($type))));
-    }
-    $objects = array();
+
     $query = new StringQuery($type);
     $query->setConditionString($queryCondition);
-    try {
-      $objects = $query->execute(BuildDepth::SINGLE, $sortArray, $pagingInfo);
+    $objects = $query->execute(BuildDepth::SINGLE, $sortArray, $pagingInfo);
+    if ($this->getLogger()->isDebugEnabled()) {
+      $this->getLogger()->debug("Load objects with query: ".$query->getLastQueryString());
     }
-    catch (UnknownFieldException $ex) {
-      // check if the sort field is illegal
-      $response = $this->getResponse();
-      $request = $this->getRequest();
-      if($request->hasValue('sortFieldName')) {
-        $sortFieldName = $request->getValue('sortFieldName');
-        if ($sortFieldName == $ex->getField()) {
-          $response->addError(ApplicationError::get('SORT_FIELD_UNKNOWN'));
-        }
-      }
-    }
-    $this->getLogger()->debug("Load objects with query: ".$query->getLastQueryString());
     return $objects;
   }
 
@@ -190,7 +189,7 @@ class ListController extends Controller {
    * @note subclasses will override this to implement special application requirements.
    * @param $nodes A reference to the array of node references passed to the view
    */
-  protected function modifyModel($nodes) {
+  protected function modifyModel(&$nodes) {
     $request = $this->getRequest();
     // TODO: put this into subclass ListController
 

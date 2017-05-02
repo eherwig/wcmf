@@ -11,7 +11,6 @@
 namespace wcmf\lib\core\impl;
 
 use wcmf\lib\core\Session;
-use wcmf\lib\security\principal\User;
 use wcmf\lib\security\principal\impl\AnonymousUser;
 
 // session configuration
@@ -22,7 +21,12 @@ ini_set('session.use_strict_mode', 'On');
 ini_set('session.cookie_httponly', 'On');
 ini_set('session.use_trans_sid', 'Off');
 ini_set('session.cache_limiter', 'nocache');
-ini_set('session.hash_function', 'sha256');
+if (in_array('sha256', hash_algos())) {
+  ini_set('session.hash_function', 'sha256');
+}
+else {
+  ini_set('session.hash_function', 1);
+}
 
 /**
  * Default session implementation.
@@ -31,27 +35,19 @@ ini_set('session.hash_function', 'sha256');
  */
 class DefaultSession implements Session {
 
-  private static $ERROR_VARNAME = 'Session.errors';
-
-  private $_anonymousUser = null;
-  private $_authUserVarName = null;
+  private $authUserVarName = null;
 
   /**
    * Constructor
    */
   public function __construct() {
-    $this->_anonymousUser = new AnonymousUser();
-    $this->_authUserVarName = 'auth_user_'.md5(__FILE__);
+    $this->authUserVarName = 'auth_user';
 
     $sessionName = 'wcmf'.md5(__FILE__);
     session_name($sessionName);
     // NOTE: prevent "headers already sent" errors in phpunit tests
     if (!headers_sent()) {
       session_start();
-      // regenerate session for authenticated sessions
-      if (isset($_SESSION[$this->_authUserVarName])) {
-        session_regenerate_id();
-      }
     }
   }
 
@@ -69,8 +65,8 @@ class DefaultSession implements Session {
   /**
    * @see Session::get()
    */
-  public function get($key) {
-    $value = null;
+  public function get($key, $default=null) {
+    $value = $default;
     if (isset($_SESSION[$key])) {
       $value = $_SESSION[$key];
     }
@@ -117,55 +113,23 @@ class DefaultSession implements Session {
   /**
    * @see Session::setAuthUser()
    */
-  public function setAuthUser(User $authUser) {
-    $this->set($this->_authUserVarName, $authUser);
+  public function setAuthUser($login) {
+    $this->set($this->authUserVarName, $login);
+    // NOTE: prevent "headers already sent" errors in phpunit tests
+    if (!headers_sent()) {
+      session_regenerate_id(true);
+    }
   }
 
   /**
    * @see Session::getAuthUser()
    */
   public function getAuthUser() {
-    $user = $this->_anonymousUser;
+    $login = AnonymousUser::USER_GROUP_NAME;
     // check for auth user in session
-    if ($this->exist($this->_authUserVarName)) {
-      $user = $this->get($this->_authUserVarName);
+    if ($this->exist($this->authUserVarName)) {
+      $login = $this->get($this->authUserVarName);
     }
-    return $user;
-  }
-
-  /**
-   * @see Session::addError()
-   */
-  public function addError($key, $error) {
-    if (isset($_SESSION[self::$ERROR_VARNAME])) {
-      $_SESSION[self::$ERROR_VARNAME] = array();
-    }
-    $_SESSION[self::$ERROR_VARNAME][$key] = $error;
-  }
-
-  /**
-   * @see Session::getError()
-   */
-  public function getError($key) {
-    $error = null;
-    if (isset($_SESSION[self::$ERROR_VARNAME])) {
-      $error = $_SESSION[self::$ERROR_VARNAME][$key];
-    }
-    return $error;
-  }
-
-  /**
-   * @see Session::getErrors()
-   */
-  public function getErrors() {
-    $errors = $_SESSION[self::$ERROR_VARNAME];
-    return $errors;
-  }
-
-  /**
-   * @see Session::clearErrors()
-   */
-  public function clearErrors() {
-    unset($_SESSION[self::$ERROR_VARNAME]);
+    return $login;
   }
 }

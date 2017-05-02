@@ -28,7 +28,8 @@ use wcmf\lib\security\PermissionManager;
  * Error Handling:
  * - throw an Exception or use response action _failure_ to signal fatal errors
  *    (calls wcmf::application::controller::FailureController)
- * - add an ApplicationError to the response to signal non fatal errors
+ * - add an ApplicationError to the response to signal non fatal errors (e.g.
+ *    validation errors)
  *
  * The following default request/response parameters are defined:
  *
@@ -47,17 +48,19 @@ use wcmf\lib\security\PermissionManager;
  */
 class Controller {
 
-  private $_request = null;
-  private $_response = null;
+  const CSRF_TOKEN_PARAM = 'csrf_token';
 
-  private $_logger = null;
-  private $_session = null;
-  private $_persistenceFacade = null;
-  private $_permissionManager = null;
-  private $_actionMapper = null;
-  private $_localization = null;
-  private $_message = null;
-  private $_configuration = null;
+  private $request = null;
+  private $response = null;
+
+  private $logger = null;
+  private $session = null;
+  private $persistenceFacade = null;
+  private $permissionManager = null;
+  private $actionMapper = null;
+  private $localization = null;
+  private $message = null;
+  private $configuration = null;
 
   /**
    * Constructor
@@ -76,14 +79,14 @@ class Controller {
           Localization $localization,
           Message $message,
           Configuration $configuration) {
-    $this->_logger = LogManager::getLogger(get_class($this));
-    $this->_session = $session;
-    $this->_persistenceFacade = $persistenceFacade;
-    $this->_permissionManager = $permissionManager;
-    $this->_actionMapper = $actionMapper;
-    $this->_localization = $localization;
-    $this->_message = $message;
-    $this->_configuration = $configuration;
+    $this->logger = LogManager::getLogger(get_class($this));
+    $this->session = $session;
+    $this->persistenceFacade = $persistenceFacade;
+    $this->permissionManager = $permissionManager;
+    $this->actionMapper = $actionMapper;
+    $this->localization = $localization;
+    $this->message = $message;
+    $this->configuration = $configuration;
   }
 
   /**
@@ -104,13 +107,15 @@ class Controller {
     // set sender on response
     $response->setSender(get_class($this));
 
-    $this->_request = $request;
-    $this->_response = $response;
+    $this->request = $request;
+    $this->response = $response;
   }
 
   /**
-   * Check if the data given by initialize() meet the requirements of the Controller.
+   * Check if the request is valid.
    * Subclasses will override this method to validate against their special requirements.
+   * Besides returning false, validation errors should be indicated by using the
+   * Response::addError method.
    * @return Boolean whether the data are ok or not.
    */
   protected function validate() {
@@ -125,10 +130,10 @@ class Controller {
    */
   public function execute($method=null) {
     $method = $method == null ? 'doExecute' : $method;
-    $isDebugEnabled = $this->_logger->isDebugEnabled();
+    $isDebugEnabled = $this->logger->isDebugEnabled();
     if ($isDebugEnabled) {
-      $this->_logger->debug('Executing: '.get_class($this).'::'.$method);
-      $this->_logger->debug('Request: '.$this->_request);
+      $this->logger->debug('Executing: '.get_class($this).'::'.$method);
+      $this->logger->debug('Request: '.$this->request);
     }
 
     // validate controller data
@@ -150,22 +155,23 @@ class Controller {
     // prepare the response
     $this->assignResponseDefaults();
     if ($isDebugEnabled) {
-      $this->_logger->debug('Response: '.$this->_response);
+      $this->logger->debug('Response: '.$this->response);
     }
 
     // log errors
-    $errors = $this->_response->getErrors();
+    $errors = $this->response->getErrors();
     for ($i=0,$count=sizeof($errors); $i<$count; $i++) {
-      $this->_logger->error($errors[$i]->__toString());
+      $this->logger->error($errors[$i]->__toString());
     }
   }
 
   /**
    * Delegate the current request to another action. The context is the same as
    * the current context and the source controller will be set to this.
-   * The request and response format will be NullFormat
-   * which means that all request values should be passed in the application internal
-   * format and all response values will have that format.
+   * The request and response format will be NullFormat which means that all
+   * request values should be passed in the application internal format and
+   * all response values will have that format. Execution will return to the
+   * calling controller instance afterwards.
    * @param $action The name of the action to execute
    * @return Response instance
    */
@@ -179,8 +185,49 @@ class Controller {
     $subRequest->setValues($curRequest->getValues());
     $subRequest->setFormat('null');
     $subRequest->setResponseFormat('null');
-    $response = $this->_actionMapper->processAction($subRequest);
-    return $response;
+    $subResponse = ObjectFactory::getInstance('response');
+    $this->actionMapper->processAction($subRequest, $subResponse);
+    return $subResponse;
+  }
+
+  /**
+   * Redirect to the given action with the given context and request data
+   * internally. The method will not return a result to the calling
+   * controller method. The calling method should return immediatly in order to
+   * avoid any side effects of code executed after the redirect.
+   * @param $action The name of the action to execute
+   * @param $context The context
+   * @param $data Associative array containing the request data
+   */
+  protected function internalRedirect($action, $context, $data) {
+    $request = ObjectFactory::getInstance('request');
+    $request->setAction($action);
+    $request->setContext($context);
+    $request->setValues($data);
+    $response = ObjectFactory::getInstance('response');
+    ObjectFactory::getInstance('actionMapper')->processAction($request, $response);
+  }
+
+  /**
+   * Redirect to the given location with the given request data externally
+   * (HTTP status code 302). The method will not return a result to the calling
+   * controller method. The calling method should return immediatly in order to
+   * avoid any side effects of code executed after the redirect. The given data
+   * are stored in the session under the given key.
+   * @param $location The location to redirect to
+   * @param $key The key used as session variable name (optional)
+   * @param $data The data to be stored in the session (optional)
+   */
+  protected function externalRedirect($location, $key=null, $data=null) {
+    if (strlen($key) > 0 && $data != null) {
+      $session = $this->getSession();
+      $session->set($key, $data);
+    }
+    $response = $this->getResponse();
+    $response->setHeader('Location', $location);
+    $response->setStatus(302);
+    $response->setFormat('null'); // prevent any rendering
+    $response->setFinal(); // prevent any further processing
   }
 
   /**
@@ -188,7 +235,7 @@ class Controller {
    * @return Request
    */
   public function getRequest() {
-    return $this->_request;
+    return $this->request;
   }
 
   /**
@@ -196,7 +243,7 @@ class Controller {
    * @return Response
    */
   public function getResponse() {
-    return $this->_response;
+    return $this->response;
   }
 
   /**
@@ -204,7 +251,7 @@ class Controller {
    * @return Logger
    */
   protected function getLogger() {
-    return $this->_logger;
+    return $this->logger;
   }
 
   /**
@@ -212,7 +259,7 @@ class Controller {
    * @return Session
    */
   protected function getSession() {
-    return $this->_session;
+    return $this->session;
   }
 
   /**
@@ -220,7 +267,7 @@ class Controller {
    * @return PersistenceFacade
    */
   protected function getPersistenceFacade() {
-    return $this->_persistenceFacade;
+    return $this->persistenceFacade;
   }
 
   /**
@@ -228,7 +275,7 @@ class Controller {
    * @return PermissionManager
    */
   protected function getPermissionManager() {
-    return $this->_permissionManager;
+    return $this->permissionManager;
   }
 
   /**
@@ -236,7 +283,7 @@ class Controller {
    * @return ActionMapper
    */
   protected function getActionMapper() {
-    return $this->_actionMapper;
+    return $this->actionMapper;
   }
 
   /**
@@ -244,7 +291,7 @@ class Controller {
    * @return Localization
    */
   protected function getLocalization() {
-    return $this->_localization;
+    return $this->localization;
   }
 
   /**
@@ -252,7 +299,7 @@ class Controller {
    * @return Message
    */
   protected function getMessage() {
-    return $this->_message;
+    return $this->message;
   }
 
   /**
@@ -260,7 +307,7 @@ class Controller {
    * @return Configuration
    */
   protected function getConfiguration() {
-    return $this->_configuration;
+    return $this->configuration;
   }
 
   /**
@@ -268,27 +315,15 @@ class Controller {
    * This method may be used by derived controller classes for convenient response setup.
    */
   protected function assignResponseDefaults() {
-    // return the first error
-    $errors = $this->_response->getErrors();
+    // return the last error
+    $errors = $this->response->getErrors();
     if (sizeof($errors) > 0) {
-      $error = $errors[0];
-      $this->_response->setValue('errorCode', $error->getCode());
-      $this->_response->setValue('errorMessage', $error->getMessage());
-      $this->_response->setValue('errorData', $error->getData());
-      $this->_response->setStatus(Response::STATUS_400);
+      $error = array_pop($errors);
+      $this->response->setValue('errorCode', $error->getCode());
+      $this->response->setValue('errorMessage', $error->getMessage());
+      $this->response->setValue('errorData', $error->getData());
+      $this->response->setStatus($error->getStatusCode());
     }
-    // set the success flag
-    if (sizeof($errors) > 0) {
-      $this->_response->setValue('success', false);
-    }
-    else {
-      $this->_response->setValue('success', true);
-    }
-
-    // set wCMF specific values
-    $this->_response->setValue('controller', get_class($this));
-    $this->_response->setValue('context', $this->_response->getContext());
-    $this->_response->setValue('action', $this->_response->getAction());
   }
 
   /**
@@ -298,9 +333,9 @@ class Controller {
    * @return Boolean whether the request is localized or not
    */
   protected function isLocalizedRequest() {
-    if ($this->_request->hasValue('language')) {
-      $language = $this->_request->getValue('language');
-      if ($language != $this->_localization->getDefaultLanguage()) {
+    if ($this->request->hasValue('language')) {
+      $language = $this->request->getValue('language');
+      if ($language != $this->localization->getDefaultLanguage()) {
         return true;
       }
     }
@@ -313,15 +348,88 @@ class Controller {
    * @return Boolean
    */
   protected function checkLanguageParameter() {
-    if ($this->_request->hasValue('language')) {
-      $language = $this->_request->getValue('language');
-      if (!in_array($language, array_keys($this->_localization->getSupportedLanguages()))) {
-        $this->_response->addError(ApplicationError::get('PARAMETER_INVALID',
+    if ($this->request->hasValue('language')) {
+      $language = $this->request->getValue('language');
+      if (!in_array($language, array_keys($this->localization->getSupportedLanguages()))) {
+        $this->response->addError(ApplicationError::get('PARAMETER_INVALID',
                 array('invalidParameters' => array('language'))));
         return false;
       }
     }
     return true;
+  }
+
+  /**
+   * Create a CSRF token, store it in the session and set it in the response.
+   * The name of the response parameter is Controller::CSRF_TOKEN_PARAM.
+   * @param $name The name of the token to be used in Controller::validateCsrfToken()
+   */
+  protected function generateCsrfToken($name) {
+    // generate token and store in session
+    $token = base64_encode(openssl_random_pseudo_bytes(32));
+    $this->getSession()->set(self::CSRF_TOKEN_PARAM.'_'.$name, $token);
+
+    // set token in response
+    $response = $this->getResponse();
+    $response->setValue(self::CSRF_TOKEN_PARAM, $token);
+  }
+
+  /**
+   * Validate the CSRF token contained in the request against the token stored
+   * in the session. The name of the request parameter is Controller::CSRF_TOKEN_PARAM.
+   * @param $name The name of the token as set in Controller::generateCsrfToken()
+   * @return boolean
+   */
+  protected function validateCsrfToken($name) {
+    // get token from session
+    $session = $this->getSession();
+    $tokenKey = self::CSRF_TOKEN_PARAM.'_'.$name;
+    if (!$session->exist($tokenKey)) {
+      return false;
+    }
+    $storedToken = $session->get($tokenKey);
+    $session->remove($tokenKey);
+
+    // compare session token with request token
+    $token = $this->getRequest()->getValue(self::CSRF_TOKEN_PARAM);
+    return $token === $storedToken;
+  }
+
+  /**
+   * Set the value of a local session variable.
+   * @param $key The key (name) of the session vaiable.
+   * @param $default The default value if the key is not defined (optional, default: _null_)
+   * @return The session var or null if it doesn't exist.
+   */
+  protected function getLocalSessionValue($key, $default=null) {
+    $sessionVarname = get_class($this);
+    $localValues = $this->session->get($sessionVarname, null);
+    return array_key_exists($key, $localValues) ? $localValues[$key] : $default;
+  }
+
+  /**
+   * Get the value of a local session variable.
+   * @param $key The key (name) of the session vaiable.
+   * @param $value The value of the session variable.
+   */
+  protected function setLocalSessionValue($key, $value) {
+    $sessionVarname = get_class($this);
+    $localValues = $this->session->get($sessionVarname, null);
+    if ($localValues == null) {
+      $localValues = array();
+    }
+    $localValues[$key] = $value;
+    $this->session->set($sessionVarname, $localValues);
+  }
+
+  /**
+   * Remove all local session values.
+   * @param $key The key (name) of the session vaiable.
+   * @param $value The value of the session variable.
+   */
+  protected function clearLocalSessionValues() {
+    $sessionVarname = get_class($this);
+    $this->session->remove($sessionVarname);
   }
 }
 ?>

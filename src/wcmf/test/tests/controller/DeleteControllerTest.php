@@ -39,7 +39,7 @@ class DeleteControllerTest extends ControllerTestCase {
   protected function getDataSet() {
     return new ArrayDataSet(array(
       'DBSequence' => array(
-        array('id' => 1),
+        array('table' => ''),
       ),
       'User' => array(
         array('id' => 0, 'login' => 'admin', 'name' => 'Administrator', 'password' => '$2y$10$WG2E.dji.UcGzNZF2AlkvOb7158PwZpM2KxwkC6FJdKr4TQC9JXYm', 'config' => ''),
@@ -76,7 +76,6 @@ class DeleteControllerTest extends ControllerTestCase {
     $response = $this->runRequest('delete', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
     $oids = $persistenceFacade->getOIDs(DeleteControllerTest::TEST_TYPE1);
     $this->assertTrue(!in_array($oid, $oids), $oid." is does not exist after deleting");
 
@@ -116,7 +115,6 @@ class DeleteControllerTest extends ControllerTestCase {
     $response = $this->runRequest('delete', $data);
 
     // tests
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
     $oids = $persistenceFacade->getOIDs(DeleteControllerTest::TEST_TYPE2);
     $this->assertTrue(in_array($oid, $oids), $oid." still exists after deleting the translation");
 
@@ -157,7 +155,6 @@ class DeleteControllerTest extends ControllerTestCase {
     $response = $this->runRequest('delete', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
     $object = $persistenceFacade->create(self::TEST_TYPE1);
     $object->setOID($oid);
     $object = ObjectFactory::getInstance('localization')->loadTranslation($object, 'de');

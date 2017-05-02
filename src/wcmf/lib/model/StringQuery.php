@@ -39,26 +39,68 @@ use wcmf\lib\util\StringUtil;
  */
 class StringQuery extends ObjectQuery {
 
-  private $_condition = '';
+  private $condition = '';
+
+  /**
+   * Create a query instance from the given query parts encoded in RQL (https://github.com/persvr/rql), e.g.
+   * (Profile.keyword1=in=8,1|Profile.keyword2=in=8,2|Profile.keywords3=in=8,3)&Profile.yearlySalary=gte=1000
+   * @param $type The entity type to query for
+   * @param $query RQL query string
+   * @return StringQuery
+   */
+  public static function fromRql($type, $query) {
+    $operatorMap = array('eq' => '=', 'ne' => '!=', 'lt' => '<', 'lte' => '<=',
+        'gt' => '>', 'gte' => '>=', 'in' => 'in', 'match' => 'regexp', '=' => '=');
+    $combineMap = array('|' => 'OR', '&' => 'AND');
+    $mapper = self::getMapper($type);
+    $stringQuery = new StringQuery($type);
+    foreach ($operatorMap as $rqlOp => $sqlOp) {
+      $query = preg_replace_callback('/([^ =|&\)]+)(='.$rqlOp.'=|'.$rqlOp.')([^ =|&\)]+)/', function ($match)
+              use($rqlOp, $sqlOp, $mapper) {
+        $typeAttr = $match[1];
+        $value = $match[3];
+        list($typeOrRole, $attribute) = explode('.', $typeAttr, 2);
+        // check if the attribute type
+        $attributeDef = $mapper->hasAttribute($attribute) ? $mapper->getAttribute($attribute) : null;
+        $attributeType = $attributeDef != null ? strtolower($attributeDef->getType()) : null;
+        $isNumber = $attributeType == 'integer' || $attributeType == 'float';
+
+        $replace = $typeAttr.' '.$sqlOp.' ';
+        if ($rqlOp == 'in' && !$isNumber) {
+          $replace .= '('.join(',', array_map(array($mapper, 'quoteValue'), explode(',', $value))).')';
+        }
+        else {
+          $replace .= $isNumber ? $value : $mapper->quoteValue($value);
+        }
+        return $replace;
+      }, $query);
+    }
+    foreach ($combineMap as $rqlOp => $sqlOp) {
+      $query = str_replace($rqlOp, ' '.$sqlOp.' ', $query);
+    }
+    $stringQuery->setConditionString($query);
+    return $stringQuery;
+  }
 
   /**
    * Set the query condition string
    * @param $condition The query definition string
    */
   public function setConditionString($condition) {
-    $this->_condition = $condition;
+    $this->condition = $condition;
   }
 
   /**
    * @see AbstractQuery::buildQuery()
    */
-  protected function buildQuery($orderby=null, PagingInfo $pagingInfo=null) {
+  protected function buildQuery($buildDepth, $orderby=null, PagingInfo $pagingInfo=null) {
     $queryType = $this->getQueryType();
     $mapper = self::getMapper($queryType);
 
     // create the attribute string (use the default select from the mapper,
     // since we are only interested in the attributes)
-    $selectStmt = $mapper->getSelectSQL(null, null, null, $pagingInfo, $this->getId());
+    $attributes = $buildDepth === false ? $mapper->getPkNames() : null;
+    $selectStmt = $mapper->getSelectSQL(null, null, $attributes, null, $pagingInfo, $this->getId());
     if (!$selectStmt->isCached()) {
       // initialize the statement
       $selectStmt->distinct(true);
@@ -67,10 +109,10 @@ class StringQuery extends ObjectQuery {
       $quoteIdentifierSymbol = $mapper->getQuoteIdentifierSymbol();
       // get all referenced types/roles from the condition and translate
       // attributes to column names
-      $conditionString = $this->_condition;
+      $conditionString = $this->condition;
       $otherRoles = array();
       $tokens = StringUtil::splitQuoted($conditionString, "/[\s=<>()!]+/", "'", true);
-      $operators = array('and', 'or', 'not', 'like', 'regexp', 'is', 'null');
+      $operators = array('and', 'or', 'not', 'like', 'regexp', 'is', 'null', 'in');
       foreach ($tokens as $token) {
         if (strlen($token) > 0) {
           if (!in_array(strtolower($token), $operators)) {

@@ -13,6 +13,7 @@ namespace wcmf\lib\presentation\control\lists\impl;
 use wcmf\lib\config\ConfigurationException;
 use wcmf\lib\core\ObjectFactory;
 use wcmf\lib\presentation\control\lists\ListStrategy;
+use wcmf\lib\util\StringUtil;
 
 /**
  * ConfigListStrategy implements a list of key/value pairs that is retrieved
@@ -28,7 +29,7 @@ use wcmf\lib\presentation\control\lists\ListStrategy;
  */
 class ConfigListStrategy implements ListStrategy {
 
-  private $_lists = array();
+  private $lists = array();
 
   /**
    * @see ListStrategy::getList
@@ -36,11 +37,11 @@ class ConfigListStrategy implements ListStrategy {
    */
   public function getList($options, $language=null) {
     if (!isset($options['section'])) {
-      throw new ConfigurationException("No 'pattern' given in list options: "+$options);
+      throw new ConfigurationException("No 'pattern' given in list options: "+StringUtil::getDump($options));
     }
     $section = $options['section'];
     $listKey = $section.$language;
-    if (!isset($this->_lists[$listKey])) {
+    if (!isset($this->lists[$listKey])) {
       $config = ObjectFactory::getInstance('configuration');
       $map = $config->getSection($section);
       $result = array();
@@ -48,9 +49,9 @@ class ConfigListStrategy implements ListStrategy {
       foreach ($map as $key => $value) {
         $result[$key] = $message->getText($value, null, $language);
       }
-      $this->_lists[$listKey] = $result;
+      $this->lists[$listKey] = $result;
     }
-    return $this->_lists[$listKey];
+    return $this->lists[$listKey];
   }
 
   /**

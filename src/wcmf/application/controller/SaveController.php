@@ -39,23 +39,21 @@ use wcmf\lib\presentation\Controller;
  * </div>
  * </div>
  *
- * Errors concerning single input fields are added to the session (the keys are the input field names)
- *
  * @author ingo herwig <ingo@wemove.com>
  */
 class SaveController extends Controller {
 
-  private $_fileUtil = null;
+  private $fileUtil = null;
 
   /**
    * Get the FileUtil instance
    * @return FileUtil
    */
   protected function getFileUtil() {
-    if ($this->_fileUtil == null) {
-      $this->_fileUtil = new FileUtil();
+    if ($this->fileUtil == null) {
+      $this->fileUtil = new FileUtil();
     }
-    return $this->_fileUtil;
+    return $this->fileUtil;
   }
 
   /**
@@ -74,7 +72,6 @@ class SaveController extends Controller {
    */
   protected function doExecute() {
     $persistenceFacade = $this->getPersistenceFacade();
-    $session = $this->getSession();
     $request = $this->getRequest();
     $response = $this->getResponse();
     $message = $this->getMessage();
@@ -191,7 +188,7 @@ class SaveController extends Controller {
                   // set the new value
                   $oldValue = $curNode->getValue($curValueName);
                   $curNode->setValue($curValueName, $curRequestValue);
-                  if ($oldValue != $curRequestValue) {
+                  if ($oldValue !== $curRequestValue) {
                     $needCommit = true;
                   }
                 }
@@ -199,8 +196,6 @@ class SaveController extends Controller {
               catch(ValidationException $ex) {
                 $invalidAttributeValues[] = array('oid' => $curOidStr,
                   'parameter' => $curValueName, 'message' => $ex->getMessage());
-                // add error to session
-                $session->addError($curOidStr, $ex->getMessage());
               }
             }
 
@@ -290,11 +285,12 @@ class SaveController extends Controller {
     }
 
     // return oid of the lastly created node
-    if (sizeof($insertOids) > 0) {
+    if (sizeof($insertOids) > 0 && !$response->hasErrors()) {
       $keys = array_keys($insertOids);
       $lastCreatedNode = $nodeArray[array_pop($keys)];
       $lastCreatedOid = $lastCreatedNode->getOid();
       $response->setValue('oid', $lastCreatedOid);
+      $response->setStatus(201);
     }
 
     $response->setAction('ok');

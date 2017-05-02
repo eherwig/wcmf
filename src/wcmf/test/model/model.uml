@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://www.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Chronos="http:///schemas/Chronos/_jAH0gM-nEd6fypAGO026Fw/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/Chronos/_jAH0gM-nEd6fypAGO026Fw/0 chronos.profile.uml#_jARlgc-nEd6fypAGO026Fw">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Chronos="http:///schemas/Chronos/_jAH0gM-nEd6fypAGO026Fw/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/Chronos/_jAH0gM-nEd6fypAGO026Fw/0 chronos.profile.uml#_jARlgc-nEd6fypAGO026Fw">
   <uml:Model xmi:id="_ItyOULQGEeOIMOFxCilDfw" name="model">
     <packagedElement xmi:type="uml:Package" xmi:id="_e7sa8LQGEeOIMOFxCilDfw" name="wcmf test">
       <packagedElement xmi:type="uml:Package" xmi:id="_1jaukLQuEeOLlbB2YLI0iw" name="PrimitiveTypes">
@@ -41,7 +41,7 @@
                 <ownedAttribute xmi:type="uml:Property" xmi:id="_7gMtsLQ8EeOQ5oJFa1i8cg" name="listeners" visibility="public" type="_agg3ALQwEeOLlbB2YLI0iw">
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OYK5QLQ9EeOQ5oJFa1i8cg" value="1"/>
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OYLgULQ9EeOQ5oJFa1i8cg" value="1"/>
-                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_OYMucLQ9EeOQ5oJFa1i8cg" value="{Search, EventListener}"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_OYMucLQ9EeOQ5oJFa1i8cg" value="{Search, EventListener, DefaultRequestListener}"/>
                 </ownedAttribute>
               </packagedElement>
               <packagedElement xmi:type="uml:Class" xmi:id="_SQkHILQ9EeOQ5oJFa1i8cg" name="Media">
@@ -49,6 +49,11 @@
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Zr4pMLQ9EeOQ5oJFa1i8cg" value="1"/>
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Zr5QQLQ9EeOQ5oJFa1i8cg" value="1"/>
                   <defaultValue xmi:type="uml:LiteralString" xmi:id="_Zr6eYLQ9EeOQ5oJFa1i8cg" value="app/public/media/"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_G6nQIA4TEeaDh6xKuYoMqA" name="cacheDir" visibility="public" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_G6nQIQ4TEeaDh6xKuYoMqA" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_G6nQIg4TEeaDh6xKuYoMqA" value="1"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_G6nQIw4TEeaDh6xKuYoMqA" value="app/public/cache/"/>
                 </ownedAttribute>
               </packagedElement>
               <packagedElement xmi:type="uml:Class" xmi:id="_dXAQELQ9EeOQ5oJFa1i8cg" name="Localization">
@@ -145,26 +150,104 @@
                 </ownedAttribute>
               </packagedElement>
               <packagedElement xmi:type="uml:Class" xmi:id="_S4bEsARHEeSxY9ess8EBIw" name="Routes">
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_S4bEsQRHEeSxY9ess8EBIw" name="/" type="_agg3ALQwEeOLlbB2YLI0iw">
-                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_S4bEsgRHEeSxY9ess8EBIw" value="action=cms"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_zPVdkLLnEeWcwaDPJFy4ig" name="POST/session" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_zPVdkbLnEeWcwaDPJFy4ig" value="action=login"/>
                 </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_S4bEswRHEeSxY9ess8EBIw" name="/rest/{language}/{className}" type="_agg3ALQwEeOLlbB2YLI0iw">
-                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_S4bEtARHEeSxY9ess8EBIw" value="action=restAction&amp;collection=1"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_4gVdILLnEeWcwaDPJFy4ig" name="DELETE/session" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_4gVdIbLnEeWcwaDPJFy4ig" value="action=logout"/>
                 </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_S4bEtQRHEeSxY9ess8EBIw" name="/rest/{language}/{className}/{id|[0-9]+}" type="_agg3ALQwEeOLlbB2YLI0iw">
-                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_S4bEtgRHEeSxY9ess8EBIw" value="action=restAction&amp;collection=0"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_mUohsLLnEeWcwaDPJFy4ig" name="PUT/user/password" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_mUohsbLnEeWcwaDPJFy4ig" value="action=changePassword"/>
                 </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_S4bEtwRHEeSxY9ess8EBIw" name="/rest/{language}/{className}/{sourceId|[0-9]+}/{relation}" type="_agg3ALQwEeOLlbB2YLI0iw">
-                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_S4bEuARHEeSxY9ess8EBIw" value="action=restAction&amp;collection=1"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_q2x3MLLnEeWcwaDPJFy4ig" name="POST/permissions/check" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_q2x3MbLnEeWcwaDPJFy4ig" value="action=checkPermissions"/>
                 </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_S4bEuQRHEeSxY9ess8EBIw" name="/rest/{language}/{className}/{sourceId|[0-9]+}/{relation}/{targetId|[0-9]+}" type="_agg3ALQwEeOLlbB2YLI0iw">
-                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_S4bEugRHEeSxY9ess8EBIw" value="action=restAction&amp;collection=0"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_d1QekOIvEeWTmJ7K0rVXhg" name="POST/permissions/check/{user}" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_d1QekeIvEeWTmJ7K0rVXhg" value="action=checkPermissions"/>
                 </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_S4bEuwRHEeSxY9ess8EBIw" name="/soap" type="_agg3ALQwEeOLlbB2YLI0iw">
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_d-R3sOIvEeWTmJ7K0rVXhg" name="GET/permissions" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_d-R3seIvEeWTmJ7K0rVXhg" value="action=getPermissions"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_eDKXsOIvEeWTmJ7K0rVXhg" name="PUT/permissions" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_eDK-wOIvEeWTmJ7K0rVXhg" value="action=setPermissions"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_u_buoLLnEeWcwaDPJFy4ig" name="GET/messages/{language}" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_u_buobLnEeWcwaDPJFy4ig" value="action=messages"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_Xq6bwL4KEeW0Nbxk-xruig" name="POST/log" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_Xq6bwb4KEeW0Nbxk-xruig" value="action=log"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_FwhIsLMHEeWcwaDPJFy4ig" name="POST/lock/{type|optimistic|pessimistic}/{oid}" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_FwhIsbMHEeWcwaDPJFy4ig" value="action=lock"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_MknSsLMHEeWcwaDPJFy4ig" name="DELETE/lock/{type|optimistic|pessimistic}/{oid}" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_MknSsbMHEeWcwaDPJFy4ig" value="action=unlock"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_TinIoOoHEeWY_Z6IknJMgQ" name="POST/process/copy" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_TinIoeoHEeWY_Z6IknJMgQ" value="action=copy"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_UIW6AOoHEeWY_Z6IknJMgQ" name="POST/process/copy/continue" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_UIW6AeoHEeWY_Z6IknJMgQ" value="action=continue&amp;controller=wcmf\application\controller\CopyController"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_UfoxkOoHEeWY_Z6IknJMgQ" name="POST/process/exportXML" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_UfoxkeoHEeWY_Z6IknJMgQ" value="action=exportXML"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_Uu8Y4OoHEeWY_Z6IknJMgQ" name="POST/process/exportXML/continue" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_Uu8Y4eoHEeWY_Z6IknJMgQ" value="action=continue&amp;controller=wcmf\application\controller\XMLExportController"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_0d6HoAvKEeaBb42pasDyug" name="POST/process/exportCSV" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_0d6HoQvKEeaBb42pasDyug" value="action=exportCSV"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_0d9K8AvKEeaBb42pasDyug" name="POST/process/exportCSV/continue" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_0d9K8QvKEeaBb42pasDyug" value="action=continue&amp;controller=wcmf\application\controller\CSVExportController"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_U10c8OoHEeWY_Z6IknJMgQ" name="POST/process/index" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_U10c8eoHEeWY_Z6IknJMgQ" value="action=indexAll"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_U7520OoHEeWY_Z6IknJMgQ" name="POST/process/index/continue" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_U7520eoHEeWY_Z6IknJMgQ" value="action=continue&amp;controller=wcmf\application\controller\SearchIndexController"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="__vNvgMweEeWPWdu5UKHfcA" name="GET,POST/media/files" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="__vNvgcweEeWPWdu5UKHfcA" value="action=browseMedia"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_S4bEswRHEeSxY9ess8EBIw" name="GET/rest/{language}/{className}" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_S4bEtARHEeSxY9ess8EBIw" value="action=restReadList"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_DVk7kBe1EeaOuvFJPYmwBw" name="POST/rest/{language}/{className}" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_DVk7kRe1EeaOuvFJPYmwBw" value="action=restCreate"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_S4bEtQRHEeSxY9ess8EBIw" name="GET/rest/{language}/{className}/{id|[0-9]+}" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_S4bEtgRHEeSxY9ess8EBIw" value="action=restRead"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_PKqZkBe9EeaOuvFJPYmwBw" name="PUT/rest/{language}/{className}/{id|[0-9]+}" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_PKqZkRe9EeaOuvFJPYmwBw" value="action=restUpdate"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_PMHLEBe9EeaOuvFJPYmwBw" name="DELETE/rest/{language}/{className}/{id|[0-9]+}" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_PMHLERe9EeaOuvFJPYmwBw" value="action=restDelete"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_S4bEtwRHEeSxY9ess8EBIw" name="POST/rest/{language}/{className}/{sourceId|[0-9]+}/{relation}" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_S4bEuARHEeSxY9ess8EBIw" value="action=restCreateInRelation"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_mX3gABe9EeaOuvFJPYmwBw" name="GET/rest/{language}/{className}/{sourceId|[0-9]+}/{relation}" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_mX3gARe9EeaOuvFJPYmwBw" value="action=restReadInRelation"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_S4bEuQRHEeSxY9ess8EBIw" name="GET/rest/{language}/{className}/{sourceId|[0-9]+}/{relation}/{targetId|[0-9]+}" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_S4bEugRHEeSxY9ess8EBIw" value="action=restRead"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_zhm9cBe9EeaOuvFJPYmwBw" name="PUT/rest/{language}/{className}/{sourceId|[0-9]+}/{relation}/{targetId|[0-9]+}" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_zhm9cRe9EeaOuvFJPYmwBw" value="action=restUpdateInRelation"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_0mkaYBe9EeaOuvFJPYmwBw" name="DELETE/rest/{language}/{className}/{sourceId|[0-9]+}/{relation}/{targetId|[0-9]+}" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_0mkaYRe9EeaOuvFJPYmwBw" value="action=restDeleteInRelation"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_S4bEuwRHEeSxY9ess8EBIw" name="GET,POST/soap" type="_agg3ALQwEeOLlbB2YLI0iw">
                   <defaultValue xmi:type="uml:LiteralString" xmi:id="_S4bEvARHEeSxY9ess8EBIw" value="action=soapAction"/>
                 </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_S4bEvQRHEeSxY9ess8EBIw" name="/list/{language}/{listDef}" type="_agg3ALQwEeOLlbB2YLI0iw">
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_S4bEvQRHEeSxY9ess8EBIw" name="GET/list/{language}/{listDef}" type="_agg3ALQwEeOLlbB2YLI0iw">
                   <defaultValue xmi:type="uml:LiteralString" xmi:id="_S4bEvgRHEeSxY9ess8EBIw" value="action=listValues"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_gAIdwLLnEeWcwaDPJFy4ig" name="GET/*" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_gAIdwbLnEeWcwaDPJFy4ig" value="action=cms"/>
                 </ownedAttribute>
               </packagedElement>
               <packagedElement xmi:type="uml:Class" xmi:id="_Un6u8FUxEeS4i-N-Z4Tllg" name="Cache">
@@ -180,6 +263,11 @@
               <packagedElement xmi:type="uml:Class" xmi:id="_QM0nECshEeWUuIR_KoweBQ" name="EventListener">
                 <ownedAttribute xmi:type="uml:Property" xmi:id="_XEozcCshEeWUuIR_KoweBQ" name="__class" type="_agg3ALQwEeOLlbB2YLI0iw">
                   <defaultValue xmi:type="uml:LiteralString" xmi:id="_adlsQCshEeWUuIR_KoweBQ" value="app\src\lib\EventListener"/>
+                </ownedAttribute>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_rt0IoA4HEeaDh6xKuYoMqA" name="DefaultRequestListener">
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_rt0IoQ4HEeaDh6xKuYoMqA" name="__class" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_rt0Iog4HEeaDh6xKuYoMqA" value="wcmf\lib\presentation\impl\DefaultRequestListener"/>
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
@@ -676,9 +764,14 @@
                 <ownedAttribute xmi:type="uml:Property" xmi:id="_gMo7YDkOEeSuCfpXnqk73Q" name="managers" type="_agg3ALQwEeOLlbB2YLI0iw">
                   <defaultValue xmi:type="uml:LiteralString" xmi:id="_yOL1QDkOEeSuCfpXnqk73Q" value="{$defaultPermissionManager, $staticPermissionManager}"/>
                 </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="__TaF0OIuEeWTmJ7K0rVXhg" name="principalFactory" visibility="public" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__TaF0eIuEeWTmJ7K0rVXhg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__TaF0uIuEeWTmJ7K0rVXhg" value="1"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="__TaF0-IuEeWTmJ7K0rVXhg" value="$principalFactory"/>
+                </ownedAttribute>
               </packagedElement>
               <packagedElement xmi:type="uml:Class" xmi:id="_VV5D4LQ-EeOQ5oJFa1i8cg" name="RoleConfig">
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_YabL4LQ-EeOQ5oJFa1i8cg" name="administrators" visibility="public" type="_agg3ALQwEeOLlbB2YLI0iw">
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_YabL4LQ-EeOQ5oJFa1i8cg" name=";administrators" visibility="public" type="_agg3ALQwEeOLlbB2YLI0iw">
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b5tWMLQ-EeOQ5oJFa1i8cg" value="1"/>
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_b5tWMbQ-EeOQ5oJFa1i8cg" value="1"/>
                   <defaultValue xmi:type="uml:LiteralString" xmi:id="_b5vLYLQ-EeOQ5oJFa1i8cg" value="admin.ini"/>
@@ -818,12 +911,22 @@
                 <ownedAttribute xmi:type="uml:Property" xmi:id="_cV3PYDkUEeSGKuH2mWBLGA" name="permissionType" type="_agg3ALQwEeOLlbB2YLI0iw">
                   <defaultValue xmi:type="uml:LiteralString" xmi:id="_kFM5oDkUEeSGKuH2mWBLGA" value="app.src.model.wcmf.Permission"/>
                 </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_9p-p4OIuEeWTmJ7K0rVXhg" name="principalFactory" visibility="public" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9p-p4eIuEeWTmJ7K0rVXhg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9p-p4uIuEeWTmJ7K0rVXhg" value="1"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_9p-p4-IuEeWTmJ7K0rVXhg" value="$principalFactory"/>
+                </ownedAttribute>
               </packagedElement>
               <packagedElement xmi:type="uml:Class" xmi:id="_1mktYDkOEeSuCfpXnqk73Q" name="StaticPermissionManager">
                 <ownedAttribute xmi:type="uml:Property" xmi:id="_1mktYTkOEeSuCfpXnqk73Q" name="__class" visibility="public" type="_agg3ALQwEeOLlbB2YLI0iw">
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1mktYjkOEeSuCfpXnqk73Q" value="1"/>
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1mktYzkOEeSuCfpXnqk73Q" value="1"/>
                   <defaultValue xmi:type="uml:LiteralString" xmi:id="_1mktZDkOEeSuCfpXnqk73Q" value="wcmf\lib\security\impl\StaticPermissionManager"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_4ijdEOIuEeWTmJ7K0rVXhg" name="principalFactory" visibility="public" type="_agg3ALQwEeOLlbB2YLI0iw">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4ijdEeIuEeWTmJ7K0rVXhg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4ikEIOIuEeWTmJ7K0rVXhg" value="1"/>
+                  <defaultValue xmi:type="uml:LiteralString" xmi:id="_4ikEIeIuEeWTmJ7K0rVXhg" value="$principalFactory"/>
                 </ownedAttribute>
               </packagedElement>
             </packagedElement>
@@ -943,6 +1046,15 @@
               </packagedElement>
               <packagedElement xmi:type="uml:Class" xmi:id="_giVKgLRnEeOfbtYsPp7Oyg" name="RESTController">
                 <generalization xmi:type="uml:Generalization" xmi:id="_5-NjcLRxEeOfbtYsPp7Oyg" general="_3TWiULQGEeOIMOFxCilDfw"/>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_kXzx8BerEeaOuvFJPYmwBw" name="readList"/>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_qQk8IBerEeaOuvFJPYmwBw" name="create"/>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_qWeIwBerEeaOuvFJPYmwBw" name="read"/>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_qYh-QBerEeaOuvFJPYmwBw" name="update"/>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_qawy4BerEeaOuvFJPYmwBw" name="delete"/>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_qc_AcBerEeaOuvFJPYmwBw" name="createInRelation"/>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_qevT8BerEeaOuvFJPYmwBw" name="readInRelation"/>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_qgwGIBerEeaOuvFJPYmwBw" name="updateInRelation"/>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_qiXPsBerEeaOuvFJPYmwBw" name="deleteInRelation"/>
               </packagedElement>
               <packagedElement xmi:type="uml:Class" xmi:id="_Cju5cPvcEeO7oqnkSuo0Ew" name="SOAPController">
                 <generalization xmi:type="uml:Generalization" xmi:id="_Cju5cfvcEeO7oqnkSuo0Ew" general="_3TWiULQGEeOIMOFxCilDfw"/>
@@ -979,171 +1091,9 @@
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ft5jQrRvEeOfbtYsPp7Oyg" value="1"/>
                 </ownedAttribute>
               </packagedElement>
-              <packagedElement xmi:type="uml:Association" xmi:id="_ICYQg7RsEeOfbtYsPp7Oyg" name="continue" memberEnd="_ICYQhLRsEeOfbtYsPp7Oyg _ICYQgLRsEeOfbtYsPp7Oyg">
-                <ownedEnd xmi:type="uml:Property" xmi:id="_ICYQhLRsEeOfbtYsPp7Oyg" name="copyController" type="_f-qcwLRnEeOfbtYsPp7Oyg" association="_ICYQg7RsEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ICYQhbRsEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ICYQhrRsEeOfbtYsPp7Oyg" value="1"/>
-                </ownedEnd>
-              </packagedElement>
-              <packagedElement xmi:type="uml:Association" xmi:id="_Un-po7RtEeOfbtYsPp7Oyg" name="failure" memberEnd="_Un-ppLRtEeOfbtYsPp7Oyg _Un-poLRtEeOfbtYsPp7Oyg">
-                <ownedEnd xmi:type="uml:Property" xmi:id="_Un-ppLRtEeOfbtYsPp7Oyg" name="loginController" type="_gVdMILRnEeOfbtYsPp7Oyg" association="_Un-po7RtEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Un-ppbRtEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Un-pprRtEeOfbtYsPp7Oyg" value="1"/>
-                </ownedEnd>
-              </packagedElement>
-              <packagedElement xmi:type="uml:Association" xmi:id="_ft5jQ7RvEeOfbtYsPp7Oyg" name="continue" memberEnd="_ft5jRLRvEeOfbtYsPp7Oyg _ft5jQLRvEeOfbtYsPp7Oyg">
-                <ownedEnd xmi:type="uml:Property" xmi:id="_ft5jRLRvEeOfbtYsPp7Oyg" name="xMLExportController" type="_g95FILRnEeOfbtYsPp7Oyg" association="_ft5jQ7RvEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ft5jRbRvEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ft5jRrRvEeOfbtYsPp7Oyg" value="1"/>
-                </ownedEnd>
-              </packagedElement>
-              <packagedElement xmi:type="uml:Association" xmi:id="_0VZyw7RvEeOfbtYsPp7Oyg" name="continue" memberEnd="_0VZyxLRvEeOfbtYsPp7Oyg _0VZywLRvEeOfbtYsPp7Oyg">
-                <ownedEnd xmi:type="uml:Property" xmi:id="_0VZyxLRvEeOfbtYsPp7Oyg" name="searchIndexController" type="_MlxgALRoEeOfbtYsPp7Oyg" association="_0VZyw7RvEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0VZyxbRvEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0VZyxrRvEeOfbtYsPp7Oyg" value="1"/>
-                </ownedEnd>
-              </packagedElement>
-            </packagedElement>
-          </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="_ufBl8LQGEeOIMOFxCilDfw" name="lib">
-            <packagedElement xmi:type="uml:Package" xmi:id="_y3QKcLQGEeOIMOFxCilDfw" name="presentation">
-              <packagedElement xmi:type="uml:Class" xmi:id="_3TWiULQGEeOIMOFxCilDfw" name="Controller">
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_cb6SQLRoEeOfbtYsPp7Oyg" name="associateController" type="_fx-roLRnEeOfbtYsPp7Oyg" association="_cb6SQ7RoEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cb6SQbRoEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cb6SQrRoEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_flu4ALRqEeOfbtYsPp7Oyg" name="associateController" type="_fx-roLRnEeOfbtYsPp7Oyg" association="_flu4A7RqEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_flu4AbRqEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_flu4ArRqEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_5dpRMLRqEeOfbtYsPp7Oyg" name="concurrencyController" type="_f7OuQLRnEeOfbtYsPp7Oyg" association="_5dpRM7RqEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5dpRMbRqEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5dpRMrRqEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_BUbAMLRrEeOfbtYsPp7Oyg" name="concurrencyController" type="_f7OuQLRnEeOfbtYsPp7Oyg" association="_BUbAM7RrEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BUbAMbRrEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BUbAMrRrEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_jCfdULRrEeOfbtYsPp7Oyg" name="copyController" type="_f-qcwLRnEeOfbtYsPp7Oyg" association="_jCfdU7RrEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jCfdUbRrEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jCfdUrRrEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_A5F5oLRsEeOfbtYsPp7Oyg" name="copyController" type="_f-qcwLRnEeOfbtYsPp7Oyg" association="_A5F5o7RsEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A5F5obRsEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A5F5orRsEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_altBwLRsEeOfbtYsPp7Oyg" name="deleteController" type="_gB5-ALRnEeOfbtYsPp7Oyg" association="_altBw7RsEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_altBwbRsEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_altBwrRsEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_l4TXYLRsEeOfbtYsPp7Oyg" name="displayController" type="_gFJfQLRnEeOfbtYsPp7Oyg" association="_l4TXY7RsEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_l4TXYbRsEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_l4TXYrRsEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_2QfGwLRsEeOfbtYsPp7Oyg" name="listController" type="_gO4DALRnEeOfbtYsPp7Oyg" association="_2QfGw7RsEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2QfGwbRsEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2QfGwrRsEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="__BDkgLRsEeOfbtYsPp7Oyg" name="loggingController" type="_gSHkQLRnEeOfbtYsPp7Oyg" association="__BDkg7RsEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__BDkgbRsEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__BDkgrRsEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_JWDCYLRtEeOfbtYsPp7Oyg" name="loginController" type="_gVdMILRnEeOfbtYsPp7Oyg" association="_JWDCY7RtEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JWDCYbRtEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JWDCYrRtEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_QFfV4LRtEeOfbtYsPp7Oyg" name="loginController" type="_gVdMILRnEeOfbtYsPp7Oyg" association="_QFfV47RtEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QFfV4bRtEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QFfV4rRtEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_imJ0sLRtEeOfbtYsPp7Oyg" name="mediaController" type="_gYmmwLRnEeOfbtYsPp7Oyg" association="_imJ0s7RtEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_imJ0sbRtEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_imJ0srRtEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_v4vFELRtEeOfbtYsPp7Oyg" name="messageController" type="_gb8OoLRnEeOfbtYsPp7Oyg" association="_v4vFE7RtEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v4vFEbRtEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v4vFErRtEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_9FI08LRtEeOfbtYsPp7Oyg" name="multipleActionController" type="_gfLv4LRnEeOfbtYsPp7Oyg" association="_9FI087RtEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9FI08bRtEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9FI08rRtEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_IALmMLRuEeOfbtYsPp7Oyg" name="rESTController" type="_giVKgLRnEeOfbtYsPp7Oyg" association="_IALmM7RuEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IALmMbRuEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IALmMrRuEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_QodDkLRuEeOfbtYsPp7Oyg" name="saveController" type="_glqyYLRnEeOfbtYsPp7Oyg" association="_QodDk7RuEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QodDkbRuEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QodDkrRuEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_WkZdkLRuEeOfbtYsPp7Oyg" name="saveController" type="_glqyYLRnEeOfbtYsPp7Oyg" association="_WkZdk7RuEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WkZdkbRuEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WkZdkrRuEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_grLgULRuEeOfbtYsPp7Oyg" name="searchController" type="_go6ToLRnEeOfbtYsPp7Oyg" association="_grLgU7RuEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_grLgUbRuEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_grLgUrRuEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_q7HfELRuEeOfbtYsPp7Oyg" name="sortController" type="_gsP7gLRnEeOfbtYsPp7Oyg" association="_q7HfE7RuEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q7HfEbRuEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_q7HfErRuEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_voYfcLRuEeOfbtYsPp7Oyg" name="sortController" type="_gsP7gLRnEeOfbtYsPp7Oyg" association="_voYfc7RuEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_voYfcbRuEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_voYfcrRuEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_43kL0LRuEeOfbtYsPp7Oyg" name="treeController" type="_gzTlwLRnEeOfbtYsPp7Oyg" association="_43kL07RuEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_43kL0bRuEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_43kL0rRuEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_IWuBcLRvEeOfbtYsPp7Oyg" name="userController" type="_g27hgLRnEeOfbtYsPp7Oyg" association="_IWuBc7RvEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IWuBcbRvEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IWuBcrRvEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_RxWv4LRvEeOfbtYsPp7Oyg" name="valueListController" type="_g6RJYLRnEeOfbtYsPp7Oyg" association="_RxWv47RvEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RxWv4bRvEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RxWv4rRvEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_ZUlQwLRvEeOfbtYsPp7Oyg" name="xMLExportController" type="_g95FILRnEeOfbtYsPp7Oyg" association="_ZUlQw7RvEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZUlQwbRvEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZUlQwrRvEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_wcTaQLRvEeOfbtYsPp7Oyg" name="searchIndexController" type="_MlxgALRoEeOfbtYsPp7Oyg" association="_wcZg4LRvEeOfbtYsPp7Oyg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wcTaQbRvEeOfbtYsPp7Oyg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wcTaQrRvEeOfbtYsPp7Oyg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_3mg2YPu5EeOmMdys2glKCA" name="renderPage" type="_FrS1MPu5EeOmMdys2glKCA" association="_3mhdcPu5EeOmMdys2glKCA">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3mg2Yfu5EeOmMdys2glKCA" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3mg2Yvu5EeOmMdys2glKCA" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_RXx8kPvcEeO7oqnkSuo0Ew" name="sOAPController" type="_Cju5cPvcEeO7oqnkSuo0Ew" association="_RXx8k_vcEeO7oqnkSuo0Ew">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RXx8kfvcEeO7oqnkSuo0Ew" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RXx8kvvcEeO7oqnkSuo0Ew" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_BNtY4C04EeSZcOHv2Y7Ocg" name="permissionController" type="_w2-bAC03EeSZcOHv2Y7Ocg" association="_BNunAC04EeSZcOHv2Y7Ocg">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BNtY4S04EeSZcOHv2Y7Ocg" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BNtY4i04EeSZcOHv2Y7Ocg" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_0WnzkE5mEeSEGaIVag_Y7g" name="permissionController" type="_w2-bAC03EeSZcOHv2Y7Ocg" association="_0Wnzk05mEeSEGaIVag_Y7g">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0WnzkU5mEeSEGaIVag_Y7g" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0Wnzkk5mEeSEGaIVag_Y7g" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_IHMbEE5nEeSEGaIVag_Y7g" name="permissionController" type="_w2-bAC03EeSZcOHv2Y7Ocg" association="_IHMbE05nEeSEGaIVag_Y7g">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IHMbEU5nEeSEGaIVag_Y7g" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IHMbEk5nEeSEGaIVag_Y7g" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_V7gfgE5nEeSEGaIVag_Y7g" name="permissionController" type="_w2-bAC03EeSZcOHv2Y7Ocg" association="_V7gfg05nEeSEGaIVag_Y7g">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V7gfgU5nEeSEGaIVag_Y7g" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V7gfgk5nEeSEGaIVag_Y7g" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_ztr8cFJlEeS9X-qkDE9hqA" name="permissionController" type="_w2-bAC03EeSZcOHv2Y7Ocg" association="_ztw08FJlEeS9X-qkDE9hqA">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ztr8cVJlEeS9X-qkDE9hqA" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ztr8clJlEeS9X-qkDE9hqA" value="1"/>
-                </ownedAttribute>
-                <ownedAttribute xmi:type="uml:Property" xmi:id="_JQkR0FLkEeSiysnzrVykIQ" name="permissionController" type="_w2-bAC03EeSZcOHv2Y7Ocg" association="_JQqYcFLkEeSiysnzrVykIQ">
-                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JQkR0VLkEeSiysnzrVykIQ" value="1"/>
-                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JQkR0lLkEeSiysnzrVykIQ" value="1"/>
-                </ownedAttribute>
+              <packagedElement xmi:type="uml:Class" xmi:id="_DE_s0AvLEeaBb42pasDyug" name="CSVExportController">
+                <generalization xmi:type="uml:Generalization" xmi:id="_DE_s0QvLEeaBb42pasDyug" general="_f1B_oLRnEeOfbtYsPp7Oyg"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_QLELMgvLEeaBb42pasDyug" name="csvexportcontroller" type="_DE_s0AvLEeaBb42pasDyug" association="_QLDkIAvLEeaBb42pasDyug"/>
               </packagedElement>
               <packagedElement xmi:type="uml:Association" xmi:id="_3mhdcPu5EeOmMdys2glKCA" name="cms" memberEnd="_3mhdcfu5EeOmMdys2glKCA _3mg2YPu5EeOmMdys2glKCA">
                 <ownedEnd xmi:type="uml:Property" xmi:id="_3mhdcfu5EeOmMdys2glKCA" type="_3TWiULQGEeOIMOFxCilDfw" association="_3mhdcPu5EeOmMdys2glKCA">
@@ -1241,7 +1191,7 @@
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9FI09rRtEeOfbtYsPp7Oyg" value="1"/>
                 </ownedEnd>
               </packagedElement>
-              <packagedElement xmi:type="uml:Association" xmi:id="_IALmM7RuEeOfbtYsPp7Oyg" name="restAction" memberEnd="_IALmNLRuEeOfbtYsPp7Oyg _IALmMLRuEeOfbtYsPp7Oyg">
+              <packagedElement xmi:type="uml:Association" xmi:id="_IALmM7RuEeOfbtYsPp7Oyg" name="restReadList" memberEnd="_IALmNLRuEeOfbtYsPp7Oyg _IALmMLRuEeOfbtYsPp7Oyg">
                 <ownedEnd xmi:type="uml:Property" xmi:id="_IALmNLRuEeOfbtYsPp7Oyg" name="controller" type="_3TWiULQGEeOIMOFxCilDfw" association="_IALmM7RuEeOfbtYsPp7Oyg">
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IALmNbRuEeOfbtYsPp7Oyg" value="1"/>
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IALmNrRuEeOfbtYsPp7Oyg" value="1"/>
@@ -1301,11 +1251,17 @@
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RxWv5rRvEeOfbtYsPp7Oyg" value="1"/>
                 </ownedEnd>
               </packagedElement>
-              <packagedElement xmi:type="uml:Association" xmi:id="_ZUlQw7RvEeOfbtYsPp7Oyg" name="exportAll" memberEnd="_ZUlQxLRvEeOfbtYsPp7Oyg _ZUlQwLRvEeOfbtYsPp7Oyg">
+              <packagedElement xmi:type="uml:Association" xmi:id="_ZUlQw7RvEeOfbtYsPp7Oyg" name="exportXML" memberEnd="_ZUlQxLRvEeOfbtYsPp7Oyg _ZUlQwLRvEeOfbtYsPp7Oyg">
                 <ownedEnd xmi:type="uml:Property" xmi:id="_ZUlQxLRvEeOfbtYsPp7Oyg" name="controller" type="_3TWiULQGEeOIMOFxCilDfw" association="_ZUlQw7RvEeOfbtYsPp7Oyg">
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZUlQxbRvEeOfbtYsPp7Oyg" value="1"/>
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZUlQxrRvEeOfbtYsPp7Oyg" value="1"/>
                 </ownedEnd>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_IEklMAvLEeaBb42pasDyug" name="exportCSV" memberEnd="_IElMQQvLEeaBb42pasDyug _IElMQgvLEeaBb42pasDyug">
+                <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_IEklMQvLEeaBb42pasDyug" source="org.eclipse.papyrus">
+                  <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IElMQAvLEeaBb42pasDyug" key="nature" value="UML_Nature"/>
+                </eAnnotations>
+                <ownedEnd xmi:type="uml:Property" xmi:id="_IElMQgvLEeaBb42pasDyug" name="controller" type="_3TWiULQGEeOIMOFxCilDfw" association="_IEklMAvLEeaBb42pasDyug"/>
               </packagedElement>
               <packagedElement xmi:type="uml:Association" xmi:id="_wcZg4LRvEeOfbtYsPp7Oyg" name="indexAll" memberEnd="_wcZg4bRvEeOfbtYsPp7Oyg _wcTaQLRvEeOfbtYsPp7Oyg">
                 <ownedEnd xmi:type="uml:Property" xmi:id="_wcZg4bRvEeOfbtYsPp7Oyg" name="controller" type="_3TWiULQGEeOIMOFxCilDfw" association="_wcZg4LRvEeOfbtYsPp7Oyg">
@@ -1349,6 +1305,235 @@
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JQqYc1LkEeSiysnzrVykIQ" value="1"/>
                 </ownedEnd>
               </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_ICYQg7RsEeOfbtYsPp7Oyg" name="continue" memberEnd="_ICYQhLRsEeOfbtYsPp7Oyg _ICYQgLRsEeOfbtYsPp7Oyg">
+                <ownedEnd xmi:type="uml:Property" xmi:id="_ICYQhLRsEeOfbtYsPp7Oyg" name="copyController" type="_f-qcwLRnEeOfbtYsPp7Oyg" association="_ICYQg7RsEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ICYQhbRsEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ICYQhrRsEeOfbtYsPp7Oyg" value="1"/>
+                </ownedEnd>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_Un-po7RtEeOfbtYsPp7Oyg" name="failure" memberEnd="_Un-ppLRtEeOfbtYsPp7Oyg _Un-poLRtEeOfbtYsPp7Oyg">
+                <ownedEnd xmi:type="uml:Property" xmi:id="_Un-ppLRtEeOfbtYsPp7Oyg" name="loginController" type="_gVdMILRnEeOfbtYsPp7Oyg" association="_Un-po7RtEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Un-ppbRtEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Un-pprRtEeOfbtYsPp7Oyg" value="1"/>
+                </ownedEnd>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_ft5jQ7RvEeOfbtYsPp7Oyg" name="continue" memberEnd="_ft5jRLRvEeOfbtYsPp7Oyg _ft5jQLRvEeOfbtYsPp7Oyg">
+                <ownedEnd xmi:type="uml:Property" xmi:id="_ft5jRLRvEeOfbtYsPp7Oyg" name="xMLExportController" type="_g95FILRnEeOfbtYsPp7Oyg" association="_ft5jQ7RvEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ft5jRbRvEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ft5jRrRvEeOfbtYsPp7Oyg" value="1"/>
+                </ownedEnd>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_QLDkIAvLEeaBb42pasDyug" name="continue" memberEnd="_QLELMgvLEeaBb42pasDyug _QLFZUAvLEeaBb42pasDyug">
+                <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QLELMAvLEeaBb42pasDyug" source="org.eclipse.papyrus">
+                  <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QLELMQvLEeaBb42pasDyug" key="nature" value="UML_Nature"/>
+                </eAnnotations>
+                <ownedEnd xmi:type="uml:Property" xmi:id="_QLFZUAvLEeaBb42pasDyug" name="csvexportcontroller" type="_DE_s0AvLEeaBb42pasDyug" association="_QLDkIAvLEeaBb42pasDyug"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_0VZyw7RvEeOfbtYsPp7Oyg" name="continue" memberEnd="_0VZyxLRvEeOfbtYsPp7Oyg _0VZywLRvEeOfbtYsPp7Oyg">
+                <ownedEnd xmi:type="uml:Property" xmi:id="_0VZyxLRvEeOfbtYsPp7Oyg" name="searchIndexController" type="_MlxgALRoEeOfbtYsPp7Oyg" association="_0VZyw7RvEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0VZyxbRvEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0VZyxrRvEeOfbtYsPp7Oyg" value="1"/>
+                </ownedEnd>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_f2VGoBeyEeaOuvFJPYmwBw" name="restCreate" memberEnd="_f2VGoxeyEeaOuvFJPYmwBw _f2Xi4BeyEeaOuvFJPYmwBw">
+                <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_f2VGoReyEeaOuvFJPYmwBw" source="org.eclipse.papyrus">
+                  <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f2VGoheyEeaOuvFJPYmwBw" key="nature" value="UML_Nature"/>
+                </eAnnotations>
+                <ownedEnd xmi:type="uml:Property" xmi:id="_f2Xi4BeyEeaOuvFJPYmwBw" name="controller" type="_3TWiULQGEeOIMOFxCilDfw" association="_f2VGoBeyEeaOuvFJPYmwBw"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_wVm8gBeyEeaOuvFJPYmwBw" name="restRead" memberEnd="_wVnjkBeyEeaOuvFJPYmwBw _wVnjkReyEeaOuvFJPYmwBw">
+                <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wVm8gReyEeaOuvFJPYmwBw" source="org.eclipse.papyrus">
+                  <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wVm8gheyEeaOuvFJPYmwBw" key="nature" value="UML_Nature"/>
+                </eAnnotations>
+                <ownedEnd xmi:type="uml:Property" xmi:id="_wVnjkReyEeaOuvFJPYmwBw" name="controller" type="_3TWiULQGEeOIMOFxCilDfw" association="_wVm8gBeyEeaOuvFJPYmwBw"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_HbG4cBezEeaOuvFJPYmwBw" name="restUpdate" memberEnd="_HbHfghezEeaOuvFJPYmwBw _HbJ7wBezEeaOuvFJPYmwBw">
+                <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HbHfgBezEeaOuvFJPYmwBw" source="org.eclipse.papyrus">
+                  <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HbHfgRezEeaOuvFJPYmwBw" key="nature" value="UML_Nature"/>
+                </eAnnotations>
+                <ownedEnd xmi:type="uml:Property" xmi:id="_HbJ7wBezEeaOuvFJPYmwBw" name="controller" type="_3TWiULQGEeOIMOFxCilDfw" association="_HbG4cBezEeaOuvFJPYmwBw"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_OdUW8BezEeaOuvFJPYmwBw" name="restDelete" memberEnd="_OdUW8xezEeaOuvFJPYmwBw _OdUW9BezEeaOuvFJPYmwBw">
+                <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_OdUW8RezEeaOuvFJPYmwBw" source="org.eclipse.papyrus">
+                  <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OdUW8hezEeaOuvFJPYmwBw" key="nature" value="UML_Nature"/>
+                </eAnnotations>
+                <ownedEnd xmi:type="uml:Property" xmi:id="_OdUW9BezEeaOuvFJPYmwBw" name="controller" type="_3TWiULQGEeOIMOFxCilDfw" association="_OdUW8BezEeaOuvFJPYmwBw"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_TteB8BezEeaOuvFJPYmwBw" name="restCreateInRelation" memberEnd="_TteB8xezEeaOuvFJPYmwBw _TtgeMBezEeaOuvFJPYmwBw">
+                <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TteB8RezEeaOuvFJPYmwBw" source="org.eclipse.papyrus">
+                  <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TteB8hezEeaOuvFJPYmwBw" key="nature" value="UML_Nature"/>
+                </eAnnotations>
+                <ownedEnd xmi:type="uml:Property" xmi:id="_TtgeMBezEeaOuvFJPYmwBw" name="controller" type="_3TWiULQGEeOIMOFxCilDfw" association="_TteB8BezEeaOuvFJPYmwBw"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_f3gV4BezEeaOuvFJPYmwBw" name="restReadInRelation" memberEnd="_f3gV4xezEeaOuvFJPYmwBw _f3gV5BezEeaOuvFJPYmwBw">
+                <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_f3gV4RezEeaOuvFJPYmwBw" source="org.eclipse.papyrus">
+                  <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f3gV4hezEeaOuvFJPYmwBw" key="nature" value="UML_Nature"/>
+                </eAnnotations>
+                <ownedEnd xmi:type="uml:Property" xmi:id="_f3gV5BezEeaOuvFJPYmwBw" name="controller" type="_3TWiULQGEeOIMOFxCilDfw" association="_f3gV4BezEeaOuvFJPYmwBw"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_kyN8YBezEeaOuvFJPYmwBw" name="restUpdateInRelation" memberEnd="_kyOjchezEeaOuvFJPYmwBw _kyQ_sBezEeaOuvFJPYmwBw">
+                <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_kyOjcBezEeaOuvFJPYmwBw" source="org.eclipse.papyrus">
+                  <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_kyOjcRezEeaOuvFJPYmwBw" key="nature" value="UML_Nature"/>
+                </eAnnotations>
+                <ownedEnd xmi:type="uml:Property" xmi:id="_kyQ_sBezEeaOuvFJPYmwBw" name="controller" type="_3TWiULQGEeOIMOFxCilDfw" association="_kyN8YBezEeaOuvFJPYmwBw"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_qYav4BezEeaOuvFJPYmwBw" name="restDeleteInRelation" memberEnd="_qYav4xezEeaOuvFJPYmwBw _qYbW8BezEeaOuvFJPYmwBw">
+                <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qYav4RezEeaOuvFJPYmwBw" source="org.eclipse.papyrus">
+                  <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qYav4hezEeaOuvFJPYmwBw" key="nature" value="UML_Nature"/>
+                </eAnnotations>
+                <ownedEnd xmi:type="uml:Property" xmi:id="_qYbW8BezEeaOuvFJPYmwBw" name="controller" type="_3TWiULQGEeOIMOFxCilDfw" association="_qYav4BezEeaOuvFJPYmwBw"/>
+              </packagedElement>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_ufBl8LQGEeOIMOFxCilDfw" name="lib">
+            <packagedElement xmi:type="uml:Package" xmi:id="_y3QKcLQGEeOIMOFxCilDfw" name="presentation">
+              <packagedElement xmi:type="uml:Class" xmi:id="_3TWiULQGEeOIMOFxCilDfw" name="Controller">
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_cb6SQLRoEeOfbtYsPp7Oyg" name="associateController" type="_fx-roLRnEeOfbtYsPp7Oyg" association="_cb6SQ7RoEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cb6SQbRoEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cb6SQrRoEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_flu4ALRqEeOfbtYsPp7Oyg" name="associateController" type="_fx-roLRnEeOfbtYsPp7Oyg" association="_flu4A7RqEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_flu4AbRqEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_flu4ArRqEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_5dpRMLRqEeOfbtYsPp7Oyg" name="concurrencyController" type="_f7OuQLRnEeOfbtYsPp7Oyg" association="_5dpRM7RqEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5dpRMbRqEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5dpRMrRqEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_BUbAMLRrEeOfbtYsPp7Oyg" name="concurrencyController" type="_f7OuQLRnEeOfbtYsPp7Oyg" association="_BUbAM7RrEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BUbAMbRrEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BUbAMrRrEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_jCfdULRrEeOfbtYsPp7Oyg" name="copyController" type="_f-qcwLRnEeOfbtYsPp7Oyg" association="_jCfdU7RrEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jCfdUbRrEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jCfdUrRrEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_A5F5oLRsEeOfbtYsPp7Oyg" name="copyController" type="_f-qcwLRnEeOfbtYsPp7Oyg" association="_A5F5o7RsEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A5F5obRsEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A5F5orRsEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_altBwLRsEeOfbtYsPp7Oyg" name="deleteController" type="_gB5-ALRnEeOfbtYsPp7Oyg" association="_altBw7RsEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_altBwbRsEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_altBwrRsEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_l4TXYLRsEeOfbtYsPp7Oyg" name="displayController" type="_gFJfQLRnEeOfbtYsPp7Oyg" association="_l4TXY7RsEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_l4TXYbRsEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_l4TXYrRsEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_2QfGwLRsEeOfbtYsPp7Oyg" name="listController" type="_gO4DALRnEeOfbtYsPp7Oyg" association="_2QfGw7RsEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2QfGwbRsEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2QfGwrRsEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="__BDkgLRsEeOfbtYsPp7Oyg" name="loggingController" type="_gSHkQLRnEeOfbtYsPp7Oyg" association="__BDkg7RsEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__BDkgbRsEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__BDkgrRsEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_JWDCYLRtEeOfbtYsPp7Oyg" name="loginController" type="_gVdMILRnEeOfbtYsPp7Oyg" association="_JWDCY7RtEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JWDCYbRtEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JWDCYrRtEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_QFfV4LRtEeOfbtYsPp7Oyg" name="loginController" type="_gVdMILRnEeOfbtYsPp7Oyg" association="_QFfV47RtEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QFfV4bRtEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QFfV4rRtEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_imJ0sLRtEeOfbtYsPp7Oyg" name="mediaController" type="_gYmmwLRnEeOfbtYsPp7Oyg" association="_imJ0s7RtEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_imJ0sbRtEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_imJ0srRtEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_v4vFELRtEeOfbtYsPp7Oyg" name="messageController" type="_gb8OoLRnEeOfbtYsPp7Oyg" association="_v4vFE7RtEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v4vFEbRtEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v4vFErRtEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_9FI08LRtEeOfbtYsPp7Oyg" name="multipleActionController" type="_gfLv4LRnEeOfbtYsPp7Oyg" association="_9FI087RtEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9FI08bRtEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9FI08rRtEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_IALmMLRuEeOfbtYsPp7Oyg" name="readList" type="_giVKgLRnEeOfbtYsPp7Oyg" association="_IALmM7RuEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IALmMbRuEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IALmMrRuEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_QodDkLRuEeOfbtYsPp7Oyg" name="saveController" type="_glqyYLRnEeOfbtYsPp7Oyg" association="_QodDk7RuEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QodDkbRuEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QodDkrRuEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_WkZdkLRuEeOfbtYsPp7Oyg" name="saveController" type="_glqyYLRnEeOfbtYsPp7Oyg" association="_WkZdk7RuEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WkZdkbRuEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WkZdkrRuEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_grLgULRuEeOfbtYsPp7Oyg" name="searchController" type="_go6ToLRnEeOfbtYsPp7Oyg" association="_grLgU7RuEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_grLgUbRuEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_grLgUrRuEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_q7HfELRuEeOfbtYsPp7Oyg" name="sortController" type="_gsP7gLRnEeOfbtYsPp7Oyg" association="_q7HfE7RuEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q7HfEbRuEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_q7HfErRuEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_voYfcLRuEeOfbtYsPp7Oyg" name="sortController" type="_gsP7gLRnEeOfbtYsPp7Oyg" association="_voYfc7RuEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_voYfcbRuEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_voYfcrRuEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_43kL0LRuEeOfbtYsPp7Oyg" name="treeController" type="_gzTlwLRnEeOfbtYsPp7Oyg" association="_43kL07RuEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_43kL0bRuEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_43kL0rRuEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_IWuBcLRvEeOfbtYsPp7Oyg" name="userController" type="_g27hgLRnEeOfbtYsPp7Oyg" association="_IWuBc7RvEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IWuBcbRvEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IWuBcrRvEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_RxWv4LRvEeOfbtYsPp7Oyg" name="valueListController" type="_g6RJYLRnEeOfbtYsPp7Oyg" association="_RxWv47RvEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RxWv4bRvEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RxWv4rRvEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_ZUlQwLRvEeOfbtYsPp7Oyg" name="xMLExportController" type="_g95FILRnEeOfbtYsPp7Oyg" association="_ZUlQw7RvEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZUlQwbRvEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZUlQwrRvEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_wcTaQLRvEeOfbtYsPp7Oyg" name="searchIndexController" type="_MlxgALRoEeOfbtYsPp7Oyg" association="_wcZg4LRvEeOfbtYsPp7Oyg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wcTaQbRvEeOfbtYsPp7Oyg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wcTaQrRvEeOfbtYsPp7Oyg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_3mg2YPu5EeOmMdys2glKCA" name="renderPage" type="_FrS1MPu5EeOmMdys2glKCA" association="_3mhdcPu5EeOmMdys2glKCA">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3mg2Yfu5EeOmMdys2glKCA" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3mg2Yvu5EeOmMdys2glKCA" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_RXx8kPvcEeO7oqnkSuo0Ew" name="sOAPController" type="_Cju5cPvcEeO7oqnkSuo0Ew" association="_RXx8k_vcEeO7oqnkSuo0Ew">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RXx8kfvcEeO7oqnkSuo0Ew" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RXx8kvvcEeO7oqnkSuo0Ew" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_BNtY4C04EeSZcOHv2Y7Ocg" name="permissionController" type="_w2-bAC03EeSZcOHv2Y7Ocg" association="_BNunAC04EeSZcOHv2Y7Ocg">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BNtY4S04EeSZcOHv2Y7Ocg" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BNtY4i04EeSZcOHv2Y7Ocg" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_0WnzkE5mEeSEGaIVag_Y7g" name="permissionController" type="_w2-bAC03EeSZcOHv2Y7Ocg" association="_0Wnzk05mEeSEGaIVag_Y7g">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0WnzkU5mEeSEGaIVag_Y7g" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0Wnzkk5mEeSEGaIVag_Y7g" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_IHMbEE5nEeSEGaIVag_Y7g" name="permissionController" type="_w2-bAC03EeSZcOHv2Y7Ocg" association="_IHMbE05nEeSEGaIVag_Y7g">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IHMbEU5nEeSEGaIVag_Y7g" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IHMbEk5nEeSEGaIVag_Y7g" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_V7gfgE5nEeSEGaIVag_Y7g" name="permissionController" type="_w2-bAC03EeSZcOHv2Y7Ocg" association="_V7gfg05nEeSEGaIVag_Y7g">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V7gfgU5nEeSEGaIVag_Y7g" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V7gfgk5nEeSEGaIVag_Y7g" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_ztr8cFJlEeS9X-qkDE9hqA" name="permissionController" type="_w2-bAC03EeSZcOHv2Y7Ocg" association="_ztw08FJlEeS9X-qkDE9hqA">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ztr8cVJlEeS9X-qkDE9hqA" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ztr8clJlEeS9X-qkDE9hqA" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_JQkR0FLkEeSiysnzrVykIQ" name="permissionController" type="_w2-bAC03EeSZcOHv2Y7Ocg" association="_JQqYcFLkEeSiysnzrVykIQ">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JQkR0VLkEeSiysnzrVykIQ" value="1"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JQkR0lLkEeSiysnzrVykIQ" value="1"/>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_IElMQQvLEeaBb42pasDyug" name="csvexportcontroller" type="_DE_s0AvLEeaBb42pasDyug" association="_IEklMAvLEeaBb42pasDyug"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_f2VGoxeyEeaOuvFJPYmwBw" name="create" type="_giVKgLRnEeOfbtYsPp7Oyg" association="_f2VGoBeyEeaOuvFJPYmwBw"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_wVnjkBeyEeaOuvFJPYmwBw" name="read" type="_giVKgLRnEeOfbtYsPp7Oyg" association="_wVm8gBeyEeaOuvFJPYmwBw"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_HbHfghezEeaOuvFJPYmwBw" name="update" type="_giVKgLRnEeOfbtYsPp7Oyg" association="_HbG4cBezEeaOuvFJPYmwBw"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_OdUW8xezEeaOuvFJPYmwBw" name="delete" type="_giVKgLRnEeOfbtYsPp7Oyg" association="_OdUW8BezEeaOuvFJPYmwBw"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_TteB8xezEeaOuvFJPYmwBw" name="createInRelation" type="_giVKgLRnEeOfbtYsPp7Oyg" association="_TteB8BezEeaOuvFJPYmwBw"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_f3gV4xezEeaOuvFJPYmwBw" name="readInRelation" type="_giVKgLRnEeOfbtYsPp7Oyg" association="_f3gV4BezEeaOuvFJPYmwBw"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_kyOjchezEeaOuvFJPYmwBw" name="updateInRelation" type="_giVKgLRnEeOfbtYsPp7Oyg" association="_kyN8YBezEeaOuvFJPYmwBw"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_qYav4xezEeaOuvFJPYmwBw" name="deleteInRelation" type="_giVKgLRnEeOfbtYsPp7Oyg" association="_qYav4BezEeaOuvFJPYmwBw"/>
+              </packagedElement>
             </packagedElement>
             <packagedElement xmi:type="uml:Package" xmi:id="_wtsc8LQGEeOIMOFxCilDfw" name="model">
               <packagedElement xmi:type="uml:Class" xmi:id="_6z2NkLQGEeOIMOFxCilDfw" name="Node"/>
@@ -1371,7 +1556,22 @@
           <packagedElement xmi:type="uml:Package" xmi:id="_nmqxoOj5EeOllcOTHGuLUw" name="src">
             <packagedElement xmi:type="uml:Package" xmi:id="_r7Q9ALQ4EeOQ5oJFa1i8cg" name="model">
               <packagedElement xmi:type="uml:Package" xmi:id="_p3FfgLTMEeOYkOsR5IzpsA" name="wcmf">
-                <packagedElement xmi:type="uml:Class" xmi:id="_s2Ve4LTMEeOYkOsR5IzpsA" name="DBSequence"/>
+                <packagedElement xmi:type="uml:Class" xmi:id="_s2Ve4LTMEeOYkOsR5IzpsA" name="DBSequence">
+                  <ownedAttribute xmi:type="uml:Property" xmi:id="_PsZYwP_DEeWzxP-Oi6uCUQ" name="table" visibility="public" type="_agg3ALQwEeOLlbB2YLI0iw">
+                    <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PsZYwf_DEeWzxP-Oi6uCUQ" value="1"/>
+                    <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PsZYwv_DEeWzxP-Oi6uCUQ" value="1"/>
+                    <defaultValue xmi:type="uml:LiteralString" xmi:id="_PsZYw__DEeWzxP-Oi6uCUQ">
+                      <value xsi:nil="true"/>
+                    </defaultValue>
+                  </ownedAttribute>
+                  <ownedAttribute xmi:type="uml:Property" xmi:id="_QCBDcP_DEeWzxP-Oi6uCUQ" name="id" visibility="public" type="_dbezULQwEeOLlbB2YLI0iw">
+                    <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QCBDcf_DEeWzxP-Oi6uCUQ" value="1"/>
+                    <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QCBDcv_DEeWzxP-Oi6uCUQ" value="1"/>
+                    <defaultValue xmi:type="uml:LiteralString" xmi:id="_QCBDc__DEeWzxP-Oi6uCUQ">
+                      <value xsi:nil="true"/>
+                    </defaultValue>
+                  </ownedAttribute>
+                </packagedElement>
                 <packagedElement xmi:type="uml:Class" xmi:id="_s73fILTMEeOYkOsR5IzpsA" name="Lock">
                   <ownedAttribute xmi:type="uml:Property" xmi:id="_EVGnsLTTEeOYkOsR5IzpsA" name="objectid" visibility="public" type="_agg3ALQwEeOLlbB2YLI0iw">
                     <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LuOKULTTEeOYkOsR5IzpsA" value="1"/>
@@ -1799,10 +1999,10 @@
   <Chronos:ChiSystem xmi:id="_v3idwLQWEeOIMOFxCilDfw" plattform="wcmf" config="server.ini" base_Class="_sYqjILQWEeOIMOFxCilDfw"/>
   <Chronos:ChiSystem xmi:id="__sbsULQ2EeOQ5oJFa1i8cg" plattform="wcmf" config="server.ini" base_Class="_4Y0UwLQ2EeOQ5oJFa1i8cg"/>
   <Chronos:ChiNode xmi:id="_4B7M0LQ4EeOQ5oJFa1i8cg" base_Class="_ylwfELQ4EeOQ5oJFa1i8cg"/>
-  <Chronos:ChiValue xmi:id="_Hrj0ILQ5EeOQ5oJFa1i8cg" db_data_type="DATETIME" base_Property="_GAGX4LQ5EeOQ5oJFa1i8cg"/>
-  <Chronos:ChiValue xmi:id="_RRfzoLQ5EeOQ5oJFa1i8cg" base_Property="_QGL3ELQ5EeOQ5oJFa1i8cg"/>
-  <Chronos:ChiValue xmi:id="_WYoFgLQ5EeOQ5oJFa1i8cg" db_data_type="DATETIME" base_Property="_VDL8kLQ5EeOQ5oJFa1i8cg"/>
-  <Chronos:ChiValue xmi:id="_bCo9kLQ5EeOQ5oJFa1i8cg" base_Property="_Z6PLELQ5EeOQ5oJFa1i8cg"/>
+  <Chronos:ChiValue xmi:id="_Hrj0ILQ5EeOQ5oJFa1i8cg" app_data_type="DATATYPE_ATTRIBUTE|GROUP_INTERNAL" db_data_type="DATETIME" base_Property="_GAGX4LQ5EeOQ5oJFa1i8cg"/>
+  <Chronos:ChiValue xmi:id="_RRfzoLQ5EeOQ5oJFa1i8cg" app_data_type="DATATYPE_ATTRIBUTE|GROUP_INTERNAL" base_Property="_QGL3ELQ5EeOQ5oJFa1i8cg"/>
+  <Chronos:ChiValue xmi:id="_WYoFgLQ5EeOQ5oJFa1i8cg" app_data_type="DATATYPE_ATTRIBUTE|GROUP_INTERNAL" db_data_type="DATETIME" base_Property="_VDL8kLQ5EeOQ5oJFa1i8cg"/>
+  <Chronos:ChiValue xmi:id="_bCo9kLQ5EeOQ5oJFa1i8cg" app_data_type="DATATYPE_ATTRIBUTE|GROUP_INTERNAL" base_Property="_Z6PLELQ5EeOQ5oJFa1i8cg"/>
   <Chronos:ChiSystem xmi:id="_e9d-8LQ6EeOQ5oJFa1i8cg" plattform="wcmf" config="server.ini" base_Class="_bbJHsLQ6EeOQ5oJFa1i8cg"/>
   <Chronos:ChiSystem xmi:id="__0gtcLQ6EeOQ5oJFa1i8cg" plattform="wcmf" config="server.ini" base_Class="_92pSkLQ6EeOQ5oJFa1i8cg"/>
   <Chronos:ChiSystem xmi:id="_FpHJULQ7EeOQ5oJFa1i8cg" plattform="wcmf" config="server.ini" base_Class="_DK_hELQ7EeOQ5oJFa1i8cg"/>
@@ -1886,7 +2086,7 @@
   <Chronos:ChiActionKey xmi:id="_jpxN0LRtEeOfbtYsPp7Oyg" action="browseMedia" base_Association="_imJ0s7RtEeOfbtYsPp7Oyg"/>
   <Chronos:ChiActionKey xmi:id="_wky50LRtEeOfbtYsPp7Oyg" action="messages" base_Association="_v4vFE7RtEeOfbtYsPp7Oyg"/>
   <Chronos:ChiActionKey xmi:id="_Aysr0LRuEeOfbtYsPp7Oyg" action="actionSet" base_Association="_9FI087RtEeOfbtYsPp7Oyg"/>
-  <Chronos:ChiActionKey xmi:id="_K9Y-MLRuEeOfbtYsPp7Oyg" action="restAction" base_Association="_IALmM7RuEeOfbtYsPp7Oyg"/>
+  <Chronos:ChiActionKey xmi:id="_K9Y-MLRuEeOfbtYsPp7Oyg" action="restReadList" base_Association="_IALmM7RuEeOfbtYsPp7Oyg"/>
   <Chronos:ChiActionKey xmi:id="_TsuF0LRuEeOfbtYsPp7Oyg" action="create" base_Association="_QodDk7RuEeOfbtYsPp7Oyg"/>
   <Chronos:ChiActionKey xmi:id="_YrV78LRuEeOfbtYsPp7Oyg" action="update" base_Association="_WkZdk7RuEeOfbtYsPp7Oyg"/>
   <Chronos:ChiActionKey xmi:id="_ixdQULRuEeOfbtYsPp7Oyg" action="search" base_Association="_grLgU7RuEeOfbtYsPp7Oyg"/>
@@ -1895,11 +2095,11 @@
   <Chronos:ChiActionKey xmi:id="_51dXcLRuEeOfbtYsPp7Oyg" action="browseTree" base_Association="_43kL07RuEeOfbtYsPp7Oyg"/>
   <Chronos:ChiActionKey xmi:id="_Jlru8LRvEeOfbtYsPp7Oyg" action="changePassword" base_Association="_IWuBc7RvEeOfbtYsPp7Oyg"/>
   <Chronos:ChiActionKey xmi:id="_S2sAQLRvEeOfbtYsPp7Oyg" action="listValues" base_Association="_RxWv47RvEeOfbtYsPp7Oyg"/>
-  <Chronos:ChiActionKey xmi:id="_cwHjgLRvEeOfbtYsPp7Oyg" action="exportAll" base_Association="_ZUlQw7RvEeOfbtYsPp7Oyg"/>
+  <Chronos:ChiActionKey xmi:id="_cwHjgLRvEeOfbtYsPp7Oyg" action="exportXML" base_Association="_ZUlQw7RvEeOfbtYsPp7Oyg"/>
   <Chronos:ChiActionKey xmi:id="_h0jtwLRvEeOfbtYsPp7Oyg" action="continue" base_Association="_ft5jQ7RvEeOfbtYsPp7Oyg"/>
   <Chronos:ChiActionKey xmi:id="_xdcHILRvEeOfbtYsPp7Oyg" action="indexAll" base_Association="_wcZg4LRvEeOfbtYsPp7Oyg"/>
   <Chronos:ChiActionKey xmi:id="_16x1ILRvEeOfbtYsPp7Oyg" action="continue" base_Association="_0VZyw7RvEeOfbtYsPp7Oyg"/>
-  <Chronos:ChiNode xmi:id="_VViRkLTNEeOYkOsR5IzpsA" base_Class="_s2Ve4LTMEeOYkOsR5IzpsA"/>
+  <Chronos:ChiNode xmi:id="_VViRkLTNEeOYkOsR5IzpsA" base_Class="_s2Ve4LTMEeOYkOsR5IzpsA" display_value="table|id" pk_name="table"/>
   <Chronos:ChiNode xmi:id="_dQEfMLTNEeOYkOsR5IzpsA" base_Class="_s73fILTMEeOYkOsR5IzpsA" display_value="objectid|login|created"/>
   <Chronos:ChiNode xmi:id="_fMz4sLTNEeOYkOsR5IzpsA" base_Class="_s5AYYLTMEeOYkOsR5IzpsA" display_value="name" orderby="name"/>
   <Chronos:ChiNode xmi:id="_haVgMLTNEeOYkOsR5IzpsA" base_Class="_tCKUYLTMEeOYkOsR5IzpsA" display_value="objectid|attribute|language"/>
@@ -1978,4 +2178,18 @@
   <Chronos:ChiAssociation xmi:id="_l6wycE0IEeWgTqa5Y3-hfQ" fk_name="fk_chapter_id" base_Association="_rf_CcLU5EeORdpT3S9OOtw"/>
   <Chronos:ChiView xmi:id="_dGdRUHIBEeWqqJ8U6ttukA" base_Class="_dGbcIHIBEeWqqJ8U6ttukA"/>
   <Chronos:ChiActionKey xmi:id="_3W8ikHIBEeWqqJ8U6ttukA" base_Association="_j0gdsHIBEeWqqJ8U6ttukA"/>
+  <Chronos:ChiValue xmi:id="_PwJQUP_DEeWzxP-Oi6uCUQ" base_Property="_PsZYwP_DEeWzxP-Oi6uCUQ"/>
+  <Chronos:ChiValue xmi:id="_QCF78P_DEeWzxP-Oi6uCUQ" db_data_type="INT(11)" base_Property="_QCBDcP_DEeWzxP-Oi6uCUQ"/>
+  <Chronos:ChiController xmi:id="_DFA68AvLEeaBb42pasDyug" base_Class="_DE_s0AvLEeaBb42pasDyug"/>
+  <Chronos:ChiActionKey xmi:id="_J6BD4AvLEeaBb42pasDyug" action="exportCSV" base_Association="_IEklMAvLEeaBb42pasDyug"/>
+  <Chronos:ChiActionKey xmi:id="_S0xYYAvLEeaBb42pasDyug" action="continue" base_Association="_QLDkIAvLEeaBb42pasDyug"/>
+  <Chronos:ChiSystem xmi:id="_rwmW4A4HEeaDh6xKuYoMqA" plattform="wcmf" base_Class="_rt0IoA4HEeaDh6xKuYoMqA"/>
+  <Chronos:ChiActionKey xmi:id="_qy0pYBeyEeaOuvFJPYmwBw" action="restCreate" base_Association="_f2VGoBeyEeaOuvFJPYmwBw"/>
+  <Chronos:ChiActionKey xmi:id="_xZTOIBeyEeaOuvFJPYmwBw" action="restRead" base_Association="_wVm8gBeyEeaOuvFJPYmwBw"/>
+  <Chronos:ChiActionKey xmi:id="_K6ODoBezEeaOuvFJPYmwBw" action="restUpdate" base_Association="_HbG4cBezEeaOuvFJPYmwBw"/>
+  <Chronos:ChiActionKey xmi:id="_PSE0sBezEeaOuvFJPYmwBw" action="restDelete" base_Association="_OdUW8BezEeaOuvFJPYmwBw"/>
+  <Chronos:ChiActionKey xmi:id="_XGUNEBezEeaOuvFJPYmwBw" action="restCreateInRelation" base_Association="_TteB8BezEeaOuvFJPYmwBw"/>
+  <Chronos:ChiActionKey xmi:id="_gkYqABezEeaOuvFJPYmwBw" action="restReadInRelation" base_Association="_f3gV4BezEeaOuvFJPYmwBw"/>
+  <Chronos:ChiActionKey xmi:id="_oPkNABezEeaOuvFJPYmwBw" action="restUpdateInRelation" base_Association="_kyN8YBezEeaOuvFJPYmwBw"/>
+  <Chronos:ChiActionKey xmi:id="_rUsx8BezEeaOuvFJPYmwBw" action="restDeleteInRelation" base_Association="_qYav4BezEeaOuvFJPYmwBw"/>
 </xmi:XMI>

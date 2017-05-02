@@ -37,7 +37,7 @@ class SaveControllerTest extends ControllerTestCase {
   protected function getDataSet() {
     return new ArrayDataSet(array(
       'DBSequence' => array(
-        array('id' => 1),
+        array('table' => ''),
       ),
       'User' => array(
         array('id' => 0, 'login' => 'admin', 'name' => 'Administrator', 'password' => '$2y$10$WG2E.dji.UcGzNZF2AlkvOb7158PwZpM2KxwkC6FJdKr4TQC9JXYm', 'config' => ''),
@@ -76,7 +76,6 @@ class SaveControllerTest extends ControllerTestCase {
     $response = $this->runRequest('update', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
     $obj = $persistenceFacade->load($oid, BuildDepth::SINGLE);
     $this->assertEquals('AdministratorModified', $obj->getValue('name'));
 
@@ -102,7 +101,6 @@ class SaveControllerTest extends ControllerTestCase {
     $response = $this->runRequest('update', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
     $translatedObj = ObjectFactory::getInstance('localization')->loadTranslatedObject($oid, 'de');
     $this->assertEquals('title [de]', $translatedObj->getValue('title'));
 
@@ -128,9 +126,8 @@ class SaveControllerTest extends ControllerTestCase {
     $response = $this->runRequest('create', $data);
 
     // test
-    $this->assertTrue($response->getValue('success'), 'The request was successful');
-    $this->_insertOID = $response->getValue('oid');
-    $obj = $persistenceFacade->load($this->_insertOID, BuildDepth::SINGLE);
+    $insertOID = $response->getValue('oid');
+    $obj = $persistenceFacade->load($insertOID, BuildDepth::SINGLE);
     $this->assertNotNull($obj);
     $this->assertEquals('user', $obj->getValue('login'));
 
@@ -157,7 +154,6 @@ class SaveControllerTest extends ControllerTestCase {
     $response = $this->runRequest('create', $data);
 
     // test (can't insert translations for non existing objects)
-    $this->assertFalse($response->getValue('success'), 'The request was not successful');
     $errors = $response->getErrors();
     $this->assertEquals(1, sizeof($errors));
     $error = $errors[0];

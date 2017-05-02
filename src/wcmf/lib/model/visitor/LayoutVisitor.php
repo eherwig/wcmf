@@ -27,14 +27,14 @@ class LayoutVisitor extends Visitor
   const MAPTYPE_HORIZONTAL = 0;
   const MAPTYPE_VERTICAL = 1;
 
-  private $_map = array();
+  private $map = array();
 
   /**
    * Constructor.
    */
   public function __construct() {
     // set default maptype
-    $this->_map["type"] = self::MAPTYPE_HORIZONTAL;
+    $this->map["type"] = self::MAPTYPE_HORIZONTAL;
   }
 
   /**
@@ -42,7 +42,7 @@ class LayoutVisitor extends Visitor
    * @param $obj A reference to the current object.
    */
   public function visit($obj) {
-    $this->_map[$obj->getOID()] = $this->calculatePosition($obj);
+    $this->map[$obj->getOID()] = $this->calculatePosition($obj);
   }
 
   /**
@@ -51,21 +51,21 @@ class LayoutVisitor extends Visitor
    * map["type"] = MAPTYPE_HORIZONTAL | MAPTYPE_VERTICAL
    */
   public function getMap() {
-    return $this->_map;
+    return $this->map;
   }
 
   /**
    * Flip layout (x <-> y).
    */
   public function flip() {
-    foreach($this->_map as $key => $position) {
+    foreach($this->map as $key => $position) {
       $temp = $position->x;
       $position->x = $position->y;
       $position->y = $temp;
-      $this->_map[$key] = $position;
+      $this->map[$key] = $position;
     }
     // switch map type
-    $this->_map["type"] = 1-$this->_map["type"];
+    $this->map["type"] = 1-$this->map["type"];
   }
 
   /**
@@ -76,11 +76,11 @@ class LayoutVisitor extends Visitor
     $parent = & $obj->getParent();
     if (!$parent) {
       // start here
-      $position = new Position(0,0,0);
+      $position = new Position(0, 0, 0);
     }
     else {
-      $position = new Position(0,0,0);
-      $parentPos = $this->_map[$parent->getOID()];
+      $position = new Position(0, 0, 0);
+      $parentPos = $this->map[$parent->getOID()];
       $position->y = $parentPos->y + 1;
       $position->z = $parentPos->z + 1;
 
@@ -90,7 +90,7 @@ class LayoutVisitor extends Visitor
       }
       else {
         // find leftmost sibling of object
-        for ($i=0;$i<sizeOf($siblings);$i++) {
+        for ($i=0; $i<sizeOf($siblings); $i++) {
           if ($siblings[$i]->getOID() == $obj->getOID()) {
             $leftSibling = & $siblings[$i-1];
           }
@@ -99,7 +99,7 @@ class LayoutVisitor extends Visitor
         $maxX = 0;
         $nIter = new NodeIterator($leftSibling);
         foreach($nIter as $oid => $curObject) {
-          $curPosition = $this->_map[$curObject->getOID()];
+          $curPosition = $this->map[$curObject->getOID()];
           if ($curPosition->x >= $maxX) {
             $maxX = $curPosition->x;
           }
@@ -107,7 +107,7 @@ class LayoutVisitor extends Visitor
         $position->x = $maxX+2;
         // reposition parents
         while ($parent != null) {
-          $this->_map[$parent->getOID()]->x += 1;
+          $this->map[$parent->getOID()]->x += 1;
           $parent = $parent->getParent();
         }
       }

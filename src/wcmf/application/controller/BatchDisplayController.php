@@ -48,36 +48,38 @@ use wcmf\lib\presentation\Response;
 class BatchDisplayController extends BatchController {
 
   // session name constants
-  private $REQUEST = 'BatchDisplayController.request';
-  private $REGISTRY = 'BatchDisplayController.registry';
-  private $ITERATOR_ID = 'BatchDisplayController.iteratorid';
+  const REGISTRY_VAR = 'registry';
+
+  // persistent iterator id
+  const ITERATOR_ID_VAR = 'BatchDisplayController.iteratorid';
 
   // default values, maybe overriden by corresponding request values (see above)
-  private $_NODES_PER_CALL = 50;
+  private $NODES_PER_CALL = 50;
 
   /**
    * @see Controller::initialize()
    */
   public function initialize(Request $request, Response $response) {
-    parent::initialize($request, $response);
-
     // initialize controller
     if ($request->getAction() != 'continue') {
       $session = $this->getSession();
 
-      // set defaults
+      // set defaults (will be stored with first request)
       if (!$request->hasValue('nodesPerCall')) {
-        $request->setValue('nodesPerCall', $this->_NODES_PER_CALL);
+        $request->setValue('nodesPerCall', $this->NODES_PER_CALL);
       }
       if (!$request->hasValue('translateValues')) {
         $request->setValue('translateValues', true);
       }
 
-      // store request in session
-      $session->set($this->REQUEST, $request);
-      $reg = array();
-      $session->set($this->REGISTRY, $reg);
+      // initialize session variables
+      $this->setLocalSessionValue(self::REGISTRY_VAR, array());
+
+      // reset iterator
+      PersistentIterator::reset(self::ITERATOR_ID_VAR, $session);
     }
+    // initialize parent controller after default request values are set
+    parent::initialize($request, $response);
   }
 
   /**
@@ -115,21 +117,19 @@ class BatchDisplayController extends BatchController {
   }
 
   /**
-   * Initialize the iterator (oids parameter will be ignored)
-   * @param $oids The oids to process
+   * Initialize the iterator (object ids parameter will be ignored)
+   * @param $oids The object ids to process
    */
   protected function startProcess($oids) {
     $session = $this->getSession();
     $persistenceFacade = $this->getPersistenceFacade();
 
-    // restore the request from session
-    $request = $session->get($this->REQUEST);
-    $nodeOID = ObjectId::parse($request->getValue('oid'));
+    // restore the request oid from session
+    $nodeOID = ObjectId::parse($this->getRequestValue('oid'));
 
     // do the action
-    $iterator = new PersistentIterator($persistenceFacade, $session, $nodeOID);
-    $iteratorID = $iterator->save();
-    $session->set($this->ITERATOR_ID, $iteratorID);
+    $iterator = new PersistentIterator(self::ITERATOR_ID_VAR, $persistenceFacade, $session, $nodeOID);
+    $iterator->save();
 
     // display the first node in order to reduce the number of calls
     $this->loadNode($iterator->current());
@@ -138,8 +138,7 @@ class BatchDisplayController extends BatchController {
 
     // proceed if nodes are left
     if ($iterator->valid()) {
-      $iteratorID = $iterator->save();
-      $session->set($this->ITERATOR_ID, $iteratorID);
+      $iterator->save();
 
       $name = $this->getMessage()->getText('Loading tree: continue with %0%',
               array($iterator->current()));
@@ -152,32 +151,26 @@ class BatchDisplayController extends BatchController {
   }
 
   /**
-   * Load nodes provided by the persisted iterator (oids parameter will be ignored)
-   * @param $oids The oids to process
+   * Load nodes provided by the persisted iterator (object ids parameter will be ignored)
+   * @param $oids The object ids to process
    */
   protected function loadNodes($oids) {
     $session = $this->getSession();
     $persistenceFacade = $this->getPersistenceFacade();
 
-    // restore the request from session
-    $request = $session->get($this->REQUEST);
-
     // check for iterator in session
-    $iterator = null;
-    $iteratorID = $session->get($this->ITERATOR_ID);
-    if ($iteratorID != null) {
-      $iterator = PersistentIterator::load($persistenceFacade, $session, $iteratorID);
-    }
+    $iterator = PersistentIterator::load(self::ITERATOR_ID_VAR, $persistenceFacade, $session);
 
     // no iterator, finish
-    if ($iterator == null) {
+    if ($iterator == null || !$iterator->valid()) {
       // set the result and finish
       $this->endProcess();
     }
 
-    // process _NODES_PER_CALL nodes
+    // process nodes
     $counter = 0;
-    while ($iterator->valid() && $counter < $request->getValue('nodesPerCall')) {
+    $nodesPerCall = $this->getRequestValue('nodesPerCall');
+    while ($iterator->valid() && $counter < $nodesPerCall) {
       $currentOID = $iterator->current();
       $this->loadNode($currentOID);
 
@@ -188,8 +181,7 @@ class BatchDisplayController extends BatchController {
     // decide what to do next
     if ($iterator->valid()) {
       // proceed with current iterator
-      $iteratorID = $iterator->save();
-      $session->set($this->ITERATOR_ID, $iteratorID);
+      $iterator->save();
 
       $name = $this->getMessage()->getText('Loading tree: continue with %0%',
               array($iterator->current()));
@@ -205,18 +197,12 @@ class BatchDisplayController extends BatchController {
    * Finish the process and set the result
    */
   protected function endProcess() {
-    $session = $this->getSession();
-
-    // clear session variables
-    $tmp = null;
-    $session->set($this->REQUEST, $tmp);
-    $session->set($this->REGISTRY, $tmp);
-    $session->set($this->ITERATOR_ID, $tmp);
+    // nothing to do, nodes are added to response during the process already
   }
 
   /**
    * Load the node with the given object id and assign it to the response.
-   * @param $oid The oid of the node to copy
+   * @param $oid The object id of the node to copy
    */
   protected function loadNode(ObjectId $oid) {
     // check if we already loaded the node
@@ -224,10 +210,10 @@ class BatchDisplayController extends BatchController {
       return;
     }
     $persistenceFacade = $this->getPersistenceFacade();
-    $session = $this->getSession();
 
-    // restore the request from session
-    $request = $session->get($this->REQUEST);
+    // restore the request values from session
+    $language = $this->getRequestValue('language');
+    $translateValues = $this->getRequestValue('translateValues');
 
     // load the node
     $node = $persistenceFacade->load($oid);
@@ -238,14 +224,14 @@ class BatchDisplayController extends BatchController {
     // translate all nodes to the requested language if requested
     if ($this->isLocalizedRequest()) {
       $localization = $this->getLocalization();
-      $node = $localization->loadTranslation($node, $request->getValue('language'), true, true);
+      $node = $localization->loadTranslation($node, $language, true, true);
     }
 
     // translate values if requested
-    if ($request->getBooleanValue('translateValues')) {
+    if ($translateValues) {
       $nodes = array($node);
       if ($this->isLocalizedRequest()) {
-        NodeUtil::translateValues($nodes, $request->getValue('language'));
+        NodeUtil::translateValues($nodes, $language);
       }
       else {
         NodeUtil::translateValues($nodes);
@@ -271,22 +257,19 @@ class BatchDisplayController extends BatchController {
    * @param $oid The object id to register
    */
   protected function register(ObjectId $oid) {
-    $session = $this->getSession();
-    $registry = $session->get($this->REGISTRY);
-    $registry[] = $oid;
-    $session->set($this->REGISTRY, $registry);
+    $registry = $this->getLocalSessionValue(self::REGISTRY_VAR);
+    $registry[] = $oid->__toString();
+    $this->setLocalSessionValue(self::REGISTRY_VAR, $registry);
   }
 
   /**
    * Check if an object id is registered in the registry
    * @param $oid The object id to check
-   * @return Boolean whether the oid is registered or not
+   * @return Boolean whether the object id is registered or not
    */
   protected function isRegistered(ObjectId $oid) {
-    $session = $this->getSession();
-    $registry = $session->get($this->REGISTRY);
-
-    return in_array($oid, $registry);
+    $registry = $this->getLocalSessionValue(self::REGISTRY_VAR);
+    return in_array($oid->__toString(), $registry);
   }
 
   /**

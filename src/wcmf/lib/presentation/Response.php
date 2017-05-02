@@ -19,14 +19,6 @@ namespace wcmf\lib\presentation;
  */
 interface Response extends ControllerMessage {
 
-  const STATUS_200 = '200 OK';
-  const STATUS_201 = '201 Created';
-  const STATUS_202 = '202 Accepted';
-  const STATUS_204 = '204 No Content';
-
-  const STATUS_400 = '400 Bad Request';
-  const STATUS_404 = '404 Not Found';
-
   /**
    * Set a string value that uniquely identifies the request data
    * that cause the current response. This value maybe used to compare
@@ -50,21 +42,23 @@ interface Response extends ControllerMessage {
 
   /**
    * Get the response HTTP status code
-   * @return String
+   * @return Integer
    */
   public function getStatus();
 
   /**
-   * Set a file download.
+   * Set a file as response.
    * NOTE: This automatically sets the response to final (see Response::setFinal)
    * @param $filename The name of the file, must be a real file, if no content is provided
+   * @param $isDownload Boolean, indicating whether the file should be return as download or not
    * @param $content File content, if in-memory only (optional)
+   * @param $type File mime type, if in-memory only (optional)
    */
-  public function setFile($filename, $content='');
+  public function setFile($filename, $isDownload, $content='', $type='');
 
   /**
    * Get the file download
-   * @return Array with keys 'filename' and 'content' or null
+   * @return Array with keys 'isDownload', 'filename', 'content' and 'type' or null
    */
   public function getFile();
 

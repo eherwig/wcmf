@@ -22,20 +22,21 @@ use wcmf\lib\presentation\Request;
  */
 class Application {
 
-  private $_startTime = null;
-  private $_initialRequest = null;
+  private $startTime = null;
+  private $request = null;
+  private $response = null;
 
-  private $_debug = true;
+  private $debug = true;
 
-  private static $_logger = null;
+  private static $logger = null;
 
   /**
    * Constructor
    */
   public function __construct() {
-    $this->_startTime = microtime(true);
-    if (self::$_logger == null) {
-      self::$_logger = LogManager::getLogger(__CLASS__);
+    $this->startTime = microtime(true);
+    if (self::$logger == null) {
+      self::$logger = LogManager::getLogger(__CLASS__);
     }
     ob_start(array($this, "outputHandler"));
     new ErrorHandler();
@@ -46,16 +47,16 @@ class Application {
    */
   public function __destruct() {
     // log resource usage
-    if (self::$_logger->isDebugEnabled()) {
-      $timeDiff = microtime(true)-$this->_startTime;
+    if (self::$logger->isDebugEnabled()) {
+      $timeDiff = microtime(true)-$this->startTime;
       $memory = number_format(memory_get_peak_usage()/(1024*1024), 2);
-      $msg = ": Time[".round($timeDiff, 2)."s] Memory[".$memory."mb]";
-      if ($this->_initialRequest != null) {
-        $msg .= " Request[".$this->_initialRequest->getSender()."?".
-                $this->_initialRequest->getContext()."?".$this->_initialRequest->getAction()."]";
+      $msg = "Time[".round($timeDiff, 2)."s] Memory[".$memory."mb]";
+      if ($this->request != null) {
+        $msg .= " Request[".$this->request->getSender()."?".
+                $this->request->getContext()."?".$this->request->getAction()."]";
       }
       $msg .= " URI[".$_SERVER['REQUEST_URI']."]";
-      self::$_logger->debug($msg);
+      self::$logger->debug($msg);
     }
     ob_end_flush();
   }
@@ -71,18 +72,19 @@ class Application {
   public function initialize($defaultController='', $defaultContext='', $defaultAction='login') {
     $config = ObjectFactory::getInstance('configuration');
 
-    // create the Request instance
-    $this->_initialRequest = ObjectFactory::getInstance('request');
-    $this->_initialRequest->initialize($defaultController, $defaultContext, $defaultAction);
+    // create the Request and Response instances
+    $this->request = ObjectFactory::getInstance('request');
+    $this->response = ObjectFactory::getInstance('response');
+
+    $this->request->initialize($this->response,
+            $defaultController, $defaultContext, $defaultAction);
 
     // initialize session
     $session = ObjectFactory::getInstance('session');
 
-    // clear errors
-    $session->clearErrors();
-
     // load user configuration
-    $authUser = $session->getAuthUser();
+    $principalFactory = ObjectFactory::getInstance('principalFactory');
+    $authUser = $principalFactory->getUser($session->getAuthUser(), true);
     if ($authUser && strlen($authUser->getConfig()) > 0) {
       $config->addConfiguration($authUser->getConfig(), true);
     }
@@ -97,7 +99,7 @@ class Application {
     date_default_timezone_set($config->getValue('timezone', 'application'));
 
     // return the request
-    return $this->_initialRequest;
+    return $this->request;
   }
 
   /**
@@ -107,34 +109,41 @@ class Application {
    */
   public function run(Request $request) {
     // process the requested action
-    $response = ObjectFactory::getInstance('actionMapper')->processAction($request);
-    return $response;
+    ObjectFactory::getInstance('actionMapper')->processAction($request, $this->response);
+    return $this->response;
   }
 
   /**
    * Default exception handling method. Rolls back the transaction and
    * executes 'failure' action.
    * @param $exception The Exception instance
-   * @param $request The Request instance
    */
-  public function handleException(\Exception $exception, Request $request=null) {
-    self::$_logger->error($exception->getMessage()."\n".$exception->getTraceAsString());
+  public function handleException(\Exception $exception) {
+    self::$logger->error($exception->getMessage()."\n".$exception->getTraceAsString());
 
-    // rollback current transaction
-    if (ObjectFactory::getInstance('configuration') != null) {
-      $persistenceFacade = ObjectFactory::getInstance('persistenceFacade');
-      $persistenceFacade->getTransaction()->rollback();
+    try {
+      if (ObjectFactory::getInstance('configuration') != null) {
+        // rollback current transaction
+        $persistenceFacade = ObjectFactory::getInstance('persistenceFacade');
+        $persistenceFacade->getTransaction()->rollback();
 
-      // redirect to failure action
-      if ($request == null) {
-        $request = $this->_initialRequest;
+        // redirect to failure action
+        if ($this->request) {
+          $error = ApplicationError::fromException($exception);
+          $this->request->addError($error);
+          $this->response->addError($error);
+          $this->request->setAction('failure');
+          $this->response->setAction('failure');
+          $this->response->setStatus($error->getStatusCode());
+          $this->response->setFinal();
+          ObjectFactory::getInstance('actionMapper')->processAction($this->request, $this->response);
+          return;
+        }
       }
-      $request->addError(ApplicationError::fromException($exception));
-      $request->setAction('failure');
-      ObjectFactory::getInstance('actionMapper')->processAction($request);
-    }
-    else {
       throw $exception;
+    }
+    catch (Exception $ex) {
+      self::$logger->error($ex->getMessage()."\n".$ex->getTraceAsString());
     }
   }
 
@@ -145,14 +154,11 @@ class Application {
    * @return String
    */
   public function outputHandler($buffer) {
-    // log last error
+    // log last error, if it's level is enabled
     $error = error_get_last();
-    if ($error !== NULL) {
-      $info = "Error: ".$error['message']." in ".$error['file']." on line ".$error['line'];
-      self::$_logger->error($info);
-
+    if ($error !== null && ($error['type'] & ini_get('error_reporting'))) {
       // suppress error message in browser
-      if (!$this->_debug) {
+      if (!$this->debug) {
         header('HTTP/1.1 500 Internal Server Error');
         $buffer = '';
       }
