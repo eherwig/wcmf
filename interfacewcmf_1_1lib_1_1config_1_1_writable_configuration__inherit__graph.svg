@@ -28,7 +28,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html" target="_top" xlink:title="InifileConfiguration reads the application configuraiton from ini files. ">
+<g id="a_node2"><a xlink:href="classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html" target="_top" xlink:title="InifileConfiguration reads the application configuration from ini files. ">
 <polygon fill="white" stroke="black" points="0,-0.5 0,-310.5 122,-310.5 122,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="61" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">InifileConfiguration</text>
 <polyline fill="none" stroke="black" points="0,-291.5 122,-291.5 "/>
@@ -46,7 +46,7 @@
 <text text-anchor="start" x="8" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getBooleanValue()</text>
 <text text-anchor="start" x="8" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 12 more...</text>
 <text text-anchor="start" x="8" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00"># processFile()</text>
-<text text-anchor="start" x="8" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00"># _parse_ini_file()</text>
+<text text-anchor="start" x="8" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00"># parseIniFile()</text>
 <text text-anchor="start" x="8" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00"># processValues()</text>
 <text text-anchor="start" x="8" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"># processValue()</text>
 <text text-anchor="start" x="8" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># configMerge()</text>
@@ -55,7 +55,7 @@
 <text text-anchor="start" x="8" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># unserialize()</text>
 <text text-anchor="start" x="8" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getSerializeFilename()</text>
 <text text-anchor="start" x="8" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00"># checkFileDate()</text>
-<text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00"># clearAllCache()</text>
+<text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00"># configChanged()</text>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00"># buildLookupTable()</text>
 <text text-anchor="start" x="8" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00"># lookup()</text>
 </a>

@@ -77,21 +77,22 @@
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
 <g id="a_node4"><a xlink:href="classwcmf_1_1lib_1_1security_1_1impl_1_1_null_permission_manager.html" target="_top" xlink:title="NullPermissionManager acts like an absent PermissionManager. ">
-<polygon fill="white" stroke="black" points="309.5,-28 309.5,-118 428.5,-118 428.5,-28 309.5,-28"/>
-<text text-anchor="middle" x="369" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">NullPermissionManager</text>
-<polyline fill="none" stroke="black" points="309.5,-99 428.5,-99 "/>
-<text text-anchor="middle" x="369" y="-87" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="309.5,-80 428.5,-80 "/>
-<text text-anchor="start" x="317.5" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPermissions()</text>
-<text text-anchor="start" x="317.5" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPermissions()</text>
-<text text-anchor="start" x="317.5" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ createPermission()</text>
-<text text-anchor="start" x="317.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00">+ removePermission()</text>
+<polygon fill="white" stroke="black" points="309.5,-22.5 309.5,-123.5 428.5,-123.5 428.5,-22.5 309.5,-22.5"/>
+<text text-anchor="middle" x="369" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">NullPermissionManager</text>
+<polyline fill="none" stroke="black" points="309.5,-104.5 428.5,-104.5 "/>
+<text text-anchor="middle" x="369" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="309.5,-85.5 428.5,-85.5 "/>
+<text text-anchor="start" x="317.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ authorize()</text>
+<text text-anchor="start" x="317.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPermissions()</text>
+<text text-anchor="start" x="317.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPermissions()</text>
+<text text-anchor="start" x="317.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createPermission()</text>
+<text text-anchor="start" x="317.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ removePermission()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge"><title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M331.17,-172.979C338.477,-153.861 345.855,-134.557 352.131,-118.137"/>
+<path fill="none" stroke="midnightblue" d="M331.187,-172.936C337.673,-155.965 344.214,-138.85 349.991,-123.737"/>
 <polygon fill="none" stroke="midnightblue" points="327.895,-171.745 327.594,-182.335 334.434,-174.244 327.895,-171.745"/>
 </g>
 <!-- Node5 -->
