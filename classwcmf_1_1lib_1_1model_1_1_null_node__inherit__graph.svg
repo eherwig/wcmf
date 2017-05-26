@@ -36,10 +36,10 @@
 <text text-anchor="start" x="23.5" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ removeValue()</text>
 <text text-anchor="start" x="23.5" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getIndispensableObjects()</text>
 <text text-anchor="start" x="23.5" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ mergeValues()</text>
-<text text-anchor="start" x="23.5" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getNumChildren()</text>
+<text text-anchor="start" x="23.5" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getRelationNames()</text>
 <text text-anchor="start" x="23.5" y="-167.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ addNode()</text>
 <text text-anchor="start" x="23.5" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getAddedNodes()</text>
-<text text-anchor="start" x="23.5" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 23 more...</text>
+<text text-anchor="start" x="23.5" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 24 more...</text>
 <text text-anchor="start" x="23.5" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ filter()</text>
 <text text-anchor="start" x="23.5" y="-123.5" font-family="Helvetica,sans-Serif" font-size="10.00"># loadRelations()</text>
 <text text-anchor="start" x="23.5" y="-112.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getRelations()</text>

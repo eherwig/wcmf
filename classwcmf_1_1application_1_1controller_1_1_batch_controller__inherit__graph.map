@@ -1,9 +1,9 @@
 <map id="BatchController" name="BatchController">
-<area shape="rect" id="node3" href="$classwcmf_1_1application_1_1controller_1_1_batch_display_controller.html" title="BatchDisplayController is used to load a tree of Node instances recursivly and return them in lists o..." alt="" coords="5,725,169,949"/>
-<area shape="rect" id="node4" href="$classwcmf_1_1application_1_1controller_1_1_copy_controller.html" title="CopyController is used to copy or move Node instances. " alt="" coords="194,696,349,979"/>
-<area shape="rect" id="node5" href="$classwcmf_1_1application_1_1controller_1_1_c_s_v_export_controller.html" title="CSVExportController exports instances of one type into a CSV file. " alt="" coords="373,762,516,913"/>
-<area shape="rect" id="node6" href="$classwcmf_1_1application_1_1controller_1_1_c_s_v_import_controller.html" title="CSVImportController imports instances of one type into the storage. " alt="" coords="540,762,701,913"/>
-<area shape="rect" id="node7" href="$classwcmf_1_1application_1_1controller_1_1_search_index_controller.html" title="SearchIndexController creates a Lucene index from the complete datastore. " alt="" coords="726,762,875,913"/>
-<area shape="rect" id="node8" href="$classwcmf_1_1application_1_1controller_1_1_x_m_l_export_controller.html" title="XMLExportController exports the content tree into an XML file. " alt="" coords="900,696,1131,979"/>
+<area shape="rect" id="node3" href="$classwcmf_1_1application_1_1controller_1_1_batch_display_controller.html" title="BatchDisplayController is used to load a tree of Node instances recursivly and return them in lists o..." alt="" coords="5,747,169,971"/>
+<area shape="rect" id="node4" href="$classwcmf_1_1application_1_1controller_1_1_copy_controller.html" title="CopyController is used to copy or move Node instances. " alt="" coords="194,696,349,1023"/>
+<area shape="rect" id="node5" href="$classwcmf_1_1application_1_1controller_1_1_c_s_v_export_controller.html" title="CSVExportController exports instances of one type into a CSV file. " alt="" coords="373,784,516,935"/>
+<area shape="rect" id="node6" href="$classwcmf_1_1application_1_1controller_1_1_c_s_v_import_controller.html" title="CSVImportController imports instances of one type into the storage. " alt="" coords="540,784,701,935"/>
+<area shape="rect" id="node7" href="$classwcmf_1_1application_1_1controller_1_1_search_index_controller.html" title="SearchIndexController creates a Lucene index from the complete datastore. " alt="" coords="726,784,875,935"/>
+<area shape="rect" id="node8" href="$classwcmf_1_1application_1_1controller_1_1_x_m_l_export_controller.html" title="XMLExportController exports the content tree into an XML file. " alt="" coords="900,718,1131,1001"/>
 <area shape="rect" id="node2" href="$classwcmf_1_1lib_1_1presentation_1_1_controller.html" title="Controller is the base class of all controllers. " alt="" coords="445,5,620,303"/>
 </map>

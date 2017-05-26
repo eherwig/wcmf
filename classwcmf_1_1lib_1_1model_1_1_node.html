@@ -153,8 +153,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a756a28909cda55de0256078569533aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af00f8db169b979a60ecaf4b550836010"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#af00f8db169b979a60ecaf4b550836010">mergeValues</a> (<a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $object)</td></tr>
 <tr class="separator:af00f8db169b979a60ecaf4b550836010"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab738ebd7975e80c82599ae509337659a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#ab738ebd7975e80c82599ae509337659a">getNumChildren</a> ($memOnly=true)</td></tr>
-<tr class="separator:ab738ebd7975e80c82599ae509337659a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8270f912607f6faeba921accc51d6a12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#a8270f912607f6faeba921accc51d6a12">getRelationNames</a> ()</td></tr>
+<tr class="separator:a8270f912607f6faeba921accc51d6a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab69bd7cf47096d032477c858dd78cf59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#ab69bd7cf47096d032477c858dd78cf59">addNode</a> (<a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $other, $role=null, $forceSet=false, $trackChange=true, $updateOtherSide=true)</td></tr>
 <tr class="separator:ab69bd7cf47096d032477c858dd78cf59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2f0d1f5875964d5e62282b003c22f15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#ac2f0d1f5875964d5e62282b003c22f15">getAddedNodes</a> ()</td></tr>
@@ -169,6 +169,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a34ed73bac24e08d4f57005cb18fa56dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cfcc79657b237f9c8ca4fac2508a5a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#a2cfcc79657b237f9c8ca4fac2508a5a9">loadChildren</a> ($role=null, $buildDepth=<a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b">BuildDepth::SINGLE</a>)</td></tr>
 <tr class="separator:a2cfcc79657b237f9c8ca4fac2508a5a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab738ebd7975e80c82599ae509337659a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#ab738ebd7975e80c82599ae509337659a">getNumChildren</a> ($memOnly=true)</td></tr>
+<tr class="separator:ab738ebd7975e80c82599ae509337659a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb9ddab32c7880f7ef43bae443680b9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#afb9ddab32c7880f7ef43bae443680b9f">getFirstChild</a> ($role=null, $type=null, $values=null, $properties=null, $useRegExp=true)</td></tr>
 <tr class="separator:afb9ddab32c7880f7ef43bae443680b9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1891af01c18077f93d59bcb2b596ce1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#aa1891af01c18077f93d59bcb2b596ce1">getChildren</a> ($memOnly=true)</td></tr>
@@ -385,7 +387,7 @@ Static Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a91b10951978a3d34b2c3d38437627014" title="Get the names of all items. ">PersistentObject::getValueNames</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a91b10951978a3d34b2c3d38437627014" title="Get the names of all attributes. ">PersistentObject::getValueNames()</a> </dd></dl>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a91b10951978a3d34b2c3d38437627014">PersistentObject</a>.</p>
 
@@ -406,7 +408,7 @@ Static Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a8c584efa272687554bd9abe5e83fe10c" title="Get the value of a named item. ">PersistentObject::getValue</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a8c584efa272687554bd9abe5e83fe10c" title="Get the value of an attribute. ">PersistentObject::getValue()</a> </dd></dl>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a8c584efa272687554bd9abe5e83fe10c">PersistentObject</a>.</p>
 
@@ -449,7 +451,7 @@ Static Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a838057c0748db6d0db1d38fe5d06ef6b" title="Set the value of a named item if it exists. ">PersistentObject::setValue</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a838057c0748db6d0db1d38fe5d06ef6b" title="Set the value of an attribute if it exists. ">PersistentObject::setValue()</a> </dd></dl>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a838057c0748db6d0db1d38fe5d06ef6b">PersistentObject</a>.</p>
 
@@ -470,7 +472,7 @@ Static Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#ab11a5b90edec335b251652cd73876317" title="Remove a named item. ">PersistentObject::removeValue()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#ab11a5b90edec335b251652cd73876317" title="Remove an attribute. ">PersistentObject::removeValue()</a> </dd></dl>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#ab11a5b90edec335b251652cd73876317">PersistentObject</a>.</p>
 
@@ -560,8 +562,8 @@ Static Protected Member Functions</h2></td></tr>
     <tr><td class="paramname">$nodeList</td><td>An array of nodes to filter or a single <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a>. </td></tr>
     <tr><td class="paramname">$oid</td><td>The object id that the Nodes should match (optional, default: <em>null</em>) </td></tr>
     <tr><td class="paramname">$type</td><td>The type that the Nodes should match (either fully qualified or simple, if not ambiguous) (optional, default: <em>null</em>) </td></tr>
-    <tr><td class="paramname">$values</td><td>An assoziative array holding key value pairs that the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> values should match (values are interpreted as regular expression, optional, default: <em>null</em>) </td></tr>
-    <tr><td class="paramname">$properties</td><td>An assoziative array holding key value pairs that the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> properties should match (values are interpreted as regular expression, optional, default: <em>null</em>) </td></tr>
+    <tr><td class="paramname">$values</td><td>An associative array holding key value pairs that the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> values should match (values are interpreted as regular expression, optional, default: <em>null</em>) </td></tr>
+    <tr><td class="paramname">$properties</td><td>An associative array holding key value pairs that the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> properties should match (values are interpreted as regular expression, optional, default: <em>null</em>) </td></tr>
     <tr><td class="paramname">$useRegExp</td><td>Boolean whether to interpret the given values/properties as regular expressions or not (default: <em>true</em>) </td></tr>
   </table>
   </dd>
@@ -643,30 +645,23 @@ Static Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab738ebd7975e80c82599ae509337659a"></a>
+<a class="anchor" id="a8270f912607f6faeba921accc51d6a12"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">getNumChildren </td>
+          <td class="memname">getRelationNames </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$memOnly</em> = <code>true</code></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the number of children of the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">$memOnly</td><td>Boolean whether to only get the number of loaded children or all children (default: <em>true</em>). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The number of children. </dd></dl>
+<p>Get the names of all relations. </p>
+<dl class="section return"><dt>Returns</dt><dd>An array of relation names. </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00295">295</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00294">294</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -721,14 +716,14 @@ Static Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a838057c0748db6d0db1d38fe5d06ef6b" title="Set the value of a named item if it exists. ">PersistentObject::setValue()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a838057c0748db6d0db1d38fe5d06ef6b" title="Set the value of an attribute if it exists. ">PersistentObject::setValue()</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$trackChange</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a838057c0748db6d0db1d38fe5d06ef6b" title="Set the value of a named item if it exists. ">PersistentObject::setValue()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a838057c0748db6d0db1d38fe5d06ef6b" title="Set the value of an attribute if it exists. ">PersistentObject::setValue()</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$updateOtherSide</td><td>Boolean whether to update also the other side of the relation (default: <em>true</em>) </td></tr>
@@ -737,7 +732,7 @@ Static Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boolean whether the operation succeeds or not </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00309">309</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00313">313</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -757,7 +752,7 @@ Static Protected Member Functions</h2></td></tr>
 <p>Get the object ids of the nodes that were added since the node was loaded. </p>
 <p>Persistence mappers use this method when persisting the node relations. </p><dl class="section return"><dt>Returns</dt><dd>Associative array with the roles as keys and an array of PersistentObject instances as values </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00359">359</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00363">363</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -801,7 +796,7 @@ Static Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00369">369</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00373">373</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -821,7 +816,7 @@ Static Protected Member Functions</h2></td></tr>
 <p>Get the object ids of the nodes that were deleted since the node was loaded. </p>
 <p>Persistence mappers use this method when persisting the node relations. </p><dl class="section return"><dt>Returns</dt><dd>Associative array with the roles as keys and an array of ObjectId instances as values </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00428">428</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00432">432</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -867,7 +862,7 @@ Static Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00443">443</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00447">447</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -887,7 +882,7 @@ Static Protected Member Functions</h2></td></tr>
 <p>Get the order of related <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> instances, if it was defined using the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#af9481965fd50bbe15b920c34533dd476" title="Define the order of related Node instances. ">Node::setNodeOrder()</a> method. </p>
 <dl class="section return"><dt>Returns</dt><dd>Associative array of with keys 'ordered', 'moved', 'role' or null </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00457">457</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00461">461</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -924,7 +919,34 @@ Static Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00468">468</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00472">472</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab738ebd7975e80c82599ae509337659a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getNumChildren </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$memOnly</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of children of the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$memOnly</td><td>Boolean whether to only get the number of loaded children or all children (default: <em>true</em>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of children. </dd></dl>
+
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00486">486</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -975,15 +997,15 @@ Static Protected Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">$role</td><td>The role that the child should match (optional, default: <em>null</em>). </td></tr>
     <tr><td class="paramname">$type</td><td>The type that the child should match (either fully qualified or simple, if not ambiguous) (optional, default: <em>null</em>). </td></tr>
-    <tr><td class="paramname">$values</td><td>An assoziative array holding key value pairs that the child values should match (optional, default: <em>null</em>). </td></tr>
-    <tr><td class="paramname">$properties</td><td>An assoziative array holding key value pairs that the child properties should match (optional, default: <em>null</em>). </td></tr>
+    <tr><td class="paramname">$values</td><td>An associative array holding key value pairs that the child values should match (optional, default: <em>null</em>). </td></tr>
+    <tr><td class="paramname">$properties</td><td>An associative array holding key value pairs that the child properties should match (optional, default: <em>null</em>). </td></tr>
     <tr><td class="paramname">$useRegExp</td><td>Boolean whether to interpret the given values/properties as regular expressions or not (default: <em>true</em>) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> instance or null. </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00487">487</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00500">500</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1010,7 +1032,7 @@ Static Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Array PersistentObject instances. </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00502">502</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00515">515</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1069,15 +1091,15 @@ Static Protected Member Functions</h2></td></tr>
     <tr><td class="paramname">$oid</td><td>The object id that the children should match (optional, default: <em>null</em>). </td></tr>
     <tr><td class="paramname">$role</td><td>The role that the children should match (optional, default: <em>null</em>). </td></tr>
     <tr><td class="paramname">$type</td><td>The type that the children should match (either fully qualified or simple, if not ambiguous) (optional, default: <em>null</em>). </td></tr>
-    <tr><td class="paramname">$values</td><td>An assoziative array holding key value pairs that the children values should match (optional, default: <em>null</em>). </td></tr>
-    <tr><td class="paramname">$properties</td><td>An assoziative array holding key value pairs that the children properties should match (optional, default: <em>null</em>). </td></tr>
+    <tr><td class="paramname">$values</td><td>An associative array holding key value pairs that the children values should match (optional, default: <em>null</em>). </td></tr>
+    <tr><td class="paramname">$properties</td><td>An associative array holding key value pairs that the children properties should match (optional, default: <em>null</em>). </td></tr>
     <tr><td class="paramname">$useRegExp</td><td>Boolean whether to interpret the given values/properties as regular expressions or not (default: <em>true</em>) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Array containing children Nodes that matched (proxies not included). </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00520">520</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00533">533</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1097,7 +1119,7 @@ Static Protected Member Functions</h2></td></tr>
 <p>Get possible children of this node type (independent of existing children). </p>
 <dl class="section return"><dt>Returns</dt><dd>An Array with role names as keys and RelationDescription instances as values. </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00552">552</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00565">565</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1134,7 +1156,7 @@ Static Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00568">568</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00581">581</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1161,7 +1183,7 @@ Static Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of parents. </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00582">582</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00595">595</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1181,7 +1203,7 @@ Static Protected Member Functions</h2></td></tr>
 <p>Get the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a>'s parent. </p>
 <p>This method exists for compatibility with previous versions. It returns the first parent. </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00591">591</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00604">604</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1232,15 +1254,15 @@ Static Protected Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">$role</td><td>The role that the parent should match (optional, default: <em>null</em>). </td></tr>
     <tr><td class="paramname">$type</td><td>The type that the parent should match (either fully qualified or simple, if not ambiguous) (optional, default: <em>null</em>). </td></tr>
-    <tr><td class="paramname">$values</td><td>An assoziative array holding key value pairs that the parent values should match (optional, default: <em>null</em>). </td></tr>
-    <tr><td class="paramname">$properties</td><td>An assoziative array holding key value pairs that the parent properties should match (optional, default: <em>null</em>). </td></tr>
+    <tr><td class="paramname">$values</td><td>An associative array holding key value pairs that the parent values should match (optional, default: <em>null</em>). </td></tr>
+    <tr><td class="paramname">$properties</td><td>An associative array holding key value pairs that the parent properties should match (optional, default: <em>null</em>). </td></tr>
     <tr><td class="paramname">$useRegExp</td><td>Boolean whether to interpret the given values/properties as regular expressions or not (default: <em>true</em>) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> instance or null. </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00611">611</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00624">624</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1267,7 +1289,7 @@ Static Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Array PersistentObject instances. </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00627">627</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00640">640</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1326,15 +1348,15 @@ Static Protected Member Functions</h2></td></tr>
     <tr><td class="paramname">$oid</td><td>The object id that the parent should match (optional, default: <em>null</em>). </td></tr>
     <tr><td class="paramname">$role</td><td>The role that the parents should match (optional, default: <em>null</em>). </td></tr>
     <tr><td class="paramname">$type</td><td>The type that the parents should match (either fully qualified or simple, if not ambiguous) (optional, default: <em>null</em>). </td></tr>
-    <tr><td class="paramname">$values</td><td>An assoziative array holding key value pairs that the parent values should match (optional, default: <em>null</em>). </td></tr>
-    <tr><td class="paramname">$properties</td><td>An assoziative array holding key value pairs that the parent properties should match (optional, default: <em>null</em>). </td></tr>
+    <tr><td class="paramname">$values</td><td>An associative array holding key value pairs that the parent values should match (optional, default: <em>null</em>). </td></tr>
+    <tr><td class="paramname">$properties</td><td>An associative array holding key value pairs that the parent properties should match (optional, default: <em>null</em>). </td></tr>
     <tr><td class="paramname">$useRegExp</td><td>Boolean whether to interpret the given values/properties as regular expressions or not (default: <em>true</em>) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Array containing parent Nodes that matched (proxies not included). </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00645">645</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00658">658</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1354,7 +1376,7 @@ Static Protected Member Functions</h2></td></tr>
 <p>Get possible parents of this node type (independent of existing parents). </p>
 <dl class="section return"><dt>Returns</dt><dd>An Array with role names as keys and RelationDescription instances as values. </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00677">677</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00690">690</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1381,7 +1403,7 @@ Static Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>RelationDescription instance or null, if the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> is not related </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00691">691</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00704">704</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1426,7 +1448,7 @@ Static Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00715">715</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00728">728</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1462,7 +1484,7 @@ Static Protected Member Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a7d43a99f995ce575be785220028ad31b" title="Get the relations for this type. ">PersistenceMapper::getRelations</a> (default: 'all') </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>An array containing the RelationDescription instances. </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00761">761</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00774">774</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1506,7 +1528,7 @@ Static Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An array containing the relatives. </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00771">771</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00784">784</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1550,7 +1572,7 @@ Static Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of relatives. </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00807">807</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00820">820</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1576,7 +1598,7 @@ Static Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00815">815</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00828">828</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1602,7 +1624,7 @@ Static Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00825">825</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00838">838</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1624,7 +1646,7 @@ Static Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a10c4f56b4c915a4a77e75a3b4452240b">PersistentObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00840">840</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00853">853</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1644,7 +1666,7 @@ Static Protected Member Functions</h2></td></tr>
 <p>Get a string representation of the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The string representation of the <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="_node_8php_source.html#l00848">848</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
+<p>Definition at line <a class="el" href="_node_8php_source.html#l00861">861</a> of file <a class="el" href="_node_8php_source.html">Node.php</a>.</p>
 
 </div>
 </div>
@@ -1717,7 +1739,7 @@ Static Protected Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu May 11 2017 23:22:55 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sat May 27 2017 01:21:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>
