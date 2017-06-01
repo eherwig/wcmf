@@ -8,5 +8,6 @@ var searchData=
   ['cache_5fkey_5ftags_5fto_5fclose',['CACHE_KEY_TAGS_TO_CLOSE',['../classwcmf_1_1application_1_1controller_1_1_x_m_l_export_controller.html#aa7306a954af1542d45848bc19ffe2f28',1,'wcmf::application::controller::XMLExportController']]],
   ['cache_5fsection',['CACHE_SECTION',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_json_format.html#a1b342d157cc0b18b046ab78bf5ee5f33',1,'wcmf::lib::presentation::format::impl::JsonFormat']]],
   ['create',['CREATE',['../classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html#ae7d71eec207ebcef53a99536e8ca8825',1,'wcmf::lib::persistence::PersistenceAction']]],
+  ['created_5fattribute',['CREATED_ATTRIBUTE',['../classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_creator_role.html#a9a9362923a66b12496dac30681706db8',1,'wcmf::lib::security::principal::impl::CreatorRole']]],
   ['csrf_5ftoken_5fparam',['CSRF_TOKEN_PARAM',['../classwcmf_1_1lib_1_1presentation_1_1_controller.html#af76f3cc0c2cf951cfccc44c977c49f7d',1,'wcmf::lib::presentation::Controller']]]
 ];

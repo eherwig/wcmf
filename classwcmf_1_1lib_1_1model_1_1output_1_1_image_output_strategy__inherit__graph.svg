@@ -16,21 +16,21 @@
 <polyline fill="none" stroke="black" points="13.5,-396.5 131.5,-396.5 "/>
 <text text-anchor="start" x="21.5" y="-384.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LINETYPE_DIRECT</text>
 <text text-anchor="start" x="21.5" y="-373.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LINETYPE_ROUTED</text>
-<text text-anchor="start" x="21.5" y="-362.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $format</text>
-<text text-anchor="start" x="21.5" y="-351.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $file</text>
-<text text-anchor="start" x="21.5" y="-340.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $map</text>
-<text text-anchor="start" x="21.5" y="-329.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $img</text>
-<text text-anchor="start" x="21.5" y="-318.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $width</text>
-<text text-anchor="start" x="21.5" y="-307.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $height</text>
-<text text-anchor="start" x="21.5" y="-296.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $scale</text>
-<text text-anchor="start" x="21.5" y="-285.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $border</text>
-<text text-anchor="start" x="21.5" y="-274.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $bgColor</text>
-<text text-anchor="start" x="21.5" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $txtColor</text>
-<text text-anchor="start" x="21.5" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $lineColor</text>
-<text text-anchor="start" x="21.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $lineType</text>
-<text text-anchor="start" x="21.5" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $labelDim</text>
-<text text-anchor="start" x="21.5" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $textPos</text>
-<text text-anchor="start" x="21.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $usemap</text>
+<text text-anchor="start" x="21.5" y="-362.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_format</text>
+<text text-anchor="start" x="21.5" y="-351.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_file</text>
+<text text-anchor="start" x="21.5" y="-340.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_map</text>
+<text text-anchor="start" x="21.5" y="-329.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_img</text>
+<text text-anchor="start" x="21.5" y="-318.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_width</text>
+<text text-anchor="start" x="21.5" y="-307.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_height</text>
+<text text-anchor="start" x="21.5" y="-296.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_xscale</text>
+<text text-anchor="start" x="21.5" y="-285.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_yscale</text>
+<text text-anchor="start" x="21.5" y="-274.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_border</text>
+<text text-anchor="start" x="21.5" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_bgColor</text>
+<text text-anchor="start" x="21.5" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_txtColor</text>
+<text text-anchor="start" x="21.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_lineColor</text>
+<text text-anchor="start" x="21.5" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_labelDim</text>
+<text text-anchor="start" x="21.5" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_textPos</text>
+<text text-anchor="start" x="21.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00"># $_usemap</text>
 <polyline fill="none" stroke="black" points="13.5,-201.5 131.5,-201.5 "/>
 <text text-anchor="start" x="21.5" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
 <text text-anchor="start" x="21.5" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ writeHeader()</text>

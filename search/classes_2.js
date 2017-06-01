@@ -15,6 +15,7 @@ var searchData=
   ['controllermessage',['ControllerMessage',['../interfacewcmf_1_1lib_1_1presentation_1_1_controller_message.html',1,'wcmf::lib::presentation']]],
   ['controllertestcase',['ControllerTestCase',['../classwcmf_1_1test_1_1lib_1_1_controller_test_case.html',1,'wcmf::test::lib']]],
   ['copycontroller',['CopyController',['../classwcmf_1_1application_1_1controller_1_1_copy_controller.html',1,'wcmf::application::controller']]],
+  ['creatorrole',['CreatorRole',['../classwcmf_1_1lib_1_1security_1_1principal_1_1impl_1_1_creator_role.html',1,'wcmf::lib::security::principal::impl']]],
   ['criteria',['Criteria',['../classwcmf_1_1lib_1_1persistence_1_1_criteria.html',1,'wcmf::lib::persistence']]],
   ['csvexportcontroller',['CSVExportController',['../classwcmf_1_1application_1_1controller_1_1_c_s_v_export_controller.html',1,'wcmf::application::controller']]],
   ['csvimportcontroller',['CSVImportController',['../classwcmf_1_1application_1_1controller_1_1_c_s_v_import_controller.html',1,'wcmf::application::controller']]]
