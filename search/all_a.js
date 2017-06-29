@@ -10,6 +10,7 @@ var searchData=
   ['importnodes',['importNodes',['../classwcmf_1_1application_1_1controller_1_1_c_s_v_import_controller.html#a3ba3fa9d45a841622c0692ee719e30f5',1,'wcmf::application::controller::CSVImportController']]],
   ['index',['index',['../classwcmf_1_1application_1_1controller_1_1_search_index_controller.html#a1a3ce76c9e2057d80e80f99ee45eca97',1,'wcmf::application::controller::SearchIndexController']]],
   ['indexedsearch',['IndexedSearch',['../interfacewcmf_1_1lib_1_1search_1_1_indexed_search.html',1,'wcmf::lib::search']]],
+  ['indexstrategy',['IndexStrategy',['../interfacewcmf_1_1lib_1_1search_1_1impl_1_1_index_strategy.html',1,'wcmf::lib::search::impl']]],
   ['infinite',['INFINITE',['../classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#aa77abffeefb50083440c805c0fd76695',1,'wcmf::lib::persistence::BuildDepth']]],
   ['info',['info',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_log4php_logger.html#adfa8ba1d05a27351e0d97169d98bb9cf',1,'wcmf\lib\core\impl\Log4phpLogger\info()'],['../classwcmf_1_1lib_1_1core_1_1impl_1_1_monolog_file_logger.html#adfa8ba1d05a27351e0d97169d98bb9cf',1,'wcmf\lib\core\impl\MonologFileLogger\info()'],['../interfacewcmf_1_1lib_1_1core_1_1_logger.html#adfa8ba1d05a27351e0d97169d98bb9cf',1,'wcmf\lib\core\Logger\info()']]],
   ['inifileconfiguration',['InifileConfiguration',['../classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html',1,'wcmf::lib::config::impl']]],

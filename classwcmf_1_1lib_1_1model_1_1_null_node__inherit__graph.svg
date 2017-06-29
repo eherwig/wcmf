@@ -33,13 +33,13 @@
 <text text-anchor="start" x="23.5" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getValueNames()</text>
 <text text-anchor="start" x="23.5" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getValue()</text>
 <text text-anchor="start" x="23.5" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setValue()</text>
-<text text-anchor="start" x="23.5" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getIndispensableObjects()</text>
-<text text-anchor="start" x="23.5" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ mergeValues()</text>
-<text text-anchor="start" x="23.5" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getNumChildren()</text>
-<text text-anchor="start" x="23.5" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ addNode()</text>
-<text text-anchor="start" x="23.5" y="-167.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getAddedNodes()</text>
-<text text-anchor="start" x="23.5" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ deleteNode()</text>
-<text text-anchor="start" x="23.5" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 22 more...</text>
+<text text-anchor="start" x="23.5" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ removeValue()</text>
+<text text-anchor="start" x="23.5" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getIndispensableObjects()</text>
+<text text-anchor="start" x="23.5" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ mergeValues()</text>
+<text text-anchor="start" x="23.5" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getRelationNames()</text>
+<text text-anchor="start" x="23.5" y="-167.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ addNode()</text>
+<text text-anchor="start" x="23.5" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getAddedNodes()</text>
+<text text-anchor="start" x="23.5" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 24 more...</text>
 <text text-anchor="start" x="23.5" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ filter()</text>
 <text text-anchor="start" x="23.5" y="-123.5" font-family="Helvetica,sans-Serif" font-size="10.00"># loadRelations()</text>
 <text text-anchor="start" x="23.5" y="-112.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getRelations()</text>
@@ -61,16 +61,16 @@
 <text text-anchor="middle" x="105" y="-544.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <polyline fill="none" stroke="black" points="16.5,-537.5 193.5,-537.5 "/>
 <text text-anchor="start" x="24.5" y="-525.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
-<text text-anchor="start" x="24.5" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ initialize()</text>
-<text text-anchor="start" x="24.5" y="-503.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getType()</text>
-<text text-anchor="start" x="24.5" y="-492.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMapper()</text>
-<text text-anchor="start" x="24.5" y="-481.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getOID()</text>
-<text text-anchor="start" x="24.5" y="-470.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOID()</text>
-<text text-anchor="start" x="24.5" y="-459.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getState()</text>
-<text text-anchor="start" x="24.5" y="-448.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setState()</text>
-<text text-anchor="start" x="24.5" y="-437.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ delete()</text>
-<text text-anchor="start" x="24.5" y="-426.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __clone()</text>
-<text text-anchor="start" x="24.5" y="-415.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 32 more...</text>
+<text text-anchor="start" x="24.5" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getType()</text>
+<text text-anchor="start" x="24.5" y="-503.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMapper()</text>
+<text text-anchor="start" x="24.5" y="-492.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getOID()</text>
+<text text-anchor="start" x="24.5" y="-481.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOID()</text>
+<text text-anchor="start" x="24.5" y="-470.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getState()</text>
+<text text-anchor="start" x="24.5" y="-459.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setState()</text>
+<text text-anchor="start" x="24.5" y="-448.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ delete()</text>
+<text text-anchor="start" x="24.5" y="-437.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __clone()</text>
+<text text-anchor="start" x="24.5" y="-426.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ copyValues()</text>
+<text text-anchor="start" x="24.5" y="-415.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 31 more...</text>
 <text text-anchor="start" x="24.5" y="-404.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setOIDInternal()</text>
 <text text-anchor="start" x="24.5" y="-393.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setValueInternal()</text>
 <text text-anchor="start" x="24.5" y="-382.5" font-family="Helvetica,sans-Serif" font-size="10.00"># validateValueAgainstValidateType()</text>
@@ -93,17 +93,17 @@
 <text text-anchor="start" x="8" y="-759.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ STATE_NEW</text>
 <text text-anchor="start" x="8" y="-748.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ STATE_DELETED</text>
 <polyline fill="none" stroke="black" points="0,-741.5 106,-741.5 "/>
-<text text-anchor="start" x="8" y="-729.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ initialize()</text>
-<text text-anchor="start" x="8" y="-718.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getType()</text>
-<text text-anchor="start" x="8" y="-707.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMapper()</text>
-<text text-anchor="start" x="8" y="-696.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getOID()</text>
-<text text-anchor="start" x="8" y="-685.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOID()</text>
-<text text-anchor="start" x="8" y="-674.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getState()</text>
-<text text-anchor="start" x="8" y="-663.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setState()</text>
-<text text-anchor="start" x="8" y="-652.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ delete()</text>
-<text text-anchor="start" x="8" y="-641.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __clone()</text>
-<text text-anchor="start" x="8" y="-630.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ copyValues()</text>
-<text text-anchor="start" x="8" y="-619.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 28 more...</text>
+<text text-anchor="start" x="8" y="-729.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getType()</text>
+<text text-anchor="start" x="8" y="-718.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMapper()</text>
+<text text-anchor="start" x="8" y="-707.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getOID()</text>
+<text text-anchor="start" x="8" y="-696.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOID()</text>
+<text text-anchor="start" x="8" y="-685.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getState()</text>
+<text text-anchor="start" x="8" y="-674.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setState()</text>
+<text text-anchor="start" x="8" y="-663.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ delete()</text>
+<text text-anchor="start" x="8" y="-652.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __clone()</text>
+<text text-anchor="start" x="8" y="-641.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ copyValues()</text>
+<text text-anchor="start" x="8" y="-630.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ mergeValues()</text>
+<text text-anchor="start" x="8" y="-619.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 27 more...</text>
 </a>
 </g>
 </g>

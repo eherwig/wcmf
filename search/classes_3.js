@@ -9,6 +9,7 @@ var searchData=
   ['defaulteventmanager',['DefaultEventManager',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_default_event_manager.html',1,'wcmf::lib::core::impl']]],
   ['defaultfactory',['DefaultFactory',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_default_factory.html',1,'wcmf::lib::core::impl']]],
   ['defaultformatter',['DefaultFormatter',['../classwcmf_1_1lib_1_1presentation_1_1format_1_1impl_1_1_default_formatter.html',1,'wcmf::lib::presentation::format::impl']]],
+  ['defaultindexstrategy',['DefaultIndexStrategy',['../classwcmf_1_1lib_1_1search_1_1impl_1_1_default_index_strategy.html',1,'wcmf::lib::search::impl']]],
   ['defaultlocalization',['DefaultLocalization',['../classwcmf_1_1lib_1_1i18n_1_1impl_1_1_default_localization.html',1,'wcmf::lib::i18n::impl']]],
   ['defaultlockhandler',['DefaultLockHandler',['../classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1impl_1_1_default_lock_handler.html',1,'wcmf::lib::persistence::concurrency::impl']]],
   ['defaultoutputstrategy',['DefaultOutputStrategy',['../classwcmf_1_1lib_1_1persistence_1_1output_1_1impl_1_1_default_output_strategy.html',1,'wcmf::lib::persistence::output::impl']]],

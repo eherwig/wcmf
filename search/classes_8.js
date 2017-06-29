@@ -6,6 +6,7 @@ var searchData=
   ['imageoutputstrategy',['ImageOutputStrategy',['../classwcmf_1_1lib_1_1model_1_1output_1_1_image_output_strategy.html',1,'wcmf::lib::model::output']]],
   ['imageutil',['ImageUtil',['../classwcmf_1_1lib_1_1io_1_1_image_util.html',1,'wcmf::lib::io']]],
   ['indexedsearch',['IndexedSearch',['../interfacewcmf_1_1lib_1_1search_1_1_indexed_search.html',1,'wcmf::lib::search']]],
+  ['indexstrategy',['IndexStrategy',['../interfacewcmf_1_1lib_1_1search_1_1impl_1_1_index_strategy.html',1,'wcmf::lib::search::impl']]],
   ['inifileconfiguration',['InifileConfiguration',['../classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html',1,'wcmf::lib::config::impl']]],
   ['insertoperation',['InsertOperation',['../classwcmf_1_1lib_1_1persistence_1_1_insert_operation.html',1,'wcmf::lib::persistence']]],
   ['internallink',['InternalLink',['../classwcmf_1_1lib_1_1presentation_1_1link_1_1_internal_link.html',1,'wcmf::lib::presentation::link']]],
