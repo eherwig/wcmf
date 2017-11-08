@@ -99,23 +99,25 @@
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
 <g id="a_node6"><a xlink:href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html" target="_top" xlink:title="TransactionEvent instances are fired at different phases of a transaction. ">
-<polygon fill="white" stroke="black" points="473.5,-17 473.5,-129 587.5,-129 587.5,-17 473.5,-17"/>
-<text text-anchor="middle" x="530.5" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">TransactionEvent</text>
-<polyline fill="none" stroke="black" points="473.5,-110 587.5,-110 "/>
-<text text-anchor="start" x="481.5" y="-98" font-family="Helvetica,sans-Serif" font-size="10.00">+ NAME</text>
-<text text-anchor="start" x="481.5" y="-87" font-family="Helvetica,sans-Serif" font-size="10.00">+ BEFORE_COMMIT</text>
-<text text-anchor="start" x="481.5" y="-76" font-family="Helvetica,sans-Serif" font-size="10.00">+ AFTER_COMMIT</text>
-<text text-anchor="start" x="481.5" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">+ AFTER_ROLLBACK</text>
-<polyline fill="none" stroke="black" points="473.5,-58 587.5,-58 "/>
-<text text-anchor="start" x="481.5" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
-<text text-anchor="start" x="481.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPhase()</text>
-<text text-anchor="start" x="481.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">+ getChangedOids()</text>
+<polygon fill="white" stroke="black" points="473.5,-6 473.5,-140 587.5,-140 587.5,-6 473.5,-6"/>
+<text text-anchor="middle" x="530.5" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00">TransactionEvent</text>
+<polyline fill="none" stroke="black" points="473.5,-121 587.5,-121 "/>
+<text text-anchor="start" x="481.5" y="-109" font-family="Helvetica,sans-Serif" font-size="10.00">+ NAME</text>
+<text text-anchor="start" x="481.5" y="-98" font-family="Helvetica,sans-Serif" font-size="10.00">+ BEFORE_COMMIT</text>
+<text text-anchor="start" x="481.5" y="-87" font-family="Helvetica,sans-Serif" font-size="10.00">+ AFTER_COMMIT</text>
+<text text-anchor="start" x="481.5" y="-76" font-family="Helvetica,sans-Serif" font-size="10.00">+ AFTER_ROLLBACK</text>
+<polyline fill="none" stroke="black" points="473.5,-69 587.5,-69 "/>
+<text text-anchor="start" x="481.5" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
+<text text-anchor="start" x="481.5" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPhase()</text>
+<text text-anchor="start" x="481.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00">+ getInsertedOids()</text>
+<text text-anchor="start" x="481.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">+ getUpdatedOids()</text>
+<text text-anchor="start" x="481.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDeletedOids()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge"><title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M442.293,-174.656C454.739,-160.453 468.913,-144.279 482.202,-129.114"/>
+<path fill="none" stroke="midnightblue" d="M442.418,-174.513C452.094,-163.471 462.807,-151.246 473.333,-139.235"/>
 <polygon fill="none" stroke="midnightblue" points="439.531,-172.497 435.572,-182.325 444.796,-177.11 439.531,-172.497"/>
 </g>
 <!-- Node7 -->

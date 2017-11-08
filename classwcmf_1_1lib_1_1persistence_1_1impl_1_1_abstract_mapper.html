@@ -123,16 +123,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html" title="AbstractMapper provides a basic implementation for other mapper classes. ">AbstractMapper</a> provides a basic implementation for other mapper classes. </p>
-<p>It handles authorization on entity level and calls the lifecycle callcacks of <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject defines the interface of all persistent objects. ">PersistentObject</a> instances. Authorization on attribute level has to be implemented by subclasses.</p>
+<p>It handles authorization on entity level and calls the lifecycle callbacks of <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject defines the interface of all persistent objects. ">PersistentObject</a> instances. Authorization on attribute level has to be implemented by subclasses.</p>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00038">38</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00041">41</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for AbstractMapper:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper__inherit__graph.svg" width="258" height="1447"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper__inherit__graph.svg" width="258" height="1462"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -141,10 +142,28 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae3f55400613d23694ab747757657ba94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4afdf4b4f4aae2ef2b5a7f011b036d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#ac4afdf4b4f4aae2ef2b5a7f011b036d2">setLogStrategy</a> (<a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1output_1_1_output_strategy.html">OutputStrategy</a> $logStrategy)</td></tr>
 <tr class="separator:ac4afdf4b4f4aae2ef2b5a7f011b036d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86b85f2bc761b324eb22f29f82da5fe8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a86b85f2bc761b324eb22f29f82da5fe8">getTypeDisplayName</a> (<a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a> $message)</td></tr>
+<tr class="separator:a86b85f2bc761b324eb22f29f82da5fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af77ff3ac39097767f4624c769459481c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#af77ff3ac39097767f4624c769459481c">getTypeDescription</a> (<a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a> $message)</td></tr>
+<tr class="separator:af77ff3ac39097767f4624c769459481c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1993bb56d99fa01bed86153f6ed1fdb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#ad1993bb56d99fa01bed86153f6ed1fdb">hasRelation</a> ($roleName)</td></tr>
 <tr class="separator:ad1993bb56d99fa01bed86153f6ed1fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac77dee55b074f69295e108d124098139"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#ac77dee55b074f69295e108d124098139">getRelation</a> ($roleName)</td></tr>
+<tr class="separator:ac77dee55b074f69295e108d124098139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d40dfa9f1ee6e4e3b59750796bc9b12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a3d40dfa9f1ee6e4e3b59750796bc9b12">getRelationsByType</a> ($type)</td></tr>
+<tr class="separator:a3d40dfa9f1ee6e4e3b59750796bc9b12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac78ba27a41d0291c61326022489d4986"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#ac78ba27a41d0291c61326022489d4986">hasAttribute</a> ($name)</td></tr>
 <tr class="separator:ac78ba27a41d0291c61326022489d4986"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae954da422d40fc286691e54679e44c6f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#ae954da422d40fc286691e54679e44c6f">getAttribute</a> ($name)</td></tr>
+<tr class="separator:ae954da422d40fc286691e54679e44c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14eee92df72ec639998545a21043d26f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a14eee92df72ec639998545a21043d26f">getReferences</a> ()</td></tr>
+<tr class="separator:a14eee92df72ec639998545a21043d26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ca3f0bebbdf646f0dd800f91c4de291"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a6ca3f0bebbdf646f0dd800f91c4de291">getAttributeDisplayName</a> ($name, <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a> $message)</td></tr>
+<tr class="separator:a6ca3f0bebbdf646f0dd800f91c4de291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7a1c75f26c6eedd2d2967cdf00f82ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#af7a1c75f26c6eedd2d2967cdf00f82ae">getAttributeDescription</a> ($name, <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a> $message)</td></tr>
+<tr class="separator:af7a1c75f26c6eedd2d2967cdf00f82ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad92c14b6c86304d3f1fb86b2936d3408"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#ad92c14b6c86304d3f1fb86b2936d3408">getProperties</a> ()</td></tr>
+<tr class="separator:ad92c14b6c86304d3f1fb86b2936d3408"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90b99cef8752ebb13eb49a1005a251ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a90b99cef8752ebb13eb49a1005a251ec">load</a> (<a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid, $buildDepth=<a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b">BuildDepth::SINGLE</a>)</td></tr>
 <tr class="separator:a90b99cef8752ebb13eb49a1005a251ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2088197336092f89458036911a002bef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a2088197336092f89458036911a002bef">create</a> ($type, $buildDepth=<a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b">BuildDepth::SINGLE</a>)</td></tr>
@@ -162,34 +181,12 @@ Public Member Functions</h2></td></tr>
 <tr class="inherit_header pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html">PersistenceMapper</a></td></tr>
 <tr class="memitem:a830b5c75df72b32396701bc563fbe3c7 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a830b5c75df72b32396701bc563fbe3c7">getType</a> ()</td></tr>
 <tr class="separator:a830b5c75df72b32396701bc563fbe3c7 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86b85f2bc761b324eb22f29f82da5fe8 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a86b85f2bc761b324eb22f29f82da5fe8">getTypeDisplayName</a> (<a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a> $message)</td></tr>
-<tr class="separator:a86b85f2bc761b324eb22f29f82da5fe8 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af77ff3ac39097767f4624c769459481c inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#af77ff3ac39097767f4624c769459481c">getTypeDescription</a> (<a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a> $message)</td></tr>
-<tr class="separator:af77ff3ac39097767f4624c769459481c inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d1403c81daa088071b2b84bc403ce0e inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a3d1403c81daa088071b2b84bc403ce0e">getPkNames</a> ()</td></tr>
 <tr class="separator:a3d1403c81daa088071b2b84bc403ce0e inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a177b44fc2918c4333031e42aca566f69 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a177b44fc2918c4333031e42aca566f69">getQuoteIdentifierSymbol</a> ()</td></tr>
-<tr class="separator:a177b44fc2918c4333031e42aca566f69 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe707d8966fc66436884e8f88e96cc7c inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#abe707d8966fc66436884e8f88e96cc7c">quoteIdentifier</a> ($identifier)</td></tr>
-<tr class="separator:abe707d8966fc66436884e8f88e96cc7c inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ee8849dfaaace6f8ae526e45c094128 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a1ee8849dfaaace6f8ae526e45c094128">quoteValue</a> ($value)</td></tr>
-<tr class="separator:a1ee8849dfaaace6f8ae526e45c094128 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d43a99f995ce575be785220028ad31b inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a7d43a99f995ce575be785220028ad31b">getRelations</a> ($hierarchyType='all')</td></tr>
 <tr class="separator:a7d43a99f995ce575be785220028ad31b inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac77dee55b074f69295e108d124098139 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#ac77dee55b074f69295e108d124098139">getRelation</a> ($roleName)</td></tr>
-<tr class="separator:ac77dee55b074f69295e108d124098139 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d40dfa9f1ee6e4e3b59750796bc9b12 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a3d40dfa9f1ee6e4e3b59750796bc9b12">getRelationsByType</a> ($type)</td></tr>
-<tr class="separator:a3d40dfa9f1ee6e4e3b59750796bc9b12 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fe8cfe8bdfa3b4c980d90ffee82864b inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a2fe8cfe8bdfa3b4c980d90ffee82864b">getAttributes</a> (array $tags=[], $matchMode='all')</td></tr>
 <tr class="separator:a2fe8cfe8bdfa3b4c980d90ffee82864b inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae954da422d40fc286691e54679e44c6f inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#ae954da422d40fc286691e54679e44c6f">getAttribute</a> ($name)</td></tr>
-<tr class="separator:ae954da422d40fc286691e54679e44c6f inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ca3f0bebbdf646f0dd800f91c4de291 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a6ca3f0bebbdf646f0dd800f91c4de291">getAttributeDisplayName</a> ($name, <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a> $message)</td></tr>
-<tr class="separator:a6ca3f0bebbdf646f0dd800f91c4de291 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7a1c75f26c6eedd2d2967cdf00f82ae inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#af7a1c75f26c6eedd2d2967cdf00f82ae">getAttributeDescription</a> ($name, <a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a> $message)</td></tr>
-<tr class="separator:af7a1c75f26c6eedd2d2967cdf00f82ae inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad92c14b6c86304d3f1fb86b2936d3408 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#ad92c14b6c86304d3f1fb86b2936d3408">getProperties</a> ()</td></tr>
-<tr class="separator:ad92c14b6c86304d3f1fb86b2936d3408 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a267fcef60c39cb385faf112bb3546b94 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a267fcef60c39cb385faf112bb3546b94">isSortable</a> ($roleName=null)</td></tr>
 <tr class="separator:a267fcef60c39cb385faf112bb3546b94 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a672ed134be9ae207ec089c1d1bfde676 inherit pub_methods_interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a672ed134be9ae207ec089c1d1bfde676">getSortkey</a> ($roleName=null)</td></tr>
@@ -287,7 +284,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00059">59</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00062">62</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -314,7 +311,49 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00076">76</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00079">79</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a86b85f2bc761b324eb22f29f82da5fe8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getTypeDisplayName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a>&#160;</td>
+          <td class="paramname"><em>$message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a86b85f2bc761b324eb22f29f82da5fe8" title="Get the display name of the type. ">PersistenceMapper::getTypeDisplayName()</a> </dd></dl>
+
+<p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a86b85f2bc761b324eb22f29f82da5fe8">PersistenceMapper</a>.</p>
+
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00086">86</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af77ff3ac39097767f4624c769459481c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getTypeDescription </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a>&#160;</td>
+          <td class="paramname"><em>$message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#af77ff3ac39097767f4624c769459481c" title="Get the description of the type. ">PersistenceMapper::getTypeDescription()</a> </dd></dl>
+
+<p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#af77ff3ac39097767f4624c769459481c">PersistenceMapper</a>.</p>
+
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00093">93</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -335,7 +374,49 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#ad1993bb56d99fa01bed86153f6ed1fdb">PersistenceMapper</a>.</p>
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00083">83</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00100">100</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac77dee55b074f69295e108d124098139"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getRelation </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$roleName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#ac77dee55b074f69295e108d124098139" title="Get the definition for a relation. ">PersistenceMapper::getRelation()</a> </dd></dl>
+
+<p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#ac77dee55b074f69295e108d124098139">PersistenceMapper</a>.</p>
+
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00108">108</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3d40dfa9f1ee6e4e3b59750796bc9b12"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getRelationsByType </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a3d40dfa9f1ee6e4e3b59750796bc9b12" title="Get the definitions for relations to a given type. ">PersistenceMapper::getRelationsByType()</a> </dd></dl>
+
+<p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a3d40dfa9f1ee6e4e3b59750796bc9b12">PersistenceMapper</a>.</p>
+
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00118">118</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -356,7 +437,130 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#ac78ba27a41d0291c61326022489d4986">PersistenceMapper</a>.</p>
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00101">101</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00129">129</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae954da422d40fc286691e54679e44c6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getAttribute </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#ae954da422d40fc286691e54679e44c6f" title="Get the definition for an attribute. ">PersistenceMapper::getAttribute()</a> </dd></dl>
+
+<p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#ae954da422d40fc286691e54679e44c6f">PersistenceMapper</a>.</p>
+
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00137">137</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a14eee92df72ec639998545a21043d26f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getReferences </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a14eee92df72ec639998545a21043d26f" title="Get the references to other entities. ">PersistenceMapper::getReferences()</a> </dd></dl>
+
+<p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a14eee92df72ec639998545a21043d26f">PersistenceMapper</a>.</p>
+
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00147">147</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ca3f0bebbdf646f0dd800f91c4de291"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getAttributeDisplayName </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a>&#160;</td>
+          <td class="paramname"><em>$message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a6ca3f0bebbdf646f0dd800f91c4de291" title="Get the display name of the type. ">PersistenceMapper::getAttributeDisplayName()</a> </dd></dl>
+
+<p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a6ca3f0bebbdf646f0dd800f91c4de291">PersistenceMapper</a>.</p>
+
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00155">155</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af7a1c75f26c6eedd2d2967cdf00f82ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getAttributeDescription </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfacewcmf_1_1lib_1_1i18n_1_1_message.html">Message</a>&#160;</td>
+          <td class="paramname"><em>$message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#af7a1c75f26c6eedd2d2967cdf00f82ae" title="Get the description of the attribute. ">PersistenceMapper::getAttributeDescription()</a> </dd></dl>
+
+<p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#af7a1c75f26c6eedd2d2967cdf00f82ae">PersistenceMapper</a>.</p>
+
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00162">162</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad92c14b6c86304d3f1fb86b2936d3408"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getProperties </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#ad92c14b6c86304d3f1fb86b2936d3408" title="Get meta information on the mapped class. ">PersistenceMapper::getProperties()</a> </dd></dl>
+
+<p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#ad92c14b6c86304d3f1fb86b2936d3408">PersistenceMapper</a>.</p>
+
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00169">169</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -387,7 +591,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a90b99cef8752ebb13eb49a1005a251ec">PersistenceMapper</a>.</p>
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00119">119</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00176">176</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -418,7 +622,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a2088197336092f89458036911a002bef">PersistenceMapper</a>.</p>
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00140">140</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00197">197</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -439,7 +643,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#aa39e50f302f70bdb719120f322d49cc6">PersistenceMapper</a>.</p>
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00156">156</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00213">213</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -460,7 +664,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#ae976c434556bbffa1f00ad2084207d31">PersistenceMapper</a>.</p>
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00214">214</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00271">271</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -503,7 +707,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a79418dff314070840928914ab1a142d8">PersistenceMapper</a>.</p>
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00247">247</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00304">304</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -552,7 +756,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a83e724262dff453dc35561b241ca7539">PersistenceMapper</a>.</p>
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00268">268</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00325">325</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -607,7 +811,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a98b29bdc19f82db61178329269679d09">PersistenceMapper</a>.</p>
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00294">294</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00351">351</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -641,7 +845,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00324">324</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00381">381</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -687,7 +891,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boolean depending on success of authorization </dd></dl>
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00336">336</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00393">393</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -738,7 +942,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00346">346</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00403">403</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1044,7 +1248,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00047">47</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00050">50</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1066,7 +1270,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00048">48</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00051">51</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1088,7 +1292,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00049">49</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00052">52</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1110,7 +1314,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00050">50</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
+<p>Definition at line <a class="el" href="_abstract_mapper_8php_source.html#l00053">53</a> of file <a class="el" href="_abstract_mapper_8php_source.html">AbstractMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1126,7 +1330,7 @@ Protected Attributes</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Jun 29 2017 01:48:57 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Nov 8 2017 02:10:41 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

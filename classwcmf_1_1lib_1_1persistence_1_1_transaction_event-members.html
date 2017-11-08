@@ -119,12 +119,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html">TransactionEvent</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html#a36b712684c6abd795c863cda049baf56">__construct</a>($phase, array $changedOids=[])</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html">TransactionEvent</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html#af709aba4ee4757c8253e7cdb839b2e4e">__construct</a>($phase, array $insertedOids=[], array $updatedOids=[], array $deletedOids=[])</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html">TransactionEvent</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html#ad814516e9bf2fd348cb9e6be8eadd1be">AFTER_COMMIT</a></td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html">TransactionEvent</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html#aebc1c599a4f01e93f06b3ae4199d519c">AFTER_ROLLBACK</a></td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html">TransactionEvent</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html#a7b3bb6e021a318994b80e61e71b3b1cd">BEFORE_COMMIT</a></td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html">TransactionEvent</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html#a3af8df95dc366bcbc56d623e1251629d">getChangedOids</a>()</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html">TransactionEvent</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html#a5e6f3042d294ed73ab72856765b7e29c">getPhase</a>()</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html">TransactionEvent</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html#a0ae6fdc3cbff6446dec4b1d189859119">getDeletedOids</a>()</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html">TransactionEvent</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html#ad3b18d6c1bc4866d36b20d5d26e35604">getInsertedOids</a>()</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html">TransactionEvent</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html#a5e6f3042d294ed73ab72856765b7e29c">getPhase</a>()</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html">TransactionEvent</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html#a590f653f81c7cafd9bf00501f4e79a97">getUpdatedOids</a>()</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html">TransactionEvent</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1core_1_1_event.html#aaf3350830f5be65c2a8521c0c937c73c">isStopped</a>()</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1core_1_1_event.html">Event</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html#a244352f035b82b20b0efa506167fd862">NAME</a></td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_transaction_event.html">TransactionEvent</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1core_1_1_event.html#adc3f4b7596e176069cd179814c05c66d">stopPropagation</a>()</td><td class="entry"><a class="el" href="classwcmf_1_1lib_1_1core_1_1_event.html">Event</a></td><td class="entry"></td></tr>
@@ -140,7 +142,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Jun 29 2017 01:48:57 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Nov 8 2017 02:10:40 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

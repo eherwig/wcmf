@@ -21,10 +21,10 @@
 <area shape="rect" id="node29" href="$classwcmf_1_1application_1_1controller_1_1_value_list_controller.html" title="ValueListController is used to resolve lists for input_type definitions. " alt="" coords="3510,468,3641,560"/>
 <area shape="rect" id="node4" href="$classwcmf_1_1application_1_1controller_1_1_batch_display_controller.html" title="BatchDisplayController is used to load a tree of Node instances recursivly and return them in lists o..." alt="" coords="5,777,169,1001"/>
 <area shape="rect" id="node5" href="$classwcmf_1_1application_1_1controller_1_1_copy_controller.html" title="CopyController is used to copy or move Node instances. " alt="" coords="194,725,349,1052"/>
-<area shape="rect" id="node6" href="$classwcmf_1_1application_1_1controller_1_1_c_s_v_export_controller.html" title="CSVExportController exports instances of one type into a CSV file. " alt="" coords="373,813,516,964"/>
-<area shape="rect" id="node7" href="$classwcmf_1_1application_1_1controller_1_1_c_s_v_import_controller.html" title="CSVImportController imports instances of one type into the storage. " alt="" coords="540,813,701,964"/>
+<area shape="rect" id="node6" href="$classwcmf_1_1application_1_1controller_1_1_c_s_v_export_controller.html" title="CSVExportController exports instances of one type into a CSV file. " alt="" coords="373,806,516,971"/>
+<area shape="rect" id="node7" href="$classwcmf_1_1application_1_1controller_1_1_c_s_v_import_controller.html" title="CSVImportController imports instances of one type into the storage. " alt="" coords="540,806,701,971"/>
 <area shape="rect" id="node8" href="$classwcmf_1_1application_1_1controller_1_1_search_index_controller.html" title="SearchIndexController creates a Lucene index from the complete datastore. " alt="" coords="726,813,875,964"/>
-<area shape="rect" id="node9" href="$classwcmf_1_1application_1_1controller_1_1_x_m_l_export_controller.html" title="XMLExportController exports the content tree into an XML file. " alt="" coords="900,747,1131,1030"/>
+<area shape="rect" id="node9" href="$classwcmf_1_1application_1_1controller_1_1_x_m_l_export_controller.html" title="XMLExportController exports the content tree into an XML file. " alt="" coords="900,740,1131,1037"/>
 <area shape="rect" id="node15" href="$classwcmf_1_1application_1_1controller_1_1_history_controller.html" title="HistoryController returns a list of last changed entity instances. " alt="" coords="1209,828,1328,949"/>
 <area shape="rect" id="node16" href="$classwcmf_1_1application_1_1controller_1_1_search_controller.html" title="SearchController executes a search and returns matching objects in a paged list. " alt="" coords="1352,828,1471,949"/>
 </map>

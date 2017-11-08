@@ -146,50 +146,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">  /**</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">   * Commit the object changes to the storage.</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">   * Sets the transaction to inactive.</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">   * @return Map of oid changes (key: oid string before commit, value: oid string after commit)</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#af5674c27d4a92f6228565010eacbb9cb">commit</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">   * Discard the object changes.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">   * Sets the transaction to inactive.</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#afa549adf79e3f8c09fe8f903dd5fbfa7">rollback</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">   * Check if the transaction is active.</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">   * @return Boolean</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#aa56a17bc66c1081fad1cca3a488224c3">isActive</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">   * Attach an object to the transaction. The returned object is the attached instance.</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">   * @param $object The object</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">   * @return PersistentObject</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a24a0881da50c6149b528b034d729a15b">attach</a>(<a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $object);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">   * Detach an object from the transaction. All local changes will not</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">   * be stored. Afterwards the object is unknown to the transaction.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">   * @param $oid The object id of the object</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a8602b5996ccc25be7603f59f5b019ef5">detach</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">   * Get a loaded object.</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">   * @param $oid ObjectId of the object</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">   * @return PersistentObject instance or null if not loaded yet</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#afdec445fe4ebbe9e754ef08965a431c7">getLoaded</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">  /**</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">   * Get all objects currently involved in the transaction</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">   * @return Array of PersistentObject instances</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a5a362cc3afebeadb3f8b97453a0251e3">getObjects</a>();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;?&gt;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#af5674c27d4a92f6228565010eacbb9cb">commit</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">   * Discard the object changes.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">   * Sets the transaction to inactive.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#afa549adf79e3f8c09fe8f903dd5fbfa7">rollback</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">   * Check if the transaction is active.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">   * @return Boolean</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#aa56a17bc66c1081fad1cca3a488224c3">isActive</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">   * Attach an object to the transaction. The returned object is the attached instance.</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">   * @param $object The object</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">   * @return PersistentObject</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a24a0881da50c6149b528b034d729a15b">attach</a>(<a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html">PersistentObject</a> $object);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">   * Detach an object from the transaction. All local changes will not</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">   * be stored. Afterwards the object is unknown to the transaction.</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">   * @param $oid The object id of the object</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a8602b5996ccc25be7603f59f5b019ef5">detach</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">   * Get a loaded object.</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">   * @param $oid ObjectId of the object</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">   * @return PersistentObject instance or null if not loaded yet</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#afdec445fe4ebbe9e754ef08965a431c7">getLoaded</a>(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_object_id.html">ObjectId</a> $oid);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">   * Get all objects currently involved in the transaction</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">   * @return Array of PersistentObject instances</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a5a362cc3afebeadb3f8b97453a0251e3">getObjects</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;?&gt;</div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1_transaction_html_a8602b5996ccc25be7603f59f5b019ef5"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#a8602b5996ccc25be7603f59f5b019ef5">wcmf\lib\persistence\Transaction\detach</a></div><div class="ttdeci">detach(ObjectId $oid)</div><div class="ttdoc">Detach an object from the transaction. </div></div>
 <div class="ttc" id="interfacewcmf_1_1lib_1_1persistence_1_1_transaction_html_afdec445fe4ebbe9e754ef08965a431c7"><div class="ttname"><a href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#afdec445fe4ebbe9e754ef08965a431c7">wcmf\lib\persistence\Transaction\getLoaded</a></div><div class="ttdeci">getLoaded(ObjectId $oid)</div><div class="ttdoc">Get a loaded object. </div></div>
 <div class="ttc" id="namespacewcmf_1_1lib_1_1persistence_html"><div class="ttname"><a href="namespacewcmf_1_1lib_1_1persistence.html">wcmf\lib\persistence</a></div><div class="ttdoc">Persistence layer related interfaces and classes. </div><div class="ttdef"><b>Definition:</b> <a href="namespaces_8php_source.html#l00042">namespaces.php:42</a></div></div>
@@ -214,7 +213,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Jun 29 2017 01:48:50 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Nov 8 2017 02:10:29 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

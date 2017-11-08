@@ -3,7 +3,7 @@ var searchData=
   ['rdbattributedescription',['RDBAttributeDescription',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_attribute_description.html',1,'wcmf::lib::model::mapper']]],
   ['rdbmanytomanyrelationdescription',['RDBManyToManyRelationDescription',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_many_to_many_relation_description.html',1,'wcmf::lib::model::mapper']]],
   ['rdbmanytoonerelationdescription',['RDBManyToOneRelationDescription',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_many_to_one_relation_description.html',1,'wcmf::lib::model::mapper']]],
-  ['rdbmapper',['RDBMapper',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html',1,'wcmf::lib::model::mapper']]],
+  ['rdbmapper',['RDBMapper',['../interfacewcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html',1,'wcmf::lib::model::mapper']]],
   ['rdbonetomanyrelationdescription',['RDBOneToManyRelationDescription',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_one_to_many_relation_description.html',1,'wcmf::lib::model::mapper']]],
   ['referencedescription',['ReferenceDescription',['../classwcmf_1_1lib_1_1persistence_1_1_reference_description.html',1,'wcmf::lib::persistence']]],
   ['regexp',['RegExp',['../classwcmf_1_1lib_1_1validation_1_1impl_1_1_reg_exp.html',1,'wcmf::lib::validation::impl']]],

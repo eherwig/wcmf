@@ -97,45 +97,47 @@
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
 <g id="a_node5"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_c_s_v_export_controller.html" target="_top" xlink:title="CSVExportController exports instances of one type into a CSV file. ">
-<polygon fill="white" stroke="black" points="276,-66.5 276,-178.5 383,-178.5 383,-66.5 276,-66.5"/>
-<text text-anchor="middle" x="329.5" y="-166.5" font-family="Helvetica,sans-Serif" font-size="10.00">CSVExportController</text>
-<polyline fill="none" stroke="black" points="276,-159.5 383,-159.5 "/>
-<text text-anchor="middle" x="329.5" y="-147.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="276,-140.5 383,-140.5 "/>
-<text text-anchor="start" x="284" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ initialize()</text>
-<text text-anchor="start" x="284" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00"># validate()</text>
-<text text-anchor="start" x="284" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getWorkPackage()</text>
-<text text-anchor="start" x="284" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getDownloadFile()</text>
-<text text-anchor="start" x="284" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initExport()</text>
-<text text-anchor="start" x="284" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># exportNodes()</text>
+<polygon fill="white" stroke="black" points="276,-61 276,-184 383,-184 383,-61 276,-61"/>
+<text text-anchor="middle" x="329.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">CSVExportController</text>
+<polyline fill="none" stroke="black" points="276,-165 383,-165 "/>
+<text text-anchor="middle" x="329.5" y="-153" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="276,-146 383,-146 "/>
+<text text-anchor="start" x="284" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+ initialize()</text>
+<text text-anchor="start" x="284" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00"># validate()</text>
+<text text-anchor="start" x="284" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00"># getWorkPackage()</text>
+<text text-anchor="start" x="284" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00"># getDownloadFile()</text>
+<text text-anchor="start" x="284" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"># initExport()</text>
+<text text-anchor="start" x="284" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00"># exportNodes()</text>
+<text text-anchor="start" x="284" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00"># cleanup()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
 <g id="edge4" class="edge"><title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M365.907,-271.334C357.937,-238.972 349.699,-205.522 343.08,-178.643"/>
+<path fill="none" stroke="midnightblue" d="M365.962,-271.556C358.513,-241.311 350.827,-210.1 344.443,-184.179"/>
 <polygon fill="none" stroke="midnightblue" points="362.58,-272.461 368.37,-281.334 369.377,-270.787 362.58,-272.461"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
 <g id="a_node6"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_c_s_v_import_controller.html" target="_top" xlink:title="CSVImportController imports instances of one type into the storage. ">
-<polygon fill="white" stroke="black" points="401,-66.5 401,-178.5 522,-178.5 522,-66.5 401,-66.5"/>
-<text text-anchor="middle" x="461.5" y="-166.5" font-family="Helvetica,sans-Serif" font-size="10.00">CSVImportController</text>
-<polyline fill="none" stroke="black" points="401,-159.5 522,-159.5 "/>
-<text text-anchor="start" x="409" y="-147.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CACHE_KEY_STATS</text>
-<polyline fill="none" stroke="black" points="401,-140.5 522,-140.5 "/>
-<text text-anchor="start" x="409" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
-<text text-anchor="start" x="409" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ initialize()</text>
-<text text-anchor="start" x="409" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"># validate()</text>
-<text text-anchor="start" x="409" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getWorkPackage()</text>
-<text text-anchor="start" x="409" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initImport()</text>
-<text text-anchor="start" x="409" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># importNodes()</text>
+<polygon fill="white" stroke="black" points="401,-61 401,-184 522,-184 522,-61 401,-61"/>
+<text text-anchor="middle" x="461.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">CSVImportController</text>
+<polyline fill="none" stroke="black" points="401,-165 522,-165 "/>
+<text text-anchor="start" x="409" y="-153" font-family="Helvetica,sans-Serif" font-size="10.00">+ CACHE_KEY_STATS</text>
+<polyline fill="none" stroke="black" points="401,-146 522,-146 "/>
+<text text-anchor="start" x="409" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
+<text text-anchor="start" x="409" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ initialize()</text>
+<text text-anchor="start" x="409" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00"># validate()</text>
+<text text-anchor="start" x="409" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00"># getWorkPackage()</text>
+<text text-anchor="start" x="409" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"># initImport()</text>
+<text text-anchor="start" x="409" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00"># importNodes()</text>
+<text text-anchor="start" x="409" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00"># cleanup()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge"><title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M425.093,-271.334C433.063,-238.972 441.301,-205.522 447.92,-178.643"/>
+<path fill="none" stroke="midnightblue" d="M425.038,-271.556C432.487,-241.311 440.173,-210.1 446.557,-184.179"/>
 <polygon fill="none" stroke="midnightblue" points="421.623,-270.787 422.63,-281.334 428.42,-272.461 421.623,-270.787"/>
 </g>
 <!-- Node7 -->
@@ -163,32 +165,33 @@
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
 <g id="a_node8"><a xlink:href="classwcmf_1_1application_1_1controller_1_1_x_m_l_export_controller.html" target="_top" xlink:title="XMLExportController exports the content tree into an XML file. ">
-<polygon fill="white" stroke="black" points="671,-17 671,-228 844,-228 844,-17 671,-17"/>
-<text text-anchor="middle" x="757.5" y="-216" font-family="Helvetica,sans-Serif" font-size="10.00">XMLExportController</text>
-<polyline fill="none" stroke="black" points="671,-209 844,-209 "/>
-<text text-anchor="start" x="679" y="-197" font-family="Helvetica,sans-Serif" font-size="10.00">+ CACHE_KEY_ROOT_OIDS</text>
-<text text-anchor="start" x="679" y="-186" font-family="Helvetica,sans-Serif" font-size="10.00">+ CACHE_KEY_EXPORTED_OIDS</text>
-<text text-anchor="start" x="679" y="-175" font-family="Helvetica,sans-Serif" font-size="10.00">+ CACHE_KEY_LAST_INDENT</text>
-<text text-anchor="start" x="679" y="-164" font-family="Helvetica,sans-Serif" font-size="10.00">+ CACHE_KEY_TAGS_TO_CLOSE</text>
-<text text-anchor="start" x="679" y="-153" font-family="Helvetica,sans-Serif" font-size="10.00">+ ITERATOR_ID_VAR</text>
-<polyline fill="none" stroke="black" points="671,-146 844,-146 "/>
-<text text-anchor="start" x="679" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
-<text text-anchor="start" x="679" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ initialize()</text>
-<text text-anchor="start" x="679" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00"># getWorkPackage()</text>
-<text text-anchor="start" x="679" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00"># getDownloadFile()</text>
-<text text-anchor="start" x="679" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"># initExport()</text>
-<text text-anchor="start" x="679" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00"># exportNodes()</text>
-<text text-anchor="start" x="679" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00"># finishExport()</text>
-<text text-anchor="start" x="679" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00"># endTags()</text>
-<text text-anchor="start" x="679" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00"># writeNode()</text>
-<text text-anchor="start" x="679" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># getNumUnvisitedChildren()</text>
-<text text-anchor="start" x="679" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># formatValue()</text>
+<polygon fill="white" stroke="black" points="671,-11.5 671,-233.5 844,-233.5 844,-11.5 671,-11.5"/>
+<text text-anchor="middle" x="757.5" y="-221.5" font-family="Helvetica,sans-Serif" font-size="10.00">XMLExportController</text>
+<polyline fill="none" stroke="black" points="671,-214.5 844,-214.5 "/>
+<text text-anchor="start" x="679" y="-202.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CACHE_KEY_ROOT_OIDS</text>
+<text text-anchor="start" x="679" y="-191.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CACHE_KEY_EXPORTED_OIDS</text>
+<text text-anchor="start" x="679" y="-180.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CACHE_KEY_LAST_INDENT</text>
+<text text-anchor="start" x="679" y="-169.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CACHE_KEY_TAGS_TO_CLOSE</text>
+<text text-anchor="start" x="679" y="-158.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ITERATOR_ID_VAR</text>
+<polyline fill="none" stroke="black" points="671,-151.5 844,-151.5 "/>
+<text text-anchor="start" x="679" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ __construct()</text>
+<text text-anchor="start" x="679" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ initialize()</text>
+<text text-anchor="start" x="679" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getWorkPackage()</text>
+<text text-anchor="start" x="679" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getDownloadFile()</text>
+<text text-anchor="start" x="679" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initExport()</text>
+<text text-anchor="start" x="679" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># exportNodes()</text>
+<text text-anchor="start" x="679" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># finishExport()</text>
+<text text-anchor="start" x="679" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># endTags()</text>
+<text text-anchor="start" x="679" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00"># writeNode()</text>
+<text text-anchor="start" x="679" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getNumUnvisitedChildren()</text>
+<text text-anchor="start" x="679" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00"># formatValue()</text>
+<text text-anchor="start" x="679" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00"># cleanup()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node8 -->
 <g id="edge7" class="edge"><title>Node1&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M474.362,-358.275C530.195,-332.423 604.91,-292.933 661.5,-245 667.654,-239.787 673.684,-234.128 679.535,-228.198"/>
+<path fill="none" stroke="midnightblue" d="M474.362,-358.275C530.195,-332.423 604.91,-292.933 661.5,-245 665.705,-241.438 669.853,-237.667 673.925,-233.744"/>
 <polygon fill="none" stroke="midnightblue" points="472.852,-355.117 465.219,-362.465 475.768,-361.481 472.852,-355.117"/>
 </g>
 <!-- Node2 -->

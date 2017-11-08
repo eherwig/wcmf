@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['sequence_5fclass',['SEQUENCE_CLASS',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#aec05d8ee51f98a0a80429868ef592ea3',1,'wcmf::lib::model::mapper::RDBMapper']]],
+  ['sequence_5fclass',['SEQUENCE_CLASS',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#aec05d8ee51f98a0a80429868ef592ea3',1,'wcmf::lib::model::mapper::impl::AbstractRDBMapper']]],
   ['session_5fvarname',['SESSION_VARNAME',['../classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1impl_1_1_default_lock_handler.html#a3bfacaf0ac887efa249e0cf4353e4db9',1,'wcmf::lib::persistence::concurrency::impl::DefaultLockHandler']]],
   ['sids_5fsession_5fvarname',['SIDS_SESSION_VARNAME',['../classwcmf_1_1lib_1_1service_1_1impl_1_1_r_p_c_client.html#a1f8e2d08ea24f0a4892ccb0e9a7ea448',1,'wcmf::lib::service::impl::RPCClient']]],
   ['single',['SINGLE',['../classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b',1,'wcmf::lib::persistence::BuildDepth']]],

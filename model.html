@@ -578,7 +578,7 @@ Configuration</h4>
 <h4><a class="anchor" id="generator_artefacts_php"></a>
 PHP Code</h4>
 <ul>
-<li><b>Mapper classes</b> are generated in directories corresponding to the model packages (<em>app/src/model</em>, if the default model packages are used). For each <code>ChiNode</code>/<code>ChiManyToMany</code> class one subclass of <a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html"><code>NodeUnifiedRDBMapper</code></a> is created (e.g. <code>AuthorRDBMapper</code>).</li>
+<li><b>Mapper classes</b> are generated in directories corresponding to the model packages (<em>app/src/model</em>, if the default model packages are used). For each <code>ChiNode</code>/<code>ChiManyToMany</code> class one subclass of <a class="el" href=""><code>NodeUnifiedRDBMapper</code></a> is created (e.g. <code>AuthorRDBMapper</code>).</li>
 <li><b>Domain classes</b> are generated in the same directories as the mapper classes. For each <code>ChiNode</code>/<code>ChiManyToMany</code> class two classes are created, one base class that contains all generated code (e.g. <code>AuthorBase</code>) and one empty subclass, that is used to add custom code (e.g. <code>Author</code>). The base class inherits from <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html"><code>Node</code></a> or one of it's subclasses. Getter methods are generated for transient/computed properties.</li>
 <li><b>Controller classes</b> are generated in directories corresponding to the model packages (<em>app/src/controller</em>, if the default model packages are used). For each <code>ChiController</code> class two classes are created, one base class that contains all generated code and one subclass that contains the methods to be implemented. The base class inherits from <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html"><code>Controller</code></a> or one of it's subclasses.</li>
 <li>The <b>SOAP interface</b> is generated in the file <em>app/public/soap-interface.php</em>. <a class="el" href="classwcmf_1_1application_1_1controller_1_1_s_o_a_p_controller.html"><code>SOAPController</code></a> uses this file to configure the <a class="el" href="classwcmf_1_1lib_1_1service_1_1_soap_server.html"><code>SoapServer</code></a>.</li>
@@ -632,7 +632,7 @@ Protected regions</h4>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Jun 29 2017 01:48:52 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Nov 8 2017 02:10:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

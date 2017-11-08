@@ -142,8 +142,8 @@ Relations</h4>
 <h3><a class="anchor" id="pers_mappers"></a>
 Persistence Mappers</h3>
 <p>wCMF uses persistence mapper classes to communicate between the application and the persistent storage (see <a class="el" href="architecture.html#arch_main">Architecture</a>). These classes implement the <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html"><code>PersistenceMapper</code></a> interface, which defines methods for all persistence actions. By using this pattern wCMF does not make any assumptions about the actual storage, which can be flat files, a database or anything else a mapper is able to handle. This approach also makes it easy to connect an existing storage to a newly created wCMF application.</p>
-<p>To simplify the implementation of mapper classes, wCMF already contains a class hierarchy for a common mapping approach, which maps each concrete class to one database table (<a href="http://martinfowler.com/eaaCatalog/concreteTableInheritance.html">Concrete Table Inheritance</a>). In this hierarchy <a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html"><code>RDBMapper</code></a> handles the communication with the relational database, while <a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html"><code>NodeUnifiedRDBMapper</code></a> defines the actual mapping rules. Application developers simply need to implement one subclass of <a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html"><code>NodeUnifiedRDBMapper</code></a> for each persistent domain class, which declares the mapping of the attributes and relations of that class.</p>
-<dl class="section note"><dt>Note</dt><dd>All mapper classes, that are created by the generator are <a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_node_unified_r_d_b_mapper.html"><code>NodeUnifiedRDBMapper</code></a> subclasses.</dd></dl>
+<p>To simplify the implementation of mapper classes, wCMF already contains a class hierarchy for a common mapping approach, which maps each concrete class to one database table (<a href="http://martinfowler.com/eaaCatalog/concreteTableInheritance.html">Concrete Table Inheritance</a>). In this hierarchy <a class="el" href="interfacewcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html"><code>RDBMapper</code></a> handles the communication with the relational database, while <a class="el" href=""><code>NodeUnifiedRDBMapper</code></a> defines the actual mapping rules. Application developers simply need to implement one subclass of <a class="el" href=""><code>NodeUnifiedRDBMapper</code></a> for each persistent domain class, which declares the mapping of the attributes and relations of that class.</p>
+<dl class="section note"><dt>Note</dt><dd>All mapper classes, that are created by the generator are <a class="el" href=""><code>NodeUnifiedRDBMapper</code></a> subclasses.</dd></dl>
 <h3><a class="anchor" id="pers_classes"></a>
 Domain Classes</h3>
 <p>Domain class instances hold the data that are used in the application and persisted in the storage.</p>
@@ -489,7 +489,7 @@ Transactions</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Thu Jun 29 2017 01:48:52 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Wed Nov 8 2017 02:10:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>
