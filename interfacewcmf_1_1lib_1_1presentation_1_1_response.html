@@ -130,7 +130,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1presentation_1_1_response__inherit__graph.svg" width="142" height="764"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacewcmf_1_1lib_1_1presentation_1_1_response__inherit__graph.svg" width="154" height="823"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -143,6 +144,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a282c10d36405d8bdb86a8d8387de9bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33b6ec12f934481bad7acbb577a8565d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a33b6ec12f934481bad7acbb577a8565d">getCacheId</a> ()</td></tr>
 <tr class="separator:a33b6ec12f934481bad7acbb577a8565d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52e901b7a9cc0c07a39d4b89327aae2f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a52e901b7a9cc0c07a39d4b89327aae2f">setCacheLifetime</a> ($seconds)</td></tr>
+<tr class="separator:a52e901b7a9cc0c07a39d4b89327aae2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32185ba86c4709d2907bd201609a0650"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a32185ba86c4709d2907bd201609a0650">getCacheLifetime</a> ()</td></tr>
+<tr class="separator:a32185ba86c4709d2907bd201609a0650"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afac82e816d0fc5049c3295f0d356acdb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#afac82e816d0fc5049c3295f0d356acdb">isCached</a> ()</td></tr>
 <tr class="separator:afac82e816d0fc5049c3295f0d356acdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ad77fc1741b274de7b7f1567471f861"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a9ad77fc1741b274de7b7f1567471f861">getCacheDate</a> ()</td></tr>
@@ -279,7 +284,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set a string value that uniquely identifies the request data resulting in the current response. </p>
-<p>This value maybe used to compare two requests and return cached responses based on the result. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If this value is not null, it will be used to compare two requests and return cached responses based on the result. Set a value of null to prevent caching. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$cacheId</td><td></td></tr>
   </table>
@@ -308,6 +313,52 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The id </dd></dl>
 
 <p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a33b6ec12f934481bad7acbb577a8565d">DefaultResponse</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a52e901b7a9cc0c07a39d4b89327aae2f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">setCacheLifetime </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$seconds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the lifetime of a cached response. </p>
+<p>After this time previously cached response is dicarded. Set a value of -1 for an infinite lifetime. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$seconds</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a52e901b7a9cc0c07a39d4b89327aae2f">DefaultResponse</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a32185ba86c4709d2907bd201609a0650"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getCacheLifetime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the lifetime of a cached response. </p>
+<p>A value of null means an infinite lifetime. </p><dl class="section return"><dt>Returns</dt><dd>Integer </dd></dl>
+
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_response.html#a32185ba86c4709d2907bd201609a0650">DefaultResponse</a>.</p>
 
 </div>
 </div>
@@ -480,7 +531,7 @@ Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Mon Nov 13 2017 22:36:22 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sun Dec 10 2017 19:59:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>

@@ -143,8 +143,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a70a0fe08035189260c72e32a9e20d30c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1df87df22fcd64f8298d22239b189b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#ae1df87df22fcd64f8298d22239b189b8">clearAllValues</a> ()</td></tr>
 <tr class="separator:ae1df87df22fcd64f8298d22239b189b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bff378c45f9901d49be3fe13c0e1989"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#a4bff378c45f9901d49be3fe13c0e1989">render</a> ($tplFile, $cacheId=null, $display=true)</td></tr>
-<tr class="separator:a4bff378c45f9901d49be3fe13c0e1989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f63937a8ea881e62234c423eabb5602"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1view_1_1_view.html#a5f63937a8ea881e62234c423eabb5602">render</a> ($tplFile, $cacheId=null, $cacheLifetime=null, $display=true)</td></tr>
+<tr class="separator:a5f63937a8ea881e62234c423eabb5602"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -261,7 +261,7 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4bff378c45f9901d49be3fe13c0e1989"></a>
+<a class="anchor" id="a5f63937a8ea881e62234c423eabb5602"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -281,6 +281,12 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$cacheLifetime</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
           <td class="paramname"><em>$display</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
@@ -295,19 +301,20 @@ Static Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$tplFile</td><td>The template file </td></tr>
-    <tr><td class="paramname">$cacheId</td><td>The id of the view (</td></tr>
+    <tr><td class="paramname">$cacheId</td><td>The id of the view (optional, </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd>Controller::getCacheId()) </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_response.html#a33b6ec12f934481bad7acbb577a8565d" title="Get the cache id. ">Response::getCacheId()</a>) </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">$cacheLifetime</td><td>The cache lifetime in seconds (optional, default: implementation specific) </td></tr>
     <tr><td class="paramname">$display</td><td>Boolean whether to output the result or return it (default: <em>true</em>) </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_smarty_view.html#a4bff378c45f9901d49be3fe13c0e1989">SmartyView</a>, and <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_null_view.html#a4bff378c45f9901d49be3fe13c0e1989">NullView</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_smarty_view.html#a5f63937a8ea881e62234c423eabb5602">SmartyView</a>, and <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1view_1_1impl_1_1_null_view.html#a5f63937a8ea881e62234c423eabb5602">NullView</a>.</p>
 
 </div>
 </div>
@@ -497,7 +504,7 @@ Static Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2017 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Mon Nov 13 2017 22:36:23 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
+          Generated on Sun Dec 10 2017 19:59:34 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.10</small>
       </div>
     </div>
   </div>
