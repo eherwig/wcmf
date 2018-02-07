@@ -37,7 +37,7 @@
 <!-- dir_572d810a40e0f32a73d7b3a05b68fa5c -->
 <g id="node3" class="node"><title>dir_572d810a40e0f32a73d7b3a05b68fa5c</title>
 <g id="a_node3"><a xlink:href="dir_572d810a40e0f32a73d7b3a05b68fa5c.html" target="_top" xlink:title="mapper">
-<polygon fill="white" stroke="red" points="222,-60 168,-60 168,-24 222,-24 222,-60"/>
+<polygon fill="white" stroke="black" points="222,-60 168,-60 168,-24 222,-24 222,-60"/>
 <text text-anchor="middle" x="195" y="-39.5" font-family="Helvetica,sans-Serif" font-size="10.00">mapper</text>
 </a>
 </g>
