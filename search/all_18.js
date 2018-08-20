@@ -29,7 +29,7 @@ var searchData=
   ['validation',['validation',['../namespacewcmf_1_1lib_1_1validation.html',1,'wcmf::lib']]],
   ['view',['view',['../namespacewcmf_1_1lib_1_1presentation_1_1view.html',1,'wcmf::lib::presentation']]],
   ['visitor',['visitor',['../namespacewcmf_1_1lib_1_1model_1_1visitor.html',1,'wcmf::lib::model']]],
-  ['waitforxpath',['waitForXpath',['../classwcmf_1_1test_1_1lib_1_1_selenium_test_case.html#afc752dc923a84712719f00364048f81e',1,'wcmf::test::lib::SeleniumTestCase']]],
+  ['wait',['wait',['../classwcmf_1_1test_1_1lib_1_1_selenium_test_case.html#a51081b4383dfe4447b8bfcb22db7c85c',1,'wcmf::test::lib::SeleniumTestCase']]],
   ['warn',['warn',['../classwcmf_1_1lib_1_1core_1_1impl_1_1_log4php_logger.html#a3869c777f69fcd72fb106f42a5fdc9f3',1,'wcmf\lib\core\impl\Log4phpLogger\warn()'],['../classwcmf_1_1lib_1_1core_1_1impl_1_1_monolog_file_logger.html#a3869c777f69fcd72fb106f42a5fdc9f3',1,'wcmf\lib\core\impl\MonologFileLogger\warn()'],['../interfacewcmf_1_1lib_1_1core_1_1_logger.html#a3869c777f69fcd72fb106f42a5fdc9f3',1,'wcmf\lib\core\Logger\warn()']]],
   ['wcmf',['wcmf',['../namespacewcmf.html',1,'']]],
   ['writableconfiguration',['WritableConfiguration',['../interfacewcmf_1_1lib_1_1config_1_1_writable_configuration.html',1,'wcmf::lib::config']]],

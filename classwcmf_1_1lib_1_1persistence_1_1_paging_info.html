@@ -116,6 +116,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classwcmf_1_1lib_1_1persistence_1_1_paging_info-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">PagingInfo Class Reference</div>  </div>
@@ -153,6 +154,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a22737a40a5885f012d19fa0a0fba28f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9373826473325aab8ececc3101f26270"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html#a9373826473325aab8ececc3101f26270">isIgnoringTotalCount</a> ()</td></tr>
 <tr class="separator:a9373826473325aab8ececc3101f26270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380b12430568a4c01d2978821d472082"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html#a380b12430568a4c01d2978821d472082">getPagination</a> ($urlPattern, $maxDisplayPages=10)</td></tr>
+<tr class="separator:a380b12430568a4c01d2978821d472082"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a88ce4debd04f2d33c6086f33a17393b8"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html#a88ce4debd04f2d33c6086f33a17393b8">SIZE_INFINITE</a> = -1</td></tr>
+<tr class="separator:a88ce4debd04f2d33c6086f33a17393b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a642fe27f959b005a5f89211f0b246cae"></a>
@@ -184,13 +192,13 @@ Public Member Functions</h2></td></tr>
 <p>Creates a <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html" title="PagingInfo contains information about a paged list. ">PagingInfo</a> object. </p>
 <p>The ignoreTotalCount parameter may be set to true, if the count is to be ignored. This may speed up loading of objects, because an extra count query may be omitted. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$pageSize</td><td>The pageSize (-1 to set no page size) </td></tr>
+    <tr><td class="paramname">$pageSize</td><td>The pageSize (<a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html#a88ce4debd04f2d33c6086f33a17393b8">PagingInfo::SIZE_INFINITE</a> to set no page size) </td></tr>
     <tr><td class="paramname">$ignoreTotalCount</td><td>Boolean whether this instance ignores the total count or not (optional, default: <em>false</em>) </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00034">34</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00036">36</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
 
 </div>
 </div>
@@ -219,7 +227,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00046">46</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00048">48</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
 
 </div>
 </div>
@@ -241,7 +249,7 @@ Public Member Functions</h2></td></tr>
 <p>Get the number of list items. </p>
 <dl class="section return"><dt>Returns</dt><dd>Number </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00054">54</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00056">56</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
 
 </div>
 </div>
@@ -269,7 +277,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00062">62</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00064">64</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
 
 </div>
 </div>
@@ -291,7 +299,7 @@ Public Member Functions</h2></td></tr>
 <p>Get the current page (1-based). </p>
 <dl class="section return"><dt>Returns</dt><dd>Number </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00071">71</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00073">73</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
 
 </div>
 </div>
@@ -313,7 +321,7 @@ Public Member Functions</h2></td></tr>
 <p>Get the size of a pages. </p>
 <dl class="section return"><dt>Returns</dt><dd>Number </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00079">79</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00081">81</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
 
 </div>
 </div>
@@ -335,7 +343,7 @@ Public Member Functions</h2></td></tr>
 <p>Get the number of pages. </p>
 <dl class="section return"><dt>Returns</dt><dd>Number </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00087">87</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00089">89</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
 
 </div>
 </div>
@@ -363,7 +371,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00095">95</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00097">97</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
 
 </div>
 </div>
@@ -385,7 +393,7 @@ Public Member Functions</h2></td></tr>
 <p>Get the current offset. </p>
 <dl class="section return"><dt>Returns</dt><dd>Number </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00104">104</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00106">106</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
 
 </div>
 </div>
@@ -407,7 +415,7 @@ Public Member Functions</h2></td></tr>
 <p>Determine if we are on the first page. </p>
 <dl class="section return"><dt>Returns</dt><dd>Boolean </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00112">112</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00114">114</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
 
 </div>
 </div>
@@ -429,7 +437,7 @@ Public Member Functions</h2></td></tr>
 <p>Determine if we are on the first page. </p>
 <dl class="section return"><dt>Returns</dt><dd>Boolean </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00120">120</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00122">122</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
 
 </div>
 </div>
@@ -451,7 +459,64 @@ Public Member Functions</h2></td></tr>
 <p>Check if this instance iignores the total count. </p>
 <dl class="section return"><dt>Returns</dt><dd>Boolean </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00128">128</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00130">130</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
+
+</div>
+</div>
+<a id="a380b12430568a4c01d2978821d472082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a380b12430568a4c01d2978821d472082">&#9670;&nbsp;</a></span>getPagination()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getPagination </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$urlPattern</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$maxDisplayPages</em> = <code>10</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the pages for a pagination navigation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$urlPattern</td><td>Url string to use containing literal {page}, that will be replaced </td></tr>
+    <tr><td class="paramname">$maxDisplayPages</td><td>Maximum number of pages to display (optional, default: 10) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Array with keys 'first', 'last', 'current', 'prev', 'next', 'pages' and arrays with 'url', 'num' as values or null, if page count &lt;= 1 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00140">140</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a88ce4debd04f2d33c6086f33a17393b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88ce4debd04f2d33c6086f33a17393b8">&#9670;&nbsp;</a></span>SIZE_INFINITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const SIZE_INFINITE = -1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_paging_info_8php_source.html#l00020">20</a> of file <a class="el" href="_paging_info_8php_source.html">PagingInfo.php</a>.</p>
 
 </div>
 </div>
@@ -467,7 +532,7 @@ Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2018 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Feb 7 2018 12:20:11 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
+          Generated on Mon Aug 20 2018 12:48:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
       </div>
     </div>
   </div>

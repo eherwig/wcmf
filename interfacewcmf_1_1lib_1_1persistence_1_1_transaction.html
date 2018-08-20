@@ -141,6 +141,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3a9793666e688407121d76d3a7e4db5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5674c27d4a92f6228565010eacbb9cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#af5674c27d4a92f6228565010eacbb9cb">commit</a> ()</td></tr>
 <tr class="separator:af5674c27d4a92f6228565010eacbb9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca2400ca914e964a60a69434b0168477"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#aca2400ca914e964a60a69434b0168477">commitCollect</a> ()</td></tr>
+<tr class="separator:aca2400ca914e964a60a69434b0168477"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa549adf79e3f8c09fe8f903dd5fbfa7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#afa549adf79e3f8c09fe8f903dd5fbfa7">rollback</a> ()</td></tr>
 <tr class="separator:afa549adf79e3f8c09fe8f903dd5fbfa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa56a17bc66c1081fad1cca3a488224c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_transaction.html#aa56a17bc66c1081fad1cca3a488224c3">isActive</a> ()</td></tr>
@@ -192,9 +194,31 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Commit the object changes to the storage. </p>
-<p>Sets the transaction to inactive. </p>
+<p>Sets the transaction to inactive. </p><dl class="section return"><dt>Returns</dt><dd>Array of executed statements (see <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#ac6854beaa072127a69f02294f1e68df9" title="Get a list of all insert/update/delete statements that where executed in the last transaction...">PersistenceMapper::getStatements()</a>) </dd></dl>
 
 <p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_transaction.html#af5674c27d4a92f6228565010eacbb9cb">DefaultTransaction</a>.</p>
+
+</div>
+</div>
+<a id="aca2400ca914e964a60a69434b0168477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca2400ca914e964a60a69434b0168477">&#9670;&nbsp;</a></span>commitCollect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">commitCollect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Collect object change statements. </p>
+<p>Acts like a normal commit, but does not execute the statements. Sets the transaction to inactive. </p><dl class="section return"><dt>Returns</dt><dd>Array of statements to be executed (see <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#ac6854beaa072127a69f02294f1e68df9" title="Get a list of all insert/update/delete statements that where executed in the last transaction...">PersistenceMapper::getStatements()</a>) </dd></dl>
+
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_transaction.html#aca2400ca914e964a60a69434b0168477">DefaultTransaction</a>.</p>
 
 </div>
 </div>
@@ -362,7 +386,7 @@ Public Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2018 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Feb 7 2018 12:20:12 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
+          Generated on Mon Aug 20 2018 12:48:33 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
       </div>
     </div>
   </div>

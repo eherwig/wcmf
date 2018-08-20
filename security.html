@@ -157,7 +157,8 @@ Permissions</h3>
 <li><em>Entity instance</em> to restrict access on one entity instance (e.g. <code>app.src.model.wcmf.User:123</code>)</li>
 <li><em>Entity instance propery</em> to restrict access on a certain property of one entity instance (e.g. <code>app.src.model.wcmf.User:123.login</code>)</li>
 </ul>
-<p>The actions for the persistency related resources are properties of <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html"><code>PersistenceAction</code></a>, e.g. <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html#add302975378da047de904daa059a332b"><code>PersistenceAction::READ</code></a>.</p>
+<p>The actions for the persistency related resources are properties of <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html"><code>PersistenceAction</code></a>, e.g. <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistence_action.html#add302975378da047de904daa059a332b"><code>PersistenceAction::READ</code></a>. While all actions can be applied to instances, for properties only <em>read</em> and <em>update</em> are taken into account.</p>
+<dl class="section note"><dt>Note</dt><dd><b>Entity relations</b> are treated like entity properties, which means that read and update access can be restricted.</dd></dl>
 <h4>Dynamic roles</h4>
 <p>Besides assigning <em>static roles</em> to users, it's sometimes useful to have roles, that evaluate dynamically in the current context (<em>requested resource</em>, <em>user</em> and <em>action</em>). With these so called <em>dynamic roles</em> it is for example possible to assign permissions to the creator of an instance or realize date/time based permissions.</p>
 <p>Dynamic roles implement the <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1principal_1_1_dynamic_role.html"><code>DynamicRole</code></a> interface and are defined in the <code>DynamicRoles</code> configuration section.</p>
@@ -246,7 +247,7 @@ CSRF protection</h3>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2018 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Feb 7 2018 12:20:08 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
+          Generated on Mon Aug 20 2018 12:48:28 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
       </div>
     </div>
   </div>

@@ -221,8 +221,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a4e33d49075fbd1b1de9ad268625a3736"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f2ef7d2d349d3ef7c8a913e110d58f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a6f2ef7d2d349d3ef7c8a913e110d58f6">getStepNumber</a> ()</td></tr>
 <tr class="separator:a6f2ef7d2d349d3ef7c8a913e110d58f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0e75dc0967afe71da4d6bd46d7a500b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab0e75dc0967afe71da4d6bd46d7a500b">addWorkPackage</a> ($name, $size, $oids, $callback, $args=null)</td></tr>
-<tr class="separator:ab0e75dc0967afe71da4d6bd46d7a500b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e1c732256bd007cac26661410976b52"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a6e1c732256bd007cac26661410976b52">addWorkPackage</a> ($name, $size, array $oids, $callback, $args=null)</td></tr>
+<tr class="separator:a6e1c732256bd007cac26661410976b52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9a3e191499fb8ae2008f646819712c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ae9a3e191499fb8ae2008f646819712c7">processPart</a> ($step)</td></tr>
 <tr class="separator:ae9a3e191499fb8ae2008f646819712c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a858996df90c7181ae4da50654ff11160"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a858996df90c7181ae4da50654ff11160">getRequestValue</a> ($name)</td></tr>
@@ -372,8 +372,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab0e75dc0967afe71da4d6bd46d7a500b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0e75dc0967afe71da4d6bd46d7a500b">&#9670;&nbsp;</a></span>addWorkPackage()</h2>
+<a id="a6e1c732256bd007cac26661410976b52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e1c732256bd007cac26661410976b52">&#9670;&nbsp;</a></span>addWorkPackage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -396,7 +396,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&#160;</td>
+          <td class="paramtype">array&#160;</td>
           <td class="paramname"><em>$oids</em>, </td>
         </tr>
         <tr>
@@ -644,8 +644,8 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>This function gets called on first initialization run as often until it returns null. This allows to define different static work packages. If you would like to add work packages dynamically on subsequent runs this may be done by directly calling the <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab0e75dc0967afe71da4d6bd46d7a500b" title="Add a work package to session. ">BatchController::addWorkPackage()</a> method. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>A work packages description as associative array with keys 'name', 'size', 'oids', 'callback' as required for <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab0e75dc0967afe71da4d6bd46d7a500b" title="Add a work package to session. ">BatchController::addWorkPackage()</a> method or null to terminate. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function gets called on first initialization run as often until it returns null. This allows to define different static work packages. If you would like to add work packages dynamically on subsequent runs this may be done by directly calling the <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a6e1c732256bd007cac26661410976b52" title="Add a work package to session. ">BatchController::addWorkPackage()</a> method. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A work packages description as associative array with keys 'name', 'size', 'oids', 'callback' as required for <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a6e1c732256bd007cac26661410976b52" title="Add a work package to session. ">BatchController::addWorkPackage()</a> method or null to terminate. </dd></dl>
 
 </div>
 </div>
@@ -788,7 +788,7 @@ Protected Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2018 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Feb 7 2018 12:20:08 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
+          Generated on Mon Aug 20 2018 12:48:28 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
       </div>
     </div>
   </div>

@@ -159,7 +159,7 @@ Formats</h3>
 <li>The <code>Content-Type</code> header defines the <b>request</b> format</li>
 <li>The <code>Accept</code> header defines the <b>response</b> format</li>
 </ul>
-<p>To find the correct format, the <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">Media Type</a> value set in those headers is matched against the mime type of all registered formats (see <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html#ac06e9f7b10fca30eb41e41d4dc108b1c"><code>Format::getMimeType</code></a>).</p>
+<p>To find the correct format, the <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">Media Type</a> value set in those headers is matched against the mime type of all registered formats (see <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1format_1_1_format.html#a48e956d454a16152cceb36f34cc3e6bf"><code>Format::getMimeType</code></a>).</p>
 <p>Formats are defined in the <code>Formats</code> configuration section as shown in the following example:</p>
 <div class="fragment"><div class="line">[Formats]</div><div class="line">html = $htmlFormat</div><div class="line">null = $nullFormat</div><div class="line"></div><div class="line">[HtmlFormat]</div><div class="line">__class = wcmf\lib\presentation\format\impl\HtmlFormat</div><div class="line"></div><div class="line">[NullFormat]</div><div class="line">__class = wcmf\lib\presentation\format\impl\NullFormat</div></div><!-- fragment --><h3><a class="anchor" id="pres_routing"></a>
 Routing</h3>
@@ -179,7 +179,8 @@ Internal routing</h4>
 <div class="fragment"><div class="line">[ActionMapping]</div><div class="line">??indexAll = wcmf\application\controller\SearchIndexController::doBegin</div><div class="line">wcmf\application\controller\SearchIndexController??continue =</div><div class="line">                            wcmf\application\controller\SearchIndexController::doContinue</div></div><!-- fragment --><p>In this case <a class="el" href="classwcmf_1_1application_1_1controller_1_1_search_index_controller.html"><code>SearchIndexController</code></a> would have to define the methods <code>doBegin</code> and <code>doContinue</code> which are called for the appropriate action keys.</p>
 <h4><a class="anchor" id="pres_routingext"></a>
 External routing</h4>
-<p>The mapping of the current <b>request uri</b> to an <b>action key</b> is called external routing. The default mapping logic is implemented in the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html#a36e0e7579b8ab70ec7690b37dcdfa312"><code>DefaultRequest::initialize</code></a> method. The method matches the <em>path part</em> of the request uri against the entries of the <code>Routes</code> configuration section to find an appropriate action key. Variables declared in path segments will be automatically passed as request parameters, but may be overwritten by explicit request parameters. The character <em>*</em> is used as wildcard.</p>
+<p>The mapping of the current <b>request uri</b> to an <b>action key</b> is called external routing. The default mapping logic is implemented in the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html#a36e0e7579b8ab70ec7690b37dcdfa312"><code>DefaultRequest::initialize</code></a> method. The method matches the <em>path part</em> of the request uri against the entries of the <code>Routes</code> configuration section to find an appropriate action key.</p>
+<p><b>Variables</b> declared in path segments will be automatically passed as request parameters, but may be overwritten by explicit request parameters. The character <em>*</em> is used as <em>wildcard</em>. Regular expression <b>patterns</b> can be added to variables to narrow the set of possibilities.</p>
 <p>The following example configuration taken from the <a class="el" href="gettingstarted.html#app">default application</a> illustrates the concept:</p>
 <div class="fragment"><div class="line">[Routes]</div><div class="line">POST/session = action=login</div><div class="line">DELETE/session = action=logout</div><div class="line">/rest/{language}/{className} = action=restAction&amp;collection=1</div><div class="line">/rest/{language}/{className}/{id|[0-9]+} = action=restAction&amp;collection=0</div><div class="line">GET/* = action=cms</div></div><!-- fragment --><ul>
 <li>The first two entries define the login and logout routes using the appropriate HTTP methods.</li>
@@ -188,6 +189,13 @@ External routing</h4>
 <li>The last entry is matched by any GET request to a path that was not matched before. It is mapped to the <em>cms</em> action - corresponding to the action key <em>??cms</em>.</li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>Any requests on routes that are <b>not</b> defined in the <code>Routes</code> configuration section will cause a <code>404</code> error. This is why this section is also considered the <em>public</em> interface of the application.</dd></dl>
+<h5>Precedence rules</h5>
+<p>Due to the use of variables in route definitions several routes might match a given request. This leads to the question which route to take, since the application only processes one per request. To find the best matching route <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html"><code>DefaultRequest</code></a> orders all matching routes and takes the first one. The sorting is done under the assumption that a more specific route is a better match.</p>
+<p>The following <b>rules</b> are implemented to find the more specific route:</p><ul>
+<li>the route with <em>less variables</em> is more specific and if two routes have the same number of variables</li>
+<li>the route with <em>more patterns</em> in the variable definitions is more specific.</li>
+</ul>
+<p>In cases where these simple rules are not sufficient, you may configure a <b>custom</b> <a class="el" href="interfacewcmf_1_1lib_1_1presentation_1_1_request.html"><code>Request</code></a> implementation (see <a class="el" href="configuration.html#conf_di">Dependency injection</a>) which overrides the <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1impl_1_1_default_request.html#a91a3762cad1e6c6f2dbfb7234f3a70a9"><code>DefaultRequest::isMatch</code></a> method.</p>
 <h5>HTTP methods</h5>
 <p>To restrict a path to one or more <b>HTTP methods</b>, they may be added in front of the route definition. In the following example the <em>cms</em> action is only available for the <em>GET</em> method, while the other actions accept <em>GET</em>, <em>POST</em>, <em>PUT</em> and <em>DELETE</em> requests:</p>
 <div class="fragment"><div class="line">[Routes]</div><div class="line">GET/ = action=cms</div><div class="line">GET,POST,PUT,DELETE/rest/{language}/{className} = action=restAction&amp;collection=1</div><div class="line">GET,POST,PUT,DELETE/rest/{language}/{className}/{id|[0-9]+} = action=restAction&amp;collection=0</div></div><!-- fragment --><p>If no method is added to a route, all methods are accepted.</p>
@@ -282,7 +290,7 @@ Logging</h2>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2018 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Feb 7 2018 12:20:08 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
+          Generated on Mon Aug 20 2018 12:48:28 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
       </div>
     </div>
   </div>

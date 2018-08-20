@@ -11,6 +11,7 @@ var searchData=
   ['operator_5for',['OPERATOR_OR',['../classwcmf_1_1lib_1_1persistence_1_1_criteria.html#a22ee5179bb121cf704f9be4c8581a913',1,'wcmf::lib::persistence::Criteria']]],
   ['optimisticlockexception',['OptimisticLockException',['../classwcmf_1_1lib_1_1persistence_1_1concurrency_1_1_optimistic_lock_exception.html',1,'wcmf::lib::persistence::concurrency']]],
   ['optimize',['optimize',['../classwcmf_1_1application_1_1controller_1_1_search_index_controller.html#ac70e64f106037d1592bd8d68eb7122ef',1,'wcmf::application::controller::SearchIndexController']]],
+  ['optimize_5ffreq',['OPTIMIZE_FREQ',['../classwcmf_1_1application_1_1controller_1_1_search_index_controller.html#a90153319595442115cf2551ce85ec744',1,'wcmf::application::controller::SearchIndexController']]],
   ['optimizeindex',['optimizeIndex',['../classwcmf_1_1lib_1_1search_1_1impl_1_1_lucene_search.html#a87d995bff5364ecdfb23d3531c9f90dc',1,'wcmf\lib\search\impl\LuceneSearch\optimizeIndex()'],['../interfacewcmf_1_1lib_1_1search_1_1_indexed_search.html#a87d995bff5364ecdfb23d3531c9f90dc',1,'wcmf\lib\search\IndexedSearch\optimizeIndex()']]],
   ['order_5fbottom',['ORDER_BOTTOM',['../classwcmf_1_1application_1_1controller_1_1_sort_controller.html#ac41b82d4e56329c031813af8a6fef168',1,'wcmf::application::controller::SortController']]],
   ['output',['output',['../classwcmf_1_1lib_1_1pdf_1_1_p_d_f_template.html#ac80632a39ad4fb3181a5eb935d16368d',1,'wcmf::lib::pdf::PDFTemplate']]],

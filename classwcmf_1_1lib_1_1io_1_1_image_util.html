@@ -130,10 +130,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a79aab6d521f7e7fa40850d642e964a6d"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_image_util.html#a79aab6d521f7e7fa40850d642e964a6d">getImageTag</a> ($imageFile, $widths, $type='w', $sizes='', $useDataAttributes=false, $alt='', $class='', $title='', $width=null, $fallbackFile='', $generate=false)</td></tr>
-<tr class="separator:a79aab6d521f7e7fa40850d642e964a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fb0bd9913984e6a3fd6d32573a6efad"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_image_util.html#a6fb0bd9913984e6a3fd6d32573a6efad">getCachedImage</a> ($location)</td></tr>
-<tr class="separator:a6fb0bd9913984e6a3fd6d32573a6efad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93ea1d49ba96a52e1fb9ce4470a9f4e4"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_image_util.html#a93ea1d49ba96a52e1fb9ce4470a9f4e4">getImageTag</a> ($imageFile, $widths, $type='w', $sizes='', $useDataAttributes=false, $alt='', $class='', $title='', array $data=[], $width=null, $fallbackFile='', $generate=false)</td></tr>
+<tr class="separator:a93ea1d49ba96a52e1fb9ce4470a9f4e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1aade87417fc342aa75571f74c94388"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1io_1_1_image_util.html#ad1aade87417fc342aa75571f74c94388">getCachedImage</a> ($location, $returnLocation=false)</td></tr>
+<tr class="separator:ad1aade87417fc342aa75571f74c94388"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -141,8 +141,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a67fcefdf6280d210671d90a28c296698"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a79aab6d521f7e7fa40850d642e964a6d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79aab6d521f7e7fa40850d642e964a6d">&#9670;&nbsp;</a></span>getImageTag()</h2>
+<a id="a93ea1d49ba96a52e1fb9ce4470a9f4e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93ea1d49ba96a52e1fb9ce4470a9f4e4">&#9670;&nbsp;</a></span>getImageTag()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -201,6 +201,12 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">array&#160;</td>
+          <td class="paramname"><em>$data</em> = <code>[]</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>$width</em> = <code>null</code>, </td>
         </tr>
@@ -230,9 +236,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Create an HTML image tag using srcset and sizes attributes. </p>
-<p>The image locations in the srcset attribute will point to the frontend cache directory (<em>FrontendCache</em> configuration section). </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The original image is supposed to be located inside the upload directory of the application (<em>Media</em> configuration section). The image locations in the srcset attribute will point to the frontend cache directory (<em>FrontendCache</em> configuration section). </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$imageFile</td><td>The image file </td></tr>
+    <tr><td class="paramname">$imageFile</td><td>The image file location relative to the upload directory </td></tr>
     <tr><td class="paramname">$widths</td><td>Array of sorted width values to be used in the srcset attribute </td></tr>
     <tr><td class="paramname">$type</td><td>Indicates how width values should be used (optional, default: w)<ul>
 <li>w: Values will be used as pixels, e.g. widths="1600,960" results in srcset="... 1600w, ... 960w"</li>
@@ -244,6 +250,7 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">$alt</td><td>Alternative text (optional) </td></tr>
     <tr><td class="paramname">$class</td><td>Image class (optional) </td></tr>
     <tr><td class="paramname">$title</td><td>Image title (optional) </td></tr>
+    <tr><td class="paramname">$data</td><td>Data attributes as key/value pairs </td></tr>
     <tr><td class="paramname">$width</td><td>Width in pixels to output for the width attribute, the height attribute will be calculated according to the aspect ration (optional) </td></tr>
     <tr><td class="paramname">$fallbackFile</td><td>The image file to use, if imageFile does not exist (optional) </td></tr>
     <tr><td class="paramname">$generate</td><td>Boolean indicating whether to generate the images or not (optional, default: <b>false</b>) </td></tr>
@@ -252,12 +259,12 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_util_8php_source.html#l00054">54</a> of file <a class="el" href="_image_util_8php_source.html">ImageUtil.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_util_8php_source.html#l00056">56</a> of file <a class="el" href="_image_util_8php_source.html">ImageUtil.php</a>.</p>
 
 </div>
 </div>
-<a id="a6fb0bd9913984e6a3fd6d32573a6efad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fb0bd9913984e6a3fd6d32573a6efad">&#9670;&nbsp;</a></span>getCachedImage()</h2>
+<a id="ad1aade87417fc342aa75571f74c94388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1aade87417fc342aa75571f74c94388">&#9670;&nbsp;</a></span>getCachedImage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,8 +276,18 @@ Public Attributes</h2></td></tr>
           <td class="memname">static getCachedImage </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$location</em></td><td>)</td>
+          <td class="paramname"><em>$location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$returnLocation</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -284,11 +301,13 @@ Public Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">$location</td><td></td></tr>
+    <tr><td class="paramname">$returnLocation</td><td>Boolean indicating if only the file location should be returned (optional) </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>String, if returnLocation is true </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_util_8php_source.html#l00137">137</a> of file <a class="el" href="_image_util_8php_source.html">ImageUtil.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_util_8php_source.html#l00155">155</a> of file <a class="el" href="_image_util_8php_source.html">ImageUtil.php</a>.</p>
 
 </div>
 </div>
@@ -321,7 +340,7 @@ Public Attributes</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2018 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Feb 7 2018 12:20:10 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
+          Generated on Mon Aug 20 2018 12:48:31 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
       </div>
     </div>
   </div>

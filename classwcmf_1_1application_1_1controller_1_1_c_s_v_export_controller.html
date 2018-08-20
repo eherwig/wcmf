@@ -116,6 +116,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classwcmf_1_1application_1_1controller_1_1_c_s_v_export_controller-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -132,7 +133,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="markdownTableBody" class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><em>in</em> <code>docFile</code>  </td><td class="markdownTableBodyNone">The name of the file to write to (path relative to script main location) (default: 'export.csv')   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><em>in</em> <code>className</code>  </td><td class="markdownTableBodyNone">The entity type to export instances of   </td></tr>
+<td class="markdownTableBodyNone"><em>in</em> <code>className</code>  </td><td class="markdownTableBodyNone">The entity type to export instances of or the source type, when exporting a relation (see sourceId, relation)   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><em>in</em> <code>sortFieldName</code>  </td><td class="markdownTableBodyNone">The field name to sort the list by. Must be one of the fields of the type selected by the className parameter. If omitted, the sorting is undefined (optional)   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowEven">
@@ -140,12 +141,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="markdownTableBody" class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><em>in</em> <code>query</code>  </td><td class="markdownTableBodyNone">A query condition encoded in RQL to be used with <a class="el" href="classwcmf_1_1lib_1_1model_1_1_string_query.html#a287276e468752b7a84f131041346e73a" title="Set the query condition string as RQL. ">StringQuery::setRQLConditionString()</a>   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><em>in</em> <code>sourceId</code>  </td><td class="markdownTableBodyNone">When exporting a relation: Id of the object to which the exported objects are related (determines the object id together with <em>className</em>)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><em>in</em> <code>relation</code>  </td><td class="markdownTableBodyNone">When exporting a relation: Name of the relation to the object defined by <em>sourceId</em> (determines the type of the returned objects)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><em>in</em> <code>nodesPerCall</code>  </td><td class="markdownTableBodyNone">The number of nodes to process in one call (default: 50)   </td></tr>
 </table>
 </div> </div><p>For additional actions and parameters see <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html">BatchController actions</a>.</p>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00049">49</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00054">54</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for CSVExportController:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -174,6 +179,29 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6c907e8af775e517a77037dd0164222f inherit pub_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a> ()</td></tr>
 <tr class="separator:a6c907e8af775e517a77037dd0164222f inherit pub_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:adca712c0b09e2fcddcfd6bdb3e82da90"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_c_s_v_export_controller.html#adca712c0b09e2fcddcfd6bdb3e82da90">DOCFILE</a> = &quot;export.csv&quot;</td></tr>
+<tr class="separator:adca712c0b09e2fcddcfd6bdb3e82da90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdaa116a30de9e48ad42cdbef2f67eab"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_c_s_v_export_controller.html#abdaa116a30de9e48ad42cdbef2f67eab">NODES_PER_CALL</a> = 50</td></tr>
+<tr class="separator:abdaa116a30de9e48ad42cdbef2f67eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html">BatchController</a></td></tr>
+<tr class="memitem:abfdca9e1c77b4ddb4180f463cab3b99c inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#abfdca9e1c77b4ddb4180f463cab3b99c">REQUEST_VAR</a> = 'request'</td></tr>
+<tr class="separator:abfdca9e1c77b4ddb4180f463cab3b99c inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af73eaa0312b714fe5ae3b4e81e6ccf59 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#af73eaa0312b714fe5ae3b4e81e6ccf59">ONE_CALL_VAR</a> = 'oneCall'</td></tr>
+<tr class="separator:af73eaa0312b714fe5ae3b4e81e6ccf59 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a375e3a8043bbbd4061ea06e857ffee73 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a375e3a8043bbbd4061ea06e857ffee73">STEP_VAR</a> = 'step'</td></tr>
+<tr class="separator:a375e3a8043bbbd4061ea06e857ffee73 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e60c3a3b30a97852be0f55bef8b74d8 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a3e60c3a3b30a97852be0f55bef8b74d8">NUM_STEPS_VAR</a> = 'numSteps'</td></tr>
+<tr class="separator:a3e60c3a3b30a97852be0f55bef8b74d8 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac289df8607485ddd41737b5669fa7fe7 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ac289df8607485ddd41737b5669fa7fe7">DOWNLOAD_STEP_VAR</a> = 'downloadStep'</td></tr>
+<tr class="separator:ac289df8607485ddd41737b5669fa7fe7 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d68c379814aadbab70cef14a16a3e3 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab3d68c379814aadbab70cef14a16a3e3">PACKAGES_VAR</a> = 'packages'</td></tr>
+<tr class="separator:ab3d68c379814aadbab70cef14a16a3e3 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classwcmf_1_1lib_1_1presentation_1_1_controller"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classwcmf_1_1lib_1_1presentation_1_1_controller')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html">Controller</a></td></tr>
+<tr class="memitem:af76f3cc0c2cf951cfccc44c977c49f7d inherit pub_attribs_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#af76f3cc0c2cf951cfccc44c977c49f7d">CSRF_TOKEN_PARAM</a> = 'csrf_token'</td></tr>
+<tr class="separator:af76f3cc0c2cf951cfccc44c977c49f7d inherit pub_attribs_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a184909dab34698899937d810a9f5d393"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_c_s_v_export_controller.html#a184909dab34698899937d810a9f5d393">validate</a> ()</td></tr>
@@ -193,8 +221,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a4e33d49075fbd1b1de9ad268625a3736 inherit pro_methods_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f2ef7d2d349d3ef7c8a913e110d58f6 inherit pro_methods_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a6f2ef7d2d349d3ef7c8a913e110d58f6">getStepNumber</a> ()</td></tr>
 <tr class="separator:a6f2ef7d2d349d3ef7c8a913e110d58f6 inherit pro_methods_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0e75dc0967afe71da4d6bd46d7a500b inherit pro_methods_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab0e75dc0967afe71da4d6bd46d7a500b">addWorkPackage</a> ($name, $size, $oids, $callback, $args=null)</td></tr>
-<tr class="separator:ab0e75dc0967afe71da4d6bd46d7a500b inherit pro_methods_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e1c732256bd007cac26661410976b52 inherit pro_methods_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a6e1c732256bd007cac26661410976b52">addWorkPackage</a> ($name, $size, array $oids, $callback, $args=null)</td></tr>
+<tr class="separator:a6e1c732256bd007cac26661410976b52 inherit pro_methods_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9a3e191499fb8ae2008f646819712c7 inherit pro_methods_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ae9a3e191499fb8ae2008f646819712c7">processPart</a> ($step)</td></tr>
 <tr class="separator:ae9a3e191499fb8ae2008f646819712c7 inherit pro_methods_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a858996df90c7181ae4da50654ff11160 inherit pro_methods_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a858996df90c7181ae4da50654ff11160">getRequestValue</a> ($name)</td></tr>
@@ -252,25 +280,6 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a84051ded64678112f8d5ccd7b5270bf5 inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12b40afde936c7acc5995799eab8cd5c inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a12b40afde936c7acc5995799eab8cd5c">clearLocalSessionValues</a> ()</td></tr>
 <tr class="separator:a12b40afde936c7acc5995799eab8cd5c inherit pro_methods_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html">BatchController</a></td></tr>
-<tr class="memitem:abfdca9e1c77b4ddb4180f463cab3b99c inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#abfdca9e1c77b4ddb4180f463cab3b99c">REQUEST_VAR</a> = 'request'</td></tr>
-<tr class="separator:abfdca9e1c77b4ddb4180f463cab3b99c inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af73eaa0312b714fe5ae3b4e81e6ccf59 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#af73eaa0312b714fe5ae3b4e81e6ccf59">ONE_CALL_VAR</a> = 'oneCall'</td></tr>
-<tr class="separator:af73eaa0312b714fe5ae3b4e81e6ccf59 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a375e3a8043bbbd4061ea06e857ffee73 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a375e3a8043bbbd4061ea06e857ffee73">STEP_VAR</a> = 'step'</td></tr>
-<tr class="separator:a375e3a8043bbbd4061ea06e857ffee73 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e60c3a3b30a97852be0f55bef8b74d8 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a3e60c3a3b30a97852be0f55bef8b74d8">NUM_STEPS_VAR</a> = 'numSteps'</td></tr>
-<tr class="separator:a3e60c3a3b30a97852be0f55bef8b74d8 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac289df8607485ddd41737b5669fa7fe7 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ac289df8607485ddd41737b5669fa7fe7">DOWNLOAD_STEP_VAR</a> = 'downloadStep'</td></tr>
-<tr class="separator:ac289df8607485ddd41737b5669fa7fe7 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3d68c379814aadbab70cef14a16a3e3 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab3d68c379814aadbab70cef14a16a3e3">PACKAGES_VAR</a> = 'packages'</td></tr>
-<tr class="separator:ab3d68c379814aadbab70cef14a16a3e3 inherit pub_attribs_classwcmf_1_1application_1_1controller_1_1_batch_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_attribs_classwcmf_1_1lib_1_1presentation_1_1_controller"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classwcmf_1_1lib_1_1presentation_1_1_controller')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html">Controller</a></td></tr>
-<tr class="memitem:af76f3cc0c2cf951cfccc44c977c49f7d inherit pub_attribs_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#af76f3cc0c2cf951cfccc44c977c49f7d">CSRF_TOKEN_PARAM</a> = 'csrf_token'</td></tr>
-<tr class="separator:af76f3cc0c2cf951cfccc44c977c49f7d inherit pub_attribs_classwcmf_1_1lib_1_1presentation_1_1_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a47a24ac0d700f62a9434d298ade72fb9"></a>
@@ -300,7 +309,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a47a24ac0d700f62a9434d298ade72fb9" title="Initialize the Controller with request/response data. ">Controller::initialize()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00058">58</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00063">63</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 
 </div>
 </div>
@@ -328,7 +337,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a184909dab34698899937d810a9f5d393" title="Check if the request is valid. ">Controller::validate()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00085">85</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00090">90</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 
 </div>
 </div>
@@ -357,7 +366,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#aa969f966d1ab74704cbde9512d281d2c" title="Get definitions of work packages. ">BatchController::getWorkPackage()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00121">121</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00149">149</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 
 </div>
 </div>
@@ -385,7 +394,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ad91d741678d4dd54df44eb28216f1a39" title="Get the filename of the file to download at the end of processing. ">BatchController::getDownloadFile()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00131">131</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00159">159</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 
 </div>
 </div>
@@ -420,9 +429,9 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>This is a callback method called on a matching work package, see <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab0e75dc0967afe71da4d6bd46d7a500b" title="Add a work package to session. ">BatchController::addWorkPackage()</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a callback method called on a matching work package, see <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a6e1c732256bd007cac26661410976b52" title="Add a work package to session. ">BatchController::addWorkPackage()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00140">140</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00168">168</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 
 </div>
 </div>
@@ -457,9 +466,9 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>This is a callback method called on a matching work package, see <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ab0e75dc0967afe71da4d6bd46d7a500b" title="Add a work package to session. ">BatchController::addWorkPackage()</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a callback method called on a matching work package, see <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a6e1c732256bd007cac26661410976b52" title="Add a work package to session. ">BatchController::addWorkPackage()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00192">192</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00237">237</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 
 </div>
 </div>
@@ -487,7 +496,40 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#aff07c1d29d6d6a540c726948254a1764" title="Clean up after all tasks are finished. ">BatchController::cleanup()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00223">223</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00270">270</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="adca712c0b09e2fcddcfd6bdb3e82da90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adca712c0b09e2fcddcfd6bdb3e82da90">&#9670;&nbsp;</a></span>DOCFILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const DOCFILE = &quot;export.csv&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00057">57</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+
+</div>
+</div>
+<a id="abdaa116a30de9e48ad42cdbef2f67eab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdaa116a30de9e48ad42cdbef2f67eab">&#9670;&nbsp;</a></span>NODES_PER_CALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const NODES_PER_CALL = 50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00058">58</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 
 </div>
 </div>
@@ -503,7 +545,7 @@ Additional Inherited Members</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2018 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Feb 7 2018 12:20:08 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
+          Generated on Mon Aug 20 2018 12:48:29 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
       </div>
     </div>
   </div>

@@ -132,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dd>
 : The query does not search in objects, that are created inside the current transaction.</dd></dl>
 <p>The following example shows the usage:</p>
-<div class="fragment"><div class="line"><span class="comment">// The code builds the following query condition:</span></div><div class="line"><span class="comment">// WHERE (Author.name LIKE &#39;%ingo%&#39; AND Author.email LIKE &#39;%wemove%&#39;) OR (Author.name LIKE &#39;%herwig%&#39;) AND</span></div><div class="line"><span class="comment">//       (Recipe.created &gt;= &#39;2004-01-01&#39;) AND (Recipe.created &lt; &#39;2005-01-01&#39;) AND ((Recipe.name LIKE &#39;%Salat%&#39;) OR (Recipe.portions = 4))</span></div><div class="line"></div><div class="line">$query = <span class="keyword">new</span> ObjectQuery(<span class="stringliteral">&#39;Author&#39;</span>);</div><div class="line"></div><div class="line"><span class="comment">// (Author.name LIKE &#39;%ingo%&#39; AND Author.email LIKE &#39;%wemove%&#39;)</span></div><div class="line">$authorTpl1 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Author&#39;</span>);</div><div class="line">$authorTpl1-&gt;setValue(<span class="stringliteral">&quot;name&quot;</span>, <span class="stringliteral">&quot;ingo&quot;</span>);</div><div class="line">$authorTpl1-&gt;setValue(<span class="stringliteral">&quot;email&quot;</span>, <span class="stringliteral">&quot;LIKE &#39;%wemove%&#39;&quot;</span>);</div><div class="line"></div><div class="line"><span class="comment">// OR Author.name LIKE &#39;%herwig%&#39;</span></div><div class="line">$authorTpl2 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Author&#39;</span>, null, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#a22ee5179bb121cf704f9be4c8581a913">Criteria::OPERATOR_OR</a>);</div><div class="line">$authorTpl2-&gt;setValue(<span class="stringliteral">&quot;name&quot;</span>, <span class="stringliteral">&quot;herwig&quot;</span>);</div><div class="line"></div><div class="line"><span class="comment">// Recipe.created &gt;= &#39;2004-01-01&#39; AND Recipe.created &lt; &#39;2005-01-01&#39;</span></div><div class="line">$recipeTpl1 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Recipe&#39;</span>);</div><div class="line">$recipeTpl1-&gt;setValue(<span class="stringliteral">&quot;created&quot;</span>, <span class="stringliteral">&quot;&gt;= &#39;2004-01-01&#39;&quot;</span>);</div><div class="line">$recipeTpl2 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Recipe&#39;</span>);</div><div class="line">$recipeTpl2-&gt;setValue(<span class="stringliteral">&quot;created&quot;</span>, <span class="stringliteral">&quot;&lt; &#39;2005-01-01&#39;&quot;</span>);</div><div class="line"></div><div class="line"><span class="comment">// AND (Recipe.name LIKE &#39;%Salat%&#39; OR Recipe.portions = 4)</span></div><div class="line"><span class="comment">// could have be built using one template, but this demonstrates the usage</span></div><div class="line"><span class="comment">// of the ObjectQuery::makeGroup() method</span></div><div class="line">$recipeTpl3 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Recipe&#39;</span>);</div><div class="line">$recipeTpl3-&gt;setValue(<span class="stringliteral">&quot;name&quot;</span>, <span class="stringliteral">&quot;Salat&quot;</span>);</div><div class="line">$recipeTpl4 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Recipe&#39;</span>, null, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#a22ee5179bb121cf704f9be4c8581a913">Criteria::OPERATOR_OR</a>);</div><div class="line">$recipeTpl4-&gt;setValue(<span class="stringliteral">&quot;portions&quot;</span>, <span class="stringliteral">&quot;= 4&quot;</span>);</div><div class="line">$query-&gt;makeGroup([$recipeTpl3, $recipeTpl4], <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#aecfb583df189a0066873cc163d1fe2a7">Criteria::OPERATOR_AND</a>);</div><div class="line"></div><div class="line">$authorTpl1-&gt;addNode($recipeTpl1, <span class="stringliteral">&#39;Recipe&#39;</span>);</div><div class="line">$authorTpl1-&gt;addNode($recipeTpl2, <span class="stringliteral">&#39;Recipe&#39;</span>);</div><div class="line">$authorTpl1-&gt;addNode($recipeTpl3, <span class="stringliteral">&#39;Recipe&#39;</span>);</div><div class="line">$authorTpl1-&gt;addNode($recipeTpl4, <span class="stringliteral">&#39;Recipe&#39;</span>);</div><div class="line">$authorList = $query-&gt;execute(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b">BuildDepth::SINGLE</a>);</div></div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>There are some limitations when using this class:<ul>
+<div class="fragment"><div class="line"><span class="comment">// The code builds the following query condition:</span></div><div class="line"><span class="comment">// WHERE (Author.name LIKE &#39;%ingo%&#39; AND Author.email LIKE &#39;%wemove%&#39;) OR (Author.name LIKE &#39;%herwig%&#39;) AND</span></div><div class="line"><span class="comment">//       (Recipe.created &gt;= &#39;2004-01-01&#39;) AND (Recipe.created &lt; &#39;2005-01-01&#39;) AND ((Recipe.name LIKE &#39;%Salat%&#39;) OR (Recipe.portions = 4))</span></div><div class="line"></div><div class="line">$query = <span class="keyword">new</span> ObjectQuery(<span class="stringliteral">&#39;Author&#39;</span>);</div><div class="line"></div><div class="line"><span class="comment">// (Author.name LIKE &#39;%ingo%&#39; AND Author.email LIKE &#39;%wemove%&#39;)</span></div><div class="line">$authorTpl1 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Author&#39;</span>);</div><div class="line">$authorTpl1-&gt;setValue(<span class="stringliteral">&quot;name&quot;</span>, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#ae6b230eb180eff4b2a102692f591abe5">Criteria::asValue</a>(<span class="stringliteral">&quot;LIKE&quot;</span>, <span class="stringliteral">&quot;%ingo%&quot;</span>));</div><div class="line">$authorTpl1-&gt;setValue(<span class="stringliteral">&quot;email&quot;</span>, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#ae6b230eb180eff4b2a102692f591abe5">Criteria::asValue</a>(<span class="stringliteral">&quot;LIKE&quot;</span>, <span class="stringliteral">&quot;%wemove%&quot;</span>));</div><div class="line"></div><div class="line"><span class="comment">// OR Author.name LIKE &#39;%herwig%&#39;</span></div><div class="line">$authorTpl2 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Author&#39;</span>, null, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#a22ee5179bb121cf704f9be4c8581a913">Criteria::OPERATOR_OR</a>);</div><div class="line">$authorTpl2-&gt;setValue(<span class="stringliteral">&quot;name&quot;</span>, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#ae6b230eb180eff4b2a102692f591abe5">Criteria::asValue</a>(<span class="stringliteral">&quot;LIKE&quot;</span>, <span class="stringliteral">&quot;%herwig%&quot;</span>));</div><div class="line"></div><div class="line"><span class="comment">// Recipe.created &gt;= &#39;2004-01-01&#39; AND Recipe.created &lt; &#39;2005-01-01&#39;</span></div><div class="line">$recipeTpl1 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Recipe&#39;</span>);</div><div class="line">$recipeTpl1-&gt;setValue(<span class="stringliteral">&quot;created&quot;</span>, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#ae6b230eb180eff4b2a102692f591abe5">Criteria::asValue</a>(<span class="stringliteral">&quot;&gt;=&quot;</span>, <span class="stringliteral">&quot;2004-01-01&quot;</span>));</div><div class="line">$recipeTpl2 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Recipe&#39;</span>);</div><div class="line">$recipeTpl2-&gt;setValue(<span class="stringliteral">&quot;created&quot;</span>, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#ae6b230eb180eff4b2a102692f591abe5">Criteria::asValue</a>(<span class="stringliteral">&quot;&lt;&quot;</span>, <span class="stringliteral">&quot;2005-01-01&quot;</span>));</div><div class="line"></div><div class="line"><span class="comment">// AND (Recipe.name LIKE &#39;%Salat%&#39; OR Recipe.portions = 4)</span></div><div class="line"><span class="comment">// could have be built using one template, but this demonstrates the usage</span></div><div class="line"><span class="comment">// of the ObjectQuery::makeGroup() method</span></div><div class="line">$recipeTpl3 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Recipe&#39;</span>);</div><div class="line">$recipeTpl3-&gt;setValue(<span class="stringliteral">&quot;name&quot;</span>, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#ae6b230eb180eff4b2a102692f591abe5">Criteria::asValue</a>(<span class="stringliteral">&quot;LIKE&quot;</span>, <span class="stringliteral">&quot;%Salat%&quot;</span>));</div><div class="line">$recipeTpl4 = $query-&gt;getObjectTemplate(<span class="stringliteral">&#39;Recipe&#39;</span>, null, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#a22ee5179bb121cf704f9be4c8581a913">Criteria::OPERATOR_OR</a>);</div><div class="line">$recipeTpl4-&gt;setValue(<span class="stringliteral">&quot;portions&quot;</span>, <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#ae6b230eb180eff4b2a102692f591abe5">Criteria::asValue</a>(<span class="stringliteral">&quot;=&quot;</span>, 4));</div><div class="line">$query-&gt;makeGroup([$recipeTpl3, $recipeTpl4], <a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_criteria.html#aecfb583df189a0066873cc163d1fe2a7">Criteria::OPERATOR_AND</a>);</div><div class="line"></div><div class="line">$authorTpl1-&gt;addNode($recipeTpl1, <span class="stringliteral">&#39;Recipe&#39;</span>);</div><div class="line">$authorTpl1-&gt;addNode($recipeTpl2, <span class="stringliteral">&#39;Recipe&#39;</span>);</div><div class="line">$authorTpl1-&gt;addNode($recipeTpl3, <span class="stringliteral">&#39;Recipe&#39;</span>);</div><div class="line">$authorTpl1-&gt;addNode($recipeTpl4, <span class="stringliteral">&#39;Recipe&#39;</span>);</div><div class="line">$authorList = $query-&gt;execute(<a class="code" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b">BuildDepth::SINGLE</a>);</div></div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>There are some limitations when using this class:<ul>
 <li>This class works only with Nodes as PersistentObjects</li>
 <li>This class only works for Nodes mapped by RDBMapper subclasses.</li>
 <li>All objects have to reside in the same datastore (the connection is taken from the first mapper)</li>
@@ -141,7 +141,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00105">105</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00106">106</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for ObjectQuery:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -187,6 +187,8 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:a2321df4f2f7d188b92b96fe63dc71a90"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a2321df4f2f7d188b92b96fe63dc71a90">getLogger</a> ()</td></tr>
+<tr class="separator:a2321df4f2f7d188b92b96fe63dc71a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacffdaf45c72a42c511bc6e6f9717e32"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#aacffdaf45c72a42c511bc6e6f9717e32">getQueryType</a> ()</td></tr>
 <tr class="separator:aacffdaf45c72a42c511bc6e6f9717e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2288399ea53ba830fbcc61791398f44a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#a2288399ea53ba830fbcc61791398f44a">buildQuery</a> ($buildDepth, $orderby=null, <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html">PagingInfo</a> $pagingInfo=null)</td></tr>
@@ -204,6 +206,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:ae6df6465b7f7b865fb1e03435a4a37c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1_object_query.html#ae6df6465b7f7b865fb1e03435a4a37c4">processTableName</a> (<a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html">Node</a> $tpl)</td></tr>
 <tr class="separator:ae6df6465b7f7b865fb1e03435a4a37c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classwcmf_1_1lib_1_1model_1_1_abstract_query"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classwcmf_1_1lib_1_1model_1_1_abstract_query')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classwcmf_1_1lib_1_1model_1_1_abstract_query.html">AbstractQuery</a></td></tr>
+<tr class="memitem:a2321df4f2f7d188b92b96fe63dc71a90 inherit pro_methods_classwcmf_1_1lib_1_1model_1_1_abstract_query"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1_abstract_query.html#a2321df4f2f7d188b92b96fe63dc71a90">getLogger</a> ()</td></tr>
+<tr class="separator:a2321df4f2f7d188b92b96fe63dc71a90 inherit pro_methods_classwcmf_1_1lib_1_1model_1_1_abstract_query"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacffdaf45c72a42c511bc6e6f9717e32 inherit pro_methods_classwcmf_1_1lib_1_1model_1_1_abstract_query"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1_abstract_query.html#aacffdaf45c72a42c511bc6e6f9717e32">getQueryType</a> ()</td></tr>
 <tr class="separator:aacffdaf45c72a42c511bc6e6f9717e32 inherit pro_methods_classwcmf_1_1lib_1_1model_1_1_abstract_query"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2288399ea53ba830fbcc61791398f44a inherit pro_methods_classwcmf_1_1lib_1_1model_1_1_abstract_query"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1_abstract_query.html#a2288399ea53ba830fbcc61791398f44a">buildQuery</a> ($buildDepth, $orderby=null, <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html">PagingInfo</a> $pagingInfo=null)</td></tr>
@@ -255,7 +259,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00129">129</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00132">132</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -276,7 +280,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Destructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00142">142</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00148">148</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -299,7 +303,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Get the query id. </p>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00151">151</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00157">157</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -346,7 +350,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html" title="Node adds the concept of relations to PersistentObject. ">Node</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00163">163</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00169">169</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -392,7 +396,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00197">197</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00203">203</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -432,7 +436,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00236">236</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00242">242</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -454,7 +458,35 @@ Additional Inherited Members</h2></td></tr>
 <p>Get the condition part of the query. </p>
 <p>This is especially useful to build a <a class="el" href="classwcmf_1_1lib_1_1model_1_1_string_query.html" title="StringQuery executes queries from a string representation. ">StringQuery</a> from the query objects. </p><dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00254">254</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00260">260</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+
+</div>
+</div>
+<a id="a2321df4f2f7d188b92b96fe63dc71a90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2321df4f2f7d188b92b96fe63dc71a90">&#9670;&nbsp;</a></span>getLogger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">getLogger </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1model_1_1_abstract_query.html#a2321df4f2f7d188b92b96fe63dc71a90" title="Get the logger. ">AbstractQuery::getLogger()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00273">273</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -482,7 +514,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1model_1_1_abstract_query.html#aacffdaf45c72a42c511bc6e6f9717e32" title="Get the name of the type that should be queried. ">AbstractQuery::getQueryType()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00267">267</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00280">280</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -527,7 +559,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1model_1_1_abstract_query.html#a2288399ea53ba830fbcc61791398f44a" title="Build the query. ">AbstractQuery::buildQuery()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00274">274</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00287">287</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -574,7 +606,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00337">337</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00350">350</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -621,7 +653,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00466">466</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00477">477</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -669,7 +701,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Array </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00543">543</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00554">554</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -707,7 +739,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00581">581</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00592">592</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -737,7 +769,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Reset internal variables. </p>
 <p>Must be called after buildQuery </p>
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00598">598</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00609">609</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -774,7 +806,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Associative array with keys 'name', 'alias' </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00611">611</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00622">622</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -802,7 +834,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00639">639</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00650">650</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -819,7 +851,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00107">107</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00108">108</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -835,7 +867,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00108">108</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00109">109</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -851,7 +883,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00109">109</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_object_query_8php_source.html#l00110">110</a> of file <a class="el" href="_object_query_8php_source.html">ObjectQuery.php</a>.</p>
 
 </div>
 </div>
@@ -867,7 +899,7 @@ Additional Inherited Members</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2018 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Feb 7 2018 12:20:10 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
+          Generated on Mon Aug 20 2018 12:48:31 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
       </div>
     </div>
   </div>

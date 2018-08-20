@@ -5,5 +5,6 @@ var searchData=
   ['one_5fcall_5fvar',['ONE_CALL_VAR',['../classwcmf_1_1application_1_1controller_1_1_batch_controller.html#af73eaa0312b714fe5ae3b4e81e6ccf59',1,'wcmf::application::controller::BatchController']]],
   ['operator_5fand',['OPERATOR_AND',['../classwcmf_1_1lib_1_1persistence_1_1_criteria.html#aecfb583df189a0066873cc163d1fe2a7',1,'wcmf::lib::persistence::Criteria']]],
   ['operator_5for',['OPERATOR_OR',['../classwcmf_1_1lib_1_1persistence_1_1_criteria.html#a22ee5179bb121cf704f9be4c8581a913',1,'wcmf::lib::persistence::Criteria']]],
+  ['optimize_5ffreq',['OPTIMIZE_FREQ',['../classwcmf_1_1application_1_1controller_1_1_search_index_controller.html#a90153319595442115cf2551ce85ec744',1,'wcmf::application::controller::SearchIndexController']]],
   ['order_5fbottom',['ORDER_BOTTOM',['../classwcmf_1_1application_1_1controller_1_1_sort_controller.html#ac41b82d4e56329c031813af8a6fef168',1,'wcmf::application::controller::SortController']]]
 ];

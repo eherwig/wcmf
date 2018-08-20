@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['basename',['basename',['../classwcmf_1_1lib_1_1io_1_1_file_util.html#aa73f697da339663bbc1551bcd2621741',1,'wcmf::lib::io::FileUtil']]],
   ['basetestcase',['BaseTestCase',['../classwcmf_1_1test_1_1lib_1_1_base_test_case.html',1,'wcmf::test::lib']]],
   ['batchcontroller',['BatchController',['../classwcmf_1_1application_1_1controller_1_1_batch_controller.html',1,'wcmf::application::controller']]],
   ['batchdisplaycontroller',['BatchDisplayController',['../classwcmf_1_1application_1_1controller_1_1_batch_display_controller.html',1,'wcmf::application::controller']]],
@@ -16,5 +17,6 @@ var searchData=
   ['begintransaction',['beginTransaction',['../classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#af3380f3b13931d581fa973a382946b32',1,'wcmf\lib\model\mapper\impl\AbstractRDBMapper\beginTransaction()'],['../classwcmf_1_1lib_1_1persistence_1_1impl_1_1_null_mapper.html#af3380f3b13931d581fa973a382946b32',1,'wcmf\lib\persistence\impl\NullMapper\beginTransaction()'],['../interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#af3380f3b13931d581fa973a382946b32',1,'wcmf\lib\persistence\PersistenceMapper\beginTransaction()']]],
   ['builddepth',['BuildDepth',['../classwcmf_1_1lib_1_1persistence_1_1_build_depth.html',1,'wcmf::lib::persistence']]],
   ['buildlookuptable',['buildLookupTable',['../classwcmf_1_1lib_1_1config_1_1impl_1_1_inifile_configuration.html#a8fa89bbaaeb8fe1791b952701b19544b',1,'wcmf::lib::config::impl::InifileConfiguration']]],
-  ['buildquery',['buildQuery',['../classwcmf_1_1lib_1_1model_1_1_abstract_query.html#a2288399ea53ba830fbcc61791398f44a',1,'wcmf\lib\model\AbstractQuery\buildQuery()'],['../classwcmf_1_1lib_1_1model_1_1_object_query.html#a2288399ea53ba830fbcc61791398f44a',1,'wcmf\lib\model\ObjectQuery\buildQuery()'],['../classwcmf_1_1lib_1_1model_1_1_string_query.html#a2288399ea53ba830fbcc61791398f44a',1,'wcmf\lib\model\StringQuery\buildQuery()']]]
+  ['buildquery',['buildQuery',['../classwcmf_1_1lib_1_1model_1_1_abstract_query.html#a2288399ea53ba830fbcc61791398f44a',1,'wcmf\lib\model\AbstractQuery\buildQuery()'],['../classwcmf_1_1lib_1_1model_1_1_object_query.html#a2288399ea53ba830fbcc61791398f44a',1,'wcmf\lib\model\ObjectQuery\buildQuery()'],['../classwcmf_1_1lib_1_1model_1_1_string_query.html#a2288399ea53ba830fbcc61791398f44a',1,'wcmf\lib\model\StringQuery\buildQuery()']]],
+  ['byxpath',['byXpath',['../classwcmf_1_1test_1_1lib_1_1_selenium_test_case.html#aae1d90ef386852157e92fdaaed0c5485',1,'wcmf::test::lib::SeleniumTestCase']]]
 ];

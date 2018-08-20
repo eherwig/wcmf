@@ -129,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>It defines a persistence mechanism that specialized mappers customize by overriding the given template methods.</p>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00049">49</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00052">52</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for AbstractRDBMapper:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -143,6 +143,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae3f55400613d23694ab747757657ba94"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#ae3f55400613d23694ab747757657ba94">__construct</a> (<a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html">PersistenceFacade</a> $persistenceFacade, <a class="el" href="interfacewcmf_1_1lib_1_1security_1_1_permission_manager.html">PermissionManager</a> $permissionManager, <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1concurrency_1_1_concurrency_manager.html">ConcurrencyManager</a> $concurrencyManager, <a class="el" href="interfacewcmf_1_1lib_1_1core_1_1_event_manager.html">EventManager</a> $eventManager)</td></tr>
 <tr class="separator:ae3f55400613d23694ab747757657ba94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a421831a265621325e1fdd19aace0c758"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#a421831a265621325e1fdd19aace0c758">__destruct</a> ()</td></tr>
+<tr class="separator:a421831a265621325e1fdd19aace0c758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf11785905da71774e052912d784e3b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#aaf11785905da71774e052912d784e3b4">__sleep</a> ()</td></tr>
 <tr class="separator:aaf11785905da71774e052912d784e3b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f0cbf4bddc632ffeba75554216dc96d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#a0f0cbf4bddc632ffeba75554216dc96d">setConnectionParams</a> ($params)</td></tr>
@@ -183,12 +185,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aac5a86f3d85d6102907e74dd50bd15f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a177bf2544edfe85d1b67487e0453d5a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#a177bf2544edfe85d1b67487e0453d5a7">loadObjectsFromSQL</a> (<a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1_select_statement.html">SelectStatement</a> $selectStmt, $buildDepth=<a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_build_depth.html#af33f2aced1762d825db23934d1b3205b">BuildDepth::SINGLE</a>, <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html">PagingInfo</a> $pagingInfo=null, &amp;$originalData=null)</td></tr>
 <tr class="separator:a177bf2544edfe85d1b67487e0453d5a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af22a3b581d7a7ed7e8b20893013714d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#af22a3b581d7a7ed7e8b20893013714d8">handleDbEvent</a> ($e)</td></tr>
+<tr class="separator:af22a3b581d7a7ed7e8b20893013714d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3380f3b13931d581fa973a382946b32"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#af3380f3b13931d581fa973a382946b32">beginTransaction</a> ()</td></tr>
 <tr class="separator:af3380f3b13931d581fa973a382946b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc95fb0d27bada24f816703817abd614"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#afc95fb0d27bada24f816703817abd614">commitTransaction</a> ()</td></tr>
 <tr class="separator:afc95fb0d27bada24f816703817abd614"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab1719603a6f0ccad51f056302445814"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#aab1719603a6f0ccad51f056302445814">rollbackTransaction</a> ()</td></tr>
 <tr class="separator:aab1719603a6f0ccad51f056302445814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6854beaa072127a69f02294f1e68df9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#ac6854beaa072127a69f02294f1e68df9">getStatements</a> ()</td></tr>
+<tr class="separator:ac6854beaa072127a69f02294f1e68df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bf6b69a87a17c66ad36aaf21e0549a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#a0bf6b69a87a17c66ad36aaf21e0549a3">getSelectSQL</a> ($criteria=null, $alias=null, $attributes=null, $orderby=null, <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_paging_info.html">PagingInfo</a> $pagingInfo=null, $queryId=null)</td></tr>
 <tr class="separator:a0bf6b69a87a17c66ad36aaf21e0549a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6568fd87ea493d55978b84560680d40"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#ae6568fd87ea493d55978b84560680d40">isForeignKey</a> ($name)</td></tr>
@@ -249,6 +255,8 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:abb8ac7a65de8946b37f4bd96a0e62140"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#abb8ac7a65de8946b37f4bd96a0e62140">getSequenceMapper</a> ()</td></tr>
+<tr class="separator:abb8ac7a65de8946b37f4bd96a0e62140"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40b1e27db851c837aafd52c67b28827c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#a40b1e27db851c837aafd52c67b28827c">getNextId</a> ()</td></tr>
 <tr class="separator:a40b1e27db851c837aafd52c67b28827c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d556751b57716a29924e573eea2abd4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwcmf_1_1lib_1_1model_1_1mapper_1_1impl_1_1_abstract_r_d_b_mapper.html#a3d556751b57716a29924e573eea2abd4">getRelationIncludingNM</a> ($roleName)</td></tr>
@@ -392,7 +400,28 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00083">83</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00092">92</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+
+</div>
+</div>
+<a id="a421831a265621325e1fdd19aace0c758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a421831a265621325e1fdd19aace0c758">&#9670;&nbsp;</a></span>__destruct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__destruct </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destructor. </p>
+
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00113">113</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -415,7 +444,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Select data to be stored in the session. </p>
 <p>PDO throws an exception if tried to be (un-)serialized. </p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00099">99</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00121">121</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -443,7 +472,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00110">110</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00132">132</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -465,7 +494,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Get the connection parameters. </p>
 <dl class="section return"><dt>Returns</dt><dd>Assoziative array with the following keys: dbType, dbHostName, dbUserName, dbPassword, dbName, dbPrefix </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00122">122</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00144">144</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -487,7 +516,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#ab7a0a080d0e721c656eef11cd641638b">RDBMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00129">129</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00151">151</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -509,7 +538,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a23a4c71383d4d2dfc4ccade9fc78e5b9">RDBMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00139">139</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00161">161</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -557,7 +586,37 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html" title="RDBMapper defines the interface for mapper classes that map to relational databases. ">RDBMapper</a> instance </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00152">152</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00174">174</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+
+</div>
+</div>
+<a id="abb8ac7a65de8946b37f4bd96a0e62140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb8ac7a65de8946b37f4bd96a0e62140">&#9670;&nbsp;</a></span>getSequenceMapper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">getSequenceMapper </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the sequence mapper. </p>
+<dl class="section return"><dt>Returns</dt><dd>PersistenceMapper </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00266">266</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -587,7 +646,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Get a new id for inserting into the database. </p>
 <dl class="section return"><dt>Returns</dt><dd>An id value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00239">239</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00277">277</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -609,7 +668,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a177b44fc2918c4333031e42aca566f69">RDBMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00285">285</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00329">329</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -632,7 +691,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#abe707d8966fc66436884e8f88e96cc7c">RDBMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00295">295</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00339">339</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -655,7 +714,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a1ee8849dfaaace6f8ae526e45c094128">RDBMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00305">305</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00349">349</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -677,7 +736,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a42d0c3f386bdbf63e504f78b7e6b9d50">RDBMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00315">315</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00359">359</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -717,7 +776,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>If the query is a select, an array of associative arrays containing the selected data, the number of affected rows else </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00326">326</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00370">370</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -750,7 +809,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a1542d2508eaa9e0a58647a425fb48705">RDBMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00349">349</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00393">393</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -773,7 +832,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a7dadd4d3b3024d9df030dce85178082a">PersistenceMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00386">386</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00430">430</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -796,7 +855,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a7d43a99f995ce575be785220028ad31b">PersistenceMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00441">441</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00485">485</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -833,7 +892,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>RelationDescription </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00452">452</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00496">496</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -866,7 +925,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a2fe8cfe8bdfa3b4c980d90ffee82864b">PersistenceMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00496">496</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00540">540</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -889,7 +948,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a267fcef60c39cb385faf112bb3546b94">PersistenceMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00524">524</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00568">568</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -912,7 +971,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a672ed134be9ae207ec089c1d1bfde676">PersistenceMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00531">531</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00575">575</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -935,7 +994,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#a7ce9b36cb807e3d26cced6b36307cd2d">PersistenceMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00542">542</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00586">586</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -972,7 +1031,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boolean </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00571">571</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00615">615</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -995,7 +1054,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a1fa115961d368dc8d0941de1a76914d4">RDBMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00579">579</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00623">623</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1040,7 +1099,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#aac5a86f3d85d6102907e74dd50bd15f6">RDBMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00591">591</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00635">635</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1079,7 +1138,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#aaf7480823fabce435f32424c25041370">AbstractMapper::loadImpl()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00632">632</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00679">679</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1119,7 +1178,7 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#ad671c122481320dd88589c0cf19b1c77">AbstractMapper::createImpl()</a> </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The type parameter is not used here because this class only constructs one type </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00652">652</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00699">699</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1148,7 +1207,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a501a74cbd9f853022f381d8cdf7df3e0">AbstractMapper::saveImpl()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00692">692</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00739">739</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1177,7 +1236,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#aa5996b46ec455c15873de1d25898d904">AbstractMapper::deleteImpl()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00736">736</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00783">783</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1229,7 +1288,7 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a14e83f9a3e9a474d756c28e1d55f54f8">AbstractMapper::getOIDsImpl()</a> </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The type parameter is not used here because this class only constructs one type </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00797">797</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00844">844</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1286,7 +1345,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#ad1301d748ad57317acbcef6e2eaeed25">AbstractMapper::loadObjectsImpl()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00820">820</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00867">867</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1355,7 +1414,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Array of PersistentObject instances </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00838">838</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00885">885</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1400,7 +1459,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1model_1_1mapper_1_1_r_d_b_mapper.html#a177bf2544edfe85d1b67487e0453d5a7">RDBMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00853">853</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00900">900</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1437,7 +1496,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>PersistentObject </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00903">903</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00950">950</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1485,7 +1544,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Mixed </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00935">935</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00982">982</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1533,7 +1592,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_facade.html#afc20fc0561ad9718e0da1a8cd3adb846" title="Load the objects matching a given condition. ">PersistenceFacade::loadObjects()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00953">953</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l01000">1000</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1596,7 +1655,35 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_abstract_mapper.html#a0e88b19d34d98c6d3942aa2ea5e37c18">AbstractMapper::loadRelationImpl()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00995">995</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l01042">1042</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+
+</div>
+</div>
+<a id="af22a3b581d7a7ed7e8b20893013714d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af22a3b581d7a7ed7e8b20893013714d8">&#9670;&nbsp;</a></span>handleDbEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">handleDbEvent </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handle an event triggered from the zend db layer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$e</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l01099">1099</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1618,7 +1705,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#af3380f3b13931d581fa973a382946b32">PersistenceMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l01055">1055</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l01112">1112</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1640,7 +1727,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#afc95fb0d27bada24f816703817abd614">PersistenceMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l01071">1071</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l01129">1129</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1663,7 +1750,29 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#aab1719603a6f0ccad51f056302445814">PersistenceMapper</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l01088">1088</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l01146">1146</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+
+</div>
+</div>
+<a id="ac6854beaa072127a69f02294f1e68df9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6854beaa072127a69f02294f1e68df9">&#9670;&nbsp;</a></span>getStatements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getStatements </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#ac6854beaa072127a69f02294f1e68df9" title="Get a list of all insert/update/delete statements that where executed in the last transaction...">PersistenceMapper::getStatements()</a> This method an array of arrays with the first item being the sql string and the second the bind parameter array </dd></dl>
+
+<p>Implements <a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistence_mapper.html#ac6854beaa072127a69f02294f1e68df9">PersistenceMapper</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l01160">1160</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1699,7 +1808,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l01102">1102</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l01168">1168</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -1729,7 +1838,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Check if the connection is currently in a transaction. </p>
 <dl class="section return"><dt>Returns</dt><dd>Boolean </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l01110">1110</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l01176">1176</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -2251,7 +2360,7 @@ In case of a sortable many to many relation, the sortkey value must also be sele
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00051">51</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00054">54</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -2267,7 +2376,7 @@ In case of a sortable many to many relation, the sortkey value must also be sele
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00074">74</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_abstract_r_d_b_mapper_8php_source.html#l00083">83</a> of file <a class="el" href="_abstract_r_d_b_mapper_8php_source.html">AbstractRDBMapper.php</a>.</p>
 
 </div>
 </div>
@@ -2283,7 +2392,7 @@ In case of a sortable many to many relation, the sortkey value must also be sele
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2018 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Feb 7 2018 12:20:11 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
+          Generated on Mon Aug 20 2018 12:48:32 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
       </div>
     </div>
   </div>

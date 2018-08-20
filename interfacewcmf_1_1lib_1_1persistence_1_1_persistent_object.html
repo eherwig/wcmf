@@ -192,8 +192,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1a79f61fa591ebe2550b187c1544e1d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e19f1226f93bea2b036d404f58412e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a6e19f1226f93bea2b036d404f58412e9">getChangedValues</a> ()</td></tr>
 <tr class="separator:a6e19f1226f93bea2b036d404f58412e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21e59648f0cae7225441015bb21b8b20"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a21e59648f0cae7225441015bb21b8b20">getOriginalValues</a> ()</td></tr>
-<tr class="separator:a21e59648f0cae7225441015bb21b8b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a026101155a1c37616ffbb20fb608a0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a7a026101155a1c37616ffbb20fb608a0">getOriginalValue</a> ($name)</td></tr>
+<tr class="separator:a7a026101155a1c37616ffbb20fb608a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a756a28909cda55de0256078569533aa2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#a756a28909cda55de0256078569533aa2">getIndispensableObjects</a> ()</td></tr>
 <tr class="separator:a756a28909cda55de0256078569533aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa54d71e15bac85c5f7a13e62b9933652"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html#aa54d71e15bac85c5f7a13e62b9933652">getProperty</a> ($name)</td></tr>
@@ -402,7 +402,7 @@ Public Attributes</h2></td></tr>
 <p>Get a copy of the object (ChangeListeners and Lock are not copied) </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="interfacewcmf_1_1lib_1_1persistence_1_1_persistent_object.html" title="PersistentObject defines the interface of all persistent objects. ">PersistentObject</a> </dd></dl>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#ad0cb87b388bc74d63dc884accdca8713">DefaultPersistentObject</a>, and <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html#ad0cb87b388bc74d63dc884accdca8713">PersistentObjectProxy</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#ad0cb87b388bc74d63dc884accdca8713">DefaultPersistentObject</a>, <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html#ad0cb87b388bc74d63dc884accdca8713">PersistentObjectProxy</a>, and <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#ad0cb87b388bc74d63dc884accdca8713">Node</a>.</p>
 
 </div>
 </div>
@@ -683,11 +683,11 @@ Public Attributes</h2></td></tr>
 <p>Get the value of an attribute. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$name</td><td>The name of the attribute to query. </td></tr>
+    <tr><td class="paramname">$name</td><td>The name of the attribute. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The value of the attribute / null if it doesn't exits. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the attribute / null if it doesn't exist. </dd></dl>
 
 <p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#a8c584efa272687554bd9abe5e83fe10c">DefaultPersistentObject</a>, <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html#a8c584efa272687554bd9abe5e83fe10c">PersistentObjectProxy</a>, and <a class="el" href="classwcmf_1_1lib_1_1model_1_1_node.html#a8c584efa272687554bd9abe5e83fe10c">Node</a>.</p>
 
@@ -766,7 +766,7 @@ Public Attributes</h2></td></tr>
 <p>Check if the object has a given attribute. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$name</td><td>The name of the attribute to query. </td></tr>
+    <tr><td class="paramname">$name</td><td>The name of the attribute. </td></tr>
   </table>
   </dd>
 </dl>
@@ -915,25 +915,32 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a21e59648f0cae7225441015bb21b8b20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21e59648f0cae7225441015bb21b8b20">&#9670;&nbsp;</a></span>getOriginalValues()</h2>
+<a id="a7a026101155a1c37616ffbb20fb608a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a026101155a1c37616ffbb20fb608a0">&#9670;&nbsp;</a></span>getOriginalValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">getOriginalValues </td>
+          <td class="memname">getOriginalValue </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$name</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the original data provided to the initialize method. </p>
-<dl class="section return"><dt>Returns</dt><dd>Associative array with value names as keys and values as values </dd></dl>
+<p>Get the original of an attribute provided to the initialize method. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$name</td><td>The name of the attribute. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the attribute / null if it doesn't exist. </dd></dl>
 
-<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#a21e59648f0cae7225441015bb21b8b20">DefaultPersistentObject</a>, and <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html#a21e59648f0cae7225441015bb21b8b20">PersistentObjectProxy</a>.</p>
+<p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#a7a026101155a1c37616ffbb20fb608a0">DefaultPersistentObject</a>, and <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html#a7a026101155a1c37616ffbb20fb608a0">PersistentObjectProxy</a>.</p>
 
 </div>
 </div>
@@ -978,11 +985,11 @@ Public Attributes</h2></td></tr>
 <p>Get the value of a named property in the object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">$name</td><td>The name of the property to query. </td></tr>
+    <tr><td class="paramname">$name</td><td>The name of the property. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The value of the property / null if it doesn't exits. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the property / null if it doesn't exist. </dd></dl>
 
 <p>Implemented in <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1impl_1_1_default_persistent_object.html#aa54d71e15bac85c5f7a13e62b9933652">DefaultPersistentObject</a>, and <a class="el" href="classwcmf_1_1lib_1_1persistence_1_1_persistent_object_proxy.html#aa54d71e15bac85c5f7a13e62b9933652">PersistentObjectProxy</a>.</p>
 
@@ -1279,7 +1286,7 @@ Public Attributes</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2018 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Wed Feb 7 2018 12:20:12 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
+          Generated on Mon Aug 20 2018 12:48:33 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
       </div>
     </div>
   </div>
