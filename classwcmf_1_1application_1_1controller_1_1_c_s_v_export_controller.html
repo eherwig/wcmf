@@ -141,16 +141,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="markdownTableBody" class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><em>in</em> <code>query</code>  </td><td class="markdownTableBodyNone">A query condition encoded in RQL to be used with <a class="el" href="classwcmf_1_1lib_1_1model_1_1_string_query.html#a287276e468752b7a84f131041346e73a" title="Set the query condition string as RQL. ">StringQuery::setRQLConditionString()</a>   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><em>in</em> <code>sourceId</code>  </td><td class="markdownTableBodyNone">When exporting a relation: Id of the object to which the exported objects are related (determines the object id together with <em>className</em>)   </td></tr>
+<td class="markdownTableBodyNone"><em>in</em> <code>translateValues</code>  </td><td class="markdownTableBodyNone">Boolean whether list values should be translated to their display values (optional, default: <em>true</em>)   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><em>in</em> <code>relation</code>  </td><td class="markdownTableBodyNone">When exporting a relation: Name of the relation to the object defined by <em>sourceId</em> (determines the type of the returned objects)   </td></tr>
+<td class="markdownTableBodyNone"><em>in</em> <code>sourceId</code>  </td><td class="markdownTableBodyNone">When exporting a relation: Id of the object to which the exported objects are related (determines the object id together with <em>className</em>)   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><em>in</em> <code>relation</code>  </td><td class="markdownTableBodyNone">When exporting a relation: Name of the relation to the object defined by <em>sourceId</em> (determines the type of the returned objects)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><em>in</em> <code>nodesPerCall</code>  </td><td class="markdownTableBodyNone">The number of nodes to process in one call (default: 50)   </td></tr>
 </table>
 </div> </div><p>For additional actions and parameters see <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html">BatchController actions</a>.</p>
 <dl class="section author"><dt>Author</dt><dd>ingo herwig <a href="#" onclick="location.href='mai'+'lto:'+'ing'+'o@'+'wem'+'ov'+'e.c'+'om'; return false;">ingo@<span style="display: none;">.nosp@m.</span>wemo<span style="display: none;">.nosp@m.</span>ve.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00054">54</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00055">55</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for CSVExportController:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -309,7 +311,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a47a24ac0d700f62a9434d298ade72fb9" title="Initialize the Controller with request/response data. ">Controller::initialize()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00063">63</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00064">64</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 
 </div>
 </div>
@@ -337,7 +339,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1lib_1_1presentation_1_1_controller.html#a184909dab34698899937d810a9f5d393" title="Check if the request is valid. ">Controller::validate()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00090">90</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00094">94</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 
 </div>
 </div>
@@ -366,7 +368,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#aa969f966d1ab74704cbde9512d281d2c" title="Get definitions of work packages. ">BatchController::getWorkPackage()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00149">149</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00153">153</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 
 </div>
 </div>
@@ -394,7 +396,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#ad91d741678d4dd54df44eb28216f1a39" title="Get the filename of the file to download at the end of processing. ">BatchController::getDownloadFile()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00159">159</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00163">163</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 
 </div>
 </div>
@@ -431,7 +433,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This is a callback method called on a matching work package, see <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a6e1c732256bd007cac26661410976b52" title="Add a work package to session. ">BatchController::addWorkPackage()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00168">168</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00172">172</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 
 </div>
 </div>
@@ -468,7 +470,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This is a callback method called on a matching work package, see <a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#a6e1c732256bd007cac26661410976b52" title="Add a work package to session. ">BatchController::addWorkPackage()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00237">237</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00241">241</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 
 </div>
 </div>
@@ -496,7 +498,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classwcmf_1_1application_1_1controller_1_1_batch_controller.html#aff07c1d29d6d6a540c726948254a1764" title="Clean up after all tasks are finished. ">BatchController::cleanup()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00270">270</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00280">280</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 
 </div>
 </div>
@@ -513,7 +515,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00057">57</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00058">58</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 
 </div>
 </div>
@@ -529,7 +531,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00058">58</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_s_v_export_controller_8php_source.html#l00059">59</a> of file <a class="el" href="_c_s_v_export_controller_8php_source.html">CSVExportController.php</a>.</p>
 
 </div>
 </div>
@@ -545,7 +547,7 @@ Protected Member Functions</h2></td></tr>
     <div class="row">
       <div class="col-md-9">
         <small>&copy; 2018 <a href="http://www.wemove.com" target="_blank">wemove digital solutions</a><br>
-          Generated on Mon Aug 20 2018 12:48:29 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
+          Generated on Tue Aug 21 2018 16:41:26 for wCMF by &#160;<a href="http://www.doxygen.org/index.html" target="_blank">doxygen</a> 1.8.14</small>
       </div>
     </div>
   </div>
